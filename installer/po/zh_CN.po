@@ -1,0 +1,139 @@
+# Chinese (Simplified) translation for dcplusplus
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the dcplusplus package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dcplusplus\n"
+"Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2018-11-12 00:08+0100\n"
+"PO-Revision-Date: 2012-10-19 05:26+0000\n"
+"Last-Translator: comet <Unknown>\n"
+"Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2018-11-11 22:50+0000\n"
+"X-Generator: Launchpad (build 18816)\n"
+
+#. type: Content of: <Strings><SECTION_DCPP>
+#: installer/Strings.xml:3
+#, no-wrap
+msgid "DC++ (required)"
+msgstr "DC++ (必需)"
+
+#. type: Content of: <Strings><BACKUP_QUESTION>
+#: installer/Strings.xml:4
+#, no-wrap
+msgid "A previous installation of DC++ has been found; backup settings and queue to '$R0'?"
+msgstr "发现已存在旧版的DC++；备份之前的设置和队列到'$R0'？"
+
+#. type: Content of: <Strings><SECTION_START_MENU>
+#: installer/Strings.xml:5
+#, no-wrap
+msgid "Start menu shortcuts"
+msgstr "开始菜单快捷方式"
+
+#. type: Content of: <Strings><SECTION_LOCAL>
+#: installer/Strings.xml:6
+#, no-wrap
+msgid "Store settings in the user profile directory"
+msgstr "在用户配置文件夹保存设置"
+
+#. type: Content of: <Strings><SECTION_ARCH>
+#: installer/Strings.xml:7
+#, no-wrap
+msgid "Install the 32-bit version"
+msgstr ""
+
+#. type: Content of: <Strings><LOCAL_WARNING>
+#: installer/Strings.xml:8
+#, no-wrap
+msgid "Unchecking this box will make DC++ store its settings in the program directory. This is strongly discouraged on Windows Vista and later; settings or downloads might get lost."
+msgstr "不选中本项则DC++保存配置文件在程序所在文件夹。在Windows Vista及之后的系统中不建议选中，否则设置或下载可能会丢失。"
+
+#. type: Content of: <Strings><WARNING_LOCALE_ERASED>
+#: installer/Strings.xml:9
+#, no-wrap
+msgid "Warning: the 'locale' directory ($INSTDIR\\locale) will be completely erased!"
+msgstr "警告： 'locale'文件夹($INSTDIR\\locale)将被完全删除。"
+
+#. type: Content of: <Strings><SM_DCPP_DESCR>
+#: installer/Strings.xml:10
+#, no-wrap
+msgid "DC++ (file sharing application)"
+msgstr "DC++ (文件共享程序)"
+
+#. type: Content of: <Strings><SM_LICENSE>
+#: installer/Strings.xml:11
+#, no-wrap
+msgid "License"
+msgstr "许可协议"
+
+#. type: Content of: <Strings><SM_HELP>
+#: installer/Strings.xml:12
+#, no-wrap
+msgid "Help"
+msgstr "帮助"
+
+#. type: Content of: <Strings><SM_CHANGELOG>
+#: installer/Strings.xml:13
+#, no-wrap
+msgid "Change Log"
+msgstr "更新记录"
+
+#. type: Content of: <Strings><EXECUTE_QUERY>
+#: installer/Strings.xml:14
+#, no-wrap
+msgid "Installation complete. Do you want to run DC++?"
+msgstr ""
+
+#. type: Content of: <Strings><SM_UNINSTALL>
+#: installer/Strings.xml:15
+#, no-wrap
+msgid "Uninstall"
+msgstr "卸载"
+
+#. type: Content of: <Strings><UN_REMOVE_QUESTION>
+#: installer/Strings.xml:16
+#, no-wrap
+msgid "Also remove queue, settings and the whole DC++ program directory ($INSTDIR) with all of its sub-directories?"
+msgstr "删除队列、配置和DC++程序文件夹($INSTDIR) 及其子文件夹？"
+
+#. type: Content of: <Strings><DONATION_INFO_1>
+#: installer/Strings.xml:17
+#, no-wrap
+msgid "Contribute to the Direct Connect Network Foundation"
+msgstr ""
+
+#. type: Content of: <Strings><DONATION_INFO_2>
+#: installer/Strings.xml:18
+#, no-wrap
+msgid "To help the development of DC++ and other DC related software, please consider contributing or donating. Your generous donations will be used for the following:"
+msgstr ""
+
+#. type: Content of: <Strings><DONATION_INFO_3>
+#: installer/Strings.xml:19
+#, no-wrap
+msgid "* Development infrastructure (domains, server costs)"
+msgstr ""
+
+#. type: Content of: <Strings><DONATION_INFO_4>
+#: installer/Strings.xml:20
+#, no-wrap
+msgid "* Certificates for supported projects"
+msgstr ""
+
+#. type: Content of: <Strings><DONATION_INFO_5>
+#: installer/Strings.xml:21
+#, no-wrap
+msgid "All donations are completly transparent, will be individually listed and published on the DCNF website, either under your own name or as an anonymous donation, according to your choice."
+msgstr ""
+
+#. type: Content of: <Strings><DONATE_BUTTON>
+#: installer/Strings.xml:22
+#, no-wrap
+msgid "Donate / Contribute"
+msgstr ""

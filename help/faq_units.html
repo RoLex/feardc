@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>What do the units mean?</h1>
+<p>
+DC++ has always measured file sizes and speeds with the understanding
+that 1024 of something make the next unit up. Using SI prefixes,
+kilo means 1000, so one kilobyte should imply 1000 bytes. In
+popular usage, one kilobyte nearly always means 1024 bytes, which means
+that "kilo" has multiple definitions depending on context. The
+International Electrotechnical
+Commission (IEC) created new prefixes to remove the ambiguity, so kilo
+could always mean 1000 (and so on). In v0.402, DC++ adopted these
+prefixes.
+</p>
+<table style="width: 100%; text-align: left;" border="0" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="font-weight: bold;">New Prefix</td>
+      <td style="font-weight: bold;">Factor</td>
+      <td style="font-weight: bold;">Old Prefix</td>
+      <td style="font-weight: bold;">Factor</td>
+    </tr>
+    <tr>
+      <td>kibi-</td>
+      <td>2<sup>10</sup></td>
+      <td>kilo-</td>
+      <td>10<sup>3</sup></td>
+    </tr>
+    <tr>
+      <td>mebi-</td>
+      <td>2<sup>20</sup></td>
+      <td>mega-</td>
+      <td>10<sup>6</sup></td>
+    </tr>
+    <tr>
+      <td>gibi-</td>
+      <td>2<sup>30</sup></td>
+      <td>giga-</td>
+      <td>10<sup>9</sup></td>
+    </tr>
+    <tr>
+      <td>tebi-</td>
+      <td>2<sup>40</sup></td>
+      <td>tera-</td>
+      <td>10<sup>12</sup></td>
+    </tr>
+    <tr>
+      <td>pebi-</td>
+      <td>2<sup>50</sup></td>
+      <td>peta-</td>
+      <td>10<sup>15</sup></td>
+    </tr>
+  </tbody>
+</table>
+<p>
+For more information about the binary units see the <a href="https://physics.nist.gov/cuu/Units/binary.html" target="_blank" class="external">National Institute of Standards and Technology</a>.
+</p>
+</body>
+</html>

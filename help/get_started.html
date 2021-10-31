@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+  <title>Get started</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link type="text/css" rel="stylesheet" href="office11.css"/>
+  <link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<h1>Get started</h1>
+
+<p>Hello and welcome! DC++ is a free, open-source client for Direct Connect file
+sharing networks. It is fully compatible with and supports connection to
+hubs using the earlier <a href="https://en.wikipedia.org/wiki/Direct_Connect_(protocol)" target="_blank" class="external">NeoModus Direct Connect (NMDC)</a> protocol, but its primary purpose is to be a client for a new generation of
+file sharing using a protocol called <a href="https://adc.sourceforge.io/" target="_blank" class="external">Advanced Direct Connect (ADC)</a>.</p>
+
+<p>The newest version of DC++ should work well on any officially supported Windows
+client operating system, including Windows 8.1 and 10 and also runs on Windows 7 as unsupported for the time being. Some older
+versions will run on even Windows XP or Vista, but using DC++ on these old, discontinued
+and vulnerable operating systems is neither recommended nor supported. 
+As long as it downloaded from the <a href="https://dcplusplus.sourceforge.io/" target="_blank" class="external">official site</a>,
+DC++ contains no viruses or adware of any kind. DC++ is free; if you paid for
+it, ask for a refund!</p> 
+
+<h2>Structure of the Direct Connect network</h2>
+
+<p>The Direct Connect (DC) network is a decentralized network, made up of
+individual servers <b>(hubs)</b> that users join to share files. Users can
+<b>search</b> for files and <b>download</b> them from other users connected to
+the same hub. A hub only helps to find files and connect users; it <i>does not
+store any files</i>. File transfers are done directly between clients, in
+peer-to-peer fashion. </p>
+
+<p>Every hub also acts as an instant messaging server. Users can chat with other
+users of the same hub using the main chat (visible to every user on the hub)
+or, alternatively, start a private conversation with a particular user.  Some
+hubs also have special chat rooms for groups of people, such as having a chat
+only for operators. </p>
+
+<p>Each hub is individually administered, and some hubs are built around sharing a
+particular type of content.
+<i>Rules</i> vary from hub to hub, but most have a restriction on the minimum
+amount and type of content a user may share (for example, some hubs disallow
+sharing of pornography).  Hubs typically have operators (or <i>ops</i>)
+appointed by the actual owner of the hub to police these rules and ban
+offenders, as well as help new users. </p>
+
+<p>There are two basic kinds of hubs. <b>Public hubs</b> are available to anyone
+who adheres to the rules and require no registration for connecting.  Some
+allow you to connect, but require registration to search or download &#45; this
+is a grey area.  In contrast, <b>private hubs</b> always require user
+authentication at login, using a username/password combination. To gain access
+to these hubs, one must get registered through other channels, such as a web
+forum or a public hub maintained by the same people. </p>
+
+<p>There are <b>Hublists</b> hosted by individual hublist servers to allow users
+to find hubs that they might like. These lists contain the <i>name</i>,
+<i>address</i> and <i>description</i> of each hub along with other data. Some
+big hublists try to contain almost all available hubs while others contain only
+a list of hubs meeting certain criteria, such as hubs in a specific country.
+</p>
+
+<h2>Connecting to DC hubs using DC++</h2>
+
+<p>DC++ has a few public <b>hublist servers</b> configured by default. They are
+the most popular and reliable ones so they are available most of the time. You
+can open up the <a href="window_public_hubs.html">Public Hublist</a> window by
+using the View/Public Hubs menu item or by clicking on the appropriate icon in the <a href="window_main.html#toolbar">Toolbar</a>. You can <a href="dialog_public_hub_lists.html">add other hublist servers</a> or manage a
+list of your own <a href="window_favorite_hubs.html">Favorite hubs</a>.  If you
+simply want to connect to a particular hub with a known address you can do it
+using File/Quick Connect.</p>
+
+<p>However, before connecting to any hub you should familiarize yourself with the
+basic principles of the DC network and have your client set up correctly to
+enjoy all the possibilities and benefits of Direct Connect.</p>
+
+<h2>Basic settings and usage</h2>
+
+<p><a href="https://dcplusplus.sourceforge.io/tutorial.html#settings" target="_blank" class="external">The DC++ Quick Start Tutorial</a> is an easy to understand guide to newcomers. It contains plenty of screenshots as well as
+a video tutorial that explains basic DC++ usage and the minimum settings required to 
+get things up and running. Make sure you gone through the tutorial and configured all
+the minimum required settings (eg. entered a unique nick in <a href="settings_general.html">General settings</a>, etc...)
+or you won't be able to connect to any hub.</p>
+
+<p>In most cases, after concluding this basic setup you must be able to connect to hubs,
+search for files and download from any user. If you don't experience any issues then 
+you can entirely <a href="#morehelp">skip the next section</a>.</p>
+
+<h2 id="connection">Troubleshooting connectivity problems</h2>
+
+<p>If you experience any connectivity problems after the required basic setup
+(eg. not able to connect to any hub, no search results, downloads don't start) then you 
+may need to do some additional configuration. Beside some less frequent issues in most 
+cases the possible source of the connectivity issues can be narrowed down to two reasons:</p>
+
+<ul>
+	<li><p><u>DC++ itself or its access to the Internet is blocked by some security software</u>.
+	Typical sympthoms of this problem are that you cannot connect to hubs and unable to download
+	hublists or you cannot start DC++ itself at all.</p>
+	<p>In this case you have to allow (unblock) DC++ in <b>all</b> the installed security 
+	software (firewall, anti-virus, anti-spyware, etc..). For additional information and
+	tips about how to unblock DC++ in the Windows firewall and other 3rd party security 
+	software follow <a href="faq_unblock.html">this FAQ</a>.</p></li>
+
+	<li><p><u>Misconfigured or incorrectly detected connectivity settings</u>. The most obivious
+	sign of this problem is that you are <i>able</i> to pull down the hublists and can connect
+	to hubs without problems, even <b>others can upload from you</b> but searches and/or
+	downloads are not working (no search results / connection timeouts).</p>
+	<p>In most cases DC++ should be able to configure connectivity settings on your behalf, provided
+	the <a href="settings_connectivity.html">Automatic connectivity setup</a> feature is enabled.
+	If searches and/or downloads are not working, make sure that the <a href="settings_connectivity.html">
+	Let DC++ determine the best connectivity settings</a> option is enabled. If it doesn't help
+	(or it forces you into <a href="faq_whyactive.html">passive mode</a> and you want to improve 
+	your connectivity) then follow <a href="faq_connection.html">the FAQ that explains how to manually
+	configure DC++ connectivity settings</a>.</p></li>
+</ul>
+
+<h2 id="morehelp">Help resources</h2>
+<p>
+Need more help?
+</p>
+
+<ul> <li style="margin-left: 10px;">You can find <a href="index.html#faqs">FAQs</a> and explanation of ALL settings in the built-in
+context sensitive Help of DC++. Just move the question mark icon from the <a href="window_main.html#toolbar">Toolbar</a> to any part of the interface you
+are unsure about, or simply select a control and hit the F1 key.</li>
+
+<li style="margin-left: 10px;">There is a complete <a href="https://www.dslreports.com/faq/dc" target="_blank" class="external">Direct
+Connect FAQ</a> maintained at dslreports.com.</li>
+
+<li style="margin-left: 10px;">There are more answers to the most frequent
+support problems at the <a href="https://answers.launchpad.net/dcplusplus/+faqs" target="_blank" class="external">FAQ section of the DC++ Launchpad page</a>.</li>
+
+</ul>
+
+<p>There is an online <u>support forum and a bug &amp; feature tracker</u> also
+available. You can access these pages through the Help menu of DC++ or from the
+<a href="links.html">links page</a>. Please <b>go through all the documentation
+mentioned above before asking for support</b>. Most of the questions asked in
+the support page are already answered in the FAQs or even in the built-in
+Help.</p>
+
+<p><u>Important :</u> before asking for support please keep in mind that DC++ is a
+<u>client for connecting to a network and developers of DC++ have no connection
+to the owners of individual hubs or hublist servers</u>. So when you have a
+problem with a particular hub or hublist server (and you can use others without
+problems) the DC++ support team is unable to help you in any way.</p>
+
+</body></html>

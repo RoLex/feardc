@@ -1,0 +1,31 @@
+# vim: set filetype=py
+
+Import('dev source_path')
+
+env, target, sources = dev.prepare_build(
+    source_path,
+    'dcpp',
+    in_bin=False,
+    precompiled_header='stdinc'
+)
+
+dev.add_boost(env)
+dev.add_dcpp(env)
+dev.add_intl(env)
+dev.add_openssl(env)
+
+env.Append(CPPDEFINES=['BUILDING_DCPP=1'])
+
+headers = dev.get_sources(source_path, "*.h")
+dev.i18n(source_path, env, [sources, headers], 'libdcpp')
+
+ret = dev.build_lib(env, target, sources, dev.cpp_lib)
+
+if ret:
+    rev_id_path = '#/dcpp/version-rev-id.inc'
+    from gen_rev_id import gen_rev_id
+    env.Command(rev_id_path, None, Action(gen_rev_id, 'Generating $TARGET'))
+    env.Depends(sources, rev_id_path)
+    env.AlwaysBuild(rev_id_path)
+
+Return('ret')

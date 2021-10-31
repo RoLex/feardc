@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+    <h1>What do the DC++-style tags mean?</h1>
+
+    <h2>Notation</h2>The following information appears in the
+    <a href="window_hub.html#userlistcolumns">Tag column</a> for every
+    user in the user list of the <a href="window_hub.html">Hub window</a>:
+    &lt;++ V:x,M:x,H:x/y/z,S:x[,O:x]&gt;, where<br/>
+
+    <div style="MARGIN-LEFT: 40px">
+        <dl>
+            <dt>V(ersion)</dt>
+
+            <dd>x = client version</dd>
+
+            <dt>M(ode)</dt>
+
+            <dd>x = mode (A = Active, P = Passive, 5 = SOCKS5)</dd>
+
+            <dt>H(ubs)</dt>
+
+            <dd>x = number of hubs connected to where you're not a
+            registered user<br/>
+            y = number of hubs you're registered in<br/>
+            z = number of hubs you're registered as an
+            operator</dd>
+
+            <dt>S(lots)</dt>
+
+            <dd>x = number of upload slots you have open (note that
+            they may be in use already)</dd>
+
+            <dt>O(pen an extra slot if speed is below)</dt>
+
+            <dd>x = if total upload is below this value DC++ will
+            open another slot<br/>
+            This part of the tag is only shown when the option for
+            it is enabled.</dd>
+        </dl>
+    </div>
+    The tag is updated every 1-2 minutes if there are changes. 
+    Other clients may introduce more tag elements such as L:x
+    or B:x which means usage of upload bandwidth limiter where
+    x is the amount of maximal upload bandwidth in KiBs.
+
+    <h2>History</h2>The DC++ tag was introduced back when the only
+    available Direct Connect client was Neo-Modus DirectConnect
+    (NMDC) v1.0. That particular client could only connect to one
+    hub at a time, which ensured that the upload slots available
+    were assigned to other users connected to that hub. At first,
+    hub owners considered DC++ to be a cheat client, because it
+    could connect to multiple hubs at once. The DC++ tag was
+    introduced so hub owners could check if the users were
+    connected to a reasonable amount of hubs and had enough upload
+    slots available for sharing.<br/>
+    At this point, almost every client, whether it's capable of
+    joining multiple hubs or not, has a similar tag in it's
+    description field. The custom is to replace "++" with some
+    other identifier uniquely identifying the client type (common
+    are "StrgDC++", "ApexDC++" and "RSX++").
+</body>
+</html>
+

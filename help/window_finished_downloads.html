@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+	<h1>
+		<img src="FinishedDL.ico" width="16" height="16" alt="Finished downloads"/>
+		Finished downloads
+	</h1>
+<p>Note that <a href="settings_logs.html#filelist">file list logging</a> must be enabled for them to appear in this window.</p>
+<p>The list of finished files are grouped in two ways: by files and by users. You can select between the two grouped lists using tabs that appear in the top of the window. In both lists a new item will appear right away when the first chunk of a file downloaded.</p>
+
+<h2>Columns</h2>
+<dl style="margin-left: 40px;">
+  <dt>Time</dt>
+  <dd>The date and time the file finished downloading.</dd>
+  <dt>Filename</dt>
+  <dd>The name of the downloaded file.</dd>
+  <dt>Path</dt>
+  <dd>The path to the downloaded file.</dd>
+  <dt>Nicks</dt>
+  <dd>The sources' nick name.</dd>
+  <dt>File size</dt>
+  <dd>The size of the file downloaded.</dd>
+  <dt>Transferred</dt>
+  <dd>The number of transferred bytes.</dd>
+  <dt>% transferred</dt>
+  <dd>Shows how many percent of the file transferred.</dd>
+  <dt>Speed</dt>
+  <dd>The average speed for the file.</dd>
+  <dt>CRC Checked</dt>
+  <dd>Whether or not the file was CRC checked. Note that <a href="settings_advanced.html#sfvcheck">Enable automatic SFV checking</a> must be enabled, and the file needs to have an accompanying SFV file.</dd>
+  <dt>Hub</dt>
+  <dd>Which hub the source was on.</dd>
+  <dt>Files</dt>
+  <dd>Which files were downloded from the user.</dd>
+  <dt>Elapsed</dt>
+  <dd>The total time, in seconds, that it took for the file to be transferred.</dd>
+</dl>
+
+<h2>Context menu commands</h2>
+<dl style="margin-left: 40px;">
+  <dt>View as text</dt>
+  <dd><p>It will open the file (stored locally) in a text viewer window.</p>
+    <!--#include virtual="commands_viewastext.inc" --> 
+  </dd>
+</dl>
+<!--#include virtual="commands_file_general.inc" --> 
+<!--#include virtual="commands_file_management.inc" --> 
+<!--#include virtual="commands_user_general.inc" --> 
+<!--#include virtual="commands_user_favorites.inc" --> 
+<!--#include virtual="commands_listview.inc" --> 
+<!--#include virtual="commands_copy.inc" --> 
+
+<h2>Status bar</h2>
+<dl style="margin-left: 40px;">
+  <dt>Only show fully downloaded files</dt>
+  <dd cshelp="IDH_FINISHED_DL_ONLY_FULL">
+When this check-box is checked (which is the case in the default configuration), only files that
+are fully downloaded (which are not anymore in the <a href="window_download_queue.html">Download
+queue</a>) appear in the &quot;Finished downloads grouped by files&quot; list.<br/>
+When this check-box is not checked, an item appears in that list as soon as a chunk of the
+corresponding file has finished downloading.
+</dd>
+  <dt># Items</dt>
+  <dd cshelp="IDH_FINISHED_DL_COUNT">The amount of items that you have downloaded (received).</dd>
+  <dt># bytes</dt>
+  <dd cshelp="IDH_FINISHED_DL_BYTES">The amount in bytes that you have downloaded (received).</dd>
+  <dt># bytes/seconds</dt>
+  <dd cshelp="IDH_FINISHED_DL_SPEED">The average speed of the files you have downloaded (received).</dd>
+</dl>
+</body>
+</html>

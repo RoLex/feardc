@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+	<h1>Transfers</h1>
+	This lists your current connections to other peers in the network, uploads (from you to the
+	other peer) and downloads (from the other peer to you).
+
+	<h2>Columns</h2>
+	<dl style="margin-left: 40px;">
+		<dt>File</dt>
+		<dd>
+		The name of the file being transferred.
+		</dd>
+
+		<dt>Path</dt>
+		<dd>
+		Shows where the current download will be saved when finished, or the path of the upload in
+		the file system.
+		</dd>
+
+		<dt>Status</dt>
+		<dd>
+		Shows the current status of the connection; can be one of: Connecting, Downloading,
+		Uploading, No slots available, Idle, Disconnected or Terminated. During data transfer you
+		can see here the name of the file, the current chunk of the file being downloaded from the
+		connected peer and maybe one or more letters in [box brackets] as well. These letters
+		specify the properties of the transfer:
+		<ul>
+			<li>[T] - TTH Checked</li>
+			<li>[Z] - ZLib Compressed transfer</li>
+			<li>[S] - Trusted secure connection</li>
+			<li>[U] - Untrusted secure connection</li>
+		</ul>
+		</dd>
+
+		<dt>User</dt>
+		<dd>
+		The nick of the connected user.
+		</dd>
+
+		<dt>Hub</dt>
+		<dd>
+		The hub which the user connected through.
+		</dd>
+
+		<dt>Time left</dt>
+		<dd>
+		The estimated time left to complete the transfer, computed from the current speed.
+		</dd>
+
+		<dt>Speed</dt>
+		<dd>
+		The current up or download speed.
+		</dd>
+
+		<dt>Transferred (Ratio)</dt>
+		<dd>
+		Amount of bytes transferred so far. The compression ratio is added between parentheses
+		(if applicable).
+		</dd>
+
+		<dt>Size</dt>
+		<dd>
+		Size of the transfer.
+		</dd>
+
+		<dt>Cipher</dt>
+		<dd>
+		Details on the encryption of the transfer (if applicable).
+		</dd>
+
+		<dt>IP</dt>
+		<dd>
+		IP address of the connected peer.
+		</dd>
+
+		<dt>Country</dt>
+		<dd>
+		Country of the connected peer (if available).
+		</dd>
+	</dl>
+
+	<h2>Context menu commands</h2>
+	<!--#include virtual="commands_file_general.inc" -->
+	<!--#include virtual="commands_user_general.inc" -->
+	<!--#include virtual="commands_user_favorites.inc" -->
+	<dl style="margin-left: 40px;">
+  		<dt>Priority</dt>
+  		<dd>Sets the priority of the selected transfer's corresponding item in the download queue.</dd>
+  		<dt>Force attempt</dt>
+		<dd>Forces DC++ to try to connect to the user immediately.</dd>
+		<dt>Disconnect</dt>
+		<dd>Forces DC++ to disconnect the user immediately.</dd>
+	</dl>
+	<!--#include virtual="commands_copy.inc" -->
+</body>
+</html>

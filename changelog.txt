@@ -1,0 +1,3128 @@
+-- 0.870 2021-09-09 --
+* Adaptively determine fastest TLS 1.3 ciphersuites (klondike)
+* [L#1703150] Fix crash when closing NMDC hubs (emtee)
+* [L#1909853] Allow the operating system to determine the best socket buffer sizes by default (maksis)
+* Add option to exclude encrypted private messages from logs (emtee)
+* [L#1445330] Allow CCPM on unencrypted ADC hubs (emtee)
+* [L#1853692] Blacklist an unmaintained hublist server
+* [L#1829064] Add new hublist server dcnf.github.io
+* [L#1815377] Fix a bug that could keep files from hashing due to CRC errors when automatic .sfv checking is enabled (emtee)
+* [L#1910274] Don't add incomplete TTH trees to hash database (cologic)
+* [L#1649066] Don't share files/directories with non-UTF-8 names on Linux/macOS/BSDs (cologic)
+* Fix GeoIP country in the Transfer View and Search window (emtee)
+* Keep existing GeoIP files after an unsuccessful download (emtee)
+* Update OpenSSL to version 1.1.1k
+* Require TLS 1.2 or newer (currently only TLS 1.3)-based ADCS connections (cologic)
+* "Require TLS ADC client-client connections" setting now on by default (poy)
+* Drop support for SHA-1-based ciphersuites due to chosen-prefix collisions from https://sha-mbles.github.io/ (cologic)
+* Disallow Diffie-Hellman keys smaller than 2048 bits to mitigate the Logjam attack (cologic)
+* Update bzip2 to version 1.0.8
+* Update MiniUPnPc to version 2.2.1
+* Update Boost to version 1.72
+
+-- 0.868 2018-11-12 --
+* During the first run of a new DC++ release shipped with new default hublist servers the new addresses are automatically added
+  to the existing setup (no manual reset/configuration needed anymore) (emtee)
+* Revisit default hublists, add new working hublist servers; blacklist discontinued or inaccessible server addresses (emtee)
+* Add function to reset the list of public hublist servers to current defaults (emtee)
+* Update OpenSSL to version 1.1.1
+* Use default ECC curve list since improvement in version OpenSSL 1.1 (cologic)
+* Remove Coral CDN support, since it's stopped running (cologic)
+* Documentation and translations updated as usual, thanks everyone
+
+-- 0.867 2017-10-12 --
+* [L#1722364] Prevent remote crashes from malevolent UDP data (maksis)
+
+-- 0.866 2017-05-20 --
+* [L#1681153] Better handle chats with a lot of text and prevent a remote freeze case (poy)
+* Update MiniUPnPc to version 2.0.20170509 - protocol and CVE-2017-8798 fixes
+* MiniUPnPc: Fix a multicast TTL setting mistakenly set to 50 instead of 2 (poy)
+
+-- 0.865 2017-02-01 --
+* Update zlib to version 1.2.11
+* [L#1656050] Fix compression errors when uploading due to a zlib API change (poy)
+* Update OpenSSL to version 1.0.2k
+
+-- 0.864 2017-01-09 --
+* [L#1654329] Fix search crashes triggered by search results from offline users (emtee)
+* Update zlib to version 1.2.10
+* [L#1654411] Share filter dialog boxes: No case-insensitive uniqueness (poy)
+* "Thank you for testing" notifications that can be disabled (poy)
+
+-- 0.863 2016-11-12 --
+* [L#1628615] Add user nick coloring to the Search window (iceman50)
+* Build with SSE3 support; Intel Core or AMD A64 X2 or newer CPU required, with some older steppings also working (cologic) 
+* [L#1638038] Fix alignment issues in 32-bit builds leading to crashes
+
+-- 0.862 2016-10-02 --
+* Update the NAT-PMP library
+* Update Boost to version 1.62
+* [L#1629574] Fix automatic connectivity detection not switching to passive mode (emtee)
+
+-- 0.861 2016-09-26 --
+* Update to GCC 6.2 & boost 1.61 (poy)
+* Build with SSE2 support; Intel P4 / AMD A64 or newer CPU required to run 32-bit builds (cologic)
+* Update OpenSSL to version 1.0.2j
+* [L#1626741] Fix some connectivity settings not being loaded / saved (emtee, poy)
+* Scroll through tabs via Ctrl+PageUp / Ctrl+PageDown (poy)
+
+-- 0.860 2016-09-14 --
+* Switch feasible http links to https (cologic)
+* [L#1451223] Added support for a HTTP downloader in the plugin interface (ullner)
+* [L#1353402] Added option to autostart DC++ when Windows starts (ullner)
+* [L#1265578] Added toolbar to download queue (ullner)
+* Better security and certs related settings layout (emtee)
+* [L#1262319] Add option to quick-check encrypted hubs in search frame (ullner)
+* [L#1494809] Fix chat tab selection on Windows 10 (iceman50)
+* [L#1506210] Improve IPv6 connectivity & add more settings (maksis, iceman50, emtee, poy, ullner)
+* Show list of available network interfaces for binding; add IPv6 binding setting (iceman50, emtee)
+* Add setting for external IPv6 addresses to be used for specific favorite hubs and hub groups (iceman50)
+* Drop Windows XP support, Vista is the minimum Windows version required to run DC++ from now (iceman50)
+* Add system memory size information to the crashlog (iceman50)
+* [L#236056] Add search options to right click menu in the notepad (ullner)
+* [L#1435007] Fix /clear-command scrolling problem (ullner)
+* [L#1473791] Added support to specify encoding in NMDC (favorite) hubs (ullner)
+* [L#264208] Add max extra slots option (ullner)
+* Add safeguarding for notification balloons (might fix some odd crashes?) (ullner)
+* [L#1306825] Add connectivity status for hubs to the public hubs window (ullner)
+* [L#1502650] Add whitelist of URIs that can be directly opened without prompt (ullner)
+* [L#710249] Show popup info text in text prompts (ullner)
+* Update OpenSSL to version 1.0.2h
+* [L#1436105] Improve KeyPrint checks (crise)
+* [L#1516181] Fix the KeyPrint check for hubs (konstantin)
+* [L#1543595] Fix issues with encrypted transfers (night)
+* Update MiniUPnP to version 2.0
+* Scroll through tabs using the mouse wheel (poy)
+* Invert extra mouse button effects on tabs to be more intuitive (poy)
+* [L#1620100] Installer: Update to NSIS 3 (emtee)
+* Installer: Fix cut lines in the donation text (poy)
+* Documentation and translations updated as usual, thanks everyone
+
+-- 0.851 2015-04-06 --
+* [L#1414362] Prefer boost regex over std regex for the time being (poy)
+* [L#1419454] [NMDC] Disallow malicious search requests (iceman50)
+* [L#1419478] [NMDC] Block C-C connections to hubs (pavel pimenov, ullner)
+* Installer page regarding contributions / donations (emtee)
+* Update some links (emtee)
+* Update OpenSSL to version 1.0.2a
+* Support only secp256r1/prime256v1/P-256 elliptic curve for ECDHE (cologic)
+
+-- 0.850 2015-01-17 --
+* [L#1308290] Enable TLS v1.1 and TLS v1.2-based ADCS connections (cologic)
+* Update OpenSSL to version 1.0.1k
+* Fix DWT button rendering on WINE (cologic)
+* [L#1206864] Fix "Require TLS ADC C-C connections" (cologic)
+* Add option to disable smart chat links - recommended on Wine (poy)
+* Improve UTF-8 RFC-3629 compliance (cologic)
+* Remove deprecated Bitzi TTH lookup (emtee)
+* Update MiniUPnP to version 1.9
+* Update the NAT-PMP library
+* Update translations
+
+-- 0.843 2014-04-28 --
+* [L#1307978] Fix subtract list functionality (crise)
+* [L#1309390] [NMDC] Prevent crashes when receiving malicious search requests (pavel pimenov)
+
+-- 0.842 2014-04-10 --
+* Update OpenSSL to version 1.0.1g - notably fixes the TLS heartbeat attack
+
+-- 0.841 2014-04-07 --
+* Reset fav hub column sizes (poy)
+* [L#395400] Revert the hub list caching patch as it was messing logs up (poy)
+
+-- 0.840 2014-03-31 --
+* [L#1115765] Added ability to filter out files and directories from the share (ullner)
+* [L#1225420] Open own list when using get/browse file list on self (ullner)
+* [L#1250614] Added menu option on hub tab for only searching in that hub (ullner)
+* [L#250238] Remove queued files that are already shared when DC++ starts (ullner)
+* [L#309815] Hub icon will change depending on user status (user/registered/operator) (ullner)
+* [L#721513] Transferview: Added "Remove file from queue" menu option and "Force attempt" is now only available for downloads (ullner)
+* [L#210217] Add connectivity status for hubs to the favorite hubs window (ullner)
+* [L#593613] Added /lastmessage in PMs to show the time of the last message (ullner)
+* [L#363092] Disallow transfer port and encrypted transfer port to be the same (ullner)
+* [L#1245179] Avoid connection failures (maksis)
+* [L#1228927] Fix columns for file lists in the Download Queue (emtee)
+* HTTP fixes (crise)
+* Safer hub state tracking (poy)
+* Add "/d <search>" for DuckDuckGo searches (poy)
+* Add a dialog box to nag XP suckers into upgrading (poy)
+* Support for a new XP-only branch in version checking (poy)
+* [L#395400] Hub list caching fixed on Linux (maksis, ullner)
+* [L#1030613] Safeguards against user command flooding (ullner)
+* [L#1030613] Separate internal from external user commands (ullner)
+* [L#991342] Verify keyprints against all available certificates - works with cert chains (crise)
+* [L#991342] Use keyprints to indicate trust for hubs and clients - keyprint is equivalent to certificate pinning in this regard (crise)
+* [L#991342] Generate temporary TLS keys dynamically at startup (crise)
+* [L#991342] Use variable size temporary TLS keys (crise)
+* [L#991342] Log some certificate verification errors (crise)
+* [L#991342] No longer use SHA1 for automatically generated client certificates (crise)
+* [L#991342] Automatically generated certificates remain valid for 90 days instead of 10 (crise)
+* [L#991342] Request certificate for all TLS connections regardless of security settings (crise)
+* [L#991342] Better OpenSSL integration regarding multi-threading and clean-up (crise)
+
+-- 0.831 2013-11-11 --
+* [L#1249810] Fix NMDC TTH search responses (emtee)
+* [ADC] Don't disconnect CCPM conns after 3 minutes of inactivity (poy)
+* [L#1246868] Increased maximum command length to 512 KiB and added an option in the UI (ullner)
+
+-- 0.830 2013-09-22 --
+* [L#1010996] Correct search responses (maksis, poy)
+* [L#1206658] Fix transfer painting issues (poy)
+* [L#1208049] Properly ungroup transfer items (poy)
+* [L#1206855] Fix a bug with duplicate directory downloads (maksis)
+* Optimize searches with multiple extensions (emtee, poy)
+* [L#1032153] Added CDATA parsing to XML parser (crise)
+* [L#233798] Added option to set automatic search interval (ullner)
+* [L#1033249] The text in the /help-command now lists the description of each command. (ullner)
+* Move the PM channel selector to a status bar menu (poy)
+* [ADC] Direct encrypted PM channels (poy)
+* [ADC] Validate connection tokens to avoid impersonators (poy)
+* [ADC] Send FM / FB in code 43 STAs instead of FL (poy)
+* Don't reconnect after a manual hub disconnect (poy)
+* [L#1225930] Always show the window when double-clicking the notif icon (poy)
+* [L#1220488] Upgrade the compiler
+* Reduce the max protocol command size from 16 MiB to 16 KiB
+* Documentation and translations updated as usual, thanks everyone
+
+-- 0.828 2013-07-23 --
+* Translation fixes
+* [L#1194299] Prevent races when sending INF/MyINFO (maksis, poy)
+* [L#1194299] Prevent races when closing a connection (maksis, poy)
+* [ADC] Send the LC (locale) parameter in INF
+* [L#1197557] Fix collateral row deletions in transfers & searches (poy)
+* Fix duplicate user rows in transfers (poy)
+* Icons in the plugin menu to show whether they are enabled (poy)
+* Toolbar button to open the download directory (emtee)
+
+-- 0.825 2013-06-18 --
+* [L#1191099] Group partial file list uploads to avoid a crash (poy)
+* [L#1189975] [ADC] Disallow some malevolent messages (maksis)
+
+-- 0.822 2013-06-03 --
+* Improve plugin management
+
+-- 0.820 2013-05-21 --
+* Rotate the icon while DC++ is loading (poy)
+* [L#243727] Allow expanding merged search results (poy)
+* Merge connections, downloads and uploads in the same list (poy)
+* [L#249622] Add user commands to transfer menus
+* Add a tab menu command to disconnect a hub (poy)
+* Validate input before trying a TTH search (emtee)
+* Display HTTP downloads in the transfer list (poy)
+* [L#190964] Handle more connection errors (poy)
+* Support city-level GeoIP databases - new params such as %[city] (poy)
+* Distribute an x64 version
+* Package plugins as .dcext files (poy)
+* Toolbar button to access plugin commands (poy)
+* Update zlib to version 1.2.8
+* Update MiniUPnPc to version 1.8
+
+-- 0.811 2013-03-04 --
+* Fix status bar parts when the window is too small (poy)
+* [L#534440] [NMDC] Preserve encodings in some search results (poy)
+* [ADC] Fix problems after marking oneself as a favorite user
+* Display progress information when DC++ starts (poy)
+* No GUI freeze when DC++ starts (poy)
+* Plugin API: conversion functions return the required buffer size
+* Update Boost to version 1.53
+* Update OpenSSL to version 1.0.1e
+* [L#1029629] Compile with MinGW-w64 instead of MinGW
+
+-- 0.810 2013-01-30 --
+* Fix a race condition on file list download (thanks bigmuscle)
+* [L#668548] Fix a potential infinite loop in BufferedSocket->setDataMode (crise)
+* Add "chunked" transfer encoding as per the HTTP/1.1 spec (crise)
+* [L#1072041] Fix DPI conversion problems (poy)
+* Remove the "Windows UPnP" port mapper in favor of MiniUPnP (poy)
+* Improve the plugin API (poy, crise)
+* Delete "View as text" files only when their window is closed (poy)
+* Fix queue matching when files have the same TTH but a different size (thanks irainman)
+* Update Boost to version 1.52 and atomic&lockfree to the version in trunk
+* Restore "Requesting" messages in the transfer list
+* [L#1071363] Apply link & plugin formatting to status messages (crise, poy)
+* [L#311818] Share file name duplicates due to directory merges (poy)
+* [L#311818] Share file name duplicates due to case differences (poy)
+* [L#311818] Reject file lists that contain duplicate items (poy)
+* Drag & drop text into text input fields (poy)
+* [L#1096465] Add "user online" / "user offline" status lines to PMs (emtee, poy)
+* Apply "send unknown /commands" to PMs (poy)
+* Don't clear the message box when trying to send a message to a disconnected hub (poy)
+* Improve OpenSSL error handling
+* Add copy menus to various lists (poy)
+* [L#289713] Add a "Copy user information" menu item (poy)
+* [ADC] Revise INF order in c-c connections as advised by ADC 1.0.2
+* Add hublist.eu to default hub lists
+* Add a toolbar button to open own file list (poy)
+* [L#489704] Fix invalid share sizes after a directory merge (poy)
+* Satisfy some boost lockfree requirements, could fix bugs on heavy load
+* Clean up earlier after receiving zlib data (thanks irainman)
+* [ADC] Send passive search replies via the hub they were requested from (poy)
+* [ADC] Actions on search results happen on the correct hub (poy)
+
+Note: The hash registry will be upgraded when running this version for the
+first time. Make sure all your drives are connected to avoid re-hashing.
+That upgrade only works on Win >= Vista; re-hashing is compulsory on XP.
+
+-- 0.802 2012-10-20 --
+* Perf improvements using lock-free queues, requires P6 CPUs (poy)
+* Reduce freezes when displaying file list dirs that contain lots of files (poy)
+* Less CPU consumption with large hubs/queues/lists (poy)
+* Fix incorrect user lists when DC++ is under heavy load (poy)
+* Plug resource leaks (poy)
+* [L#411484] [ADC] Fix BLOM when h > 32 (thanks yorhel)
+* [L#198416] Fix a crash when closing the download queue (poy)
+
+-- 0.801 2012-09-29 --
+* [L#1029629] Prevent crashes on heavy use by updating Boost.Atomic
+
+-- 0.800 2012-09-16 --
+* [L#270107] Revamp favorite hub settings (poy)
+* Reduce resource consumption when slots are full (poy)
+* [L#984330] Make PM windows more aware of the selected hub (poy)
+* [L#927821] Don't choke on hub addresses with spaces (poy)
+* Update OpenSSL to version 1.0.1c
+* Fix a mixup between IPs and hostnames leading to wrong search results (poy)
+* Tweak help tooltips in the settings dialog (poy)
+* Make the menu bar hideable (poy)
+* Add a /info hub command (poy)
+* [L#957994] Fix glitches with the file list loader (poy)
+* [L#1007103] Correct download logging after an app restart (emtee)
+* Replace option to disable ADC C-C TLS with one to require it (cologic)
+* [L#1007099] Fix disabled buttons in user matching settings (poy)
+* Do not automatch queue for bad/removed sources (emtee)
+* Minor DL queue tab fixes (poy)
+* Replace the slot up-down control by a context menu (poy)
+* [L#745162] Fix upload log format for partial lists (emtee)
+* Fix GUI problems in a download attempt of a public hublist with invalid address (emtee)
+* Fix unsuccessful HTTP redirections (emtee)
+* [L#1016205] Avoid deadlocks when changing user matchings (poy)
+* [L#249159] Improve performance when selecting lots of lines in lists (poy)
+* [L#1016907] Exclude temporary downloads from queue dupe check (emtee)
+* Greatly improve user command removal time when closing a hub
+* [L#587597] Add plugin API (Crise, iceman50)
+* [dwt] Add a link control (poy)
+* Allow Magnet links to be pasted in the "Quick connect" box (poy)
+* Rise the minislot size to 512 KiB
+* More Alt+I shortcuts for list filters (emtee)
+* Increase the chat buffer limit (iceman50)
+* Eliminate GUI freezes when opening large file lists (poy)
+* Remove the search spy in favor of the dev plugin - works on ADC too (poy)
+* Fix partial list browsing after loading an old full list (poy)
+* Add QP support (iceman50)
+* [L#305811] Grant extra slot hangs connection in ADC hubs (iceman50)
+* [L#1032227] Fix a crash when parsing messages with Magnet links (poy)
+* [L#1039537] Fix a crash in Windows 8 (poy)
+* Update Boost to version 1.51
+* Merge 2 identical active mode settings (poy)
+* Fix NAT-PMP renewal (poy)
+* [L#226968] Remember list sorting & splitter positions (poy)
+* [L#1041553] Fix help tooltips in Windows 8 (poy)
+* Fix GeoIP & OpenSSL problems with wide character paths (poy)
+* [L#288756] Automatically mark sources of large files as bad if the full tree is not available (emtee)
+* Documentation and translations updated as usual, thanks everyone
+
+-- 0.799 2012-05-05 --
+* Add icons (iceman50)
+* Fix table header column translations (emtee)
+* Improve chat link menus (poy)
+* Fix crashes when closing the DL queue window (poy)
+* [L#330176] More reasonable DL queue directory expansion (poy)
+* Update OpenSSL to version 1.0.1b
+* Update zlib to version 1.2.7
+
+-- 0.797 2012-04-17 --
+* Save and restore partial file lists (poy)
+* Apply ADL searches in partial file lists (poy)
+* Heuristics to send additional levels of info in partial file lists (poy)
+* Add a "Download full list" button in the file list toolbar (poy)
+* Partial file lists in NMDC hubs (poy)
+* Reclaim memory after a file list match
+* Improve file reading operations
+* [L#678432] Context-sensitive help tooltips in the settings dialog (poy)
+* [L#804993] Improve multiple monitor support (poy)
+* Propose a default nick using the Win user account name (poy)
+* [L#914457] Fix missing tab icons (poy)
+* Add a setting to enable away mode when Windows is locked (poy)
+* Make the away message optional (poy)
+* [L#704502] Away mode after some time of inactivity (poy)
+* Allow empty user matching definitions that match every user (poy)
+* Add predefined user matching defs for favs (bold, more red) & ops (more blue) (poy)
+* [L#300971] Keep updating GUI elements while a menu is up (poy)
+* Apply user matching definition styles to nicks in chats (poy)
+* Fix favorite hub groups on Win XP (poy)
+* [L#925659] Safer window cleanup (poy)
+* Reduce chat flickering (bigmuscle)
+* [L#923612] Show the last chat line in taskbar previews (poy)
+* Show chat logs with a dim text color (poy)
+* Re-add lost user information tooltips (poy)
+* Fix discrepancies in the /conn chat command (poy)
+* Update boost to version 1.49
+* [L#947895] Move the "follow redirect" command to inline chat links (poy)
+* Format chat links (poy)
+* Improve threaded file list loading (poy)
+* [L#981733] Prevent the keyboard language from switching
+* [L#966339] Fix bot detection in NMDC hubs
+
+-- 0.791 2012-01-14 --
+* Update translations
+
+-- 0.790 2011-12-29 --
+* Fav users frame becomes users frame and shows all users
+* Experimental implementation of KEYP ADC extension
+* Display the name of the device MiniUPnP has bound to (poy)
+* Add NAT-PMP for port mappings as an alternative to UPnP (poy)
+* Continue from the beginning after reaching the end of a file list when searching (poy)
+* Report the progress of file list searches in the status bar (poy)
+* Repurpose Ctrl+F to in-place searches in chat windows & file lists (poy)
+* Better splitter resizing
+* [L#730828] Prevent a stack overflow when searching within too big file lists (poy)
+* [L#710359] Add finished downloads log (emtee)
+* Save and restore the current directory of file lists (poy)
+* Move file list status bar buttons to the toolbar (poy)
+* Faster startup with many tabs
+* Reduce flickering when resizing
+* Reorganize connectivity settings (poy)
+* [L#748623] Port mappers respect the bind address (poy)
+* Make more parts of the interface DPI-aware (poy)
+* Resizable and scrollable settings dialog
+* Remember the last settings page (poy)
+* Fix focus problems in dialogs (poy)
+* Fix Ctrl+W / Ctrl+F4 sometimes closing the wrong tab (poy)
+* [L#604983] Fix transfers dying on setting upload/download throttle to 0 (cologic)
+* [L#591626] Menus to adjust the bw limit from the tray menu & status bar (poy, iceman50)
+* Increase the max bandwidth limit from 32 MiB/s to 1 GiB/s
+* More icons (many from the Crystal Clear project, thanks to them)
+* Add notifications via balloon popups and sound (poy)
+* Fix taskbar tab previews when DC++ is elevated (poy)
+* When holding shift at start, hubs are opened but not connected to (poy)
+* Fix an integer overflow when starting a search 25 days after the previous one
+* DC++ survives a Windows theme change better (poy)
+* Remove the license page from the installer
+* Update OpenSSL to version 1.0.0e
+* [L#189241] Store crash reports in a CrashLog.txt file (poy)
+* Improve "View as text" windows (poy)
+* [L#804024] [ADC] Separate application and version in INF (ullner)
+* [L#696761] Modal dialog fixes (poy)
+* Link with DEP and ASLR support (thanks cologic)
+* Store the password (if available) using "Add to favorites" (thanks iceman50)
+* Fix queries in http downloads (thanks bigmuscle)
+* Update MiniUPnPc to version 1.6
+* [L#309402] Initial IPv6 support
+* Update boost to version 1.48
+* COM initialization fix for the Windows UPnP mapper (thanks bigmuscle)
+* [L#425667] More accurate indexing time left calculation (poy)
+* Switch to binary GeoIP databases, add the IPv6 one (poy)
+* The country format can be customized, see help for available codes (poy)
+* Handle GeoIP database updates from within the program (iceman50, poy)
+* [L#783516] ZLIF compression support (iceman50)
+* [L#874282] Fix the "Close disconnected hubs" command (poy)
+* [L#721102] Close tabs when releasing the mouse button (poy)
+* [L#729684] Fix the /userlist chat command (poy)
+* Revamp style settings (poy)
+* Add user matching settings (poy)
+* [L#887021] No beep on ctrl+A in some text-boxes (poy)
+* Improve list filters, add one to filter search results (poy)
+* [L#901237] Fix a possible crash on parital list removal from the queue (thanks bigmuscle)
+* [L#900650] Fix removal of same ADC users logged into multiple hubs when they go offline (emtee)
+* Plug memory leaks in list and tree controls (poy)
+* [L#735512] Switch to Boost.Atomic to solve freezes (poy)
+* [L#871975] Safer updating of the finished transfer window (poy)
+* Load file lists in a separate thread (bigmuscle, poy)
+
+-- 0.782 2011-03-05 --
+* Prevent a remote crash triggered via malformed user commands (poy)
+* Avoid crashes when closing from the taskbar too often (poy)
+* [L#580051] Restore DC++ colors to the fav hub window (poy)
+* Be stricter when determining whether MiniUPnP has succeeded (poy)
+* [L#704743] Fix hang on exit under WINE in active mode (cologic)
+* [L#654483] Don't duplicate file list entries when re-downloading it (poy)
+* Highlight window splitters on mouse hover (poy)
+* Prevent endless redirection loops with some Coral servers (poy)
+* [L#590651] Plug a resource leak with regard to tab icons (poy)
+* [L#726254] Avoid a crash related to the Win 7 taskbar integration (poy)
+
+-- 0.781 2011-01-12 --
+* Add a dummy serial number to TLS certs to satisfy some parsers (poy)
+* Avoid loading unprocessed file lists on exit (poy)
+
+-- 0.780 2011-01-10 --
+* Compiled with C++0x support
+* Update Boost to version 1.45
+* Prevent hub-provided cmds from "open own list" from going to the wrong hub
+* Remove ADC empty token workaround targeting 0.698 (cologic)
+* Enable Data Execution Prevention (cologic)
+* Improved tabs, new settings (poy)
+* [L#571546] Add an "X" icon to close the active tab (poy)
+* [L#603071] Linux compile fix (thanks netcelli)
+* [L#606435] Prevent potential re-hashing (thanks vasily.n)
+* Automatic incoming connection type detection - enabled by default (emtee)
+* Add "Close all hubs" to Window menu (emtee)
+* New icons
+* Update the links in the "Help" menu (poy)
+* Prevent current-directory Windows DLL injection (cologic)
+* [L#617021] Fix linux semaphore (thanks gennady proskurin)
+* [L#617591] Fix multi-core/cpu issue with ref-counting (thanks gennady proskurin)
+* Fix some counters that could have caused issues when running dc++ for a long time
+* [L#617517] More portable critical sections (thanks big muscle)
+* Removed stlport support (probably defunct by now...)
+* Modernize the installer and make it translatable (poy)
+* Customize the font selection dialog, save the charset (poy)
+* Blacklist rogue hub-lists (poy)
+* Fix some wrong menu fonts (poy)
+* [L#630655] Separate IP and Country columns in users and connections lists (thanks iceman50)
+* Support taskbar thumbnails and "Aero Peek" live previews on Win 7 (poy)
+* Fix menu separators on Win 7 (poy)
+* [L#588224] Display folders using the correct icon on Win 7 (poy)
+* Help updates (poy, emtee)
+* [L#571914] Fix crash when a zero sized bloom filter is requested (emtee)
+* Don't close the net stats window when double-clicking on the status bar (poy)
+* Fix a random crash when reconnecting hubs and being unlucky (poy)
+* Added notice about the original C implementation of Tiger (you must include this in mods!) (ullner)
+* Add a menu to change the group of a fav hub more easily (poy)
+* [ADC] Support hidden users as per the ADC ext spec (poy)
+* [ADC] Group search extensions thanks to "SEGA" (poy)
+* Keep search history in file list windows (emtee)
+* Add a "Previous" button in file lists for backwards searching (emtee)
+* More efficient file list searches that start from the current selection (poy)
+* Move the file list searching functionality to a togglable search bar (poy)
+* Update OpenSSL to version 1.0.0c (poy)
+* [L#378829] Make sure our OpenSSL binaries aren't "optimized for MS-DOS" (poy)
+* [L#674545] Add magnet keyword search (thanks flow84)
+* [L#506288] Save settings periodically (poy)
+* Add titles to various menus (poy)
+* [L#535556] Make sure menus are not too wide (poy)
+* [L#610466] Fix sharing of downloaded files from different drives (emtee)
+* [L#300728] Fix infinite recursion when sharing a directory with a broken name on unix (thanks alexander sashnov)
+* [L#250149] Retry on more possible Coral errors (emtee)
+* [L#260748] Really readded sfv check (was broken by segmented downloading) (emtee)
+* Update bzip2 to version 1.0.6
+* [ADC] Dispatch the amount of free slots with INF FS (poy)
+* [ADC] Dispatch away mode changes (poy)
+* Add a user icon modifier for users with no free slot (when INF FS is available) (poy)
+* Add a user icon to represent bots (poy)
+* [L#534242] Better looking settings dialog (fleetcommand, poy)
+* Allow regular expressions in ADL searches (poy)
+* [L#395464] [ADC] Send "000" as the STA success code
+* Add user information tooltips (poy)
+* Avoid parallel hub list downloads (emtee)
+* Display full country names rather than abbreviations (poy)
+* Select a better default font (poy)
+* [L#681754] Fonts and dialogs respect DPI settings - mark DC++ as DPI aware (poy)
+* Update MiniUPnPc to version 1.5 (poy)
+* Ameliorate the MiniUPnPc device selection
+* Prevent an endless loop on connection failure (thanks bigmuscle)
+* More consistent behavior in file lists for back / forward / up, and some buttons (poy)
+* Rework file and folder icons, add one for incomplete dirs (poy)
+* Save and restore the selected tab when re-opening (poy)
+* Process file lists only when they first come into view (poy)
+* [L#700594] Prevent multiple password dialogs and give them the hub title (poy)
+* [L#700593] Add an address bar in file lists (poy)
+* Documentation and translations updated as usual, thanks everyone
+
+-- 0.770 2010-07-05 --
+* [L#550300] Catch more potential file corruptions (thanks bigmuscle)
+* Fix socket resolve in *nix systems (thanks razzloss)
+* [ADC] NAT traversal to allow passive-passive connections (thanks cologic)
+* Reduce donwload reconnect attempts after connection failures (poy)
+* Fix crashes related to file lists (poy)
+* [L#230973] Add MiniUPnPc for UPnP mappings and make it threaded (poy)
+* Be stricter when parsing list-looking %[line:] params (poy)
+* [L#326541] [ADC] Customizable search type extensions (emtee, poy)
+* Update zlib to version 1.2.5
+* Documentation and translations updated as usual, thanks everyone
+
+-- 0.762 2010-05-16 --
+* Stability improvement related to menus (poy)
+* [L#539992] Shell menus for directories when browsing own file list (poy)
+* Parse separators in titles of user command param boxes (poy)
+* Fix painting issues with /clear (poy)
+* Smooth text-box menus (poy)
+* Add user commands to the chat menu (poy)
+* OpenSSL 0.9.8n - defends against a remote crash (poy)
+* [L#548743] Fix broken share regression on non-Windows systems (steven sheehy)
+* Fix 'Share hidden files' checkbox value saved to a wrong setting (emtee)
+* [L#562099] Fix encoding problems (poy)
+* [L#556011] Respect the font style in chat windows
+* [L#551319] Add %[fileMN] to user command params (thanks darkklor)
+* Magnet links are now produced with a size (xl) param
+* [L#505450] Extend %[line:] to create combo boxes (thanks sulan)
+* Compilation fixes for OpenSolaris (thanks andrew browne)
+* Help updates (poy, emtee)
+* [L#550300] Fix a possible file corruption (thanks bigmuscle)
+* [L#551184] Fix unnecessary move of downloaded filelists (emtee)
+* [L#556853] Fix sharing a whole drive (root folder) was impossible in random cases (emtee)
+* [L#559544] Don't clear multiline boxes with Ctrl+Alt+A (poy)
+* [L#545264] Correct ADC hub counts (emtee)
+* Add an "Elapsed" column in finished transfer windows (poy)
+* [L#539841] Network settings arrangements (poy)
+* [L#556799] Fix positioning and possible queue problems with downloaded file lists (emtee)
+* Refresh open file lists when they are being opened again (poy)
+
+-- 0.761 2010-03-14 --
+* [L#533840] Fix crashes with themed menus (poy)
+* Fix showing settings from the tray menu (poy)
+* Prevent a crash when the app is closed while a modal dialog is up (poy)
+
+-- 0.760 2010-03-11 --
+* [L#263390] Fix main icon format (poy)
+* Help updates (emtee, poy)
+* Handle file lists better in finished windows (emtee, poy)
+* [dwt] Implement Richedit text control (cologic)
+* Update the file list window title bar when the user online status changes (poy)
+* Re-open previous windows - no auto-connect/auto-open setting anymore (poy)
+* Fix own file list not deleted on closure
+* Fix menu title size (poy)
+* [L#239895] Display ISTA
+* "Recent windows" button in the toolbar (poy)
+* Upgraded to OpenSSL 0.9.8m-beta1 (poy)
+* [L#350585] Fix sorting issues in finished windows (poy)
+* [L#339872] Fix crash when decompression initialization fails (steven sheehy)
+* Restore check-boxes in the "Context" user command group (poy)
+* CTM protection by domain name instead of ip (thanks poy)
+* [L#362598] Fix share crash (thanks emtee)
+* [L#367186] Fix crash in waiting users (poy)
+* [L#261185] Use standard user menus in PMs, waiting users, file lists (poy)
+* [L#210727] Solve file list refresh & hashing sync issues (thanks ben)
+* [L#264342] Stop hashing on shutdown (thanks steven sheehy)
+* [L#350994] Fix ignored downloads from search (poy)
+* [L#362878] Compilation fix for Mac OS X (thanks ximin luo)
+* Save user nicks (poy)
+* [L#384558] Don't share the temporary download directory (poy)
+* [L#385818] More native menu colors (poy)
+* [L#385821] Apply the font to check-boxes and tabs (poy)
+* [L#213213] Implement bandwidth throttling (cologic, bigmuscle)
+* New icons (thanks radox)
+* Fix dialog focus issues (poy)
+* Fix a crash in queue frame
+* Move finished downloads functionality into queue frame
+* [L#415965] Hashing can be paused (bigmuscle, emtee, poy)
+* [L#414068] No 35-characters limit to nick and description (ullner)
+* [ADC] Support the TS param of MSG (poy)
+* Convert language codes to real names in settings (poy)
+* Improve user command support in ADC hubs (poy)
+* Improve context-sensitive help (poy)
+* Fix Ctrl+Shift+Tab (poy)
+* Readded WTL exception to the license (for mod developers)
+* Update to boost 1.40
+* [L#463723] Fixed download directory path on non-win32 (thanks razzloss)
+* Favorite hub groups (poy)
+* [L#206778] Fix issues related to users online in multiple hubs (poy)
+* [L#460724] [ADC] Handle self-QUI when sent before INF (thanks sulan)
+* [L#431045] Don't overwrite downloaded files in some cases (thanks emtee)
+* Fix splitter positioning (poy)
+* [ADC] Don't send commands that the hub has forbidden via STA (poy)
+* [L#458498] Fix bad bloom error message causing disconnects
+* Fix coloring of drop-down controls (poy)
+* Show last main chat lines, add a "History" settings category (poy)
+* [L#483323] Fix share files instantly after downloaded (emtee)
+* Toolbar customization (shift+drag, double-click, right-click) (poy)
+* [L#338888] Fix sharing hidden directories (emtee)
+* Auto-resize the message editing box when composing a multiline message (poy)
+* Remove flicker when opening a window (poy)
+* Re-try UPnP mappings after closing settings (poy)
+* [L#485018] Handle adcs:// links (thanks emtee)
+* [L#484247] Fix memory usage when parsing (unreasonably) large file lists
+* [L#242259] Fix a few more cases when adding sources to the queue (emtee)
+* [ADC] Filter some status messages
+* Drop support for non-xml hub lists
+* [L#351393] Fix memory leak during share update
+* [L#400080] Improve hub list status messages (emtee)
+* [ADC] Allow hubs to send IPs of passive users via INF (poy)
+* [L#473173] Fix crash when hashing files on non-Windows systems (thanks razzloss)
+* Update list-view filters more often (poy)
+* Show multiple user-command params in the same dialog (poy)
+* [L#509456] Fix pressing Tab in the notepad (poy)
+* Register in HKCU instead of HKLM to avoid UAC warnings; ditch magnet.exe (poy)
+* Don't use the Vista download dir when running in local mode
+* When a static window is opened, check its menu & toolbar buttons (poy)
+* [L#321246] Fix crash with debug builds on non-Windows systems (steven sheehy)
+* [L#510314] Fix a possible crash in rechecker (thanks poy)
+* Don't move files <= 10 MB to weird places
+* [L#515646] Remove ADC 0.10 compatibility (not ADCS 0.10) (cologic)
+* Change the tray icon on private messages (poy)
+* [L#195209] Revise keyboard shortcuts (poy)
+* Error message when loading the notepad file fails (poy)
+* Remove obsolete default hublists (emtee)
+* Chat actions should work better when the user list is hidden (poy)
+* Icons and tooltips in status bars (radox, poy)
+* Update the installer to cope with new settings directories (emtee)
+* [L#512032] Guard against out-of-screen window placement
+
+-- 0.75 2009-03-06 --
+* [L#243727] "Merge results for the same file" check-box in search (poy)
+* [L#306209] [ADC] Send only 5 results to passive users (thanks sulan)
+* [L#300993] Status message when a download fails from search (poy)
+* [L#264146] Fix the finished downloads check-box sometimes not appearing (poy)
+* Remove unsightly border below tab headers (poy)
+* Fix wrong mouse cursors (poy)
+* [L#312946] Add possibility to recheck unfinished downloads (emtee, poy)
+* Fixed lists being matched twice
+* [L#206778] Searches and connection attempts go through the correct hub if possible
+* [L#254191] Bzr revision in AboutBox
+* Upgraded to OpenSSL 0.9.8j (poy)
+* [L#256358] Fix multiple instances (poy)
+* Fix encoding issues in translated help files (poy)
+* Help updates (emtee, poy)
+* [L#259100] Fix upload speed reporting
+* [L#275588] Clean up whitespace before sending search
+* [L#302376] Clickable paths in the system log window (thanks poy)
+* [L#195047] Auto-resizable UI (arnetheduck, poy, emtee)
+* Shell menus for multiple selections (poy)
+* [L#256357] Fix painting issues (poy)
+* Add hub closing confirmation dialog (poy)
+* [L#324960] Make sure downloaded chunks are always saved (thanks emtee)
+* [L#264479] Double-click on main status bar stats to open the network stats window (poy)
+* Double-click on the "AWAY" indicator to switch away mode on/off (poy)
+* Add "/dslots <number>" chat command (thanks fusbar)
+* [L#316475] Fix crash on decompression errors
+* [L#317339] Fix round-off issue when segmented downloads are disabled
+* [L#253702] Fix crash on too many connections
+* [L#228582] Fix crash when dirs share virtual name
+* [L#261618] Fix crash when finished transfers lists are too busy (poy)
+* [L#316096] Send base hub address when connecting to other peers
+* Fix errors and warnings when compiling with g++ (steven sheehy)
+* [L#241995] Restore word selection in text-boxes on double-click (poy)
+* [L#220499] Optionally use system paths for queue etc
+* [L#300268] [ADC] Validate utf8 before processing messages
+* Updated Polish, German, Finnish, Romanian, Swedish, Brazilian Portuguese,
+  French, Bosnian, UK English, Hungarian, Korean, Serbian, Russian, Turkish,
+  Portuguese, Latvian, Bulgarian, Norwegian and Estonian translations (thank 
+  you all translators)
+* Added secure connection status to hub frame
+
+-- 0.7091 2008-11-27 --
+* Fix packaging issues with regard to the settings dialog 
+* New GUI translations for Canadian English, Gujarati and Malayalam languages
+* Update existing GUI translations 
+* Help translation system using po4a (thanks poy)
+* Partial Help tanslations for Greek, Norwegian, Brazilian Portugese, Russian,
+  French, Romanian, UK English, Polish, Hungarian, Swedish, Italian, German, 
+  Turkish, Serbian and Galician languages (thanks to the respective translators)
+
+-- 0.709 2008-11-27 --
+* Fix favorite users columns (emtee)
+* [L#249159] Prevent UI freeze when selecting lots of items in list views (poy)
+* [L#261172] Add favorite user & ADLS removal confirmation dialogs (poy)
+* [L#263108] Misc fixes related to search results grouping (poy)
+* [L#263390] Fix tray icon format (poy)
+* Resize finished DL & search spy check-boxes correctly (poy)
+* Help updates (poy, emtee)
+* [L#268353] Fixed TigerHash regression on big-endian architectures (steven sheehy)
+* Upgraded to OpenSSL 0.9.8i (poy)
+* [L#262540] Fix crash when closing a busy window (poy, arnetheduck)
+* Better header arrows for Common Controls < 6 (poy)
+* Fix keys in the "Connections" window (poy)
+* [L#289571] Fix non-responsiveness when the download queue has too many directories on Vista (poy)
+* Disallow fake connections to a few known hub list servers (poy)
+* [L#269098] Fix the users list not clearing itself out (poy)
+
+-- 0.708 2008-08-28 --
+* Added setting for max characters per tab (poy)
+* [L#234458] Added "File size" and "% transferred" columns in finished windows (poy, emtee)
+* Fix absent country code for IPs > 128.0.0.0 in MSVC builds (poy)
+* Remove useless chars in some paths that could lead to a Shell menu crash (poy)
+* [L#234458] Disable some menu commands in finished windows when files don't exist (poy)
+* Added option to always display tray icon and reorganized its menu
+* [L#234897] Improve error message when file list is too big (thanks steven sheehy)
+* [L#234529] Right-alight sizes
+* [L#243908] Better nick sorting in search results (thanks emtee)
+* [L#231447] Fix file list positioning from search (arnetheduck, poy)
+* Fix bogus menus when they contain more than 200 dynamic items (poy)
+* Shell menus are now sub-menus, loaded only when requested (poy)
+* [L#243728] Make Shell menus Vista-compliant (poy)
+* Don't re-log logs when opening PM windows (poy)
+* [L#243201] Save excluded search terms correctly in search history (thanks emtee)
+* Search spy tab highlighting (poy)
+* Help updates (emtee, poy)
+* Enable keyboard shortcuts in the help file (poy)
+* [L#242365] Error message when getting version info fails (thanks emtee)
+* [L#203763] Ctrl-A selects all list view items again (thanks poy)
+* [L#245474] Error when adding multiple sources to queue (thanks emtee)
+* [L#234458] "Only show fully downloaded files" check-box in the finished DL status bar (poy)
+* Count transfers that have run then failed in finished windows (poy)
+* [L#247038] Improve SSL connection setup
+* [L#249692] Better magnet error message
+* Fixed UPnP for TLS port
+* [L#242329] Fix SSL assert
+* [L#246080] Users with untrusted cert removed from queue
+* [L#230991] Add fast hash option
+* [L#217082] Remember the positions of transfers and queue splitters (poy)
+* [L#251536] Fix file list columns (poy)
+* [L#234527] Fix possible crash when auto-downloading ADL Search matches (poy)
+* [L#239901] Fix user commands separators (poy)
+* Downloaded file lists show up with their correct extension (poy)
+* [L#251486] Correct $GetZBlock support announcment
+* [L#228283] Sort downloads by % done when sorting by status, resort dynamically
+* Up-down control in the main status bar to change upload slots (poy)
+* Fix crash with the "unable to open ports" message (poy)
+* Add an optional param to the /clear command that specifies the number of lines to keep (poy)
+* Add line history and /ts in private message windows, just like in hub windows (poy)
+* [L#255370] Fix "View as text" in own file list (thanks emtee)
+* Add icons next to tab menu titles (poy)
+* [L#256895] Fix behavior when starting minimized (poy)
+* [L#257225] Automatch of search results always on
+* [L#246596] Partial file list requests visible in download queue
+* Queue frame is not marked dirty when file list finishes
+* Parse %userCID when logging finished transfers (poy)
+* Fix audio file type search filter (emtee)
+* Updated Slovenian, Estonian, Latvian, Australian, Greek, Norwegian,
+  Brazilian, Russian, Lithuanian, French, Portuguese, Traditional Chinese,
+  Turkish, Simplified Chinese, Finnish, Romanian, Telugu, Hebrew, UK English,
+  Bulgarian, Polish, Hungarian, Swedish, Croatian, Italian, German, Dutch,
+  Serbian and Spanish translations.
+
+-- 0.707 2008-06-22 --
+* Fixed crash when pressing F1 twice
+* [L#203213] Search results with same tth are grouped
+* [L#209419] Keep nick when user goes offline
+* [L#208615] Fix finished frames being spammed by segments (thanks poy)
+* Fixed a potential loss of connection with compressed transfers
+* Fixed crash on Shell menu when browsing own file list (poy)
+* Help updates (emtee, poy, bsod, pseudonym)
+* [L#217878] Use system messages for file errors on nix (thanks individ)
+* [L#185549] Fix connection hang on local hub connection
+* [L#226188] Fix small chunks uploaded without slot (thanks pseudonym)
+* [L#228059] Fix UI not updating after "Find" in a file list window yields no result (poy)
+* Fixed invisible menu items in large owner-drawn menus (poy)
+* [L#230972] Copy any field of hubframe userlist to clipboard (cologic)
+* Prevent transfer tabs from being closed (poy)
+* [dwt] Improved richedit support (thanks cologic)
+* [L#228285] No "beep" sound when starting a search with the enter key (poy)
+* Upgraded to OpenSSL 0.9.8h (poy)
+* [L#237396] Fix crash when segmented downloads are switched off (thanks bigmuscle)
+* [L#238333] Fix a possible remote crash on partial file list requests (thanks crise)
+* [L#238522] Make translations work with wide path names (poy)
+* Extra mouse buttons can be used to switch between tabs (poy)
+* Fixed Alt+key combinations in the file list window (poy)
+* Added a drop-down menu next to the toolbar icon for favorite hubs (poy)
+* [L#237682] Fix bug that would make DC++ not return correct search results
+* Fixed directories not being returned when searching for directories only
+* Fix wrong default settings in some cases (poy)
+* Fixed favorite hubs & ADLSearch windows scrolled down when opened (emtee)
+* Fix removal of multiple favorite users at the same time (poy)
+* Double-click on status bars to open corresponding log files (poy)
+* The number of filtered items shown in public hubs (emtee)
+* [L#225592] Fix file corruption when partially downloaded file is corrupted (part emtee)
+* [L#239793] Automagically retry if coral fails (thanks emtee)
+* Updated Icelandic, Greek, Polish, Turkish, German, Finnish, Chinese, Slovak,
+  Arabic, Norwegian, Dutch, Ukranian, Czech, Spanish, Estonian, Brazilian,
+  Hungarian, French, UK English, Romanian, Hebrew, Swedish, Russian,
+  Portuguese and Slovenian translations (thanks to the respective translators)
+* [L#228271] Right-click selects user in waiting users
+* [L#235852] Add 1000 mbit upload speed
+
+-- 0.706 2008-04-24 --
+* [L#202563] Fixed some missing translations
+* Use setenv on unix (thanks yakov suraev)
+* Fixed out of focus window when restoring from icon (poy)
+* [L#203865] Fixed multiple instances (poy)
+* Context-sensitive help (poy)
+* Updated help files (poy, mikejj, emtee)
+* Fixed toolbar separators (poy)
+* Upgraded to bzip2 1.0.5 (thanks mikejj)
+* Fixed background color of drop-down controls
+* Fixed selection glitches
+* Both up&downloads are disconnected if evil users quit (thanks poy)
+* Add average share to status bar (thanks mikejj)
+* Minor improvements to load / save dialogs
+* [L#208917] Fixed menu background colors (poy)
+* [L#208344] Fix about dialog up/down stats
+* [L#209099] Fixed non-disappearing controls in search (poy)
+* [L#208684] Made the Alt key work again for line history in hub window (poy)
+* [L#209684] Fixed parsing of non-XML hub lists (poy)
+* [L#205660] Readded hub column to transfers (thanks mikejj)
+* [L#209277] Fixed crash on bad translation (thanks poy)
+* More controls now use the font defined in settings (poy)
+* [L#211164] Fixed bug when a new tab row is created while DC++ is minimized (poy)
+* [L#211480] Fixed duplicated settings pages on bad translations (poy)
+* Added the title of the currently selected page in settings (poy)
+* [L#206785] Fixed a crash when a menu is owner-drawn while the desktop isn't visible (poy)
+* [L#211313] Fixed bad virtual name being loaded (thanks kulmegil)
+* [L#202801] Allow virtual folders to have the same name
+* Allow more characters in virtual names
+* [L#190015] Improved transfer speed averaging 
+* [L#212411] Fixed downloading multiple file lists (poy)
+* Added filter already shared from search results (thanks smir)
+* [L#206521] Fixed directory not being removable (thanks poy)
+* Reduced resize flicker some
+* [L#195209] Added various sound options (thanks poy)
+* [L#211497] Segment size is automatically chosen depending on speed
+* [L#209876] Added option to completely disable segmented downloads 
+* [L#209885] Fix antifrag not working as it should
+* Anti-frag no longer optional - not using it was broken by segmented downloading
+* [L#215779] Fix a few hub list download issues (thanks emtee)
+* [L#195209] Changed tab order in hub windows (poy)
+* Removed unused rollback option (thanks mikejj)
+* Fixed PM history not showing the last line (poy)
+* Queued field in connections no longer counts paused items
+* [L#185722] Fix missing progress bars (no longer optional)
+* Fix a crash when adding a favorite hub that already existed
+* Renamed smartwin to dwt since by now it's very different from its roots
+* Added some menu icons (poy)
+* Updated several translations, we now have complete (or almost) Brazilian Portuguese, UK English,
+  Finnish, French, Hungarian, Italian, Polish, Romanian, Swedish, Norwegian,
+  German and Spanish translations
+* [L#210117] View user/hub online/offline status
+
+-- 0.705 2008-03-14 --
+* Several patches for better *nix compatibility of the core (thanks steven sheehy et al)
+* Improve segmented download implementation
+* Fix search request ip when using multiple ip's (thanks stanislav maslovski)
+* Fixed a crash when right-clicking in own file list
+* [ADC] Searches filtered by token if available so that each search window only gets its own results
+* [ADC] Implemented test version of bloom filters which will dramatically reduce hub bandwidth usage for TTH searches
+* Fixed a crash with partial list browsing
+* Replaced homegrown i18n solution with gettext (thanks david grundberg, mikejj)
+* Fixed an issue with nick encodings and nmdc connections (thanks stanislav maslovski)
+* Added download view which shows per-file download information
+* Chat timestamps on by default
+* Added tab drag/drop (thanks poy)
+* Changed Pothead to mikejj 
+* Fixed search spy crash
+* Upgraded to bzip 1.0.4 (thanks mikejj)
+* Tab tooltips (thanks poy)
+* [L#185724] Allow spaces in the description field (poy)
+* [L#180321] [ADC] Handle third person formatting (thanks poy)
+* [L#186429] Fix right-click issue when chat history is long (thanks poy)
+* [L#188107] In waiting users, show requested chunk (since we can't know % done)
+* [L#188585] Fixed crash when download connection was disconnected before any data was received
+* Fixed crash due to race condition on idle check (thanks bigmuscle)
+* Fixed crash when copying identity
+* Fixed potential timer race condition (thanks bigmuscle)
+* The good parts of partially downloaded segments are now added to queue (thanks bigmuscle)
+* Fancy menus (thanks poy)
+* [L#180321] [ADC] Added /me handling (thanks poy)  
+* [L#187288] Fixed issues with scrolling (thanks poy)
+* [L#190463] Fixed re-add sources showing wrong sources (thanks poy)
+* [L#190469] Fixed kick message filtering (thanks mikejj)
+* version.xml now use Coral (ullner)
+* [ADC] Number of files counts unique files when sending stats to hub 
+* [ADC] Fixed kick handling
+* [L#190955] Fixed 100% on remove all sources in queue
+* Fixed a few hardcoded dc++'s (thanks steven sheehy)
+* Don't always show the tray icon after killing and re-opening explorer.exe (poy)
+* Updated links (thanks pietry)
+* Fixed clicking on active tab (poy)
+* [L#195209] Fixed tabbing in hub windows (poy)
+* [L#195209] Fixed Ctrl+F that opens favorite hubs (poy)
+* [L#194696] Fixed small memory leak
+* Some unix compile fixes (thanks pavel andreev and yakov suraev)
+* [L#199192] [NMDC] Fixed crash on empty private message
+* [L#198416] Fixed crash when closing the download queue (poy)
+
+-- 0.704 2007-12-14 --
+* Hub lists added to utilize Coral's distributed network (ullner)
+* Use system header arrows on common controls 6+ (thanks poy)
+* Fixed badly drawn arrows (thanks poy)
+* Fixed transfer view header widths (thanks james ross)
+* Fixed about years (thanks james ross)
+* Fixed version info (poy)
+* Keep selection visible on move up/down in some list views (poy)
+* Fixed clicking in the header of the favorite hubs list view (poy)
+* Update most things to ADC 1.0
+* Fixed pressing enter in the notepad (poy)
+* Fixed user commands params (poy)
+* Readded list view double buffering (thanks poy)
+* Fixed some msvc compile issues (thanks james ross)
+* Fixed key handling in file listings (poy)
+* Message always focused first in chats (poy)
+* Fixed filter in public hubs (thanks poy)
+* Fixed missing title changes on tab change (thanks poy)
+* Fixed user list filter (poy)
+* Readded chat message box auto-scroll (poy)
+* Fixed tab order in public hubs (poy)
+* Tooltips for toolbars (thanks poy)
+* Close tab with middle mouse button (thanks poy)
+* Fixed socket ip bind (thanks garg's quasi-friend)
+* Finished UCMD extension draft implementation
+* Fixed status bars (poy)
+* Fixed protocol error STA being sent as type C
+* Fixed a multisource download crash
+* Fixed state checks for uploads (an invalid sequence could possibly crash client from remote)
+* Page up/down in private chat scrolls chat log just as in hub chat
+* Fixed crash on right-click in the download queue (poy)
+* Readded waiting users frame keyboard shortcut
+* Handle some QUI flags (thanks pret/poy)
+
+-- 0.703 2007-11-08 --
+* Fixed invalid strings (thanks james ross)
+* Reverted initial anti-flicker (needs rethinking)
+* Fixed some memory leaks
+* Fixed background color in settings dialog example (thanks poy)
+* Fixed disappearing tooltips (thanks poy)
+* Stats frame work (thanks poy)
+* Appearance page font cleanup (thanks poy)
+* Context menu fix (thanks poy)
+* Magnet dialog fixed (thanks poy)
+* Reorder some options (thanks poy)
+* Allow files with $ in them (thanks ullner)
+* Fixed splitter resizing
+* Fixed average download speed
+* Removed test entries from finished frames
+* Fixed an issue with multisource downloads
+* Fixed missing hubs on pub hubs reopen
+* Fixed crash on setting priority on running item
+* Fixed issue adc connectivity when starting for the first time
+* Fixed average overall transfer speed in main status bar
+* Removed max tab rows setting, won't be implemented in the near future
+* Fixed text not being displayed when opening private chat
+* Fixed initial focus issues
+* Fixed search on enter
+* Fixed window activation on toolbar click
+* Fixed spyframe crash
+* Fixed /fav info (thanks ullner)
+
+-- 0.702 2007-10-21 --
+* Fixed missing sorting in most places
+* Fixed crash on startup when missing Certificates folder
+* Fixed right-click menu with nested user commands
+* Added expiry check to certificate regeneration
+* Readded splash screen
+* Readded sfv check (always done at end of download due to segmented downloading)
+
+-- 0.701 2007-10-18 --
+* Fixed an upload bug
+* Reworked some context menu stuff
+* Replaced yassl with OpenSSL, SSL certs no longer require external OpenSSL application
+* Added cipher column to transfer view
+* Because certs are automagically generated, ADC transfers will now by default be encrypted if both
+  clients use a recent version (see the cipher column to know)
+* Fixed one of several possible crashes at exit
+
+-- 0.700 2007-10-11 --
+* [B#1102] Fixed move/rename queue folder (thanks mikael eman)
+* [B#1124] Fixed thread shutdown on *nix (thanks mikael eman)
+* Fixed invalid share size
+* [B#1127] Fixed crash on invalid file list (thanks steven sheehy)
+* [B#1019] Reworked initial filelist dir (thanks mikael eman)
+* Moved to smartwin to enable mingw compiling (thanks cologic, ullner, poy)
+* Removed notepad loading compatibility code for notepad texts from versions < 0.20
+* Fixed time issues with DC++ running for more than 49 days
+* [B#980] Fixed PM's when popup is disabled (thanks ullner)
+* [B#1066] Search for alternates not available on uploads (thanks ullner)
+* [B#1104] Better error message on dupe source (thanks ullner)
+* [B#1132] Download queue updated when users go offline (thanks stephan hohe)
+* [B#1133] Fixed max tab rows being reset (thanks mikejj)
+* [B#1134] Use SO_REUSEADDR for connection manager socket (thanks mikael eman)
+* [B#1136] Fixed dupe changelog rebuild (thanks mikejj)
+* [B#1139] Fixed download delay in some cases (thanks mikael eman)
+* [B#1144] Added possibility to add many hub lists in one go (use ; as separator) (thanks poy)
+* [B#1152] Only refresh if there are directories shared (thanks ullner)
+* [B#1153] More Shell menus (thanks poy)
+* [B#1159] Removed unnecessary resume position reset (thanks cologic)
+* Removed rollback support - advanced TTH resume is now always used (thanks cologic)
+* Switched to mingw/stlport5.1
+* Uninstaller removes adc registry key (thanks ullner)
+* Private message status bar text handling more similar to hub frame
+* yassl upgraded
+* gcc 4.3 compile fix (thanks steven sheehy)
+* Some upgrades to the charset handling (thanks steven sheehy)
+* Fixed socket signal interrupts (thanks mikael eman)
+* Spy frame average fix
+* Fixed "Don't dl already queued" option
+* Added segmented downloads
+* Improved accuracy of transfer stats
+* Files from passive users queued even when passive (in the hopes of finding an alternative source)
+* Tabs are on top with ugly little icons (new icons, anyone?)
+* No more MDI
+
+-- 0.699 2006-12-18 --
+* Switched to VC8/VS2005
+* Removed some unused options
+* Antifrag is now default
+* Confirm hub removal is now default
+* SFV checking is now default
+* Fixed TLS port not being greyed out
+* Automatic hub reconnection is only done if at least one successful connection has been made
+* [B#1080] Better nick tab completion (thanks cologic)
+* [B#1081] Added user IP in hub frame (thanks cologic)
+* No more STLport for the time being
+* Linux checks for invalid file types (thanks steven sheehy)
+* Fixed potential crash when search began with space
+* [B#1085] Better sound playing settings (thanks cologic / ullner)
+* [B#1111] OpenSSL compatibility and some unix fixes (thanks steven sheehy)
+* [B#1056] Added option to sort fav users above other users in hub frame (thanks poy)
+* [B#1063] Added option to show Shell context menu in finished frame (thanks poy)
+* [B#1092] Fixed TTH tree being redownloaded (thanks stephan hohe)
+* [B#1097] Fixed waiting users being removed (thanks stephan hohe)
+* [B#1110] Added new adc hub list (thanks mafa_45)
+* [B#1091] Added new nmdc hub lists (thanks poy)
+* [B#1112] Port sign cleanup (thanks steven sheehy)
+* [ADC] Fixed client-to-client connection sequence
+* [B#1064] Updated to YaSSL 1.5.0, should fix crash
+* [B#446] Public hub lists are cached and downloaded only when user requests it (thanks poy)
+* [B#1117] Fixed subfolders being created on filelist downloads (thanks mikael eman)
+* [B#1096] Updated credits in about box
+* [B#1123] Removed some typecasts (thanks stephan hohe)
+* [B#1099] Fixed "Readd all" spin
+* [B#1095] Fixed about dialog
+
+-- 0.698 2006-10-10 --
+* [B#1065] Code cleanup (thanks steven sheehy)
+* Fixed readme.txt (thanks ullner)
+* More code cleanup
+* Fixed trusted/untrusted upload view
+* Fixed crash on invalid remote command during upload
+* [ADC] Improved GFI command support
+* Lowest priority downloads are no longer started if there are other downloads running
+* Upgraded to STLport 5.0.2
+* Updated compile instructions
+* Updated unsigned types to C99
+* Removed unmaintained autoconf files
+* Reworked match listing to make it slightly faster
+* Fixed a few random crashes
+* [ADC] Removed obsolete DSC command
+* Fixed user list not being updated in some cases
+* [B#1071] Added fasthash for unix (thanks steven sheehy)
+
+-- 0.697 2006-09-29 --
+* [ADC] Fixed a few protocol issues
+* Some code cleanup
+* Queue frame fixes and memory saves
+* TLS port change without restart fixed
+* [B#1007] Fixed nick character check
+* Fixed some transfer view sorting issues
+* [B#59] Added option to match all local lists
+
+-- 0.696 2006-09-22 --
+* Fixed a possible deadlock
+* [B#1058] Removed some whitespace (big thanks to mikejj)
+* Removed the possibility to download files without TTH
+* Removed the possibility to read *.DcLst files (no TTH, no i18n support)
+* Files with no TTH no longer show up in search and directory listings
+* Sources in the queue with no TTH support will no longer appear
+* Files without TTH in the queue will be removed (finish downloads with an older version)
+* [ADC] Fixed support for uncompressed files.xml as well as proper files.xml.bz2 support
+* Some socket code cleanup
+* Removed broken nick save code
+* Upgraded yaSSL to 1.4.0
+* Fixed some SSL connection issues
+* Fixed on-the-fly compression of file lists
+* [B#1055] Stopped files.xml.bz2 from being deleted on linux (thanks dorian)
+* [B#1061] Log page fix (thanks fleetcommand)
+* [B#1033] Altered NMDC hubname/description detection slightly (thanks fleetcommand)
+* [B#1059] Fixed the possibility for users to become hidden in some cases (thanks fleetcommand)
+
+-- 0.695 2006-09-10 --
+* PM popup/ignore options updated, in nmdc a hub is any nick which hasn't sent a hello or myinfo, and a bot is a nick with myinfo
+  without connection type
+* [B#125] Fixed out-of-order PM/quit
+* [B#224] Slots are no longer granted to disconnected users, instead disconnection is delayed a minute
+* [NMDC] Fixed extra space in chat
+* [B#395] Fixed password being blanked
+* [B#419] Allowed changing case only when moving file in queue
+* [B#736] Fixed escaping of menu items
+* [B#1013] Fixed gcc warnings (thanks steven sheehy)
+* [B#1023] Fixed some large stack allocations (thanks steven sheehy)
+* [B#1026] Fixed some potential buffer overflows (thanks steven sheehy)
+* [B#1027] Improved unix socket support (thanks steven sheehy)
+* [B#1028] Improved big endian support (thanks steven sheehy)
+* [B#1029] Fixed BSD compile issue (thanks steven sheehy)
+* [B#1031] Fixed a crash after closing hub window (thanks bigmuscle/mikejj)
+* [B#1032] Fixed certificates help (thanks mikejj)
+* Added possibility to store configuration files in separate directory
+* Switched back to unicows for w9x users, opencow was missing too many functions
+* [B#876] Fixed lost tooltips (thanks poy and bigmuscle)
+* [B#1041] Fixed about tab order (thanks mikejj)
+* [B#1042] Fixed experts tab order (thanks mikejj)
+* [B#1047] Fixed possible nmdc crash (thanks guitarm)
+* [B#1049] Added tooltip to tab bar (thanks poy)
+* [B#1053] Fixed vista detection (thanks ullner)
+* [B#988] Fixed duplicate nicks
+* [B#1015] Fixed chevron text
+* Default hub lists updated
+
+-- 0.694 2006-07-10 --
+* Fixed crash in certificates page
+* [B#1005] Fixed linux compile issue (thanks tpo)
+* [B#1004] Fixed browse file list on self
+* Both .crt and .pem files are read as trusted certificates
+
+-- 0.693 2006-07-09 --
+* Fixed crash bug
+* Added language code to example language xml
+
+-- 0.692 2006-07-09 --
+* [B#927] Fixed OP detection bug really (thanks mikejj)
+* [B#938] Added a few more ADC info fields (thanks ullner)
+* [B#939] Fixed hub info update (thanks ullner)
+* [B#940] Fixed a 64-bit compile error (thanks steven sheehy)
+* [B#942] Fixed atomic operations on unices (thanks tobias nygren)
+* [B#943] Fixed unix utsname compile issue (thanks tobias nygren)
+* [B#944] Fixed unix string conversion bug (thanks tobias nygren)
+* [B#945] Fixed unix mutex initialiser (thanks tobias nygren)
+* [B#946] Tiger hash supports big endian and 64-bit architectures (thanks tobias nygren)
+* [B#941] Updated usercount display (thanks mikejj)
+* [B#951] Fixed issue with high port numbers (thanks tpo)
+* [B#958] Search spy tth option automagically saved (thanks ullner)
+* [B#959] Code cleanup (thanks mikejj)
+* [B#966] Max hash speed fixed when fast hashing method is not used (thanks steven sheehy)
+* [B#967] Fixed path case-sensitivity issue (thanks steven sheehy)
+* Fixed auto-reconnect
+* [B#936] Fixed duplicate entries in search hubs
+* Fixed some hub title display issues
+* Some spring cleanup
+* [B#970] Unix file permissions correctly set (thanks steven sheehy)
+* [ADC] Allowed $ and | in nick/description
+* Fixed targetdrive bug for temp target location
+* Fixed a crash bug when hash data cannot be saved
+* Possibly fixed issues with queue items not being updated
+* Added warning when someone tries to spam hublist.org or dcpp.net with your client
+* [B#968] Fixed unix compile issue (thanks mikejj)
+* [B#975] Fixed silly warning (thanks mikejj)
+* [B#978] Fixed 64-bit compiler issue (thanks steven sheehy)
+* [B#988] Only unique nicks diplayed in title bar 
+* Added protection from hubs/clients sending junk data resulting in high memory usage / crash
+* Updated to yaSSL 1.3.7
+* Added a few TLS options; [U] in transfer status means untrusted TLS (encrypted but certificate not validated)
+* Added certificate generation, OpenSSL must be installed and in PATH for this to work
+* [B#996] Fixed an issue where directories that are hard to delete were created
+* [B#1000] Fixed linux compile issue (thanks steven sheehy)
+* [B#949] Fixed a crash when reading invalid XML files
+* TLS port may now be specified in settings and is only opened if TLS is enabled
+* Added TLS port to /connection
+* [B#977] Added copy hub address to hub right-click menu (thanks mikejj)
+* [B#1001] Fixed assertion on unix (thanks steven sheehy)
+
+-- 0.691 2006-06-03 -- 
+* Links to bugzilla in html changelog
+* [B#122] Added userlist filter (thanks trem)
+* [B#578] Added search for alternates to transfers menu (thanks trem)
+* [B#861] Fixed auto-prio not being set correctly (thanks trem)
+* [B#878] Added close all ... to window menu (thanks trem)
+* [B#903] Holding shift while minimizing will use opposite tray setting (thanks joakim tosteberg)
+* [B#923] PM history always read (thanks trem)
+* [B#927] Fixed OP detection bug (thanks mikejj)
+* [B#929] Fixed list view flicker issues (thanks trem)
+* [B#931] Improved keyboard navigation (thanks trem)
+* Added "all" to hub list field search (thanks trem)
+* Fixed bug when sending active ADC search results
+* Updated to ADC 0.11
+* Passive users now also get ADC search results
+* Changed nmdc bot-detection to what it was before, should fix pm-to-bot bug
+
+-- 0.69 2006-05-21 --
+* Small linux / old gcc fixes (thanks jens oknelid)
+* Fixed an issue where client could be crashed from remote
+* Fixed an issue bad nicks could cause directories to be created in log / file list download folder
+* Changed autodrop default to 2 for fewer unexpected autodrops (thanks paka)
+* Saved users file more often to have fewer missing nicks around
+* CID of user shown if nick is missing (in queue for example)
+* Added display of CID in a few places
+* Updated yaSSL to 1.2.2
+* Fixed ADC hubname display (thanks ullner)
+* Advanced TTH rollback no longer performed if tree is invalid (thanks garg)
+* Option not to auto-disconnect favorite users (thanks ullner)
+* Fixed auto-disconnect delay (thanks ullner)
+* Another fix for opencow
+* Fixed user command parameters not being remembered
+* Fixed ADC op commands
+* [B#464] Added option for masked password prompt (thanks ullner)
+* [B#922] Updated help links (thanks xan)
+* Fixed op count
+* [B#230] Added settings to tray menu 
+* [B#403] Unfinished file lists deleted since they're never resumed anyway
+* [B#639] Separated remove user from queue menu option
+* [B#766] Fixed broken app titlebar
+* Removed support for generating NMDC-style file lists (old clients won't be able to download from you)
+
+-- 0.689 2006-04-01 --
+* Fixed displaying of available bytes when user list is off
+* Fixed a potential crash when not showing user list
+* Fixed 100% CPU bug on upload
+* [B#853] Fixed missing function in opencow
+
+-- 0.688 2006-03-18 --
+* Fixed public hubs sorting (thanks mikejj)
+* Fixed a ZPipe issue (thanks jove)
+* [B#858] Fixed a 100% cpu / crash bug
+* [B#872] Fixed a pm issue hopefully
+* [B#812] Fixed pm's being sent to bots
+* Files with invalid crc-32, as per their sfv file, are no longer shared
+* [B#873] Added connect to hub option (thanks joakim tosteberg)
+* Fixed an issue with linux file reading (thanks bart vullings and steven)
+* Added back/forward mouse/keyboard navigation to directory listing frame
+
+-- 0.687 2006-02-26 --
+* Fixed XML file list generation for invalid filenames from other os's
+* Fixed a rare refresh crash
+* CID is now shown if no nick name is currently available for a user
+* Fixed another crash when loading file lists
+* Played some more with bufferedsocket performance
+* Fixed some VS 2005 issues (thanks trem)
+* Installer now removes old unicows library
+* Updated to yaSSL 1.1.5
+* Added possiblity to sort transfer view by all downloads first (thanks guitarm)
+* Some cleanup for frame creation (thanks martin)
+* Fixed some translation strings (thanks fleetcommand)
+* Fixed some finished transfers frames issues (thanks trem)
+* /pm and and a few other things work without user list in hub frame
+* Added support for the ZPipe extension (test version) (thanks jove)
+* Moved to subversion, CVS will no longer be maintained
+
+-- 0.686 2006-02-13 --
+* Fixed active search (oops)
+* Fixed a crash when clicking on dchub links
+
+-- 0.685 2006-02-12 --
+* Fixed "browse list" being available for NMDC users
+* [ADC] Removed obsolete CI field
+* Fixed missing upload progress
+* [B#89] Readded dynamic compression disabling
+* Added filelist download speed to filelist browser status bar
+* Added advanced hublist filter (thanks trem)
+* [B#579] Fixed 0-byte files not being created if directory doesn't exist
+* [B#804] Cleaned up project files (thanks mikejj)
+* Socket buffer size = 0 now means use system default
+* [B#789] Fixed wrong nick being copied (thanks ullner)
+* [B#794] [ADC] Fixed automatic reconnect (thanks ullner)
+* [B#806] Fixed description for favorite hubs (thanks ullner)
+* Updated to latest ADC specs, this will break 0.68/0.681/0.6811 queue sources and fav users (for NMDC as well)
+* Fixed a bufferedsocket crash
+* [ADC] Fixed quitting user processing (thanks ullner)
+* Clarified upload speed setting (thanks mikejj)
+* Manual away setting no longer cleared when un-minimizing (thanks mikejj)
+* Search result automatching waits with match until file list is downloaded if auto-matching enabled
+* Slight performance improvement when sending files
+* Fixed an issue with nick names disappearing from hub
+* Added customizable maximum user count when autosearching
+* Changed to open source version unicows for win9x users, perhaps this one will work better for you (see it as a
+  last attempt; if it doesn't work, w9x support will be phased out completely unless someone else solves the win9x
+  issues)
+* [B#774] Fixed invalid description being sent if hub modifies it
+* [B#818] Fixed default exit mnemonic
+* Fixed some more crashes (thanks bigmuscle)
+* Fixed some shutdown issues
+* Updated country database
+
+-- 0.6811 2006-01-21 --
+* Fixed a socket race condition leading to failing connections and crashes
+
+-- 0.681 2006-01-21 --
+* Fixed a crash when using slow sources disconnect
+* Fixed system log overflow
+* Minor user command fix (thanks garg)
+* Removed some duplicate code (thanks trem)
+* Ctrl-a to select all items in a list (thanks garg)
+* [B#484] Added a check for multiple refreshes running at the same time (thanks trem)
+* Fixed a few crashes here and there
+* Fixed no-slots message not being sent out always
+* Fixed yassl build locations (thanks mikejj)
+* Added ip resolve cache when searching (thanks trem)
+* [B#413] Failed file moves are now reported to the system log
+
+-- 0.68 2006-01-08 --
+* Changed the user identification process completely to work better with ADC. This leads to a more strict interpretation of
+  which users are actually the same for NMDC (essentially, NMDC users are now identified by nick+hub always, not only nick)
+* Removed saving of directories scheduled for download, since the individual files should appear in the queue fast enough that
+  this will rarely be used (since file lists are free and downloaded almost instantly)
+* Fixed international timestamps (thanks ullner)
+* Fixed targetdrive docs (thanks ullner)
+* [B#485] Fixed transfer list view flicker on WinXP
+* New connection settings, please check settings page
+* Connection type strings changed
+* No longer falls back to passive mode on failed UPnP
+* Janitorial cleanups (thanks garg)
+* Removed some old favorite file format compatibility code
+* Added country to search frame (thanks paka)
+* Strftime fix (thanks garg)
+* [B#521] Help instead of readme shown on first startup (thanks paka)
+* [B#553] Minimize to tray and confirm appexit default to true (thanks paka)
+* [B#452] Fixed example.xml language file generation (thanks tpo)
+* [B#556] Fixed last searches purge (thanks sulan)
+* [B#73] Added option to disconnect slow sources (thanks paka)
+* ADC hub counts updated correctly (thanks ullner)
+* [B#325] Added error message when adding dupe fav hub (thanks ullner)
+* Updated bzip2 to 1.0.3 (thanks garg)
+* Some small *nix fixes (thanks poison)
+* Source path no longer saved for TTH enabled clients (saves memory and queue file space)
+* [B#335] Search window settings saved automatically (thanks mikejj)
+* Open folder selects file in explorer (thanks mikejj)
+* Local echo in pm window formatted as the other side should see it (thanks paka)
+* Fixed debug assertion (thanks tpo)
+* Dirty tabs settings improved (thanks ullner)
+* ZLib upgraded to 1.2.3, possibly fixing security issues (thanks garg)
+* Slot grants now last one connection instead of 10 minutes
+* [B#632] Subtotals shown when selecting users in hub frame (thanks cologic)
+* [B#625] /u chat command opens url (thanks pur)
+* [NMDC] The first word of hub name is taken as short name for displaying purposes when space is limited
+* [B#629] Waiting users frame added (thanks cologic)
+* Removed old versions check (thanks cologic)
+* [B#635] Added option to limit maximum file list size to open (thanks paka)
+* Filelist transfer logging default to off (thanks paka)
+* Added some checks when creating fav hubs (thanks tpo)
+* More settings screen updates (thanks ullner)
+* Fixed linux file moving (thanks naga)
+* [B#260] Added option to only download files with TTH (thanks ullner)
+* [B#708] Fixed registry creation functions used (thanks ullner)
+* Updated WTL
+* Rewrote socket code to remove some old hacks and add some new (major change)
+* Now using standard windows error messages for socket errors
+* [ADC] Added basic SSL encryption support
+* Fixed a bug with file list loading and filenames differing in case only
+* Fixed a few standard compliance issues
+* Added dirtying to waiting users frame (thanks ullner)
+* Changed so that a few flags are shown in transfer status, [T] = TTH check on, [Z] = zlib on, [R] = rollback performed, [S] = secure
+* Parameter names all updated, your current %[xxx] macros will break all over, on the upside they're now more or less unified
+* [ADC] All hubs a user is online on are shown where only one was shown before 
+* Fixed some log page issues
+* Replaced small buffer size option with the possibility to set recv/send buffer sizes manually
+* Consolidated bolding options, you'll have to reset them to your preference
+* Removed support for old hash index files (pre-0.670)
+* Improved hashing error reporting
+* Fixed hash database rebuild
+* Added /removefav command to remove a favorite hub (thanks ullner)
+* [B#717] Fixed search combo box (thanks mikejj)
+* Added option to change auto-refresh interval (thanks ullner)
+* [B#740] Removed tab completion option (thanks ullner)
+* [B#743] Added registry key creation failure notification (thanks ullner)
+* [B#717] Fixed dropdown sizes (thanks mikejj)
+* [B#760] Fixed list subtraction issue (thanks cologic)
+* Added some right-to-left support, but it probably needs more work
+* [NMDC] Minislots are no longer given to old DC++ clients (<0.304)
+* [ADC] Directory size returned with search results
+* Fixed a rare deadlock
+  
+-- 0.674 2005-04-10 --
+*** WARNING ***
+  This version fixes a security bug, upgrade unless you want to risk losing data
+  anywhere on your drive, this error affects all clients from 0.307 to date (thanks cologic for finding it)
+*** WARNING ***
+* Added stats window to autoopen (thanks paka)
+* Fixed context menu open for multi-screen setups (thanks trem)
+* Changed country database to the original format so that users can update by themselves (thanks paka)
+* Fixed some registry issues (thanks trem)
+* [B#443] Fixed localised number encodings (thanks trem)
+* Updated sorting to use a more windows-like order (thanks trem)
+* Fixed an issue with restore all (thanks krzysztof tyszecki)
+* Added list view tooltips
+
+-- 0.673 2005-03-22 --
+* Added auto-prio by file size settings (thanks paka)
+* Fixed yet another context menu fix (in case anyone wondered, it should now
+  be possible to use the context menu key for all context menus)
+* Fixed a search crash with search history set at 0
+* Updated unicows W95 unicode support
+* Updated to latest WTL
+* Fixed directory listing total sizes (thanks trem)
+* Fixed empty oplist issue
+
+-- 0.672 2005-03-20 --
+* Fixed an issue when loading pre-671 file lists
+* Fixed the context menu fix
+
+-- 0.671 2005-03-19 --
+* Added possibility to set minislot size (thanks ullner)
+* [B#22] Added possibility for multiline away messages and user commands (thanks ullner)
+* Added file type to queue frame (thanks ullner)
+* Changed stats frame to use standard colors (thanks yoji)
+* [B#439] Fixed purge button (thanks ullner)
+* Fixed search frame only tth issue (thanks naga)
+* Updated to ADC 0.9
+* Fixed a crash bug (thanks trem)
+* Fixed a geoip init bug (thanks trem)
+* Fixed a prio setting bug (thanks tpo)
+* Fixed some font settings (thanks tpo)
+* Fixed ADC password sending
+* Magnet registration fix (thanks ullner and farcry)
+* Finished partial file lists for ADC
+* Fixed some ADC crashes
+* Basic ADC searches now work
+* Basic ADC pms now work
+* Basic ADC transfers now work
+* Added option to specify bind address for sockets (thanks sed)
+* Made the connection flood trigger slighly less sensitive
+* [B#58] Fixed strange user list behaviour
+* [B#83] Consolidated auto-open window options
+* Fixed some context menu stuff
+
+-- 0.670 2005-02-04 --
+* Fixed an issue with international formats of float numbers (also fixes UDP port setting)
+* Fixed a minor crash log output address issue
+* Split off color and sound to a new page (thanks ullner)
+* [B#359] Fixed an issue with negative search terms (thanks naga)
+* Added option to filter TTH results in search spy (thanks joakim tosteberg)
+* [B#184] Updated log functionality to allow users to customize log filenames (thanks naga)
+* Fixes to log edit function (thanks naga)
+* Added possibility to filter all searches without tth (thanks naga)
+* More preferences splitting (thanks ullner)
+* Small socket fix (thanks tremor)
+* Search tab goes bold if set to (thanks naga)
+* Hopefully fixed an UPnP crash
+* [B#302] User commands in file lists (thanks joakim tosteberg)
+* ADC url's clickable (thanks naga)
+* [B#117] Improved search timer to avoid spamming hub (thanks naga)
+* Redid some of the hash storage code, should be slighly more efficient
+* [B#94] Share is cached for faster startup
+* Temporary targetnames are now filled in when download starts, not when item is added to queue,
+  which makes temp target dir changes happen for current queue items as well, plus we get a huge
+  memory save on huge queues.
+* [B#363] Added "Remove All Sources" to queue (thanks izzzo & garg)
+* Queue menu items greyed out when there are no items (thanks izzzo)
+* Fixed a crash with certain empty lists (thanks garg)
+* Added "restore all" to undo "minimize all" (thanks guitarm)
+* Added optional pm history (thanks trem and ullner)
+* Better log file managment (thanks trem)
+* [B#412] Fixed a queue count issue on removal (thanks ullner)
+* [B#9] Fixed a queue move issue (thanks paka)
+* [B#20] Fixed upload auto-slot granting (thanks naga)
+* Redid adl search to accomodate for partial list browsing (thanks garg)
+* Added initial ADC file transfers support
+* ADC hub connectivity improved
+* Fixed unnecessary COM initialisation (thanks garg)
+* Some linux compile fixes
+* Added readd all sources (thanks garg)
+* Fixed a deadlock when closing hub windows (thanks trem)
+* Added user ip logging in up and downloads (thanks ullner)
+* Small spy frame fix (thanks garg)
+* Small pm fix (thanks garg)
+* Added password warning for n00bs (thanks sed)
+* Help file updates (thanks ullner, garg)
+* Probably fixed the list redownloading bug
+* Hash index format change (as a side effect, it's very easy to find dupes
+  in the new format, someone should make a tool)
+* Download manager changes in preparation for partial list browsing and other
+  ADC features 
+* Improved efficiency for small files (<=64KiB) in the hash storage
+* Added advanced resume that detects and tries to repair rollback inconsistencies
+  using tiger trees
+* Fixed a rare invalid zlib decompression error
+* Autosearch and automatch queue is now done by tth only (!) (thanks garg)
+* Automatch search done by tth only, should make things slightly faster
+* Search for alternates automatically uses tth if available (thanks garg)
+* Lowered compression level so that uploads will take less cpu
+* Added exact file size to directory listings (thanks paka)
+* Remove confirm fix (thanks trem)
+* Added option for the new tab select behaviour (thanks trem)
+* [B#116] Added possibility to download to temp folder on the same drive as target (thanks sed)
+* Fixed user command string for file list context (thanks sed)
+* [B#290] Added more correct escaping of search strings (thanks sed)
+* [B#432] Fixed download directory for adlsearch matches (thanks ullner)
+* Some UPnP fixes (thanks nils maier)
+* ADL Search byte prefix fixes, might screw up your adl search settings on first load (thanks ullner)
+* Linux download path fix (thanks jens oknelid)
+* Added purge button for search history (thanks sulan)
+* Added column reorder to file listing (thanks ullner)
+* Fixed alt source download starts (thanks paka)
+
+-- 0.668 2004-11-30 --
+* [B#311] Fixed crash on open own filelist (thanks sulan)
+* Added option to make /join open a new window (thanks ullner)
+* Added mailto: to link-clicking (thanks ullner)
+* Fixed stack overflow with excessive xml nesting (thanks farcry)
+* Fixed virtual name issue with invalid chars in the virtual name (thanks farcry)
+* Fixes to ADC implementation, see http://developer.berlios.de/projects/ddc/ for a 
+  somewhat compatible hub in development
+* Some linux patches (thanks tim burton)
+* PgUp/PgDn now scroll the chat window (thanks jonathan stone)
+* Small fix with line history (thanks jonathan stone)
+* Added option to use separate TCP and UDP ports
+* [B#303] Fixed a raw command guessing bug (thanks garg)
+* [B#345] Fixed an xml listing parsing bug
+* [B#309] Hopefully fixed nt4 startup
+* Hopefully fixed an issue with downloading international search results from old clients
+
+-- 0.667 2004-11-15 --
+* Improved multiple hublist support (thanks garg)
+* Fixed some favdirs issues (thanks naga)
+* Fixed a status logging issue (thanks naga)
+* [B#289] Fixed annoying login issue
+* Added possibility to rename shares (thanks naga and tremor)
+* [B#106] Fixed show joins for fav users (thanks ullner)
+* Fixed some unnecessary connects when download slots are full
+* Fixed magnet registration issue (thanks garg)
+* Some code documentation work (thanks jonathan jansson)
+* Makedefs.py fixes (thanks garg)
+* A connection attempt is made when you grant a slot to potentially start the other 
+  fella's transfers (thanks sed)
+* Fixed passive search results issue with international nicks (thanks garg)
+* Fixed search frame extension vs tth again
+* FAQ added to the help file (thanks bsod)
+* Upgraded to zlib 1.2.2, fixing a security issue (thanks garg)
+* Added %[file] to the transfer view user commands (thanks naga)
+* Fixed myinfo update issue (thanks sulan)
+* Added option to use only up/down for command line history (thanks jonathan stone)
+* Improved installer (thanks bsod)
+* Fixed so that a connection attempt is made when changing a transfer to highest priority
+
+-- 0.666 2004-11-03 --
+* [B#173] Fixed copy nick to clipboard (thanks trem)
+* Removed some old code (thanks garg)
+* Added tth to log codes (thanks garg)
+* Added # of locally filtered results to search frame (thanks garg)
+* Fixed a crash in the upnp code
+* Fixed wide formatting of time (thanks garg)
+* [B#166] Added local filtering of searches with "-" in front of the search term (thanks cologic)
+* Fixed a missing hubframe stats bug (thanks trem)
+* [B#87] TTH's are now correctly searched for in search spy (thanks trem)
+* [B#256] Fixed an issue with utf8 user commands (thanks trem)
+* Moved to a less intrusive build procedure where stlport and wtl are local to the
+  DC++ build (see compile.txt)
+* Added /log to show log for current hub / user (thanks garg)
+* More internationalization (thanks garg)
+* Updated some template code (thanks farcry)
+* Extended log command (thanks ullner)
+* [B#212] Fixed issue with utf-8 nicks during login to some hubs (thanks garg)
+* Fixed issue with utf-8 time formatting for certain languages in certain locales
+* Removed search optimisation obsoleted by tth's and bloom filters (those of
+  you with a large number of files in your share, post on the forum if you notice
+  any big increase in CPU usage)
+* [B#69] Added option not to download files already in share (by TTH) (thanks TPO)
+* Help file work (garg, ullner)
+* Added petabytes (PiB) (thanks garg)
+* Clicking on active tab will deactivate it (thanks garg)
+* [B#227] Fixed an issue with loading invalid virtual names when upgrading (thanks garg)
+* [B#256] Fixed another issue with user commands (thanks garg)
+* Updated to WTL 7.5.4291
+* [B#183] Hopefully fixed a few issues with w9x and Unicode
+* Fixed common control initialization
+* Unix makefile now generates a shared lib (thanks jeremy huddleston)
+* Slight memory save for hash database
+* [B#130] Added favorite hub removal confirmation option (thanks ullner)
+* [B#5] Fixed broken redirect (thanks garg)
+* Added spy frame column saving (thanks garg)
+* ADL Search autoqueue saved now (thanks garg)
+* Window minimization issue fix (thanks garg)
+* [B#129] Fixed some issues with downloading >4GiB files
+* [B#15] ADL Search goto directory fixed (thanks garg)
+* Some fixes for compiling on osx (thanks jonathan jansson)
+* Removed Makedefs in favour of a python script
+* FastAlloc disabled in debug builds
+* [B#266] Fixed a crash with offline users and user commands (thanks naga)
+* [B#165] Fixed a case insensitivity issue (thanks farcry)
+* [B#18] Added favorite download directories (thanks naga)
+* Fixed MyINFO spam when hashing
+
+-- 0.4034 2004-10-03 --
+* Help file additions (thanks naga & ullner)
+* [B#170] Fixed a few issues with files not being hashed correctly (thanks garg)
+* More ADC fixes (thanks sed)
+* Fixed some ADLSearch stuff (thanks garg)
+* Added item count to finished frames (thanks garg)
+* Fixed user commands encoding (thanks garg)
+* Added last search time to search spy (thanks ullner)
+* [B#3] Fixed queue size growing on queue item move
+* Fixed missing file list on 0 byte share
+* [B#185] Fixed missing search results (thanks garg)
+
+-- 0.4033 2004-09-27 --
+*** WARNING *** 
+ This update will change all your config files and queues, and it is 
+ very probable that you won't be able to revert back to an older version
+ once the update has been done!!!
+ Also, finish your queue file before upgrading if you care for your
+ international filenames in it - they will not be correctly converted.
+*** WARNING ***
+
+* Fixed a rare download crash (thanks farcry)
+* Fixed tab dropping in the last position (thanks trem)
+* Fixed directory sorting in the file listings (thanks trem)
+* Files that can't be moved to the target drive from the temp folder
+  are now renamed to their real name
+* Text with unix and mac line end encodings should now be correctly displayed
+* [B#35] TTH Values are used for right click download menus when available
+* Upgraded to WTL 7.5.4196
+* Updated license to allow others to release legal binaries compiled against WTL
+* Moved the core structures to UTF-8 to allow correct internationalisation (major change)
+* Moving towards full unicodization of the user interface, MS layer for unicode
+  now needed for old crappy windows versions, and I don't know how good that works. The
+  rest of us can now see correct names being displayed in file listings (for XML filelists anyway)
+* Rewrote the share manager so that it doesn't lock the whole of DC++ while reading the
+  directories of shared files when refreshing the list
+* Added virtual share name
+* Removed autosearch string, it's not used any more
+* Fixed a tth hash speed bug (hashing should be much faster now)
+* File listings are now generated on the fly when someone needs them
+* [B#127] Added UPnP support (thanks mark gillespie)
+* Ctrl-L now opens file lists (thanks garg)
+* Various ADC patches (thanks sedulus)
+* Slightly changed temporary download name
+* TTH Leaf uploads no longer logged (thanks garg)
+* Added (initial) support for hublist.org xml hublists, now default
+  (you have to change your hub list address to http://www.hublist.org/PublicHubList.xml.bz2
+  if you want to benefit)
+* Fixed an issue with invalid TTH inconsistencies due to files being downloaded to the same
+  target filename as a previously downloaded file (.nfo's usually)
+* Some memory savings for people with large queues
+* Fixed a bug with autosearch repeating the same search needlessly (this should result in fewer
+  autosearches, good for the hubs)
+* Files scheduled for viewing are always set to highest prio
+* Added rudimentary automake and autoconf support for the client part, perhaps this will encourage someone
+  to finish a nice linux port
+* [B#162] Fixed dupe usercommands on reconnect (thanks sed)
+* Links now clickable in PM's and notepad as well (thanks naga)
+* Files are no longer hashed if the shared directory is removed while hashing
+* Added hash progress dialog, hashing is run at a higher priority when dialog is shown
+* Fixed a crash issue with invalid DcLst:s (thanks garg)
+* Better strategy for removing old filelists on exit (thanks garg)
+* Added Geo-IP license and fixes (thanks garg)
+* Added Help file - make sure you read it (thanks garg)
+* [B#169] Fixed a memory leak with rollback buffers under certain conditions
+* ADC INF updates only send the necessary info (thanks sed)
+
+ -- 0.4032 2004-08-08 --
+* Fixed issue with autosearch not getting filelists
+* Fixed an issue with autosearch by tth not being done
+* Added folder histore for single file downloads (thanks slowmo)
+* Fishing locale from os, changes string representations in some places (thanks garg)
+* Caseless icon optimization (thanks garg)
+* CTRL-E shortcut for refresh (thanks garg)
+* Fixed a process termination issue (thanks defr)
+* DCTC file not available detected (thanks defr)
+* Fixed bad window size being saved for minimised windows (thanks trem)
+* Fixed an issue with the ADC parser (thanks trem)
+* More WTL 7.5 preparations (thanks garg)
+* Added a switch to ease the life of the UPX compressor (exe compressors suck btw) (thanks garg)
+* Added irc:// as web link (thanks ullner)
+* Fixed an issue with the adc parser (thanks sed)
+* TTH trees no longer require a slot
+* Added options to open file lists and pm's in background (thanks sed)
+* Minor number formatting fixes (thanks palm and garg)
+* Some more linux compile fixes (thanks palm)
+* Additional translation strings (thanks garg)
+* Fixed own search results bug (thanks garg)
+* <64KiB files auto-highest priority (thanks garg)
+* Fixed search in utf-8 file lists (thanks fleetcommand)
+* Fixed utf-8 encoding/decoding, chinese and other multi-byte scripts should
+  now work ok (thanks liny)
+* Removed obsolete Import from NMDC queue (blame cologic)
+* Added option to disable bolding for hub frames (thanks ullner)
+* Fixed a small leak in the Search Frame (thanks psf8500)
+* Added bitzi.com lookup and magnet link copy (thanks garg)
+* Removed .bz2 lists from "open file list" types (thanks garg)
+* Fixed a download-to crash (thanks farcry)
+* Fixed dialog modality in several places (thanks garg)
+* Fixed some debug assertions (thanks garg)
+* Queue sorted sensibly (thanks garg)
+* Added customizable timestamps (thanks ullner)
+* Added extended dupe logging (thanks xan)
+* Some code pedantry cleanup done (thanks garg)
+* Unfinished files now have a slightly different naming scheme (thanks garg)
+* Added default unfinished folder (thanks garg)
+* When matching queue, users marked with file not available are readded (thanks farcry)
+* Added (limited support for) magnet link handling (thanks garg)
+* Uninstaller now removes the one registry key DC++ creates (thanks garg)
+* Fixed a few link click bugs (thanks garg)
+* Added quick connect (thanks tpo)
+* + and - in the queue change priority (thanks tpo)
+* Network stat colors are now the same as in the transfer window (thanks tpo)
+* Fixed a rare automatch crash (thanks farcry)
+* Allowed sharing of network folders (thanks garg)
+* Added option to automatically add finished files to share without refresh (thanks farcry)
+* Fixed a few closing window crashes (thanks farcry)
+* Fixed a tab moving issue (thanks farcry)
+* Sources with rollback errors are now automatically removed (thanks garg)
+* Fixed compile.txt and readme.txt (thanks garg)
+* Magnet handler included in installer (thanks garg & magnethandler author)
+* New icon with alpha channels for xp (thanks olle svensson, sorry all other icon 
+  submitters who sent it before him, neither aestethic nor personal reasons why 
+  yours wasn't chosen =)
+* Fixed another download to crash (thanks garg)
+* Stringdefs automatically rebuilt (thanks farcry & garg)
+* DC++ will only share files that HAVE BEEN HASHED!
+
+ -- 0.403 2004-06-27 --
+* Fixed 100% cpu / crash bug
+
+ -- 0.402 2004-06-27 --
+* Fixed transfer view crash (thanks garg)
+* Removed default sort in search frame
+* Window sizes / positions of favorite hubs saved (thanks trem)
+* Begun work on the ADC protocol (major change)
+* Fixed issue with the exceptioninfo growing indefinately (recursive behaviour)
+* Readded missing TTHSearch to hub $Supports
+* Fixed unnecessary $MyINFO being sent out
+* Removed time left and speed from waiting transfers (thanks garg)
+* Documented %[line:reason]
+* Fixed a bug with hanging queue display
+* When searching by hash, size mode set to normal (don't care)
+* Hash speed tweaks, check if it's any better.
+* Fixed a crash when moving files
+* Fixed directory sorting in directory listings
+* Fixed an unnecessary disconnect on file not available
+* Fixed missing write buffering
+* Added drag-drop of directories onto the shared dirs view (thanks trem)
+* Added option for specifying max hashing speed
+* Updated installer to optionally create a backup of the settings when upgrading
+* Changed to a more convenient observer implementation (no, not a functor (or something more fancy) based one)
+* Fixed an invalid XML file list crash
+* Copy address to clipboard from public hub list (thanks joakim tosteberg)
+* Changed to IEC binary multiple units (MiB, KiB etc)
+* GETSETREF templetized (thanks farcry)
+* Small files size increased to 64KiB
+* Op's that use a client that supports minislots always get a minislot (for small files / xml file lists), 
+  regardless of how many minislots are already taken.
+* Matching by name removed for queue items with a TTH root (for autosearches)
+* Autosearch is done by TTH for queue items that have a root
+* Removed GetTestZBlock (no more safe/compressed transfers from old clients)
+* Added support for automatic user command clearing (code 255) (thanks sedulus)
+* User country shown in ip field (thanks pofis)
+* Automatic search matching is now done exclusively by tth for those items that have a TTH root and 
+  by exact filename for those that don't.
+* Dropped support for bzip2 file lists
+* Show joins parts for fav users only option added (thanks psf8500)
+* Added possibility to log hub status messages (thanks naga)
+* Removed full-row-select option (blame garg)
+* Added possibility to drag-drop tabs (thanks trem)
+* Added toggles for transferview showing (thanks trem)
+* HTTPS added as chat click link (thanks naga)
+* Autoconnect postponed if no nick has been set (thanks sed)
+* Various unix compile fixes (thanks christer palm)
+* Fixes for IEC in settings pages (thanks slowmo)
+* Remove multiple directories from share (thanks slowmo)
+* Added executable TTH to about box (for reporting bugs)
+* Changed exceptioninfo.txt format to prepare for automatic crash logging
+* Added download by TTH root instead of share path. This feature enables
+  the downloading client to find the file even if the uploader has reorganized
+  its share.
+* Fixed number formatting in search and queue frames (thanks slowmo)
+* Workaround for WTL75 bug with menus (thanks garg)
+* .mkv and .flac added as file formats (thanks garg)
+* Added warning about non-shared files with $ in them (thanks garg)
+* Fixed a rare deadlock when autosearching
+* Search by TTH greyed out for items that don't have a TTH root (thanks slowmo)
+* Added default menu items to finished frames (thanks slowmo)
+* TTH leaves (TTHL) exchanged between capable clients to verify data integrity
+* Fixed a disconnecting bug caused when $UGetBlock and $GetZBlock are given an 
+  unknown number of bytes to send
+
+ -- 0.401 2004-03-28 --
+* Fixed the dupe file issue
+* Hopefully fixed the dupe op issue
+* Rephrased remove dupes option (thanks garg)
+
+ -- 0.400 2004-03-27 --
+* Fixed escape in user commands (thanks garg)
+* Probably fixed search frame hang
+* Exact size in queue frame (thanks cologic)
+* Ip in search frame (thanks cologic)
+* Small fix to transfer view sorting (thanks naga)
+* User commands in transfer view (thanks naga)
+* Extra logging in main status bar (thanks garg)
+* Option not to bold queue tab (thanks garg)
+* Option not to send unknown /-commands (thanks garg)
+* Hopefully fixed some encoding issues with the xml filelist
+* Hashing is now mandatory (stop whining, it was only meant to be optional in 0.307)
+* Match files now works correctly with TTH's in queue
+* Hub name more or less correct on TTH results in search frame
+* Added search by TTH to queue frame
+* Large speed improvement in user list loading when lists sorted on user name
+* Fixed inverted ratio of uploads
+* New icons in window menu (thanks garg)
+* SFV failure message (thanks garg)
+* Bolds for defaults in some menus (thanks garg)
+* Fixed random filelist crash
+* Performance improvement in background match queue
+* Dupe file check done by TTH value
+
+ -- 0.307 2004-03-10 --
+* Experimental release, lots and lots of core code has changed => high fatal bug probability.
+* Fixed full name being displayed in user commands with submenus
+* Bloom filters dramatically improve cpu efficiency on incoming searches (if you have a large share)
+* Auto match results shown in status bar
+* Added option to match autosearch filenames exactly to further avoid the wrong file being downloaded (default on)
+* End of zlib transfer test period, semantics slightly changed ($GetTestZBlock -> $GetZBlock, $Sending changed)
+* Speed increase when loading shares with many files of the same size (thanks farcry)
+* Added file hashing, turn it off in advanced settings (experimental)
+* Merkle trees and tiger hashing added for TTH hash support
+* Compression totally rewritten, should also fix a few minor issues
+* Compression (GetZBlock) and hashing (TTHSearch) is advertised to hubs through $Supports, I advise hubs to advise 
+  its users to keep at least hashes on so that searching by hashes will work efficiently (as it's only useful if 
+  all clients on the hub support it).
+* Fixed bug where no/invalid file listing would be written if there was no disk space (the old one is used now 
+  instead...)
+* XML File lists that contain hashes if available, and support full utf-8 names (correct viewing is not guaranteed,
+  but download should work)
+* Upgraded to zlib 1.2.1 (thanks garg)
+* Extra column for hub in transfer list (thanks naga)
+* Copy nick to clipboard in transfer list (thanks naga)
+* Files starting with a '.' are no longer shared if hidden files are not shared (...unix...)
+* Fixed a minor memory leak when an invalid search result is returned (exploitable minor security issue)
+* Slight speedup of file list loading
+* File IO rewritten (major change)
+* Rollback no longer depends on buffer size
+* /rebuild rebuilds the hash database and potentially reduces the size of the raw hash data file (also checks
+  its integrity)
+* Ip column in transfer list (thanks cologic)
+* Scrollbar for multiline messages (thanks garg)
+* Fixed an issue with icon transparencies (thanks garg)
+
+ -- 0.306 2004-01-09 --
+* Fixed an issue with UNC paths (those starting with "\\")
+* Changed autosearch so that it only searches if less than 5 sources are online, this should stop galloping
+  filelist downloads as well
+* Upgraded to WTL 7.1, should fix a few UI issues
+* Fixed brightness of compressed transfer progress bars
+* Fixed a crash with badly formatted compressed transfer requests
+* Some work on memory managment, dramatically improving DC++'s behaviour with large queues / shares
+* Auto-match queue is only done on exact match
+* Fixed a bug in the compressor that may have caused compressed uploads not to finish and/or 100% cpu
+* The sound part of partially corrupted queues is now recovered
+* When opening a file list from search results, the file's directory is automatically shown
+* An extra buffer flush is done to ensure that file lists are fully written to disk
+* Readme automatically shown for new users (thanks johnny)
+* Filename is shown on transfer error (no slots etc) (thanks ciber)
+* Ctrl-tab order is now the standard last-seen
+* Added support for user command menu subitems (add a '\' to the name)
+* Fixed locale setting bug
+* Added option to automatically add items to queue from ADL search (thanks twink)
+* Fixed share sizes not being updated with the "share hidden" box (thanks theparanoidone)
+* Directories with '$' in the name are no longer shared (they can't be downloaded)
+* Favorite users can now have descriptions
+* Added filesize and filesizeshort to search frame %[...] macros (thanks gadget)
+* Added option not to log filelist transfers
+* Fixed some issues with being / not being op
+
+ -- 0.305 2003-12-04 --
+* Fixed disappearing queue items bug
+* Fixed displaying of upload compression in progress bar
+* Added compression ratio column and %[actualsize] and %[actualsizeshort] to log formats available
+* Fixed doubled name when downloading directories from search frame
+* Fixed a mem leak for safe transfers
+* Fixed a crash during downloads
+* Fixed speed problems with user list
+* Added "open download directory" to file and tray menu
+* Shift-clicking tab will close window (thanks twink)
+* Added support for $UserIP, %[ip] as user command parameter and server side ip detection (automatically used
+  if the ip field in settings is blank)
+* Transfer bar colors updated and user-configurable (thanks garg)
+* Fixed possibility to share same folder twice (thanks theparaniodone)
+* Fixed translations of kick & redirect user
+* Fixed missing subdirs when moving directories in the queue
+* Really fixed hublist space trimming =)
+* Added ".wmv" and ".ogm" as video extensions
+* Fixed some issues with same-named fav users
+* Fixed small mem leak in fav users
+* Max download slots default changed to 3
+* Max 3 slots more than max download slots are used for highest priority downloads
+* Added option to automatically download filelist and match it on autosearch match. This will dramatically speed up
+  autosearching, lessening the strain on the hubs as less searches have to be done.
+* Added accelerator for filtering in public hubs (thanks garg)
+* Fixed some translations (thanks ciber)
+* Added "downloaded bytes" to queue (thanks ciber)
+* Fixed refresh file list from main menu
+* Switched user and filename column in search frame so that the image will be attached to the correct column (thanks
+  garg)
+* A few message boxes updated (thanks garg)
+* Added supports NoHello, a hub bandwidth easing feature for the hubs that support it
+* Fixed a problem with matched list downloads not starting
+
+ -- 0.304 2003-11-19 --
+* Fixed missing usercommands (thanks sed)
+* Added option not to receive usercommands 
+* Fixed a bug with bad search result type (hub owners, make sure your users upgrade if they use 0.302-0.303) 
+  (thanks saurod)
+* Added "$Supports MiniSlots" for other clients to profit from dc++'s free small files and filelist free slots
+  (thanks sed)
+* Added /getlist command to get users list from chat (thanks twink)
+* Added check so that temp directory cannot be added to share list
+* Hopefully speeded up hub connect a little
+* Fixed transfer view sorting I think, this is how it should be: running downloads, running uploads, waiting 
+  downloads, waiting uploads
+* Fixed missing string (thanks garg)
+* Fixed invalid date added formatting
+* Fixed trimming of spaces for http downloads (hub list...)
+* Fixed a bug in autosearch when using auto search strings (thanks ilkka seppälä)
+* Fixed typo in user commands help
+* Fixed missing sort arrows
+* Added time last seen online to fav users (thanks gargoyle)
+* Changed auto-grant slot ui (thanks gargoyle)
+* Fixed error removing recently added share directory
+* Fixed open folder in finished frames
+
+
+ -- 0.303 2003-11-14 --
+* Fixed reversed free and open slots in search results (oops...=)...upgrade or you're likely to be banned!
+
+ -- 0.302 2003-11-14 --
+* Added a small menu to the tray icon (thanks orkblutt)
+* Added port to hub log files
+* Some fixes so that \client will compile better under linux (thanks christer palm, he's working on
+  a linux version using dc++ as base...)
+* Speedups, code cleanup to GUI list handling
+* New STLPort again (4.6) (a lot of the match queue crashes are probably STLPort's fault, 
+  so I'm changing again, to see if the latest is better, + that I changed two lines in it)
+* Fixed some bugs in the &-translation
+* Can be compiled in MSVC 7.1 without stlport, make sure to undefine HAS_STLPORT in config.h
+* Updated the antifrag feature to recover from crashes (thanks distiller)
+* Fixed so that tab completion works with multiple [xxx] tags (thanks sed)
+* More code cleanup, keep a backup of your queue handy while upgrading, queue code extensively
+  rewritten to ease future changes
+* Updates to the autosearch feature
+* Added (well, enabled) GetZBlock, a feature that makes all transfers safer by checking CRC's
+  during the transfer and if possible, compresses. This is an experimental feature, and it might
+  require some extra cpu, so it can be turned off in settings, turning it off will turn it off for
+  both up- and downloads. If both users have it enabled it will automatically be used. Compression
+  is automatically turned off file files that don't compress well (.rar's for example), but the extra
+  CRC check is still done. Safe transfers are marked by a * in the active transfers list (I'll think
+  of something better later on...)
+* New, very nice progress bars for the transfers window (thanks citruz)
+* Multi-shade progress bars to show how much was resumed and compressed
+* Added auto-grant option to favorite users (thanks saurod)
+* Improvements of robustness and speed of the XML reader
+* Fixed some minor Examples.xml issues ("\\" and "\t" are now correctly shown)
+* Fixed a queue crash bug
+* Changed transfer view sort order (active downloads, active uploads then connection attempts...one
+  fine day perhaps it'll be configurable...)
+* Added date added column to queue
+* Temporary downloads folder no longer shared
+* Fixed a bug where the socks5 proxy was used for http proxy connections (thanks dan fulger)
+* Added command history scrolling using ctrl-up/down/home/end (thanks cologic)
+* Fixed match queue crashes
+* Fixed sending of unknown '/'-commands to the hub (thanks sedulus)
+* Added support for once-per-nick usercommands (and made kick/redirect work like once)
+* Filename and path in finished frames split ut in two columns (thanks twink)
+* Fixed NoGetINFO so that it actually doesn't send any getinfo's
+
+ -- 0.301 2003-10-28 --
+* Fixed usercommands in hub frame (kick for example)
+* Other fixes to usercommands (thanks sedulus)
+* Fixed reading of DCTC file lists I think (haven't tested) (DCTC of course has to be different 
+  from all other clients and create file lists with multiple directories with the _same_ name 
+  for no reason)
+* Fixed "open folder" in finished frames
+* Added new search for alternates algorithm with possibility to set search string yourself
+  (thanks saurod)
+* Added selection of which hubs to search in (thanks saurod)
+* Fixed link opening in some browsers
+* Added NoGetINFO extension support
+
+ -- 0.300 2003-10-27 --
+*** WARNING ***
+  Security update, upgrade unless you want to risk losing files anywhere
+  on your hd (this is for all versions prior to this one) (thanks fusbar for bringing 
+  it to my attention) 
+*** WARNING ***
+
+* Some code cleanup
+* Added vertical tiling of windows
+* Nick and password are now taken from favorite hubs on redirect (thanks saurod)
+* Fixed a case sensitivity bug in favorite hubs (thanks saurod)
+* Locale formatting of exact size in search (thanks saurod)
+* Fixed a bug where directories were not correctly returned (thanks saurod)
+* Replaced the tab control in the settings with a tree, expect many more settings soon
+* Fixed a bug when changing priorities from paused
+* Reduced transfer view flicker somewhat when sorted by status
+* Reconnect time is randomized a little to reduce stress on hub when everyone reconnects
+* Small i18n fix in uploads settings (thanks atomicjo)
+* Numbers only on search size box (thanks atomicjo)
+* Delete multiple favorite users (thanks garg)
+* Autocomplete turned off when using shift-tab (to tab between the windows instead) 
+  (thanks garg)
+* Small fixes (thanks garg)
+* Toolbar updates (thanks garg)
+* Speeded up match queue a lot (I mean a _lot_)
+* Added a network statistics view
+* Added tab-specific context menus
+* Added support for hub $Supports
+* Added hub-sent usercommands
+* Usercommands changed to raw in save file
+* New %[ parameters in user commands
+* &amp; is used to escape the & in chat (currently only escapes when really necessary, i e
+  | or $ escape is used)
+* Added "Match Queue" to various right-click menus
+* Internationalised settings (thanks garg)
+* Fixed finished frame lockups
+* Moved to Visual Studio 7.1, 7.0 project files are available, but won't be maintained...
+* Own icon always set to blue (DC++) (thanks atomicjo)
+* Edges around the settings (thanks opera)
+* Fixed right-click issue in the hub frame (thanks twink)
+* Fixed a problem with detecting protocol extensions
+* Updates to the queue frame (bugs fixed and smarter when using with multiple drives)
+* Fixes to zblock sends (thanks sandos)
+* Links are opened in a new browser window
+* New STLPort again (4.5-1020)
+* Increased some buffer sizes to increase high-speed transfer performance
+* Added tooltip to hub window status bar that shows last 5 status lines
+* /-commands that don't exist are now sent to the hub
+* Added /pm
+* Added /g to search google
+* Added /imdb to search imdb
+
+
+-- 0.263 2003-09-30 --
+* Fixed a mouse click crash (thanks sed)
+* Fixed so that donating is done in euro's from the help menu (why don't you try it out? =)
+* Port can now be seen in the hub frame title (thanks sed)
+* Fixed a major bug with filename case sensitivity (causing strange queue behaviour)
+* Fixed another queue crash bug
+* Queue now starts fully expanded (makes sense with smart queues)
+* Fixed compiling issue on vc6
+
+ -- 0.262 2003-09-24 --
+* Added arrows and tri-state sorting (thanks saurod)
+* Fixed a crash with certain queues when opening queue frame
+* Fixed a bug in the search frame not setting b/kB/MB correctly when searching for alternates
+* Fixed bad loading of menu translations
+* Fixed tag not being removed when someone turns it off
+* Added connection flooding protection
+* Fixed a bug with file extension being cut off when moving files in certain windows setups (I think, not tested)
+* Small fix to ip detect code (thanks fusbar)
+* Fixed a file read crash
+* Fixed so that DC++ correctly returns hub port in search results (thanks sed)
+* Now correctly reacts to multiple $Hello's with own nick
+* When moving items in the fav lists, items are scrolled into view if moved outside the window
+* Added "View as text file" option when downloading files (only shows the first 32k though...)
+* Made it possible to compile using the stl supplied in msvc 7.x, it's untested though, and I won't maintain it
+  (I just wanted to see if it works)
+* Already existing files are prioritised when queueing
+* Changed so that files are downloaded in alphabetical order when first added (this makes opening large user file 
+  lists a little bit slower)
+* Upgraded to STLPort 4.5.0725 (should be compatible with msvc 7.1)
+* Fixed right-click menu in hub frame when the username comes last on a line (thanks sed)
+* Added stored password sent notification when connecting to favorite hubs
+
+ -- 0.261 2003-07-15 --
+* Fixed user list problems
+* Fixed a queue frame crash
+
+ -- 0.26 2003-07-15 --
+* Search for alternates now sets file type as well (and should work correctly with sizes...)
+* Search now returns results for exact size matches on at least/most searches
+* Some minor fixes
+* Fixed a crash on adding items to the queue
+* Progress bar now has different color for selected items
+* Added notification for which file was not available for downloading
+* Added H: to main window status bar
+* Hub developers: Added section about $Supports scheme for client-hub communication to extensions.txt that 
+  dc++/dch++ will (probably) use to extend the protocol (if it ever happens =).
+* Default hub list now points to one that works
+* Minor code cleanups
+* M:5 in the <++ tag means socks5 mode (this should have worked since 0.20...)
+* If no nick is set the settings dialog pops up at startup (to help newbies...)
+* Added a smarter queue tree display, to make it less deep
+* Fixed downloading of files with ? and * in name
+* Fixed downloading of filelists from users with \ in name
+* ADLSearch: Added Break on first option and special 'discard' target (see help) (by henrik as usual)
+* Added time left and speed columns to transfer window
+* Add to favorite user available from search frame
+* <++ tag is now shown in a separate column in the hub frame
+* Different tab types are now colored differently (some day I might actually make the colors configurable...)
+* Tabs are back at using the system menu font instead of the custom one
+* Added tab completition in hub frame, turn it off in advanced settings to get old tab behaviour (it can also
+  be used as a user search...)
+* Added move up/down controls to favorite hubs
+* Added options to open the finished downloads and favorite hubs window at startup
+* Fixed a bug where bad results were being given when searching for directories
+
+ -- 0.251 2003-05-28 --
+* Fixed 100% cpu bug in new search (thanks opera)
+* Fixed a bug with queue selection counts (thanks sed)
+* Fixed a problem with percents not being escaped correctly in user commands (thanks sed)
+* Added so that you can use time formatting in the away message (%Y, %m ...) (thanks vladimir marko)
+* Added %[file] to search frame user commands (that becomes the current filename) (thanks sarf)
+* Fixed some of the vc6 compile errors/warnings
+* ADLSearch: now accepts %[nick] (see help)
+
+ -- 0.25 2003-05-20 --
+Major:
+* Implemented a faster substring search algorithm for share and file listing searches (the QuickSearch variant of 
+  Boyer-Moore)
+* User commands now work from search as well
+* Fixed a major bug where queue items without sources were not loaded from disk on restart
+* Fixed slow favorites opening / excessive saving (thanks garg)
+* Large speedup in file listing search (QuickSearch + unnecessary processing added earlier removed)
+* Added selection size info to queue frame (same as file listing)
+* Fixed some crashes when closing windows (and perhaps added some new ones...)
+
+ADLSearch: (by Henrik Engström)
+  * Keyboard shortcuts.
+  * Context menu (back again).
+  * Removed 'Active' column and made it a check box.
+  * Unified button texts to the rest of DC++.
+  * Fixed bug with multiple destination directories, some search results only ended up in the first of multiples.
+
+Minor:
+* Memory savings for users with many files in share
+* Hyperthreading / multicpu users, try again and report back if it works
+* Fixed %[hub] in upload log
+* Some code cleanup
+* Fix for buggy HTTP servers sending Content-Length with wrong case (thanks sandos)
+* Added link to change log in help menu (thanks garg)
+* Fixed link to faq (thanks garg)
+* Fixed public hub list mouse clicks and reopening (thanks garg)
+* Fixed so that "3/4 users offline" can be translated to polish
+* Fixed tabbing in search frame 
+* Added option for not downloading zero-byte files
+* Added handling for dchub:// in main chat (opens the hub)
+* Fixed a bug with strange nicks causing problems with file list opening
+* Fixed a bug with orphaned file lists
+* Fixed a bug with socks5 password length (thanks dwomac) 
+* Double-clicking text selects the word (as in old versions, thanks garg)
+* Directories are no longer returned for "at least" searches with bytes > 0 (i e directory size is assumed 0)
+* Fixed another issue with accesses to invalid drive letters (thanks sarf)
+* Holding shift during startup (when the main window shows) will disable autoconnecting to hubs
+* Fixed user description saving and updating (thanks garg)
+* Large files are now moved in a separate thread to avoid losing connection while moving (if using temporary download dir)
+
+ -- 0.242 2003-04-19 --
+* Updated compile.txt with some notes on submitting patches
+* Perhaps fixed the multicpu/hyperthreading issue (could someone try and report to the bug tracker?)
+* Various optimizations of the socket code to regain some of the upload performance that some seem to have problems
+  with (keep in mind that SFV-checking, when enabled, slows things down on the downloading end when a file is checked...)
+* Fixed problems with changing active port
+* Fixed favorite hub properties saving
+* Added option not to send away message to bots (users that have not sent a myinfo that is...) (thanks sedulus)
+* Fixed 302-moved code a bit (thanks sedulus)
+* Added match queue feature to the file listing window. This will take every file in the file listing and see if there
+  is any matching file in the queue (exact filename & size match). Every match will then be added to the queue as an
+  extra source. Depending on your queue size and the number of files in the listing this might take some time to do...
+* UI updates to ADLSearch (by Henrik Engström)
+
+ -- 0.241 2003-04-01 --
+* Made the XML parser a bit more robust against bad XML data (to avoid embarassing situations such as the last one...)
+* Favorite users and hubs are now saved on edit instead of on exit.
+* Added support for "302 file moved"  for hublist downloads (thanks sedulus/sandos)
+* Fixed error reporting for hublist download
+* Same server but different port is now properly considered a different hub (thanks sedulus)
+* Last entered parameter for user commands is now remembered (%[line:...])
+* VC6 projects files brought up-to-date
+* Added a DLL to the installation procedure to make sure we get good debug info under older windows versions (research 
+  by garg)
+* Fixed attempt to access f: I think (it seems that the debug info generator tries to access f: when dc++ crashes, 
+  because microsoft compiled their stuff from f:...untested, I don't have any f: =)
+* Update to some confirmation dialog (thanks garg)
+* Partially changed back to the 0.233 code for uploads (since the new one seems to cause upload performance problems)
+* The queue is now only bolded when an file is finished.
+* Added away indicator in the main status bar (thanks garg)
+* Added finished uploads frame (thanks garg)
+* Added finished bold disable option (thanks garg)
+* Minor adjustments to the sort order
+* Added anti-fragmentation feature. When downloading, it creates a file of the expected target size with unspecified
+  content. If the download fails, the file is truncated to the size DC++ thinks it has downloaded, and
+  resume should work fine. If DC++ crashes, you'll lose the whole downloaded part + any resumed part as well, as
+  there's no way to know how much valid data there is in the file. Disabled by default.
+* Added a few keyboard shortcuts here and there
+* Fixed bug with SFV retrying (files will now properly be retried _once_ beforer a source is discarded)
+* The maximization state of the inner windows is now remebered, default to maximized first time.
+
+ -- 0.24 2003-03-11 --
+* The splash screen is now correctly centered (we thank Vladimir Marko for this important patch =)
+* Added ADLSearch, a new search filter for browsing files, submitted/made by Henrik Engström.
+* Local ip handling improved, so that a per-hub ip is used if nothing is entered in the active field (good for
+  people who connect to local hubs or through different network cards)
+* You can now use $ and | in the chat. DC++ uses the HTML standard &#36; and &#124; to replace them...some people
+  might not like this because it's different than the escape sequence used in the lock, but I prefer a standard way
+  of escaping that's not limited to numbers below 999...later on, perhaps I'll add full &-escaping support so that
+  people will be able to send all kinds of strange characters. The same escpace sequences are used in the description
+  and email.
+* Incoming connections are now handled in a completely different, more effective way (one thread less...). This could
+  perhaps help with the multicpu/hyperthreading issue, but I doubt it...
+* Fixed a crash-at-exit in the debug build
+* Fixed a bug causing missing search results (thanks opera)
+* Another go at the case insensitive string comp bug (tried with a queue file that was reported not to work so...)
+* Added custom per-hub user description to favorite hubs (thanks garg)
+* Some code cleanup and minor fixes
+* Updated H: tag. It now looks like H:x/y/z where x, y, and z are normal, registered and op hubs respectively. It
+  is updated roughly once a minute, but if you're disconnected, the count won't go down until the window is closed
+  (i e hubs you're trying to reconnect to count as well, to avoid too many updates being sent to the hub). Also,
+  note that there's a problem with the op count. All op's will first be counted as registered users, and then,
+  when they're fully logged in the count will be updated. This is a protocol limitation and there's not much to
+  do about it (although, most of the time you shouldn't notice, if the hub sends the op list fast enough...). This
+  release also fixes a bug where the count was not correctly updated across all hubs.
+* To avoid confusion when receiving text pasted from the chat, "- " is inserted whenever a line starts with '<' or 
+  '[' in the main and private chat (so that it won't look like somebody else is writing a message)
+* I think you can now use %-shortcuts in the nick when specifying user commands (%[line:] does not work tho...)
+* Doubled interval between autosearches (2 minutes now, and 60 between each research of the same file), this to 
+  ease the bandwidth load on busy hubs
+* Favorites, users and user commands are now saved to a separate file. The old ones will still be loaded for a 
+  few versions...
+* Added info about current directory/selection to the file listing browser
+
+ -- 0.233 2003-02-24 --
+* Back to normal...
+* Fixed a small bug with disappearing tray icon (thanks vladimir marko)
+* Fixed a major bug in the case insensitive string compares resulting in 100% cpu/crashes in certain cases 
+  (specially with filenames that contain international characters). This should also fix sort problems
+  and perhaps some search problems as well...
+* Fixed some problems with file lists not refreshing correctly when they were being downloaded at the same time.
+* Added option to disable the hourly automatic share refresher
+* Fixed another Finished Files crash -- now it *should* work, I actually tested it once this time...
+* Fixed a "dc++ would not shutdown" bug (thanks garg)
+* Fixed another thing with hub lists being unnecessarily downloaded (thanks garg)
+* Fixed a bug with opening faulty .bz2 file lists (thanks who)
+* Fixed a bug with whole descriptions not being visible in the settings
+
+ -- 0.232 2003-02-14 --
+* Fixed a bug when temp download directory was missing '\' in the end
+* Fixed another crash when disk full bug
+* Files containing $'s are no longer added to share (can't be downloaded later on...) (this is a protocol limitation)
+* Changed the "download whole directory" back to the old way of working (see 0.23 notes), it turned out that i didn't
+  like it and neither did anyone at the forum seem to do...maybe I'll think of something better later on...
+* Fixed the move file thing (properly this time, I hope)
+* Fixed edit boxes being enabled when option was not in logs&sound settings (thanks garg)
+* Fixed "add shared directory" modality (thanks garg)
+* Fixed finished files crash
+* Added an icon for the finished downloads to the toolbar (thanks garg)
+* The main icon now contains a 48x48 icon as well (thanks garg)
+* I hope the owner of the picture doesn't sue me / mind =)...
+
+ -- 0.231 2003-02-04 --
+* Minor speedup in the string tokenizer (silly...)
+* Fixed missing search results when searching without type (fix also provides a tiny speedup when being searched)
+* Fixed a silly assertion fault in the debug build
+* Fixed the single file move crash (together with "wrong file moved", same bug)
+* Fixed so that a user won't be granted a slot when using a "free" slot if disconnected because of the 
+  autodisconnect feature (thanks garg)
+* The tab control now supports more than one row
+* In the tab chevron menu, those windows that have updated (that would have been bold) now have a dot
+* The download queue tab now goes bold if something about the queue has updated (download finished/added/failed/etc)
+* The message edit box in the hub and pm windows now uses the font selected in the settings
+* The finished files frame now goes bold when new items are finished
+* Fixed some of the problems when not viewing the directory tree in the queue. There might be some bugs left tho, 
+  haven't tested...
+
+ -- 0.23 2003-01-30 --
+* New release policy, I'll wait a few days with the "new version" nag, just to see if a release is ok (doesn't have
+  any fatal bugs in it). If you want to be on the bleeding edge, either subscribe to the release notification on
+  sourceforge or check it every now and then. The same goes for the link on http://dcplusplus.sf.net (i e the download 
+  will only be available from http://www.sf.net/projects/dcplusplus in the files section).
+* Removed the -Debug zip file. The debug information is now included in all public releases of DC++, this to rid
+  the debug forums of crash reports with missing debug information. There are no performance penalties from having
+  the debug symbols, they are loaded on demand (and if you're really deperate for disk space, you can remove the .pdb
+  file). This of course makes the distribution download a bit bigger, an unfortunate side-effect...
+* Fixed a bug in the uninstaller (it didn't remove DCPlusPlus.pdb if installed)
+* Fixed a bug with the user commands (PM didn't work)
+* Some fixes to queue moving (moving to targets that already exist in queue now adds the sources of the old file
+  to the existing target instead of just ignoring them...)
+* Changed the way "download whole directory" works. It now downloads the files directly to the directory you've 
+  chosen, i e if you download the directory "mp3" to "x:\down" all files from "mp3" will end up in "x:\down"
+  instead of "x:\down\mp3". This makes it easier to add files when somebody's changed the directory name but not the
+  filenames (common with rar/ace sets). If you download to the default download directory, the directory is created 
+  (i e "default\mp3" in the example). Now I only have to decide whether I like this change or not...
+* Cleanup of the VC7 Project files
+* The number of uploads slots is now shown as negative if it exceeds the specified number of slots (because of auto-
+  open or granting). We'll see how long it takes until someone reports this as a bug...
+* Added ability to set default away message (hm...perhaps this should use the last message set?)
+* Redesigned the appearance dialog a bit (like the advanced options now)
+* If DC++ receives "banned" during the login phase, it'll stop automatically reconnecting (n�jd nu, nev? =)
+* The splash screen no longer shows on the task bar (avoids flicker when loading is fast) and is not topmost (use
+  alt-esc instead of alt-tab to switch to it if you lose it...and it can't be an option because it's shown prior to
+  any settings being loaded).
+* Hublist is no longer loaded in the background by default when starting the application.
+* Fixed some proxy connection problems for the hublist (thanks Ondrea (or is it Ondra or Ondrej? =))
+* Disabled automatic opening of the hublist. You can reenable it in the settings (this is to save some 
+  bandwidth on the hub list servers).
+* The hublist http://dcplusplus.sourceforge.net/PublicHubList.config has been replaced by 
+  http://dcplusplus.sourceforge.net/PublicHubList.config.bz2 (the same, but bzipped, sourceforge didn't like
+  the load on their servers...)
+* Fixed a bug when returning compressed file search results
+* Changed the way string compares are done, this should fix the sorting and searching problems with different
+  charsets. All string compares are now done based on the user's locale, so searching users that use a different charset
+  might yield unexpected results.
+* Automatic search now searches with type if possible (to ease the load on clients)
+* Fixed a disk full crash
+* Added "Close all disconnected hubs" to the Window menu (thanks Kenneth Skovhede)
+* Added /favorite to pm window to add user as a favorite user (/fav also works) (thanks Kenneth Skovhede)
+* Added /favorite to hub window to add hub to favorite hubs (/fav also works) (thanks Kenneth Skovhede)
+* Added "Grant slot" to transfers right-click menu (thanks Kenneth Skovhede)
+* Added "Add to favorites" to transfers right-click menu (thanks Kenneth Skovhede)
+* Added "Open folder" to finished downloads frame (thanks Kenneth Skovhede)
+* Performance increase in search 1: When somebody searches with a type (document, video, etc), directories that
+  don't contain the specified type are not searched. If people use search types a lot, this should be a significant
+  improvement. To make this work out good, keep different file types in different directories, and smaller parts of
+  your share will be searched. This will work better when more people have updated their clients so that autosearch 
+  uses types as well. 
+* Performance increase in search 2: Words frequently searched for are filtered out earlier in the search, so that
+  only directories that contain a specific word are searched. This is based on the observation that a lot of the 
+  contain either their suffix (mp3 or avi for example), or some other frequently searched words. By only searching
+  directories that for sure contain one of these words, we eliminate a lot of useless searching. In this first
+  implementation, the list of words is static, but later on I'll add dynamic adaption, so that it's really only the
+  most frequently words that make it to the list (thanks to Vladimir Marko for idea and research, to find out more
+  see his post on http://dcplusplus.sf.net/forum in Protocol Alley (perfincrease 1 is based on the same kind of thinking))
+* Fixed the hourly automatic share refresher (this is done with a low priority thread)
+* Highest priority downloads are now always started (even if the exceed the speed & max downloads limits), this way
+  important files, file lists and small files always get downloaded...(uhm, this might have the side effect that a 
+  list download might disconnect another slot if a file change for the other one occurs during the list transfer...
+  if this becomes a problem, I'll look into it "later" =) (completely untested...hope it doesn't break downloading =)
+
+ -- 0.22 2003-01-05 --
+* The forums are up again! On a new address though, http://dcplusplus.sf.net/forum...
+* Added nice installer. It's big because it comes with the debug info, if you just want a zip as in the old versions,
+  you can find it on http://sf.net/projects/dcplusplus.
+* Fixed a bug with files being added to the queue without target directory. This caused quite a lot of strange
+  behaviour ranging from hang at startup to empty queues and crashing deletes. Hopefully, I fixed it proper,
+  but rereport the bugs if you still have problems... 
+
+*** WARNING ***
+  If you upgrade to 0.22, all old queue items that are missing a directory in the
+  target file-name will be removed. Don't upgrade if your queue is precious to you, and you didn't have anything
+  in the default download directory box in the settings (finish it with version 0.181
+  or edit your queue.xml file and add a directory to all targets without...). (thanks fusbar for finding it)
+*** WARNING ***
+
+* Added so that only files with the same extension are visible in the download to menus (this was actually done in 0.21
+  but I forgot to write it down...=)
+* Fixed a bug where dc++ would stop listening to incoming connections, causing connection timeouts in active mode
+* Right-click menu now works for all nicks (even outside < and >)
+* Fixed width of some status bars when font size differs from mine (I think...why would anyone want to change anyway? =)
+* Fixed height of edit controls when font size differs from mine
+* Added the hub the user was last connected to to the finished downloads.
+* Added hub to the logging (see readme for available parameters)
+* Fixed a bug in speed calculation in the finished downloads frame (for resumed downloads)
+* Last known hub is now shown in pm window when user goes offline
+* Progress bars can now be disabled in the advanced settings
+* Added user-customizable right-click menu commands to the hub windows (to send commands to hub bots)
+* Advanced settings dialog remade a bit
+* Fixed missing default setting for default download directory, making a lot of queue items miss a target directory =)
+* Fixed case sensitivity in search right-click menu
+* Fixed crash when opening file lists
+* Added on-the-fly SFV checking, enable it in the advanced settings. Failed files are removed and requeued.
+* Added sfv parameter to the logging (for full list, see readme.txt) and finished files frame
+* Fixed startup crash when settings file was incorrectly saved (unfortunately, this makes you lose your settings tho)
+* Fixed vc6 project file (zlib wasn't in the dependencies...come on guys, this much you should be able to figure out)
+* If you're translating and find any untranslated string or have problems because something can't be done in your
+  language (strange plurals?), add it to the bug report...(settings excluded)
+
+ -- 0.211 2002-12-26 --
+* Oops, forgot to remove the transfer slowdown code when I was testing the progress bars...=)
+
+ -- 0.21 2002-12-26 --
+* Some DLLs are now delay loaded, speeding up startup and initial memory usage a tiny little bit
+* Fixed so that the default copy-menu appears when rightclicking outside a nickname in the hub chat
+* Added "copy nickname to clipboard" to the hub chat right click menu
+* Fixed a directory searching bug (no directory search results when hubname contained a space...*sigh*) (thanks xeroc)
+* Fixed returning of own search results (oops, some debug code left...)
+* More work on the queue internals (should hopefully fix the bug when an item is reported as running even though it's
+  not)
+* Fixed some issues with 0-byte files in the queue (an unnecessary disconnection occurred)
+* More work on the queue window; File lists now have a separate folder, fixed viewing of right-click menus so that
+  they only show the commands that actually work depending on selection count.
+* Fixed / Improved the sorting of the transfer status. It is now always sorted as running downloads - 
+  connecting downloads - uploads (unless you flip the sort order...doh!)
+* Added beautiful progress bars to the transfers area (hej ullis =)
+* Added exact byte size to the search window
+* Fixed a bug with directory downloading from other dc++ users (that use the .bz filelist)
+* Incomplete file lists are now deleted on failure.
+* Fixed the socks resolve setting bug (somebody will have to try the DNS resolution itself though...can't do)
+* Added "no-tree-mode" to the queue. The queue window then shows the full list of queueitems (if possible,
+  the number of items it can show depends on your operating system)
+* The search window now uses non-colored icons (system or dc++), I didn't like the coloring anyway, will think
+  of something better later on...
+* Some minor changes to the settings dialogs...preparing for making translation possible...
+* Fixed port changing bug (DC++ would still listen to the old port until restarted)
+* Added debug-build-type error reporting to the release builds as well. Now, if supported by the OS, dc++ will emit
+  a useful bug report whenever it crashes. If you have a lot of problems with dc++ crashing, you should download
+  the debug information from www.sourceforge.net/projects/dcplusplus, and then, when reporting the bug, include
+  the generated "extenedinfo.txt" file. Do not report the crash unless you have this file and have downloaded the 
+  debug information file.
+  The extended tracing code is in part written by Zoltan Csizmadia (zoltan_csizmadia@yahoo.com), found it on 
+  some web site. (
+* Added moving of files in the queue (experimental)
+* Fixed bug when a '\' was not added to the temp downloads directory
+* Right-click menu works for joins and parts as well now (changed the format of the join/part message =)
+* Fixed a lockup bug (transfer speeds would not update among other things...)
+
+ -- 0.20 2002-12-06 --
+* Collective thanks to all who have donated $$$ to me, I didn't think people would do it, but they
+  actually have, amounts ranging from $1 to $200...keep 'em coming =) (keep in mind tho that paypal steals 30 cents
+  and some percentage (4 i think) from me when you pay with a credit card). Oh, I think you can also donate in 
+  � (euros) now, which is, of course, my preferred currency =)
+* The forum and lichlord.org are currently down for maintenance, and the owner is waiting for new network equipment. 
+  I would open an alternative forum if I could get the old posts, but because all network connections to the server are      
+  broken it's difficult to get the old posts out of it for the moment (physical access to the server is somewhat 
+  limited). For the most desperate ones, I opened a new conference on sourceforge (where the old forums were) that
+  you can use, or if you feel like it, try one of the forums that people have put up on their own (I won't read
+  them though, don't have time). Anyway, lichlord should be up soon I hope...
+* This release is completely untested (more or less, i'm in the third world (italy...amazing that this country made
+  it to the G7, and is still actually there...)), and is most problably not very stable. If it crashes, I don't
+  want to know about it unless you're using the debug version (that most probably doesn't work with w98), that
+  generates an exceptioninfo.txt file. If you report a crash bug ("unhandled exception"), make sure you include
+  this file in the report, otherwise it's a waste of your time writing and my time deleting. I do not recommend
+  this version for those who are comfortable with 0.181...
+* I've decided to clear the bug and feature request forum of all posts, regardless of whether they have been 
+  fixed/implemented or not, because of the ridiculous amount of duplicates. I apologize to those that made valid, new
+  fresh and interesting requests, but because of all double-posting idiots, I can't keep up with things. I've tagged all
+  the closed requests as "out of date", and I kindly ask the original authors to reopen their posts if they still
+  consider them valid and non-duplicate. You can find them by browsing for closed posts. Also, before posting a feature
+  request, check that the feature is not already implemented (by looking in the settings for instance). It is not
+  exactly a sign of intelligence to suggest features that already exist...and there seems to be an alarming number of
+  stupid people out there...
+* The CVS is not up to date (because of the retarded firewall at my school...)
+* Clicking on a users name with ctrl pressed opens a pm window (thanks opera)
+* Clicking on a users name with shift downloads the users file list (thanks opera)
+* Right-clicking on a name in the chat will bring up the user menu (thanks opera)
+* Fixed a bug in the startup procedure resulting in a crash sometimes
+* Fixed bug that window size was set to 0 when dc++ was turned of while being minimized, resulting in "missing
+  dc++ window" on startup
+* Added socks5 support (more or less...no gssapi support), works like passive mode. M:5 means socks5 in the <++ tag.
+  (No, I won't be adding socks4 as it doesn't support UDP forwarding)
+* Myinfo is now sent out roughly every 1-2 minutes if something has changed hub-count-wise (was 10-20 min before)
+* Added directory downloading (from the search window, unfinished, not sure if it works, experimental,
+  kids, don't do it at home, dangerous...)
+* Fixed some random bugs and very uncommon memory leaks
+* Fixed the ordering in the right-click menus so that "browse" and recent dirs appear first
+* Added directory (folder) searching
+* .ogg and .wma are now returned when someone searches for audio files
+* .txt and .nfo are now returned when someone searches for documents
+* .divx is now returned when someone searches for videos
+* .gif and .jpg (!) are now returned when someone searches for pictures (oops, must have missed them 
+  when reverse engineering the original .exe...=)
+* Note; the extended search results only work if the client being searched is a new dc++...
+* Improved XML handling (much less memory used on queue load)
+* Speeded up queue save a lot, shouldn't take any notable amount of memory either (for those with large 
+  (10000+ files) queues), although if you have a queue that large you should perhaps consider your queuing
+  strategy...
+* Added total bytes and average speed to finished downloads window
+* A random free port between 1025 and 32000 is now used in active mode, unless a port specifically has been set. This
+  port is changed on every restart to avoid problems with networks where traffic on certain ports is limited or
+  banned. If you have a firewall that requires a certain port to be used (incoming traffic), go to the settings 
+  and set it (your best pick is a random one in the above noted range) (setting not kept from previous version).
+  DC++ requires that both TCP and UDP data can reach the client on this port. To find out the ip/port currently 
+  in use, type /connection in a hub window. 
+* Failed downloads are now not put at the beginning to avoid having partial unfinished downloads
+* The queue window now has a tree instead of a list to the left
+* Added a common controls version check to rid the support forum of (at least some of the) stupid questions
+* Spaces are now trimmed from most ip addresses
+* Added O: in the <++ tag, it means that the user is using the speedautoopen slot feature, and the number is the kb/s 
+  setting. IMHO this is a much better way of measuring the whole slots thing, and in future releases S: may become 
+  optional if the min upload speed feature is turned on (a good topic for the dc++ forums...). Uhm, in other words,
+  if the current total upload speed of a user is lower than the number after O:, dc++ will automatically open another
+  slot. 
+* Some internal changes in the queue handling (might cause trouble, untested)
+* The notepad content is now saved in a file called "Notepad.txt" in the dc++ main directory instead of the xml file
+* Fixed the file search and made it search a bit more accoring to the sort order
+* Fixed so that the same string won't be added to the recent searches list
+* Queue is now indexed by a map instead of a hash resulting in slightly more cpu use (if you have a huge queue)
+  but queue is ordered accoring to filename to avoid partially downloaded directories (when saved, queue is now sorted
+  by target location and will be downloaded in that order when reloaded from disk...)
+* Fixed so that focus is correctly set to the message input edit box in the hub chat window when changing back to dc++
+* Recreates filelisting if it's missing on request from another user (if it's been deleted that is...). This effectively
+  stops the "delete filelist"-cheat.
+* Added automatic disconnection of uploads if a user leaves the hub. This is a somewhat controversial feature
+  that disconnects any uploads to a user if the user leaves the hub (or is kicked...). If an upload is cancelled
+  in this way, a free slot is granted to the user being kicked, in case that the user was unwillingly disconnected
+  from the hub and returns within 10 minutes. This effectively prevents the "jump into hub, start a bunch of downloads,
+  and exit the hub"-cheat, without the cheater being able to do anything about it. It is off by default, turn on in
+  the settings.
+* Alt-S sends a message in the chats
+* The PM window now correctly shows when a user goes on/offline and doesn't send the message if the user is offline
+  (so that you don't lose it from the edit box)
+
+ -- 0.181 2002-08-12 --
+* Fixed a nick changing bug
+* Fixed some vc6 project build settings
+* Fixed some minor vc6 compatibility issues
+* Fixed some issues with invalid filenames (names containing invalid characters, should also fix
+  the file downloaded but missing from the download directory error) (thanks Kyrre Aalerud)
+* Added so that the user name appears at top level of the directory tree in the browse file list window
+  so that directory totals for the top directories can be seen, untested, might cause problems but shouldn't...
+* Main window state (maximized and so on) and size are saved on exit (and restored I think =)
+* Kick messages are now correctly filtered (even when status line in chat setting is on)
+* Fixed an issue with very long path names (win9x can't handle path names longer than 260 chars), 
+  these will now generate an error
+* Fixed the speed display of very fast transfers (>4 mb/s)
+* Fixed a bug where a bad file list could cause dc++ to crash
+* Fixed the loading of list view column orders
+* Added so that doubleclicking on usernames in the main chat (<nick>) will select the user in the user list
+* Added so that doubleclicking words starting with http://, www. and ftp:// will open the link
+* Fixed a bug with bad hublist server names (empty ones, not starting with http://...)
+* Added WM_ENDSESSION handling so that the queue and settings are saved when shutting down the computer
+* Added auto-away on minimize option
+* Fixed restoring window to maximized state after minimizing to tray
+* Added a "small send buffer" option that should help users that are having download problems when others leech
+  from them...basically, this makes the outgoing packet size smaller (1k instead of 16k), leaving more bandwidth
+  for acks to flow through...it also makes sending less efficient, specially for high bandwidth users, so don't
+  turn it on unless you have to...hard disk reading performance will be worse as well with this option enabled...
+* Added paypal-donate menu option to help
+
+ -- 0.18 2002-07-01 --
+* Added a finished downloads window
+* Added temporary download directory option
+* Added support for dchub://hubip:port and dchub://hubip:port/nick (will download that users filelist) (partially
+  by Luca Rota, thanks) (completely untested)
+* Sort by slots in search is now secondarily sorted by open slots
+* Fixed sort by priority in queue window
+* Fixed "don't remove dupes" option
+* Improved performance a bit when there were a lot of "no free download slots"
+* Fixed missing join messages
+* Shift-enter in hub send message instead of adding a newline to the text (use ctrl-enter for newlines)
+  (because a lot of people can't type properly and keep holding shift when pressing enter...I hear old (60+) 
+  people often do this...=)
+* More changes to the autosearch, it should now be more random and therefore yield better results...
+* Old download queues (pre 0.174) are no longer loaded
+* Added better error handling on failed downloads
+* Added a column to the queue window that shows which sources have failed and why
+* Major changes in the connection queue handling for better stability in the future
+* Added doxygen configuration file. To generate a very nice overview of the dc++ sources
+  download doxygen (Www.doxygen.org) and graphviz (search google), then check doxyfile
+  for the proper paths, and then type start doxygen in the project directory
+* Removed sources are no longed automatically readded by the autosearch feature
+* Added option to readd a removed/bad source from the queue window
+* Added option to remove a user from all queued downloads from the transfer window
+
+ -- 0.177 2002-06-07 --
+* Improved performance on "File not available" (connection / slot is now kept)
+* Remove source on "File Not Available" is no longer an option. Don't ask why.
+* Changed the queue back to the old behaviour, that files are downloaded in the order they're added (to avoid
+  having all the smallest files of multiple unfinished directories)
+* Fixed some queue random crash bugs
+* Fixed the wrong transfer icon bug (I think...)
+* Improved overall queue performance (again...=)
+* Fixed a small bug that caused some unnecessary traffic to the hub (nmdc works this way, every time a user logs
+  on, his info is requested from the hub, but this request is unnecessary as the info is sent out automatically 
+  to all users, in nmhub v1.0.25 at least...complain if I'm wrong...)
+* Fixed the long shutdown time when a _very_ slow transfer was in progress
+* Added some other minor bandwidth saving features (only the users that need to be updated are updated when
+  reviewing the user list after having closed it for a while)
+* More potential connection timeout fixed (go, farcry, go!)
+* Fixed some minor client-client protocol issues
+* Fixed some more faulty "user offline" errors
+* Made autosearch more effective (much less hub bandwidth usage...)
+* Added a tiny splash sceen (no gfx, just text...)
+* Added a search hit counter to the search spy
+* Fixed a small redrawing bug in the tabs at the bottom
+* Fixed the sort by slots in search results
+* Fixed the slow upload speeds I think...at least it should be a bit better...
+* Switched to vc.net...we'll see if it's any good...
+
+ -- 0.176 2002-05-26 --
+* Various optimizations of search handling and list sorting for better perfomance
+* Fixed a small bug in the search frame
+* Made "Full row select" default
+* Fixed some serious random crash bugs
+* Fixed a w95/98 bug that sometimes caused text not to be displayed
+* Fixed some socket issues with worthless tcp implementations (read: win95/98/me) that don't provide a decent buffer
+* Worked some more on the socket handling in general
+* Fixed a crash when trying to use an invalid %[...] log message
+* Fixed some issues with online users being reported as offline
+* Added option to disable the user listing. This saves _a lot_ of CPU, memory and bandwidth for both user and hub
+  (Note; this also disables hub share and user totals, as well as connection type in the search)
+* Fixed some issues with reloading user lists
+* Added so that autogranting upload slots is done with a minimum 30 second delay (to avoid slot races where everyone
+  gets a slot before the average upload has adjusted itself...)
+* Limited description length to 35 characters (excluding the <++ tag...)
+* Changed so that second "/away <msg>" updates the away message instead of disabling away mode. "/away"
+  without message still enables default msg first time and disables away mode second...
+* Fixed so that only one connection / hub is opened (even when being redirected...)
+* Fixed a connection timeout bug (thanks farcry)
+* Fixed the update speed of a few lists (thanks farcry)
+
+ -- 0.175 2002-05-18 --
+* Fixed a 100% cpu bug (thanks zc...stoopid nmdc hub, sending strange things...)
+* Fixed dupe search filter
+* Fixed bad total transfers info (you have to edit/remove dcplusplus.xml to make it display correct values
+  if 0.174 got it wrong)
+
+ -- 0.174 2002-05-17 --
+* Fixed a tray icon bug (thanks andreas kronquist)
+* Fixed a minor search results bug (thanks andreas kronquist)
+* Fixed a redirection bug
+* Changed so that the average speed is calculated as a running average over the last 30 seconds (instead of
+  the whole transfer time...the value in the log file is still a whole file average)
+* Added some advanced logging options (log format now customizable)
+* Found a bug in the msvc7 optimizer...after a small workaround, my vc7-compiled build seems quite stable
+* Search spammers are now ignored for 2 full minutes before they're given responses again
+* Fixed so that multiple search results from the same user are not shown
+* Fixed a few case (in)sensistivity issues
+* Huge performance increase on large queues with many sources / download
+* Changed the order of downloads, smaller files with equal priority are now downloaded first
+* Added two more priorities
+* Tray icon is now redisplayed if explorer crashes
+* Queue is now saved to a separate file, and updated 6 times as often (old queue will still be loaded in 
+  this version)
+* Fixed some minor hublist bugs
+* Fixed unknown error 0x0 (I think...)
+* Fixed min speed autogrant slot (was counting bytes instead of kilobytes...=)
+* Fixed hidden directory sharing (not sharing...)
+* Added a few icons to the search list
+* Added some all time stats to the about window
+* Fixed some searching issues
+* Added quick links to files of the same size when selecting multiple files with same size in 
+  the search (thanks patbateman)
+* Added right-click menu to the directory bar in the download queue
+* Fixed a crash when closing dc++
+* Added support for dns names in the ip field in the active mode settings (untested)
+* Users with same nick but on different hubs are no longer added to the queue
+* Added an icon for the download queue (thanks zc), more icons to come
+
+ -- 0.173 2002-04-29 --
+* Fixed some minor debug mode bugs
+* Fixed some vc7 compatibility issues, but some initial experiments show that there are stability problems
+  when compiling with optimization on..._STL::list seems to generate a lot of crashes...
+* Fixed win95 missing explorer icons bug (?)
+* Fixed the <16kb and file list extra slots bug
+* Added some stuff to the search spy (useless features are the best...=)
+* Fixed some hub counter issues, and updated the counter so that it only counts hubs that you've logged in to
+  at least once (this should lead to a more stable hub count, especially when connecting the first time...)
+* Fixed automatic redirect following
+* Improved user list performance and fixed a few user list bugs
+* Fixed various user and share counting bugs
+* Added file searching to directory listings
+* Improved the autosearch algorithm a little bit
+* Fixed some issues with autoconnecting to favorite hubs
+* Changed the way rollback works, it is now more tightly integrated with write buffer size. Write buffer
+  size will now be used as a cutoff, so that the last <writebuffersize> bytes will be removed and then
+  <rollbacksize> bytes will be compared to see if it's the same file. Recommended values for write buffer
+  is 64kb or your hard disk cluster size (Low-speed connectees might wish to use a lower buffer, as it
+  this many bytes are redownloaded if the file has to be resumed). If you set write buffering to 0 the old 
+  (pre-writebuffering) routines will be used which are still considered safer (when ++ crashes...). 
+  Recommended rollback is 1024 bytes, or 4096 if you want to be extra safe.
+* Fixed search for alternates bug
+* Fixed so that dupe searches are not added to the drop-down box
+* Fixed some right-click bugs in the tab at the bottom
+* Fixed tab click minimization bug when window was maximized
+* Added minimize all windows (thanks Anton M)
+* Improved viewing performance of most list views (less unneccesary sorting)
+* Fixed bzip2 list file opening
+* Disabled connecting to oneself. Use "open file list" to see what your share looks like!
+* Added so that op:s always can download the file list (regardless of open slots)
+
+ -- 0.172 2002-04-28 --
+* Changed so that only bz-lists can be downloaded using the extra slot (since they're smaller...)
+* Fixed size column in download queue
+* Added last known hub viewing for users that are offline (not saved between dc++ sessions, this would take too many resources...)
+* Added /-commands to pm windows as well (most of them anyway...)
+* Added /grant to pm window
+* Added /close to close a window
+* Added a very short /help message
+* Added latest version to about dialog box
+* Fixed windows maximization state change
+* Added an option to use system icons when browsing files
+* Added support for bzip2-compressed hub list downloading (also, the full hub list will only be available in bzip2 format to
+  ease the load on the dc++ list server)
+* Added some info to the tooltip when dc++ is minimized to the tray (stats are for transfers only, hub traffic is not counted in...)
+* Changed the slots info at the bottom to show free slots instead of taken (to avoid confusion when viewing the search results...)
+* Added deleting from search results window (use the delete button on the keyboard...)
+* Added option not to popup a new window for pm:s (message is shown in main chat instead unless there's already a pm window open)
+* Added opening of previously downloaded user file lists menu option
+* Fixed some minor UI issues
+* Set default sorting to nick in the users list
+* Fixed a bug that caused some temporary files not to be deleted
+* Increased number of search results returned when searching in active mode to 10 (instead of 5...10 is much better as you can search
+  for 10 disks at a time in a rar/ace-set), passive mode is still 5
+* Added option to automatically open an extra slot if current upload speed is less than a certain kb/sec
+* When sorting users by nick, op's are now put on top/bottom (ascending/descending)
+* Added automatic reindexing of file list every now and then...
+
+ -- 0.171 2002-04-21 --
+* Fixed version number in changelog and exe-file =)
+* Fixed downloading bug
+* Fixed queue frame size column
+* Fixed favorite users right-click menu
+* Fixed sort by file type in file list
+* Fixed missing font settings
+
+ -- 0.17 2002-04-20 --
+* Fixed the disk full crash
+* Fixed some minor memory handling issues
+* Fixed sorting in the search frame
+* Fixed window looks in winxp ugly mode (added manifest file kindly supplied by mike)
+* Added right-click menu to the tab control
+* Replaced the password dialog by a /-command in the main chat (to avoid problems with lost password dialog boxes)
+* Changed so that a second "/away" disables away mode (/back is still working)
+* File lists are now saved in a separate directory to avoid clutter in the main dc++ one...
+* Added option to send status messages to main chat
+* Added option to show joins/parts in main chat, and /showjoins command to toggle for the current hub
+* Upgraded to new WTL, which should fix a lot of minor UI bugs. This should also make it possible to compile the application in VC7.
+* Fixed a bug where multiple notepad frames were opened
+* Source code reorganization, all UI specific code moved to a separate directory (to ease code maintenance and future unix port)
+* Code cleanup, to be more compilant to the ISO C++ / C99 standard
+* First test compile with gcc (note; does not mean that I'm porting to linux...this is just for fun...lotsa' errors tho...)
+* Fixed a potential file corruption issue
+* Fixed a bug with write buffer size = 0
+* Fixed some random crashes
+* Fixed a bug where logs were not written if log directory was changed and DC++ not restarted
+* Some more guessing at the 100% cpu bug...the fact that I never get it doesn't make it easier...if someone could profile it...
+* Fixed some issues with changing nicks while being connected to hubs / users
+* Fixed some minor bugs in the incoming connection handling
+* Fixed some transfer window reporting issues (a few more details on connection progress now...)
+* Improved the search flood protection a bit
+* Removed the public hublist multi-select feature (high abuse factor...)
+* Added a file type column to the directory listing
+* Fixed some errors in the up/download log
+* Updated the queue frame
+* Yet more internationalization, everything except the settings dialogs should be translatable now
+* Improved the formatting of the output XML file
+* Improved XML loading speed a lot
+* Added a chevron menu to the tab bar at the bottom that shows the missing window tabs
+* Added current search string to the title of the search window
+* Fixed missing/bad connection type bug
+* Fixed some user handling problems (when having the same nick on multiple hubs...)
+* Added a second "users" string so that translating into finnish will work ok
+* Fixed a small bug that might have caused some firewalls to complain (UDP packets were sometimes being sent to port 0)
+* Added abilitly to use bzip2 compressed file lists resulting in _a lot_ faster file list downloads (bzip2 compresses 2-4 times better than
+  the simple huffman encoding done in nmdc. Note; this requires DC++ >0.164 in both ends and was mainly added to test the protocol extension
+  scheme, but should be fairly useful for all the low bandwidth people out there...
+* Added an optional annoying noise when a private chat window is opened and / or when a pm is received
+* Changed the way notepad is saved, old notepad contents will disappear when you update from older versions
+
+ -- 0.163 2002-04-04 --
+* More internationalization
+* Added public hublist filter
+* Minor UI fixes
+* Changed error messages in public hubs frame
+* Fixed some minimize to tray issues (window popping up...)
+* Reduced flicker in the bottom tabs when resizing window
+* Added simultaneous downloads limit option, as well as max download speed to start new downloads
+* Added a favorite users frame
+* Added proxy support for downloading the hub list
+* Fixed a crash when loading invalid hub lists
+* Added transfer window sorting
+* Fixed kicking the same user multiple times from search
+* Added last kick/redirect reason to the search frame as well
+* Reordered some of the right-click menus so that "dangerous" options are at the end
+* Worked some on the cpu bug, should a bit better now...
+* Fixed a bug where some data was unnecessarily requested from the hub, causing a little extra load (thanks dan kline)
+* Added some new menu options to the help menu
+* Added search spy window with counter
+* Added NMDC queue importing (thanks luca rota)
+* Added some simple logging, more will probably come...
+* Removed option to keep finished downloads in queue (replaced by log...and yes, the log will be improved later on...)
+
+ -- 0.162 2002-03-18 --
+* Fixed another hub counting bug (this is becoming annoying...gee, I should be sleeping...=)
+* Fixed a bug where the kick message was not sent correctly
+
+ -- 0.161 2002-03-18 --
+* Fixed a hub counting bug (this should also reduce the number of redunant description updates, thus lessening the load on the hub)
+* Hopefully fixed the 100% cpu bug (found a very likely candidate at least...=)
+
+ -- 0.16 2002-03-15 --
+* Fixed a resource leak that might have caused the sudden deaths (thanks carxor)
+* Added saving of last kick & redirect reasons (and server...)
+* Added hub name to the password dialog
+* Changed default port to 1412, should improve compatibility with a lot of firewalls 
+  (that only allow incoming data on port >1024)
+* Updated user handling, issues related to diffent users with same nick should work out better now 
+  (also increased performance in user handling) (Major change...)
+* Fixed some minor ui bugs
+* Added options to ignore or popup messages from bots and other offline users
+* Fixed some more minor memory and resource leaks
+* Improved incoming search performance, also fixed some minor search result bugs
+* Improved general window updating performance (when getting info about users and closing windows)
+* Should have fixed the scroll problem (although I've never experienced it myself...)
+* Increased time between kickmsg and actual kick...wonder if it's enough or needs to be increased more...
+* Fixed a bug where files that already existed on the target location were being added to the queue
+* Did some more work on the queue managment to reduce crash frequency
+* Improved file transfer perfomance a bit
+* Fixed so that priorities are saved / loaded
+* Improved rollback buffering, the app now discards the last <rollbacksize> bytes, and 
+  then checks the <rollbacksize> bytes before that for inconsistensies.
+* Fixed so that the correct edit box gets the focus when switching windows
+* Fixed a bug with renaming share directory names when refreshing
+* Some code cleanup
+* Added option to keep duplicate files in the dclist (but their sizes are not added to the file share total in any case)
+* More random crashes fixed
+* Added timestamps to private frames as well
+* Added possibility to change column order and widths
+* Added write buffering to reduce fragmentation when downloading multiple files
+* New search window with new search options (file types, free slots)
+* A first go at internationalization...many of the texts in DC++ can now be changed by loading a different language XML
+* Added some information to the description field, <++ V:x,M:x,H:x,S:x> where V = client version, M = mode (a=active, p=passive)
+  H=number of hubs connected to where you're not a registered user, S=number of slots you have open. This is updated every 10-15 minutes.
+* Small performance increase in loading dclists (thanks geoff)
+* Added total queue size and number of queue items to the download queue window
+* Added path column to download queue
+* Added a limit so that only 15 users and 1 op kan be kicked at a time from the hub user list
+* Fixed the download directory name bug
+
+ -- 0.154 2002-02-25 --
+* Added passive user detection, those that are behind a set of bricks are passive.
+  (detected when the user searches or tries to connect to you)
+* Added a primitive search history
+* Fixed a slot freeing bug
+* Added option to grant extra slots to specific users
+* Changed order of kick message sending, to increase the chances of the user actually getting the message
+* Improved XML loading speed a bit (there's more to be done if necessary...)
+* Fixed some XML parser bugs
+* The XML is now backed up before writing a new one, so that you don't lose your queue when ++ crashes
+* Added a quick-fix so that the XML file can be displayed in ie...
+* Fixed crash when trying to send a message to an unconnected hub
+* Fixed some random crashes
+* Fixed default download folder error (when missing '\')
+* Fixed multiline posting
+* Reworked ip detection once more, should now be able to detect changing ip's as well...
+* Fixed various invalid display bugs in the download queue
+* Fixed missing users and bots in the user list
+* Upgraded STLport (4.5.3 now...)
+* Hopefully fixed the growing threads issue
+* Fixed the connection type icon being reported to nmdc users
+* Partially fixed the connection timeout bug (++ now correctly shows reconnection attempts...)
+* Added chat timestamps (/ts)
+* Added exit confirmation dialog (optional)
+* Fixed search bug when part of the search string was in the directory and part of it was in the filename
+* Added dupe file removal, files with same name and size are automatically removed from your share
+* Fixed another search results bug
+
+ -- 0.153 2002-02-11 --
+* Fixed some potential deadlocks
+* Fixed some potential crashes
+* Code cleanup, no more level 4 warnings
+* New STL (STLport 4.5.1), to improve standards compatibility and stability (major change...)
+* Added new favorites properties dialog
+* Added possibility to add unlisted hubs to favorites
+* Fixed a lot of minor instability issues
+* Added a slot counter to the status bar, shows the number of taken slots
+* Fixed the memory leak
+* Fixed a search bug
+* Fixed a rollback bug
+
+ -- 0.152 2002-02-07 --
+* Fixed a queue saving bug (resulting in overwritten resumes...yes, this is _the_ resume bug...)
+* Improved network efficiency and application responsivness
+* Started improving the threading, which will result in less crashes.
+* Fixed disconnection from hubs at startup
+* Hopefully fixed "unknown error 0x2747", please report if you get "Ran out of buffer space"
+* Fixed circular pm:s (away messages are now only sent once per user when the window is opened, and only when he/she initiates the pm session...)
+* Hopefully fixed pm away message crashes
+* Fixed annoying scroll in hub window (when scolling up to view previous messages)
+* Added option to minimize to tray
+* Fixed a connection timeout bug
+* Fixed "Get User List" in transfer window crash
+* Fixed _some_ of the random crashes
+* DCLists are now removed from the download queue even if "keep finished downloads" is set...
+* Fixed bug where dc++ continued to try to establish a connection to a user even though there were no downloads in the queue
+* Fixed a bug where connections were not correctly removed from the transfer window
+* Added options to disable automatic opening of queue and public hub list windows
+* Fixed full row select in queue window
+* Fixed multiple copies of the same user as download source
+* Removed many of the annoying error boxes. The error message now appears in the status bar.
+
+ -- 0.151 2002-02-03 --
+* Fixed stupid resume file bug (abnormal progam termination...)
+
+ -- 0.15 2002-02-03 --
+* Added a new queue window, to reduce clutter in the transfer window at the bottom
+* Totally reworked the queue managment code, queue related bugs should now be a lot easier to find...=)
+* Added a check to ensure the minimum 1 slot
+* Added option to keep finished downloads in the queue
+* Fixed a small error with the rollback
+* Fixed incorrect search results for nm search by file type
+* Fixed lost slot problem, slots are now kept until the connection is broken (note; you do not get a slot for downloading the 
+  dc list, only when you start downloading real files...)
+* Fixed another small incompatibility with search results
+* Fixed description cheat
+* Added download priorities
+* Fixed redirect compatibility
+* Fixed dns resolution bug (for url:s beginning with a number)
+* Added option to filter away kick messages from the chat window
+* Fixed a memory leak when reconnecting to hubs
+* User list is now cleared upon hub disconnection
+* Added /clear in the chat
+* Added /away <msg> and /back (no, you don't have to specify an away message, there's a default...)
+* Added private message to search window menu
+* I've not had much time to test the new features, but hey, that's what I have you users for...=)
+
+ -- 0.14 2002-01-26 --
+* Fixed upload slots bug
+* Fixed download resume bug
+* Fixed security bug (allowing people to download arbitrary files on the hd...thanx Simon E.)
+* Added new settings dialog
+* Added client version option
+* Added rollback size option
+* Added auto-follow redirects option
+* Removed some level 4 warnings when compiling
+* Almost made compatible with VC++ 7.0 (You still have to change one line in the WTL to compile due to changes in ATL...)
+* Fixed some performance issues with large download queues (the app was doing a lot of unnecessary saving...). This should also
+  solve the problems people have had with unsaved settings...
+* Corrected transfer list display (Offline/Online users)
+* Added search flood detection (If more than 5 searches are received from the same user within 7 seconds, DC++ will send
+  out a warning)
+* Added /dc++, /search <string>, /slots #, /refresh and /join <hub> commands in the main chat
+* Added option to disable clearing of the search box
+* Added option to select full rows in all list boxes
+* Added option to automatically remove download sources if "File Not Available" is received
+* Fixed close hub window bug
+* Hopefully fixed another crash bug
+* Added text and background color selection
+* Added font selection (Only for chat windows so far...)
+* Added option to remove hidden files from share
+* Increased the size of the toolbar icons a bit
+* Fixed another bug where users could download files that were not shared
+
+ -- 0.132 2002-01-21 --
+* Fixed a bug when downloading tiny file lists (people with 0b share...)
+* Removed the empty line in the chat windows
+* Set default focus in the chat window to the box where messages are entered
+* Fixed aborted uploads bug
+* Fixed the add similar directory bug
+* Added sound when new private message window opens
+* Added hub address to hub frame title
+* Added bold text in the window tabs whenever chat text changes...
+* Added time stamp to private messages
+* Fixed a bug where DC++ was returning bad search results ("At least" was not working correctly)
+* Because of a design flaw in the original dc client, I had to remove the small files and dc list extra slots
+  feature for original dc users, but hey, it's their loss really (there's a problem with file listings closing
+  just because "no free slots" is reported as soon as they try to download)
+* Fixed a private message crash
+* Added automatic saves every time the download list changes (now you only have to hope it doesn't crash while saving...=)
+* Added notepad (stupid feature really, what's wrong with windows' notepad?) (only visible in menu so far...)
+* Fixed missing close button on pm window (I think...can't find a window without at least...)
+
+ -- 0.131 2002-01-20 --
+* Fixed the lock at start bug
+* Fixed the write to full disk bug (hopefully...)
+* Fixed a small transfer queue bug
+* Added an icon for the "follow redirect" thing...will probably change soon...
+* Added a maximum dc list slots (3 more than currently open slots...)
+
+ -- 0.13 2002-01-19 --
+* Added directory listing sort
+* Fixed missing '\\' in the default download directory bug
+* Fixed a small bug where search responses sometimes reported -1 free slots
+* Fixed "Download to..." bug in search frame
+* Fixed some application lockups
+* Fixed some random crashes
+* Fixed a bug in the user connection procuedure
+* Fixed data corruption bug (in rare cases, dc++ was filling files with "$send")
+* Changed the default directory in "Download to..." to the default download directory (instead of "My Computer")
+* Added op commands in search window
+* Added "Download to" for each file of the same size already in the download queue
+* Reorganized transfers menu
+* Running downloads are now moved to top of transfer list, and running uploads are put at bottom
+* Files smaller than 16k and file lists are now downloaded before any larger ones from the same user
+* More work on the multihub feature
+* More work on the resume rollback, it should now work a bit better
+* Made sure that the settings file is never shared (DCPlusPlus.xml)
+* Reworked local ip discovery, hopefully it will work better on machines with multiple ip's...
+* Made sure transfers stop when the disk is full (also added more verbose file error messages)
+* Users can now download files <16kb and file lists regardless of free slots (!)
+* Readded tooltips for the toolbar buttons
+* Added a "Follow last redirect" to the menu (will add to toolbar later on)
+
+ -- 0.122 2002-01-16 --
+* Fixed search bug
+* Hopefully fixed download bug, please report...
+
+ -- 0.121 2002-01-15 --
+* Fixed resume bug
+* Fixed rollback bug
+* Fixed upload slots bug
+* Fixed some minor download queue bugs
+* Tried a different approach to the download problems in 0.12. When implementing different user nicks on different hubs,
+  I had to change some of the download code to something that I'm not sure will work with the original client,
+  that's why you've had so many problems with 0.12. Please remember that this is still alpha software, and that
+  I release these versions this frequently so that 1) you have the latest of the latest and 2) so that I have someone
+  who does the testing for me to speed up development...anyway, keep on reporting them bugs and one day, they will be gone!!
+
+ -- 0.12 2002-01-14 --
+* Improved search efficiency a tiny bit
+* Changed default option in the search window to 'At Least'. All files are at least 0 bytes long anyway...
+* Added file extension field in the search frame
+* Fixed a bug where the application could stop working if a right-button menu was displayed
+* Added PM and browse file list to uploads right button menu as well
+* Huge performance increase in the user list (most noticeable when connecting to the hub and getting the initial list...)
+* More general ui performance fixes, it should now be a lot more responsive even when the cpu load is significant
+* Fixed empty search fields bug (I hope...)
+* Fixed some of the random crashes (major code rewrite, so I might have introduced some new ones...we'll see...=)
+* Changed background color to white (or whatever you have as window color), don't worry though, soon you'll be able to choose it yourselves...
+* Fixed case of connection type strings
+* The bots are now visible in the user list (Seems like they don't answer to getinfo requests...)
+* Added user connection type to search frame
+* New icons and colors for the user interface (Thanx mongomaster...)
+* Fixed menu bug in NT4, hopefully it works in W95 as well now...btw, I'm considering removing the menu...
+* Fixed multiple connections per user bug
+* Fixed remove last source bug
+* Added list of favorite hubs
+* Added right-button menu to Public Hubs
+* Added auto-connect feature for favorites
+* Added automatic password for favorites
+* Added option to use different user names for different hubs (unknown stability, might work, might not...)
+* Added a new developer, peli...
+* Changed some of the keyboard shortcuts
+* Limited the buffer for the chat windows to 20000 characters, after that it will start removing lines from the top (untested...)
+* Added a graphics fellow/developer, mongomaster
+
+ -- 0.11 2002-01-08 --
+* Fixed annoying reconnect bug
+* Fixed annoying Private Messaging bug
+* Fixed search filtering bug
+* Fixed search sorting bug
+* Made more compatible with Win95 (Right-button menus should now work there as well...haven't tested though)
+* Fixed some other minor bugs
+* Resume rollback, DC++ now checks the last 1024 bytes for exact match when resuming and aborts the download on failure
+* Added a separator between each user in the transfer right button menu (I'll do something better later on...)
+* Added some keyboard shortcuts
+* Public hubs automatically appears on startup
+* Thanks for all the bug reports and feature request, keep on adding them!
+* DC++ will now detect other DC++ users as soon as a connection attempt is made...look out for blue icons...=)
+
+ -- 0.10 2002-01-06 --
+* Search results sorting
+* Multiple selections in search results
+* Removed some diagnostic messages
+* Default action in search window is now file download, not list download
+* Only one downloading connection per user now
+* Removed some download queue bugs
+* Added basic icons that distinguish op's from normal users
+* Right-button menu in the transfer list
+* Responds to incoming searches
+* Automatic update notification
+
+ -- 0.09 2002-01-02 --
+* Right-button menu in search window
+* Download queue saving
+* Fixed a nasty download queue bug
+* Added some transfer statistics
+* Multiple download sources (Very alpha...)
+* Fixed some problems with case insensitivity in filenames
+
+ -- 0.08 2001-12-27 --
+* Private messages
+* Right-button menues
+* OP / Registred user login (with password)
+* OP Commands (Kick, redirect)
+* Optimized file listing (a lot faster now...should barely notice it unless it's a _very_ large list)
+* Optimized shared files compression
+* More work towards application stability...although focus is still on functionality...
+* More work on the download queue
+* Connection saving, i e connections to users are not released until two inactive minutes have passed, giving time to browse the user's 
+  files without worrying about slots
+* Fixed file size sorting
+* Fixed searching a bit, one should now be able to have two concurrent searches going...
+* Fixed upload removing (?)
+
+ -- 0.07 2001-12-18 --
+* Passive searching (I hope...)
+* Reworked the download queue, it should now be a bit more stable...
+* Some ui work
+* bugfixes as usual...although, now it's starting to become fairly stable...
+
+ -- 0.06 2001-12-13 --
+* A lot of UI work, the app should be at least a tiny bit more comfortable to work with
+* Automatic reconnections (to hubs and users)
+* Yet another slew of bugs killed (hm, where are all those bugs coming from? =)
+* Downloading of directories and multiple files at a time
+* Default download directory
+* Some work on the search window, although searching is far from finished...
+* Quicker startup (huffman encoding of the file list is now done in a separate thread)
+* Automatic ip detection (if nothing's entered in the settings dialog...)
+* Changed to case insensitive sorting...
+* Download deleting
+
+ -- 0.05 2001-12-08 --
+* Searching (A very basic first version, only in active mode)
+* More information about things (Hub statistics)
+* A lot of bugs fixed, still a lot of them left tho...
+* More bugfixes...
+* Improved Huffman en/decoding speed quite a bit
+
+ -- 0.04 2001-12-05 --
+* Downloads
+* Uploads (file sharing)
+* A bit better thread handling
+* Transfer list
+* Upload/Download statistics
+* Automatic reconnection attempts when no slots are available
+* Bug fixes
+* New about box =)
+
+ -- 0.03 2001-11-27 --
+* Hub list sorting.
+* Users get deleted from user list when logging off
+* User list sorting
+* File sizes reported in B, kB, MB, GB and TB respectively
+* Downloads!!! (Only user file listings so far)
+* Improved UI a tiny bit
+* New settings, including passive mode and active port selection.
+* Some thread work, but more needed to be done, current model really sucks...
+
+ -- 0.02 2001-11-22 --
+* Settings dialog, to set user name and connection info.
+* Search command recognised.
+* New buttons.
+
+ -- 0.01 2001-11-21 --
+* Initial release.
+* List hubs, connect to them and chat 

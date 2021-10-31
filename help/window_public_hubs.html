@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+	<h1>
+		<img src="PublicHubs.ico" width="16" height="16" alt="Public hubs"/>
+		Public hubs
+	</h1>
+<h2>Columns</h2>
+<dl style="margin-left: 40px;">
+  <!--#include virtual="window_hublists.inc" -->
+  <dt>Users</dt>
+  <dd>Amount of users in the hub when the hub was checked by the hublist bot.</dd>
+  <dt>Address</dt>
+  <dd>The hub's address.</dd>
+  <dt>Country</dt>
+  <dd>Which country the hub resides in.</dd>
+  <dt>Shared</dt>
+  <dd>Amount of bytes shared in the hub when the hub was checked by the hublist bot.</dd>
+  <dt>Min share</dt>
+  <dd>A restriction in the hub, where &quot;Min share&quot; is the minimum amount of bytes you have to share to be let in.</dd>
+  <dt>Min slots</dt>
+  <dd>A restriction in the hub, where &quot;Min slots&quot; is the minimum amount of slots you have to have open to be let in.</dd>
+  <dt>Max hubs</dt>
+  <dd>A restriction in the hub, where &quot;Max hubs&quot; is the maximum amount of hubs you are allowed to be in to be let in.</dd>
+  <dt>Max users</dt>
+  <dd>A restriction in the hub, where &quot;Max users&quot; is the maximum amount of users the hub will let in.</dd>
+  <dt>Reliability</dt>
+  <dd>How often the hub has been online, in percentage.</dd>
+  <dt>Rating</dt>
+  <dd>If the hublist allowed users to vote on a hub, this will appear as the hub's rating. The more stars, the better.</dd>
+</dl>
+
+<h2>Context menu commands</h2>
+<dl style="margin-left: 40px;">
+  <dt>Connect</dt>
+  <dd>Will open a new hub window and try to connect to the selected hub.</dd>	  
+  <dt>Add to favorites</dt>
+  <dd>Will add the selected hub to the <a href="window_favorite_hubs.html">Favorite hubs</a>.</dd>	  
+</dl>
+<!--#include virtual="commands_copy.inc" -->
+
+<h2>Filter</h2>
+<p cshelp="IDH_PUBLIC_HUBS_FILTER">
+<div>
+	Here, you can filter the hublist so you will only see specific hubs in the hublist.
+</div>
+<!--#include virtual="window_list_filter.inc" -->
+<div>
+	Eg, selecting 'address' in the drop down, and writing "foo" in the filter, will only display hubs that have "foo" in their address. When a filter is in effect, the number of hubs filtered out is shown in the status bar.
+</div>
+<div>The filter input box can be focused with Alt+I.</div>
+</p>
+<h2 id="confpublists">Configured Public Hub Lists</h2>
+<p cshelp="IDH_PUBLIC_HUBS_LISTS">
+In the dropdown, you may select different hublists you want to see. If the hublist was downloaded before you will have the cached version displayed. Click Refresh to get the fresh version of the hublist. 
+<br/>
+If you click on 'Configure', you will be able to change, add and remove hublists. The order in <a href="dialog_public_hub_lists.html">Configured Public Hub Lists</a> determines the order hublists are displayed in the dropdown mentioned above.
+</p>
+<p><a href="https://www.dslreports.com/faq/8189" target="_blank" class="external">List of alternative hublists.</a></p>
+<h2>Refresh</h2>
+<p cshelp="IDH_PUBLIC_HUBS_REFRESH">
+Download a fresh version of the hublist. If the download fails click Refresh again to get the next available hublist in the dropdown.
+</p>
+<h2>Status bar</h2>
+<dl style="margin-left: 40px;">
+<dt>Messages part (left)</dt>
+<dd cshelp="IDH_PUBLIC_HUBS_STATUS">
+Shows status messages about the loading of public hub lists;
+<ul>
+<li>&quot;downloading&quot;: hub list is currently being downloaded from the server, this may take a while;</li>
+<li>&quot;downloaded&quot;: hub list has been successfully downloaded from the server, and is currently being displayed; you're looking at a fresh version of the hub list;</li>
+<li>&quot;loaded from chache&quot;: a previously saved hub list has been successfully loaded from your DC++ cache directory, and is currently being displayed; that version might be out-dated, if you want to refresh it, click on the &quot;Refresh&quot; button;</li>
+<li>error messages may also appear in this area: when a hub list download has failed, DC++ will automatically switch to the next hub list.</li>
+</ul>
+</dd>
+<dt>Hubs</dt>
+<dd cshelp="IDH_PUBLIC_HUBS_HUBS">
+The total number of individual hubs in the current hub list. When the hublist is filtered, it shows the number of hubs filtered out as well.</dd>
+<dt>Users</dt>
+<dd cshelp="IDH_PUBLIC_HUBS_USERS">Sum of the users numbers of every hubs in the current hub list.</dd>
+</dl>
+</body>
+</html>

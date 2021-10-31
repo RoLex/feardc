@@ -1,0 +1,51 @@
+# vim: set filetype=py
+
+Import('dev source_path')
+
+env = dev.env.Clone()
+
+dev.add_boost(env)
+
+if dev.is_win32():
+    env.Append(LIBS=[
+        'comctl32', 'comdlg32', 'gdi32', 'ole32', 'oleaut32', 'shlwapi',
+        'uuid', 'uxtheme', 'winmm', 'wtsapi32'
+    ])
+
+
+env.Append(CPPPATH=['#/dwt/include'])
+
+res = []
+
+if dev.is_win32():
+    if env['RC'] == 'rc':  # MSVC
+        env.Append(RCFLAGS=['/d' + env['arch']])
+    elif env['RC'].find('windres') != -1:  # MinGW
+        env.Append(RCFLAGS=['-D' + env['arch']])
+    else:
+        print('Unknown resource compiler.')
+        Return()
+    res = env.RES(dev.get_sources(source_path, '*.rc'))
+
+# imitate build_util's prepare_build
+env.VariantDir(dev.get_build_path(source_path), '.', duplicate=0)
+if env['msvcproj']:
+    ret = dev.build_lib(env, None, None, dev.cpp_lib, 'dwt-test')
+else:
+    import os
+    ret = []
+    for f in Glob('*.cpp'):
+        sources = dev.get_sources(source_path, str(f))
+        ret.append(dev.build_program(
+            env,
+            dev.get_target(
+                source_path,
+                os.path.basename(str(f)).replace('.cpp', ''),
+                in_bin=False
+            ),
+            [sources, res]
+        ))
+
+env.Help("\nYou can build dwt tests by running 'scons dwt/test'\n")
+
+Return('ret')

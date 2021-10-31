@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>Proxy settings for outgoing connections</h1>
+<p>These settings provide possibility of using a SOCKS5 proxy server for outgoing connections.</p>
+<dl style="margin-left: 40px;">
+  <dt>Direct connection</dt>
+  <dd cshelp="IDH_SETTINGS_PROXY_DIRECT_OUT">Select this mode if you can make unrestricted outbound
+connections. This includes connecting to any IP address on any port. Choose this option if unsure.</dd>
+  <dt>SOCKS5</dt>
+  <dd cshelp="IDH_SETTINGS_PROXY_SOCKS5">Select this mode if you want to make outbound connections through
+a SOCKS proxy. The caveats for Passive mode also apply here.
+SOCKS5 proxies are <u>not</u>
+the same as HTTP proxies. DC++'s SOCKS5 support does <u>not</u> include GSSAPI.</dd>
+</dl>
+<h3 style="margin-left: 40px;">Options</h3>
+<dl style="margin-left: 80px;">
+  <dt>Socks IP</dt>
+  <dd cshelp="IDH_SETTINGS_PROXY_SOCKS_SERVER">This is the IP, not host name, of your SOCKS5 server.</dd>
+  <dt>Port</dt>
+  <dd cshelp="IDH_SETTINGS_PROXY_SOCKS_PORT">The port that your SOCKS5 server runs on. The default is 1080.</dd>
+  <dt>Login</dt>
+  <dd cshelp="IDH_SETTINGS_PROXY_SOCKS_USER">Login name for the SOCKS5 proxy; may be required.</dd>
+  <dt>Password</dt>
+  <dd cshelp="IDH_SETTINGS_PROXY_SOCKS_PASSWORD">Password for the SOCKS5 proxy; may be required.</dd>
+  <dt>Use SOCKS5 server to resolve host names</dt>
+  <dd cshelp="IDH_SETTINGS_PROXY_SOCKS_RESOLVE">Enable this to use the SOCKS5 proxy, instead of the local name
+server, to resolve host names into IP addresses.</dd>
+</dl>
+</body>
+</html>

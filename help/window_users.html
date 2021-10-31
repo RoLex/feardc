@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+	<h1>
+		<img src="Users.ico" width="16" height="16" alt="Users"/>
+		Users
+	</h1>
+
+<p>This window shows the list of all users of the hubs you connected in the current DC++ session as well as all the detailed information associated with every listed user. It's possible to quickly find any online user from any connected hub and easily keep track of your favorite users, too. With its powerful filtering capabilities this window provides the functionality of the former Favorite Users and Waiting Users window.</p>
+
+<h2>User list columns</h2>
+<dl style="margin-left: 40px;">
+  <dt>Favorite</dt>
+  <dd>The blue star icon shows that this particular user is a favorite. Click the icon to add or remove the user from the favorites.</dd>
+  <dt>Auto grant slot</dt>
+  <dd>The icon indicates that DC++ should auto grant a favorite user a slot or not. If the indicator is green, DC++ will automatically grant the user a slot; you can click the icon to toggle. The function works only for users already set to favorite.</dd>
+  <dt>Nick</dt>
+  <dd>The nick of the user.</dd>
+  <dt>Hub (last seen in, if offline)</dt>
+  <dd>Which hub you saw this user the last time.</dd>
+  <dt>Status / Time last seen</dt>
+  <dd>For normal users this column shows the online status. For favorite users it shows which specific date and time you saw this user the last time; or "Online" if the favorite user is currently online.</dd>
+  <dt>Description</dt>
+  <dd>Brief description for the user. You can change this description by either selecting "Description" from the context menu or by pressing the Enter key. The description is saved for favorite users only.</dd>
+  <dt>CID</dt>
+  <dd>Client ID of the user.</dd>
+</dl>
+
+<h2>User list context menu commands</h2>
+<dl style="margin-left: 40px;">
+  <dt>Connect to hub</dt>
+  <dd>This menu item shows only for favorite users. If the user is online this will select the first hub where he/she is connected. If the user is offline you can use this function to connect to the hub where this favorite user last seen in.</dd>	  
+  <dt>Description</dt>
+  <dd>Edit the brief description of the user (shown in the Description column).</dd>
+</dl>
+<!--#include virtual="commands_user_general.inc" -->
+<!--#include virtual="commands_user_favorites.inc" -->
+<!--#include virtual="commands_listview.inc" --> 
+<!--#include virtual="commands_copy.inc" -->
+
+<h2>Details pane (right)</h2>
+<p cshelp="IDH_USERS_DETAILS">
+	This pane shows you all the available details sent by the DC client of the selected user. The number of records shown can heavily depend on what kind of user selected, what protocol it uses, etc... For example you can get the most information from an ADC client user while the amount of available information from a hub bot is usually very small.
+</p>	
+
+<h2>Filters (bottom)</h2>
+<p>The user list can be filtered by text, online status and file transfer activity. The following options are available:</p>
+<dl style="margin-left: 40px;">
+  <dt>Text filter</dt>
+  <dd>
+	<p cshelp="IDH_USERS_FILTER">
+	<!--#include virtual="window_list_filter.inc" -->
+	<div>
+		Eg writing "foo" in the filter input box, selecting "Nick" and "Partial match" will only display users that have
+		"foo" in their nick.
+	</div>
+	</p>
+  </dd>
+  <dt>Online</dt>
+  <dd cshelp="IDH_USERS_FILTER_ONLINE">
+  	If enabled the user list shows online users only, it will filter out all users who are currently offline (not connected to any hub where you are currently logged in).
+  </dd>
+  <dt>Favorite</dt>
+  <dd cshelp="IDH_USERS_FILTER_FAVORITE">
+  	If enabled the user list shows only your favorite users.
+  </dd>
+  <dt>Pending download</dt>
+  <dd cshelp="IDH_USERS_FILTER_QUEUE">
+  	If enabled the user list will show those users whom you're currently downloading from.
+  </dd>
+  <dt>Pending upload</dt>
+  <dd cshelp="IDH_USERS_FILTER_WAITING">
+  	If enabled the user list will show those users who are waiting for a free slot to be able to start downloading from you (functionality of the former Waiting Users window). These users have have queued one more files from you, but haven't been able to get a slot.
+  </dd>
+</dl>
+
+</body>
+</html>

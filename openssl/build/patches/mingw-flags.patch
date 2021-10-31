@@ -1,0 +1,27 @@
+* Build MinGW variants with the same settings as VS variants:
+	* -DOPENSSL_SYS_WIN32
+
+* Add -DOPENSSL_NO_CAPIENG which our mingw64 compiler only partially supports, leading to checks in
+  engines/e_capi.c to pass but producing errors when linking.
+
+diff -ru old/Configurations/10-main.conf new/Configurations/10-main.conf
+--- old/Configurations/10-main.conf	2018-09-11 12:34:40.498557600 +0100
++++ new/Configurations/10-main.conf	2018-09-11 12:34:40.498557600 +0100
+@@ -1380,7 +1380,7 @@
+         inherit_from     => [ "BASE_unix", asm("x86_asm"),
+                               sub { $disabled{shared} ? () : "x86_uplink" } ],
+         CC               => "gcc",
+-        CFLAGS           => picker(default => "-Wall",
++        CFLAGS           => picker(default => "-Wall -DOPENSSL_SYS_WIN32 -DOPENSSL_NO_CAPIENG",
+                                    debug   => "-g -O0",
+                                    release => "-O3 -fomit-frame-pointer"),
+         cflags           => "-m32",
+@@ -1412,7 +1412,7 @@
+         # Applink is never engaged and can as well be omitted.
+         inherit_from     => [ "BASE_unix", asm("x86_64_asm") ],
+         CC               => "gcc",
+-        CFLAGS           => picker(default => "-Wall",
++        CFLAGS           => picker(default => "-Wall -DOPENSSL_SYS_WIN32 -DOPENSSL_NO_CAPIENG",
+                                    debug   => "-g -O0",
+                                    release => "-O3"),
+         cflags           => "-m64",

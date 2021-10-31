@@ -1,0 +1,33 @@
+Import('dev source_path')
+
+env = dev.env.Clone()
+
+dev.add_boost(env)
+dev.add_dcpp(env)
+dev.add_intl(env)
+dev.add_openssl(env)
+
+dev.force_console(env)
+
+# imitate build_util's prepare_build
+env.VariantDir(dev.get_build_path(source_path), '.', duplicate=0)
+if env['msvcproj']:
+    ret = dev.build_lib(env, None, None, dev.cpp_lib, 'utils')
+else:
+    import os
+    ret = []
+    for f in Glob('*.cpp'):
+        sources = dev.get_sources(source_path, str(f))
+        ret.append(dev.build_program(
+            env,
+            dev.get_target(
+                source_path,
+                os.path.basename(str(f)).replace('.cpp', ''),
+                in_bin=False
+            ),
+            sources
+        ))
+
+env.Help("\nYou can build additional utilities by running 'scons utils'\n")
+
+Return('ret')

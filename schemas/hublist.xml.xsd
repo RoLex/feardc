@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>Direct Connect Hublist XSD.</xs:documentation>
+	</xs:annotation>
+
+	<xs:simpleType name="columnType">
+		<xs:annotation>
+			<xs:documentation>Enumeration of the column type that may be used.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="string">
+				<xs:annotation>
+					<xs:documentation>A column should be interpreted as a string.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="int">
+				<xs:annotation>
+					<xs:documentation>A column should be interpreted as an integer.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="bytes">
+				<xs:annotation>
+					<xs:documentation>A column should be interpreted as a sequence of bytes.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="statusType">
+		<xs:annotation>
+			<xs:documentation>Enumeration of the status of the hub.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Online">
+				<xs:annotation>
+					<xs:documentation>The hub is online.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		<xs:enumeration value="">
+				<xs:annotation>
+					<xs:documentation>No status.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="EMPTY_STR">
+	  <xs:restriction base="xs:string">
+		<xs:enumeration value=""/>
+	  </xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="extended_long">
+	   <xs:union memberTypes="xs:long EMPTY_STR"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="extended_float">
+	   <xs:union memberTypes="xs:float EMPTY_STR"/>
+	</xs:simpleType>
+   
+	<xs:attribute name="Name" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Name of the element.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Address" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Address of the hub or hublist, specified in the URI form (http://example.com, dchub://example.com, adc://example.com etc).</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Description" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Description of the hub.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Country" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Country the hub reside in.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Users" type="extended_long">
+		<xs:annotation>
+			<xs:documentation>Amount of users.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Shared" type="extended_long">
+		<xs:annotation>
+			<xs:documentation>Amount of shared bytes.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Status" type="statusType">
+		<xs:annotation>
+			<xs:documentation>The status of the hub.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Minshare" type="extended_long">
+		<xs:annotation>
+			<xs:documentation>The minimum share requirement of the hub.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Minslots" type="extended_long">
+		<xs:annotation>
+			<xs:documentation>The minimum slot requirement of the hub.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Maxslots" type="extended_long">
+		<xs:annotation>
+			<xs:documentation>The maximum slot requirement of the hub.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Maxhubs" type="extended_long">
+		<xs:annotation>
+			<xs:documentation>The maximum hubs requirement of the hub.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Maxusers" type="extended_long">
+		<xs:annotation>
+			<xs:documentation>The maximum users of the hub.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Reliability" type="extended_float">
+		<xs:annotation>
+			<xs:documentation>The reliability of the hub.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Rating" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The rating of the hub.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Type" type="columnType">
+		<xs:annotation>
+			<xs:documentation>Column type, see the type columnType.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+
+	<xs:element name="Hublist">
+		<xs:annotation>
+			<xs:documentation>Hublist element specifying the hubs a hublists has pinged.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Hubs"></xs:element>
+			</xs:sequence>
+
+			<xs:attribute ref="Name" use="optional">
+				<xs:annotation>
+					<xs:documentation>The name of the hublist.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Address" use="optional">
+				<xs:annotation>
+					<xs:documentation>The address of the hublist.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Hubs">
+		<xs:annotation>
+			<xs:documentation>Hubs element specifying the columns that the document lists and the hubs within.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Columns"></xs:element>
+				<xs:element ref="Hub" maxOccurs="unbounded" minOccurs="0"></xs:element>
+			</xs:sequence>
+
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Columns">
+		<xs:annotation>
+			<xs:documentation>Columns element specifying a list of columns.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Column"></xs:element>
+			</xs:sequence>
+
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Column">
+		<xs:annotation>
+			<xs:documentation>Column element specifying a column to be displayed for the user.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:any processContents="lax"></xs:any>
+			</xs:sequence>
+			
+			<xs:attribute ref="Name" use="optional">
+				<xs:annotation>
+					<xs:documentation>The name of the column.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Type" use="optional">
+				<xs:annotation>
+					<xs:documentation>The type of the column.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Hub">
+		<xs:annotation>
+			<xs:documentation>Hub element specifying a hub.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:any processContents="lax"></xs:any>
+			</xs:sequence>
+				
+			<xs:attribute ref="Name" use="optional">
+				<xs:annotation>
+					<xs:documentation>See the reference attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Address" use="optional">
+				<xs:annotation>
+					<xs:documentation>See the reference attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Description" use="optional">
+				<xs:annotation>
+					<xs:documentation>See the reference attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Country" use="optional">
+				<xs:annotation>
+					<xs:documentation>See the reference attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Users" use="optional">
+				<xs:annotation>
+					<xs:documentation>See the reference attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Shared" use="optional">
+				<xs:annotation>
+					<xs:documentation>See the reference attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Status" use="optional">
+				<xs:annotation>
+					<xs:documentation>See the reference attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Minshare" use="optional">
+				<xs:annotation>
+					<xs:documentation>See the reference attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Minslots" use="optional">
+				<xs:annotation>
+					<xs:documentation>See the reference attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Maxslots" use="optional">
+				<xs:annotation>
+					<xs:documentation>See the reference attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Maxhubs" use="optional">
+				<xs:annotation>
+					<xs:documentation>See the reference attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Maxusers" use="optional">
+				<xs:annotation>
+					<xs:documentation>See the reference attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Reliability" use="optional">
+				<xs:annotation>
+					<xs:documentation>See the reference attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Rating" use="optional">
+				<xs:annotation>
+					<xs:documentation>See the reference attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

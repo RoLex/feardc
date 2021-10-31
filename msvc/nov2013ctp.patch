@@ -1,0 +1,57 @@
+This patch is to be applied to MSVC 2013's VC/vcvarsall.bat file so that it uses the Nov 2013 CTP
+toolset by default when compiling from the command line.
+
+--- vcvarsall - original.bat	2013-12-06 00:25:34.043435400 +0100
++++ vcvarsall.bat	2013-12-06 00:27:17.393617000 +0100
+@@ -15,11 +15,17 @@
+ :x86
+ if not exist "%~dp0bin\vcvars32.bat" goto missing
+ call "%~dp0bin\vcvars32.bat"
++set PATH=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\bin;%PATH%
++set INCLUDE=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\include;%INCLUDE%
++set LIB=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\lib;%LIB%
+ goto :SetVisualStudioVersion
+ 
+ :amd64
+ if not exist "%~dp0bin\amd64\vcvars64.bat" goto missing
+ call "%~dp0bin\amd64\vcvars64.bat"
++set PATH=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\bin\amd64;%PATH%
++set INCLUDE=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\include;%INCLUDE%
++set LIB=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\lib\amd64;%LIB%
+ goto :SetVisualStudioVersion
+ 
+ :arm
+@@ -30,21 +36,33 @@
+ :x86_amd64
+ if not exist "%~dp0bin\x86_amd64\vcvarsx86_amd64.bat" goto missing
+ call "%~dp0bin\x86_amd64\vcvarsx86_amd64.bat"
++set PATH=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\bin\x86_amd64;%PATH%
++set INCLUDE=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\include;%INCLUDE%
++set LIB=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\lib\amd64;%LIB%
+ goto :SetVisualStudioVersion
+ 
+ :x86_arm
+ if not exist "%~dp0bin\x86_arm\vcvarsx86_arm.bat" goto missing
+ call "%~dp0bin\x86_arm\vcvarsx86_arm.bat"
++set PATH=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\bin\x86_arm;%PATH%
++set INCLUDE=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\include;%INCLUDE%
++set LIB=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\lib\arm;%LIB%
+ goto :SetVisualStudioVersion
+ 
+ :amd64_x86
+ if not exist "%~dp0bin\amd64_x86\vcvarsamd64_x86.bat" goto missing
+ call "%~dp0bin\amd64_x86\vcvarsamd64_x86.bat"
++set PATH=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\bin\amd64_x86;%PATH%
++set INCLUDE=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\include;%INCLUDE%
++set LIB=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\lib;%LIB%
+ goto :SetVisualStudioVersion
+ 
+ :amd64_arm
+ if not exist "%~dp0bin\amd64_arm\vcvarsamd64_arm.bat" goto missing
+ call "%~dp0bin\amd64_arm\vcvarsamd64_arm.bat"
++set PATH=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\bin\amd64_arm;%PATH%
++set INCLUDE=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\include;%INCLUDE%
++set LIB=C:\Program Files (x86)\Microsoft Visual C++ Compiler Nov 2013 CTP\lib\arm;%LIB%
+ goto :SetVisualStudioVersion
+ 
+ :SetVisualStudioVersion

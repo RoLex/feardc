@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+	<h1>
+		<img src="Directory.ico" width="16" height="16" alt="File List"/>
+		File List
+	</h1>
+
+<h2>Toolbar</h2>
+<dl style="margin-left: 40px;">
+	<dt><img src="Left.ico" width="16" height="16" alt="Back"/> Back</dt>
+	<dd cshelp="IDH_FILE_LIST_BACK">Switch to the previously visited directory. This command can also be accessed via the Backspace key and the Ctrl+Left keyboard shortcut.</dd>
+	<dt><img src="Right.ico" width="16" height="16" alt="Forward"/> Forward</dt>
+	<dd cshelp="IDH_FILE_LIST_FORWARD">Switch to the next visited directory. This command can also be accessed via the Ctrl+Right keyboard shortcut.</dd>
+	<dt><img src="Up.ico" width="16" height="16" alt="Up one level"/> Up one level</dt>
+	<dd cshelp="IDH_FILE_LIST_UP">Switch to the parent directory. This command can also be accessed via the Ctrl+Up keyboard shortcut.</dd>
+  <dt>Subtract list</dt>
+  <dd cshelp="IDH_FILE_LIST_SUBSTRACT">Compare this list to another list, and only show the differences between each. Useful to see new items added by an user to his file list.</dd>
+  <dt>Match queue</dt>
+  <dd cshelp="IDH_FILE_LIST_MATCH_QUEUE">Search the list for items you are currently downloading; found items will be automatically added as sources for your current downloads.</dd>
+  <dt>Download full list</dt>
+  <dd cshelp="IDH_FILE_LIST_DOWNLOAD_FULL">
+  Downloads a full version of the current file list (generally, file lists are downloaded in parts
+  to only download the directories you are interested in). This function is also useful to refresh
+  the file list if you suspect the user may have modified it.
+  </dd>
+  <dt><img src="Search.ico" width="16" height="16" alt="Find"/> Find</dt>
+  <dd cshelp="IDH_FILE_LIST_FIND">Toggle the visibility of the search box, which allows searching
+  within the file list.</dd>
+</dl>
+
+<h2>Search row (optional - below the toolbar)</h2>
+A search row may be shown right below the toolbar to allow looking for files in the current file
+list. Its visibility is controlled by the "Find" button.
+<dl style="margin-left: 40px;">
+  <dt>Text-box and method selection drop-down (left)</dt>
+  <dd cshelp="IDH_FILE_LIST_SEARCH_BOX">Enter your search terms here. The most recent searches can
+  be accessed by unfolding the list contained within this box. Select the desired matching method
+  from the dropdown in the right. Available modes are: exact word match, partial word match or
+  match a <a href="https://regular-expressions.mobi/index.html" target="_blank" class="external">regular 
+  expression</a>.</dd>
+  <dt><img src="Left.ico" width="16" height="16" alt="Previous"/> Previous</dt>
+  <dd cshelp="IDH_FILE_LIST_FIND_PREV">Find items that match the search strings specified in the
+  text-box. The search starts from the current selection and goes backwards.</dd>
+  <dt><img src="Right.ico" width="16" height="16" alt="Next"/> Next</dt>
+  <dd cshelp="IDH_FILE_LIST_FIND_NEXT">Find items that match the search strings specified in the
+  text-box. The search starts from the current selection and goes forward.</dd>
+</dl>
+
+<h2>Folder list (left)</h2>
+<p cshelp="IDH_FILE_LIST_DIRS">
+Folders available in the current file list. Left-click on a folder to show the contents of that folder in the window on the right; right-click to open a menu that allows you to download the whole folder or access user related menu commands.
+</p>
+
+<h2>Contents (right)</h2>
+<p cshelp="IDH_FILE_LIST_FILES">
+Shows the contents of the folder selected in the folder list (window on the left). Right-click to get menu options.
+</p>
+<h3>Columns</h3>
+<dl style="margin-left: 40px;">
+  <dt>File</dt>
+  <dd>The file and folder names inside the currently selected folder.</dd>
+  <dt>Type</dt>
+  <dd>Shows the file extensions of the files in the current folder.</dd>
+  <dt>Exact size</dt>
+  <dd>The size in bytes of files in the current folder.</dd>
+  <dt>Size</dt>
+  <dd>The size of these files in normal form.</dd>
+  <dt>TTH</dt>
+  <dd>The Hash of these files.</dd>
+</dl>
+
+<h2>Context menu commands</h2>
+<!--#include virtual="commands_file_download.inc" -->
+<!--#include virtual="commands_file_general.inc" -->
+<!--#include virtual="commands_file_management.inc" -->
+<dl style="margin-left: 40px;">
+  <dt>View as text</dt>
+  <dd>
+    <!--#include virtual="commands_viewastext.inc" -->
+  </dd>
+</dl>
+<dl style="margin-left: 40px;">
+  <dt>User <b>&gt;</b></dt>
+  <dd>
+    <!--#include virtual="commands_user_general.inc" -->
+  </dd>
+</dl>
+<!--#include virtual="commands_copy.inc" -->
+
+<h2>Status bar (bottom)</h2>
+<dl style="margin-left: 40px;">
+  <dt>Speed</dt>
+  <dd>The speed the current file list was downloaded.</dd>
+  <dt>Files (left)</dt>
+  <dd>Total number of individual files in the whole file list.</dd>
+  <dt>Size (left)</dt>
+  <dd>Total amount of bytes represented by every individual files in the whole file list.</dd>
+  <dt>Files (right)</dt>
+  <dd>Number of items selected; or number of items in the current directory if there is no item selected.</dd>
+  <dt>Size (right)</dt>
+  <dd>Total amount of bytes represented by the currently selected items; or by all items in the current directory if there is no item selected.</dd>
+</dl>
+</body>
+</html>

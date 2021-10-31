@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>DC++ settings files guide</h1>
+<p>Unlike most of the applications DC++ does not use the Windows Registry to store its settings. Instead, most of the settings and application data are saved into individual files. Settings are stored in various files in <a href="https://en.wikipedia.org/wiki/XML" target="_blank" class="external">XML</a> format. This is a real advantage since XML files can be opened with any text editor so in case of any problems the settings are accessible outside of the program as well.</p>
+<p>In this FAQ article you'll find all the information needed about settings files themselves, their possible locations and ways how to preserve and transfer them into another computer or Windows installation.</p>
+
+<h2>What are the different DC++ settings files for?</h2>
+<p>DC++ has many files in purpose of store its different kinds of application data and settings. Here's the complete list of settings files created and used by DC++:</p>
+<dl style="margin-left: 40px;">
+	<dt><untranslated>DCPlusPlus.xml</untranslated></dt>
+	<dd>This is the main settings file of DC++, it stores everything what you can set in the Settings dialog including the list of shared folders.  Additionally it stores all the visibility settings of the GUI, size and position of columns and window splitters and the list of recently opened windows.</dd>
+	<dt><untranslated>Favorites.xml</untranslated></dt>
+	<dd>This file stores your favorite hubs and favorite users with all of their properties including login information and passwords.</dd>
+	<dt><untranslated>Queue.xml</untranslated></dt>
+	<dd>Your download queue items and their properties saved into this setting file. This file also contains information about what pieces (chunks) of the queued files have already been downloaded.</dd>
+	<dt><untranslated>HashIndex.xml</untranslated></dt>
+	<dt><untranslated>HashData.dat</untranslated></dt>
+	<dd>These files contain hashes for your shared and queued files. You can read more about them in <a href="https://dcpp.wordpress.com/2006/03/09/what-do-hashindexxml-and-hashdatadat-do" target="_blank" class="external">this article</a>.</dd>
+	<dd></dd>
+	<dt><untranslated>ADLSearch.xml</untranslated></dt>
+	<dd>This file stores your defined ADLSearch queries.</dd>
+	<dt><untranslated>Users.xml</untranslated></dt>
+	<dd>This is a temporary file for storing some user nicks to be able to display nicks correctly in the program interface when the users are offline.</dd>
+	<dt><untranslated>Plugins.xml</untranslated></dt>
+	<dd>This file contains the list of installed plugins and their specific settings.</dd>
+	<dt><untranslated>Notepad.txt</untranslated></dt>
+	<dd>This stores the contents of the <a href="window_notepad.html">Notepad window</a>. Through this file the text can be kept across sessions.</dd>
+	<dt><untranslated>DcppBoot.xml</untranslated></dt>
+	<dd>This file is accessed only at startup and it stores information about where should DC++ find the rest of the settings files. It also determines the default path of the <a href="settings_downloads.html#defdwnlddir">default finished and unfinished download folders</a>.</dd>
+</dl>	
+<p>Note that the information above is vaild for the most recent versions of DC++. Older versions may miss some files or behave otherwise.</p>
+
+<h2 id="location">Where can I find the settings files?</h2>
+<p>There are the three possible locations of DC++ settings files (the most probable location listed first):</p>
+<ol>
+<li><p>The DC++ subfolder of the Application Data directory of your user profile. This is the most probable location of the settings files if you used the installer (.exe) to install or upgrade your DC++. In a typical case the path is</p>
+	<ul>
+		<li>
+			<i>C:\Users\[your username]\AppData\Roaming\DC++\</i>
+		</li>
+	</ul>
+ </li>
+ <li>The same folder where the DC++ executable (DCPlusPlus.exe) resides. This is will be the default location of the settings files if you picked the zipped archive (portable) version from the download page.</li>	
+ <li>In a path relative to the folder where the DC++ executable (DCPlusPlus.exe) resides. In this case the path is manually set in dcppboot.xml.</li>	
+</ol>
+	
+The actual location of the files depend on the contents of the file called <i>dcppboot.xml</i>. This file is always located at the same folder where the DC++ executable (DCPlusPlus.exe) resides. As it mentioned earlier, dcppboot.xml can be opened with a simple text editor or viewer. Beside the settings themselves the file contains a brief explanation of the possible options and their effect. You can read more about this topic in <a href="https://dcpp.wordpress.com/2009/03/11/boost-up-your-dc/" target="_blank" class="external">this article</a>.
+<p>Note that the information above is vaild for the most recent versions of DC++. Older versions may behave otherwise.</p>
+
+<h2>How do I move my existing settings to another installation?</h2>
+<p>In short, backup the settings files listed above, and then in the new installation, copy all of them to the same location where you've found them. If you place them to the correct location, DC++ will automatically use them. This can be done by the following easy steps:</p>
+<ol>
+	<li>Determine the location of the settings files in your old installation the way described above.</li>
+	<li>Backup the settings files you want to preserve.</li>
+	<li>Install DC++ to the new operating system. Run it once so it'll create the necessary folders.</li>
+	<li>Close DC++!</li>
+	<li>If you <u>used the installer (.exe)</u> to install DC++ then place your archived settings files to the DC++ subfolder in Application Data directory of your <u>user profile</u> (see the exact path for your OS above). If you downloaded the <u>zipped binary of DC++</u> (.zip, portable version) then place your archived settings files to <u>the folder where you unpacked</u> the binary. If it asks then overwrite the default files with your archived ones.</li>
+	<li>Restart DC++. You're done.</li>
+</ol>
+<p><u>Warning</u>: do not unpack the portable (zipped) version of DC++ under the Program Files folder unless you have the UAC service completely disabled. Doing so may cause loss of settings and/or unfinished downloads due to <a href="https://blogs.msdn.microsoft.com/patricka/2009/12/14/tales-of-application-compatibility-weirdness-demystifying-uac-virtualization/" target="_blank" class="external">Microsoft's User Account Control Data Redirection technology</a>.</p>
+
+<h2>How do I move my incomplete downloads, plugins configuration and other (temporary) data of DC++ to another installation?</h2>
+<p>To be able to continue your unfinished downloads you must copy the unfinished (.dctmp) files to the new installation. The location of these files depend on the <a href="settings_downloads.html#unfdwnlddir">Unfinished downloads directory settings</a>. You must put the unfinished files to the default unfinished folder of the new DC++ installation or copy them to any folder you like and set it as a directory for <a href="settings_downloads.html#unfdwnlddir">Unfinished downloads</a> in DC++ settings. Close DC++ while you copy the files!</p>
+<p><u>Warning</u>: Do not connect to hubs and start downloading before you copied the unfinshed files. This can reset some of your downloads so they'll lost their progress and will start from the beginning. In this case you have to overwrite the newly created unfinished files with the ones from the previous installation and use 'Recheck Integrity' menu command in the Download Queue to get back your progress.</p>
+<p>There are some other data you may want to move to the new installation :</p>
+<ul>
+	<li><u>Security certificates</u> : you may need to move your own or generated certificate files to have them when you log on to secure hubs. Their location is set in the <a href="settings_certs.html">Security Cerificates</a> panel. By default they are in a subfolder named 'Certificates' which located at the same folder as your settings files.</li>
+	<li><u>Cached hublists</u> : its possible that you won't be able to download some of your old hublists with the new installation (they can be permanently unavailable, discontinued, etc...). To avoid loss of your favourite hublists you can copy their cached versions. You can find them in in a subfolder named 'HubLists' located at the DC++ temporary data folder (see below).</li>
+	<li><u>Saved filelists</u> : if you keep downloaded filelists you can move them as well. Just copy the contents of the subfolder named 'FileLists' located at the DC++ temporary data folder (see below).</li>
+	<li><u>Plugin settings</u> : to move the settings specific to your installed plugins you need to copy the file named 'Plugins.xml'. In case of .dcext packaged plugins you have to reinstall them manually in the target system. If any of your plugins are in pure .dll format then the only way of reusing the plugin settings is to copy the .dll files to the very same path as they were before in the old installation.</li>
+</ul>
+<p>The actual location of the temporary data folder corelates with the location of settings files <a href="#location">(described above)</a>: </p>
+<ul>
+	<li>If the settings files are located in the <u>program directory</u> then the subfolders for temporary data will be also there, in the very same folder.</li>
+	<li>If the settings files are in your <u>user profile</u> then (in a typical case) you'll find the temporary folders in the following location :
+	<ul>
+		<li>
+			<i>C:\Users\[your username]\AppData\Local\DC++\</i>
+		</li>
+	</ul>
+	</li>
+</ul>
+
+</body>
+</html>

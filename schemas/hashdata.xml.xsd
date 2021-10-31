@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>DC++ HashData XML file XSD.</xs:documentation>
+	</xs:annotation>
+
+	<xs:simpleType name="hashType">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TTH">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Allows the ability to speciy an attribute value or element value that can be empty but still be of a different type than a string. -->
+	<xs:simpleType name="EMPTY_STR">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value=""/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="extended_long">
+		<xs:union memberTypes="xs:long EMPTY_STR"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="extended_float">
+		<xs:union memberTypes="xs:float EMPTY_STR"/>
+	</xs:simpleType>
+
+	<!-- Attribute deferences -->
+	<xs:attribute name="Version" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>Version of the element.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Type" type="hashType">
+		<xs:annotation>
+			<xs:documentation>Hash type.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Index" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>The index of the hash leaf within the tree.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="BlockSize" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>The size of the blocks in bytes.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Size" type="xs:int">
+		<xs:annotation>
+			<xs:documentation>The size of a file in bytes.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Root" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>The hash root of a file.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Name" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Name of element.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="TimeStamp" type="xs:long">
+		<xs:annotation>
+			<xs:documentation>TimeStamp of element.</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+
+	<xs:element name="HashStore">
+		<xs:annotation>
+			<xs:documentation>.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Trees"></xs:element>
+				<xs:element ref="Files"></xs:element>
+			</xs:sequence>
+
+			<xs:attribute ref="Version" use="required">
+				<xs:annotation>
+					<xs:documentation>The version of the hash store file format.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Trees">
+		<xs:annotation>
+			<xs:documentation>.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Hash" maxOccurs="unbounded" minOccurs="0"></xs:element>
+			</xs:sequence>
+
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Hash">
+		<xs:annotation>
+			<xs:documentation>Hash element specifying a hash node.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:any processContents="lax"></xs:any>
+			</xs:sequence>
+			
+			<xs:attribute ref="Type" use="required">
+				<xs:annotation>
+					<xs:documentation>Hash type.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Index" use="required">
+				<xs:annotation>
+					<xs:documentation>The index of the hash leaf within the tree.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="BlockSize" use="required">
+				<xs:annotation>
+					<xs:documentation>The size of the blocks in bytes.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Size" use="required">
+				<xs:annotation>
+					<xs:documentation>The size of a file in bytes.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Root" use="required">
+				<xs:annotation>
+					<xs:documentation>The hash root of the file (used for reference within this file).</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Files">
+		<xs:annotation>
+			<xs:documentation>Files element specifying the files that are referenced.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="File" maxOccurs="unbounded" minOccurs="0"></xs:element>
+			</xs:sequence>
+
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="File">
+		<xs:annotation>
+			<xs:documentation>File element specifying a file reference.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:any processContents="lax"></xs:any>
+			</xs:sequence>
+
+			<xs:attribute ref="Name" use="required">
+				<xs:annotation>
+					<xs:documentation>Name of the file.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="TimeStamp" use="required">
+				<xs:annotation>
+					<xs:documentation>Timestamp when the file was added to the repository.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Root" use="required">
+				<xs:annotation>
+					<xs:documentation>The hash root of the file (used for reference within this file).</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

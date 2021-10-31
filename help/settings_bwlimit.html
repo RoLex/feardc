@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+	<h1>Bandwidth limiting</h1>
+
+	<p>
+	Bandwidth limiting is useful when the total download or upload bandwidth (or both) of your internet connection are 
+	maxed out by file transfers of DC++. With this function you can control your bandwidth usage and keep free 
+	bandwidth for other applications or other members of your local network. Limiting your bandwidth slightly under
+	the maximum speed of your connection is also useful on certain types of internet connections (eg. DSL) where
+	uploading near the maximum possible speed may affect the speeds of your downloads and vica versa.
+	</p>
+	
+	<h2>Transfer rate limiting</h2>
+	<dl style="margin-left: 40px;">
+		<dt>Maximum upload rate</dt>
+		<dd cshelp="IDH_SETTINGS_BWLIMIT_UPLOAD">
+		This specifies the maximum upload rate value in KiB/s. Zero value means no limiting at all. (default: 0)
+		</dd>
+		<dt>Maximum download rate</dt>
+		<dd cshelp="IDH_SETTINGS_BWLIMIT_DOWNLOAD">
+		This specifies the maximum download rate value in KiB/s. Zero value means no limiting at all. (default: 0)
+		</dd>
+	</dl>
+	
+	<h2>Secondary transfer rate limiting</h2>
+	<dl style="margin-left: 40px;">
+		<dt>Use second set of bandwidth limits</dt>
+		<dd cshelp="IDH_SETTINGS_BWLIMIT_SECONDARY_ENABLE">
+		With this function you can specify alternate bandwidth limiting and upload slot values to be used in a certain
+		time interval of a day. Note that setting the same time value for beginning and ending will disable the function.
+	</dd>
+	</dl>
+
+	<h2>Secondary transfer rate limiting settings</h2>
+	<dl style="margin-left: 40px;">
+		<dt>Maximum upload rate</dt>
+		<dd cshelp="IDH_SETTINGS_BWLIMIT_SECONDARY_UPLOAD">
+		This specifies the maximum upload rate value for the alternative limiting period in KiB/s.
+		Zero value means no limiting at all. (default: 0)
+		</dd>
+		<dt>Maximum download rate</dt>
+		<dd cshelp="IDH_SETTINGS_BWLIMIT_SECONDARY_DOWNLOAD">
+		This specifies the maximum download rate value for the alternative limiting period in KiB/s.
+		Zero value means no limiting at all. (default: 0)
+		</dd>
+		<dt>Upload slots</dt>
+		<dd cshelp="IDH_SETTINGS_BWLIMIT_SECONDARY_SLOTS">
+		Here you can set the number of opened upload slots for the alternative limiting period. (default: 1)
+		</dd>
+	</dl>
+
+</body>
+</html>

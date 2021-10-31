@@ -1,0 +1,266 @@
+This document describes the extensions I've made to the DC protocol, to be
+able to support extra functionality. Those are of course subject to change 
+and discussion but I'll try to keep it as up to date as possible. Other 
+clients are most welcome to follow this scheme and use the features 
+presented here as they wish. The main scheme stems from a discussion 
+sometime ago on the javadc-devel list on sourceforge...
+
+Note; I assume familiarity with the dc protocol as used in neomodus dc 
+1.00091...
+
+The main idea behind the protocol is that when setting up the connection, 
+each client tells the other one about all commands it understands, and 
+after that, use those commands as pleased...to be able to do this we need 
+to add a command to the protocol that tells the other client about the 
+features it supports. We also need to make sure that only clients that
+have a fair chance of understanding this command (to avoid unneccesary 
+data being sent and to avoid confusing other clients). The scheme I've 
+chosen is based on the $Lock information being sent upon setting up a 
+connection, where a client that supports the extension command sends a 
+special string in the lock, to let the other one know that it supports 
+the extended commands. When having found such a client, it sends 
+information about all features it supports before sending a correctly 
+computed $Key.
+
+On a side note; DC++ requires commands to come in a certain order to be 
+able to efficiently use resources and will ignore any commands out of 
+order (such as multiple $Send commands). This also improves the 
+determinism of the protocol.
+
+
+*** Client-Client communication ***
+
+Feature: Supports
+Since: 0.17
+
+Purpose: To identify which features a certain client supports
+
+Usage: "$Supports <feature1> <feature2> ... <featureN>|"
+<featurename> = Case sensitive string describing the feature that a 
+certain client supports. This should be the name of the command being 
+sent, i e if a client supports a command "$GetBZListLen|", featurename 
+should be GetBZListLen, unless of course, this is not a feature that 
+requires sending extra data. Feature names may (obviously) not contain 
+spaces. Empty $Supports should not be sent.
+
+Should be sent: After receiving $Lock but before sending $Key
+
+Notes: In the initial discussions, we thought about adding version 
+information (something like "$Supports <name> <version>|"), but I've 
+decided not to use this because 1) There could be problems with old 
+versions, i e client x supports version 1.2, does that mean that it 
+supports version 1.1 and 1.0 as well? 2) It's really easy to add a new 
+version, i e "$Supports GetBZListLen GetBZListLen2|" to advertise an 
+upgraded $GetBZListLen command.
+This command should only be sent if the $Lock starts with the exact string 
+EXTENDEDPROTOCOL", to avoid confusing clients that don't understand it
+anyway. DC++ also uses the Pk part of the lock to identify exact client 
+version, so a full $Lock string from a dc++ client is 
+"$Lock EXTENDEDPROTOCOLxxxx Pk=DCPLUSPLUS0.164xxxx" where xxxx denotes 
+some random data (not beginning with a number...=).
+
+--------------------------------------------------------------------
+
+Feature: MiniSlots
+Since: 0.304
+
+Usage: This allows the other client to use a free slot for small files / 
+file list. $Supports is needed because nmdc closes the file list browser
+when the connection is broken, which it becomes when the client on the
+other side tries to download its first file and fails because it has no
+real slot (there were lots of nmdc users bitching about this...).
+
+--------------------------------------------------------------------
+
+Feature: GetZBlock
+Since: 0.307
+Deprecated - replaced by ADCGet
+
+Usage: Instead of $Get and $Send, use 
+"$GetZBlock <start> <numbytes> <filename>|" where <start> is the 0-based
+(yes, 0-based, not like get that's 1-based) starting index of the file 
+used, <numbytes> is the number of bytes to send and <filename> obviously 
+is the filename. The other client then responds 
+"$Sending <bytes>|<compressed data>", if the sending is ok or 
+"$Failed <errordescription>|" if it isn't. If everything's ok, the data is 
+sent until the whole uncompressed length has been sent. <bytes> specifies
+how many uncompressed bytes will be sent, not compressed, as the sending
+client doesn't know how well the file will compress. $Sending is 
+needed to be able to distinguish the failure command from file data. Only 
+one roundtrip is done for each block though, minimizing the need for 
+maintaining states.
+
+Compression: Compression is done using ZLib (v 1.1.4 in DC++ 0.21's case), 
+using dynamic compression level. The compression level can of course be 
+changed by the implementator to reduce CPU usage, or even just store 
+compression in the case of non-compressible files, which then works as 
+adler32 check of the transferred data.
+
+Support of $GetZBlock also implies support for $UGetZBlock.  The syntax
+and semantics of $UGetZBlock are the same as the $GetZBlock, but the
+filename must be given in utf-8 encoding.
+
+--------------------------------------------------------------------
+
+Feature: XmlBZList
+Since: 0.307
+
+Usage: Supporing this means supporting utf-8 XML file lists with the 
+following general structure:
+
+<FileList Version="1" Generator="dc client name and version">
+ <Directory Name="xxx">
+  <Directory Name="yyy">
+   <File Name="zzz" Size="1"/>
+  </Directory>
+ </Directory>
+</FileList>
+
+In each directory, including the root, the name of the entity must be
+case-insensitive unique in that level of the hierarchy. 
+
+Other fields may be added as necessary. DC++ for instance adds the
+TTH attribute to each file it knows the TTH root of in base32 encoding.
+
+The file list is available as "files.xml.bz2" (vs MyList.DcLst), and is
+compressed using bzip2.
+
+To retrieve unicode files from the file list, the client may also support
+the above GetZBlock and its utf-8 derivatives.  Support for XmlBZList
+implies support for $UGetBlock, so files are guaranteed to be retrievable.
+
+$UGetBlock follows $UGetZBlock semantics, but without compressing 
+the data. The <bytes> parameter of $Sending specifies how many bytes
+will be sent.
+
+Don't touch Version. Add your own, with a different name, if you feel 
+compelled.
+
+Don't trust Generator to determine features of the file list. It's there
+mainly for debugging and informative purposes.
+
+--------------------------------------------------------------------
+
+Feature: ADCGet
+Since: 0.402
+
+Usage: 
+
+"$ADCGET <type> <filename> <startpos> <bytes> <flag0>...<flagN>"
+A complete replacement for all binary data transfers using an ADC-like syntax.
+See the ADC specs to see how GET behaves. (https://adc.sourceforge.io/ADC.html#_get)
+
+--------------------------------------------------------------------
+
+Feature: TTHL
+Since: 0.402
+
+Usage:
+
+Supporting this means supporting the upload of tth leaf data. Instead
+of transfering the file itself, the TTH data of all leaves is transferred
+in binary. The size transferred back is the number of bytes of leaf data,
+from this and the file size the receiving client can calculate which
+level (tree depth) the sending client is offering. The receiver should
+obviosly check that the received leaf data is correct by rebuilding the
+tree and checking that it's recorded root matches.
+
+--------------------------------------------------------------------
+
+Feature: TTHF
+Since: 0.402
+
+Usage:
+
+Supporting this means supporting file identification by TTH root. This
+means supporting downloads by TTH root instead of share directory and
+name. The advantage is that moved files can still be found by the
+downloader without requeuing the file.
+
+The extension adds a namespace "TTH" before the ADC file root. A TTHF
+filename has the following syntax:
+
+TTH/<TTH root in base32, 192 binary bits>
+
+i e the TTH namespace consists of TTH root values directly under the
+"TTH/" root.
+
+The naming scheme is valid in all types (i e also for getting TTH leaves)
+
+--------------------------------------------------------------------
+
+Feature: ZLIG
+Since: 0.402
+
+Usage:
+
+Supporting this means that zlib compressed $ADCGET transfers are supported.
+
+--------------------------------------------------------------------
+
+*** Client-Hub communication ***
+
+Feature: Supports
+Since: 0.300
+
+Usage: "$Supports <feature1> <feature2> ... <featureN>|"
+This is mostly analogous to the client-client communcation part. The hub 
+must send a $Lock that begins with "EXTENDEDPROTOCOL", which will prompt 
+the client to answer with $Supports. Then, when a hub receives "$Supports" 
+it _must_ answer with "$Supports" to tell the client about its features 
+(which may differ from the ones the client supports). See client-client 
+part for details. The hub must not send "EXTENDEDPROTOCOL" unless it 
+supports at least one feature.
+
+Should be sent: After $Lock, before $Key
+
+--------------------------------------------------------------------
+
+Feature: UserCommand
+Since: 0.300
+
+Usage: See http://nmdc.sourceforge.net/Versions/NMDC-1.3.html#_usercommand
+
+--------------------------------------------------------------------
+
+Feature: NoGetINFO
+Since: 0.302
+
+Usage: This indicates that hub doesn't need $GetINFO's to send out $MyINFO's
+at connect. This is a sort of light-weight QuickList that's very easy to
+implement and does half of QuickList's job.
+
+--------------------------------------------------------------------
+
+Feature: UserIP2
+Since: 0.305
+
+Usage: This indicates support for $UserIP; see
+http://nmdc.sourceforge.net/Versions/NMDC-1.3.html#_userip_extension
+
+--------------------------------------------------------------------
+
+Feature: NoHello
+Since: 0.305
+
+Usage: This indicates that the client doesn't need neither $Hello nor $NickList
+when connecting to a hub and receiving its users (i e $myinfo for each user is
+enough). It still accepts $Hello though (to add bots to the user list),
+and will still send getnicklist to indicate that it indeed is interested
+in the user list. It still requires a $hello to be sent about itself during login!
+--------------------------------------------------------------------
+
+Feature: GetZBlock
+Since: 0.307
+
+Usage: This indicates that the client is capable of compressed 
+transfers, and has the option to use them enabled.
+
+--------------------------------------------------------------------
+
+Feature: TTHSearch
+Since: 0.307
+
+Usage: This indicates that the client supports searching for queued 
+files by TTH, if there is one available to it.  TTH searching is more 
+CPU efficient than the previous method. 

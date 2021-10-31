@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>Queue settings</h1>
+<h2>Auto priority settings</h2>
+<p cshelp="IDH_SETTINGS_QUEUE_AUTOPRIO">
+Autoprio allows setting the queue item priority automatically when
+adding it to the download queue. A user can then change the priority of
+a file manually.<br/>
+Priority conditions are checked from the Highest to the Lowest
+priority, when assigning a priority to a new queue item. A zero means
+that the given priority level won't be used - except Normal priority,
+which is the default priority. Lowest possible value for the Highest
+priority is 16 KiB.
+</p>
+<dl style="margin-left: 40px;">
+  <dt>Highest prio max size</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_PRIO_HIGHEST">Files with the same or under the entered size will be set to
+Highest as priority. (default: 64 KiB) </dd>
+  <dt>Normal prio max size</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_PRIO_NORMAL">Files with the same or under the entered size, but above Highest
+and High prio max size, will be set to Normal as priority. (default: 0
+KiB) </dd>
+  <dt>High prio max size</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_PRIO_HIGH">Files with the same or under the entered size, but above Highest
+prio max size, will be set to High as priority. (default: 0 KiB)</dd>
+  <dt>Low prio max size</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_PRIO_LOW">Files with the same or under the entered size, but above Highest,
+High and Normal prio max size, will be set to Low as priority.
+(default: 0 KiB)</dd>
+</dl>
+<h2 id="autodrop">Autodrop settings</h2>
+<p cshelp="IDH_SETTINGS_QUEUE_AUTODROP">
+Autodrop allows automatical removal (or disconnecting) of slow download
+sources. By default, slow sources are removed.<br/>
+All of these autodrop options are necessary to estimate and
+disconnect/drop sources properly.
+</p>
+<dl style="margin-left: 40px;">
+  <dt>Drop sources below x B/s</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_AUTODROP_SPEED">If the download speed of a file is below the entered value, the
+source will be dropped. (default: 1024 B/s) </dd>
+  <dt>Min elapsed</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_AUTODROP_ELAPSED">Amount of time (in seconds) that has to pass since the download
+started before a source can be dropped. (default: 15 s) </dd>
+  <dt>Min sources online</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_AUTODROP_MINSOURCES">Minimum amount of sources before any sources will be dropped.
+(default: 1) </dd>
+  <dt>Check every x s</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_AUTODROP_INTERVAL">Check every x second(s) if the source is slow. (default: 10 s) </dd>
+  <dt>Max inactivity</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_AUTODROP_INACTIVITY">This is the maximal time since the last chunk of data for the
+file was recieved. It is meant to improve speed measurement accuracy
+and to prevent dropping sources that are going to be disconnected only
+because of their current inactivity. (default: 10 s) </dd>
+  <dt>Min filesize</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_AUTODROP_FILESIZE">Minimum filesize before sources will be dropped (in KiB).
+(default: 0 KiB)</dd>
+</dl>
+<h2>Other queue options</h2>
+<dl style="margin-left: 40px;">
+  <dt>Set lowest prio for newly added files larger than Low prio size</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_PRIO_LOWEST">With this enabled, files that are larger than Low prio max size
+are set to Lowest as priority. If disabled, the files will be set to
+Normal as priority. </dd>
+  <dt>Autodrop slow sources for all queue items (except filelists)</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_AUTODROP_ALL">
+This option removes the slow sources for all queue items (except
+file lists).<br/>
+To enable autodrop, turn on either "Autodrop slow sources for all queue
+items" or "Remove slow file lists" (or both of them).
+</dd>
+  <dt>Remove slow filelists</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_AUTODROP_FILELISTS">
+With this option enabled, DC++ will delete a file list whose speed
+was recognized as too slow.<br/>
+To enable autodrop, turn on either "Autodrop slow sources for all queue
+items" or "Remove slow file lists" (or both of them).
+</dd>
+  <dt>Don't remove the source when autodropping, only disconnect</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_AUTODROP_DISCONNECT">With this option enabled, sources will only be disconnected but
+not removed from the queue.</dd>
+  <dt id="autosearchdl">Automatically search for alternative download locations</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_AUTO_SEARCH">Every few minutes, the client will search for files in your
+Download Queue to find more download locations (more users/sources).
+The autosearch will find exact matches by searching via hash. 
+<i>
+The drawback is that it may won't find much more sources and will prevent 
+manual searches on hubs where a predefined search interval rule is in effect.
+</i> To avoid constant auto searches you can set the maximal number of sources that files can have
+when you specify a number in <a href="settings_expert.html#autosearchlimit">Auto search limit</a> setting.
+</dd>
+  <dt id="automatchqueue">Automatically match queue for search hits</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_AUTO_SEARCH_AUTO_MATCH">Enable to automatically download a user's list and match them as
+sources for files in your Download Queue when they've been discovered
+as a source for one of the files you're downloading. If you download
+files in sets, that user is probably a source for many more files
+you're downloading. <i>Enable if unsure.
+The drawbacks are that it might add slower sources, possibly increasing
+the time needed to complete a download, and that you'll download a lot
+of file lists.</i></dd>
+  <dt>Skip zero-byte files</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_SKIP_ZERO_BYTE">When this option is enabled, any zero byte files you try to
+download will be silently skipped. Sometimes empty files contain
+information through their naming. However every file, even an empty
+one, will consume some drive space.</dd>
+  <dt id="alreadyshared">Don't download files already in share</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_DONT_DL_ALREADY_SHARED">This option will stop you from downloading files which already
+exist in one of your shared directories. When you enable this function, to get already shared items removed from the
+queue you have to restart DC++.</dd>
+  <dt>Don't download files already in the queue</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_DONT_DL_ALREADY_QUEUED">This option will stop you from downloading files which already
+exist in your queue by blocking the addition of the same file to a different place in the queue. The comparsion is made
+by TTH and not by the name or the size of the file. Even though the addition is blocked the possible new sources will still 
+be aquired and added to the existing file in the queue. If the file already exists in the queue and no new sources found either
+then a &quot;File is already in the queue&quot; message will be shown.</dd>
+  <dt id="keepfinished">Keep finished files in the queue</dt>
+  <dd cshelp="IDH_SETTINGS_QUEUE_KEEP_FINISHED_FILES">Enable this option if you want to keep downloaded files and folders
+in the download queue after they have been finished. After downloaded the queue items will have 'Finished' status and you
+can delete these finished entries anytime later. Using this function you can keep track of what files are already downloaded
+right there in the download queue without the need of checking the <a href="window_finished_downloads.html">Finished Downloads</a>
+window. Note that if you physically move/delete your downloaded files from their target location, it won't result automatic deletion 
+of the corresponding finished entries from the queue. If you disable this function, it won't remove existing finished items from
+the queue either, you must do that manually.</dd>
+</dl>
+</body>
+</html>

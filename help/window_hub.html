@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link type="text/css" rel="stylesheet" href="office11.css"/>
+  <link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+	<h1>
+		<img src="HubOn.ico" width="16" height="16" alt="Hub"/>
+		Hub
+	</h1>
+<h2>Main chat window (left)</h2>
+<p cshelp="IDH_HUB_CHAT">
+The main chat window displays messages sent by the hub. You can chat with other users in this "public area" by writing a message in the field below the main chat and pressing either Enter or Alt+S to send your message. You may also use <a href="chat_commands.html">/commands</a> (send /help to list those available). You can right click to the users' nicks to bring up the user context menu described below.<br/>
+Note; this is not the place to search for files. Open a <a href="window_search.html">Search window</a> to do that.<br/>
+This window can be focused with Alt+C.
+</p>
+
+<h3>Main chat messages</h3>
+<p>Messages destined to the status bar can also be shown in the main chat, depending on some
+options in <a href="settings_appearance.html">Appearance settings</a>: one
+<a href="settings_appearance.html#viewstatus">general option to have useful status messages sent
+	to the main chat window</a> (enabled by default), and one
+<a href="settings_appearance.html#filterkick">to control whether spam messages should also be
+	considered useful</a>. Regardless of these settings, status messages are always shown in the
+<a href="#statusbar">status bar of the hub window</a>.</p>
+<p>Status messages are easy to spot: they start with three asterisks (&#42;&#42;&#42;); on the
+other hand, normal messages generally contain a nick (either the name of an online user or a hub
+bot) printed between &lt; and &gt;. A better description of the various status bar messages can be
+found <a href="#messages">below</a>.</p>
+<p>Click on links (URLs that start with https://, ftp://, www, etc) shown in the chat window to
+open them with the registered browser/viewer software.</p>
+
+<h2>Users list (right)</h2>
+<p>
+List of users connected to the hub. You can right-click them to see the menu options available for each.<br/>
+<a href="faq_different_icons.html">Follow this link to see what the different icons mean</a>.<br/>
+The users list can be shown or hidden by using the checkbox available in the bottom right of the hub window, in the status bar, right below the users list filter. When that checkbox is checked, the users list is shown.<br/>
+This window can be focused with Alt+U.
+</p>
+
+<h3 id="userlistcolumns">Columns</h3>
+<dl style="margin-left: 40px;">
+  <dt>Nick</dt>
+  <dd>The nicknames of the people currently connected to the hub.</dd>
+  <dt>Shared</dt>
+  <dd>How much each person is sharing.</dd>
+  <dt>Description</dt>
+  <dd>How the people have described themselves.</dd>
+  <dt>Tag</dt>
+  <dd>This shows information about what client they are using, how it's setup and how many hubs they are in. For example a tag like this &lt;++ V:705,M:A,H:1/2/3,S:4,O:5&gt; indicates that they are using DC++, version 0.705.  They are in active mode (as opposed to M:P for passive and M:5 for Socks5 connection).  They are unregistered in 1 hub, registered in 2 hubs and operators in 3 hubs.  They have 4 slots open.  More slots will open if they are all used and are uploading slower than 5kb/s. The complete specification and history of the DC++ tag can be found
+  <a href="faq_plusplus_tag.html">here</a>. </dd>
+  <dt>Connection</dt>
+  <dd>The upload speed the user has.</dd>
+  <dt>IP</dt>
+  <dd>The IP adress of the user.</dd>
+  <dt>Country</dt>
+  <dd>The country code of the user (if available).</dd>
+  <dt>E-Mail</dt>
+  <dd>Their E-Mail address. Normally blank or false.</dd>
+  <dt>CID</dt>
+  <dd>The users CID. This is a unique identifier of that person.</dd>
+</dl>
+
+<h3>Context menu commands</h3>
+<!--#include virtual="commands_user_general.inc" -->
+<!--#include virtual="commands_user_favorites.inc" -->
+<!--#include virtual="commands_copy.inc" -->
+<p>Shortcut to the "Get file list" command: Alt+G.</p>
+<p>Shortcut to the "Send private message" command: Alt+P.</p>
+
+<h2>Users list filter (bottom right)</h2>
+<p cshelp="IDH_HUB_FILTER">
+<div>
+	Here, you can filter the users list so you will only see specific users.
+</div>
+<!--#include virtual="window_list_filter.inc" -->
+<div>
+	Eg, selecting 'Nick' in the drop down, and writing "foo" in the filter, will only display users that have "foo" in their nick.<br/>
+	Note that users will only be visually filtered, not disconnected; also note that the remaining parts of the filtering control set are visible only when the filter input box is focused.
+</div>
+</p>
+
+<h2>Field to write a message (bottom left)</h2>
+<p cshelp="IDH_HUB_MESSAGE">
+<div>
+Write a message here to chat with other users connected to the hub. You can press either Enter or Alt+S to send your message. You may also use <a href="chat_commands.html">/commands</a> (send /help to list those available).
+</div>
+<div>
+When composing a multiline message, this box resizes itself automatically according to the <placeholder><a href="settings_appearance.html#messagelines">Height of the message editing box</a></placeholder> settings.
+</div>
+<div>This window can be focused with Alt+M.</div>
+</p>
+
+<h2 id="statusbar">Status bar</h2>
+<dl style="margin-left: 40px;">
+  <dt id="messages">Messages part (left)</dt>
+  <dd>
+  <div cshelp="IDH_HUB_STATUS">You can see here the last status message or a kick message sent by the hub. To see more from the recent kick/status messages you can move the mouse pointer above the status bar - the last few messages will be shown as a tooltip shortly.</div>
+  Common status messages:
+    <ul>
+    	<li>Messages about connecting, disconecting and redirecting to/from hubs and related problems</li>
+    	<li>Joins and parts of (favorite) users according to the <a href="settings_appearance.html#showjoins">Show joins...</a> settings</li>
+    	<li>Results of <a href="chat_commands.html">chat commands</a> issued</li>
+    	<li>Private messages when you set to <a href="settings_windows.html">display them in the mainchat window instead of a new window</a></li>
+    	<li><a href="https://support.microsoft.com/kb/819124" target="_blank" class="external">Standard Windows Socket error messages</a> in case of problems connecting to a hub or eg. when a hub disconnects unexpectedly (note that as these messages come directly from the operating system, they always appear in the language specified in your Windows locale settings regardless of what locale is set for DC++)</li>
+    	<li>Everything which comes from the hub and does not start with a valid nick (NMDC hubs only)</li>
+    </ul>	
+  </dd>
+  <dt><img src="Secure.ico" width="16" height="16" alt="Hub secure status"/> Hub secure status</dt>
+  <dd cshelp="IDH_HUB_SECURE_STATUS">Shows the hub's secure status. If the hub uses secure hub-client communications then a padlock icon shown here with the actual trusted status and cipher shown as a tooltip of the icon. If the hub isn't secure this part of the status bar is completly missing.</dd>
+  <dt><img src="Users.ico" width="16" height="16" alt="Users"/> Users</dt>
+  <dd cshelp="IDH_HUB_USERS_COUNT">Shows the number of users connected to the hub.</dd>
+  <dt>Total shared</dt>
+  <dd cshelp="IDH_HUB_SHARED">Indicates the total amount of bytes shared by the users.</dd>
+  <dt>Average share</dt>
+  <dd cshelp="IDH_HUB_AVERAGE_SHARED">Shows the amount of average share in the hub.</dd>
+  <dt>Unnamed check-box (right)</dt>
+  <dd cshelp="IDH_HUB_SHOW_USERS">Show or hide the users list using this check-box.</dd>
+</dl>
+</body>
+</html>

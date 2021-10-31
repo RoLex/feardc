@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+	<h1>
+		<img src="Search.ico" width="16" height="16" alt="Search"/>
+		Search
+	</h1>
+<p>The Search window allows searching for files inside the shares of on-line users. You can search for
+one or more keywords and optionally use filters as described below. When your search query is ready, press the Search button to send out the search request to the hub(s) you are connected to; these hubs will then forward the search request to all of their connected users.</p>
+<p>When a client matches a search request, it sends the results back to the requester. These results then show up in the search results list of the Search window.</p>
+<p>You can open several independent Search windows and define different search arguments in each, thus allowing you to process multiple searches simultaneously. Be careful though, it sometimes happens that search results show up in the wrong window (this is a deficiency of the NMDC protocol, and should never happen with ADC hubs).</p>
+<p>Note that <b>search requests are sent out only once, when the Search button is pressed</b>. After that - until that button is pressed again - the sole purpose of the Search window is to show results received by DC++ that: either match the search query (NMDC); or match the search ID (ADC).<br/>
+(This means that users who have logged in <i>after</i> you pressed the Search button won't send you any search result unless
+you repeat the search.)</p>
+<p>You may not start or repeat searches as fast as you like. There is a minimum interval of a few seconds between two searches
+defined in DC++. You will get a countdown message in the Status bar if you try to search sooner than allowed 
+and will be able to repeat the search only when the client is ready to search again. Besides, some hubs also limit searches by checking for forbidden keywords or by blocking repeated similar searches sent in a too small amount of time. Some hubs have
+predefined minimum search intervals for all searches or some even totally block searches if you are in 
+<a href="settings_connectivity_manual.html#connection">passive mode</a>.</p>
+<p>Search hits with TTH are always matched to the Download queue and new sources are automatically added to the queue items
+unless they were removed or marked as "bad" sources before. The filelists of all newly discovered sources will be automatically
+matched for possible other queued files if the <a href="settings_queue.html#automatchqueue">Automatically match queue for search hits</a>
+setting is enabled. Activating that option can generate lots of filelist traffic when large amount of new sources are found for queued files.</p>
+
+<p>Search results with identical hashes are grouped under the same entry. A merged entry can be
+respectively expanded and collapsed using the [+] and [-] glyphs on the left or with the right and
+left arrow keys were one to want to peek at the various results received for the same file.</p>
+
+<p>If you often get too few search results or no results at all, refer to the <a href="faq_nosearch.html">Search troubleshooting FAQ</a>.</p>
+
+<h2>Search options (left)</h2>
+<dl style="margin-left: 40px;">
+  <dt>Search for</dt>
+  <dd cshelp="IDH_SEARCH_SEARCH_FOR">This is the set of search strings to search for. Words beginning with "-" will be filtered away.</dd>
+  <dt>Purge</dt>
+  <dd cshelp="IDH_SEARCH_PURGE">Clear the contents of the <a href="settings_history.html#searchhistory">search history</a>.</dd>
+  <dt>Search</dt>
+  <dd cshelp="IDH_SEARCH_SEARCH">Start searching for the set of search strings defined above. Note; you may not start too many searches in a small amount of time.</dd>
+  <dt>Size</dt>
+  <dd cshelp="IDH_SEARCH_SIZE">Filter away files depending on their file size.</dd>
+  <dt>File type</dt>
+  <dd cshelp="IDH_SEARCH_TYPE">Filter away results depending on their file type (extension) or hash value.<br/>
+  Note: options that specify a certain file type (other than <i>Any</i>, <i>Directory</i> &amp; <i>TTH</i>) will work different on ADC and NMDC hubs as follows:
+  <ul>
+  	<li>In NMDC hubs : not all possible extensions are included in some file type groups. If you search for newer or obscure file types then it is recommended to use the <i>Any</i> option here and include the desired file extension(s) in the search string instead.</li>
+  	<li>In ADC hubs : all file type groups will filter results using the corresponding configured <a href="settings_search_types.html">Search Types</a> setting.</li>
+  </ul>
+  </dd>
+  <dt>Only users with free slots</dt>
+  <dd cshelp="IDH_SEARCH_SLOTS">Filter away files depending on the user's free slots.</dd>
+  <dt>Hide files already in share</dt>
+  <dd cshelp="IDH_SEARCH_SHARE">Filter away files that are already in share.</dd>
+  <dt>Hubs</dt>
+  <dd cshelp="IDH_SEARCH_HUBS">Search only selected hubs.</dd>
+</dl>
+<h2>Results list (right)</h2>
+<h3>Columns</h3>
+<dl style="margin-left: 40px;">
+  <dt>File</dt>
+  <dd>The file name.</dd>
+  <dt>Hits</dt>
+  <dd>The amount of results received for the same file. Multiple identical results are grouped
+  together; they may be expanded with the [+] sign or by pressing the right arrow key.</dd>
+  <dt>User</dt>
+  <dd>The user's nick name.</dd>
+  <dt>Type</dt>
+  <dd>The file's extension (file type).</dd>
+  <dt>Size</dt>
+  <dd>The file's size.</dd>
+  <dt>Slots</dt>
+  <dd>x/y: x slots available of a total y.</dd>
+  <dt>Path</dt>
+  <dd>The path in the user's file list where the file is stored.</dd>
+  <dt>Connection</dt>
+  <dd>The user's possible <a href="settings_general.html#linespeed">line speed in upload</a>.</dd>
+  <dt>Hub</dt>
+  <dd>In which hub the user is in.</dd>
+  <dt>Exact size</dt>
+  <dd>The exact size of the file.</dd>
+  <dt>IP</dt>
+  <dd>The user's IP.</dd>
+  <dt>TTH root</dt>
+  <dd>The TTH root for the file.</dd>
+  <dt>CID</dt>
+  <dd>The unique ID that DC++ use to identify other users.</dd>
+</dl>
+
+<h3>Context menu commands</h3>
+<!--#include virtual="commands_file_download.inc" --> 
+<dl style="margin-left: 40px;">
+  <dt>Download whole directory</dt>
+  <dd>If one or more files selected from the same folder it will add the whole folder
+  	  to the Download Queue.</dd>	  
+  <dt>Download whole directory to...</dt>
+  <dd>Combines the function of <i>Download to...</i> and <i>Download whole directory</i> 
+  	  commands</dd>	  
+  <dt>View as text</dt>
+  <dd><p>It downloads the selected file to the temporary folder of the operating system and opens
+  	  its contents in a text viewer window. The file will be deleted right after its contents shown.</p>
+  	  <!--#include virtual="commands_viewastext.inc" --> 
+  </dd>
+</dl>
+<!--#include virtual="commands_file_general.inc" --> 
+<!--#include virtual="commands_user_general.inc" --> 
+<!--#include virtual="commands_user_favorites.inc" --> 
+<!--#include virtual="commands_listview.inc" --> 
+<!--#include virtual="commands_copy.inc" -->
+
+<h2>Filter search results</h2>
+<p cshelp="IDH_SEARCH_FILTER">
+<div>
+	These controls allow filtering current search results in order to only see specific ones.
+</div>
+<!--#include virtual="window_list_filter.inc" -->
+<div>
+	Eg selecting "File" in the drop down, and writing "foo" in the filter, will only display results that
+	have "foo" in their file name. When a filter is in effect, the "Items" part of the status bar is
+	updated to reflect it.
+</div>
+</p>
+
+<h2>Status bar</h2>
+<dl style="margin-left: 40px;">
+  <dt>+/- checkbox</dt>
+  <dd>Show or hide the search options group (left side of the search window).</dd>
+  <dt>X items or C / N items</dt>
+  <dd>Either the total amount of search results applicable to the running search query, if none has
+  been filtered away after applying the "Filter search results" filter ("X items" format), or the
+  current amount of items that are displayed in the list after applying the filter out of the total
+  amount of search results ("C / N items" format).</dd>
+  <dt># dropped</dt>
+  <dd>The amount of search results that have been received but do not satisfy the running search
+  query.</dd>
+</dl>
+</body>
+</html>

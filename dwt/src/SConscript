@@ -1,0 +1,37 @@
+Import('dev source_path')
+
+env, target, sources = dev.prepare_build(
+    source_path,
+    'dwt',
+    in_bin=False,
+    recursive=True
+)
+
+dev.add_boost(env)
+
+env.Append(CPPPATH=['#/dwt/include'])
+
+
+def get_msvcproj_files(env):
+    def parse_patterns(patterns):
+        array = []
+        for pattern in patterns:
+            for f in env.Glob('#/dwt/' + pattern):
+                array.append(f)
+        return array
+    return (
+        parse_patterns([
+            'include/dwt/*.h',
+            'include/dwt/*/*.h',
+            'include/dwt/*/*/*.h'
+        ]),
+        parse_patterns([
+            'src/*.cpp',
+            'src/*/*.cpp',
+            'src/*/*/*.cpp'
+        ])
+    )
+
+ret = dev.build_lib(env, target, sources, get_msvcproj_files, 'dwt')
+
+Return('ret')

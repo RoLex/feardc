@@ -1,0 +1,11 @@
+Import('dev source_path')
+
+env, target, sources = dev.prepare_build(
+    source_path,
+    'bzip2',
+    source_glob='*.c',
+    in_bin=False
+)
+
+ret = dev.build_lib(env, target, sources, dev.c_lib)
+Return('ret')

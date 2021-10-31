@@ -1,0 +1,87 @@
+[OPTIONS]
+Auto Index=Yes
+Compatibility=1.1 or later
+Compiled file=DCPlusPlus.chm
+Contents file=toc.hhc
+Default Window=main
+Default topic=index.html
+Display compile progress=Yes
+Enhanced decompilation=Yes
+Full-text search=Yes
+Index file=index.hhk
+Language=0x409
+Title=Help for DC++
+
+[WINDOWS]
+main=,"toc.hhc","index.hhk","index.html","index.html",,,,,0x42520,220,0x204e,[0,0,640,480],,,,,,,0
+
+
+[FILES]
+office11.css
+style.css
+external.png
+
+[ALIAS]
+IDH_INDEX=index.html
+IDH_GET_STARTED=get_started.html
+IDH_CHANGELOG=changelog.html
+IDH_KEYBOARD=keyboard_commands.html
+IDH_COMPILE=compile.html
+IDH_MAIN=window_main.html
+IDH_HUB=window_hub.html
+IDH_PM=window_pm.html
+IDH_FILE_LIST=window_file_list.html
+IDH_PUBLIC_HUBS=window_public_hubs.html
+IDH_FAVORITE_HUBS=window_favorite_hubs.html
+IDH_USERS=window_users.html
+IDH_QUEUE=window_download_queue.html
+IDH_FINISHED_DL=window_finished_downloads.html
+IDH_FINISHED_UL=window_finished_uploads.html
+IDH_SEARCH=window_search.html
+IDH_ADL_SEARCH=window_adlsearch.html
+IDH_NOTEPAD=window_notepad.html
+IDH_TEXT_VIEWER=window_text_viewer.html
+IDH_SYSTEM_LOG=window_system_log.html
+IDH_NET_STATS=window_network_stats.html
+IDH_TRANSFERS=window_transfers.html
+IDH_HASH_PROGRESS=dialog_indexing_progress.html
+IDH_USER_COMMAND=dialog_user_command.html
+IDH_USER_MATCH=dialog_user_matching.html
+IDH_FAVORITE_HUB=dialog_favorite_hub.html
+IDH_FAV_HUB_GROUPS=dialog_fav_hub_groups.html
+IDH_ADLSP=dialog_adls_properties.html
+IDH_PUBLIC_HUB_LISTS=dialog_public_hub_lists.html
+IDH_CUSTOMIZE_TB=dialog_customize_tb.html
+IDH_STRING_LIST=dialog_string_list.html
+IDH_GENERALPAGE=settings_general.html
+IDH_CONNECTIVITYPAGE=settings_connectivity.html
+IDH_CONNECTIVITYMANUALPAGE=settings_connectivity_manual.html
+IDH_BWLIMITPAGE=settings_bwlimit.html
+IDH_PROXYPAGE=settings_proxy.html
+IDH_DOWNLOADPAGE=settings_downloads.html
+IDH_FAVORITE_DIRSPAGE=settings_favoritedirs.html
+IDH_QUEUEPAGE=settings_queue.html
+IDH_UPLOADPAGE=settings_sharing.html
+IDH_UPLOADFILTERINGPAGE=settings_sharing_filtering.html
+IDH_APPEARANCEPAGE=settings_appearance.html
+IDH_STYLESPAGE=settings_styles.html
+IDH_TABSPAGE=settings_tabs.html
+IDH_WINDOWSPAGE=settings_windows.html
+IDH_NOTIFICATIONSPAGE=settings_notifications.html
+IDH_HISTORYPAGE=settings_history.html
+IDH_LOGPAGE=settings_logs.html
+IDH_ADVANCEDPAGE=settings_advanced.html
+IDH_EXPERTSPAGE=settings_expert.html
+IDH_UCPAGE=settings_user_commands.html
+IDH_CERTIFICATESPAGE=settings_certs.html
+IDH_SEARCHTYPESPAGE=settings_search_types.html
+IDH_USERMATCHPAGE=settings_user_matching.html
+IDH_PLUGINPAGE=settings_plugins.html
+
+[MAP]
+#include resource.h
+
+[TEXT POPUPS]
+
+[INFOTYPES]
+

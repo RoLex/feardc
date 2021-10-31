@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+	<h1>
+		<img src="UserOn.ico" width="16" height="16" alt="Private Message"/>
+		Private Message
+	</h1>
+
+<h2>Private chat window (top)</h2>
+<p cshelp="IDH_PM_CHAT">
+The private chat window displays messages sent during your private conversation with a specific user (to know which one, take a look at the title bar of the main DC++ window). You can chat with the other user in this "private area" by writing a message in the field below the private chat and pressing either Enter or Alt+S to send your message. You may also use <a href="chat_commands.html">/commands</a> (send /help to list those available).
+</p>
+<p>Click on links (URLs that start with https://, ftp://, www, etc) shown in the chat window to
+open them with the registered browser/viewer software.</p>
+
+<h2>Field to write a message (bottom)</h2>
+<p cshelp="IDH_PM_MESSAGE">
+<div>
+Write a message here to chat with the user you are currently in private conversation with (to know which one, take a look at the title bar of the main DC++ window). You can press either Enter or Alt+S to send your message. You may also use <a href="chat_commands.html">/commands</a> (send /help to list those available).
+</div>
+<div>
+When composing a multiline message, this box resizes itself automatically according to the <placeholder><a href="settings_appearance.html#messagelines">Height of the message editing box</a></placeholder> settings.
+</div>
+</p>
+
+<h2>Status bar</h2>
+
+<h3>Message part (left)</h3>
+<p cshelp="IDH_PM_STATUS">
+Shows the most recent status message.<br/>
+To see more from the recent status messages you can move the mouse pointer above the status bar - the last few messages will be shown as a tooltip shortly.
+</p>
+
+<h3>Communication channel</h3>
+<p cshelp="IDH_PM_CHANNEL">
+Private messages are usually sent through a hub, the name of which is indicated here. This part can
+also show "<placeholder>Direct encrypted channel</placeholder>" when private messages flow directly
+between you and the user (no hub involved in that case).<br/>
+Click this part to select the desired communication channel.
+</p>
+
+<h2 id="ccpm">Information on direct encrypted private message channels</h2>
+<p>
+Hubs can spy upon any private message they may be involved in routing from one user to another. In
+order to avoid such spying, one can initiate a peer-to-peer connection with the desired user and
+use it to send private messages.<br/>
+The hub used to establish the initial peer-to-peer connection must be an ADC hub and the connection
+between the user and the hub must be encrypted ("adcs" scheme instead of "adc"). Additionally, both
+users must support the "CCPM" ADC extension.<br/>
+Ways to attempt a direct encrypted channel:
+<ul>
+	<li>Click the "Communication channel" part of the status bar and select the
+	"<placeholder>Start a direct encrypted channel</placeholder>" menu command.</li>
+	<li>Send the "/direct" chat command.</li>
+	<li>Send the "/encrypted" chat command.</li>
+</ul>
+Ways to disconnect the direct encrypted channel:
+<ul>
+	<li>Click the "Communication channel" part of the status bar and select the
+	"<placeholder>Disconnect the direct encrypted channel</placeholder>" menu command.</li>
+	<li>Click the "Communication channel" part of the status bar and select a hub.</li>
+	<li>Close the private message window.</li>
+	<li>Disconnect the transfer from the
+	<placeholder><a href="window_transfers.html">Transfers</a></placeholder> list.</li>
+</ul>
+</p>
+
+</body>
+</html>

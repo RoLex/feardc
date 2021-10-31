@@ -1,0 +1,15 @@
+/* add an icon next to external links */
+a.external {
+	background: url(external.png) no-repeat right;
+	padding-right: 12px;
+	zoom: 1; /* hack for IE <= 7, to force a re-flow */
+}
+
+img {
+	border: 0;
+	vertical-align: middle;
+}
+
+td.cl {
+	text-align: left;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>Sharing</h1>
+<h2>Shared directories</h2>
+<p cshelp="IDH_SETTINGS_UPLOAD_DIRECTORIES">
+To add directories to your share, you can use the Add and Remove
+buttons, or drag and drop folders from a Windows Explorer window.
+<em style="font-weight: bold;">Beginning with version
+0.4032, files will be shared only once they have been hashed.</em>
+</p>
+<p style="font-weight: bold;">If you enter the Sharing tab and press OK; the client may appear to
+freeze, this is due to a refresh of the file list.</p>
+<dl style="margin-left: 40px;">
+  <dt>Add folder</dt>
+  <dd cshelp="IDH_SETTINGS_UPLOAD_ADD">Browse for a new folder to add to your share. If another
+existing file shares that name, the new name will be made unique by
+adding another letter to its name. After selecting the directory
+to add, you will be able to pick the Virtual Name that it will be shown
+under when other users see your files. You are allowed to merge different folders into one virtual folder
+using the same Virtual Name. Their content will be shown as one folder in your filelist. If the newly added files have
+not been hashed, the Hash Progress Dialog will display. You can
+choose to let it display, or let hashing continue in the background.</dd>
+  <dt>Rename</dt>
+  <dd cshelp="IDH_SETTINGS_UPLOAD_RENAME">Change the virtual name on a shared folder. Note: the
+client will
+appear to freeze when you exit settings, this is due to a refresh of
+the file list.</dd>
+  <dt>Remove</dt>
+  <dd cshelp="IDH_SETTINGS_UPLOAD_REMOVE">Remove the selected folder(s).</dd>
+</dl>
+<dl>
+  <dt id="slots">Upload slots</dt>
+  <dd cshelp="IDH_SETTINGS_UPLOAD_SLOTS">Configure the number of slots
+that other users can occupy to
+download files from you. A remote user can use only one slot for
+each hub that they're on with you. DC++ supports uploading
+file lists and files below <a href="settings_expert.html#minislotsize">512 KiB</a> to
+other DC++ users without requiring
+a slot. There's a max of 3 connections in addition to normal slots,
+these are called mini slots.<br/>
+Note: If a user leaves the hub, DC++ will close his slots; if the user
+is back within 10 minutes, DC++ will grant him a slot. (This will only
+happen if <a href="settings_advanced.html#disconnect">Automatically
+disconnect users who leave the hub</a> is enabled.) This can cause your
+upload slots to go over the maximum set in settings.
+</dd>
+     <dt>Automatically open an extra slot if speed is below (0 = disable)</dt>
+  <dd cshelp="IDH_SETTINGS_UPLOAD_MIN_UPLOAD_SPEED">If the average upload speed drops below the given number,
+an
+additional upload slot will be granted. These slots are granted
+once every 30 seconds at maximum. If the speed of the original
+uploads increases, the granted slot will not be closed.</dd>
+    <dt id="extraslots">Max extra upload slots</dt>
+  <dd cshelp="IDH_SETTINGS_MAX_EXTRA_UPLOAD_SLOTS">Configure the number of maximum extra slots. Default is 3.</dd>
+</dl>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>Appearance</h1>
+<p style="font-style: italic;" cshelp="IDH_SETTINGS_APPEARANCE_REQUIRES_RESTART">Note: some of these options require
+that you restart DC++; they won't be applied while DC++ is running. Some settings apply to specific windows and will therefore be loaded when opening a new window.</p>
+<h2>Options</h2>
+<dl style="margin-left: 40px;">
+  <dt>Minimize to tray</dt>
+  <dd cshelp="IDH_SETTINGS_APPEARANCE_MINIMIZE_TRAY">When enabled, minimizing DC++ will cause it to appear as an icon
+in the windows system tray. If you left click, it will be
+returned to its previous status. If you right click on the icon,
+it will give you a small menu.</dd>
+  <dt>Always display tray icon</dt>
+  <dd cshelp="IDH_SETTINGS_APPEARANCE_ALWAYS_TRAY">When enabled, the tray icon will be always shown, regardless of 
+  	the visibility state of DC++ program window.</dd>
+  <dt>Show timestamps in chat by default</dt>
+  <dd cshelp="IDH_SETTINGS_APPEARANCE_TIME_STAMPS">When enabled, a string representing the current
+  time (called "timestamp") will be prepended to every chat message. To customize the timestamp
+  format, use the <a href="#timestamp_format">Timestamp format</a> option below.</dd>
+  <dt id="viewstatus">View status messages in chat</dt>
+  <dd cshelp="IDH_SETTINGS_APPEARANCE_STATUS_IN_CHAT">Show some messages destined for the Status Bar in the chat window as
+well. Applies to both hub and private chat windows.<i>It's generally a good idea to leave this enabled.</i></dd>
+  <dt id="filterspam">Filter spam messages</dt>
+  <dd cshelp="IDH_SETTINGS_APPEARANCE_FILTER_MESSAGES">When enabled, kick, debug and other spam messages are hidden from main chat. These messages are generally not useful and make reading the chat more troublesome.</dd>
+  <dt id="showjoins">Show joins / parts in chat by default</dt>
+  <dd cshelp="IDH_SETTINGS_APPEARANCE_SHOW_JOINS">Show an entry in main chat whenever someone joins or leaves the
+hub. Use the <a href="chat_commands.html#showjoins">/showjoins chat
+command</a>
+to enable or disable it on already open hubs. <i>On large hubs, you don't want this enabled.</i></dd>
+  <dt>Only show joins / parts for favorite users</dt>
+  <dd cshelp="IDH_SETTINGS_APPEARANCE_FAV_SHOW_JOINS">With this option enabled, only the joining and parting of
+<a href="window_users.html">Favorite Users</a> are shown.</dd>
+  <dt>Sort favorite users first</dt>
+  <dd cshelp="IDH_SETTINGS_APPEARANCE_SORT_FAVUSERS_FIRST">With this option enabled, those users who are <a href=window_favorite_users.html>favorite users</a> will be sorted first in user lists.</dd>
+  <dt id="guessip">Guess user country from IP</dt>
+  <dd cshelp="IDH_SETTINGS_APPEARANCE_GET_USER_COUNTRY">
+  When selected, DC++ displays user country information when available. DC++ uses
+  <a href="https://dev.maxmind.com/geoip/legacy/geolite/" target="_blank" class="external">MaxMind's GeoIP</a>
+  databases in order to do so.
+  </dd>
+  <dt>City-level geolocation database (allows parameters such as %[city])</dt>
+  <dd cshelp="IDH_SETTINGS_APPEARANCE_GEO_CITY">
+  Use a more detailed geolocation database that contains information such as the city, the region,
+  the latitude and longitude, etc. Compared to the default country-level geolocation database, the
+  city-level one is bigger and consumes more memory.<br/>
+  See <a href="https://www.maxmind.com/en/geoip2-city-database-accuracy" target="_blank" class="external">
+	  GeoIP2 City Accuracy</a> for more information.<br/>
+  Additional parameters that can be used in conjunction with the city-level geolocation database:
+  <b>%[areacode]</b>, <b>%[city]</b>, <b>%[lat]</b>, <b>%[long]</b>, <b>%[metrocode]</b>,
+  <b>%[postcode]</b>, <b>%[region]</b>.
+  </dd>
+  <dt>Region name geolocation database (allows %[region])</dt>
+  <dd cshelp="IDH_SETTINGS_APPEARANCE_GEO_REGION">
+  Complement the city-level geolocation database with one containing region names. By default, the
+  <b>%[region]</b> parameter of city-level databases contains cryptic codes that may be difficult
+  to relate to the actual region; enable this setting to download a database that will be used to
+  translate these codes into more understandable region names.
+  </dd>
+</dl>
+<h2>Miscellaneous</h2>
+<dl style="margin-left: 40px;">
+  <dt id="timestamp_format">Timestamp format</dt>
+  <dd cshelp="IDH_SETTINGS_APPEARANCE_TIMESTAMP_FORMAT">This lets you select the format of the time stamps that can
+appear in the chat and private message windows. For the available
+formatting variables, please see <a
+	href="settings_logs.html#timeformat">Logs</a>. <br/>(default: %H:%M)</dd>
+<dt>Country format</dt>
+<dd cshelp="IDH_SETTINGS_APPEARANCE_COUNTRY_FORMAT">
+This box allows customization of the way user country information is displayed throughout the
+interface. <b>Default: %[2code] - %[name]</b><br/><br/>
+Available variables:
+<ul>
+	<li><b>%[2code]</b> gets replaced by a 2-letters country code (eg DE, FR).</li>
+	<li><b>%[3code]</b> gets replaced by a 3-letters country code (eg DEU, FRA).</li>
+	<li><b>%[continent]</b> gets replaced by a continent code (AF, AS, EU, NA, OC, SA for Africa,
+	Asia, Europe, North America, Oceania and South America).</li>
+	<li><b>%[engname]</b> gets replaced by the English country friendly name (eg Germany, France).</li>
+	<li><b>%[name]</b> gets replaced by the localized country friendly name (eg Germany, France on
+	an English operating system).</li>
+	<li><b>%[officialname]</b> gets replaced by the localized country official name (eg Federal
+	Republic of Germany, French Republic on an English operating system).</li>
+</ul>
+Additional available variables when using the city-level database:
+<ul>
+	<li><b>%[areacode]</b> gets replaced by the area code (United States only).</li>
+	<li><b>%[city]</b> gets replaced by the city's name.</li>
+	<li><b>%[lat]</b> gets replaced by the latitude.</li>
+	<li><b>%[long]</b> gets replaced by the longitude.</li>
+	<li><b>%[metrocode]</b> gets replaced by the DMA / metro code (United States only).</li>
+	<li><b>%[postcode]</b> gets replaced by the city's postal code.</li>
+	<li><b>%[region]</b> gets replaced by the region's name.</li>
+</ul>
+</dd>
+<dt id="messagelines">Height of the message editing box</dt>
+<dd cshelp="IDH_SETTINGS_APPEARANCE_MESSAGE_LINES">
+Use these 2 boxes to control how much you want message editing boxes (in <placeholder><a href="window_hub.html">Hub</a></placeholder> and <placeholder><a href="window_pm.html">Private Message</a></placeholder> windows) to resize themselves when you are composing a multiline message. Both settings can have the same value, in which case the message editing box will never redraw itself. Minimum value: 1. Default values: 1 and 10.
+</dd>
+  <dt>Language</dt>
+  <dd cshelp="IDH_SETTINGS_APPEARANCE_LANGUAGE">This drop-down list allows you to choose which language DC++ should use for its user interface and messages. "Default" means "use the same language as my operating system".</dd>
+</dl>
+</body>
+</html>

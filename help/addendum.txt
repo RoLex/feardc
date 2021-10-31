@@ -1,0 +1,5 @@
+PO4A-HEADER:position=</body>;mode=before
+<hr/>
+<p>
+File translated from English. <a href="https://translations.launchpad.net/dcplusplus" target="_blank" class="external">Chip in!</a>
+</p>

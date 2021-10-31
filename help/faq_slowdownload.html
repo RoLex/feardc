@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>Slow download speeds </h1>
+<p>If you experience slow downloads, it could be for many reasons. However, 
+	they can be different when you experience slow download speed from certain
+	user(s) or when you get slow speeds downloading from every peer. Please try 
+	to download from or get filelist of several (at least 10) users before you go on.
+	Note that this faq does NOT cover the case when your downloads won't start at all.</p>
+	
+<h2>Slow downloads from certain user(s)</h2>
+<p>Reasons connections with some users may be too slow:</p>
+<ol>
+	<li>
+	The upload bandwidth of the peer you are downloading from is maxed out. Don't pay attention to
+	the value of the <a href="window_hub.html#userlistcolumns">Connection</a> column in the user
+	list: it is subjective and often not an accurate representation of the user's actual speed.
+	</li>
+	<li>
+	The peer you are downloading from is too far from you (maybe on another continent) and too many
+	<a href="https://www.webopedia.com/TERM/H/hop.html" target="_blank" class="external">hops</a>
+	are necessary to connect you to your peer.<br/>
+	It is also possible that either your ISP or the other user's provider has limited overseas
+	bandwitdh available.<br/>
+	You can view your peer's country in
+	<placeholder><a href="window_transfers.html">Transfers</a></placeholder> area (provided the
+	<a href="settings_appearance.html#guessip">Guess user country from IP</a> setting is enabled).
+	</li>
+ <li>The person who you are downloading from is using a bandwidth
+limiter. There are two types of limiting: client based or using a third-party
+program. 
+    <ul>
+      <li>Clients with bandwidth limiting capability often have set download
+and upload speed ratios in place to avoid abuse. (ex. if the
+upload speed limit is set below 6 KiB/s, then the client will restrict
+the client download speed to a 2:1 ratio). This varies from
+client to client and obviously not all support upload limiting.
+This type of speed limiting <i>only</i>
+restricts the uploading of files, including user lists. It
+does not limit chat, private messages, or searches. From version 0.760
+DC++ also has internal file transfer limiting capability. If enabled, DC++ shows
+the upload limiting rate in the 
+<a href="window_hub.html#userlistcolumns">Connection coloumn</a>
+of a hub's user list. Other (older) clients may show this value in
+L: or B: part of the <a href="faq_plusplus_tag.html">DC++ tag</a>.
+</li>
+      <li>Users could also be using a third-party program to limit the
+speed of traffic. This type of speed limiting is absolute; it
+will limit the speed of all traffic by the user, which can include file
+transfers, searches, chat, and private messages. This type
+of application never enforce a download speed:upload speed ratio, it
+may be more prone to abuse.</li>
+    </ul>
+   So for particularly slow transfers (1 KiB/s or slower) from a certain user,
+abusive upload limiting <b>may</b> be to blame. 
+ </li> 
+ <li>The person who you are downloading from suffers from one or more  
+ constant speed problem described in the next section.
+ </li> 
+</ol>
+<p>Solution: try to find more sources for your downloads:</p>
+<ul>
+	<li>
+	To find more sources for your download, right-click it from the
+	<placeholder><a href="window_download_queue.html">Download Queue</a></placeholder> or from the
+	<placeholder><a href="window_transfers.html">Transfers</a></placeholder> area and select the
+	<i>Search for alternates</i> command. A corresponding
+	<placeholder><a href="window_search.html">Search</a></placeholder> window will open,
+	the "Slots" column of the result list of which can be leveraged to find users with available
+	bandwidth.
+	</li>
+ <li>
+ More sources for queued files can be discovered and automatically added if you enable
+ <a href="settings_queue.html#automatchqueue">Automatically Match Queue for Search Hits</a>
+ in Queue settings.</li>
+ <li>
+ Automatic discovery for additional sources is also possible if you enable
+ <a href="settings_queue.html#autosearchdl">Automatically Search for Alternative Download Locations</a>
+ in Queue settings. Note that some hubs have
+ predefined minimum search interval rules so enabling this function may
+ result no hits for manual searches in these hubs.
+ </li>
+ <li>
+ To minimize the download time make sure you have checked 
+ <a href="settings_advanced.html#segmented">Enable segmented downloads</a> in
+ Advanced settings. With segmented downloads enabled
+ you are able to download the pieces of a file from several sources at the same time.
+ </li>
+</ul>
+
+<h2>Slow downloads from every user</h2>
+<p>Slow downloads within DC++ may be caused by the following:</p>
+<ol>
+  <li><a href="settings_bwlimit.html">Bandwidth limiting</a> is enabled for downloads.
+  Make sure the limiter is disabled or set to a high enough value.</li>
+  <li>Your Internet connection is shared with others on your <acronym
+ title="Local Area Network">LAN</acronym> and they are using up all the
+available bandwidth. Tell them to knock it off. =) 
+  Also your connection speed to the gateway or router on your <acronym
+ title="Local Area Network">LAN</acronym> can be slower than the available speed
+ from your <acronym title="Internet Service Provider">ISP</acronym>. 
+ It could be for reasons like week signal strength on a wireless connection, 
+ broken/old network devices, etc... Try to do a file transfer test within your local
+ network to be sure that it's fast enough.</li>
+  
+  <li>Your ISP may be limiting your P2P traffic via some method of
+packet shaping. Call up the ISP and inquire if they do anything
+with P2P traffic. You can try to connect to ADC hubs and test your downloads there.
+As ADC is a newer and more efficient DC protocol it can be still unknown to your ISP's
+throttling system. If the ISP <i>does</i>
+throttle you, then there is nothing much that can be done to increase the
+speeds. This is also common at Universities and at the workplace,
+and is <a href="faq_university.html">the topic of another FAQ</a>.</li>
+
+  <li id="ddos">You haven't set up your third party firewall or internet monitor
+software correctly. Some of these security applications may treat p2p transfer as a 
+<a href="https://en.wikipedia.org/wiki/Denial-of-service_attack" target="_blank"
+ class="external"> DDoS flood</a> attempt and tries to defend your computer from it.
+Try to disable or even uninstall these applications temporarily and test your downloads again.
+If it helps refer the application's documentation how to make exception rules for DC++.
+If you have a router its also possible that it has some anti-DDoS or flood protection
+feature and it may enabled by default. Check the router's documentation or configuration page
+for a possible option of this kind.</li>
+
+<li>You need to optimize your operating system for your current
+connection speed. First, <b>close <u>all</u></b> <acronym
+ title="peer to peer">P2P</acronym> applications. Next run the <a
+ href="https://www.dslreports.com/tweaks" target="_blank" class="external">DSLReports
+TweakTest</a>. Once you have optimized it, then run a speed test at
+<a href="https://www.dslreports.com/stest" target="_blank" class="external">DSLReports
+SpeedTest Page</a> or at the nice looking
+<a href="https://speedtest.net" target="_blank" class="external">SpeedTest.Net</a> page
+(select a test site closest to your location for
+accurate results). This will give you a good idea what your
+maximum download and upload speeds are. If you're getting within
+10% of your connection speed, that's the best you can get! If you
+are having trouble with your <i>broadband</i>
+connection, and it relates to packet loss, excessive latency, or
+Internet or <acronym title="Internet Service Provider">ISP</acronym>
+congestion, running the <a href="https://www.dslreports.com/linequality"
+ target="_blank" class="external">Line Quality Test </a>
+may help find the cause (<i>requires logon, free signup).</i>
+  </li>
+
+    <li><p>Your Internet connection is <acronym
+ title="Digital Subscriber Loop">DSL</acronym>, cable, or satellite one
+with an asymmetrical connection speed, such as 768/128 Kib/s or
+3.0 Mib/s / 256 Kib/s. On such connections, if you upload near the speed of
+your upload limit (16 KiB/s in the case of the 768/128 connection), it
+may affect the speeds of your downloads, no matter how much larger
+your download connection is. If this is happening, you can use the 
+<a href="settings_bwlimit.html"> built-in transfer limiting function</a>
+to set the maximum upload rate value <b>slightly</b> lower than
+your available upload speed (eg. to 15 or 14 KiB/s in the case above).</p>
+<p>If you aren't allowed to use upload limiting you can also experiment with changing the
+size of <a href="settings_expert.html#writebuffer">Socket Write Buffer</a> in Experts Only
+panel of DC++ settings. It defaults to 8 KiB and you can try to change it to a smaller
+value. You should specify the value in bytes and you may have to try several values
+to test what size suits your connection best. Note that you should restart DC++ to
+changes take effect.</p></li>
+
+  <li>The &quot;<acronym title="Quality of Service">QoS</acronym> Packet Scheduler&quot; is enabled 
+ in your Windows so you are not able to use some reserved bandwidth for download. Follow 
+ <a href="https://www.vistax64.com/threads/qos-bandwidth-reserve-limit.109326/"
+ target="_blank" class="external"> this guide</a> to disable QoS in Windows 7 or 8.
+Some routers also have QoS capabilities, but it shouldn't be enabled by default. Please consult your router's manual for more
+information. </li>
+
+  <li>Your computer is infected with malicious software which altered the low level network
+settings of your operating system. This is common when your Windows become infected with spy/adware.
+Even they are disinfected, their destructive modifications usually still remain. You can
+follow the official guided help from Microsoft how to restore these settings 
+<a href="https://support.microsoft.com/kb/299357" target="_blank" class="external">in Windows 7 and 8.x</a>.
+If you're running Windows 10 you can try 
+<a href="https://www.minitool.com/news/reset-tcp-ip-windows-10.html" target="_blank" class="external">this guide</a>
+to fix network settings.</li>
+</ol>
+</body>
+</html>

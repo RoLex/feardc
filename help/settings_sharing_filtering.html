@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>Filtering</h1>
+<dl style="margin-left: 40px;">
+  <dt>Share hidden files</dt>
+  <dd cshelp="IDH_SETTINGS_UPLOAD_SHAREHIDDEN">Share files with the Hidden attribute set and files inside
+directory with the Hidden attribute set. With this option off, files
+starting with a . (full stop) will not be shared. Note: this option requires a
+refresh of the file list, and may cause the client to appear to freeze.
+  </dd>
+  <dt>File minimum size</dt>
+  <dd cshelp="IDH_SETTINGS_UPLOAD_SKIPLIST_MINSIZE">
+      Only include include files in the share that has a file size above the specified value. Value is specified in bytes. The value 0 removes the filter and is the default.
+  </dd>
+    <dt>File maximum size</dt>
+  <dd cshelp="IDH_SETTINGS_UPLOAD_SKIPLIST_MAXSIZE">
+      Only include include files in the share that has a file size below the specified value. Value is specified in bytes. The value 0 removes the filter and is the default.
+  </dd>
+  <dt>File name filtering with Regular expressions</dt>
+  <dd cshelp="IDH_SETTINGS_UPLOAD_SKIPLIST_REGEX">
+      Filters out any file with a name that matches a regular expression that is listed here. Use semicolon to separate multiple regular expressions. For example, the value ^.*\.txt;^.*\.png will remove any file that has the extensions txt or png.
+  </dd>
+  <dt>File extension filtering</dt>
+  <dd cshelp="IDH_SETTINGS_UPLOAD_SKIPLIST_EXTENSIONS">
+      Filters out any file with an extension that is listed here. Use semicolon to separate multiple extensions. For example, the value txt;png will remove any file that has the extensions txt or png.
+  </dd><dt>Path filtering</dt>
+  <dd cshelp="IDH_SETTINGS_UPLOAD_SKIPLIST_PATHS">
+      Filters out any path that is listed here. Use semicolon to separate multiple paths. For example, the value "download;secret_files" will remove any directory that has download or secret_files in the path.
+  </dd>
+</dl>
+</body>
+</html>

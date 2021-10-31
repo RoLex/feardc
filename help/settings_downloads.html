@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>Downloads</h1>
+<p>This page contains the configuration options for where DC++ will
+place complete and incomplete downloads, options that control the
+maximum simultaneous downloads, and information on the public hub list
+that DC++ will use.</p>
+<h2>Directories</h2>
+<div style="margin-left: 40px;">
+<dl>
+  <dt id="defdwnlddir">Default download directory</dt>
+  <dd cshelp="IDH_SETTINGS_DOWNLOAD_DOWNLOADDIR">
+<p>After a download is complete, DC++ tries to move your
+just finished file to this directory. The default location of the directory depends on what kind of installation
+method used to install DC++. If you used the installer (.exe) then your finished downloads will be placed to a folder
+in your Windows user profile. In a typical case the default path of the finished downloads is</p>
+	<ul>
+		<li>
+			<i>C:\Users\[your username]\Downloads\</i>
+		</li>
+	</ul>
+<p>If you installed the portable (zip archive) version of DC++ then the finished downloads folder defaults to the
+"Downloads\" subdirectory under where the DC++ executable is located. The directory will be automatically created if needed in both cases.</p>
+<p>Make sure you have enough disk space for your downloads, have write access to the directory and 
+have an appropriate file system if you download large files (note that maximum possible size for a 
+file on a FAT32 volume is 4 GiB).</p>
+<p>If the target volume runs out of space, DC++ will keep your downloaded files in the Unfinished Downloads Directory
+having renamed them to their original filename.</p>
+</dd>
+  <dt id="unfdwnlddir">Unfinished downloads directory</dt>
+  <dd cshelp="IDH_SETTINGS_DOWNLOAD_TEMP_DOWNLOAD_DIRECTORY">
+  <p>All incomplete downloads will be stored in this directory. If you leave it empty, temporary downloads will be stored in the default unfinished files folder. The default location of the Incomplete folder depends on what kind of installation method used to install DC++. If you used the installer (.exe) then your finished downloads will be placed to a folder in your Windows user profile. In a typical case the default path of the unfinished downloads is</p>
+	<ul>
+		<li>
+			<i>C:\Users\[your username]\AppData\Local\DC++\Incomplete</i>
+		</li>
+	</ul>
+  
+  <p>If you installed the portable (zip archive) version of DC++ then the finished downloads folder defaults to the "Incomplete\" subdirectory under
+where the DC++ executable is located. The directory will be automatically created if needed in both cases.</p>
+  <p>Make sure you have enough disk space for your unfinished downloads, have write access to the
+  directory and have an appropriate file system if you download large files (note that maximum
+possible size for a file on a FAT32 volume is 4 GiB).
+  From version 0.700 on of DC++, the antifragmentation method must always be used for segmented
+  downloads to work correctly. Hence DC++ tries to reserve the full space needed for the file when
+  starting the download. In case of an error (eg. when the drive that holds your Unfinished
+  Downloads runs out of space), you will get an error message going like "Not enough space on the
+  disk" even if your target drive does have enough free space!
+  Incomplete file names follow the following rule: &lt;filename&gt;.&lt;ext&gt;.&lt;TTH&gt;.dctmp.
+  </p>
+  <p>
+  You can use the <b>%[targetdrive]</b> variable in order to have
+  unfinished download directories in all of your target drives. This way, unfinished download
+  directories will be distributed amongst all of your drives, resulting in a smaller chance of
+runnig out of disk space.</p>
+  <p><u>Example</u>: when %[targetdrive]DCUnfinished\ is set
+  as the unfinished downloads directory, DC++ creates incomplete files in E:\DCUnfinished\ when
+  you download to any target folder located on drive E: and so on...<br/>
+  The %[targetdrive] variable is also useful if you often download larger files to a drive other
+  than the one that contains your usual unfinished directory. At the end of a successful download,
+  moving a large file from the unfinished folder to its target can be very time and resource
+  consuming, especially when moving files to another partition of the same physical drive.</p>
+  </dd>
+</dl>
+</div>
+<h2>Limits</h2>
+<p cshelp="IDH_SETTINGS_DOWNLOAD_LIMITS">These settings are to avoid overloading your internet connection with
+a large number of simulatenous downloads. However, for both values listed below, certain conditions can result in the
+limits not being obeyed. Specifically, up to 3 files that are set
+to the 'highest' priority can be transferred while other downloads are
+going. File lists and small files (64 kibibytes or
+smaller) are queued with 'highest' as their priority. When either
+of the limits are hit, DC++ shows <em>"All download slots taken"</em>
+next to each source in the status column of the Connections tab.</p>
+<div style="margin-left: 40px;">
+<dl>
+  <dt>Maximum simultaneous downloads (0 = infinite)</dt>
+  <dd cshelp="IDH_SETTINGS_DOWNLOAD_DOWNLOADS">This limits the number of simultaneous downloads.
+A value of 0 means no limit. (default: 3)</dd>
+  <dt>No new downloads if speed exceeds (KiB/s, 0 = disable)</dt>
+  <dd cshelp="IDH_SETTINGS_DOWNLOAD_MAXSPEED">This is another method of limiting simultaneous downloads,
+designed to prevent new downloads if your existing downloads exceed a
+specific threshold. It's measured in kibibytes per second, and a
+value of zero will disable this limit. <div
+ style="font-style: italic;">Note; because of changing download speeds, this is not 100% accurate...</div></dd>
+</dl>
+</div>
+<h2 id="hublist">Public Hubs list</h2>
+<dl style="margin-left: 40px;">
+  <dt>Public Hubs list URL</dt>
+  <dd><placeholder><a href="dialog_public_hub_lists.html">Configured Public Hub Lists</a></placeholder></dd>
+  <dt>Reset Public Hub Lists</dt>
+  <dd cshelp="IDH_SETTINGS_DOWNLOAD_RESETLISTS">This function removes all existing configured hublist entries and reset to the default preconfigured ones came with the current DC++ version.</dd>
+  <dt>HTTP Proxy (for hublist only)</dt>
+  <dd cshelp="IDH_SETTINGS_DOWNLOAD_PROXY">This HTTP proxy will <u>only</u> be used to request the Public
+Hub List specified above. It's <u>not</u> used for uploads,
+downloads, or connecting to a hub.</dd>
+</dl>
+</body>
+</html>

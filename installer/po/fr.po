@@ -1,0 +1,139 @@
+# French translation for dcplusplus
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the dcplusplus package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dcplusplus\n"
+"Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2018-11-12 00:08+0100\n"
+"PO-Revision-Date: 2015-04-06 19:12+0000\n"
+"Last-Translator: poy <Unknown>\n"
+"Language-Team: French <fr@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2018-11-11 22:50+0000\n"
+"X-Generator: Launchpad (build 18816)\n"
+
+#. type: Content of: <Strings><SECTION_DCPP>
+#: installer/Strings.xml:3
+#, no-wrap
+msgid "DC++ (required)"
+msgstr "DC++ (requis)"
+
+#. type: Content of: <Strings><BACKUP_QUESTION>
+#: installer/Strings.xml:4
+#, no-wrap
+msgid "A previous installation of DC++ has been found; backup settings and queue to '$R0'?"
+msgstr "Une installation existante de DC++ a été détectée ; sauver les options et téléchargements en attente dans '$R0' ?"
+
+#. type: Content of: <Strings><SECTION_START_MENU>
+#: installer/Strings.xml:5
+#, no-wrap
+msgid "Start menu shortcuts"
+msgstr "Raccourcis dans le menu Démarrer"
+
+#. type: Content of: <Strings><SECTION_LOCAL>
+#: installer/Strings.xml:6
+#, no-wrap
+msgid "Store settings in the user profile directory"
+msgstr "Sauver les options dans le répertoire du profil utilisateur"
+
+#. type: Content of: <Strings><SECTION_ARCH>
+#: installer/Strings.xml:7
+#, no-wrap
+msgid "Install the 32-bit version"
+msgstr "Installer la version 32-bits"
+
+#. type: Content of: <Strings><LOCAL_WARNING>
+#: installer/Strings.xml:8
+#, no-wrap
+msgid "Unchecking this box will make DC++ store its settings in the program directory. This is strongly discouraged on Windows Vista and later; settings or downloads might get lost."
+msgstr "Avec cette case décochée, DC++ sauvera ses options dans le répertoire de son propre programme. Ceci est fortement déconseillé sur Windows Vista et plus ; des options ou des téléchargements risquent d'être perdus."
+
+#. type: Content of: <Strings><WARNING_LOCALE_ERASED>
+#: installer/Strings.xml:9
+#, no-wrap
+msgid "Warning: the 'locale' directory ($INSTDIR\\locale) will be completely erased!"
+msgstr "Attention : le répertoire 'locale' ($INSTDIR\\locale) sera entièrement effacé !"
+
+#. type: Content of: <Strings><SM_DCPP_DESCR>
+#: installer/Strings.xml:10
+#, no-wrap
+msgid "DC++ (file sharing application)"
+msgstr "DC++ (application de partage de fichiers)"
+
+#. type: Content of: <Strings><SM_LICENSE>
+#: installer/Strings.xml:11
+#, no-wrap
+msgid "License"
+msgstr "License"
+
+#. type: Content of: <Strings><SM_HELP>
+#: installer/Strings.xml:12
+#, no-wrap
+msgid "Help"
+msgstr "Aide"
+
+#. type: Content of: <Strings><SM_CHANGELOG>
+#: installer/Strings.xml:13
+#, no-wrap
+msgid "Change Log"
+msgstr "Changements"
+
+#. type: Content of: <Strings><EXECUTE_QUERY>
+#: installer/Strings.xml:14
+#, no-wrap
+msgid "Installation complete. Do you want to run DC++?"
+msgstr "Installation terminée. Souhaitez-vous lancer DC++ ?"
+
+#. type: Content of: <Strings><SM_UNINSTALL>
+#: installer/Strings.xml:15
+#, no-wrap
+msgid "Uninstall"
+msgstr "Désinstaller"
+
+#. type: Content of: <Strings><UN_REMOVE_QUESTION>
+#: installer/Strings.xml:16
+#, no-wrap
+msgid "Also remove queue, settings and the whole DC++ program directory ($INSTDIR) with all of its sub-directories?"
+msgstr "Aussi supprimer les téléchargements en attente, les options et le répertoire de DC++ dans son ensemble ($INSTDIR) avec tous ses sous-répertoires ?"
+
+#. type: Content of: <Strings><DONATION_INFO_1>
+#: installer/Strings.xml:17
+#, no-wrap
+msgid "Contribute to the Direct Connect Network Foundation"
+msgstr "Contribuer à la Direct Connect Network Foundation"
+
+#. type: Content of: <Strings><DONATION_INFO_2>
+#: installer/Strings.xml:18
+#, no-wrap
+msgid "To help the development of DC++ and other DC related software, please consider contributing or donating. Your generous donations will be used for the following:"
+msgstr "Pour aider au développement de DC++ et des autres programmes DC liés, toute contribution ou don de votre part serait grandement apprécié. Les dons seront mis à profit pour les points suivants :"
+
+#. type: Content of: <Strings><DONATION_INFO_3>
+#: installer/Strings.xml:19
+#, no-wrap
+msgid "* Development infrastructure (domains, server costs)"
+msgstr "* Infrastructure pour le développement (domaines, coûts des servers)"
+
+#. type: Content of: <Strings><DONATION_INFO_4>
+#: installer/Strings.xml:20
+#, no-wrap
+msgid "* Certificates for supported projects"
+msgstr "* Certificats pour les projets supportés"
+
+#. type: Content of: <Strings><DONATION_INFO_5>
+#: installer/Strings.xml:21
+#, no-wrap
+msgid "All donations are completly transparent, will be individually listed and published on the DCNF website, either under your own name or as an anonymous donation, according to your choice."
+msgstr "Les donations sont entièrement transparentes et seront individuellement listées et publiées sur le site de la DCNF (soit avec votre nom, soit en tant que donation anonyme, selon votre choix)."
+
+#. type: Content of: <Strings><DONATE_BUTTON>
+#: installer/Strings.xml:22
+#, no-wrap
+msgid "Donate / Contribute"
+msgstr "Faire un don / Contribuer"

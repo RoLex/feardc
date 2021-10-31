@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<h1>How to set up connection manually?</h1>
+
+<p>In most cases DC++ should be able to automatically detect the appropriate
+connection method. This FAQ gives detailed information how to set up
+your incoming connection manually in case of the <a href="settings_connectivity.html">
+automatic detection</a> fails or its result isn't acceptable for you.</p>
+
+<h2 id="connbasics">Understanding DC++ connectivity</h2>
+
+<p>To make your life easier while using DC++ your connection must be set up correctly.
+In other words your incoming connection type must be correctly chosen for searches and
+downloads to work. The available connection modes depend on the structure of your network
+and the way you access the Internet. From a protocol perspective, there are two connection
+methods available: <b>active mode</b> and <b>passive mode</b>. While passive
+mode is almost guaranteed to work, it does not work as well as a properly
+configured active mode connection. For a more in-depth explanation, read
+<a href="faq_whyactive.html">Why do I need active mode?</a></p>
+
+<p>Note that correct <b>incoming connection settings are needed for searches and file
+downloads</b> to work. These settings <b>have no effect on ability to connecting to hubs
+or downloading hublists</b>. This FAQ assumes that <u>you are able to download hublists
+and connect to hubs</u> as well as other peers can upload files from you. If this is not
+true then you must elminate another kind of problems before go on with this FAQ:
+<ul>
+	<li>Make sure DC++ isn't blocked by any firewall and similar security software. For tips
+	how to workaround this situation and unblock DC++ please follow <a href="faq_unblock.html">
+	this guide</a>.</li>
+	<li>Check that DC++ uses the correct network interface for accessing the Internet, especially
+	if you use multiple Internet connections or any IP tunneling 
+	(<a href="https://en.wikipedia.org/wiki/Virtual_private_network" target="_blank" class="external">VPN</a>)
+	software. You can specify the correct interface to use with DC++ <a href="settings_connectivity_manual.html#bindaddress">
+	here</a>.</li>
+</ul>
+</p>
+
+<h2>Decide what active mode setting to choose</h2>
+
+<p>It is very important to decide what <i>active connection mode</i> is available
+for you. It depends on your network structure, so you need to know exactly how
+you access the Internet. Is it a direct connection through a modem or do you
+have a local network and access the Internet through a router or other gateway?
+If unsure, <a href="https://web.archive.org/web/20121011224133/www.b.ali.btinternet.co.uk/DCPlusPlus/advancedUsage.html#activepassive" target="_blank" class="external">this page</a> should help you figure it out.</p>
+
+<p>If you're still unsure what network devices you use to connect to the Internet,
+then use <a href="https://www.google.com/" target="_blank" class="external">Google</a>! It can give you
+information on every network device you own, just by searching for the <u>model
+number</u> printed on the device.  Many ISPs call their device a simple modem
+when it is actually a router, so it never hurts to check.</p>
+
+<p>In order to choose a proper active connection mode, you must know whether you
+are <i>behind a router or gateway</i> or if you <i>access the Internet
+directly</i>. You can also determine if you have a router or not by checking
+your <i>external</i> and <i>internal</i> IP addresses. If these IP addresses
+<b>do NOT match then you access the Internet through a local gateway or
+router</b>.</p>
+
+<ul> <li style="margin-left: 10px;">To see your <i>internal IP address</i> go
+to the Windows Start menu, click Run... and type : cmd /k ipconfig</li>
+
+<li style="margin-left: 10px;">To see your <i>external IP address</i> go to one
+	of the following websites : <a href="https://www.whatismyip.com/" target="_blank" class="external">www.whatismyip.com</a>, <a href="https://www.ip2location.com/" target="_blank" class="external">www.ip2location.com</a>, or <a href="https://checkip.net/?checkip" target="_blank" class="external">checkip.net</a></li>
+</ul>
+
+<p>If you are still unsure you may want to consult your ISP support hotline or
+system administrator (if on an organization's network).</p>
+
+<p>To manually configure your connectivity settings, uncheck <a href="settings_connectivity.html">
+Let DC++ determine the best connectivity settings</a> in the Connectivity settings pane of the settings
+dialog. This will enable the controls on the <a href="settings_connectivity_manual.html#connection">Manual configuration</a>
+pane where you can alter connectivity settings manually.</p>
+
+<p>When you look at the <a href="settings_connectivity_manual.html#connection">Incoming connection settings</a>
+you will find 2 options for active mode and the last option for being passive
+as a last resort. For being active:</p>
+
+<ul>
+	<li style="margin-left: 10px;"><b>If you don't have a router/gateway</b> you need to set the 
+	<i>Active mode (I have no router / I have configured my router)</i> option.</li>
+	<li style="margin-left: 10px;">If you <b>connecting through a router/gateway you can choose between
+the 1st or the 2nd option</b> : <i>Active mode (I have no router / I have configured my router)</i>
+	or <i>Active mode (let DC++ configure my router with NAT-PMP / UPnP)</i>.</li>
+</ul>
+
+<h2>Setting up active mode if you are directly connected (NOT behind a router)</h2>
+
+<ul>
+	<li>
+	Click on File menu and then Settings. Click on the <a href="settings_connectivity_manual.html">Manual configuration pane</a>.
+	</li>
+	<li>
+	Select the <b>Active mode (I have no router / I have configured my router)</b> radio button. Leave the fields in 
+	the 'External / WAN IP' box blank. This will make DC++ use the current IP assigned to your network card. 
+	You must NOT have an internal IP address for this to work.
+	</li>
+	<li>
+	Leave the transfers and search port fields blank also. This will make DC++ randomize the port it uses each time.
+	</li>
+	<li>
+	Leave the Outgoing Connection settings in the Proxy pane set to Direct Connection.
+	</li>
+	<li>
+	Click OK. This will close the Settings window.
+	</li>
+	<li>
+	Test active mode by joining several hubs and doing a search for a common term. You should get results back. 
+	If not, then you are likely behind a router, have an internal IP address or haven't properly configured your <a href="faq_unblock.html">security software to unblock DC++</a>.
+	</li>
+</ul>
+<p>Note hat this is the proper connection mode to choose if you're <b>using DC++ to connect to local hubs</b> and you plan to connect to users in your local network only.</p>
+
+<h2>Setting up active mode if you are behind a router</h2>
+
+<p>If you're behind a router (gateway) then your computer is a <b>member of a separate local network so connections
+coming from the Internet must find their way into your computer</b> that resides in a private network. For successful
+connectivity <b>the router must be set up</b> to open the communication ports DC++ uses and forward 
+the incoming information from the Internet to the correct computer (the one that runs DC++).
+This is called <b>port forwarding</b> or <b>port mapping</b> and it requires configuration in the router device.
+There are ways to do port mapping <i>automatically</i> if your router supports one of the automatic
+port mapping protocols available in DC++. If none of the automatic port mapping ways are supported by the router, 
+the configuration should be done manually to achieve a working active connection mode.</p>
+
+<h3 id="automap">Automatic port mapping configuration</h3>
+
+<p>You can simplify the process of setting up port forwarding if your router supports automatic port mapping protocols 
+such as NAT-PMP or <acronym title="Universal Plug and Play">UPnP</acronym>. For more information, see
+<a href="faq_mapping.html">What is NAT-PMP / UPnP?</a>.</p>
+
+<p>All broadband <acronym title="Small Office, Home Office">SOHO</acronym> routers that manufactured in the recent
+years should support at least UPnP and it should be enabled by default (this may not always true for older models).
+In any case its best to consult the documentation of the device about what port mapping protocol does the router 
+support and how to enable it.</p>
+
+<p>Currently, DC++ includes support for both UPnP and NAT-PMP. If automatic port mapping
+is enabled in the connectivity configuration DC++ will try to map the ports with all the available mapper interfaces until
+a successful attempt. To enable automatic port mapping
+
+<ul>
+	<li>
+	Click on File menu and then Settings. Click on the <a href="settings_connectivity_manual.html">Manual configuration pane</a>.
+	</li>
+	<li>
+	Select the <b>Active mode (let DC++ configure my router with NAT-PMP / UPnP)</b> radio button. Leave the fields in the &quot;External / WAN IP&quot; box blank.
+	</li>
+	<li>
+	Leave the transfers and search port fields blank also. This will make DC++ randomize the port it uses each time.
+	</li>
+	<li>
+	Leave the Outgoing Connection settings in the Proxy pane set to Direct Connection.
+	</li>
+	<li>
+	Click OK. This will close the Settings window.
+	</li>
+	<li>
+	Test active mode by joining several hubs and doing a search for a common term. You should get results back. If not, then 
+	open the <a href="window_system_log.html">System Log</a> window and check the last log messages about the port mapping 
+	attempts and possible errors.
+	</li>
+</ul>
+</p>
+
+<p>Here are some tips if you can't make the automatic port mapping work and unable to figure out what's the problem:
+<ul>
+	<li>Make absolutely sure you have properly configured your <a href="faq_unblock.html">security software to unblock DC++</a></li>
+	<li>When automatic port mapping is selected DC++ tries all the included mapping interfaces one by one, until a 
+		successful result. The default order of the implementations is pre-determined but you can force what mapper
+		DC++ should try first. It's possible that DC++ gets a successful signal from a certain mapping interface 
+		(you see successful port mapping results in the <a href="window_system_log.html">System Log</a> window) but searches
+		and downloads still don't work as the port mapping operation is actually failed. In this case you can 
+		<a href="settings_connectivity_manual.html#prefmap">select another mapping interface to try first</a> in a hope of a
+		better result.</li>
+	<li>Try to <a href="settings_connectivity_manual.html#extip">set your external IP manually</a> (see above how to determine it)
+		especially if you see 'Port mapping: Failed to get external IP' message in the <a href="window_system_log.html">
+		System Log</a> window or wrong IP addess shown if you use the /conn chat command. Don't forget to 
+		<a href="settings_connectivity_manual.html#noipoverride">disallow the automatic IP override</a> in these cases.</li>
+	<!--Readd this when DC++ gets WinUPnP support again
+	<li>While the preferred UPnP interface is MiniUPnP, in some cases you may find the legacy Windows UPnP mapper more 
+		successful (eg. if you have an older router model and it worked well with older versions of DC++). In any case it
+		worth a try if the other mappers are failed and you'll find troubleshooting tips for the <u>Windows UPnP only</u> in
+		<a href="https://www.dslreports.com/faq/11043" target="_blank" class="external">this FAQ</a>.</li>-->
+</ul>
+</p>
+
+<h3>Manual port mapping configuration</h3>
+
+<p>If you are unable to automate port forwarding with NAT-PMP or UPnP, you can follow the <a href="faq_portforward.html">
+Manual port forwarding FAQ</a> to achieve active connection mode. Note that manual port forwarding is an advanced task
+and it requires a minimal knowledge of computer networking.</p>
+
+<h3>Select passive mode as the last resort</h3>
+
+<p>If none of the above helped or you are not able to use active mode in your
+network (e.g. you have no access to the configuration page of the
+router/gateway or you have firewall service provided by your ISP) then you must
+choose <i>Passive mode (last resort - has serious limitations)</i> option in 
+<a href="settings_connectivity_manual.html">Connectivity Settings</a>. As linked above,
+however, passive mode has several disadvantages.</p>
+
+<p>If you still unable to search and/or download even in passive mode another possibility is that your ISP is blocking DC 
+(and often other p2p protocols as well). This is also common at universities, at the workplace or other organizations, and 
+is <a href="faq_university.html">the topic of another FAQ</a>.</p>
+</body>
+</html>

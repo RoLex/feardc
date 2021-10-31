@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link type="text/css" rel="stylesheet" href="office11.css"/>
+  <link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>How to set up manual port forwarding?</h1>
+
+<p>In most cases DC++ should be able to automatically detect the appropriate
+connection method for the user, however, there can still be cases when there are no
+ways to map the port automatically so a manual configuration required to achieve
+active mode. This FAQ gives detailed information how to set up port forwarding
+manually in case of the <a href="settings_connectivity.html">
+automatic connectivity setup</a> fails or you have gateway devices without 
+<a href="faq_mapping.html">automatic port mapping</a> support.</p>
+
+<p>This FAQ assumes that
+<ul>
+	<li>You're familiar with <a href="faq_connection.html#connbasics">DC++ connectivity concepts</a></li>
+	<li>You already tried the <a href="faq_connection.html#automap">automatic ways of port mapping</a> 
+	without success (or you are certain that you don't have supporting devices in your network)</li>
+	<li>You have basic understanding of computer networking</li>
+	<li>You have proper access to the configuration layout of your gateway (router) device</li>
+</ul>
+</p>
+
+<p>For DC++ to work properly in active mode, it requires access on <acronym title="Transmission Control Protocol">
+TCP</acronym> and <acronym title="User Datagram Protocol">UDP</acronym> listening ports, as well as outgoing access
+on all ports for both TCP and UDP. If you are in a private network behind a NAT device the incoming information
+to the listening ports should be forwarded to the proper computer.</p>
+
+<p>For an in-depth, but still easy to understand explanation of port forwarding, read 
+<a href="https://portforward.com/help/portforwarding.htm" target="_blank" class="external">What is Port Forwarding?</a>
+The following steps describe the configuration of port forwarding in general as the exact configuration method
+and layout varies in the different type of gateway devices.</p>
+
+<ol>
+  <li>First you need to set up the router to forward the connections to
+the computer with DC++. This is could be called Port mapping, port
+redirecting, port forwarding or something like that in your router configuration. 
+Find out how to do this with your router / <acronym title="Network Address Translation">NAT</acronym>
+in the user manual came with your device.</li>
+  <li>You need to forward three ports: 2 ports for transfers and encrypted transfers (both use TCP protocol) and
+one port for searches what uses the UDP protocol. You can use the same port number for transfers and searches,
+but <b>you need a different one for the encrypted transfers</b>. Of course you can choose different port numbers
+for each as well. So select two or three numbers between 1024 - 65535, they should mostly all be free. 
+Make sure you <b>select the correct protocol types</b> (TCP, UDP or Both) for each port number when you cerate the 
+port forwarding rules in the gateway's config interface.</li>
+  <li>The IP that you are forwarding to should be the <b>internal</b> IP address of your computer running DC++.
+ It usually begins with <a href="non-routable.html">"192.168",
+"172.16." or "10.x."</a>. To see your internal IP address go to the command prompt and type:
+<i>ipconfig</i> (Start Menu -&gt; Run
+-&gt; <i>cmd /k ipconfig</i>)</li>
+  <li>When you have mapped the port(s) on the router, open up DC++ and
+go to <a href="settings_connectivity_manual.html#connection">Manual configuration settings</a>.
+Select <b>Active mode (I have no router / I have configured my router)</b>. In the port fields, enter the port
+number(s) that you forwarded on the router. </li>
+  <li>In the External / WAN IP field, you need to enter the <b>external</b> IP address of your router.
+Your external IP can be checked on 
+<a href="https://www.dslreports.com/whatismyip" target="_blank" class="external">DSLReport's
+IP page</a> or at <a
+ href="https://whatismyip.com" target="_blank" class="external">WhatIsMyIP.com</a>. </li>
+  <li>Active mode should now be working. For checking or troubleshooting if you have properly
+  	 forwarded the port(s) to DC++, use <a
+ href="https://www.canyouseeme.org" target="_blank" class="external">www.canyouseeme.org</a>. Make sure DC++ is open. Then, in the site, enter the port you're forwarded and click Check. If everything has been properly set up, the site should say Success. If you get an error message in red, then you need to double-check the port forwarding on the router, DC++ settings and possibly your <a href="faq_unblock.html">built-in or 3rd party software firewall</a> settings.</li>
+</ol>
+
+<p><u>TIP:</u>Before you fill out the required settings it may worth to check if DC++ is able to automatically detect
+some of the required parameters. To do this, go to the Connectivity pane in the Settings, enable <a href="settings_connectivity.html">
+automatic connectivity detection</a>, click 'Detect Now' and when the detection is finished click 'Edit detected settings'.
+Depending on the results this way you may speed up setting up manual port forwarding if DC++ is able to detect any subset of
+the required settings.</p>
+
+<h2>Troubleshooting</h2>
+
+<p>If you have problems finding the correct port forwarding settings in your gateway setup you may get detailed help, how-to guide and screen shots for various router models at <a href="https://portforward.com/router.htm" target="_blank" class="external">www.portforward.com</a>. There is a huge list of models there, click on your model name,
+ then select DC++ from the list of applications. An interactive guide will appear to help you how 
+ to access your router's configuration page and how to set up port forwarding for DC++. 
+ You can find some more how-to's for popular router models at the <a href="https://www.dslreports.com/faq/dc/3.2_Hardware_Firewalls___Routers" target="_blank" class="external">DSLReport FAQ page</a> as well.
+</p>
+
+<p>If active mode is working for a while, but <u>the next time when you use DC++</u>, you only get <i>Connection Timeout</i>s or no
+results when searching, your IP (either <b>external</b> or <b>internal</b>) is likely to have changed. Of course you can update your IP settings manually each time they changed, but there are better solutions to avoid constant IP address updates:
+</p> 
+<ul>
+	<li>
+    If you find the external IP is constantly changing, you can sign up to a free dynamic DNS service 
+such as <a href="https://www.noip.com/" target="_blank"
+ class="external">No-IP</a> or <a
+ href="https://freedns.afraid.org/" target="_blank" class="external">FreeDNS</a>
+    and put your dynamic DNS address into the External / WAN IP field in DC++ <a href="settings_connectivity_manual.html#connection">Connection Settings</a>. Each DDNS provider has a downloadable IP updater software what updates the dynamic name service with your latest IP. Make sure you download, configure and  run this program while using DC++. Many router models have DDNS client software included for specific DDNS provider(s) so it worth a check in your router configurations before choosing a provider. After you setup the built-in DDNS client you won't need to run any IP updater software, your router will automatically take care of updating your DNS name.</li>
+	<li>If you find that your internal IP changes when you restart your computer then your operating system is obtaining an IP address from your router at boot using <a href="https://portforward.com/networking/dhcp.htm" target="_blank" class="external">DHCP protocol</a>. If you want your computer to always have the same internal IP address you must setup Static DHCP in your router configuration. Static DHCP is a useful feature which makes your router always assign the same IP address to a specific computer on your network. You will have to <a href="https://www.dur.ac.uk/cis/lan/mac/windows/" target="_blank" class="external">find MAC address of your network card</a> to set up Static DHCP.<br/>
+	Another option to ensure you'll always have the same internal IP address is to set up static IP address for your computer. Here's a <a href="https://portforward.com/networking/staticip.htm" target="_blank" class="external">FAQ</a> how to do this for different versions of Windows.</li>
+</ul>
+
+<p>Besides normal file transfers DC++ is capable of <a href="settings_certs.html">secure</a> (<a href="https://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank" class="external">SSL encrypted</a>) way of receiving and transmitting files on ADC hubs. If you're able to download in NMDC hubs but not in ADC ones then most probably you have a problem with the secure transfer port. You should check if the secure transfer port is forwarded correctly to be able to download from ADC users who have secure transfers enabled.</p>
+
+</body>
+</html>

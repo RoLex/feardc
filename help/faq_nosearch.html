@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1> Why don't I get any search results? </h1>
+<p>Assuming that you can connect to a hub and chat with users, this is
+usually caused by a firewall, router, connection sharing. 
+Another possibility is that you do not meet a certain criteria on a hub
+so you are not able to perform searches as often as you like.
+There are several things you can try:</p>
+<h2>If you can't get search results on a particular hub while you can on others</h2>
+<ol>
+  <li>If you are in passive connection mode some hubs may won't allow
+   you to search as it stresses the hub a lot. Try to set up active
+   mode following the
+   <a href="faq_connection.html">Connection setup guide</a>.</li>
+  <li>Some hubs allow searches for registered users only. 
+   Check login messages, banners, hub addresses or ask an operator how
+   to register yourself.</li> 	
+  <li>Some hubs have predefined search interval rule to avoid hub
+  	overloading with passive searches. It means you have to wait
+  	some time before you can start a successive new search.
+  	Make sure you don't have 
+    <a href="settings_queue.html#autosearchdl">
+    Automatically Search for Alternative Download Locations</a>
+    enabled in Queue settings if you are in a hub of this kind
+    as it could prevent you to get manual search results.</li> 	
+</ol>
+<h2>If you are unable to search on all hubs</h2>
+<ol>
+  <li>If you use one of the active connection modes, enter your external 
+  	<acronym title="Internet Protocol">IP</acronym> address
+to the <i>External/WAN IP</i> field in the <a href="settings_connectivity_manual.html#connection">
+Connection settings dialog</a> and try to search again. 
+Find out the IP from <a href="https://www.whatismyip.com/" target="_blank"
+ class="external">What Is My IP</a>.</li>
+  <li>Check your router/gateway/firewall configuration. You need to make sure
+it's allowing or forwarding incoming connections on the port specified in
+the settings. You have to enable both <acronym
+ title="Transmission Control Protocol">TCP</acronym> and <acronym
+ title="User Datagram Protocol">UDP</acronym> traffic. If you can
+download, but not search, UDP is blocked. Please read the 
+<a href="faq_connection.html">Connection setup guide</a>.</li>
+  <li>Your school or work might be blocking DC traffic. Read the FAQ on
+types of blocks, and what you <a href="faq_university.html">might be
+able to do about it</a>.</li>
+  <li>If the above things don't work for you, you'll have to use
+passive mode (if the hub allows it).</li>
+  <li>
+If you still can't search (in passive mode) then probably your DC++
+blocked by a software firewall. Please follow the 
+<a href="faq_unblock.html">guide how to unblock DC++ in firewalls and 
+other types of security sofware</a>. </li>
+<li>
+An anti-flood protector software / network device can (partially)
+block your searches as well. You can suspect that you have a problem 
+of this kind when you always get few results even if you
+searched for a common term. You can read more about this topic in the 
+<a href="faq_slowdownload.html#ddos">Slow downloads FAQ</a>.</li>
+</ol></body>
+</html>

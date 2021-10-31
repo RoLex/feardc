@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+	<h1>
+		<img src="Queue.ico" width="16" height="16" alt="Download queue"/>
+		Download queue
+	</h1>
+    <h2>Toolbar</h2>
+<dl style="margin-left: 40px;">
+	<dt><img src="Play.ico" width="16" height="16" alt="Start"/>Start</dt>
+	<dd cshelp="IDH_QUEUE_TOOLBAR_START">Set the selected items' priority to Normal.</dd>
+	
+    <dt><img src="Pause.ico" width="16" height="16" alt="Pause"/>Pause</dt>
+	<dd cshelp="IDH_QUEUE_TOOLBAR_PAUSE">Set the selected items' priority to Paused.</dd>
+
+    <dt><img src="Increment.ico" width="16" height="16" alt="Increase priority"/>Increase priority</dt>
+	<dd cshelp="IDH_QUEUE_TOOLBAR_INCREASE_PRIO">Increase the selected items' priority.</dd>
+
+    <dt><img src="Decrement.ico" width="16" height="16" alt="Decrease priority"/>Decrease priority</dt>
+	<dd cshelp="IDH_QUEUE_TOOLBAR_DECREASE_PRIO">Decrease the selected items' priority.</dd>
+
+    <dt><img src="RemoveQueue.ico" width="16" height="16" alt="Remove file"/>Remove file</dt>
+	<dd cshelp="IDH_QUEUE_TOOLBAR_REMOVE_FILE">Remove the queued file(s).</dd>
+</dl>
+
+<h2 id="leftscreen">Left screen</h2>
+This screen will display the queued directories in a tree view. 
+<h3>Menu options</h3>
+<dl style="margin-left: 40px;">
+  <dt>Set priority</dt>
+  <dd>This will set the priority of all files in the directory. If a file is paused, it will not begin to download and it will not be <a href="settings_queue.html">automatically searched</a> for.</dd>
+  <dt>Move/Rename</dt>
+  <dd>Moves and/or renames the queued directory.</dd>
+  <dt>Remove</dt>
+  <dd>Deletes the queued directory from the queue. If <a href="settings_windows.html#confirmitem">Confirm item removal in download queue</a> is enabled, you will be prompted.</dd>
+</dl>
+<h2>Right screen</h2>
+<h3>Columns</h3>
+<dl style="margin-left: 40px;">
+  <dt>Filename</dt>
+  <dd>The name of the queued file.</dd>
+  <dt>Status</dt>
+  <dd>Display the file's current status. Possible status messages are:
+  <ul>
+	  <li><p><i>Running...</i></p>
+	  <p>
+	  The queued file is currently beeing downloaded from one ore more sources. Its progress, as
+	  well as details on the available peers, can be tracked using the
+	  <placeholder><a href="window_transfers.html">Transfers</a></placeholder> area.
+	  </p>
+  	</li>
+  	<li><p><i>Waiting (User(s) online)</i></p>
+  		<p>In this case one or more sources are online but not available (no free slots).</p>
+  	</li>
+  	<li><p><i>User(s) offline</i></p>
+  		<p>It means that no sources are currently online for this file. You should wait until at least one goes online or you can search for additional alternate sources for this file by selecting the appropriate menu command from the context menu.</p>
+  	</li>
+  	<li><p><i>Finished</i></p>
+  		<p>This status is shown when the file is already downloaded. Keeping finished files in the queue can be enabled or disabled by the <a href="settings_queue.html#keepfinished">corresponding switch in the Queue settings</a>.</p>
+  	</li>
+   </ul>
+  </dd>
+  <dt>Size</dt>
+  <dd>The size of the file, rounded off to closest appropriate unit.</dd>
+  <dt>Downloaded</dt>
+  <dd>The amount of bytes downloaded.</dd>
+  <dt>Priority</dt>
+  <dd>The file's priority. If a file is paused, it will not begin to download and it will not be <a href="settings_queue.html">automatically searched</a> for.</dd>
+  <dt>Users</dt>
+  <dd>The sources' names and their respective hubs.</dd>
+  <dt>Path</dt>
+  <dd>The path to the queued file's location, when finished.</dd>
+  <dt>Exact size</dt>
+  <dd>The exact file size in bytes.</dd>
+  <dt>Errors</dt>
+  <dd>If an error occur for a file, the error will be displayed here by showing the nick(s) of the problematic source(s) and the error message between parentheses. Possible errors are :
+   <ul>
+  	<li><p><i>File not available</i></p>
+  		<p>The file cannot be downloaded from the source at the moment. Either the user's filelist was outdated when this file was added to the queue or the user removed the file from his/her share since then.</p>
+  	</li>	
+  	<li><p><i>Passive user</i></p>
+  		<p>You can get this error only if you are in <a href="settings_connectivity_manual.html#connection">Passive connection mode</a>. The client of the given source is in passive mode, either and two <a href="faq_whyactive.html">passive users cannot download from each other</a>. The source will be used automatically if at least one of the peers <a href="faq_whyactive.html">switches to Active mode</a>.</p>
+  	</li>	
+  	<li><p><i>CRC32 inconsistency (SFV-Check)</i></p>
+  	<p>The file was downloaded but its CRC32 checksum does not match the checksum stored in an accompanying .sfv file. The file will be redownloaded from another source. You can disable this integrity check with the corresponding checkbox in <a href="settings_advanced.html#sfvcheck">Advanced settings</a>.</p>
+  	</li>	
+	<li><p><i>Full tree does not match TTH root</i></p>
+		<p>The source provided wrong or corrupted <a href="https://en.wikipedia.org/wiki/Merkle_tree#Tiger_tree_hash" target="_blank" class="external">Tiger tree</a> for the file. This can caused by connection problems or hashdata corruption (at one or both peers).</p>
+	</li>	
+	<li><p><i>No full tree available</i></p>
+		<p>None of the sources provided the <a href="https://en.wikipedia.org/wiki/Merkle_tree#Tiger_tree_hash" target="_blank" class="external">Tiger tree</a> for this large file and as long as the full tree is not available DC++ cannot resume this file. You can readd the source(s) manually and let DC++ download the file without having the hash tree information at your own risk.</p>
+	</li>	
+  	<li><p><i>Source too slow</i></p>
+  		<p>The source is dropped because it meets one ore more criteria defined in your <a href="settings_queue.html#autodrop">Autodrop settings</a>.</p>
+  	</li>	
+  	<li><p><i>Remote client does not fully support TTH - cannot download</i></p>
+  		<p>The source using an old or unsupported client.</p>
+  	</li>	
+  	<li><p><i>User certificate not trusted</i></p>
+  		<p>You have set in <a href="settings_certs.html">Security certificates settings</a> that your client should only accept sources with trusted certificates. This source is not trusted so it'll be excluded from downloads.</p>
+  	</li>	
+  	<li><p><i>Remote ADC client does not use TLS encryption</i></p>
+  		<p>You have set in <a href="settings_certs.html">Security certificates settings</a> that your client should only accept sources with TLS encrypted connections. This source does not seem to have an encrypted connection so it'll be excluded from downloads.</p>
+  	</li>	
+   </ul>	
+  </dd>
+  <dt>Added</dt>
+  <dd>The date and time when the file was added to the queue.</dd>
+  <dt>TTH root</dt>
+  <dd>The file's TTH root.</dd>
+  <dt>Type</dt>
+  <dd>The extension (file type) of the queued file.</dd>
+</dl>
+<h3>Context menu commands</h3>
+<!--#include virtual="commands_file_general.inc" --> 
+<dl style="margin-left: 40px;">
+  <dt>Move/Rename</dt>
+  <dd>Moves and/or renames the queued file.</dd>
+  <dt>Recheck integrity</dt>
+  <dd>Rechecks the corresponding unfinished download. Useful:
+  <ul>
+	  <li>if your settings have been damaged, in particular the &quot;Queue.xml&quot; file. You simply readd the lost items to the queue, recheck
+	  	  them and files which have partially downloaded before will resume from where they stopped.</li>
+	  <li>if the unfinished file has been damaged (eg because of disk errors).</li>
+	  <li>if the file was successfully downloaded but DC++ failed to move it to its final destination.</li>
+  </ul>
+  </dd>
+  <dt>Set priority</dt>
+  <dd>The file's priority. If a file is paused, it will not begin to download and it will not be <a href="settings_queue.html">automatically searched</a> for.</dd>
+  <dt>Re-add source</dt>
+  <dd>Re-add a source that was previously removed.</dd>
+  <dt>Remove source</dt>
+  <dd>Remove a source from a queued file.</dd>
+  <dt>Remove user from queue</dt>
+  <dd>Removes the user from all files in the queue.</dd>
+</dl>
+<!--#include virtual="commands_user_general.inc" --> 
+<!--#include virtual="commands_listview.inc" --> 
+<!--#include virtual="commands_copy.inc" --> 
+
+<h2>Status bar</h2>
+<dl style="margin-left: 40px;">
+  <dt>Unnamed checkbox</dt>
+  <dd cshelp="IDH_QUEUE_SHOW_TREE">This will toggle the appearance of the <a href="window_download_queue.html#leftscreen">left screen</a>.</dd>
+  <dt>Items</dt>
+  <dd cshelp="IDH_QUEUE_PARTIAL_COUNT">The amount of selected items.</dd>
+  <dt>Size (left)</dt>
+  <dd cshelp="IDH_QUEUE_PARTIAL_BYTES">The total size (in bytes) of selected items.</dd>
+  <dt>Files</dt>
+  <dd cshelp="IDH_QUEUE_TOTAL_COUNT">The total amount of files queued.</dd>
+  <dt>Size (right)</dt>
+  <dd cshelp="IDH_QUEUE_TOTAL_BYTES">The total amount of bytes queued.</dd>
+</dl>
+</body>
+</html>

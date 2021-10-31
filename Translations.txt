@@ -1,0 +1,77 @@
+DC++ translation process
+========================
+
+This document briefly describes the DC++ translation process.
+Translations currently happen in Launchpad <https://translations.launchpad.net/dcplusplus>.
+
+1) Creating translation templates
+2) Updating translations
+
+
+1) Creating translation templates
+---------------------------------
+
+Translation templates are .pot files.
+
+First, clean up with::
+
+	scons -c help=1 i18n=1 dcpp/po/libdcpp.pot help/po/dcpp-help.pot installer/po/dcpp-installer.pot win32/po/dcpp-win32.pot
+
+Then build translation templates with::
+
+	scons help=1 i18n=1 dcpp/po/libdcpp.pot help/po/dcpp-help.pot installer/po/dcpp-installer.pot win32/po/dcpp-win32.pot
+
+Commit them with::
+
+	hg ci -m "Update translation templates"
+	hg push
+
+Copy the files to the Bazaar repository at Launchpad and commit them with::
+
+	bzr ci -m "Update translation templates"
+	bzr push
+
+Launchpad should then update the translation templates by itself. Follow the import status on
+<https://translations.launchpad.net/dcplusplus/+imports>; once all translation templates are marked
+as "Imported", announce translations are ready by providing links to
+<https://translations.launchpad.net/dcplusplus>:
+
+	- Send a message to <https://lists.sourceforge.net/lists/listinfo/dcplusplus-devel>.
+
+
+2) Updating translations
+------------------------
+
+Download PO files from <https://translations.launchpad.net/dcplusplus/trunk/+export>.
+
+Extract them to a directory, say C:/trans.
+
+Open a Cygwin command prompt in the scripts directory of the DC++ repo. Merge new translations::
+
+	./update-languages.sh C:/trans
+
+[If running scons from Cygwin is a problem, temporarily remove the scons call in
+update-languages.sh, call that scons command manually then run the script.]
+
+Check updated and new translations with::
+
+	hg status
+
+Ensure new translations are correct (recently updated). Use "hg add" to add them if they are;
+otherwise, delete them.
+
+Make sure updated languages build fine; eg for the "fr" language::
+
+	scons i18n=1 build/debug-mingw/bin/locale/fr
+
+Should there be errors, it is usually just a matter of a mis-matched tag, missing placeholder or
+some such. No need to interrupt the whole process in that case; fix / delete the translation in 2
+places: 1) the relevant ``.po`` file; 2) on the Launchpad translation interface.
+
+Commit new translations::
+
+	hg ci
+	hg push
+
+
+vim: set filetype=rst:

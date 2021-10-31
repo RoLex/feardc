@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<h1>How to unblock DC++ in firewalls and other installed security software?</h1>
+
+<p>Under Windows, using security software and certain operating system features to prevent the computer
+from various attacks and security hazards is a common and highly recommended 
+practice. However, any misconfigured security feature can cause cause problems using DC++
+ranging from partial feature blocking to a complety blocked network access.
+If you experience connection problems (can't connect to <b>any</b> hub or download <b>any</b> hublist,
+file transfers aren't possible in any direction, <b>neither downloads nor uploads</b>) 
+<u>while your other installed programs are able to access the Internet without problems</u> 
+then it's possible that something blocks DC++.</p>
+
+<p>Whether it is the operating system's built-in firewall or any installed 3rd party security
+software that keeps DC++ from work, you must find out why's the blocking and how to unblock DC++.</p>
+
+<h2>Signs of blocking</h2>
+<p>You might suspect that DC++ is blocked if you experience any combination of the following:</p>
+<ul>
+	<li>you are unable to connect to any hub</li>
+	<li>you can't download any hublist</li>
+	<li>no file transfers (neither uploads nor downloads)</li>
+	<li>weird messages at start complaining about unable to open ports</li>
+	<li>cannot start DC++ itself at all</li>
+</ul>
+
+<p>Another way to check if DC++ is blocked is to go the Help/About menu in
+DC++ and check if it can download the Latest Version number (bottom box of the
+window). A version number should appear in the box soon. If you get error
+message instead it means something is preventing DC++ from accessing the
+Internet.</p>
+
+<p><u>Important:</u> If you have problems with <b>searches and/or file downloads only</b>, 
+while uploads and other functions are working properly then most likely the problem is with
+the <a href="settings_connectivity.html">connectivity settings</a> instead. While it does not
+hurt to go on with this FAQ and check if DC++ is properly allowed in various places, if the 
+case above applies to you, you may solve the problem sooner if you follow the
+<a href="faq_connection.html">Connection setup guide</a> instead.</p>
+
+<h2>What OS components or software can block DC++?</h2>
+<ul>
+	<li>Windows internal firewall</li>
+	<li>3rd party firewall software</li>
+	<li>Anti-virus software</li>
+	<li>Anti-spyware software</li>
+	<li>Security suites with features combined of the above</li>
+</ul>
+
+<h2>Troubleshooting Windows built-in firewall</h2>
+
+<p>The firewall component included in recent Windows operating systems is enabled by default. While it does not offer a plethora of options, its suitable to use by itself for protection. If it's enabled and you have problems accessing the Internet with DC++ the best practice is to check for and delete existing exception(s) for DC++ then let the operating system properly readd it at next start of the DC++ application. To do this, close DC++ and
+<ul> 
+  <li><u>in Windows 7 or later</u>:
+go to Control Panel -&gt; Windows Firewall -&gt; Allow a program or feature through Windows Firewall. Select DC++ and click Remove.
+  </li>
+</ul>
+Start DC++ again and if a firewall popup window appears asking permission for DC++, click Allow.
+</p>
+
+<p>If the above doesn't help its wise to enable logging of packets that the firewall drops for troubleshooting DC++ (or any other applications') access. To do this,
+<ul>
+  <li><u>in Windows 7 and later</u>:
+go to Control Panel -&gt; Windows Firewall -&gt; Advanced Settings -&gt; Monitoring -&gt; Firewall. You can browse the firewall events here in great detail.</li>
+</ul>
+</p>
+
+<h2>Unblock DC++ in various 3rd party security software</h2>
+
+<p>The method for unblocking programs in 3rd party security software varies from product to product.
+Check the program's help or manual for proper instructions. The best general practice is to
+exit DC++ and remove ALL the rules for DC++ in the appropriate configuration place of your 
+security software. If you run a complete security suite you may have to unblock DC++ in more parts
+of the application (eg. in the firewall part and the application control part).</p>
+
+<p>After deleting the rules restart DC++. In most cases you'll be shown a popup window or a taskbar
+alert from the security software where you can properly enable (make an exception rule for) DC++.</p>
+
+<p>Some additional tips:
+<ul>
+	<li>Almost all anti-virus suites (Norton 360, McAfee, CA, Eset, Kaspersky, F-Secure, AVG, etc.) include a firewall
+component with their "typical" install method. Because of this, you can still have a firewall running even if you've 
+never installed a separate firewall product or seen a sign of its operation.</li>
+
+	<li>If you use a third party software firewall or securty suite then make 
+sure you have the <a href="https://support.microsoft.com/kb/283673" target="_blank" class="external">internal Windows firewall disabled</a>. 
+On Windows 7 and later Windows versions your 3rd party firewall application most likely disables the internal firewall automatically.</li>
+
+	<li>You can find configuration instructions for some popular firewall software <a href="https://www.dslreports.com/faq/dc/3.1_Software_Firewalls" target="_blank" class="external">here</a>.</li>
+</ul>
+</p>
+
+</body>
+</html>

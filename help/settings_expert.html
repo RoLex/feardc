@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>Experts only</h1>
+<dl style="margin-left: 40px;">
+  <dt>Max hash speed</dt>
+  <dd cshelp="IDH_SETTINGS_EXPERT_MAX_HASH_SPEED">This is the speed at which DC++ will hash your files, in
+MiB/s.
+It is limited by the speed of your disk subsystem, but it can be
+used to make hashing slower and less noticable. A "normal" hash
+speed may be anywhere from 20 to 50 MiB/s.  (no default)</dd>
+  <dt>Write buffer size</dt>
+  <dd cshelp="IDH_SETTINGS_EXPERT_BUFFERSIZE">This controls the size of the chunks that DC++ writes to
+disk for downloads. Measured in kibibytes. (default: 16 KiB)</dd>
+  <dt id="autosearchlimit">Auto-search limit</dt>
+  <dd cshelp="IDH_SETTINGS_EXPERT_AUTO_SEARCH_LIMIT">This will limit the amount of online sources a file can have before it will no longer be auto searched for. For example, if this option is set to 2, if a file has more than or exactly 2 sources online, the file will be excluded from the auto-search list. (default: 5 sources)</dd>
+    <dt id="Dt1">Auto-search interval</dt>
+  <dd cshelp="IDH_SETTINGS_EXPERT_AUTO_SEARCH_INTERVAL">This will set the time interval between auto searches. Specified in seconds and defaults to 120 seconds (cannot be lower than this).</dd>
+  <dt id="minislotsize">Mini slot size</dt>
+  <dd cshelp="IDH_SETTINGS_EXPERT_MINISLOT_SIZE">This value defines a file size border for mini slots; a <a href="settings_sharing.html#slots">mini slot</a> will be given to peers on requesting files below this size. The minimum value for this setting is 512 KiB. (default: 512 KiB)</dd>
+  <dt id="maxlistsize">Max filelist size</dt>
+  <dd cshelp="IDH_SETTINGS_EXPERT_MAX_FILELIST_SIZE">This setting controls the size of the maximum file list
+that DC++
+will open, in mebibytes. This setting helps protect against
+malformed file lists that require large amounts of memory to decode.
+You may need to reduce or increase the value of this setting
+based on personal experience. (default: 512 MiB)</dd>
+  <dt>PID</dt>
+  <dd cshelp="IDH_SETTINGS_EXPERT_PRIVATE_ID">This is your unique private ID (PID). This will later with an algorithm be used to identify you on ADC hubs. <b>Do not share this with other users.</b></dd>
+  <dt id="autorefresh">Auto refresh time</dt>
+  <dd cshelp="IDH_SETTINGS_EXPERT_AUTO_REFRESH_TIME">This controls the interval at which your shared directories
+are rescanned for new and changed content. This is measured
+in minutes. (default: 60 minutes)</dd>
+  <dt>Settings save interval</dt>
+  <dd cshelp="IDH_SETTINGS_EXPERT_SETTINGS_SAVE_INTERVAL">This controls the interval at which
+  your settings are automatically saved; good to prevent losses in case of crashes. This is
+  measured in minutes. (default: 10 minutes)</dd>
+  <dt>Socket read buffer</dt>
+  <dd cshelp="IDH_SETTINGS_EXPERT_SOCKET_IN_BUFFER">The size of the buffer DC++ uses to read sockets. Measured
+in bytes. (default: operating system default)</dd>
+  <dt id="writebuffer">Socket write buffer</dt>
+  <dd cshelp="IDH_SETTINGS_EXPERT_SOCKET_OUT_BUFFER">The size of the buffer DC++ uses to write to sockets.
+  Measured in bytes. (default: operating system default)</dd>
+  <dt>Max PM windows</dt>
+  <dd cshelp="IDH_SETTINGS_EXPERT_MAX_PM_WINDOWS">
+  The maximum amount of <placeholder><a href="window_pm.html">Private Message</a></placeholder>
+  windows that are allowed to be opened at the same time. (default: 50)<br/>
+  When a <placeholder><a href="window_pm.html">Private Message</a></placeholder> window can't be
+  opened because this setting would not be satisfied, the chat message that spawned it will be
+  shown in its originating <placeholder><a href="window_hub.html">Hub</a></placeholder> window
+  instead.
+  </dd>
+  <dt id="maxcommandlength">Max protocol command length</dt>
+  <dd cshelp="IDH_SETTINGS_EXPERT_MAX_COMMAND_LENGTH">The amount of protocol data DC++ will maximally manage. This setting help protect against potentially malicious clients and hubs.
+  Measured in bytes. (default: 524288 bytes)</dd>
+    <dt id="whitelistedopenuris">Whitelisted URIs to open</dt>
+  <dd cshelp="IDH_SETTINGS_EXPERT_WHITELIST_OPEN_URIS">URIs to automatically open without a security prompt. Use semicolon to separate multiple URIs. Default is http:;https:;www;mailto:</dd>
+</dl>
+</body>
+</html>

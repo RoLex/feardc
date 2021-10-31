@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>Advanced</h1>
+<dl style="margin-left: 40px;">
+	<dt>Automatically follow redirects</dt>
+	<dd cshelp="IDH_SETTINGS_ADVANCED_AUTO_FOLLOW">
+	A connected hub can send out a redirect request, asking your client to disconnect from the
+	current hub in order to join another one. When this setting is enabled, DC++ automatically
+	follows these requests and connects to the hubs it has been asked to be redirected to. When
+	this setting is disabled, DC++ displays a link one can click on to follow the redirect request.
+	Note that DC++ disconnects hubs that have sent a redirect request no matter what.
+	</dd>
+  <dt>Clear search box after each search</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_CLEAR_SEARCH">After each search, your search terms will be cleared. The last
+terms will be accessible through the drop-down. You can set how many terms that you want to save by using <a href="settings_history.html#searchhistory">Search history</a>.</dd>
+  <dt id="listdupes">Keep duplicate files in your file list</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_LIST_DUPES">Decides whether to remove duplicate files from your share or to
+list them but subtract their size from your total reported share size.
+Duplicate files never count towards your share size, no matter what
+this is set to.</dd>
+  <dt id="registrydchubadc">Register with Windows to handle dchub://, adc:// and adcs:// URL links</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_URL_HANDLER">When set, DC++ will be the default handler for all dchub://, adc://
+and adcs:// links. These links can appear on web pages, internet shortcuts on your
+computer, or be typed and run as a program from
+the Start Menu. Disable this if you prefer for a different
+application to handle Direct Connect hub links. Disabling will make
+DC++ remove the keys from the Windows registry.
+  </dd>
+  <dt id="registrymagnet">Register with Windows to handle magnet: URI links</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_MAGNET_REGISTER">When set, DC++ will register itself to handle magnet: links.
+These links will let you search the Direct Connect network for a file
+matching a given file hash, given that the magnet link contains
+information appropriate for the Direct Connect network.
+Disabling will make DC++ remove the key from
+the Windows registry.
+</dd>
+
+<dt>Register with Windows to handle .dcext files</dt>
+<dd cshelp="IDH_SETTINGS_ADVANCED_DCEXT_REGISTER">
+Associate DC++ with the .dcext file extension in Windows. Those files are plugins that can be
+installed into DC++ to extend its functionality.
+</dd>
+
+  <dt>Don't delete file lists when exiting</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_KEEP_LISTS">If this option is disabled, DC++ will delete the contents of the
+file list directory, where file lists are stored, when
+exiting. However, you can open already downloaded file lists
+instead of downloading them again. These file lists have a chance of
+being out of date, but for users on slow connections, keeping file
+lists can save time. <em>Since the file list isn't curent, don't be
+surprised if the files you enqueue to download have been removed by the
+user, or moved.</em></dd>
+  <dt id="disconnect">Automatically disconnect users who leave the hub</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_AUTO_KICK">The Direct Connect spirit is all about sharing. You are only
+sharing when you are connected to one or more hubs. In the past, users
+of questionable integrity and spirit logged onto a hub, selected a
+download, and disconnected from the hub again. If everyone did that,
+there would be nothing to download. Enable this option to avert that
+kind of behaviour. <em>Note that you might need to disable this option
+if you're connected to a hub that has a bad connection. The user will
+regain his/her slot if he/she reconnects within 10 minutes, but you
+might have opened up another slot for another user in the mean time.
+This could cause a situation where you have way more upload slots in
+use than you selected in the settings. Also, if you quit the hub,
+people downloading from you will not be disconnected.</em></dd>
+  <dt id="sfvcheck">Enable automatic SFV checking</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_SFV_CHECK">Simple File Verification (SFV) is a scheme in which a set of
+files are accompanied by a so-called sfv-file which contains CRC32
+checksums of each file. If there is an sfv-file included, DC++ will
+check that your download is free of corruption and retry the download
+that wasn't the case.</dd>
+  <dt>Don't send the away message to bots</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_NO_AWAYMSG_TO_BOTS">When in away mode, don't send the away message to users that
+appear to be bots. Having this option disabled is very annoying if you
+get messages from bots that link chat from multiple users (the most
+well known example is the Operator Chat facility found in many hubs).
+Users are judged to be bots if they have an empty Connection type. <i>Enable if unsure.</i></dd>
+
+  <dt id="break">Break on first ADLSearch match</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_ADLS_BREAK_ON_FIRST">If you're using the <a href="window_adlsearch.html">ADLSearch</a>
+features, keeping this option enabled will make a file show up in only
+the first search it matches. If disabled, it may appear multiple times,
+if it matches more than one search. <i>Disable
+if unsure.</i></dd>
+  <dt>Enable safe and compressed transfers</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_COMPRESS_TRANSFERS">When transfering data with a compatible client, DC++ will try to
+use ZLIB compression with integrity checks. This uses some CPU cycles,
+but can dramatically speed up transfers of uncompressed files as well
+as ensure file integrity (reduce the chance of corruption to near zero).<i>Enable if unsure.</i></dd>
+  <dt>Accept custom user commands from hub</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_HUB_USER_COMMANDS">This option lets you enable or disable DC++'s ability to retrieve
+custom commands from a remote hub. Custom User Commands may show
+when you click on the hub's tab, or on a user in the Transfer View,
+Search Window, or User List, and can enable you to read the rules,
+perform operator functions, interact with hub bots, etcetera.</dd>
+  <dt>Send unknown /commands to the hub</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_SEND_UNKNOWN_COMMANDS">Enable this to send <a href="chat_commands.html">/commands</a>
+that DC++ does not recognize to the hub as normal chat.</dd>
+  <dt>Add finished files to share instantly (if shared)</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_ADD_FINISHED_INSTANTLY">If you download files directly to a shared directory, enabling
+this option will add the files to your share as soon as they're
+finished. Searches will return the file, and users can download it. It
+will not appear in your file list until the next refresh.</dd>
+  <dt>Use CTRL for line history</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_USE_CTRL_FOR_LINE_HISTORY">Press up arrow while holding down CTRL to scroll through line
+history. If not enabled, you can still use ALT.</dd>
+  <dt>Don't automatically disconnect favorite users who leave the hub</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_AUTO_KICK_NO_FAVS">With this option enabled, and <a href="window_settings_advanced.html#disconnect">Automatically disconnect users who leave the hub</a>, users who are in your <a href="favorite_users.html">Favorite users</a> page are not disconnected.</dd>
+  <dt>Use extended menus with icons and titles</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_OWNER_DRAWN_MENUS">Have DC++ draw its own menus, which allows icons and titles to be added. Disable to revert to classic Windows menus.</dd>
+  <dt>Use system icons when browsing files (slows browsing down a bit)</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_USE_SYSTEM_ICONS">
+  Ask Windows Explorer for per-extension file icons rather than using default ones distributed
+  with DC++. <i>Turning this option on might reduce file browsing performance.</i>
+  </dd>
+  <dt>Clickable chat links (disable on Wine)</dt>
+  <dd cshelp="IDH_SETTINGS_CLICKABLE_CHAT_LINKS">
+  Pretty link formatting in the chat control. Disable on messed up systems (such as old versions of
+  Wine) should chat links fail to show up.
+  </dd>
+  <dt id="segmented">Enable segmented downloads</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_SEGMENTED_DL">With this option enabled, DC++ uses segmented downloading. i.e. it downloads each file in many parts simultaneously from all available sources.</dd>
+  <dt id="systemstartup">Start DC++ when Windows starts</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_REGISTER_SYSTEM_STARTUP">With this option enabled, DC++ will start up automatically when Windows starts.</dd>
+
+  <dt>Display testing nags</dt>
+  <dd cshelp="IDH_SETTINGS_ADVANCED_DISPLAY_TESTING_NAGS">
+  Display bug report / etc information when using a testing version of DC++ (one that has not yet
+  been marked as stable by the DC++ team).
+  </dd>
+
+</dl>
+</body>
+</html>

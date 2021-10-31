@@ -1,0 +1,141 @@
+#include "resource.h"
+
+#if defined x86
+1 24 "res/DCPlusPlus.manifest.x86"
+#elif defined x64
+1 24 "res/DCPlusPlus.manifest.x64"
+#elif defined ia64
+1 24 "res/DCPlusPlus.manifest.ia64"
+#else
+#error "manifest: unknown arch"
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_DCPP                ICON                    "res/DCPlusPlus.ico"
+IDI_PUBLICHUBS          ICON                    "res/PublicHubs.ico"
+IDI_SEARCH              ICON                    "res/Search.ico"
+IDI_FAVORITE_HUBS       ICON                    "res/FavoriteHubs.ico"
+IDI_PRIVATE             ICON                    "res/UserOn.ico"
+IDI_DIRECTORY           ICON                    "res/Directory.ico"
+IDI_HUB                 ICON                    "res/HubOn.ico"
+IDI_NOTEPAD             ICON                    "res/Notepad.ico"
+IDI_QUEUE               ICON                    "res/Queue.ico"
+IDI_FINISHED_DL         ICON                    "res/FinishedDL.ico"
+IDI_ADLSEARCH           ICON                    "res/ADLSearch.ico"
+IDI_FINISHED_UL         ICON                    "res/FinishedUL.ico"
+IDI_USERS               ICON                    "res/Users.ico"
+IDI_NET_STATS           ICON                    "res/NetStats.ico"
+IDI_MAGNET              ICON                    "res/Magnet.ico"
+IDI_HUB_OFF             ICON                    "res/HubOff.ico"
+IDI_PRIVATE_OFF         ICON                    "res/UserOff.ico"
+IDI_GROUPED_BY_FILES    ICON                    "res/GroupedByFiles.ico"
+IDI_GROUPED_BY_USERS    ICON                    "res/GroupedByUsers.ico"
+IDI_EXIT                ICON                    "res/Exit.ico"
+IDI_CHAT                ICON                    "res/Chat.ico"
+IDI_HELP                ICON                    "res/Help.ico"
+IDI_OPEN_DL_DIR         ICON                    "res/OpenDLDir.ico"
+IDI_OPEN_FILE_LIST      ICON                    "res/OpenFileList.ico"
+IDI_RECONNECT           ICON                    "res/Reconnect.ico"
+IDI_SETTINGS            ICON                    "res/Settings.ico"
+IDI_TRAY_PM             ICON                    "res/TrayPM.ico"
+IDI_TRUSTED             ICON                    "res/Trusted.ico"
+IDI_SECURE              ICON                    "res/Secure.ico"
+IDI_RECENTS             ICON                    "res/Recents.ico"
+IDI_WHATS_THIS          ICON                    "res/WhatsThis.ico"
+IDI_DOWNLOAD            ICON                    "res/Download.ico"
+IDI_UPLOAD              ICON                    "res/Upload.ico"
+IDI_UPLOAD_FILTERING    ICON                    "res/UploadFiltering.ico"
+IDI_CHANGELOG           ICON                    "res/Changelog.ico"
+IDI_DONATE              ICON                    "res/Donate.ico"
+IDI_GET_STARTED         ICON                    "res/GetStarted.ico"
+IDI_INDEXING            ICON                    "res/Indexing.ico"
+IDI_LINKS               ICON                    "res/Links.ico"
+IDI_REFRESH             ICON                    "res/Refresh.ico"
+IDI_SLOTS               ICON                    "res/Slots.ico"
+IDI_OK                  ICON                    "res/OK.ico"
+IDI_CANCEL              ICON                    "res/Cancel.ico"
+IDI_LEFT                ICON                    "res/Left.ico"
+IDI_RIGHT               ICON                    "res/Right.ico"
+IDI_USER                ICON                    "res/User.ico"
+IDI_USER_AWAY           ICON                    "res/UserAway.ico"
+IDI_USER_BOT            ICON                    "res/UserBot.ico"
+IDI_USER_NOCON          ICON                    "res/UserNoCon.ico"
+IDI_USER_NOSLOT         ICON                    "res/UserNoSlot.ico"
+IDI_USER_OP             ICON                    "res/UserOp.ico"
+IDI_UP                  ICON                    "res/Up.ico"
+IDI_FILE                ICON                    "res/File.ico"
+IDI_EXEC                ICON                    "res/Exec.ico"
+IDI_FAVORITE_USER_ON    ICON                    "res/FavoriteUserOn.ico"
+IDI_FAVORITE_USER_OFF   ICON                    "res/FavoriteUserOff.ico"
+IDI_GREEN_BALL          ICON                    "res/BallGreen.ico"
+IDI_RED_BALL            ICON                    "res/BallRed.ico"
+IDI_SLOTS_FULL          ICON                    "res/SlotsFull.ico"
+IDI_ADVANCED            ICON                    "res/Advanced.ico"
+IDI_CLOCK               ICON                    "res/Clock.ico"
+IDI_STYLES              ICON                    "res/Styles.ico"
+IDI_BW_LIMITER          ICON                    "res/BandwidthLimiter.ico"
+IDI_CONN_GREY           ICON                    "res/ConnGrey.ico"
+IDI_CONN_BLUE           ICON                    "res/ConnBlue.ico"
+IDI_EXPERT              ICON                    "res/Expert.ico"
+IDI_FAVORITE_DIRS       ICON                    "res/FavoriteDirs.ico"
+IDI_LOGS                ICON                    "res/Logs.ico"
+IDI_NOTIFICATIONS       ICON                    "res/Notifications.ico"
+IDI_PROXY               ICON                    "res/Proxy.ico"
+IDI_TABS                ICON                    "res/Tabs.ico"
+IDI_WINDOWS             ICON                    "res/Windows.ico"
+IDI_BALLOON             ICON                    "res/Balloon.ico"
+IDI_SOUND               ICON                    "res/Sound.ico"
+IDI_ULIMIT				ICON					"res/ULimit.ico"
+IDI_DLIMIT				ICON					"res/DLimit.ico"
+IDI_OPEN_OWN_FILE_LIST  ICON                    "res/OpenOwnFileList.ico"
+IDI_PLUGINS				ICON					"res/Plugins.ico"
+IDI_USER_REG            ICON                    "res/UserReg.ico"
+IDI_DELETE              ICON                    "res/Remove.ico"
+IDI_PAUSE               ICON                    "res/Pause.ico"
+IDI_PLAY                ICON                    "res/Play.ico"
+IDI_INCREMENT           ICON                    "res/Increment.ico"
+IDI_DECREMENT           ICON                    "res/Decrement.ico"
+IDI_REMOVEQUEUE         ICON                    "res/RemoveQueue.ico"
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,8,7,0
+ PRODUCTVERSION 0,8,7,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "https://dcplusplus.sourceforge.io"
+            VALUE "FileDescription", "DC++"
+            VALUE "FileVersion", "0, 8, 7, 0"
+            VALUE "InternalName", "DC++"
+            VALUE "LegalCopyright", "Copyright 2001-2021 Jacek Sieka"
+            VALUE "OriginalFilename", "DCPlusPlus.exe"
+            VALUE "ProductName", "DC++"
+            VALUE "ProductVersion", "0, 8, 7, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END

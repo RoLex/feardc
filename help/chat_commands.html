@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>Chat Commands</h1>
+<h2>Main Chat</h2>
+<dl style="margin-left: 40px;">
+  <dt><untranslated>/join &lt;hub-ip&gt;</untranslated></dt>
+  <dd>Joins &lt;hub-ip&gt;. See also <a
+ href="settings_windows.html#new_window">Open new window when using
+/join</a>.</dd>
+  <dt id="showjoins"><untranslated>/showjoins</untranslated></dt>
+  <dd>Toggles the displaying of users joining the hub. This only
+takes effect for freshly-arriving users.</dd>
+  <dt><untranslated>/favshowjoins</untranslated></dt>
+  <dd>Toggles the displaying of favorite users joining the hub. Does
+not require /showjoins to be enabled.</dd>
+  <dt><untranslated>/userlist</untranslated></dt>
+  <dd>Toggles visibility of the list of users for the current
+hub.</dd>
+  <dt><untranslated>/connection</untranslated></dt>
+  <dt><untranslated>/conn</untranslated></dt>
+  <dd>Displays the connectivity status information, auto detected or manually chosen connection mode, IP and ports that DC++ is currently using for connections with all users.</dd>
+  <dt><untranslated>/favorite</untranslated></dt>
+  <dt><untranslated>/fav</untranslated></dt>
+  <dd>Adds the current hub (along with your nickname and password, if
+used) to the list of <a href="favorite_hubs.html">Favorite Hubs</a>.</dd>
+  <dt><untranslated>/removefavorite</untranslated></dt>
+  <dt><untranslated>/removefav</untranslated></dt>
+  <dd>Removes the current hub from the list of <a href="favorite_hubs.html">Favorite Hubs</a>.</dd>
+  <dt><untranslated>/pm &lt;user&gt; [message]</untranslated></dt>
+  <dd>Opens a private message window to the user, and optionally sends
+the message, if one was specified.</dd>
+  <dt><untranslated>/getlist &lt;user&gt;</untranslated></dt>
+  <dd>Adds the user's list to the Download Queue.</dd>
+  <dt><untranslated>/ignore &lt;user&gt;</untranslated></dt>
+  <dd>Adds a user matching definition (or modifies an existing one, if possible) to ignore chat
+  messages from the specified user.</dd>
+  <dt><untranslated>/unignore &lt;user&gt;</untranslated></dt>
+  <dd>Adds a user matching definition (or modifies an existing one, if possible) to stop ignoring
+  chat messages from the specified user.</dd>
+  <dt><untranslated>/topic</untranslated></dt>
+  <dd>Prints the current hub's topic. Useful if you want to copy the topic or it contains a link you'd like to easily open.</dd>
+</dl>
+<h2>Private Message</h2>
+<dl style="margin-left: 40px;">
+  <dt><untranslated>/direct</untranslated></dt>
+  <dt><untranslated>/encrypted</untranslated></dt>
+  <dd>Starts a direct encrypted communication channel to avoid spying on your private messages.</dd>
+  <dt><untranslated>/getlist</untranslated></dt>
+  <dd>Adds the current user's list to the Download Queue.</dd>
+  <dt><untranslated>/grant</untranslated></dt>
+  <dd>Grants the remote user a slot. Once they connect, or if
+they don't connect in 10 minutes, the granted slot is removed.</dd>
+  <dt><untranslated>/favorite</untranslated></dt>
+  <dt><untranslated>/fav</untranslated></dt>
+  <dd>Adds the current user to the list of <a
+	  href="window_users.html">Favorite Users</a>.</dd>
+  <dt><untranslated>/ignore</untranslated></dt>
+  <dd>Adds a user matching definition (or modifies an existing one, if possible) to ignore chat
+  messages from the current user.</dd>
+  <dt><untranslated>/unignore</untranslated></dt>
+  <dd>Adds a user matching definition (or modifies an existing one, if possible) to stop ignoring
+  chat messages from the current user.</dd>
+  <dt><untranslated>/lastmessage</untranslated></dt>
+  <dd>Lists the date and time when the last message was sent or received.</dd>
+</dl>
+<h2>Both</h2>
+<dl style="margin-left: 40px;">
+  <dt><untranslated>/refresh</untranslated></dt>
+  <dd>Manually refreshes DC++'s share list by going through the shared
+directories and adding new folders and files. DC++ automatically
+refreshes once an hour by default, and also refreshes after the list of
+shared directories is changed.</dd>
+  <dt><untranslated>/slots &lt;number&gt;</untranslated></dt>
+  <dd>Sets the current number of upload slots to the number you
+specify. If this is less than the current number of slots, no
+uploads are cancelled.</dd>
+  <dt><untranslated>/dslots &lt;number&gt;</untranslated></dt>
+  <dd>Sets the current number of download slots to the number you
+specify. If this is less than the current number of slots, no
+downloads are cancelled.</dd>
+  <dt><untranslated>/search &lt;string&gt;</untranslated></dt>
+  <dd>Opens a new search window with the specified search string.
+It does <u>not</u>
+automatically send the search.</dd>
+  <dt><untranslated>/close</untranslated></dt>
+  <dd>Closes the current window.</dd>
+  <dt><untranslated>/clear [lines to keep]</untranslated></dt>
+  <dd>Clears the current window of all text. Optionally, you can specify how many of the latest
+(most recent) lines should be kept.</dd>
+  <dt><untranslated>/dc++</untranslated></dt>
+  <dd>Sends a random DC++ advertising message to the chat, including a
+link to the DC++ homepage and the version number.</dd>
+  <dt id="awayback"><untranslated>/away [message]</untranslated></dt>
+  <dd>Sets Away status. New private message windows will be
+responded to, once, with the message you specified, or the default away
+message configured in the <a href="settings_general.html#awaymsg">Personal information</a>
+settings page.</dd>
+  <dt><untranslated>/back</untranslated></dt>
+  <dd>Un-sets Away status.</dd>
+  <dt><untranslated>/d &lt;search string&gt;</untranslated></dt>
+  <dd>Launches your default web browser to the DuckDuckGo search engine
+with the specified search.</dd>
+  <dt><untranslated>/g &lt;search string&gt;</untranslated></dt>
+  <dd>Launches your default web browser to the Google search engine
+with the specified search.</dd>
+  <dt><untranslated>/imdb &lt;imdb query&gt;</untranslated></dt>
+  <dd>Launches your default web browser to the Internet Movie Database
+(imdb) with the specified query.</dd>
+  <dt><untranslated>/rebuild</untranslated></dt>
+  <dd>Rebuilds the HashIndex.xml and HashData.dat files, removing
+entries to files that are no longer shared, or old hashes for files
+that have since changed. This runs in the main DC++ thread, so
+the interface will freeze until the rebuild is finished.</dd>
+  <dt><untranslated>/log &lt;status, system, downloads, uploads&gt;</untranslated></dt>
+  <dd>If no parameter is specified, it launches the log for the hub or
+private chat with the associated application in Windows. If one of the
+parameters is specified it opens that log file. The status log is
+available only in the hub frame.</dd>
+  <dt><untranslated>/help</untranslated></dt>
+  <dd>Displays available commands. (The ones listed on this page.) Optionally, you can specify &quot;brief&quot; to have a brief listing.</dd>
+  <dt><untranslated>/u &lt;url&gt;</untranslated></dt>
+  <dd>Launches your default web browser with the given URL.</dd>
+  <dt><untranslated>/f &lt;search string&gt;</untranslated></dt>
+  <dd>Highlights the last occourrence of the specified search string in 
+the chat window.</dd>
+</dl>
+</body>
+</html>

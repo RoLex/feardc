@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>How do I install DC++?</h1>
+<p>
+Just run the installer and fire up DC++, then enter the settings to set it up according to your preferences (the most important are <a href="settings_general.html">nick</a>, <a href="settings_downloads.html">download location</a> and <a href="settings_sharing.html">shared directories</a>). When using the installer, DC++ will store its settings and create the default downloads directory in the current user's profile directory.
+</p>
+<p>
+You can also download the .zip file (Binary, portable version) and unpack it to any directory you like. If you use the portable version, all the settings and the downloads directory will be stored in the directory where DC++ has been unpacked. You can configure DC++ to use another directory for settings by editing a file called dcppboot.xml located besides the DC++ executable. You can read more about the storage of settings and downloaded files in <a href="faq_settings_files.html">this FAQ</a>.
+</p>
+<p>
+Note: if you use the portable (.zip) version of DC++, then it's not recommended to unpack it to the Program Files directory. Doing so may cause loss of settings and/or unfinished downloads due to the <a href="https://blogs.msdn.microsoft.com/patricka/2009/12/14/tales-of-application-compatibility-weirdness-demystifying-uac-virtualization/" target="_blank" class="external">User Account Control Data Redirection</a> technology.
+</p>
+<br/>
+<h1>How do I uninstall DC++?</h1>
+<p>
+Use the uninstaller that followed when you used the installer. It will remove all installed program files and (if you choose so) will delete all of your settings and unfinished downloads as well.<br/>
+If you didn't use the installer (portable version): You can safely delete your DC++ directory, but be aware that dchub://, adc://, adcs:// and magnet: links will remain in the registry and will point to the nonexistent application. If you disable the <a href="settings_advanced.html#registrydchubadc">Register with Windows to Handle dchub://, adc:// and adcs:// URL Links</a> and <a href="settings_advanced.html#registrymagnet">Register with Windows to Handle magnet: URI Links</a> options before uninstalling, these registry settings will be removed.</p>
+<p>If you want to move your settings, unfinished downloads and other DC++ data to another computer, follow the <a href="faq_settings_files.html">Settings files guide</a>.
+</p>
+<br/>
+<h1>How do I upgrade DC++?</h1>
+<p>
+Just install the new version (or unpack the .zip) in the directory your old version was in. Your old settings, queue, favorites will still be used by the new version. 
+<br/>
+<b>BEWARE : </b>There are some cases though when a feature upgrade makes impossible to reuse some some kind of settings or data created by an older version of DC++.  
+</p>
+<ul>
+  <li>Old (ver &lt;= 0.163) Notepad notes will get lost, due to a format change in 0.17</li>
+  <li>If you upgrade to 0.22, all old queue items that are missing a directory in the target file-name will be removed. Don't upgrade if your queue is precious to you, and you didn't have anything in the default download directory box in the settings (finish it with version 0.181 or edit your queue.xml file and add a directory to all targets without...).</li>
+  <li>If you upgrade to 0.4033, all logs will be formatted as UTF-8 (Unicode), instead of ASCII. Also, finish your queue with the older version before upgrading if you care for your international filenames in it - they will not be correctly converted. </li>
+  <li>If you upgrade to 0.685, as the user identification method has been changed, you will lose your favorite users and all sources from your queue.</li>
+  <li>If you upgrade to 0.695, as compatibility with non-TTH clients has been dropped, sources with no TTH support will no longer appear and files without TTH will be removed from your queue.</li>
+</ul>
+</body>
+</html>

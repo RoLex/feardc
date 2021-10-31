@@ -1,0 +1,20 @@
+This document lists preprocessor macros available to tweak the way DWT is built.
+
+--- Important ---
+
+DWT_SHARED: Define when DWT is meant to be used in a shared library, rather than in a main
+application.
+When DWT_SHARED is defined, the implementor is expected to call dwt::Application::init
+and dwt::Application::uninit. It is assumed the host of the library will be pumping messages; so no
+message loop is provided under DWT_SHARED.
+When DWT_SHARED is not defined, the implementor is expected to provide the dwtMain function which
+DWT calls and which should launch the message loop by calling dwt::Application::run.
+Note that a few features of DWT have limited availability under DWT_SHARED; notably:
+- Asynchronous calls (set by dwt::Application::callAsync or dwt::Widget::callAsync) are synchronous
+(because the shared library can't inject its asynchronous calls into its host's message pump).
+- Accelerator keys aren't handled (for similar reasons).
+
+--- Debugging ---
+
+DWT_DEBUG_WIDGETS: Define to write debugging messages to standard output whenever a widget is
+created or destroyed. This is useful to track widget leaks.

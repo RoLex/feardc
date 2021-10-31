@@ -1,0 +1,75 @@
+This document describes the way DC plugins are packaged and distributed.
+
+More resources:
+- C SDK: <https://launchpad.net/dcpp-plugin-sdk-c>.
+- C++ SDK: <https://launchpad.net/dcpp-plugin-sdk-cpp>.
+- Implementation details: dcpp/Plugin* files.
+
+Alternative names for a DC plugin: DC extension, DC++ plugin, DC++ extension - stemming from the
+host-agnostic design of the DC plugin API.
+
+A DC plugin is, at the very least, a shared extension (.so Linux file, .dll Windows file) that
+defines a "pluginInit" function and handles basic events from the plugin API (ON_INSTALL, ON_LOAD,
+etc). It can then subscribe to interfaces such as DCHooks to catch more events.
+
+Shared extensions are fine for testing but impractical to distribute and to have users install.
+Therefore, a DC plugin is preferably packaged as a .dcext file.
+
+A .dcext file is a ZIP archive, as defined by PKWARE's APPNOTE, either uncompressed (method 0) or
+compressed with DEFLATE (method 8), with the following restrictions:
+- No encryption.
+- No streaming / splitting / spanning.
+- No manifest file.
+- No character outside of the ASCII range in file names.
+- Extensions / extra fields and comments are allowed but shall be ignored.
+
+That archive must contain an XML file named "info.xml" at its root, whose contents shall validate
+against the schemas/dcext.xsd schema.
+
+Description of the XML tags:
+
+- "dcext" (compulsory): Root tag.
+
+- "UUID" (compulsory): UUID to uniquely identify this plugin.
+- "Name" (compulsory): Friendly name of the plugin.
+- "Version" (compulsory): Version of the plugin; used for updates.
+- "ApiVersion" (compulsory): Plugin API version the plugin has been built with.
+
+- "Author" (optional): Author of the plugin.
+- "Description" (optional): Short description of the plugin.
+- "Website" (optional): Plugin website.
+
+- "Plugin" (compulsory): Location of the loadable shared extension within the archive. The required
+	"Platform" attribute of this tag must be a value from the "Platform codes" list below. Multiple
+	"Plugin" tags may be provided for different platforms.
+- "Files" (optional): Additional files required by the plugin, each within a "File" tag. "File"
+	tags may contain an optional "Platform" attribute which must be a value from the "Platform
+	codes" list below; in its absence, files are assumed to be platform-independant by default.
+
+Platform codes:
+- elf-x64: ELF format, x64 architecture.
+- elf-x86: ELF format, x86 architecture.
+- pe-x64: PE format, x64 architecture.
+- pe-x86: PE format, x86 architecture.
+
+Example info.xml:
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<dcext>
+	<UUID>{f62ed829-def5-4332-a0d7-84d2ec692006}</UUID>
+	<Name>Test plugin</Name>
+	<Version>2.3</Version>
+	<ApiVersion>6</ApiVersion>
+	<Author>Test team</Author>
+	<Description>Plugin to do X</Description>
+	<Website>http://example.com</Website>
+	<Plugin Platform="elf-x64">x64/TestPlugin.so</Plugin>
+	<Plugin Platform="elf-x86">x86/TestPlugin.so</Plugin>
+	<Plugin Platform="pe-x64">x64/TestPlugin.dll</Plugin>
+	<Plugin Platform="pe-x86">x86/TestPlugin.dll</Plugin>
+	<Files>
+		<File>icons/TestPlugin.ico</File>
+		<File>fonts/cool.font</File>
+		<File Platform="elf-x64">FasterHash.so</File>
+	</Files>
+</dcext>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+	<h1>
+		<img src="ADLSearch.ico" width="16" height="16" alt="Automatic Directory Listing Search"/>
+		Automatic Directory Listing Search
+	</h1>
+<h2>What is Automatic Directory Listing Search?</h2>
+Automatic Directory Listing Search (ADLSearch) is a tool for searching
+of file lists downloaded from users. Create a new ADLSearch entering
+'avi' as search string for example. When you download a directory
+listing from a user, all avi-files will be placed in a special folder
+called <b>&lt;&lt;&lt;ADLSearch&gt;&gt;&gt;</b>.
+<h2>Columns</h2>
+<dl style="margin-left: 40px;">
+  <dt>Enabled / Search String</dt>
+  <dd>This is the set of search strings to search for. The checkbox indicates whether the search is active (box checked) or inactive (box unchecked).</dd>
+  <dt>Source Type</dt>
+  <dd><p>One of following values:</p>
+<dl style="margin-left: 40px;">
+  <dt>Filename</dt>
+  <dd>Matches search against filename.</dd>
+  <dt id="directory">Directory</dt>
+  <dd>Matches against current subdirectory and places the whole
+structure in the special folder.</dd>
+  <dt>Full Path</dt>
+  <dd>Matches against whole directory + filename.</dd>
+</dl>
+</dd>
+  <dt>Destination Directory</dt>
+  <dd>Sets the output folder for a search. Multiple folders with
+different names can exist simultaneously. Each folder name gets wrapped
+in &lt;&lt;&lt; and &gt;&gt;&gt;.</dd>
+  <dt>Min Size</dt>
+  <dd>Sets the lower limits for file size. This is unused for <a href="#directory">Directory</a> searches.</dd>
+  <dt>Max Size</dt>
+  <dd>Sets the upper limits for file size. This is unused for <a href="#directory">Directory</a> searches.</dd>
+</dl>
+<h2>Buttons / Context menu commands</h2>
+<dl style="margin-left: 40px;">
+  <dt>New</dt>
+  <dd cshelp="IDH_ADLS_NEW">Create a new ADLSearch entry.</dd>
+  <dt>Properties</dt>
+  <dd cshelp="IDH_ADLS_PROPERTIES">Change pre-existing ADLSearch properties for the selected entries.</dd>
+  <dt>Move up</dt>
+  <dd cshelp="IDH_ADLS_MOVE_UP">Move up selected ADLSearch entries in the list.</dd>
+  <dt>Move down</dt>
+  <dd cshelp="IDH_ADLS_MOVE_DOWN">Move down selected ADLSearch entries in the list.</dd>
+  <dt>Remove</dt>
+  <dd cshelp="IDH_ADLS_REMOVE">Removes selected ADLSearch entries from the list.</dd>
+  <dt>Help</dt>
+  <dd>Launch this help file.</dd>
+</dl>
+<p>Description of some other common context menu options are listed in the <a href="commands_listview.html">
+Listview-related menu commands</a> page.</p>
+<h2>Extra Features</h2>
+<ol>
+  <li>There is a new option in the context menu (right-click) for
+directory listings. It is called 'Go to directory' and can be used to
+jump to the original location of the file or directory in the filelist.</li>
+  <li>If you use <a href="settings_logs.html#timeformat">time
+formatting</a> variables, they will be replaced by today's date. If you
+use %[nick] it will be replaced by the nick of the user you download
+the directory listing from.</li>
+  <li>If you name a destination directory 'discard', it will not be
+shown in the total result. Useful with the feature below to remove
+uninteresting results.</li>
+  <li>There is a setting called <a href="settings_advanced.html#break">Break
+on First ADLSearch Match</a>. If enabled, ADLSearch will stop after the
+first match for a specific file/directory.The order in the ADLSearch
+windows is therefore important. Example: Add a search item at the top
+of the list with string='xxx' and destination='discard'. It will catch
+many pornographic files and they will not be included in any following
+search results.</li>
+</ol>
+</body>
+</html>

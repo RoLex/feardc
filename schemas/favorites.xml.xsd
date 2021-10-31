@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>DC++ Favorites XML file XSD.</xs:documentation>
+	</xs:annotation>
+	
+	<xs:simpleType name="boolType">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="0">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="UserCommandType">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:int">
+			<xs:enumeration value="0">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="1">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="2">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="3">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="4">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Allows the ability to speciy an attribute value or element value that can be empty but still be of a different type than a string. -->
+	<xs:simpleType name="EMPTY_STR">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value=""/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="extended_long">
+		<xs:union memberTypes="xs:long EMPTY_STR"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="extended_float">
+		<xs:union memberTypes="xs:float EMPTY_STR"/>
+	</xs:simpleType>
+
+	<!-- Attribute deferences -->
+	<xs:attribute name="Name" type="xs:string">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Description" type="xs:string">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Password" type="xs:string">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Server" type="xs:string">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Encoding" type="xs:string">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Group" type="xs:string">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Nick" type="xs:string">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="LastSeen" type="xs:long">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="GrantSlot" type="boolType">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="UserDescription" type="xs:string">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="URL" type="xs:string">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="CID" type="xs:string">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Context" type="xs:int">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Command" type="xs:string">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="To" type="xs:string">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	<xs:attribute name="Hub" type="xs:string">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+
+	<!-- Elements -->
+	<xs:element name="Favorites">
+		<xs:annotation>
+			<xs:documentation>.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Hubs" maxOccurs="1" minOccurs="0"></xs:element>
+				<xs:element ref="Users" maxOccurs="1" minOccurs="0"></xs:element>
+				<xs:element ref="UserCommands" maxOccurs="1" minOccurs="0"></xs:element>
+				<xs:element ref="FavoriteDirs" maxOccurs="1" minOccurs="0"></xs:element>
+			</xs:sequence>
+
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Hubs">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Group" maxOccurs="unbounded" minOccurs="0"></xs:element>
+				<xs:element ref="Hub" maxOccurs="unbounded" minOccurs="0"></xs:element>
+			</xs:sequence>
+
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Group">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:any processContents="lax"></xs:any>
+			</xs:sequence>
+
+			<xs:attribute ref="Name" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Hub">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:any processContents="lax"></xs:any>
+			</xs:sequence>
+
+			<xs:attribute ref="Name" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Description" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Password" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Encoding" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Group" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Nick" use="optional">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Users">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="User" maxOccurs="unbounded" minOccurs="0"></xs:element>
+			</xs:sequence>
+
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="User">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:any processContents="lax"></xs:any>
+			</xs:sequence>
+
+			<xs:attribute ref="LastSeen" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="GrantSlot" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="UserDescription" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Nick" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="URL" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="CID" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="UserCommands">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="UserCommand" maxOccurs="unbounded" minOccurs="0"></xs:element>
+			</xs:sequence>
+
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="UserCommand">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:any processContents="lax"></xs:any>
+			</xs:sequence>
+
+			<xs:attribute name="Type" use="required" type="UserCommandType">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Context" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Name" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Command" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="To" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Hub" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="FavoriteDirs">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Directory" maxOccurs="unbounded" minOccurs="0"></xs:element>
+			</xs:sequence>
+
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Directory">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute ref="Name" use="required">
+						<xs:annotation>
+							<xs:documentation></xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

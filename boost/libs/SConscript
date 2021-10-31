@@ -1,0 +1,13 @@
+Import('dev source_path')
+
+env, target, sources = dev.prepare_build(
+    source_path,
+    'boost',
+    in_bin=False,
+    recursive=True,
+)
+
+env.Append(CPPPATH=['#/boost'])
+
+ret = dev.build_lib(env, target, sources)
+Return('ret')

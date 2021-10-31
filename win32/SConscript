@@ -1,0 +1,68 @@
+# vim: set filetype=py
+
+Import('dev source_path')
+
+env, target, sources = dev.prepare_build(
+    source_path,
+    'DCPlusPlus',
+    precompiled_header='stdafx'
+)
+
+dev.add_boost(env)
+dev.add_crashlog(env)
+dev.add_dcpp(env)
+dev.add_intl(env)
+dev.add_openssl(env)
+
+if dev.is_win32():
+    env.Append(CPPPATH=['#/dwt/include'])
+    env.Append(LIBS=[
+        'comctl32', 'comdlg32', 'oleaut32', 'shlwapi', 'uuid', 'uxtheme',
+        'winmm', 'wtsapi32'
+    ])
+
+if 'HAVE_HTMLHELP_H' in env['CPPDEFINES']:
+    env.Append(LIBS=['htmlhelp'])
+
+prog_sources = sources
+
+if dev.is_win32():
+    if env['RC'] == 'rc':  # MSVC
+        env.Append(RCFLAGS=['/d' + env['arch']])
+    elif env['RC'].find('windres') != -1:  # MinGW
+        env.Append(RCFLAGS=['-D' + env['arch']])
+    else:
+        print('Unknown resource compiler.')
+        Return()
+    res = env.RES(dev.get_sources(source_path, '*.rc'))
+    env.Depends(res, 'resource.h')
+    prog_sources.append(res)
+
+headers = dev.get_sources(source_path, "*.h")
+dev.i18n(source_path, env, [sources, headers], 'dcpp-win32')
+
+if env['msvcproj']:
+    ret = dev.build_lib(env, target, sources, dev.cpp_lib)
+else:
+    ret = dev.build_program(env, target, prog_sources)
+
+if 'gcc' in env['TOOLS']:
+    # strip debug info to a separate PDB file
+    env.Command(
+        target + '.pdb',
+        '$PROGPREFIX' + target + '$PROGSUFFIX',
+        Action(
+            env['strip'] + ' --only-keep-debug "$SOURCE" -o "$TARGET"',
+            'Extracting debugging symbols to $TARGET'
+        )
+    )
+    env.Command(
+        '$PROGPREFIX' + target + '-stripped' + '$PROGSUFFIX',
+        '$PROGPREFIX' + target + '$PROGSUFFIX',
+        Action(
+            env['strip'] + ' "$SOURCE" -o "$TARGET"',
+            'Creating $TARGET'
+        )
+    )
+
+Return('ret')

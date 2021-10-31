@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>Creating patches</h1>
+<br/>
+<dl>
+  <dt>Using <a
+ href="https://www.gnu.org/software/diffutils/diffutils.html" 
+ target="_blank" class="external">GNU Diff</a></dt>
+  <dd>1. Download and install <a
+ href="https://www.gnu.org/software/diffutils/diffutils.html" 
+ target="_blank" class="external">GNU Diff</a>.</dd>
+  <dd>2. Type <i>cmd</i> in Run and navigate your way to where GNU
+Diff is installed.</dd>
+  <dd>3. Write <i>diff -[parameter(s)] &lt;path to the untouched file
+or folder&gt; &lt;path to the changed file or folder&gt; &gt;
+my-diff.diff</i></dd>
+  <dd>4. A file, my-diff.diff, will now be created in the directory
+which GNU Diff is placed. Other extensions for the patch (such as .txt)
+are acceptable, there is no standard.</dd>
+  <dd><br/>
+Example: <i>C:\Program Files\GNU Diff&gt;diff -uNr dcplusplus_orig
+dcplusplus_chan &gt; my-diff.diff</i> <br/>
+C:\Program Files\GNU Diff is where GNU Diff is installed.<br/>
+The parameter <i style="font-weight: bold;">u</i> means the diff will
+be unified. <i style="font-weight: bold;">N</i> means that GNU Diff
+will show output even if a file doesn't exist in one of the two
+folders.
+    <i style="font-weight: bold;">r</i> means that GNU Diff will go
+through subdirectories and give output on which directory and file
+differ.
+    <br/>
+    <i>dcplusplus_orig</i> is the folder that is untouched and what the
+changes is going to differ against.
+    <br/>
+    <i>dcplusplus_chan</i> is the folder where changes has occured.
+    <br/>
+The actual diff is <i>my-diff.diff</i>.
+    <p>Parameters and more information on how to use GNU Diff can be
+found in the documentation for GNU Diff which should have come included
+with GNU Diff. Otherwise, the manual can be found at the <a
+ href="https://www.gnu.org/software/diffutils/manual/diffutils.html"
+ target="_blank" class="external">GNU Diff manual</a></p>
+  </dd>
+  <dt>Interpreting the diff</dt>
+  <dd>
+	<pre><untranslated>diff -uNr dcplusplus_orig/client/file.cpp dcplusplus_chan/client/file.cpp<br/>--- dcplusplus_orig/client/file.cpp	Tue Nov 30 00:21:30 2004<br/>+++ dcplusplus_chan/client/file.cpp	Wed Dec  1 13:59:59 2004<br/>@@ -336,7 +336,7 @@<br/>        // text<br/>        // text<br/>        int a = 0;<br/>-       int b;<br/>+       int c;<br/>        double pi;<br/>        string helpfile;<br/>        string dcplusplus;</untranslated></pre>
+  </dd>
+  <dd>Lines starting with <b>-</b> (minus sign) are going to be
+removed. <br/>
+Lines starting with <b>+</b> (plus sign) are going to be added.</dd>
+</dl>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+
+	<xs:simpleType name="WindowIdType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="DirectoryListing">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PM">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Hub">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Notepad">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SystemLog">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Queue">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PublicHubs">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FavHubs">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Users">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FinishedDL">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FinishedUL">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Search">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ADLSearch">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Stats">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="WindowParamIdType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Speed">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Directory">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Hub">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FileList">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="CID">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Title">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Address">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="LogPath">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Active">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="SearchType">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:annotation>
+						<xs:documentation></xs:documentation>
+					</xs:annotation>
+
+					<xs:attribute type="xs:byte" name="Id" use="required">
+						<xs:annotation>
+							<xs:documentation></xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="UserMatch">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:annotation>
+						<xs:documentation></xs:documentation>
+					</xs:annotation>
+
+					<xs:attribute type="xs:string" name="Name" use="required">
+						<xs:annotation>
+							<xs:documentation></xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute fixed="1" type="xs:byte" name="Predefined" use="optional">
+						<xs:annotation>
+							<xs:documentation></xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute fixed="1" type="xs:byte" name="Favs" use="optional">
+						<xs:annotation>
+							<xs:documentation></xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute type="xs:string" name="Font" use="optional">
+						<xs:annotation>
+							<xs:documentation></xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute type="xs:int" name="TextColor" use="optional">
+						<xs:annotation>
+							<xs:documentation></xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute type="xs:byte" name="BgColor" use="optional">
+						<xs:annotation>
+							<xs:documentation></xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute type="xs:byte" name="Ops" use="optional">
+						<xs:annotation>
+							<xs:documentation></xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Directory">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:annotation>
+						<xs:documentation>The full system path to the directory to share.</xs:documentation>
+					</xs:annotation>
+
+					<xs:attribute type="xs:string" name="Virtual" use="required">
+						<xs:annotation>
+							<xs:documentation>Virtual directory name.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Param">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+
+					<xs:annotation>
+						<xs:documentation></xs:documentation>
+					</xs:annotation>
+
+					<xs:attribute type="WindowParamIdType" name="Id" use="required">
+						<xs:annotation>
+							<xs:documentation>ID of the attribute. This is required. NOTE: THIS SHOULD BE AN ENUMERATION IN THIS SCHEMA FILE.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+
+					<xs:attribute fixed="1" type="xs:byte" name="Opt" use="optional">
+						<xs:annotation>
+							<xs:documentation>Value of 1 indicates that this is a generic attribute. If this is present, the attributes FileList and CID will be ignored.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+
+					<xs:attribute fixed="1" type="xs:byte" name="FileList" use="optional">
+						<xs:annotation>
+							<xs:documentation>Value of 1 indicates that the attribute is a file list path. If this is present, the attributes Opt and CID will be ignored.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+
+					<xs:attribute fixed="1" type="xs:byte" name="CID" use="optional">
+
+						<xs:annotation>
+							<xs:documentation>Value of 1 indicates that the attribute is a CID. If this is present, the attributes Opt and FileList will be ignored.</xs:documentation>
+						</xs:annotation>
+
+					</xs:attribute>
+
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Window">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Param" maxOccurs="unbounded" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation></xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute type="WindowIdType" name="Id" use="required">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Configuration">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:annotation>
+						<xs:documentation></xs:documentation>
+					</xs:annotation>
+
+					<xs:attribute type="WindowIdType" name="Id" use="required">
+						<xs:annotation>
+							<xs:documentation></xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+
+					<xs:attribute type="xs:byte" name="MaxItems" use="required">
+						<xs:annotation>
+							<xs:documentation></xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Settings">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:any processContents="lax">
+				</xs:any>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="SearchTypes">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="SearchType" maxOccurs="unbounded" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation></xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Share">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Directory" maxOccurs="unbounded" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation></xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="UserMatches">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="UserMatch" maxOccurs="unbounded" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation></xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Windows">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Window" maxOccurs="unbounded" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation></xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Recent">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Configuration" maxOccurs="unbounded" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation></xs:documentation>
+					</xs:annotation>
+				</xs:element>
+
+				<xs:element name="Window" maxOccurs="unbounded" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation></xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="DCPlusPlus">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Settings" />
+				<xs:element ref="SearchTypes" />
+				<xs:element ref="Share" />
+				<xs:element ref="UserMatches" />
+				<xs:element ref="Windows" />
+				<xs:element ref="Recent" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

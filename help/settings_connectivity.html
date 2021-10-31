@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+	<h1>Connectivity</h1>
+
+	<h2 id="autoconn">Automatic connectivity setup</h2>
+	<p>
+	Connectivity settings must be correctly configured for searches and downloads to work. In most
+	cases, DC++ is able to detect the best connectivity settings by itself. When it can't (for
+	example, when multiple network cards are available or when the network topology is too
+	complicated), the various connectivity settings can still be manually adjusted from the
+	<placeholder><a href="settings_connectivity_manual.html">Manual configuration</a></placeholder>
+	page.
+	</p>
+
+	<dl style="margin-left: 40px;">
+
+		<dt>Let DC++ determine the best connectivity settings</dt>
+		<dd cshelp="IDH_SETTINGS_CONNECTIVITY_AUTODETECT">
+		Select this to let DC++ determine the best connectivity settings on your behalf. This
+		should work with the majority of network structures DC++ is generally used in. The success
+		rate depends on operating system configuration and on the network topology.<br/>
+		Note that when this option is active, <u>manual connectivity settings will be ignored</u>.
+		<p>It is recommended to disable this option and to manually set up connectivity settings
+		when the network topology is not easy for DC++ to figure out, such as:
+		<ul>
+			<li>When there is more than one physical network device (eg. network cards, 3G USB
+			modems) plugged in the computer (the bind address will have to be fiddled with).</li>
+			<li>In the presence of network tunneling, a
+			<a href="https://en.wikipedia.org/wiki/Virtual_private_network" target="_blank" class="external">VPN</a>
+			service or any other software that creates virtual network devices.</li>
+			<li>When DC++ is only supposed to connect to local network hubs (eg. in a campus).</li>
+		</ul>
+		</p>
+		</dd>
+
+		<dt>Detect now</dt>
+		<dd cshelp="IDH_SETTINGS_CONNECTIVITY_DETECT_NOW">
+		With this button, you can force DC++ to (re)detect the best connectivity settings. Details
+		and the result of the operation will be shown in the "Detection log" box below.
+		</dd>
+
+		<dt>Detection log</dt>
+		<dd cshelp="IDH_SETTINGS_CONNECTIVITY_DETECTION_LOG">
+		This box contains log messages of the last connectivity auto-detection. It contains the
+		detection steps, possible error messages and shows why a certain connection mode was
+		chosen. This information is helpful in case of errors or when the result is other than
+		expected. Detection messages appear in the
+		<placeholder><a href="window_system_log.html">System Log</a></placeholder> as well;
+		descriptions of the various messages are available in the
+		<a href="window_system_log.html">list of System log messages</a>.
+		</dd>
+
+		<dt>Edit detected settings</dt>
+		<dd cshelp="IDH_SETTINGS_CONNECTIVITY_EDIT">
+		Press this button to customize the connectivity settings that DC++ has automatically
+		detected. Connectivity auto-detection will be disabled, in favor of manually configured
+		settings. The dialog will switch to the
+		<placeholder><a href="settings_connectivity_manual.html">Manual configuration</a></placeholder>
+		page, in which the currently auto-detected connectivity settings will have been filled.
+		Note that for the time being DC++ attempts to detect IPv4 connectivity only.
+		</dd>
+
+		</dl>
+</body>
+</html>

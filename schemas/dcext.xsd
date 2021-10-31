@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>DC Plugin XML file XSD.</xs:documentation>
+	</xs:annotation>
+
+	<xs:simpleType name="platformCode">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="elf-x64">
+				<xs:annotation>
+					<xs:documentation>ELF format, x64 architecture</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="elf-x86">
+				<xs:annotation>
+					<xs:documentation>ELF format, x86 architecture</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="pe-x64">
+				<xs:annotation>
+					<xs:documentation>PE format, x64 architecture</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="pe-x86">
+				<xs:annotation>
+					<xs:documentation>PE format, x86 architecture</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="dcext">
+		<xs:annotation>
+			<xs:documentation>.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:choice>
+					<xs:element name="UUID" type="xs:string"  maxOccurs="1" minOccurs="1"></xs:element>
+					<xs:element name="Name" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+					<xs:element name="Version" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+					<xs:element name="ApiVersion" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+					
+					<xs:element name="Author" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+					<xs:element name="Description" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+					<xs:element name="Website" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+					
+					<xs:element name="Plugin" type="Plugin" maxOccurs="unbounded" minOccurs="0"></xs:element>
+					<xs:element ref="Files" maxOccurs="1" minOccurs="0"></xs:element>					
+				</xs:choice>
+			</xs:sequence>
+
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+			
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="Plugin" mixed="true">
+		
+		<xs:sequence>
+			<xs:any processContents="lax" maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+				
+		<xs:attribute name="Platform" type="platformCode" use="optional">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			
+	</xs:complexType>
+	
+	<xs:element name="Files">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="File" type="File" maxOccurs="unbounded" minOccurs="0"></xs:element>
+			</xs:sequence>
+
+			<xs:anyAttribute processContents="lax"></xs:anyAttribute>
+
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<xs:complexType name="File" mixed="true">
+		
+		<xs:sequence>
+			<xs:any processContents="lax" maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+				
+		<xs:attribute name="Platform" type="platformCode" use="optional">
+				<xs:annotation>
+					<xs:documentation></xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			
+	</xs:complexType>
+
+</xs:schema>

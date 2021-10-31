@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+	<h1>Notifications</h1>
+
+	<dl style="margin-left: 40px;">
+
+		<dt>Download finished</dt>
+		<dd cshelp="IDH_SETTINGS_NOTIFICATIONS_FINISHED_DL">
+		This event fires every time a download completes. Doesn't apply to file lists.
+		</dd>
+
+		<dt>File list downloaded</dt>
+		<dd cshelp="IDH_SETTINGS_NOTIFICATIONS_FINISHED_FL">
+		This event fires every time a file list download completes.
+		</dd>
+
+		<dt>Main chat message received</dt>
+		<dd cshelp="IDH_SETTINGS_NOTIFICATIONS_MAIN_CHAT">
+		This event fires every time a chat message is received in the main channel of a
+		<placeholder><a href="window_hub.html">Hub</a></placeholder>.
+		</dd>
+
+		<dt>Private message received</dt>
+		<dd cshelp="IDH_SETTINGS_NOTIFICATIONS_PM">
+		This event fires every time a private chat message is received.
+		</dd>
+
+		<dt>Private message window opened</dt>
+		<dd cshelp="IDH_SETTINGS_NOTIFICATIONS_PM_WINDOW">
+		This event fires every time the reception of a private chat message leads to a new
+		<placeholder><a href="window_pm.html">Private Message</a></placeholder> window being
+		opened.
+		</dd>
+
+	</dl>
+
+	<h2>Play a sound</h2>
+	<p cshelp="IDH_SETTINGS_NOTIFICATIONS_SOUND">
+	Checking this box will turn sound notifications on for the selected event. The system's default
+	beep sound will be used by default unless a custom one is assigned from the
+	"<placeholder>Notification sound</placeholder>" group.<br/>
+	This box can be switched by double-clicking the sound icon in the "Sound" column of the desired
+	event.
+	</p>
+
+	<h2>Display a balloon popup</h2>
+	<p cshelp="IDH_SETTINGS_NOTIFICATIONS_BALLOON">
+	Checking this box will turn balloon popup notifications on for the selected event. An example
+	of such a balloon can be previewed by pressing the
+	"<placeholder>Fire a balloon popup example</placeholder>" button.<br/>
+	This box can be switched by double-clicking the balloon icon in the "Balloon" column of the
+	desired event.
+	</p>
+
+	<h2>Sound settings</h2>
+	<p cshelp="IDH_SETTINGS_NOTIFICATIONS_SOUND_FILE">
+	Instead of the system's default beep, a custom sound can be assigned to each event by selecting
+	the desired event in the "Notifications" list, enabling the "Sound" icon, then clicking the
+	"Browse..." button. Only Wave sound files (typically with a ".wav" extension) are allowed.
+	</p>
+
+	<h2>Balloon settings</h2>
+	<h3>Display the balloon only when DC++ is in the background</h3>
+	<p cshelp="IDH_SETTINGS_NOTIFICATIONS_BALLOON_BG">
+	When this box is checked, balloons popups will fire to signal the selected event only when DC++
+	is in the background (either minimized or not the active window). Otherwise, they will always
+	be displayed whenever the selected event is signalled.
+	</p>
+
+	<h2>Fire a balloon popup example</h2>
+	<p cshelp="IDH_SETTINGS_NOTIFICATIONS_BALLOON_EXAMPLE">
+	Pressing this button will have DC++ launch a balloon popup example from the Windows
+	notification area. The balloon popup will be titled
+	"<i>DC++ - <placeholder>Balloon popup example</placeholder></i>" and will contain the following
+	string as its content text:
+	"<i><placeholder>This is an example of a balloon popup notification!</placeholder></i>".
+	</p>
+</body>
+</html>

@@ -1,0 +1,960 @@
+# Hungarian translation for dcplusplus
+# Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
+# This file is distributed under the same license as the dcplusplus package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dcplusplus\n"
+"Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2018-11-12 00:07+0100\n"
+"PO-Revision-Date: 2016-09-06 20:38+0000\n"
+"Last-Translator: eMTee <Unknown>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2018-11-11 22:49+0000\n"
+"X-Generator: Launchpad (build 18816)\n"
+
+#: dcpp\DownloadManager.cpp:360
+#, boost-format
+msgid " - Queued: %1%"
+msgstr " - a sorban: %1%."
+
+#: dcpp\Util.cpp:578
+#, c-format, boost-format
+msgid "%'lld B"
+msgstr "%'lld B"
+
+#: dcpp\Util.cpp:540
+#, c-format, boost-format
+msgid "%.02f GiB"
+msgstr "%.02f GiB"
+
+#: dcpp\Util.cpp:536
+#, c-format, boost-format
+msgid "%.02f KiB"
+msgstr "%.02f KiB"
+
+#: dcpp\Util.cpp:538
+#, c-format, boost-format
+msgid "%.02f MiB"
+msgstr "%.02f MiB"
+
+#: dcpp\Util.cpp:544
+#, c-format, boost-format
+msgid "%.02f PiB"
+msgstr "%.02f PiB"
+
+#: dcpp\Util.cpp:542
+#, c-format, boost-format
+msgid "%.02f TiB"
+msgstr "%.02f TiB"
+
+#: dcpp\UserMatchManager.cpp:132
+#, boost-format
+msgid "%1% %2% (added by %3%)"
+msgstr "%1% %2% (%3% által felvéve)"
+
+#: dcpp\MappingManager.cpp:137 dcpp\MappingManager.cpp:188
+#, boost-format
+msgid "%1% %2% port (%3% %4%)"
+msgstr "%1% %2% port (%3% %4%)"
+
+#: dcpp\HttpConnection.cpp:134 dcpp\HttpConnection.cpp:217
+#: dcpp\HttpConnection.cpp:273
+#, boost-format
+msgid "%1% (%2%)"
+msgstr "%1% (%2%)"
+
+#: dcpp\AdcHub.cpp:159
+#, boost-format
+msgid "%1% (%2%) has same CID {%3%} as %4% (%5%), ignoring"
+msgstr "%1% (%2%) CID-je {%3%} ugyanaz, mint %4% (%5%)-é, kihagyva"
+
+#: dcpp\NmdcHub.cpp:295
+#, boost-format
+msgid "%1% (Nick unknown)"
+msgstr "%1% (Ismeretlen nick)"
+
+#: dcpp\PluginManager.cpp:156 dcpp\PluginManager.cpp:176
+#: dcpp\PluginManager.cpp:579
+#, boost-format
+msgid "%1% is already installed"
+msgstr "A(z) %1% már telepítve van"
+
+#: dcpp\PluginManager.cpp:142 dcpp\PluginManager.cpp:541
+#, boost-format
+msgid "%1% is not a valid plugin"
+msgstr "Érvénytelen bővítmény: %1%"
+
+#: dcpp\PluginManager.cpp:108 dcpp\PluginManager.cpp:145
+#: dcpp\PluginManager.cpp:546
+#, boost-format
+msgid "%1% is not compatible with %2%"
+msgstr "%1% nem kompatibilis %2%-val"
+
+#: dcpp\HashManager.cpp:695
+#, boost-format
+msgid ""
+"%1% not shared; calculated CRC32 does not match the one found in SFV file."
+msgstr ""
+"%1% nincs megosztva. A kiszámított CRC32 nem egyezik az SFV fájlban lévővel."
+
+#: dcpp\AdcHub.cpp:298
+#, boost-format
+msgid "%1% was kicked by %2%: %3%"
+msgstr "%1%-t kirúgta %2%: %3%"
+
+#: dcpp\AdcHub.cpp:301
+#, boost-format
+msgid "%1% was kicked: %2%"
+msgstr "%1% kirúgva: %2%"
+
+#: dcpp\FinishedManager.cpp:160 dcpp\Transfer.cpp:91 dcpp\User.cpp:154
+#, boost-format
+msgid "%1%/s"
+msgstr "%1%/s"
+
+#: dcpp\ConnectivityManager.cpp:323
+#, boost-format
+msgid "%1%: %2%"
+msgstr "%1%: %2%"
+
+#: dcpp\DownloadManager.cpp:461
+#, boost-format
+msgid "%1%: File not available"
+msgstr "%1%: A fájl nem elérhető"
+
+#: dcpp\Util.cpp:534
+#, c-format, boost-format
+msgid "%d B"
+msgstr "%d B"
+
+#: dcpp\Util.cpp:574
+#, c-format, boost-format
+msgid "%s B"
+msgstr "%s B"
+
+#: dcpp\ADLSearch.cpp:35
+msgid "<Enter string>"
+msgstr "<Kulcsszava(k)>"
+
+#: dcpp\QueueManager.cpp:600
+msgid "A file with a different TTH root already exists in the queue"
+msgstr "Egy különböző TTH gyökerű fájl már van a sorban"
+
+#: dcpp\QueueManager.cpp:597
+msgid "A file with a different size already exists in the queue"
+msgstr "Egy különböző mérettel rendelkező fájl már van a sorban"
+
+#: dcpp\QueueManager.cpp:539
+msgid "A file with the same hash already exists in your share"
+msgstr "A megosztásodban már van egy fájl ugyanezzel a hash-sel"
+
+#: dcpp\ConnectivityManager.cpp:259
+msgid "Active mode"
+msgstr "Aktív mód"
+
+#: dcpp\ConnectivityManager.cpp:261
+#, boost-format
+msgid ""
+"Active mode behind a router that %1% can configure; port mapping status: %2%"
+msgstr ""
+"Aktív mód router mögött amelyet a %1% képes konfigurálni. A port-"
+"hozzárendelés állapota: %2%"
+
+#: dcpp\ConnectivityManager.cpp:310
+msgid ""
+"Active mode could not be achieved; a manual configuration is recommended for "
+"better connectivity"
+msgstr ""
+"Nem sikerült az aktív módot automatikusan beállítani. Ha jobb kapcsolatot "
+"szeretnél, a beállítások kézi módosítása szükséges"
+
+#: dcpp\ConnectivityManager.cpp:187
+msgid "All IPv6 addresses found are local; disabling connectivity"
+msgstr "Az összes talált IPv6 cím lokális, a kapcsolódás tiltásra kerül."
+
+#: dcpp\ConnectionManager.cpp:214
+msgid "All download slots taken"
+msgstr "Összes letöltési szál foglalt"
+
+#: dcpp\MappingManager.cpp:65
+msgid "Another port mapping attempt is in progress..."
+msgstr "Egy másik port-hozzárendelési kísérlet már folyamatban van..."
+
+#: dcpp\SearchManager.cpp:36
+msgid "Any"
+msgstr "Bármely"
+
+#: dcpp\SearchManager.cpp:37
+msgid "Audio"
+msgstr "Hang"
+
+#: dcpp\ConnectionManager.cpp:851
+#, boost-format
+msgid "Blocked a C-C connection to a hub ('%1%:%2%'; request from '%3%')"
+msgstr "C-C kapcsolat egy hubhoz blokkolva ('%1%:%2%'; kérés '%3%'-tól)"
+
+#: dcpp\ConnectionManager.cpp:870
+#, boost-format
+msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
+msgstr ""
+"'%1%' a(z) '%2%' hubról blokkolva túlterheléses támadás (DDoS) észlelése "
+"miatt"
+
+#: dcpp\QueueManager.cpp:1675
+msgid "CRC32 inconsistency (SFV-Check)"
+msgstr "CRC32 inkonzisztencia (SFV-Ellenőrzéskor)"
+
+#: dcpp\QueueManager.cpp:1666
+#, boost-format
+msgid "CRC32 inconsistency (SFV-Check): %1%"
+msgstr "CRC32 inkonzisztencia (SFV-Ellenőrzéskor): %1%"
+
+#: dcpp\CryptoManager.cpp:521
+#, boost-format
+msgid "Certificate verification for %1% failed with error: %2%"
+msgstr "A(z) %1% tanúsítvány ellenőrzése sikertelen. Hiba: %2%"
+
+#: dcpp\SearchManager.cpp:38
+msgid "Compressed"
+msgstr "Tömörített"
+
+#: dcpp\BufferedSocket.cpp:203 dcpp\SSLSocket.cpp:172 dcpp\SSLSocket.cpp:179
+msgid "Connection closed"
+msgstr "Kapcsolat lezárva"
+
+#: dcpp\BufferedSocket.cpp:170 dcpp\BufferedSocket.cpp:188
+#: dcpp\ConnectionManager.cpp:221 dcpp\Socket.cpp:389
+msgid "Connection timeout"
+msgstr "Időtúllépés"
+
+#: dcpp\ConnectivityManager.cpp:322
+#, boost-format
+msgid "Connectivity (%1%): %2%"
+msgstr "Kapcsolódás (%1%): %2%"
+
+#: dcpp\ConnectionManager.cpp:315
+#, boost-format
+msgid "Connectivity error: %1%"
+msgstr "Kapcsolódási hiba: %1%"
+
+#: dcpp\ConnectivityManager.cpp:271
+#, boost-format
+msgid ""
+"Connectivity information:\n"
+"\n"
+"Automatic connectivity setup is: %1%\n"
+"\n"
+"\tIPv4: %2%\n"
+"\tIPv6: %3%\n"
+"\tExternal IP (v4): %4%\n"
+"\tExternal IP (v6): %5%\n"
+"\tBound interface (v4): %6%\n"
+"\tBound interface (v6): %7%\n"
+"\tTransfer port: %8%\n"
+"\tEncrypted transfer port: %9%\n"
+"\tSearch port: %10%"
+msgstr ""
+"Kapcsolódás adatai:\n"
+"\n"
+"Automatikus kapcsolódás beállítás: %1%\n"
+"\n"
+"\tIPv4: %2%\n"
+"\tIPv6: %3%\n"
+"\tKülső IP (v4): %4%\n"
+"\tKülső IP (v6): %5%\n"
+"\tKötött felület (v4): %6%\n"
+"\tKötött felület (v6): %7%\n"
+"\tÁtvitel port: %8%\n"
+"\tTitkosított átvitel port: %9%\n"
+"\tKeresés port: %10%"
+
+#: dcpp\ConnectionManager.cpp:307
+msgid "Connectivity restored"
+msgstr "Kapcsolódás lehetősége visszaállítva"
+
+#: dcpp\ConnectivityManager.cpp:249
+msgid "Connectivity settings are being configured; try again later"
+msgstr "A kapcsolódási beállítások konfigurálás alatt, próbáld később"
+
+#: dcpp\Socket.cpp:340
+msgid "Could not open port for listening"
+msgstr "A port nem nyitható meg"
+
+#: dcpp\DownloadManager.cpp:236
+#, boost-format
+msgid "Could not open target file: %1%"
+msgstr "Nem sikerült megnyitni a célfájlt a következő miatt: %1%"
+
+#: dcpp\DCPlusPlus.cpp:131
+msgid "Country information"
+msgstr "Ország információk"
+
+#: dcpp\ConnectivityManager.cpp:151
+msgid "Determining the best connectivity settings..."
+msgstr "A legjobb kapcsolódási beállítások meghatározása..."
+
+#: dcpp\SearchManager.cpp:43
+msgid "Directory"
+msgstr "Könyvtár"
+
+#: dcpp\ShareManager.cpp:400
+msgid "Directory already shared"
+msgstr "A könyvtár már meg van osztva"
+
+#: dcpp\ShareManager.cpp:387
+msgid "Directory is hidden"
+msgstr "A mappa rejtett"
+
+#: dcpp\DirectoryListing.cpp:203
+msgid "Directory missing name attribute"
+msgstr "Hiányzik a könyvtár név attribútuma"
+
+#: dcpp\ConnectivityManager.cpp:264
+msgid "Disabled"
+msgstr "Tiltva"
+
+#: dcpp\ADLSearch.cpp:411
+msgid "Discard"
+msgstr "Elvet"
+
+#: dcpp\BufferedSocket.cpp:474 dcpp\HttpManager.cpp:76
+msgid "Disconnected"
+msgstr "Szétkapcsolva"
+
+#: dcpp\UploadManager.cpp:545
+#, boost-format
+msgid "Disconnected user leaving the hub: %1%"
+msgstr "A hubról kilépő felhasználó szétkapcsolva: %1%"
+
+#: dcpp\SearchManager.cpp:39
+msgid "Document"
+msgstr "Dokumentum"
+
+#: dcpp\DCPlusPlus.cpp:127
+msgid "Download Queue"
+msgstr "Letöltési Sor"
+
+#: dcpp\ShareManager.cpp:793
+#, boost-format
+msgid ""
+"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
+"%3%"
+msgstr ""
+"Többször meglévő fájl nem lesz megosztva: %1% (Méret: %2% B) Megegyezik "
+"ezzel: %3%"
+
+#: dcpp\DirectoryListing.cpp:196 dcpp\DirectoryListing.cpp:221
+msgid "Duplicate item in the file list"
+msgstr "Duplikált elem a fájl-listában"
+
+#: dcpp\QueueManager.cpp:679 dcpp\QueueManager.cpp:683
+#, boost-format
+msgid "Duplicate source: %1%"
+msgstr "Dupla forrás: %1%"
+
+#: dcpp\MappingManager.cpp:143 dcpp\MappingManager.cpp:200
+msgid "Encrypted transfer"
+msgstr "Titkosított átvitel"
+
+#: dcpp\HttpConnection.cpp:243
+#, boost-format
+msgid "Endless redirection loop (%1%)"
+msgstr "Végtelen átirányítási ciklus (%1%)"
+
+#: dcpp\HashManager.cpp:543
+#, boost-format
+msgid "Error creating hash data file: %1%"
+msgstr "Hiba a hash adatfájl létrehozásakor: %1%"
+
+#: dcpp\BZUtils.cpp:35 dcpp\BZUtils.cpp:56 dcpp\BZUtils.cpp:64
+#: dcpp\ZUtils.cpp:37 dcpp\ZUtils.cpp:73 dcpp\ZUtils.cpp:100
+#: dcpp\ZUtils.cpp:110
+msgid "Error during compression"
+msgstr "Hiba a tömörítéskor"
+
+#: dcpp\BZUtils.cpp:76 dcpp\BZUtils.cpp:98 dcpp\BZUtils.cpp:101
+#: dcpp\CryptoManager.cpp:672 dcpp\CryptoManager.cpp:691
+#: dcpp\CryptoManager.cpp:705 dcpp\ZUtils.cpp:124 dcpp\ZUtils.cpp:149
+#: dcpp\ZUtils.cpp:163
+msgid "Error during decompression"
+msgstr "Hiba a kicsomagoláskor"
+
+#: dcpp\CryptoManager.cpp:139
+msgid "Error generating certificate"
+msgstr "Hiba a tanúsítvány készítésekor"
+
+#: dcpp\HashManager.cpp:700
+#, boost-format
+msgid "Error hashing %1%: %2%"
+msgstr "Hiba a következő hashelésekor: %1%: %2%"
+
+#: dcpp\PluginManager.cpp:601
+#, boost-format
+msgid "Error loading %1%"
+msgstr "Hiba %1% betöltésekor"
+
+#: dcpp\PluginManager.cpp:533
+#, boost-format
+msgid "Error loading %1%: %2%"
+msgstr "Probléma a (z) %1% betöltésekor: %2%"
+
+#: dcpp\HashManager.cpp:111 dcpp\HashManager.cpp:313
+#, boost-format
+msgid "Error saving hash data: %1%"
+msgstr "Hiba a hash adatok mentésekor: %1%"
+
+#: dcpp\SearchManager.cpp:40
+msgid "Executable"
+msgstr "Futtatható"
+
+#: dcpp\MappingManager.cpp:110 dcpp\MappingManager.cpp:227
+msgid "Failed to create port mappings"
+msgstr "Nem sikerült létrehozni a port-hozzárendeléseket"
+
+#: dcpp\MappingManager.cpp:216
+msgid "Failed to get external IP"
+msgstr "Nem sikerült lekérni a külső IP-t"
+
+#: dcpp\MappingManager.cpp:183
+#, boost-format
+msgid "Failed to initialize the %1% interface"
+msgstr "Nem sikerült inicializálni a %1% felületet"
+
+#: dcpp\CryptoManager.cpp:388
+msgid "Failed to load certificate file"
+msgstr "Nem sikerült betölteni a tanúsítvány fájlt"
+
+#: dcpp\CryptoManager.cpp:396
+msgid "Failed to load private key"
+msgstr "Nem sikerült betölteni a pirvát kulcsot"
+
+#: dcpp\CryptoManager.cpp:409
+#, boost-format
+msgid "Failed to load trusted certificate from %1%"
+msgstr "Nem sikerült a megbízható tanúsítvány betöltése innen: %1%"
+
+#: dcpp\MappingManager.cpp:191
+#, boost-format
+msgid "Failed to map the %1% port (%2% %3%) with the %4% interface"
+msgstr ""
+"Nem sikerült létrehozni a(z) %1% port-hozzárendelést (%2% %3%) a %4% "
+"felülettel"
+
+#: dcpp\AdcHub.cpp:221
+msgid "Failed to negotiate base protocol"
+msgstr "Az alap protokoll egyeztetése sikertelen"
+
+#: dcpp\MappingManager.cpp:238
+#, boost-format
+msgid ""
+"Failed to remove port mappings from the %1% device with the %2% interface"
+msgstr ""
+"Nem sikerült a port-hozzárendelések törlése a(z) %1% eszközről a %2% "
+"felülettel"
+
+#: dcpp\Socket.cpp:621
+msgid ""
+"Failed to set up the socks server for UDP relay (check socks address and "
+"port)"
+msgstr ""
+"A socks kiszolgáló beállítása az UDP port továbbításra nem sikerült "
+"(ellenőrizd a kiszolgáló címét és a portot)"
+
+#: dcpp\QueueManager.cpp:666
+msgid "File already exists at the target location"
+msgstr "A fájl már létezik a cél helyen"
+
+#: dcpp\ShareManager.cpp:959
+#, boost-format
+msgid "File list %1% generated"
+msgstr "Fájl-lista generálva : %1%"
+
+#: dcpp\ShareManager.cpp:825
+#, boost-format
+msgid "File list refresh failed: %1%"
+msgstr "Hiba a fájl-lista frissítésekor: %1%"
+
+#: dcpp\ShareManager.cpp:888
+msgid "File list refresh finished"
+msgstr "A fájl-lista frissítése befejeződött"
+
+#: dcpp\ShareManager.cpp:808
+msgid ""
+"File list refresh in progress, please wait for it to finish before trying to "
+"refresh again"
+msgstr ""
+"A fájl-lista frissítése már folyamatban van. Várd meg, amíg befejeződik, "
+"mielőtt újra frissíteni próbálnál!"
+
+#: dcpp\ShareManager.cpp:853
+msgid "File list refresh initiated"
+msgstr "A fájl-lista frissítése elkezdődött"
+
+#: dcpp\HashManager.cpp:83
+#, boost-format
+msgid "Finished hashing: %1%"
+msgstr "Indexelés befejezve: %1%"
+
+#: dcpp\HashManager.cpp:77
+#, boost-format
+msgid "Finished hashing: %1% (%2% at %3%/s)"
+msgstr "Indexelés befejezve: %1% (%2%, %3%/s sebességgel)"
+
+#: dcpp\HashManager.cpp:80
+#, boost-format
+msgid "Finished hashing: %1% (%2%)"
+msgstr "Indexelés befejezve: %1% (%2%)"
+
+#: dcpp\DownloadManager.cpp:296
+msgid "Full tree does not match TTH root"
+msgstr "A teljes fa nem megfelelő a TTH gyökérhez"
+
+#: dcpp\CryptoManager.cpp:377
+msgid "Generated new TLS certificate"
+msgstr "Új TLS tanúsítvány generálva"
+
+#: dcpp\MappingManager.cpp:249
+msgid "Generic"
+msgstr "Általános"
+
+#: dcpp\HttpManager.cpp:100
+#, boost-format
+msgid "HTTP file download failed to create file %1%, error: %2%"
+msgstr "Nem sikerült a %1% fájlt létrehozni HTTP letötés során, hiba: %2%"
+
+#: dcpp\DCPlusPlus.cpp:121
+msgid "Hash database"
+msgstr "Hash adatbázis"
+
+#: dcpp\HashManager.cpp:622
+msgid "Hash database rebuilt"
+msgstr "A hash adatbázis újraépítve"
+
+#: dcpp\HashManager.cpp:70 dcpp\HashManager.cpp:258
+#, boost-format
+msgid "Hashing failed: %1%"
+msgstr "Sikertelen indexelés: %1%"
+
+#: dcpp\AdcHub.cpp:227
+msgid ""
+"Hub probably uses an old version of ADC, please encourage the owner to "
+"upgrade"
+msgstr ""
+"A hub vélhetően régi verziójú ADC protokollt használ, kérlek szólj a "
+"tulajnak, hogy frissítsen"
+
+#: dcpp\UserMatchManager.cpp:132
+msgid "Ignore"
+msgstr "Mellőzés"
+
+#: dcpp\FavoriteManager.cpp:725
+#, boost-format
+msgid "Invalid URL: %1%"
+msgstr "Érvénytelen URL: %1%"
+
+#: dcpp\Archive.cpp:42 dcpp\Archive.cpp:94
+msgid "Invalid archive"
+msgstr "Érvénytelen archívum"
+
+#: dcpp\UserConnection.cpp:52 dcpp\UserConnection.cpp:70
+#: dcpp\UserConnection.cpp:138
+msgid "Invalid data"
+msgstr "Érvénytelen adat"
+
+#: dcpp\DirectoryListing.cpp:97
+msgid "Invalid file list extension (must be .xml or .bz2)"
+msgstr "Érvénytelen fájl-lista kiterjesztés (csak .xml vagy .bz2 lehet)"
+
+#: dcpp\ShareManager.cpp:578
+#, boost-format
+msgid "Invalid file name found while hashing folder %1%"
+msgstr "Érvénytelen fájlnév a %1% könyvtár hash-elése közben"
+
+#: dcpp\StringMatch.cpp:69
+#, boost-format
+msgid "Invalid regular expression: %1%"
+msgstr "Érvénytelen reguláris kifejezés : %1%"
+
+#: dcpp\SettingsManager.cpp:700
+msgid "Invalid search type name"
+msgstr "Érvénytelen keresés típus név"
+
+#: dcpp\DownloadManager.cpp:224
+msgid "Invalid size"
+msgstr "Érvénytelen méret"
+
+#: dcpp\QueueManager.cpp:653 dcpp\QueueManager.cpp:658
+msgid ""
+"Invalid target file (missing directory, check default download directory "
+"setting)"
+msgstr ""
+"Érvénytelen célfájl (hiányzó könyvtár, ellenőrizd az alapértelmezett "
+"letöltési könyvtár beállításait)"
+
+#: dcpp\FavoriteManager.cpp:467
+msgid "Kick user(s)"
+msgstr "Felhasználó(k) kirúgása"
+
+#: dcpp\ConnectivityManager.cpp:195
+msgid "Local network with possible NAT detected, trying to map the ports..."
+msgstr ""
+"Helyi hálózat lehetséges NAT-tal észlelve, próbálkozás a portok "
+"továbbítására..."
+
+#: dcpp\BufferedSocket.cpp:296
+msgid "Maximum command length exceeded"
+msgstr "A maximális parancs hossz túllépve"
+
+#: dcpp\PluginManager.cpp:552
+#, boost-format
+msgid "Missing dependencies for %1%"
+msgstr "Hiányzó függőségek a(z) %1%-hez"
+
+#: dcpp\Streams.h:160
+msgid "More bytes written than requested"
+msgstr "A kértnél több byte írása történt"
+
+#: dcpp\CryptoManager.cpp:128
+msgid "No certificate file chosen"
+msgstr "Nincs kiválasztva tanúsítvány fájl"
+
+#: dcpp\ShareManager.cpp:383
+msgid "No directory specified"
+msgstr "Nincs könyvtár megadva"
+
+#: dcpp\CryptoManager.cpp:125
+msgid "No private key file chosen"
+msgstr "Nincs kiválasztva privát kulcs fájl"
+
+#: dcpp\DownloadManager.cpp:361
+msgid "No slots available"
+msgstr "Nincs szabad slot"
+
+#: dcpp\SettingsManager.cpp:758
+msgid "No such search type"
+msgstr "Nincs ilyen keresés típus"
+
+#: dcpp\UserConnection.cpp:64
+msgid "Non-UTF-8 data in an ADC connection"
+msgstr "Nem UTF-8 kódolású adat egy ADC kapcsolatban"
+
+#: dcpp\AdcHub.cpp:697
+#, boost-format
+msgid "Not listening for connections - please restart %1%"
+msgstr "Nem figyel kapcsolatokra - kérlek, indítsd újra a %1%-t"
+
+#: dcpp\ClientManager.cpp:149 dcpp\ClientManager.cpp:180
+#: dcpp\FinishedManager.cpp:131 dcpp\FinishedManager.cpp:137
+#: dcpp\FinishedManager.cpp:143 dcpp\SearchManager.cpp:323
+#: dcpp\SearchManager.cpp:384 dcpp\Transfer.cpp:81 dcpp\Transfer.cpp:85
+msgid "Offline"
+msgstr "Kilépett"
+
+#: dcpp\UploadManager.cpp:88
+msgid "Partial file list"
+msgstr "Részleges fájl lista"
+
+#: dcpp\ConnectivityManager.cpp:263
+msgid "Passive mode"
+msgstr "Passzív mód"
+
+#: dcpp\SearchManager.cpp:41
+msgid "Picture"
+msgstr "Kép"
+
+#: dcpp\MappingManager.cpp:243
+#, boost-format
+msgid "Port mapping: %1%"
+msgstr "Port-továbbítás: %1%"
+
+#: dcpp\ConnectivityManager.cpp:177
+msgid ""
+"Public IP address detected, selecting active mode with direct connection"
+msgstr ""
+"Publikus IP-cím észlelve, az aktív mód beállítva közvetlen kapcsolattal"
+
+#: dcpp\FavoriteManager.cpp:471
+msgid "Redirect user(s)"
+msgstr "Felhasználó(k) átirányítása"
+
+#: dcpp\ShareManager.cpp:403
+msgid "Remove all subdirectories before adding this one"
+msgstr "Távolíts el minden alkönyvtárat, mielőtt ezt felveszed"
+
+#: dcpp\DownloadManager.cpp:229
+msgid "Response does not match request"
+msgstr "A válasz nem felel meg a kérésnek"
+
+#: dcpp\MappingManager.cpp:144 dcpp\MappingManager.cpp:201
+msgid "Search"
+msgstr "Keresés"
+
+#: dcpp\ConnectivityManager.cpp:361
+msgid "Search (UDP)"
+msgstr "Keresés (UDP)"
+
+#: dcpp\SearchManager.cpp:160
+#, boost-format
+msgid "Search disabled: %1%"
+msgstr "Keresés tiltva:%1%"
+
+#: dcpp\SearchManager.cpp:152
+msgid "Search enabled again"
+msgstr "Keresés ismét engedélyezve"
+
+#: dcpp\DCPlusPlus.cpp:118
+msgid "Security certificates"
+msgstr "Biztonsági tanúsítványok"
+
+#: dcpp\ChatMessage.cpp:65
+#, boost-format
+msgid "Sent %1%"
+msgstr "Elküldve %1%"
+
+#: dcpp\DCPlusPlus.cpp:124
+msgid "Shared Files"
+msgstr "Megosztott fájlok"
+
+#: dcpp\Socket.cpp:497 dcpp\Socket.cpp:501
+msgid "Socks server authentication failed (bad login / password?)"
+msgstr ""
+"A hitelesítés a socks kiszolgálónál nem sikerült (rossz felhasználói név/"
+"jelszó?)"
+
+#: dcpp\MappingManager.cpp:204
+#, boost-format
+msgid ""
+"Successfully created port mappings (Transfers: %1%, Encrypted transfers: "
+"%2%, Search: %3%) on the %4% device with the %5% interface"
+msgstr ""
+"Sikeres port-hozzárendelés (Átvitel: %1%, Titkosíott átvitel: %2%, Keresés: "
+"%3%) a(z) %4% eszközön a(z) %5% felülettel"
+
+#: dcpp\MappingManager.cpp:107
+#, boost-format
+msgid ""
+"Successfully created port mappings on the %1% device with the %2% interface"
+msgstr "Sikeres port-hozzárendelés a(z) %1% eszközön a(z) %2% felülettel"
+
+#: dcpp\MappingManager.cpp:237
+#, boost-format
+msgid ""
+"Successfully removed port mappings from the %1% device with the %2% interface"
+msgstr ""
+"A port-hozzárendelések sikeresen el lettek távolítva a(z) %1% eszközről a(z) "
+"%2% felülettel"
+
+#: dcpp\CryptoManager.cpp:620
+#, boost-format
+msgid "Supplied KeyPrint %1% did not match %2%."
+msgstr "A megadott %1% KeyPrint nem egyezik ezzel: %2%."
+
+#: dcpp\CryptoManager.cpp:618
+msgid "Supplied KeyPrint did not match any certificate."
+msgstr "A megadott KeyPrint nem egyezik egyetlen tanusítvánnyal sem."
+
+#: dcpp\CryptoManager.cpp:379
+#, boost-format
+msgid "TLS disabled, failed to generate certificate: %1%"
+msgstr "TLS letiltva, a tanúsítvány fájl generálása sikertelen: %1%"
+
+#: dcpp\CryptoManager.cpp:369
+msgid "TLS disabled, no certificate file set"
+msgstr "TLS letiltva, nincs tanúsítvány fájl beállítva"
+
+#: dcpp\SSLSocket.cpp:190
+msgid "TLS error"
+msgstr "TLS hiba"
+
+#: dcpp\SearchManager.cpp:44
+msgid "TTH"
+msgstr "TTH"
+
+#: dcpp\MerkleCheckOutputStream.h:53 dcpp\MerkleCheckOutputStream.h:113
+msgid "TTH inconsistency"
+msgstr "TTH inkonzisztencia"
+
+#: dcpp\Download.cpp:115
+msgid "Target file is missing or wrong size"
+msgstr "A cél fájl hiányzik vagy nem megfelelő méretű"
+
+#: dcpp\QueueManager.cpp:646
+msgid "Target filename too long"
+msgstr "A cél fájlneve túl hosszú"
+
+#: dcpp\ConnectionManager.cpp:81
+msgid ""
+"The encrypted transfer port cannot be the same as the transfer port, "
+"encrypted transfers will be disabled"
+msgstr ""
+"A titkosított átvitel port nem lehet ugyanaz mint az átvitel port. A "
+"titkosított adatátvitel tiltva lesz"
+
+#: dcpp\QueueManager.cpp:1509
+#, boost-format
+msgid ""
+"The queued file %1% already exists in your share, removing from the queue"
+msgstr ""
+"A letöltési sorban lévő %1% fájl már benne van a megosztásban ezért "
+"eltávolításra kerül a sorból."
+
+#: dcpp\Socket.cpp:483
+msgid "The socks server doesn't support login / password authentication"
+msgstr ""
+"A socks kiszolgáló nem támogatja a bejelentkezési név / jelszó hitelesítést"
+
+#: dcpp\Socket.cpp:396 dcpp\Socket.cpp:404 dcpp\Socket.cpp:437
+#: dcpp\Socket.cpp:441 dcpp\Socket.cpp:465 dcpp\Socket.cpp:480
+msgid "The socks server failed establish a connection"
+msgstr "Nem sikerült a socks kiszolgálóhoz kapcsolódni"
+
+#: dcpp\Socket.cpp:469
+msgid "The socks server requires authentication"
+msgstr "A socks kiszolgáló hitelesítést igényel"
+
+#: dcpp\ShareManager.cpp:391
+msgid "The temporary download directory cannot be shared"
+msgstr "Az ideiglenes letöltési könyvtár nem megosztható"
+
+#: dcpp\QueueManager.cpp:604
+msgid "This file has already finished downloading"
+msgstr "Ez a fájl már korábban letöltődött"
+
+#: dcpp\QueueManager.cpp:585
+msgid "This file is already queued"
+msgstr "A fájl már a sorban van"
+
+#: dcpp\NmdcHub.cpp:952
+#, boost-format
+msgid ""
+"This hub is trying to use your client to spam %1%, please urge hub owner to "
+"fix this"
+msgstr ""
+"Ez a hub megpróbálja a kliensedet arra használni, hogy spamelje a következő "
+"címet : %1%, figyelmeztesd a hub tulajdonosát hogy javítsa ezt"
+
+#: dcpp\SettingsManager.cpp:704 dcpp\SettingsManager.cpp:726
+msgid "This search type already exists"
+msgstr "Ez a keresés típus már létezik"
+
+#: dcpp\HttpConnection.cpp:288
+#, boost-format
+msgid "Too much data in response body (%1%)"
+msgstr "Túl sok adat a választörzsben (%1%)"
+
+#: dcpp\MappingManager.cpp:142 dcpp\MappingManager.cpp:199
+msgid "Transfer"
+msgstr "Átvitel"
+
+#: dcpp\ConnectivityManager.cpp:355
+msgid "Transfer (TCP)"
+msgstr "Átvitel (TCP)"
+
+#: dcpp\HttpConnection.cpp:204
+#, boost-format
+msgid "Transfer-encoding error (%1%)"
+msgstr "Átvitel kódolási hiba (%1%)"
+
+#: dcpp\UserMatchManager.cpp:132
+msgid "Un-ignore"
+msgstr "Újra engedélyezett"
+
+#: dcpp\Thread.cpp:30 dcpp\Thread.cpp:38
+msgid "Unable to create thread"
+msgstr "A szál léterhozása sikertelen"
+
+#: dcpp\QueueManager.cpp:943
+#, boost-format
+msgid "Unable to move %1% to %2% (%3%) nor to rename to %4% (%5%)"
+msgstr ""
+"Nem sikerült átmozgatni %1% fájlt a következõ helyre: %2% (%3%) sem pedig "
+"átnevezni a következõre: %4% (%5%)"
+
+#: dcpp\QueueManager.cpp:940
+#, boost-format
+msgid "Unable to move %1% to %2% (%3%); renamed to %4%"
+msgstr ""
+"Nem sikerült átmozgatni %1% fájlt a következõ helyre: %2% (%3%). Átnevezve a "
+"következõre: %4%"
+
+#: dcpp\ConnectivityManager.cpp:165
+#, boost-format
+msgid ""
+"Unable to open %1% port(s); connectivity settings must be configured manually"
+msgstr ""
+"Nem sikerült megnyitni a(z) %1% port(ok)at. Kézzel kell beállítanod a "
+"kapcsolatot"
+
+#: dcpp\QueueManager.cpp:1119
+#, boost-format
+msgid "Unable to open filelist: %1%"
+msgstr "Nem sikerült megnyitni a fájl-listát: %1%"
+
+#: dcpp\HashManager.cpp:124
+msgid "Unable to read hash data file"
+msgstr "A hash adatfájl beolvasása nem lehetséges"
+
+#: dcpp\UploadManager.cpp:210
+#, boost-format
+msgid "Unable to send file %1%: %2%"
+msgstr "A fájl küldése sikertelen: %1%: %2%"
+
+#: dcpp\Socket.cpp:200
+#, c-format, boost-format
+msgid "Unknown error: 0x%1$x"
+msgstr "Ismeretlen hiba: 0x%1$x"
+
+#: dcpp\Socket.cpp:219
+#, c-format, boost-format
+msgid "Unknown protocol %d"
+msgstr "Ismeretlen protokoll %d"
+
+#: dcpp\PluginManager.cpp:566
+#, boost-format
+msgid "Updating the %1% plugin from version %2% to version %3%"
+msgstr "A(z) %1% bővítmény frissítése %2% verzióról %3% verzióra"
+
+#: dcpp\DCPlusPlus.cpp:112
+msgid "Users"
+msgstr "Felhasználók"
+
+#: dcpp\SearchManager.cpp:42
+msgid "Video"
+msgstr "Videó"
+
+#: dcpp\QueueManager.cpp:533
+msgid "You're trying to download from yourself!"
+msgstr "Saját magadtól próbálsz meg letölteni!"
+
+#: dcpp\ConnectivityManager.cpp:255
+msgid "disabled"
+msgstr "tiltva"
+
+#: dcpp\SettingsManager.cpp:212 dcpp\SettingsManager.cpp:213
+msgid "downloaded from"
+msgstr "letöltve innen:"
+
+#: dcpp\ConnectivityManager.cpp:253
+#, boost-format
+msgid ""
+"enabled\n"
+"\tIPv4 detection: %1%\n"
+"\tIPv6 detection: %2%"
+msgstr ""
+"engedélyezve\n"
+"\tIPv4 észlelés: %1%\n"
+"\tIPv6 észlelés: %2%"
+
+#: dcpp\ConnectivityManager.cpp:268
+msgid "undefined"
+msgstr "nem meghatározott"
+
+#: dcpp\SettingsManager.cpp:214
+msgid "uploaded to"
+msgstr "feltöltve ide:"

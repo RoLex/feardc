@@ -1,0 +1,53 @@
+=== modified file 'po4a/lib/Locale/Po4a/Xml.pm'
+--- po4a/lib/Locale/Po4a/Xml.pm	2009-06-13 21:52:22 +0000
++++ po4a/lib/Locale/Po4a/Xml.pm	2009-06-14 14:22:06 +0000
+@@ -210,7 +210,7 @@
+ 	}
+ 
+ 	if (   ($#save_holders > 0)
+-	    or ($translation =~ m/<placeholder\s+type="[^"]+"\s+id="(\d+)"\s*\/>/s)) {
++	    or ($translation =~ m/<placeholder\s+id=(\d+)\s*\/>/s)) {
+ 		$holder->{'translation'} = $translation;
+ 	} else {
+ 		$self->SUPER::pushline($translation);
+@@ -381,7 +381,7 @@
+ The location of the placeholder in its block will be marked with a string
+ similar to:
+ 
+-  <placeholder type=\"footnote\" id=\"0\"/>
++  <placeholder id=0/>
+ 
+ The tags must be in the form <aaa>, but you can join some
+ (<bbb><aaa>), if a tag (<aaa>) should only be considered 
+@@ -1397,7 +1397,7 @@
+ 						# paragraph, and save the @paragraph in the
+ 						# current holder.
+ 						my $last_holder = $save_holders[$#save_holders];
+-						my $placeholder_str = "<placeholder type=\"".$cur_tag_name."\" id=\"".($#{$last_holder->{'sub_translations'}}+1)."\"/>";
++						my $placeholder_str = "<placeholder id=".($#{$last_holder->{'sub_translations'}}+1)."/>";
+ 						push @paragraph, ($placeholder_str, $text[1]);
+ 						my @saved_paragraph = @paragraph;
+ 
+@@ -1640,10 +1640,10 @@
+ 		my $count = 0;
+ 		my $str = $translation;
+ 		while (    (defined $str)
+-		       and ($str =~ m/^.*?<placeholder\s+type="[^"]+"\s+id="(\d+)"\s*\/>(.*)$/s)) {
++		       and ($str =~ m/^.*?<placeholder\s+id=(\d+)\s*\/>(.*)$/s)) {
+ 			$count += 1;
+ 			$str = $2;
+-			if ($holder->{'sub_translations'}->[$1] =~ m/<placeholder\s+type="[^"]+"\s+id="(\d+)"\s*\/>/s) {
++			if ($holder->{'sub_translations'}->[$1] =~ m/<placeholder\s+id=(\d+)\s*\/>/s) {
+ 				$count = -1;
+ 				last;
+ 			}
+@@ -1654,7 +1654,7 @@
+ 			# OK, all the holders of the current paragraph are
+ 			# closed (and translated).
+ 			# Replace them by their translation.
+-			while ($translation =~ m/^(.*?)<placeholder\s+type="[^"]+"\s+id="(\d+)"\s*\/>(.*)$/s) {
++			while ($translation =~ m/^(.*?)<placeholder\s+id=(\d+)\s*\/>(.*)$/s) {
+ 				# FIXME: we could also check that
+ 				#          * the holder exists
+ 				#          * all the holders are used
+

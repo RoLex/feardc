@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>Applying
+patches</h1>
+<br/>
+<dl>
+  <dt>Using <a href="https://savannah.gnu.org/projects/patch/" 
+target="_blank" class="external">GNU Patch</a></dt>
+  <dd>1. Download and place <a
+ href="https://savannah.gnu.org/projects/patch/" target="_blank" 
+ class="external">GNU patch</a> in the directory 
+ you want to patch.</dd>
+  <dd>2. Type <i>cmd</i>
+in Run and tab your way to where GNU Patch is.</dd>
+  <dd>3. Write <i>patch
+-[parameter] &lt; my-patch.diff</i></dd>
+  <dd>4. The file <i>my-patch.diff</i>
+is the actual patch you want to apply. </dd>
+  <dd><br/>
+Example: <i>C:\Program
+Files\DCpp_orig&gt;patch -p1 &lt; my-patch.diff</i><br/>
+C:\Program Files\DCpp_orig is the directory that is going to be patched.<br/>
+p1 gives the entire file name unmodified with out a leading slash.<br/>
+    <br/>
+    <p>Parameters and more information on how to use GNU Diff can be
+found in the documentation for GNU Diff which should have come included
+with GNU Diff. Otherwise, the manual can be found at the <a
+ href="https://www.gnu.org/software/diffutils/manual/diffutils.html"
+ target="_blank" class="external">GNU Diff manual</a></p>
+  </dd>
+</dl>
+</body>
+</html>

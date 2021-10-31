@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>ADLSearch Properties</h1>
+<dl style="margin-left: 40px;">
+  <dt>Search String</dt>
+  <dd cshelp="IDH_ADLSP_SEARCH_STRING">This is the set of search strings or expressions to search for.</dd>
+  <dt>Regular Expression</dt>
+  <dd cshelp="IDH_ADLSP_SEARCH_REGULAR_EXPRESSION">If enabled then the Search String is interpreted as a <a href="https://regular-expressions.mobi/" target="_blank" class="external">regular expression</a>; otherwise it will be used for normal textual search.</dd>
+  <dt>Source Type</dt>
+  <dd><p>One of following values:</p>
+<dl style="margin-left: 40px;">
+  <dt>Filename</dt>
+  <dd>Matches search against filename.</dd>
+  <dt id="directory">Directory</dt>
+  <dd>Matches against current subdirectory and places the whole
+structure in the special folder.</dd>
+  <dt>Full Path</dt>
+  <dd>Matches against whole directory + filename.</dd>
+</dl>
+</dd>
+  <dt>Min FileSize</dt>
+  <dd cshelp="IDH_ADLSP_MIN_FILE_SIZE">Sets the lower limits for file size. This is unused for <a href="#directory">Directory</a> searches.</dd>
+  <dt>Max FileSize</dt>
+  <dd cshelp="IDH_ADLSP_MAX_FILE_SIZE">Sets the upper limits for file size. This is unused for <a href="#directory">Directory</a> searches.</dd>
+  <dt>Size Type</dt>
+  <dd cshelp="IDH_ADLSP_SIZE_TYPE">Sets the units for the search sizes.</dd>
+  <dt>Destination Directory</dt>
+  <dd cshelp="IDH_ADLSP_DEST_DIR">Sets the output folder for a search. Multiple folders with
+different names can exist simultaneously. Each folder name gets wrapped
+in &lt;&lt;&lt; and &gt;&gt;&gt;.</dd>
+  <dt>Enabled</dt>
+  <dd cshelp="IDH_ADLSP_ENABLED">Marks the search as active or inactive.</dd>
+  <dt>Download Matches</dt>
+  <dd cshelp="IDH_ADLSP_AUTOQUEUE">When checked, matches to this search will be put into your
+<a href="window_download_queue.html">Download Queue</a>.</dd>
+</dl>
+</body>
+</html>

@@ -1,0 +1,52 @@
+/* Style Sheet Last updated - 10/17/2000 */ 
+/* This style sheet is for IE 4.02 and up */ 
+
+
+/* BODY = default paragraph font */ 
+	body		{background-color: #ffffff; font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 70%; }
+	
+/* HYPERLINKS */ 
+	a:link, a:visited	{color: #0000FF; text-decoration: none; }
+	a:active, a:hover	{color: #990099; cursor:auto; text-decoration: underline; }
+	a.external   { color: #008080 }
+	.pop		{text-decoration: none; }
+	acronym	{ color: rgb(0, 128, 0);
+			text-decoration: none;
+			border-bottom-width: 1px;
+			border-bottom-style: dashed;
+			cursor: help; }
+	
+/* LISTS */ 
+	ol		{font-size: 100%; margin-top: .5em; margin-bottom: 0em; margin-left: 4em;}
+	ul		{font-size: 100%; margin-top: .5em; margin-bottom: 0em;}
+	ol ul		{list-style: disc; margin-top: .5em;}
+	ul ul		{list-style: disc; margin-top: .5em;}
+	li		{margin-bottom: .7em; margin-left: -2em;}
+
+/* PREFORMATTING - CODE */ 
+	pre		{font-size: 100%; margin-top: 1.2em; margin-bottom: 1.5em;}
+	code	 	{font-family: "courier new", courier, monospace; font-size: 125%; }
+	
+/* TABLES */ 
+	table		{font-size: 100%; margin-top: 1em; margin-bottom: 0em;}
+	th		{text-align: left; background: #CCCCCC; margin: .25em; vertical-align: bottom;}
+	tr		{vertical-align: top;}
+	td		{margin: .25em; vertical-align: top; border-bottom: 1 solid #CCCCCC; }
+
+/* PARAGRAPH */
+	p		{margin-top: .6em; margin-bottom: .6em; }
+
+/* Heading styles---------------------------------------------------------------------------- */ 
+
+	h1		{font-size: 125%; margin-top: .4em; margin-bottom: .5em;}
+	h2		{font-size: 110%; margin-top: 2em; margin-bottom: .5em;}
+	h3		{font-size: 100%; margin-top: 1.2em; margin-bottom: .5em; font-weight: bold;}
+	h4		{font-size: 100%; margin-top: 1.2em; font-weight: bold;}
+	h5		{font-size: 100%; margin-top: 1.2em; font-weight: bold;}
+	.lproch		{font-weight: bold ;margin-top: 1.2em; }/* Heading 9,List Procedure Heading,lproch */ 
+
+/* Defined List styles ----------------------------------------------------------------------- */
+
+	dt		{font-weight: bold; }
+	dd		{margin-left: 2em; margin-bottom: .6em; }
+

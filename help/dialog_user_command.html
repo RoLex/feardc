@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>User Command</h1>
+<h2>Command Types:</h2>
+<dl style="margin-left: 40px;">
+  <dt>Separator</dt>
+  <dd cshelp="IDH_USER_COMMAND_SEPARATOR">Adds a separator to the menu</dd>
+  <dt>Raw</dt>
+  <dd cshelp="IDH_USER_COMMAND_RAW">Sends raw command to the hub (experts only, end it with '|' in NMDC hubs and '\n' in ADC hubs!)</dd>
+  <dt>Chat</dt>
+  <dd cshelp="IDH_USER_COMMAND_CHAT">Sends command as if you were typing it in the chat</dd>
+  <dt>PM</dt>
+  <dd cshelp="IDH_USER_COMMAND_PM">Sends command as if you sent it by PM</dd>
+</dl>
+<h2>Context</h2>
+<p cshelp="IDH_USER_COMMAND_CONTEXT">
+Contexts determine where the command is shown.
+</p>
+<dl style="margin-left: 40px;">
+  <dt>Hub Menu</dt>
+  <dd cshelp="IDH_USER_COMMAND_HUB_MENU">Hub tab (at the top of the screen) context menu</dd>
+  <dt>User Menu </dt>
+  <dd cshelp="IDH_USER_COMMAND_USER_MENU">User context menu in chat and PM tab menu</dd>
+  <dt>Search Menu</dt>
+  <dd cshelp="IDH_USER_COMMAND_SEARCH_MENU">Search context menu</dd>
+  <dt>File list Menu</dt>
+  <dd cshelp="IDH_USER_COMMAND_FILELIST_MENU">File list context menu</dd>
+</dl>
+<h2>Parameters</h2>
+<dl style="margin-left: 40px;">
+  <dt>Name</dt>
+  <dd cshelp="IDH_USER_COMMAND_NAME">Name as displayed in the menu (use '/' to create sub-menus, and '//' to actually write a slash)</dd>
+  <dt>Command</dt>
+  <dd cshelp="IDH_USER_COMMAND_COMMAND">Command text (may contain any of the variables listed below). Use Ctrl + Enter to create a new line.</dd>
+  <dt>Hub address</dt>
+  <dd cshelp="IDH_USER_COMMAND_HUB">
+  Hub address as typed when connecting. "op" = NMDC hubs where you are an operator, "adc://" = all
+  ADC hubs, "adc://op" = ADC hubs where you are an operator, "adcs://" = all
+  <a href="settings_certs.html">secured</a> ADC hubs. If empty, and the "Raw" type is selected,
+  then only NMDC hubs will match; if empty, and the "Chat" or "Private Message" types are selected,
+  then all hubs will match regardless of their protocol.</dd>
+  <dt>To</dt>
+  <dd cshelp="IDH_USER_COMMAND_NICK">Private Message recipient</dd>
+  <dt>Send once per nick.</dt>
+  <dd cshelp="IDH_USER_COMMAND_ONCE">
+  Send only once per user from search or file lists, regardless of how many files have been
+  selected per user.</dd>
+</dl>
+<h2>Variables</h2>
+<p>
+In the parameters, you can use %[<b>xxx</b>]
+variables and <a href="settings_logs.html#timeformat">date/time
+specifiers</a> (%Y, %m, ...). The following variables are also
+available:
+</p>
+<ul style="margin-left: 40px;">
+	<li>%[fileFN]: Filename (search, file list, and transfer view contexts only)</li>
+	<li>%[fileSIsize]: File size (search, file list contexts only)</li>
+	<li>%[fileSIshort]: File size, short version including units (search, file list contexts only)</li>
+	<li>%[fileTR]: TTH for the file, or "NONE" (search, file list contexts only)</li>
+	<li>%[fileMN]:
+	<a href="https://en.wikipedia.org/wiki/Magnet_URI_scheme" target="_blank" class="external">magnet link</a>
+	to the file (search, file list contexts only)</li>
+	<li>%[type]: "File" or "Directory" (directory context only)</li>
+	<li>
+	%[line:<i>caption</i>]: Opens up a dialog asking for "<i>caption</i>".<br/>
+	By default, the input interface is a text-box control, unless "<i>caption</i>" corresponds to
+	the following syntax: caption/default_sel/value0/value1/.../valueN where <i>caption</i> is the
+	new caption, <i>default_sel</i> is a number corresponding to the default value to select, and
+	the following params are values of a drop-down list control created instead of the text-box.
+	Params are separated using forward slashes ('/'); one can use '//' to actually write a slash.
+	</li>
+</ul>
+<p>
+In addition to these variables, all of the ADC INF flags are available, with the following prefixes: <b>my</b>, <b>user</b>, and <b>hub</b>. Some may <u>not</u> be available on NMDC hubs. Many useful ones are enumerated below:
+</p>
+<div style="margin-left: 40px;">
+<ul>
+  <li>%[myNI]: Your nick</li>
+  <li>%[myCID]: Your ADC CID</li>
+  <li>%[userNI]: The user's nick</li>
+  <li>%[userCID]: The user's ADC CID</li>
+  <li>%[userI4]: The user's IP (if supported by hub)</li>
+  <li>%[userTAG]: The user's tag</li>
+  <li>%[userDE]: The user's description</li>
+  <li>%[userEM]: The user's email</li>
+  <li>%[userSS]: The user's shared bytes (exact)</li>
+  <li>%[userSSshort]: The user's shared bytes (formatted with units)</li>
+</ul>
+</div>
+<h2 style="margin-left: 40px;">Compatibilty Variables</h2>
+<ul style="margin-left: 40px;">
+  <ul>
+    <li>%[mynick] = %[myNI]</li>
+    <li>%[nick] = %[userNI]</li>
+    <li>%[file] = %[fileFN]</li>
+    <li>%[filesize] = %[fileSI]</li>
+    <li>%[filesizeshort] = %[fileSIshort]</li>
+    <li>%[tth] = %[fileTR]</li>
+    <li>%[mycid] = %[myCID] </li>
+    <li>%[cid] = %[userCID]</li>
+    <li>%[ip] = %[userI4]</li>
+    <li>%[tag] = %[userTAG]</li>
+    <li>%[description] = %[userDE]</li>
+    <li>%[email] = %[userEM]</li>
+    <li>%[share] = %[userSS]</li>
+    <li>%[shareshort] = %[userSSshort]</li>
+  </ul>
+</ul>
+</body>
+</html>

@@ -1,0 +1,18 @@
+Import('dev source_path')
+
+env, target, sources = dev.prepare_build(
+    source_path,
+    'zlib',
+    source_glob='*.c',
+    in_bin=False
+)
+
+if not dev.is_win32():
+    sources = [source for source in sources if 'iowin32' not in source]
+
+import sys
+if sys.platform == 'cygwin':  # TODO configure
+    env.Append(CPPDEFINES=['USE_FILE32API'])
+
+ret = dev.build_lib(env, target, sources, dev.c_lib)
+Return('ret')

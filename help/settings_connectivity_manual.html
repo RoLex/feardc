@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+	<h1>Connectivity<br/>
+		Manual configuration
+	</h1>
+<p>
+Use these settings to manually configure DC++ for incoming connections. If unsure about these settings, 
+you may want to follow the <a href="faq_connection.html">Manual connection setup guide</a>.
+While some settings as various <i>Ports</i> are shared, the rest are grouped making possible to individually
+set and fine tune connectivity for IPv4 and IPv6 protocols. Settings on this pane are unavailabe and ignored 
+when <a href="settings_connectivity.html#autoconn">Automatic connectivity setup</a> is enabled.
+Note that IPv6 support is currently in experimental state and DC++ might not able to connect to all kinds
+of DC clients using the IPv6 protocol.
+</p>
+<p>Before changing these make sure you are familiar with the meaning of each connection mode and with the <a href="faq_whyactive.html">differences between active and passive mode and their effect on your ability to 
+search and download from users</a> of the DC network.
+</p>
+
+<h2 id="connection">Manual incoming connection settings for both IPv4 and IPv6 protocols</h2>
+
+<dl style="margin-left: 40px;">
+	<dt>Ports</dt>
+	<dd><p>These settings specify the communication ports DC++ listens on for incoming connections.
+	Generally you don't need to add specific ports unless you configured your port forwarding settings
+	manually. If port settings are left blank, DC++ will let the operating system generate a random
+	port number. Port values are ignored when
+	<a href="settings_connectivity.html#autoconn">Automatic connectivity setup</a> is enabled.</p>
+	<dl>
+		<dt>Transfer port (TCP)</dt>
+		<dd cshelp="IDH_SETTINGS_CONNECTIVITY_PORT_TCP">This is the port that DC++ listens on for
+		incoming connections from other peers. If this port is incorrectly forwarded, you won't be
+		able to download.</dd>
+		<dt>Encrypted transfer port (TCP)</dt>
+		<dd cshelp="IDH_SETTINGS_CONNECTIVITY_PORT_TLS">This is the port that DC++ listens on for
+		incoming <a href="settings_certs.html">TLS (encrypted)</a> connections from other peers. If
+		this port is incorrectly forwarded, you won't be able to search nor to download on
+		encrypted ADC hubs. Note that <b>this port value should be different than the one used for
+			transfers (TCP).</b></dd>
+		<dt>Search port (UDP)</dt>
+		<dd cshelp="IDH_SETTINGS_CONNECTIVITY_PORT_UDP">This is the port that DC++ listens on for
+		incoming search results. If this port is incorrectly forwarded, you won't be able to
+		receive search results.</dd>
+	</dl>
+	</dd>
+</dl>
+
+<h2 id="connection">Individual settings for IPv4 and IPv6 protocols</h2>
+	<p style="margin-left: 40px;">The following incoming connection settings grouped to be able to 
+	do a separate setup for the two available IP protocols.</p>
+	
+<dl style="margin-left: 40px;">
+	<dt>Active mode (I have no router / I have configured my router)</dt>
+	<dd cshelp="IDH_SETTINGS_CONNECTIVITY_ACTIVE">
+	Select this mode if you are directly connected to the Internet (no router) or if you are
+	willing to manually configure port forwarding rules in your router. Use this mode only if the
+	automatic configuration (via NAT-PMP / UPnP) is not an option for you. For more information,
+	refer to the <a href="faq_portforward.html">Manual port forwarding guide</a>.
+	</dd>
+
+	<dt>Active mode (let DC++ configure my router with NAT-PMP / UPnP)</dt>
+	<dd cshelp="IDH_SETTINGS_CONNECTIVITY_UPNP">
+	Select this mode if you are behind a router that supports standard port forwarding methods such
+	as NAT-PMP or UPnP. Most routers do support them but they often have to be explicitly enabled
+	from the router's configuration page. Thanks to automatic port mapping methods, DC++ is able to
+	open the ports it needs and obtain your external IP address as well. For more information, see
+	<a href="faq_mapping.html">What is NAT-PMP / UPnP?</a>.
+	</dd>
+
+	<dt>Passive mode (last resort - has serious limitations)</dt>
+	<dd cshelp="IDH_SETTINGS_CONNECTIVITY_PASSIVE">
+	Select this mode if you can't get active mode to work. In this mode, DC++ will not try to
+	listen for inbound connections; it will only initiate outbound ones. This mode carries some
+	serious limitations:
+	<ul style="margin-left: 80px;">
+		<li>only 5 results per user will be returned in response to searches.</li>
+		<li>you may not be able to download / receive search results from passive users.</li>
+		<li>you may not be able to fully enjoy certain hubs (because of their regulations).</li>
+	</ul>
+	Note that DC++ tries NAT Traversal on ADC hubs to allow passive users to connect with each other.
+	</dd>
+
+	<dt>Disable connectivity</dt>
+	<dd cshelp="IDH_SETTINGS_CONNECTIVITY_DISABLE">
+	Select this mode if you do not wish to have the specified protocol active.
+	</dd>
+
+	<dt id="extip">External / WAN IP address</dt>
+	<dd cshelp="IDH_SETTINGS_CONNECTIVITY_EXTERNAL_IP">
+	These fields specify your external IP addresses for the specified protocol. 
+	<i>Note: most hubs are able to determine your external IPs and forward it to your DC++, making 
+	a manual configuration of this field unnecessary.</i> If your computer is directly connected to 
+	the internet, your internal and external IP will be the same and can easily be automatically 
+	detected. Fill these boxes <b>only</b> if you need to override said auto-detection. 
+	Ordinarily, only users behind a router (NAT device) need to fill in this boxes. 
+	If you put a DNS name here, DC++ will try to resolve it into an IP address before use. 
+	For additional information like how to determine your external IP
+	address, follow the <a href="faq_connection.html">Manual connection setup guide</a>.</dd>
+
+	<dt id="noipoverride">Don't allow hubs/NAT-PMP/UPnP to override</dt>
+	<dd cshelp="IDH_SETTINGS_CONNECTIVITY_OVERRIDE">
+	Enable this to always use the IP address in "External / WAN IP", and not let either NAT-PMP,
+	UPnP nor connected hubs change it. If unsure, leave this setting disabled.
+	</dd>
+
+	<dt id="prefmap">Preferred port mapping interface</dt>
+	<dd cshelp="IDH_SETTINGS_CONNECTIVITY_MAPPER">
+	DC++ has several interfaces available it can use to try to automatically map the ports it
+	requires on the router:
+	<ul>
+		<li>NAT-PMP: A lightweight protocol that is not widely used by generic routers; but
+		open-source firmwares generally implement it.</li>
+		<li>MiniUPnP: An open-source UPnP library.</li>
+	</ul>
+	The interface selected here will be tried first; other available interfaces will then be tried
+	if the preferred port mapping interface were to fail.
+	</dd>
+
+	<dt id="bindaddress">Bind Address</dt>
+	<dd cshelp="IDH_SETTINGS_CONNECTIVITY_BIND_ADDRESS">
+	This setting allows binding DC++ network connections of the specified protocol to a specific network 
+	adapter by its IP address. Useful when you have more than one physical or virtual network adapter installed and
+	you want to assign a specfic device for all the network traffic generated for a certain IP protocol 
+	by DC++.<br/>
+	If this setting is set to 'Default' it means that DC++ is relying on the operating
+	system to find the best adapter. In case of the adapter offered by the operating system does
+	not suit you, you can override it here by selecting the required adapter. <br/>
+	If binding with the selected adapter fails, it will do so silently and the 'Default' setting
+	(INADDR_ANY) will be used instead.
+	</dd>
+
+</dl>
+</body>
+</html>
