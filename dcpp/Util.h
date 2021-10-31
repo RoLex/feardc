@@ -473,6 +473,7 @@ public:
 	static bool isAdcUrl(const string& aHubURL);
 	static bool isAdcsUrl(const string& aHubURL);
 	static bool isNmdcUrl(const string& aHubURL);
+	static bool isNmdcsUrl(const string& aHubURL);
 
 private:
 	/** In local mode, all config and temp files are kept in the same dir as the executable */

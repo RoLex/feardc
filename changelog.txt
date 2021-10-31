@@ -1,3 +1,6 @@
+-- 0.871 20##-##-## --
+* [LB#841189] [LQ#698901] Add support for secure NMDC client to hub connections, port defaults to 411, requires nmdcs:// in URL (RoLex)
+
 -- 0.870 2021-09-09 --
 * Adaptively determine fastest TLS 1.3 ciphersuites (klondike)
 * [L#1703150] Fix crash when closing NMDC hubs (emtee)

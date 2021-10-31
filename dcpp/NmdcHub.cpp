@@ -36,18 +36,16 @@
 
 namespace dcpp {
 
-NmdcHub::NmdcHub(const string& aHubURL) :
-Client(aHubURL, '|', false),
-supportFlags(0),
-lastUpdate(0),
-lastProtectedIPsUpdate(0)
-{
-}
+NmdcHub::NmdcHub(const string& aHubURL, bool secure):
+	Client(aHubURL, '|', secure),
+	supportFlags(0),
+	lastUpdate(0),
+	lastProtectedIPsUpdate(0)
+{}
 
 NmdcHub::~NmdcHub() {
 	clearUsers();
 }
-
 
 #define checkstate() if(state != STATE_NORMAL) return
 

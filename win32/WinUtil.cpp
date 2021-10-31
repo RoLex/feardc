@@ -533,7 +533,7 @@ const TCHAR
 		_T("\r\n-- My client keeps track of all the recent opened windows, does yours?\r\n") LINE2,
 		_T("\r\n-- These addies are pretty annoying, aren't they? Get revenge by sending them yourself!\r\n") LINE2,
 		_T("\r\n-- My client supports taskbar thumbnails and Aero Peek previews, does yours?\r\n") LINE2,
-		_T("\r\n-- My client supports secure communication and transfers, does yours?\r\n") LINE2,
+		_T("\r\n-- My client supports TLS encrypted communication and transfers, does yours?\r\n") LINE2,
 		_T("\r\n-- My client supports grouping favorite hubs, does yours?\r\n") LINE2,
 		_T("\r\n-- My client supports segmented downloading, does yours?\r\n") LINE2,
 		_T("\r\n-- My client supports browsing file lists, does yours?\r\n") LINE2 };
@@ -1408,13 +1408,16 @@ bool registerHandler(const tstring& name, const tstring& description, bool url, 
 void WinUtil::registerHubHandlers() {
 	if(SETTING(URL_HANDLER)) {
 		if(!urlDcADCRegistered) {
-			urlDcADCRegistered = registerHandler(_T("dchub"), _T("URL:Direct Connect Protocol"), true) &&
+			urlDcADCRegistered =
+				registerHandler(_T("dchub"), _T("URL:Direct Connect Protocol"), true) &&
+				registerHandler(_T("nmdcs"), _T("URL:Direct Connect Protocol"), true) &&
 				registerHandler(_T("adc"), _T("URL:Direct Connect Protocol"), true) &&
 				registerHandler(_T("adcs"), _T("URL:Direct Connect Protocol"), true);
 		}
 	} else if(urlDcADCRegistered) {
 		urlDcADCRegistered =
-			::SHDeleteKey(HKEY_CURRENT_USER, _T("Software\\Classes\\dchub")) != ERROR_SUCCESS ||
+			::SHDeleteKey(HKEY_CURRENT_USER, _T("Software\\Classes\\dchub")) == ERROR_SUCCESS ||
+			::SHDeleteKey(HKEY_CURRENT_USER, _T("Software\\Classes\\nmdcs")) == ERROR_SUCCESS ||
 			::SHDeleteKey(HKEY_CURRENT_USER, _T("Software\\Classes\\adc")) == ERROR_SUCCESS ||
 			::SHDeleteKey(HKEY_CURRENT_USER, _T("Software\\Classes\\adcs")) == ERROR_SUCCESS;
 		regChanged();
@@ -1532,10 +1535,12 @@ bool WinUtil::parseLink(const tstring& str, bool followExternal) {
 	string proto, host, port, file, query, fragment;
 	Util::decodeUrl(url, proto, host, port, file, query, fragment);
 
-	if(Util::stricmp(proto.c_str(), "adc") == 0 ||
-	   Util::stricmp(proto.c_str(), "adcs") == 0 ||
-	   Util::stricmp(proto.c_str(), "dchub") == 0 )
-	{
+	if (
+		(Util::stricmp(proto.c_str(), "adc") == 0) ||
+		(Util::stricmp(proto.c_str(), "adcs") == 0) ||
+		(Util::stricmp(proto.c_str(), "dchub") == 0) ||
+		(Util::stricmp(proto.c_str(), "nmdcs") == 0)
+	) {
 		HubFrame::openWindow(mainWindow->getTabView(), url);
 
 		/// @todo parse other params when RFCs for these schemes have been published.

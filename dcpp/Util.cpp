@@ -460,12 +460,12 @@ void Util::decodeUrl(const string& url, string& protocol, string& host, string& 
 			host = url.substr(authorityStart, hostEnd - authorityStart);
 		}
 
-		if(portStart == string::npos) {
-			if(protocol == "http") {
+		if (portStart == string::npos) {
+			if (protocol == "http") {
 				port = "80";
-			} else if(protocol == "https") {
+			} else if (protocol == "https") {
 				port = "443";
-			} else if(protocol == "dchub"  || protocol.empty()) {
+			} else if (protocol == "dchub" || protocol == "nmdcs" || protocol.empty()) {
 				port = "411";
 			}
 		} else {
@@ -1257,14 +1257,20 @@ string Util::getTempPath() {
 #endif
 }
 
-bool Util::isAdcUrl(const string& aHubURL) { 
-	return Util::strnicmp("adc://", aHubURL.c_str(), 6) == 0; 
+bool Util::isAdcUrl(const string& aHubURL) {
+	return Util::strnicmp("adc://", aHubURL.c_str(), 6) == 0;
 }
-bool Util::isAdcsUrl(const string& aHubURL) { 
-	return Util::strnicmp("adcs://", aHubURL.c_str(), 7) == 0; 
+
+bool Util::isAdcsUrl(const string& aHubURL) {
+	return Util::strnicmp("adcs://", aHubURL.c_str(), 7) == 0;
 }
-bool Util::isNmdcUrl(const string& aHubURL) { 
-	return Util::strnicmp("dchub://", aHubURL.c_str(), 8) == 0; 
+
+bool Util::isNmdcUrl(const string& aHubURL) { // note: above functions are used only for FavHubProperties::handleInitDialog() so these are useless
+	return Util::strnicmp("dchub://", aHubURL.c_str(), 8) == 0;
+}
+
+bool Util::isNmdcsUrl(const string& aHubURL) {
+	return Util::strnicmp("nmdcs://", aHubURL.c_str(), 8) == 0;
 }
 
 size_t noCaseStringHash::operator()(const string& s) const {
