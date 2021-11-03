@@ -380,12 +380,17 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 		if(j == string::npos)
 			return;
 
-		string connection = param.substr(i, j-i-1);
-
+		string connection = ((i == j) ? Util::emptyString : param.substr(i, j - i - 1));
 		u.getIdentity().setBot(connection.empty()); // No connection = bot...
 		u.getIdentity().setHub(false);
+		u.getIdentity().set("CO", connection);
+		u.getIdentity().setStatus(Util::toString(param[j - 1]));
 
-		u.getIdentity().set("CO", connection); 
+		if (u.getIdentity().getStatus() & Identity::TLS)
+			u.getUser()->setFlag(User::TLS);
+		else
+			u.getUser()->unsetFlag(User::TLS);
+
 		i = j + 1;
 		j = param.find('$', i);
 
@@ -437,9 +442,19 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 		if(j+1 >= param.size()) {
 			return;
 		}
-		string port = param.substr(j+1);
+		string port = param.substr(j + 1);
+		bool secure = false;
+
+		if (port.size() && port[port.size() - 1] == 'S') {
+			port.erase(port.size() - 1);
+
+			if (CryptoManager::getInstance()->TLSOk())
+				secure = true;
+		}
+
 		// For simplicity, we make the assumption that users on a hub have the same character encoding
-		ConnectionManager::getInstance()->nmdcConnect(server, port, getMyNick(), getHubUrl(), getEncoding());
+		ConnectionManager::getInstance()->nmdcConnect(server, port, getMyNick(), getHubUrl(), getEncoding(), secure);
+
 	} else if(cmd == "$RevConnectToMe") {
 		if(state != STATE_NORMAL) {
 			return;
@@ -497,6 +512,8 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 				supportFlags |= SUPPORTS_NOGETINFO;
 			} else if(i == "UserIP2") {
 				supportFlags |= SUPPORTS_USERIP2;
+			} else if (i == "TLS") {
+				supportFlags |= SUPPORTS_TLS;
 			}
 		}
 	} else if(cmd == "$UserCommand") {
@@ -552,14 +569,18 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 			}
 
 			if(CryptoManager::getInstance()->isExtended(lock)) {
-				supports({
-					"UserCommand",
-					"NoGetINFO",
-					"NoHello",
-					"UserIP2",
-					"TTHSearch",
-					"ZPipe0"
-				});
+				StringList feat;
+				feat.push_back("UserCommand");
+				feat.push_back("NoGetINFO");
+				feat.push_back("NoHello");
+				feat.push_back("UserIP2");
+				feat.push_back("TTHSearch");
+				feat.push_back("ZPipe0");
+
+				if (CryptoManager::getInstance()->TLSOk())
+					feat.push_back("TLS");
+
+				supports(feat);
 			}
 
 			key(CryptoManager::getInstance()->makeKey(lock));
@@ -769,7 +790,8 @@ void NmdcHub::connectToMe(const OnlineUser& aUser) {
 	dcdebug("NmdcHub::connectToMe %s\n", aUser.getIdentity().getNick().c_str());
 	string nick = fromUtf8(aUser.getIdentity().getNick());
 	ConnectionManager::getInstance()->nmdcExpect(nick, getMyNick(), getHubUrl());
-	send("$ConnectToMe " + nick + " " + localIp + ":" + ConnectionManager::getInstance()->getPort() + "|");
+	bool secure = CryptoManager::getInstance()->TLSOk() && aUser.getUser()->isSet(User::TLS);
+	send("$ConnectToMe " + nick + " " + localIp + ":" + ConnectionManager::getInstance()->getPort() + (secure ? "S" : "") + "|");
 }
 
 void NmdcHub::revConnectToMe(const OnlineUser& aUser) {
@@ -788,6 +810,7 @@ void NmdcHub::myInfo(bool alwaysSend) {
 	checkstate();
 
 	reloadSettings(false);
+	char StatusMode = Identity::NORMAL;
 
 	string tmp1 = ";**\x1fU9";
 	string tmp2 = "+L9";
@@ -818,13 +841,16 @@ void NmdcHub::myInfo(bool alwaysSend) {
 		uploadSpeed = SETTING(UPLOAD_SPEED);
 	}
 
+	if (CryptoManager::getInstance()->TLSOk())
+		StatusMode |= Identity::TLS;
+
 	string uMin = (SETTING(MIN_UPLOAD_SPEED) == 0) ? Util::emptyString : tmp5 + Util::toString(SETTING(MIN_UPLOAD_SPEED));
 	string myInfoA =
 		"$MyINFO $ALL " + fromUtf8(getMyNick()) + " " + fromUtf8(escape(get(Description))) +
 		tmp1 + VERSIONSTRING + tmp2 + modeChar + tmp3 + getCounts();
 	string myInfoB = tmp4 + Util::toString(SETTING(SLOTS));
 	string myInfoC = uMin +
-		">$ $" + uploadSpeed + "\x01$" + fromUtf8(escape(get(Email))) + '$';
+		">$ $" + uploadSpeed + StatusMode + '$' + fromUtf8(escape(get(Email))) + '$';
 	string myInfoD = ShareManager::getInstance()->getShareSizeString() + "$|";
 	// we always send A and C; however, B (slots) and D (share size) can frequently change so we delay them if needed
  	if(lastMyInfoA != myInfoA || lastMyInfoC != myInfoC ||

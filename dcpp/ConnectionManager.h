@@ -108,7 +108,7 @@ public:
 		expectedConnections.add(aNick, aMyNick, aHubUrl);
 	}
 
-	void nmdcConnect(const string& aServer, const string& aPort, const string& aMyNick, const string& hubUrl, const string& encoding);
+	void nmdcConnect(const string& aServer, const string& aPort, const string& aMyNick, const string& hubUrl, const string& encoding, bool secure = false);
 	void adcConnect(const OnlineUser& aUser, const string& aPort, const string& aToken, bool secure);
 	void adcConnect(const OnlineUser& aUser, const string& aPort, const string& localPort, BufferedSocket::NatRoles natRole, const string& aToken, bool secure);
 

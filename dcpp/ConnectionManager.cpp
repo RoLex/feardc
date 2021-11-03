@@ -361,14 +361,14 @@ void ConnectionManager::accept(const Socket& sock, bool secure) noexcept {
 	}
 }
 
-void ConnectionManager::nmdcConnect(const string& aServer, const string& aPort, const string& aNick, const string& hubUrl, const string& encoding) {
+void ConnectionManager::nmdcConnect(const string& aServer, const string& aPort, const string& aNick, const string& hubUrl, const string& encoding, bool secure) {
 	if(shuttingDown)
 		return;
 
 	if (checkHubCCBlock(aServer, aPort, hubUrl))
 		return;
 
-	UserConnection* uc = getConnection(true, false);
+	UserConnection* uc = getConnection(true, secure);
 	uc->setToken(aNick);
 	uc->setHubUrl(hubUrl);
 	uc->setEncoding(encoding);
