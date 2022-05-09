@@ -30,6 +30,7 @@ gcc_flags = {
         '-Wno-unknown-pragmas',
         '-Wno-unused-parameter', '-Wno-unused-value',
         '-Wno-unused-but-set-variable',
+        '-Wno-nonnull', # new gcc doesnt seem to like boost alot
         '-fexceptions',
     ],
     'debug': [],

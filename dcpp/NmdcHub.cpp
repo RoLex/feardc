@@ -338,6 +338,118 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 			fire(ClientListener::NmdcSearch(), this, seeker, a, Util::toInt64(size), type, terms);
 		}
 
+	} else if (cmd == "$SA") { // tths extension, active search
+		checkstate();
+
+		if (!(supportFlags & SUPPORTS_TTHS))
+			return;
+
+		string::size_type pos = param.find(' ');
+
+		if (pos == string::npos)
+			return;
+
+		string terms = param.substr(0, pos);
+
+		if (terms.size() != 39) // validate tth length
+			return;
+
+		string seeker = param.substr(pos + 1);
+
+		if (seeker.size() < 9 || seeker.size() > 21) // 1.2.3.4:5 - 111.222.333.444:55555
+			return;
+
+		// verlihub never sends our searches to us, but filter own searches anyway
+		if (ClientManager::getInstance()->isActive() && (seeker == localIp + ':' + SearchManager::getInstance()->getPort()))
+			return;
+
+		uint64_t tick = GET_TICK();
+		clearFlooders(tick);
+		seekers.emplace_back(seeker, tick);
+
+		for (auto& fi: flooders) {
+			if (fi.first == seeker)
+				return;
+		}
+
+		int count = 0;
+
+		for (auto& fi: seekers) {
+			if (fi.first == seeker)
+				count++;
+
+			if (count > 7) {
+				fire(ClientListener::SearchFlood(), this, str(F_("%1% (Nick unknown)") % seeker));
+				flooders.emplace_back(seeker, tick);
+				return;
+			}
+		}
+
+		fire(ClientListener::NmdcSearch(), this, seeker, SearchManager::SIZE_DONTCARE, 0, SearchManager::TYPE_TTH, terms);
+
+	} else if (cmd == "$SP") { // tths extension, passive search
+		checkstate();
+
+		if (!(supportFlags & SUPPORTS_TTHS))
+			return;
+
+		if (!ClientManager::getInstance()->isActive()) // we are also passive
+			return;
+
+		string::size_type pos = param.find(' ');
+
+		if (pos == string::npos)
+			return;
+
+		string terms = param.substr(0, pos);
+
+		if (terms.size() != 39) // validate tth length
+			return;
+
+		string seeker = param.substr(pos + 1);
+
+		if (seeker.empty() || seeker.find(' ') != string::npos)
+			return;
+
+		// verlihub never sends our searches to us, but filter own searches anyway
+		if (Util::stricmp(seeker.c_str(), getMyNick().c_str()) == 0)
+			return;
+
+		string seekpas = "Hub:" + seeker;
+		uint64_t tick = GET_TICK();
+		clearFlooders(tick);
+		seekers.emplace_back(seekpas, tick);
+
+		for (auto& fi: flooders) {
+			if (fi.first == seekpas)
+				return;
+		}
+
+		int count = 0;
+
+		for (auto& fi: seekers) {
+			if (fi.first == seekpas)
+				count++;
+
+			if (count > 7) {
+				fire(ClientListener::SearchFlood(), this, seeker);
+				flooders.emplace_back(seekpas, tick);
+				return;
+			}
+		}
+
+		auto u = findUser(seeker);
+
+		if (!u)
+			return;
+
+		if (!u->getUser()->isSet(User::PASSIVE)) {
+			u->getUser()->setFlag(User::PASSIVE);
+			updated(*u);
+		}
+
+		fire(ClientListener::NmdcSearch(), this, seekpas, SearchManager::SIZE_DONTCARE, 0, SearchManager::TYPE_TTH, terms);
+
 	} else if(cmd == "$MyINFO") {
 		string::size_type i, j;
 		i = 5;
@@ -502,21 +614,29 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 			getHubIdentity().setDescription(unescape(param.substr(i+3)));
 		}
 		fire(ClientListener::HubUpdated(), this);
-	} else if(cmd == "$Supports") {
+
+	} else if (cmd == "$Supports") {
 		StringTokenizer<string> st(param, ' ');
 		StringList& sl = st.getTokens();
-		for(auto& i: sl) {
-			if(i == "UserCommand") {
+
+		for (auto& i: sl) {
+			if (i == "UserCommand")
 				supportFlags |= SUPPORTS_USERCOMMAND;
-			} else if(i == "NoGetINFO") {
+			else if (i == "NoGetINFO")
 				supportFlags |= SUPPORTS_NOGETINFO;
-			} else if(i == "UserIP2") {
+			else if (i == "UserIP2") // note: not used anywhere, $UserIP can be both v1 and v2
 				supportFlags |= SUPPORTS_USERIP2;
-			} else if (i == "TLS") {
+			else if (i == "TTHS")
+				supportFlags |= SUPPORTS_TTHS;
+			else if (i == "TLS")
 				supportFlags |= SUPPORTS_TLS;
-			}
 		}
-	} else if(cmd == "$UserCommand") {
+
+	} else if (cmd == "$UserCommand") {
+		// we dont want this or hub didnt state support for this
+		if (!SETTING(HUB_USER_COMMANDS) || !(supportFlags & SUPPORTS_USERCOMMAND))
+			return;
+
 		string::size_type i = 0;
 		string::size_type j = param.find(' ');
 		if(j == string::npos)
@@ -570,11 +690,16 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 
 			if(CryptoManager::getInstance()->isExtended(lock)) {
 				StringList feat;
-				feat.push_back("UserCommand");
+
+				if (SETTING(HUB_USER_COMMANDS)) // dont waste hub resources
+					feat.push_back("UserCommand");
+
 				feat.push_back("NoGetINFO");
 				feat.push_back("NoHello");
 				feat.push_back("UserIP2");
+				feat.push_back("BotList");
 				feat.push_back("TTHSearch");
+				feat.push_back("TTHS"); // https://www.te-home.net/?do=work&id=verlihub&page=nmdc#tths
 				feat.push_back("ZPipe0");
 
 				if (CryptoManager::getInstance()->TLSOk())
@@ -674,6 +799,7 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 
 			updated(v);
 		}
+
 	} else if(cmd == "$OpList") {
 		if(!param.empty()) {
 			OnlineUserList v;
@@ -697,6 +823,33 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 			// updated when they log in (they'll be counted as registered first...)
 			myInfo(false);
 		}
+
+	} else if (cmd == "$BotList") { // botlist extension
+		if (param.empty())
+			return;
+
+		OnlineUserList v;
+		StringTokenizer<string> t(param, "$$");
+		StringList& sl = t.getTokens();
+
+		for (auto& it: sl) {
+			if (it.empty())
+				continue;
+
+			OnlineUser& ou = getUser(it);
+			ou.getIdentity().setBot(true);
+
+			if (ou.getUser() == getMyIdentity().getUser()) {
+				setMyIdentity(ou.getIdentity());
+			}
+
+			v.push_back(&ou);
+		}
+
+		updated(v);
+		updateCounts(false);
+		myInfo(false);
+
 	} else if(cmd == "$To:") {
 		string::size_type i = param.find("From:");
 		if(i == string::npos)
@@ -867,20 +1020,35 @@ void NmdcHub::myInfo(bool alwaysSend) {
 
 void NmdcHub::search(int aSizeType, int64_t aSize, int aFileType, const string& aString, const string&, const StringList&) {
 	checkstate();
+
+	if ((aFileType == SearchManager::TYPE_TTH) && (supportFlags & SUPPORTS_TTHS)) { // tths extension
+		if (aString.size() != 39) // validate tth length
+			return;
+
+		if (ClientManager::getInstance()->isActive())
+			send("$SA " + aString + ' ' + localIp + ':' + SearchManager::getInstance()->getPort() + '|');
+		else
+			send("$SP " + aString + ' ' + fromUtf8(getMyNick()) + '|');
+
+		return;
+	}
+
 	char c1 = (aSizeType == SearchManager::SIZE_DONTCARE) ? 'F' : 'T';
 	char c2 = (aSizeType == SearchManager::SIZE_ATLEAST) ? 'F' : 'T';
 	string tmp = ((aFileType == SearchManager::TYPE_TTH) ? "TTH:" + aString : fromUtf8(escape(aString)));
 	string::size_type i;
-	while((i = tmp.find(' ')) != string::npos) {
+
+	while ((i = tmp.find(' ')) != string::npos)
 		tmp[i] = '$';
-	}
+
 	string tmp2;
-	if(ClientManager::getInstance()->isActive()) {
+
+	if (ClientManager::getInstance()->isActive())
 		tmp2 = localIp + ':' + SearchManager::getInstance()->getPort();
-	} else {
+	else
 		tmp2 = "Hub:" + fromUtf8(getMyNick());
-	}
-	send("$Search " + tmp2 + ' ' + c1 + '?' + c2 + '?' + Util::toString(aSize) + '?' + Util::toString(aFileType+1) + '?' + tmp + '|');
+
+	send("$Search " + tmp2 + ' ' + c1 + '?' + c2 + '?' + Util::toString(aSize) + '?' + Util::toString(aFileType + 1) + '?' + tmp + '|');
 }
 
 string NmdcHub::validateMessage(string tmp, bool reverse) {

@@ -1,3 +1,8 @@
+-- 0.872 20##-##-## --
+* Add support for TTHS NMDC extension to save traffic on both sides with short TTH searches, widely supported by Verlihub (RoLex)
+* Add support for BotList NMDC extension, widely supported by Verlihub (RoLex)
+* Don't waste our and NMDC hub resources when we don't want user commands (RoLex)
+
 -- 0.871 2022-04-01 --
 * Update OpenSSL to version 1.1.1n
 * Offer the current testing release to a random subset of users at start (emtee)
