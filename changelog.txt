@@ -1,4 +1,7 @@
--- 0.871 20##-##-## --
+-- 0.871 2022-04-01 --
+* Update OpenSSL to version 1.1.1n
+* Offer the current testing release to a random subset of users at start (emtee)
+* [L#1965620] Restore TLS connections to certain servers with multiple hostnames (fix adapted from AirDC++) (emtee)
 * [LB#841189] [LQ#698901] Add support for secure NMDC client to hub connections, port defaults to 411, requires nmdcs:// in URL (RoLex)
 * Add support for secure hub address when available in public hublists (RoLex)
 * Add support for secure NMDC client to client connections, requires successful TLS configuration on our side and specified TLS flag in remote user $MyINFO (RoLex)

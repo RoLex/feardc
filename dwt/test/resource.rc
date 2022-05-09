@@ -29,7 +29,7 @@ BEGIN
             VALUE "FileDescription", "Test"
             VALUE "FileVersion", "1, 0, 0, 0"
             VALUE "InternalName", "Test"
-            VALUE "LegalCopyright", "Copyright 2001-2021 Jacek Sieka"
+            VALUE "LegalCopyright", "Copyright 2001-2022 Jacek Sieka"
             VALUE "OriginalFilename", "test.exe"
             VALUE "ProductName", "Test"
             VALUE "ProductVersion", "1, 0, 0, 0"

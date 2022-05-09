@@ -1,5 +1,5 @@
 DC++
-Copyright (C) 2001-2021 Jacek Sieka, arnetheduck at gmail dot com
+Copyright (C) 2001-2022 Jacek Sieka, arnetheduck at gmail dot com
 
 This program is licensed under GPL-2 with the notable exception
 that you may compile and link it with OpenSSL (www.openssl.org) 

@@ -1,7 +1,7 @@
 /*
  DC++ Widget Toolkit
 
- Copyright (c) 2007-2021, Jacek Sieka
+ Copyright (c) 2007-2022, Jacek Sieka
 
  SmartWin++
 

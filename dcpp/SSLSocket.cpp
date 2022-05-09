@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2021 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,11 +28,11 @@
 
 namespace dcpp {
 
-SSLSocket::SSLSocket(CryptoManager::SSLContext context, bool allowUntrusted, const string& expKP) : SSLSocket(context) {
+SSLSocket::SSLSocket(CryptoManager::SSLContext context, bool allowUntrusted, const string& expKP, const string& hostName_) : SSLSocket(context, hostName_) {
 	verifyData.reset(new CryptoManager::SSLVerifyData(allowUntrusted, expKP));
 }
 
-SSLSocket::SSLSocket(CryptoManager::SSLContext context) : Socket(TYPE_TCP), ctx(NULL), ssl(NULL), verifyData(nullptr) {
+SSLSocket::SSLSocket(CryptoManager::SSLContext context, const string& hostName_) : Socket(TYPE_TCP), ctx(NULL), ssl(NULL), verifyData(nullptr), hostName(hostName_) {
 	ctx = CryptoManager::getInstance()->getSSLContext(context);
 }
 
@@ -54,6 +54,14 @@ bool SSLSocket::waitConnected(uint32_t millis) {
 		if(!verifyData) {
 			SSL_set_verify(ssl, SSL_VERIFY_NONE, NULL);
 		} else SSL_set_ex_data(ssl, CryptoManager::idxVerifyData, verifyData.get());
+
+		if (!hostName.empty()) {
+			// Set the hostname for certain servers that have more than one hostname; in this case the client has to tell 
+			// the server the exact hostname it is trying to connect to, so that the server can provide the right SSL certificate.
+			// See https://github.com/openssl/openssl/issues/7147
+			
+			SSL_set_tlsext_host_name(ssl, hostName.c_str());
+		}
 
 		checkSSL(SSL_set_fd(ssl, getSock()));
 	}

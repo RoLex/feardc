@@ -79,7 +79,7 @@ gcc_link_flags = {
         '-g', '-Wl,--no-undefined,--nxcompat,--dynamicbase', '-time'
     ],
     'debug': [],
-    'release': ['-O3']
+    'release': ['-O3', '-static']
 }
 
 msvc_link_flags = {

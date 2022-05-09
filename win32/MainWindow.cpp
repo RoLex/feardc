@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2021 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1466,20 +1466,32 @@ void MainWindow::completeVersionUpdate(bool success, const string& result) {
 
 		string url = Text::fromT(links.homepage);
 
-		if(xml.findChild("URL")) {
-			url = xml.getChildData();
-		}
-
-		xml.resetCurrentChild();
 		if(xml.findChild("Version")) {
 			auto remoteVersion = Util::toDouble(xml.getChildData());
+			auto newStable = remoteVersion > VERSIONFLOAT;
 
-			if(remoteVersion > VERSIONFLOAT) {
+			bool newTesting = false;
+			if ((SETTING(TESTING_STATUS) != SettingsManager::TESTING_DISABLED) && !newStable && (GET_TIME() % (60 * 60) < 5 * 60)) {
+				// when available, we offer a testing release to a random subset of users; 
+				// for those who is using the latest stable version and did not opt-out of displaying testing related info
+				// plus has some luck so the current time is in the first 5 minutes of the current hour.
 				xml.resetCurrentChild();
-				if(xml.findChild("Title")) {
+				if(xml.findChild("TestingVersion")) {
+					auto remoteTestingVersion = Util::toDouble(xml.getChildData());
+					newTesting = remoteTestingVersion > VERSIONFLOAT;
+				}
+			}
+
+			if(newStable || newTesting) {
+				xml.resetCurrentChild();
+				if(xml.findChild(newTesting ? "TestingURL" : "URL")) {
+					url = xml.getChildData();
+				}
+				xml.resetCurrentChild();
+				if(xml.findChild(newTesting ? "TestingTitle" : "Title")) {
 					const string& title = xml.getChildData();
 					xml.resetCurrentChild();
-					if(xml.findChild("Message")) {
+					if(xml.findChild(newTesting ? "TestingMessage" : "Message")) {
 						if(url.empty()) {
 							const string& msg = xml.getChildData();
 							dwt::MessageBox(this).show(Text::toT(msg), Text::toT(title));
@@ -1734,7 +1746,7 @@ void MainWindow::parseCommandLine(const tstring& cmdLine) {
 	) {
 		WinUtil::parseLink(cmdLine.substr(i), false);
 
-	} else if((i = cmdLine.find(_T("dcext:"))) != tstring::npos) {
+	} else if ((i = cmdLine.find(_T("dcext:"))) != tstring::npos) {
 		auto path = Text::fromT(cmdLine.substr(i + 6));
 		Util::sanitizeUrl(path);
 		PluginInfoDlg(this, path).run();

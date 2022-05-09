@@ -1,6 +1,6 @@
 DC++ Widget Toolkit
 
-Copyright (c) 2007-2021, Jacek Sieka
+Copyright (c) 2007-2022, Jacek Sieka
 
 Parts of DWT are based on SmartWin++
 Copyright (c) 2005 Thomas Hansen

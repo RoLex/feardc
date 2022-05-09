@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2021 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,7 +46,7 @@ public:
 		CT_HUB = 32,
 		CT_HIDDEN = 64
 	};
-	
+
 	enum StatusFlags {
 		NORMAL		= 0x01,
 		//AWAY		= 0x02,

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2021 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -442,6 +442,7 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 		if(j+1 >= param.size()) {
 			return;
 		}
+
 		string port = param.substr(j + 1);
 		bool secure = false;
 
@@ -454,7 +455,6 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 
 		// For simplicity, we make the assumption that users on a hub have the same character encoding
 		ConnectionManager::getInstance()->nmdcConnect(server, port, getMyNick(), getHubUrl(), getEncoding(), secure);
-
 	} else if(cmd == "$RevConnectToMe") {
 		if(state != STATE_NORMAL) {
 			return;

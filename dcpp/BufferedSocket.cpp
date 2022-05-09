@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2021 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -94,7 +94,7 @@ void BufferedSocket::setOptions() {
 uint16_t BufferedSocket::accept(const Socket& srv, bool secure, bool allowUntrusted, const string& expKP) {
 	dcdebug("BufferedSocket::accept() %p\n", (void*)this);
 
-	unique_ptr<Socket> s(secure ? new SSLSocket(CryptoManager::SSL_SERVER, allowUntrusted, expKP) : new Socket(Socket::TYPE_TCP));
+	unique_ptr<Socket> s(secure ? new SSLSocket(CryptoManager::SSL_SERVER, allowUntrusted, expKP, Util::emptyString) : new Socket(Socket::TYPE_TCP));
 
 	auto ret = s->accept(srv);
 
@@ -108,12 +108,12 @@ uint16_t BufferedSocket::accept(const Socket& srv, bool secure, bool allowUntrus
 }
 
 void BufferedSocket::connect(const string& aAddress, const string& aPort, bool secure, bool allowUntrusted, bool proxy, const string& expKP) {
-	connect(aAddress, aPort, Util::emptyString, NAT_NONE, secure, allowUntrusted, proxy, expKP);
+	connect(aAddress, aPort, Util::emptyString, NAT_NONE, secure, allowUntrusted, proxy, expKP, true);
 }
 
-void BufferedSocket::connect(const string& aAddress, const string& aPort, const string& localPort, NatRoles natRole, bool secure, bool allowUntrusted, bool proxy, const string& expKP) {
+void BufferedSocket::connect(const string& aAddress, const string& aPort, const string& localPort, NatRoles natRole, bool secure, bool allowUntrusted, bool proxy, const string& expKP, bool isURL) {
 	dcdebug("BufferedSocket::connect() %p\n", (void*)this);
-	unique_ptr<Socket> s(secure ? new SSLSocket(natRole == NAT_SERVER ? CryptoManager::SSL_SERVER : CryptoManager::SSL_CLIENT, allowUntrusted, expKP) : new Socket(Socket::TYPE_TCP));
+	unique_ptr<Socket> s(secure ? new SSLSocket(natRole == NAT_SERVER ? CryptoManager::SSL_SERVER : CryptoManager::SSL_CLIENT, allowUntrusted, expKP, (isURL ? aAddress : Util::emptyString)) : new Socket(Socket::TYPE_TCP));
 
 	s->setLocalIp4(CONNSETTING(BIND_ADDRESS));
 	s->setLocalIp6(CONNSETTING(BIND_ADDRESS6));
