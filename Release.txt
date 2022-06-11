@@ -66,7 +66,9 @@ Tag the repository according to the version number. Example::
 6) Distro build (in 2 steps)
 ----------------------------
 
-Ensure your repo is clean (no ``.sconsign.dblite`` file; no ``build`` directory), then:
+Ensure your repo is clean (no ``.sconsign.dblite`` file; no ``build`` directory) and
+also that all the files required but cannot be added to the repo are all present 
+(e.g. HTMLHelp includes and libs) then:
 
 - Build the x64 version::
 
@@ -101,7 +103,7 @@ The ``build/distro`` directory should contain 4 files; check their contents:
 - Upload these 4 files to the sourceforge project, with the method of your choice (I prefer via FTP).
 
 - Make a pass on their details once they are uploaded to indicate what they are, targeted
-  platforms, etc. Also mark the installer as the preferred download on Windows.
+  platforms, etc.
 
 
 9) Update the web site
@@ -121,14 +123,24 @@ Update launchpad bugs from "Fix Committed" to "Fix Released", either by hand or 
 ``scripts/commited_released.py`` script.
 
 
-11) Testing -> Stable status
+11) Update version.xml
+----------------------
+
+Add / uncomment the <Testingxx> parts of the ``version.xml`` file stored by the web site to
+start offering the testing release for a small subset of the userbase.
+
+
+12) Testing -> Stable status
 ----------------------------
 
 After some time (usually a week or two), the testing version can be considered stable.
 
 - Update the web site - ``download.html`` and ``index.html`` pages.
 
-- Update the ``version.xml`` file stored by the web site.
+- Update the ``version.xml`` file stored by the web site with the new stable version number.
+  Also remove / uncomment the <Testingxx> parts of the file until / unless there's a new version
+  marked as ``Testing``.
 
+- Mark the new stable installer as the preferred download on Windows.
 
 vim: set filetype=rst:

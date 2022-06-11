@@ -18,7 +18,7 @@ if dev.is_win32():
     env.Append(CPPPATH=['#/dwt/include'])
     env.Append(LIBS=[
         'comctl32', 'comdlg32', 'oleaut32', 'shlwapi', 'uuid', 'uxtheme',
-        'winmm', 'wtsapi32'
+        'winmm', 'wtsapi32', 'dwmapi'
     ])
 
 if 'HAVE_HTMLHELP_H' in env['CPPDEFINES']:

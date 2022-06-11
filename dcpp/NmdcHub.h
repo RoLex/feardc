@@ -3,7 +3,7 @@
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -12,8 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #ifndef DCPLUSPLUS_DCPP_NMDC_HUB_H
@@ -36,17 +35,30 @@ using std::list;
 class NmdcHub : public Client, private Flags
 {
 public:
+	enum SupportFlags {
+		SUPPORTS_USERCOMMAND = 0x01,
+		SUPPORTS_NOGETINFO = 0x02,
+		SUPPORTS_USERIP2 = 0x04,
+		SUPPORTS_TTHS = 0x08,
+		SUPPORTS_TLS = 0x10,
+		SUPPORTS_BOTLIST = 0x20,
+		SUPPORTS_HUBTOPIC = 0x40,
+		SUPPORTS_MCTO = 0x80
+	};
+
 	using Client::send;
 	using Client::connect;
 
 	virtual void connect(const OnlineUser& aUser, const string&, ConnectionType);
 
 	virtual void hubMessage(const string& aMessage, bool /*thirdPerson*/ = false);
+	virtual void hubMCTo(const string& aNick, const string& aMessage);
 	virtual void privateMessage(const OnlineUser& aUser, const string& aMessage, bool /*thirdPerson*/ = false);
 	virtual void sendUserCmd(const UserCommand& command, const ParamMap& params);
 	virtual void search(int aSizeType, int64_t aSize, int aFileType, const string& aString, const string& aToken, const StringList& aExtList);
 	virtual void password(const string& aPass) { send("$MyPass " + fromUtf8(aPass) + "|"); }
 	virtual void infoImpl() { myInfo(false); }
+	virtual bool haveSupports(int flag) { return (supportFlags & flag); }
 
 	virtual size_t getUserCount() const { Lock l(cs); return users.size(); }
 	virtual int64_t getAvailable() const;
@@ -61,13 +73,6 @@ public:
 	
 private:
 	friend class ClientManager;
-	enum SupportFlags {
-		SUPPORTS_USERCOMMAND = 0x01,
-		SUPPORTS_NOGETINFO = 0x02,
-		SUPPORTS_USERIP2 = 0x04,
-		SUPPORTS_TTHS = 0x08,
-		SUPPORTS_TLS = 0x10
-	};
 
 	mutable CriticalSection cs;
 

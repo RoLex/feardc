@@ -3,7 +3,7 @@
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -12,8 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include "stdinc.h"
@@ -155,6 +154,10 @@ CryptoManager::~CryptoManager() {
 	ERR_free_strings(); 
 	EVP_cleanup(); 
 	CRYPTO_cleanup_all_ex_data();
+}
+
+string CryptoManager::keyprintToString(const ByteVector& kp) noexcept {
+	return "SHA256/" + Encoder::toBase32(&kp[0], kp.size());
 }
 
 bool CryptoManager::TLSOk() const noexcept {
@@ -597,7 +600,7 @@ int CryptoManager::verify_callback(int preverify_ok, X509_STORE_CTX *ctx) {
 			return allowUntrusted ? 1 : 0;
 
 		ByteVector kp = ssl::X509_digest(cert, EVP_sha256());
-		string expected_keyp = "SHA256/" + Encoder::toBase32(&kp[0], kp.size());
+		string expected_keyp = keyprintToString(kp);
 
 		// Do a full string comparison to avoid potential false positives caused by invalid inputs
 		if(keyp.compare(expected_keyp) == 0) {

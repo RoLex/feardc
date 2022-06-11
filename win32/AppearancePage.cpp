@@ -3,7 +3,7 @@
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -12,8 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include "stdafx.h"
@@ -45,6 +44,8 @@ PropPage::ListItem AppearancePage::listItems[] = {
 	{ SettingsManager::FAV_SHOW_JOINS, N_("Only show joins / parts for favorite users"), IDH_SETTINGS_APPEARANCE_FAV_SHOW_JOINS },
 	{ SettingsManager::SORT_FAVUSERS_FIRST, N_("Sort favorite users first"), IDH_SETTINGS_APPEARANCE_SORT_FAVUSERS_FIRST },
 	{ SettingsManager::GET_USER_COUNTRY, N_("Guess user country from IP"), IDH_SETTINGS_APPEARANCE_GET_USER_COUNTRY },
+	{ SettingsManager::SHOW_USER_IP, N_("Show user IP in chat"), IDH_SETTINGS_APPEARANCE_SHOW_USER_IP },
+	{ SettingsManager::SHOW_USER_COUNTRY, N_("Show user country in chat"), IDH_SETTINGS_APPEARANCE_SHOW_USER_COUNTRY },
 	{ SettingsManager::GEO_CITY, N_("City-level geolocation database (allows parameters such as %[city])"), IDH_SETTINGS_APPEARANCE_GEO_CITY },
 	{ SettingsManager::GEO_REGION, N_("Region name geolocation database (allows %[region])"), IDH_SETTINGS_APPEARANCE_GEO_REGION },
 	{ 0, 0 }

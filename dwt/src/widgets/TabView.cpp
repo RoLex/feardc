@@ -39,7 +39,6 @@
 #include <dwt/widgets/ToolTip.h>
 #include <dwt/WidgetCreator.h>
 #include <dwt/util/StringUtils.h>
-#include <dwt/util/win32/Version.h>
 #include <dwt/DWTException.h>
 #include <dwt/resources/Brush.h>
 #include <dwt/Texts.h>
@@ -50,7 +49,7 @@ const TCHAR TabView::windowClass[] = WC_TABCONTROL;
 
 TabView::Seed::Seed(unsigned widthConfig_, bool toggleActive_, bool ctrlTab_) :
 BaseType::Seed(WS_CHILD | WS_CLIPCHILDREN | WS_CLIPSIBLINGS |
-	TCS_FOCUSNEVER | TCS_HOTTRACK | TCS_MULTILINE | TCS_OWNERDRAWFIXED | TCS_RAGGEDRIGHT | TCS_TOOLTIPS),
+	TCS_FOCUSNEVER | TCS_HOTTRACK | TCS_MULTILINE | TCS_OWNERDRAWFIXED | TCS_RAGGEDRIGHT | TCS_TOOLTIPS), // TCS_BOTTOM
 tabStyle(WinDefault),
 font(0),
 widthConfig(widthConfig_),
@@ -180,7 +179,7 @@ void TabView::create(const Seed & cs) {
 
 		closeIcon = cs.closeIcon;
 
-		if(cs.tabStyle == Seed::WinBrowser && util::win32::ensureVersion(util::win32::VISTA)) {
+		if(cs.tabStyle == Seed::WinBrowser) {
 			theme.load(std::wstring(L"BrowserTab::") + std::wstring(VSCLASS_TAB), this);
 			if(!theme)
 				theme.load(VSCLASS_TAB, this, false);

@@ -116,7 +116,7 @@ const char GeoIP_country_code[256][3] = { "--","AP","EU","AD","AE","AF","AG","AI
 	"TZ","UA","UG","UM","US","UY","UZ","VA","VC","VE",
 	"VG","VI","VN","VU","WF","WS","YE","YT","RS","ZA",
 	"ZM","ME","ZW","A1","A2","O1","AX","GG","IM","JE",
-  "BL","MF", "BQ", "SS", "O1" };
+  "BL","MF", "BQ", "SS", "O1" }; // todo: XK - Kosovo
 
 static const unsigned num_GeoIP_countries = (unsigned)(sizeof(GeoIP_country_code)/sizeof(GeoIP_country_code[0]));
 

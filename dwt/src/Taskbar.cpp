@@ -33,35 +33,11 @@
 
 #include <dwmapi.h>
 
-#include <dwt/LibraryLoader.h>
 #include <dwt/util/check.h>
-#include <dwt/util/win32/Version.h>
 #include <dwt/widgets/Container.h>
 #include <dwt/widgets/Window.h>
 
-/* the following messages are only defined for Win 7; we can use them as everything we do wrt
- * taskbars is dynamic and depends on the Win version. */
-#if(_WIN32_WINNT < 0x0601)
-#define WM_DWMSENDICONICTHUMBNAIL 0x0323
-#define WM_DWMSENDICONICLIVEPREVIEWBITMAP 0x0326
-#endif
-
 namespace dwt {
-
-typedef HRESULT (WINAPI *t_DwmInvalidateIconicBitmaps)(HWND);
-static t_DwmInvalidateIconicBitmaps DwmInvalidateIconicBitmaps = 0;
-
-typedef HRESULT (WINAPI *t_DwmSetIconicLivePreviewBitmap)(HWND, HBITMAP, POINT*, DWORD);
-static t_DwmSetIconicLivePreviewBitmap DwmSetIconicLivePreviewBitmap = 0;
-
-typedef HRESULT (WINAPI *t_DwmSetIconicThumbnail)(HWND, HBITMAP, DWORD);
-static t_DwmSetIconicThumbnail DwmSetIconicThumbnail = 0;
-
-typedef HRESULT (WINAPI *t_DwmSetWindowAttribute)(HWND, DWORD, LPCVOID, DWORD);
-static t_DwmSetWindowAttribute DwmSetWindowAttribute = 0;
-
-typedef BOOL (WINAPI *t_ChangeWindowMessageFilterEx)(HWND, UINT, DWORD, void*);
-static t_ChangeWindowMessageFilterEx ChangeWindowMessageFilterEx = 0;
 
 Taskbar::Taskbar() :
 taskbar(0),
@@ -75,47 +51,26 @@ Taskbar::~Taskbar() {
 }
 
 void Taskbar::initTaskbar(WindowPtr window_) {
-	if(!util::win32::ensureVersion(util::win32::SEVEN))
-		return;
+	window = window_;
+	dwtassert(window, "Taskbar: no widget set");
 
-	static LibraryLoader lib(_T("dwmapi"), true);
-	if(lib.loaded()) {
-
-#define get(name) if(!name) { if(!(name = reinterpret_cast<t_##name>(lib.getProcAddress(_T(#name))))) { return; } }
-		get(DwmInvalidateIconicBitmaps);
-		get(DwmSetIconicLivePreviewBitmap);
-		get(DwmSetIconicThumbnail);
-		get(DwmSetWindowAttribute);
-#undef get
-
-		if(!ChangeWindowMessageFilterEx) {
-			LibraryLoader lib_user32(_T("user32"));
-			ChangeWindowMessageFilterEx = reinterpret_cast<t_ChangeWindowMessageFilterEx>(
-				lib_user32.getProcAddress(_T("ChangeWindowMessageFilterEx")));
-			// ignore failures, this isn't a vital call to have.
-		}
-
-		window = window_;
-		dwtassert(window, "Taskbar: no widget set");
-
-		/* init the ITaskbarList3 COM pointer. MSDN recommends waiting for the
-		"TaskbarButtonCreated" message, but neither MFC nor Win SDK samples do that, so we don't
-		either. greatly simplifies the logic of this interface. */
+	/* init the ITaskbarList3 COM pointer. MSDN recommends waiting for the
+	"TaskbarButtonCreated" message, but neither MFC nor Win SDK samples do that, so we don't
+	either. greatly simplifies the logic of this interface. */
 #ifdef __GNUC__
-		/// @todo remove when GCC knows about ITaskbarList
-		CLSID CLSID_TaskbarList;
-		OLECHAR tbl[] = L"{56FDF344-FD6D-11d0-958A-006097C9A090}";
-		CLSIDFromString(tbl, &CLSID_TaskbarList);
-		IID IID_ITaskbarList;
-		OLECHAR itbl[] = L"{56FDF342-FD6D-11d0-958A-006097C9A090}";
-		CLSIDFromString(itbl, &IID_ITaskbarList);
+	/// @todo remove when GCC knows about ITaskbarList
+	CLSID CLSID_TaskbarList;
+	OLECHAR tbl[] = L"{56FDF344-FD6D-11d0-958A-006097C9A090}";
+	CLSIDFromString(tbl, &CLSID_TaskbarList);
+	IID IID_ITaskbarList;
+	OLECHAR itbl[] = L"{56FDF342-FD6D-11d0-958A-006097C9A090}";
+	CLSIDFromString(itbl, &IID_ITaskbarList);
 #endif
-		if(::CoCreateInstance(CLSID_TaskbarList, 0, CLSCTX_INPROC_SERVER, IID_ITaskbarList,
-			reinterpret_cast<LPVOID*>(&taskbar)) != S_OK) { taskbar = 0; }
-		if(taskbar && taskbar->HrInit() != S_OK) {
-				taskbar->Release();
-				taskbar = 0;
-		}
+	if(::CoCreateInstance(CLSID_TaskbarList, 0, CLSCTX_INPROC_SERVER, IID_ITaskbarList,
+		reinterpret_cast<LPVOID*>(&taskbar)) != S_OK) { taskbar = 0; }
+	if(taskbar && taskbar->HrInit() != S_OK) {
+			taskbar->Release();
+			taskbar = 0;
 	}
 }
 
@@ -151,14 +106,12 @@ void Taskbar::addToTaskbar(ContainerPtr tab) {
 
 	/* call ChangeWindowMessageFilterEx on the 2 messages we use to dispatch bitmaps to the
 	destktop manager to prevent blockings because of different privilege levels. */
-	if(ChangeWindowMessageFilterEx) {
-		ChangeWindowMessageFilterEx(proxy->handle(), WM_DWMSENDICONICTHUMBNAIL, 1/*MSGFLT_ALLOW*/, 0);
-		ChangeWindowMessageFilterEx(proxy->handle(), WM_DWMSENDICONICLIVEPREVIEWBITMAP, 1/*MSGFLT_ALLOW*/, 0);
-	}
+	::ChangeWindowMessageFilterEx(proxy->handle(), WM_DWMSENDICONICTHUMBNAIL, 1/*MSGFLT_ALLOW*/, 0);
+	::ChangeWindowMessageFilterEx(proxy->handle(), WM_DWMSENDICONICLIVEPREVIEWBITMAP, 1/*MSGFLT_ALLOW*/, 0);
 
 	// keep the proxy window in sync with the actual tab window.
 	tab->onTextChanging([proxy](const tstring& text) { proxy->setText(text); });
-	tab->onSized([proxy](const SizedEvent&) { DwmInvalidateIconicBitmaps(proxy->handle()); });
+	tab->onSized([proxy](const SizedEvent&) { ::DwmInvalidateIconicBitmaps(proxy->handle()); });
 
 	// forward taskbar events that were sent to the proxy window to the actual tab window.
 	proxy->onActivate([this, tab](bool activate) {
@@ -182,7 +135,7 @@ void Taskbar::addToTaskbar(ContainerPtr tab) {
 		// generate a thumbnail to be displayed in the taskbar.
 		BitmapPtr bitmap = getBitmap(tab, lParam);
 		if(bitmap) {
-			DwmSetIconicThumbnail(proxy->handle(), bitmap->handle(), 0);
+			::DwmSetIconicThumbnail(proxy->handle(), bitmap->handle(), 0);
 		}
 		return 0;
 	}, Message(WM_DWMSENDICONICTHUMBNAIL));
@@ -196,15 +149,15 @@ void Taskbar::addToTaskbar(ContainerPtr tab) {
 			MENUBARINFO info = { sizeof(MENUBARINFO) };
 			if(::GetMenuBarInfo(window->handle(), OBJID_MENU, 0, &info))
 				offset.y += Rectangle(info.rcBar).height();
-			DwmSetIconicLivePreviewBitmap(proxy->handle(), bitmap->handle(), &offset, 0);
+			::DwmSetIconicLivePreviewBitmap(proxy->handle(), bitmap->handle(), &offset, 0);
 		}
 		return 0;
 	}, Message(WM_DWMSENDICONICLIVEPREVIEWBITMAP));
 
 	// indicate to the window manager that it should always use the bitmaps we provide.
 	BOOL attrib = TRUE;
-	DwmSetWindowAttribute(proxy->handle(), DWMWA_FORCE_ICONIC_REPRESENTATION, &attrib, sizeof(attrib));
-	DwmSetWindowAttribute(proxy->handle(), DWMWA_HAS_ICONIC_BITMAP, &attrib, sizeof(attrib));
+	::DwmSetWindowAttribute(proxy->handle(), DWMWA_FORCE_ICONIC_REPRESENTATION, &attrib, sizeof(attrib));
+	::DwmSetWindowAttribute(proxy->handle(), DWMWA_HAS_ICONIC_BITMAP, &attrib, sizeof(attrib));
 
 	taskbar->RegisterTab(proxy->handle(), window->handle());
 	moveOnTaskbar(tab);

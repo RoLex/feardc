@@ -1,22 +1,18 @@
 # vim: set filetype: py
 
-EnsureSConsVersion(3, 0, 0)
+EnsureSConsVersion(4, 0, 0)
 
 import os
 import sys
 
 from build_util import Dev, gen_po_name
 
-# TODO the ipa-cp-clone optimization is disabled; it causes a crash when
-# starting a DL.
-
 # TODO enable "-fdebug-types-section" when
 # <https://sourceware.org/bugzilla/show_bug.cgi?id=20645> is resolved.
 
-# TODO enable LTO once "Link-time optimization does not work well with
-# generation of debugging information. Combining -flto with -g is currently
-# experimental and expected to produce unexpected results." disappears from
-# https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html
+# TODO enable LTO once we move to a compiler based on gcc 8.2.1 or later
+# where https://www.mail-archive.com/gcc-bugs@gcc.gnu.org/msg580583.html
+# is fixed.
 
 # Disabled GCC warnings:
 #   -Wno-missing-field-initializers: Overzealous; makes sense to disable.
@@ -30,17 +26,16 @@ gcc_flags = {
         '-Wno-unknown-pragmas',
         '-Wno-unused-parameter', '-Wno-unused-value',
         '-Wno-unused-but-set-variable',
-        '-Wno-nonnull', # new gcc doesnt seem to like boost alot
-        '-fexceptions',
+        '-fexceptions'
     ],
     'debug': [],
-    'release': ['-O3', '-fno-ipa-cp-clone']
+    'release': ['-O3']
 }
 
 gcc_xxflags = {
     'common': [],
     'debug': [],
-    'release': []
+    'release': ['-std=gnu++20']
 }
 
 msvc_flags = {
@@ -156,7 +151,7 @@ opts.AddVariables(
      '- "i686-w64-mingw32-" for 32-bit MinGW builds.\n'
      '- "x86_64-w64-mingw32-" for 64-bit MinGW builds.\n'
      'May be forced to nothing via "prefix=".'),
-    EnumVariable('arch', 'Target architecture', 'x86', ['x86', 'x64', 'ia64']),
+    EnumVariable('arch', 'Target architecture', 'x86', ['x86', 'x64']),
     BoolVariable('msvcproj', 'Build MSVC project files', 'no'),
     BoolVariable(
         'distro',
@@ -224,8 +219,8 @@ if dev.is_win32():
     # Windows header defines
     # <https://msdn.microsoft.com/en-us/library/aa383745(VS.85).aspx>
     env.Append(CPPDEFINES=[
-        '_WIN32_WINNT=0x600',  # Windows Vista
-        'WINVER=0x600',  # Windows Vista
+        '_WIN32_WINNT=0x601',  # Windows 7
+        'WINVER=0x601',  # Windows 7
         '_WIN32_IE=0x600',  # Common Controls 6
 
         # other defs that influence Windows headers
@@ -251,8 +246,10 @@ if 'gcc' in env['TOOLS']:
     # Require SSE2 for e.g., significantly faster Tiger hashing
     # https://www.cryptopp.com/benchmarks.html
     # Require SSE3 for FISTTP
-    if env['arch'] in ['x86', 'x64']:
-        env.Append(CCFLAGS=['-march=nocona', '-mtune=generic'])
+    if env['arch'] == 'x86':
+        env.Append(CCFLAGS=['-march=nocona', '-mtune=generic']) # Through SSE3
+    elif env['arch'] == 'x64':
+        env.Append(CCFLAGS=['-march=native', '-mtune=generic']) # Through SSSE3
 
 if 'msvc' in env['TOOLS']:
     env['pch'] = True
@@ -274,7 +271,7 @@ if 'mingw' in env['TOOLS']:
 
     env.Append(LINKFLAGS=[
         '-static-libgcc', '-static-libstdc++', '-mthreads',
-        '-Wl,--enable-runtime-pseudo-reloc',
+        '-Wl,--enable-runtime-pseudo-reloc'
     ])
 
     if env['mode'] == 'release' or sys.platform == 'win32':
@@ -316,8 +313,6 @@ env.Append(CXXFLAGS=xxflags['common'])
 
 env.Append(LINKFLAGS=link_flags[env['mode']])
 env.Append(LINKFLAGS=link_flags['common'])
-
-env.SourceCode('.', None)
 
 import SCons.Scanner
 SWIGScanner = SCons.Scanner.ClassicCPP(
@@ -412,11 +407,6 @@ if 'gcc' in env['TOOLS'] and env['mode'] == 'debug':
         conf.env.Append(LINKFLAGS=['-Og'])
 
 env = conf.Finish()
-
-# TODO ugly! ugly! ugly! should be a test based on the GCC version.
-# this is for GCC 5, as some systems (cygwin) don't have GCC 6 yet.
-if not dev.is_win32():
-    env.Append(CXXFLAGS=['-std=gnu++14'])
 
 # TODO run config tests to determine which libs to build
 

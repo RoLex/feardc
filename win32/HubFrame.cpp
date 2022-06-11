@@ -3,7 +3,7 @@
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -12,8 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include "stdafx.h"
@@ -27,8 +26,10 @@
 #include <dcpp/ConnectivityManager.h>
 #include <dcpp/FavoriteManager.h>
 #include <dcpp/LogManager.h>
+#include <dcpp/NmdcHub.h>
 #include <dcpp/SearchManager.h>
 #include <dcpp/PluginManager.h>
+#include <dcpp/CryptoManager.h>
 #include <dcpp/User.h>
 #include <dcpp/UserMatch.h>
 #include <dcpp/version.h>
@@ -515,51 +516,50 @@ void HubFrame::enterImpl(const tstring& s) {
 		} else if(Util::stricmp(cmd.c_str(), _T("help")) == 0) {
 			bool bShowBriefCommands = !param.empty() && (Util::stricmp(param.c_str(), _T("brief")) == 0);
 
-			if(bShowBriefCommands)
-			{
-				addChat(T_("*** Keyboard commands:") + _T("\r\n") + 
-						WinUtil::commands +
-						_T(", /join <hub-ip>, /showjoins, /favshowjoins, /close, /userlist, ")
-						_T("/conn[ection], /fav[orite], /removefav[orite], /info, ")
-						_T("/pm <user> [message], /getlist <user>, /ignore <user>, /unignore <user>, ")
-						_T("/log <status, system, downloads, uploads>, /topic")
-					   );
-			}
-			else
-			{
-				addChat(T_("*** Keyboard commands:") + _T("\r\n") + 
-						WinUtil::getDescriptiveCommands()
-						+ _T("\r\n") _T("/join <hub-ip>")
-						+ _T("\r\n\t") + T_("Joins <hub-ip>. See also Open new window when using /join.")
-						+ _T("\r\n") _T("/showjoins")
-						+ _T("\r\n\t") + T_("Toggles the displaying of users joining the hub. This only takes effect for freshly-arriving users.")
-						+ _T("\r\n") _T("/favshowjoins")
-						+ _T("\r\n\t") + T_("Toggles the displaying of favorite users joining the hub. Does not require /showjoins to be enabled.")
-						+ _T("\r\n") _T("/userlist")
-						+ _T("\r\n\t") + T_("Toggles visibility of the list of users for the current hub.")
-						+ _T("\r\n") _T("/connection")
-						+ _T("\r\n") _T("/conn")
-						+ _T("\r\n\t") + T_("Displays the connectivity status information, auto detected or manually chosen connection mode, IP and ports that DC++ is currently using for connections with all users.")
-						+ _T("\r\n") _T("/favorite")
-						+ _T("\r\n") _T("/fav")
-						+ _T("\r\n\t") + T_("Adds the current hub (along with your nickname and password, if used) to the list of Favorite Hubs.")
-						+ _T("\r\n") _T("/removefavorite")
-						+ _T("\r\n") _T("/removefav")
-						+ _T("\r\n\t") + T_("Removes the current hub from the list of Favorite Hubs.")
-						+ _T("\r\n") _T("/pm <user> [message]")
-						+ _T("\r\n\t") + T_("Opens a private message window to the user, and optionally sends the message, if one was specified.")
-						+ _T("\r\n") _T("/getlist <user>")
-						+ _T("\r\n\t") + T_("Adds the user's list to the Download Queue.")
-						+ _T("\r\n") _T("/ignore <user>")
-						+ _T("\r\n\t") + T_("Adds a user matching definition (or modifies an existing one, if possible) to ignore chat messages from the specified user.")
-						+ _T("\r\n") _T("/unignore <user>")
-						+ _T("\r\n\t") + T_("Adds a user matching definition (or modifies an existing one, if possible) to stop ignoring chat messages from the specified user.")
-						+ _T("\r\n") _T("/topic")
-						+ _T("\r\n\t") + T_("Prints the current hub's topic. Useful if you want to copy the topic or it contains a link you'd like to easily open.")
+			if (bShowBriefCommands) {
+				addChat(T_("*** Keyboard commands:") + _T("\r\n") +
+					WinUtil::commands +
+					_T(", /join <hub-ip>, /showjoins, /favshowjoins, /close, /userlist, ")
+					_T("/conn[ection], /fav[orite], /removefav[orite], /info, ")
+					_T("/pm <user> [message], /mcpm <user> <message>, /getlist <user>, /ignore <user>, ")
+					_T("/unignore <user>, /log <status, system, downloads, uploads>, /topic")
+				);
 
-					);
+			} else {
+				addChat(T_("*** Keyboard commands:") + _T("\r\n") +
+					WinUtil::getDescriptiveCommands()
+					+ _T("\r\n") _T("/join <hub-ip>")
+					+ _T("\r\n\t") + T_("Joins <hub-ip>. See also Open new window when using /join.")
+					+ _T("\r\n") _T("/showjoins")
+					+ _T("\r\n\t") + T_("Toggles the displaying of users joining the hub. This only takes effect for freshly-arriving users.")
+					+ _T("\r\n") _T("/favshowjoins")
+					+ _T("\r\n\t") + T_("Toggles the displaying of favorite users joining the hub. Does not require /showjoins to be enabled.")
+					+ _T("\r\n") _T("/userlist")
+					+ _T("\r\n\t") + T_("Toggles visibility of the list of users for the current hub.")
+					+ _T("\r\n") _T("/connection")
+					+ _T("\r\n") _T("/conn")
+					+ _T("\r\n\t") + T_("Displays the connectivity status information, auto detected or manually chosen connection mode, IP and ports that DC++ is currently using for connections with all users.")
+					+ _T("\r\n") _T("/favorite")
+					+ _T("\r\n") _T("/fav")
+					+ _T("\r\n\t") + T_("Adds the current hub (along with your nickname and password, if used) to the list of Favorite Hubs.")
+					+ _T("\r\n") _T("/removefavorite")
+					+ _T("\r\n") _T("/removefav")
+					+ _T("\r\n\t") + T_("Removes the current hub from the list of Favorite Hubs.")
+					+ _T("\r\n") _T("/pm <user> [message]")
+					+ _T("\r\n\t") + T_("Opens a private message window to the user, and optionally sends the message, if one was specified.")
+					+ _T("\r\n") _T("/mcpm <user> <message>")
+					+ _T("\r\n\t") + T_("Sends a private main chat message to the user if supported by hub, NMDC only.")
+					+ _T("\r\n") _T("/getlist <user>")
+					+ _T("\r\n\t") + T_("Adds the user's list to the Download Queue.")
+					+ _T("\r\n") _T("/ignore <user>")
+					+ _T("\r\n\t") + T_("Adds a user matching definition (or modifies an existing one, if possible) to ignore chat messages from the specified user.")
+					+ _T("\r\n") _T("/unignore <user>")
+					+ _T("\r\n\t") + T_("Adds a user matching definition (or modifies an existing one, if possible) to stop ignoring chat messages from the specified user.")
+					+ _T("\r\n") _T("/topic")
+					+ _T("\r\n\t") + T_("Prints the current hub's topic. Useful if you want to copy the topic or it contains a link you'd like to easily open.")
+				);
 			}
-			
+
 		} else if(Util::stricmp(cmd.c_str(), _T("pm")) == 0) {
 			string::size_type j = param.find(_T(' '));
 			if(j != string::npos) {
@@ -576,6 +576,38 @@ void HubFrame::enterImpl(const tstring& s) {
 				UserInfo* ui = findUser(param);
 				if(ui) {
 					PrivateFrame::openWindow(getParent(), HintedUser(ui->getUser(), url), Util::emptyStringT);
+				}
+			}
+
+		} else if (Util::stricmp(cmd.c_str(), _T("mcpm")) == 0) {
+			auto nmdc = dynamic_cast<NmdcHub*>(client);
+
+			if (!nmdc) { // todo: does adc support this?
+				addStatus(T_("This command is not yet supported on ADC hubs."));
+
+			} else if (!nmdc->haveSupports(NmdcHub::SUPPORTS_MCTO)) {
+				addStatus(T_("This hub does not support MCTo extension."));
+
+			} else {
+				string::size_type j = param.find(_T(' '));
+
+				if (j == string::npos) {
+					addStatus(T_("Missing command parameters: /mcpm <user> <message>"));
+
+				} else {
+					tstring nick = param.substr(0, j);
+					tstring msg = param.substr(j + 1);
+
+					if (nick.empty() || msg.empty()) {
+						addStatus(T_("Missing command parameters: /mcpm <user> <message>"));
+
+					} else if (!findUser(nick)) {
+						addStatus(str(TF_("Specified user is not online: %1%") % nick));
+
+					} else {
+						nmdc->hubMCTo(Text::fromT(nick), Text::fromT(msg));
+						addStatus(str(TF_("Private main chat message was sent to %1%: %2%") % nick % msg));
+					}
 				}
 			}
 
@@ -635,6 +667,37 @@ void HubFrame::addedChat(const tstring& message) {
 		client->getHubIdentity().getParams(params, "hub", false);
 		params["hubURL"] = [this] { return client->getHubUrl(); };
 		client->getMyIdentity().getParams(params, "my", true);
+		LOG(LogManager::CHAT, params);
+	}
+}
+
+void HubFrame::addedChat(const ChatMessage& message) {
+	const tstring msg = Text::toT(message.message);
+
+	{
+		auto u = url;
+		WinUtil::notify(WinUtil::NOTIFICATION_MAIN_CHAT, msg, [this, u] { activateWindow(u); });
+	}
+
+	setDirty(SettingsManager::BOLD_HUB);
+
+	if (client->get(HubSettings::LogMainChat)) {
+		ParamMap params;
+		params["message"] = [&msg] { return Text::toDOS(Text::fromT(msg)); };
+		client->getHubIdentity().getParams(params, "hub", false);
+		params["hubURL"] = [this] { return client->getHubUrl(); };
+		client->getMyIdentity().getParams(params, "my", true);
+		auto ou = ClientManager::getInstance()->findOnlineUserHint(message.from->getCID(), url);
+		string extra;
+
+		if (ou && !ou->getIdentity().isBot() && ou->getIdentity().getIp().size()) {
+			extra += " | " + ou->getIdentity().getIp();
+
+			if (ou->getIdentity().getCountry().size())
+				extra += " | " + ou->getIdentity().getCountry();
+		}
+
+		params["extra"] = [extra] { return extra; };
 		LOG(LogManager::CHAT, params);
 	}
 }
@@ -753,7 +816,9 @@ void HubFrame::onPrivateMessage(const ChatMessage& message) {
 			/// @todo add formatting here (for PMs in main chat)
 			addChat(str(TF_("Private message from %1%: %2%") % getNick(message.from) % Text::toT(message.message)));
 		}
-		WinUtil::mainWindow->TrayPM();
+
+		if (!SETTING(SKIP_TRAY_BOT_PMS) || (!fromHub && !fromBot))
+			WinUtil::mainWindow->TrayPM();
 	}
 }
 
@@ -1092,6 +1157,13 @@ void HubFrame::on(ClientLine, Client*, const string& line, int type) noexcept {
 	}
 }
 
+void HubFrame::on(HubMCTo, Client*, const string& nick, const string& line) noexcept {
+	callAsync(
+		[this, nick, line] {
+			addChat(str(TF_("Private main chat message from %1%: %2%") % Text::toT(nick) % Text::toT(line)));
+		}
+	);
+}
 
 void HubFrame::onStatusMessage(const string& line, int flags) {
 	callAsync([=] { addStatus(Text::toT(line),
@@ -1306,7 +1378,9 @@ void HubFrame::tabMenuImpl(dwt::Menu* menu) {
 	}
 
 	menu->appendItem(T_("&Reconnect\tCtrl+R"), [this] { reconnect(); }, WinUtil::menuIcon(IDI_RECONNECT));
-	menu->appendItem(T_("Copy &address to clipboard"), [this] { handleCopyHub(); });
+	menu->appendItem(T_("Copy &address to clipboard"), [this] { handleCopyHub(false); });
+	if (client->isSecure() && client->getHubUrl().find("?kp=") == string::npos)
+		menu->appendItem(T_("Copy address with &keyprint to clipboard"), [this] { handleCopyHub(true); });
 	menu->appendItem(T_("&Search hub"), [this] { handleSearchHub(); }, WinUtil::menuIcon(IDI_SEARCH));
 	menu->appendItem(T_("&Disconnect"), [this] { disconnect(false); }, WinUtil::menuIcon(IDI_HUB_OFF));
 
@@ -1333,8 +1407,9 @@ void HubFrame::handleShowUsersClicked() {
 	statusDirty = true;
 }
 
-void HubFrame::handleCopyHub() {
-	WinUtil::setClipboard(Text::toT(url));
+void HubFrame::handleCopyHub(bool keyprinted) {
+	auto address = keyprinted ? url + "/?kp=" + CryptoManager::getInstance()->keyprintToString(client->getKeyprint()) : url;
+	WinUtil::setClipboard(Text::toT(address));
 }
 
 void HubFrame::handleSearchHub() {

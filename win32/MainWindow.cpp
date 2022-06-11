@@ -3,7 +3,7 @@
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -12,8 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include "stdafx.h"
@@ -54,6 +53,7 @@
 #include <dwt/widgets/SplitterContainer.h>
 #include <dwt/widgets/ToolBar.h>
 
+#include "ACFrame.h"
 #include "AboutDlg.h"
 #include "ADLSearchFrame.h"
 #include "CrashLogger.h"
@@ -248,9 +248,13 @@ fullSlots(false)
 			::ShowWindow(handle(), cmdShow);
 		}
 
+		handleActivate(true); //Now as it is already visible, set the proper focus for the active restored window.
+
 		if(cmdShow == SW_MINIMIZE || cmdShow == SW_SHOWMINIMIZED || cmdShow == SW_SHOWMINNOACTIVE)
 			handleMinimized();
 	});
+
+	Util::setAway(SETTING(LAST_AWAY));
 
 	if(SETTING(NICK).empty()) {
 		callAsync([this] {
@@ -356,6 +360,11 @@ void MainWindow::initMenu() {
 			[this] { SystemFrame::openWindow(getTabView()); });
 		viewIndexes[StatsFrame::id] = viewMenu->appendItem(T_("Network Statistics"),
 			[this] { StatsFrame::openWindow(getTabView()); }, WinUtil::menuIcon(IDI_NET_STATS));
+#ifdef DEBUG
+		viewIndexes[ACFrame::id] = viewMenu->appendItem(T_("About:config"),
+			[this] { ACFrame::openWindow(getTabView()); }, WinUtil::menuIcon(IDI_DCPP));
+#endif
+
 		viewMenu->appendItem(T_("Indexing progress"), [this] { handleHashProgress(); }, WinUtil::menuIcon(IDI_INDEXING));
 		viewMenu->appendSeparator();
 		viewIndexes["Menu"] = viewMenu->appendItem(T_("Menu bar\tCtrl+0"), [this] { switchMenuBar(); });
@@ -608,7 +617,10 @@ void MainWindow::initTabs() {
 	seed.toggleActive = SETTING(TOGGLE_ACTIVE_WINDOW);
 	seed.ctrlTab = true;
 	tabs = paned->addChild(seed);
-	tabs->initTaskbar(this);
+
+	if (!SETTING(DISABLE_TASKBAR_MENU))
+		tabs->initTaskbar(this);
+
 	tabs->onTitleChanged([this](const tstring &title) { handleTabsTitleChanged(title); });
 	tabs->onHelp(&WinUtil::help);
 }
@@ -2127,5 +2139,6 @@ void MainWindow::openWindow(const string& id, const WindowParams& params) {
 	compare_id(SystemFrame);
 	compare_id(StatsFrame);
 	compare_id(TextFrame);
+	compare_id(ACFrame);
 #undef compare_id
 }

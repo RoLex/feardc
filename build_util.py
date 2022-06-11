@@ -486,12 +486,11 @@ def get_win_cp(lcid):
     LOCALE_RETURN_NUMBER = 0x20000000
 
     buf = ctypes.c_int()
-    ctypes.windll.kernel32.GetLocaleInfoA(
-        lcid,
-        LOCALE_RETURN_NUMBER | LOCALE_IDEFAULTANSICODEPAGE,
-        ctypes.byref(buf),
-        6
-    )
+
+    if sys.platform == 'cygwin':
+        ctypes.cdll.kernel32.GetLocaleInfoA(lcid, LOCALE_RETURN_NUMBER | LOCALE_IDEFAULTANSICODEPAGE, ctypes.byref(buf), 6)
+    else:
+        ctypes.windll.kernel32.GetLocaleInfoA(lcid, LOCALE_RETURN_NUMBER | LOCALE_IDEFAULTANSICODEPAGE, ctypes.byref(buf), 6)
 
     if buf.value != 0:
         return 'cp' + str(buf.value)
@@ -525,31 +524,26 @@ def msvcproj_workarounds(target, source, env):
 
     import re
 
-    # include paths in MSVC projects are not expanded; expand them manually.
-    # bug: <http://scons.tigris.org/issues/show_bug.cgi?id=2382>
-    # TODO remove this when the bug is fixed in SCons.
-    contents = contents.replace('#/', env.Dir('#').abspath + '/')
-
     # clean up empty commands for non-built projects to avoid build failures.
     contents = re.sub(
-        'echo Starting SCons &amp;&amp;\s*(-c)?\s*&quot;&quot;',
-        '',
+        b'echo Starting SCons &amp;&amp;\s*(-c)?\s*&quot;&quot;',
+        b'',
         contents
     )
 
     # remove SConstruct from included files since it points nowhere anyway.
     contents = re.sub(
-        '<ItemGroup>\s*<None Include="SConstruct" />\s*</ItemGroup>',
-        '',
+        b'<ItemGroup>\s*<None Include="SConstruct" />\s*</ItemGroup>',
+        b'',
         contents
     )
 
-    # update the platform toolset to the VS 2013 one.
+    # update the platform toolset to the VS 2019 one.
     # TODO remove when SCons adds this.
     contents = contents.replace(
-        '<UseOfMfc>false</UseOfMfc>',
-        '<UseOfMfc>false</UseOfMfc>\r\n\t\t'
-        '<PlatformToolset>v130_CTP_Nov2013</PlatformToolset>'
+        b'<UseOfMfc>false</UseOfMfc>',
+        b'<UseOfMfc>false</UseOfMfc>\r\n\t\t'
+        b'<PlatformToolset>v142</PlatformToolset>'
     )
 
     f = open(str(target[0]), 'wb')

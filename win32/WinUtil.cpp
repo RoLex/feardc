@@ -3,7 +3,7 @@
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -12,8 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include "stdafx.h"
@@ -44,7 +43,6 @@
 
 #include <dwt/Clipboard.h>
 #include <dwt/DWTException.h>
-#include <dwt/LibraryLoader.h>
 #include <dwt/WidgetCreator.h>
 #include <dwt/util/GDI.h>
 #include <dwt/widgets/Grid.h>
@@ -58,6 +56,7 @@
 #include "SearchFrame.h"
 #include "MainWindow.h"
 #include "PrivateFrame.h"
+#include "ACFrame.h"
 
 #ifdef HAVE_HTMLHELP_H
 #include <htmlhelp.h>
@@ -544,9 +543,10 @@ const TCHAR
 
 const char* command_strings[] = {
 	"/refresh",
+	"/me",
+	"/slots #", 
+	"/dslots #",
 	"/search <string>",
-	"/close",
-	"Closes the current window.",
 	"/clear [lines to keep]",
 	"/dc++",
 	"/away [message]",
@@ -558,11 +558,16 @@ const char* command_strings[] = {
 	"/log <status, system, downloads, uploads>",
 	"/help",
 	"/u <url>",
-	"/f <search string>"
+	"/f <search string>",
+	"/download #",
+	"/upload #",
+	"/close",
+	"/about:config, /a:c, /ac"
 };
 
 const char* command_helps[] = {
 	N_("Manually refreshes DC++'s share list by going through the shared directories and adding new folders and files. DC++ automatically refreshes once an hour by default, and also refreshes after the list of shared directories is changed."),
+	N_("Speak as a third person."),
 	N_("Sets the current number of upload slots to the number you specify. If this is less than the current number of slots, no uploads are cancelled."),
 	N_("Sets the current number of download slots to the number you specify. If this is less than the current number of slots, no downloads are cancelled."),
 	N_("Opens a new search window with the specified search string. It does not automatically send the search."),
@@ -575,9 +580,13 @@ const char* command_helps[] = {
 	N_("Launches your default web browser to the Internet Movie Database (imdb) with the specified query."),
 	N_("Rebuilds the HashIndex.xml and HashData.dat files, removing entries to files that are no longer shared, or old hashes for files that have since changed. This runs in the main DC++ thread, so the interface will freeze until the rebuild is finished."),
 	N_("If no parameter is specified, it launches the log for the hub or private chat with the associated application in Windows. If one of the parameters is specified it opens that log file. The status log is available only in the hub frame."),
-	N_("Displays available commands. (The ones listed on this page.) Optionally, you can specify &quot;brief&quot; to have a brief listing."),
+	N_("Displays available commands. (The ones listed on this page.) Optionally, you can specify \"brief\" to have a brief listing."),
 	N_("Launches your default web browser with the given URL."),
-	N_("Highlights the last occourrence of the specified search string in the chat window.")
+	N_("Highlights the last occourrence of the specified search string in the chat window."),
+	N_("Set the download speed limit in KiBs. Zero or omitted value disables the limit."),
+	N_("Set the upload speed limit in KiBs. Zero or omitted value disables the limit."),
+	N_("Closes the current window."),
+	N_("Opens the internal settings list debugging tool window.")
 };
 
 tstring WinUtil::getDescriptiveCommands() {
@@ -595,7 +604,7 @@ tstring WinUtil::getDescriptiveCommands() {
 
 tstring
 	WinUtil::commands =
-		_T("/refresh, /me <msg>, /clear [lines to keep], /slots #, /dslots #, /search <string>, /f <string>, /dc++, /away <msg>, /back, /d <searchstring>, /g <searchstring>, /imdb <imdbquery>, /u <url>, /rebuild, /download, /upload");
+		_T("/refresh, /me <msg>, /slots #, /dslots #, /search <string>, /clear [lines to keep], /dc++, /away <msg>, /back, /d <searchstring>, /g <searchstring>, /imdb <imdbquery>, /rebuild, /log [type], /help [brief], /u <url>, /f <string>, /download [#], /upload [#], /close, /a[bout][:]c[onfig]");
 
 bool WinUtil::checkCommand(tstring& cmd, tstring& param, tstring& message, tstring& status, bool& thirdPerson) {
 	string::size_type i = cmd.find(' ');
@@ -651,16 +660,21 @@ bool WinUtil::checkCommand(tstring& cmd, tstring& param, tstring& message, tstri
 		}
 	} else if(Util::stricmp(cmd.c_str(), _T("dc++")) == 0) {
 		message = msgs[GET_TICK() % MSGS];
-	} else if(Util::stricmp(cmd.c_str(), _T("away")) == 0) {
-		if(Util::getAway() && param.empty()) {
+
+	} else if (Util::stricmp(cmd.c_str(), _T("away")) == 0) {
+		if (Util::getAway() && param.empty()) {
 			Util::setAway(false);
 			status = T_("Away mode off");
+
 		} else {
 			Util::setAway(true);
 			Util::setAwayMessage(Text::fromT(param));
 			auto awayMessage = Util::getAwayMessage();
 			status = str(TF_("Away mode on: %1%") % (awayMessage.empty() ? T_("No away message") : Text::toT(awayMessage)));
 		}
+
+		ClientManager::getInstance()->infoUpdated();
+
 	} else if(Util::stricmp(cmd.c_str(), _T("back")) == 0) {
 		Util::setAway(false);
 		status = T_("Away mode off");
@@ -698,6 +712,8 @@ bool WinUtil::checkCommand(tstring& cmd, tstring& param, tstring& message, tstri
 		auto value = Util::toInt(Text::fromT(param));
 		ThrottleManager::setSetting(ThrottleManager::getCurSetting(SettingsManager::MAX_DOWNLOAD_SPEED_MAIN), value);
 		status = value ? str(TF_("Download limit set to %1% KiB/s") % value) : T_("Download limit disabled");
+	} else if(Util::stricmp(cmd.c_str(), _T("about:config")) == 0 || Util::stricmp(cmd.c_str(), _T("ac")) == 0 || Util::stricmp(cmd.c_str(), _T("a:c")) == 0) {
+		ACFrame::openWindow(mainWindow->getTabView());
 	} else {
 		return false;
 	}

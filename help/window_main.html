@@ -1,229 +1,210 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="https://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link type="text/css" rel="stylesheet" href="office11.css"/>
-<link type="text/css" rel="stylesheet" href="style.css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="office11.css" />
+<link type="text/css" rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-	<h1>
-		<img src="DCPlusPlus.png" width="16" height="16" alt="DC++"/>
-		Main DC++ window
-	</h1>
+<h1>
+<img src="DCPlusPlus.png" width="16" height="16" alt="DC++" />
+Main DC++ window
+</h1>
 <h2>Main Menu bar (top)</h2>
-
 <dl id="filemenu" style="margin-left: 10px;">
-	<dt>File Menu</dt>
-	<dd>
-	    You can find the file input-output functions as well as the basic connection options and the settings in this menu.
-		<dl style="margin-left: 30px;">
-			<dt><img src="HubOn.ico" width="16" height="16" alt="Quick connect..."/> Quick connect...</dt>
-			<dd>
-			Allows you to connect to a hub by specifying its address. This field also handles
-			<a href="https://en.wikipedia.org/wiki/Magnet_URI_scheme" target="_blank" class="external">Magnet links</a>.
-			</dd>
-			<dt id="connectfavgroup"><img src="FavoriteHubs.ico" width="16" height="16" alt="Connect to a favorite hub group"/> Connect to a favorite hub group</dt>
-			<dd>
-			<div>Opens a dialog asking to select a favorite hub group; after pressing "OK" in that dialog, <placeholder><a href="window_hub.html">Hub</a></placeholder> windows will be opened for every hub that is part of the selected favorite hub group.</div>
-			<div>More information about the use of favorite hub groups in the help topics associated to the <placeholder><a href="dialog_fav_hub_groups.html">Favorite hub groups</a></placeholder> dialog.</div>
-			</dd>
-			<dt><img src="Reconnect.ico" width="16" height="16" alt="Reconnect"/> Reconnect</dt>
-			<dd>To reconnect (disconnect and connect again) the hub which is currently in the foreground. If the active window is not a hub, it does nothing.</dd>
-			<dt><img src="OpenFileList.ico" width="16" height="16" alt="Open file list..."/> Open file list...</dt>
-			<dd>This menu is for opening a previously downloaded filelist. It defaults to the FileLists folder inside the <a href="faq_settings_files.html">directory used to store DC++ settings files</a>.</dd>
-			<dt><img src="OpenOwnFileList.ico" width="16" height="16" alt="Open own list"/> Open own list</dt>
-			<dd>You can open and check how your own file list looks like. Useful to see what's displayed to others when they get your file list.</dd>
-			<dt>Match downloaded lists</dt>
-			<dd>This function is used to match your download queue for already downloaded file lists (they stored in the FileLists folder inside the <a href="faq_settings_files.html">directory used to store DC++ settings files</a>).</dd>
-			<dt><img src="Refresh.ico" width="16" height="16" alt="Refresh file list"/> Refresh file list</dt>
-			<dd>This will immediately rescan your shared directories for new or changed content and updates your file list.</dd>
-			<dt><img src="OpenDLDir.ico" width="16" height="16" alt="Open downloads directory"/> Open downloads directory</dt>
-			<dd>Opens your downloads folder in Windows Explorer.</dd>
-			<dt>Open crash log</dt>
-			<dd>
-			When DC++ encounters a crash, it writes a "CrashLog.txt" file. This command helps view
-			the contents of the crash log in a
-			<placeholder><a href="window_text_viewer.html">Text viewer</a></placeholder>
-			window. You're encouraged to report crash logs in the <a href="links.html">official DC++ bug tracker.</a></dd>
-			<dt><img src="Settings.ico" width="16" height="16" alt="Settings"/> Settings</dt>
-			<dd>Opens the Settings panel.</dd>
-			<dt>GeoIP database update</dt>
-			<dd>Starts downloading the latest GeoIP databases (provided they aren't already being
-			downloaded) then handles saving them at the right place.<br/>
-			Note that this operation is automatically run every 16 days.<br/>
-			<a href="https://dev.maxmind.com/geoip/legacy/geolite/" target="_blank" class="external">MaxMind's GeoIP</a>
-			databases are used by DC++ to get information about user countries.</dd>
-			<dt><img src="Plugins.ico" width="16" height="16" alt="Plugins"/> Plugins</dt>
-			<dd><p>Opens the <placeholder><a href="settings_plugins.html">Plugins</a></placeholder> configuration submenu containing the following commands:</p>
+<dt>File Menu</dt>
+<dd>
+You can find the file input-output functions as well as the basic connection options and the settings in this menu.
+<dl style="margin-left: 30px;">
+<dt><img src="HubOn.ico" width="16" height="16" alt="Quick connect..." /> Quick connect...</dt>
+<dd>
+Allows you to connect to a hub by specifying its address. This field also handles
+<a href="https://en.wikipedia.org/wiki/Magnet_URI_scheme" target="_blank" class="external">Magnet links</a>.
+</dd>
+<dt id="connectfavgroup"><img src="FavoriteHubs.ico" width="16" height="16" alt="Connect to a favorite hub group" /> Connect to a favorite hub group</dt>
+<dd>
+<div>Opens a dialog asking to select a favorite hub group; after pressing "OK" in that dialog, <placeholder><a href="window_hub.html">Hub</a></placeholder> windows will be opened for every hub that is part of the selected favorite hub group.</div>
+<div>More information about the use of favorite hub groups in the help topics associated to the <placeholder><a href="dialog_fav_hub_groups.html">Favorite hub groups</a></placeholder> dialog.</div>
+</dd>
+<dt><img src="Reconnect.ico" width="16" height="16" alt="Reconnect" /> Reconnect</dt>
+<dd>To reconnect (disconnect and connect again) the hub which is currently in the foreground. If the active window is not a hub, it does nothing.</dd>
+<dt><img src="OpenFileList.ico" width="16" height="16" alt="Open file list..." /> Open file list...</dt>
+<dd>This menu is for opening a previously downloaded filelist. It defaults to the FileLists folder inside the <a href="faq_settings_files.html">directory used to store DC++ settings files</a>.</dd>
+<dt><img src="OpenOwnFileList.ico" width="16" height="16" alt="Open own list" /> Open own list</dt>
+<dd>You can open and check how your own file list looks like. Useful to see what's displayed to others when they get your file list.</dd>
+<dt>Match downloaded lists</dt>
+<dd>This function is used to match your download queue for already downloaded file lists (they stored in the FileLists folder inside the <a href="faq_settings_files.html">directory used to store DC++ settings files</a>).</dd>
+<dt><img src="Refresh.ico" width="16" height="16" alt="Refresh file list" /> Refresh file list</dt>
+<dd>This will immediately rescan your shared directories for new or changed content and updates your file list.</dd>
+<dt><img src="OpenDLDir.ico" width="16" height="16" alt="Open downloads directory" /> Open downloads directory</dt>
+<dd>Opens your downloads folder in Windows Explorer.</dd>
+<dt>Open crash log</dt>
+<dd>
+When DC++ encounters a crash, it writes a "CrashLog.txt" file. This command helps view
+the contents of the crash log in a
+<placeholder><a href="window_text_viewer.html">Text viewer</a></placeholder>
+window. You're encouraged to report crash logs in the <a href="links.html">official DC++ bug tracker.</a></dd>
+<dt><img src="Settings.ico" width="16" height="16" alt="Settings" /> Settings</dt>
+<dd>Opens the Settings panel.</dd>
+<dt>GeoIP database update</dt>
+<dd>Starts downloading the latest GeoIP databases (provided they aren't already being
+downloaded) then handles saving them at the right place.<br />
+Note that this operation is automatically run every 16 days.<br />
+<a href="https://dev.maxmind.com/geoip/legacy/geolite/" target="_blank" class="external">MaxMind's GeoIP</a>
+databases are used by DC++ to get information about user countries.</dd>
+<dt><img src="Plugins.ico" width="16" height="16" alt="Plugins" /> Plugins</dt>
+<dd><p>Opens the <placeholder><a href="settings_plugins.html">Plugins</a></placeholder> configuration submenu containing the following commands:</p>
 			<!--#include virtual="menu_plugins.inc" -->
-			</dd>
-			<dt><img src="Exit.ico" width="16" height="16" alt="Exit"/> Exit</dt>
-			<dd>Closes DC++.</dd>
-		</dl>
-	</dd>
-	<dt id="viewmenu">View Menu</dt>
-	<dd>
-	    You can open all DC++ tabs and windows with the sub-items of this menu. Some kind of tabbed windows can have only one instance opened while you are able to open more from others. If you try to open more from a tab which can't have more than one instance, the already opened one will be focused.
-		<dl style="margin-left: 30px;">
-
-			<dt><img src="PublicHubs.ico" width="16" height="16" alt="Public Hubs"/> Public Hubs</dt>
-			<dd><div>Open the <placeholder><a href="window_public_hubs.html">Public Hubs</a></placeholder> window.</div>
-			<div>In there, you can retreive lists of available hubs and connect to them.</div></dd>
-
-			<dt><img src="FavoriteHubs.ico" width="16" height="16" alt="Favorite Hubs"/> Favorite Hubs</dt>
-			<dd><div>Open the <placeholder><a href="window_favorite_hubs.html">Favorite Hubs</a></placeholder> window.</div>
-			<div>In there, you can store and manage you favorite places in the DC network.</div></dd>
-
-			<dt><img src="Users.ico" width="16" height="16" alt="Users"/> Users</dt>
-			<dd><div>Open the <placeholder><a href="window_users.html">Users</a></placeholder> window.</div>
-			<div>You can see all the users of the connected hubs listed in there. Additionally you can manage your favorite DC users here as well as grant extra access to your share for any of them.</div></dd>
-
-			<dt><img src="Queue.ico" width="16" height="16" alt="Download Queue"/> Download Queue</dt>
-			<dd><div>Open the <placeholder><a href="window_download_queue.html">Download Queue</a></placeholder> window.</div>
-			<div>In there, you can track and manage your files being downloaded.</div></dd>
-
-			<dt><img src="FinishedDL.ico" width="16" height="16" alt="Finished Downloads"/> Finished Downloads</dt>
-			<dd><div>Open the <placeholder><a href="window_finished_downloads.html">Finished Downloads</a></placeholder> window.</div>
-			<div>It lists your downloaded files in the current session.</div></dd>
-
-			<dt><img src="FinishedUL.ico" width="16" height="16" alt="Finished Uploads"/> Finished Uploads</dt>
-			<dd><div>Open the <placeholder><a href="window_finished_uploads.html">Finished Uploads</a></placeholder> window.</div>
-			<div>It lists the files uploaded from you in the current session.</div></dd>
-
-			<dt><img src="Search.ico" width="16" height="16" alt="Search"/> Search</dt>
-			<dd><div>Open the <placeholder><a href="window_search.html">Search</a></placeholder> window.</div>
-			<div>This is the place where you can search for files to download.</div></dd>
-
-			<dt><img src="ADLSearch.ico" width="16" height="16" alt="ADL Search"/> ADL Search</dt>
-			<dd><div>Open the <placeholder><a href="window_adlsearch.html">ADL Search</a></placeholder> window.</div>
-			<div>It incorporates a tool for filtering file lists downloaded from users.</div></dd>
-
-			<dt><img src="Notepad.ico" width="16" height="16" alt="Notepad"/> Notepad</dt>
-			<dd><div>Open the <placeholder><a href="window_notepad.html">Notepad</a></placeholder> window.</div>
-			<div>In there, you can store random text. The text will be kept even if you close DC++.</div></dd>
-
-			<dt>System Log</dt>
-			<dd><div>Open the <placeholder><a href="window_system_log.html">System Log</a></placeholder> window.</div>
-			<div>It is where all the system messages of the current session are logged.</div></dd>
-
-			<dt><img src="NetStats.ico" width="16" height="16" alt="Network Statistics"/> Network Statistics</dt>
-			<dd><div>Open the <placeholder><a href="window_network_stats.html">Network Statistics</a></placeholder> window.</div>
-			<div>It displays a real-time chart of the average speed of data sent and received by DC++.</div></dd>
-
-			<dt><img src="Indexing.ico" width="16" height="16" alt="Indexing progress"/> Indexing progress</dt>
-			<dd><div>Open the <placeholder><a href="dialog_indexing_progress.html">Indexing progess</a></placeholder> dialog.</div>
-			<div>It shows you the current state of file hashing operation and how much time there is left from it.</div></dd>
-
-			<dt>Menu bar</dt>
-			<dd>
-			Toggle the permanent visibility of the main menu bar. When it is hidden, the menu bar
-			can be temporarily brought back into view with standard Windows shortcuts (Alt or F10).
-			</dd>
-
-			<dt>Toolbar</dt>
-			<dd>Enable or disable the toolbar.</dd>
-
-			<dt>Transfer view</dt>
-			<dd>Enable or disable the transfer view.</dd>
-
-			<dt>Status bar</dt>
-			<dd>Enable or disable the status bar.</dd>
-		</dl>
-	</dd>
-	<dt>Window Menu</dt>
-	<dd>
-	    You can find options here to close all instance of specific groups of tabs by one click.
-		<dl style="margin-left: 30px;">
-			<dt><img src="HubOff.ico" width="16" height="16" alt="Close disconnected hubs"/> Close disconnected hubs</dt>
-			<dd>Closes all disconnected <placeholder><a href="window_hub.html">Hub</a></placeholder> windows.</dd>
-			<dt id="closefavgroup"><img src="FavoriteHubs.ico" width="16" height="16" alt="Close all hubs of a favorite group"/> Close all hubs of a favorite group</dt>
-			<dd>
-			<div>Opens a dialog asking to select a favorite hub group; after pressing "OK" in that dialog, all opened <placeholder><a href="window_hub.html">Hub</a></placeholder> windows that are part of the selected favorite hub group will be closed.</div>
-			<div>More information about the use of favorite hub groups in the help topics associated to the <placeholder><a href="dialog_fav_hub_groups.html">Favorite hub groups</a></placeholder> dialog.</div>
-			</dd>
-			<dt id="closenotfavgroup"><img src="FavoriteHubs.ico" width="16" height="16" alt="Close hubs not in a favorite group"/> Close hubs not in a favorite group</dt>
-			<dd>
-			<div>Opens a dialog asking to select a favorite hub group; after pressing "OK" in that dialog, all opened <placeholder><a href="window_hub.html">Hub</a></placeholder> windows that are <b>not</b> part of the selected favorite hub group will be closed.</div>
-			<div>More information about the use of favorite hub groups in the help topics associated to the <placeholder><a href="dialog_fav_hub_groups.html">Favorite hub groups</a></placeholder> dialog.</div>
-			</dd>
-			<dt><img src="UserOn.ico" width="16" height="16" alt="Close all PM windows"/> Close all PM windows</dt>
-			<dd>Closes all <placeholder><a href="window_pm.html">Private Message</a></placeholder> windows regardless of their online status.</dd>
-			<dt><img src="UserOff.ico" width="16" height="16" alt="Close all offline PM windows"/> Close all offline PM windows</dt>
-			<dd>Closes all offline <placeholder><a href="window_pm.html">Private Message</a></placeholder> windows.</dd>
-			<dt><img src="Directory.ico" width="16" height="16" alt="Close all file list windows"/> Close all file list windows</dt>
-			<dd>Closes all opened file list windows. Saved file lists can be reopened by selecting "<placeholder>Open file list...</placeholder>" from the <a href="#filemenu">File menu</a>.</dd>
-			<dt><img src="Search.ico" width="16" height="16" alt="Close all search windows"/> Close all search windows</dt>
-			<dd>Closes all opened <placeholder><a href="window_search.html">Search</a></placeholder> windows.</dd>
-		</dl>
-	</dd>
-	<dt>Help Menu</dt>
-	<dd>
-	    Here you can access the built-in Help, FAQs, guides and some documentation. It also contains hotlinks to reach the different parts of the DC++ online community.
-		<dl style="margin-left: 30px;">
-			<dt><img src="Help.ico" width="16" height="16" alt="Help Contents"/> Help Contents</dt>
-			<dd>Opens the Overview page of the built-in Help.</dd>
-			<dt><img src="GetStarted.ico" width="16" height="16" alt="Get started"/> Get started</dt>
-			<dd>The best way to start here if you are new to DC++.</dd>
-			<dt><img src="Changelog.ico" width="16" height="16" alt="Change Log"/> Change Log</dt>
-			<dd>You can follow what's been changed in the different DC++ versions since the development started.</dd>
-			<dt><img src="DCPlusPlus.png" width="16" height="16" alt="About DC++"/> About DC++</dt>
-			<dd>You can see the copyrights, list of all names who ever contributed to DC++ as well as some useful statistical information about your up/download ratio. The About box also shows you the version number of the current stable release of DC++.</dd>
-			<dt><img src="Links.ico" width="16" height="16" alt="Links"/> Links</dt>
-			<dd>Web links that will open in your web browser.
-
-			<dl style="margin-left: 30px;">
-			<dt>Homepage</dt>
-			<dd>Opens the DC++ home page in your web browser.</dd>
-			<dt>Downloads</dt>
-			<dd>Opens the trusted DC++ download page in your web browser.</dd>
-			<dt>Frequently asked questions</dt>
-			<dd>Opens the DC++ FAQ page in your web browser.</dd>
-			<dt>Help center</dt>
-			<dd>Points to the DC++ support forum.</dd>
-			<dt>Discussion forum</dt>
-			<dd>Points to the DC++ discussion forum.</dd>
-			<dt>Request a feature</dt>
-			<dd>You can propose modifications or request new features here.</dd>
-			<dt>Report a bug</dt>
-			<dd>You can report problems about DC++ here.</dd>
-			<dt><img src="Donate.ico" width="16" height="16" alt="Donate (paypal)"/> Donate (paypal)</dt>
-			<dd>Found this free program useful? Then you please consider donating some money... You can do it here, through the author's Paypal account.</dd>
-			<dt>Blog</dt>
-			<dd>Opens the DC++ blog in your web browser.</dd>
-			<dt>Community news</dt>
-			<dd>Opens the DCBase portal in your web browser.</dd>
-			</dl>
-
-			</dd>
-
-		</dl>
-    </dd>
+</dd>
+<dt><img src="Exit.ico" width="16" height="16" alt="Exit" /> Exit</dt>
+<dd>Closes DC++.</dd>
 </dl>
-
+</dd>
+<dt id="viewmenu">View Menu</dt>
+<dd>
+You can open all DC++ tabs and windows with the sub-items of this menu. Some kind of tabbed windows can have only one instance opened while you are able to open more from others. If you try to open more from a tab which can't have more than one instance, the already opened one will be focused.
+<dl style="margin-left: 30px;">
+<dt><img src="PublicHubs.ico" width="16" height="16" alt="Public Hubs" /> Public Hubs</dt>
+<dd><div>Open the <placeholder><a href="window_public_hubs.html">Public Hubs</a></placeholder> window.</div>
+<div>In there, you can retreive lists of available hubs and connect to them.</div></dd>
+<dt><img src="FavoriteHubs.ico" width="16" height="16" alt="Favorite Hubs" /> Favorite Hubs</dt>
+<dd><div>Open the <placeholder><a href="window_favorite_hubs.html">Favorite Hubs</a></placeholder> window.</div>
+<div>In there, you can store and manage you favorite places in the DC network.</div></dd>
+<dt><img src="Users.ico" width="16" height="16" alt="Users" /> Users</dt>
+<dd><div>Open the <placeholder><a href="window_users.html">Users</a></placeholder> window.</div>
+<div>You can see all the users of the connected hubs listed in there. Additionally you can manage your favorite DC users here as well as grant extra access to your share for any of them.</div></dd>
+<dt><img src="Queue.ico" width="16" height="16" alt="Download Queue" /> Download Queue</dt>
+<dd><div>Open the <placeholder><a href="window_download_queue.html">Download Queue</a></placeholder> window.</div>
+<div>In there, you can track and manage your files being downloaded.</div></dd>
+<dt><img src="FinishedDL.ico" width="16" height="16" alt="Finished Downloads" /> Finished Downloads</dt>
+<dd><div>Open the <placeholder><a href="window_finished_downloads.html">Finished Downloads</a></placeholder> window.</div>
+<div>It lists your downloaded files in the current session.</div></dd>
+<dt><img src="FinishedUL.ico" width="16" height="16" alt="Finished Uploads" /> Finished Uploads</dt>
+<dd><div>Open the <placeholder><a href="window_finished_uploads.html">Finished Uploads</a></placeholder> window.</div>
+<div>It lists the files uploaded from you in the current session.</div></dd>
+<dt><img src="Search.ico" width="16" height="16" alt="Search" /> Search</dt>
+<dd><div>Open the <placeholder><a href="window_search.html">Search</a></placeholder> window.</div>
+<div>This is the place where you can search for files to download.</div></dd>
+<dt><img src="ADLSearch.ico" width="16" height="16" alt="ADL Search" /> ADL Search</dt>
+<dd><div>Open the <placeholder><a href="window_adlsearch.html">ADL Search</a></placeholder> window.</div>
+<div>It incorporates a tool for filtering file lists downloaded from users.</div></dd>
+<dt><img src="Notepad.ico" width="16" height="16" alt="Notepad" /> Notepad</dt>
+<dd><div>Open the <placeholder><a href="window_notepad.html">Notepad</a></placeholder> window.</div>
+<div>In there, you can store random text. The text will be kept even if you close DC++.</div></dd>
+<dt>System Log</dt>
+<dd><div>Open the <placeholder><a href="window_system_log.html">System Log</a></placeholder> window.</div>
+<div>It is where all the system messages of the current session are logged.</div></dd>
+<dt><img src="NetStats.ico" width="16" height="16" alt="Network Statistics" /> Network Statistics</dt>
+<dd><div>Open the <placeholder><a href="window_network_stats.html">Network Statistics</a></placeholder> window.</div>
+<div>It displays a real-time chart of the average speed of data sent and received by DC++.</div></dd>
+<dt><img src="DCPlusPlus.ico" width="16" height="16" alt="About:config" />About:config</dt>
+<dd><div>Open the <placeholder><a href="window_about_config.html">About:config</a></placeholder> window.</div>
+<div>It is an internal settings list debugging and testing helper tool window. This menu item exists only in development builds of DC++. See the /about:config command in the <placeholder><a href="chat_commands.html">Chat Commands</a></placeholder> list for more information.</div></dd>
+<dt><img src="Indexing.ico" width="16" height="16" alt="Indexing progress" /> Indexing progress</dt>
+<dd><div>Open the <placeholder><a href="dialog_indexing_progress.html">Indexing progess</a></placeholder> dialog.</div>
+<div>It shows you the current state of file hashing operation and how much time there is left from it.</div></dd>
+<dt>Menu bar</dt>
+<dd>
+Toggle the permanent visibility of the main menu bar. When it is hidden, the menu bar
+can be temporarily brought back into view with standard Windows shortcuts (Alt or F10).
+</dd>
+<dt>Toolbar</dt>
+<dd>Enable or disable the toolbar.</dd>
+<dt>Transfer view</dt>
+<dd>Enable or disable the transfer view.</dd>
+<dt>Status bar</dt>
+<dd>Enable or disable the status bar.</dd>
+</dl>
+</dd>
+<dt>Window Menu</dt>
+<dd>
+You can find options here to close all instance of specific groups of tabs by one click.
+<dl style="margin-left: 30px;">
+<dt><img src="HubOff.ico" width="16" height="16" alt="Close disconnected hubs" /> Close disconnected hubs</dt>
+<dd>Closes all disconnected <placeholder><a href="window_hub.html">Hub</a></placeholder> windows.</dd>
+<dt id="closefavgroup"><img src="FavoriteHubs.ico" width="16" height="16" alt="Close all hubs of a favorite group" /> Close all hubs of a favorite group</dt>
+<dd>
+<div>Opens a dialog asking to select a favorite hub group; after pressing "OK" in that dialog, all opened <placeholder><a href="window_hub.html">Hub</a></placeholder> windows that are part of the selected favorite hub group will be closed.</div>
+<div>More information about the use of favorite hub groups in the help topics associated to the <placeholder><a href="dialog_fav_hub_groups.html">Favorite hub groups</a></placeholder> dialog.</div>
+</dd>
+<dt id="closenotfavgroup"><img src="FavoriteHubs.ico" width="16" height="16" alt="Close hubs not in a favorite group" /> Close hubs not in a favorite group</dt>
+<dd>
+<div>Opens a dialog asking to select a favorite hub group; after pressing "OK" in that dialog, all opened <placeholder><a href="window_hub.html">Hub</a></placeholder> windows that are <b>not</b> part of the selected favorite hub group will be closed.</div>
+<div>More information about the use of favorite hub groups in the help topics associated to the <placeholder><a href="dialog_fav_hub_groups.html">Favorite hub groups</a></placeholder> dialog.</div>
+</dd>
+<dt><img src="UserOn.ico" width="16" height="16" alt="Close all PM windows" /> Close all PM windows</dt>
+<dd>Closes all <placeholder><a href="window_pm.html">Private Message</a></placeholder> windows regardless of their online status.</dd>
+<dt><img src="UserOff.ico" width="16" height="16" alt="Close all offline PM windows" /> Close all offline PM windows</dt>
+<dd>Closes all offline <placeholder><a href="window_pm.html">Private Message</a></placeholder> windows.</dd>
+<dt><img src="Directory.ico" width="16" height="16" alt="Close all file list windows" /> Close all file list windows</dt>
+<dd>Closes all opened file list windows. Saved file lists can be reopened by selecting "<placeholder>Open file list...</placeholder>" from the <a href="#filemenu">File menu</a>.</dd>
+<dt><img src="Search.ico" width="16" height="16" alt="Close all search windows" /> Close all search windows</dt>
+<dd>Closes all opened <placeholder><a href="window_search.html">Search</a></placeholder> windows.</dd>
+</dl>
+</dd>
+<dt>Help Menu</dt>
+<dd>
+Here you can access the built-in Help, FAQs, guides and some documentation. It also contains hotlinks to reach the different parts of the DC++ online community.
+<dl style="margin-left: 30px;">
+<dt><img src="Help.ico" width="16" height="16" alt="Help Contents" /> Help Contents</dt>
+<dd>Opens the Overview page of the built-in Help.</dd>
+<dt><img src="GetStarted.ico" width="16" height="16" alt="Get started" /> Get started</dt>
+<dd>The best way to start here if you are new to DC++.</dd>
+<dt><img src="Changelog.ico" width="16" height="16" alt="Change Log" /> Change Log</dt>
+<dd>You can follow what's been changed in the different DC++ versions since the development started.</dd>
+<dt><img src="DCPlusPlus.png" width="16" height="16" alt="About DC++" /> About DC++</dt>
+<dd>You can see the copyrights, list of all names who ever contributed to DC++ as well as some useful statistical information about your up/download ratio. The About box also shows you the version number of the current stable release of DC++.</dd>
+<dt><img src="Links.ico" width="16" height="16" alt="Links" /> Links</dt>
+<dd>Web links that will open in your web browser.
+<dl style="margin-left: 30px;">
+<dt>Homepage</dt>
+<dd>Opens the DC++ home page in your web browser.</dd>
+<dt>Downloads</dt>
+<dd>Opens the trusted DC++ download page in your web browser.</dd>
+<dt>Frequently asked questions</dt>
+<dd>Opens the DC++ FAQ page in your web browser.</dd>
+<dt>Help center</dt>
+<dd>Points to the DC++ support forum.</dd>
+<dt>Discussion forum</dt>
+<dd>Points to the DC++ discussion forum.</dd>
+<dt>Request a feature</dt>
+<dd>You can propose modifications or request new features here.</dd>
+<dt>Report a bug</dt>
+<dd>You can report problems about DC++ here.</dd>
+<dt><img src="Donate.ico" width="16" height="16" alt="Donate (paypal)" /> Donate (paypal)</dt>
+<dd>Found this free program useful? Then you please consider donating some money... You can do it here, through the author's Paypal account.</dd>
+<dt>Blog</dt>
+<dd>Opens the DC++ blog in your web browser.</dd>
+<dt>Community news</dt>
+<dd>Opens the DCBase portal in your web browser.</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
 <h2 id="toolbar">Toolbar (top, icons below menus)</h2>
 <p>
-<a href="window_public_hubs.html" title="Public Hubs"><img src="PublicHubs.ico" width="20" height="20" alt="Public Hubs"/></a>
-<a href="#tb_reconnect" title="Reconnect"><img src="Reconnect.ico" width="20" height="20" alt="Reconnect"/></a>
-<a href="window_favorite_hubs.html" title="Favorite Hubs"><img src="FavoriteHubs.ico" width="20" height="20" alt="Favorite Hubs"/></a>
-<a href="window_users.html" title="Users"><img src="Users.ico" width="20" height="20" alt="Users"/></a>
-<a href="window_download_queue.html" title="Download Queue"><img src="Queue.ico" width="20" height="20" alt="Download Queue"/></a>
-<a href="window_finished_downloads.html" title="Finished Downloads"><img src="FinishedDL.ico" width="20" height="20" alt="Finished Downloads"/></a>
-<a href="window_finished_uploads.html" title="Finished Uploads"><img src="FinishedUL.ico" width="20" height="20" alt="Finished Uploads"/></a>
-<a href="window_search.html" title="Search"><img src="Search.ico" width="20" height="20" alt="Search"/></a>
-<a href="window_adlsearch.html" title="ADL Search"><img src="ADLSearch.ico" width="20" height="20" alt="ADL Search"/></a>
-<a href="window_network_stats.html" title="Network Statistics"><img src="NetStats.ico" width="20" height="20" alt="Network Statistics"/></a>
-<a href="#tb_opendldir" title="Open downloads directory"><img src="OpenDLDir.ico" width="20" height="20" alt="Open downloads directory"/></a>
-<a href="#tb_openfl" title="Open file list..."><img src="OpenFileList.ico" width="20" height="20" alt="Open file list..."/></a>
-<a href="#tb_openownfl" title="Open own list"><img src="OpenOwnFileList.ico" width="20" height="20" alt="Open own list"/></a>
-<a href="#tb_refresh" title="Refresh file list"><img src="Refresh.ico" width="20" height="20" alt="Refresh file list"/></a>
-<a href="#tb_recent" title="Recent windows"><img src="Recents.ico" width="20" height="20" alt="Recent windows"/></a>
-<a href="#tb_settings" title="Settings"><img src="Settings.ico" width="20" height="20" alt="Settings"/></a>
-<a href="window_notepad.html" title="Notepad"><img src="Notepad.ico" width="20" height="20" alt="Notepad"/></a>
-<a href="#tb_plugins" title="Plugins"><img src="Plugins.ico" width="20" height="20" alt="Plugins"/></a>
-<a href="#tb_whats_this" title="What's This?"><img src="WhatsThis.ico" width="20" height="20" alt="What's This?"/></a>
+<a href="window_public_hubs.html" title="Public Hubs"><img src="PublicHubs.ico" width="20" height="20" alt="Public Hubs" /></a>
+<a href="#tb_reconnect" title="Reconnect"><img src="Reconnect.ico" width="20" height="20" alt="Reconnect" /></a>
+<a href="window_favorite_hubs.html" title="Favorite Hubs"><img src="FavoriteHubs.ico" width="20" height="20" alt="Favorite Hubs" /></a>
+<a href="window_users.html" title="Users"><img src="Users.ico" width="20" height="20" alt="Users" /></a>
+<a href="window_download_queue.html" title="Download Queue"><img src="Queue.ico" width="20" height="20" alt="Download Queue" /></a>
+<a href="window_finished_downloads.html" title="Finished Downloads"><img src="FinishedDL.ico" width="20" height="20" alt="Finished Downloads" /></a>
+<a href="window_finished_uploads.html" title="Finished Uploads"><img src="FinishedUL.ico" width="20" height="20" alt="Finished Uploads" /></a>
+<a href="window_search.html" title="Search"><img src="Search.ico" width="20" height="20" alt="Search" /></a>
+<a href="window_adlsearch.html" title="ADL Search"><img src="ADLSearch.ico" width="20" height="20" alt="ADL Search" /></a>
+<a href="window_network_stats.html" title="Network Statistics"><img src="NetStats.ico" width="20" height="20" alt="Network Statistics" /></a>
+<a href="#tb_opendldir" title="Open downloads directory"><img src="OpenDLDir.ico" width="20" height="20" alt="Open downloads directory" /></a>
+<a href="#tb_openfl" title="Open file list..."><img src="OpenFileList.ico" width="20" height="20" alt="Open file list..." /></a>
+<a href="#tb_openownfl" title="Open own list"><img src="OpenOwnFileList.ico" width="20" height="20" alt="Open own list" /></a>
+<a href="#tb_refresh" title="Refresh file list"><img src="Refresh.ico" width="20" height="20" alt="Refresh file list" /></a>
+<a href="#tb_recent" title="Recent windows"><img src="Recents.ico" width="20" height="20" alt="Recent windows" /></a>
+<a href="#tb_settings" title="Settings"><img src="Settings.ico" width="20" height="20" alt="Settings" /></a>
+<a href="window_notepad.html" title="Notepad"><img src="Notepad.ico" width="20" height="20" alt="Notepad" /></a>
+<a href="#tb_plugins" title="Plugins"><img src="Plugins.ico" width="20" height="20" alt="Plugins" /></a>
+<a href="#tb_whats_this" title="What's This?"><img src="WhatsThis.ico" width="20" height="20" alt="What's This?" /></a>
 </p>
-<p>The toolbar provides quick access to some regularly used parts and functions of DC++. You can customize the toolbar for yourself, 
+<p>The toolbar provides quick access to some regularly used parts and functions of DC++. You can customize the toolbar for yourself,
 add, remove and group the buttons using the following toolbar customization functions:</p>
 <ul>
 <li>Holding the "shift" key you can drag &amp; drop toolbar buttons wherever you want.</li>
@@ -232,88 +213,69 @@ add, remove and group the buttons using the following toolbar customization func
 </ul>
 <p>The toolbar can hold the following available icons:</p>
 <dl style="margin-left: 40px;">
-    <dt>Public Hubs</dt>
-	<dd cshelp="IDH_TOOLBAR_PUBLIC_HUBS">Open the <placeholder><a href="window_public_hubs.html">Public Hubs</a></placeholder> window.</dd>
-
-    <dt id="tb_reconnect">Reconnect</dt>
-    <dd cshelp="IDH_TOOLBAR_RECONNECT">Reconnect (disconnect and connect again) the hub which is currently in the foreground.</dd>
-
-    <dt id="tb_favhubs">Favorite Hubs</dt>
-    <dd cshelp="IDH_TOOLBAR_FAVORITE_HUBS">
-	<div>Open the <placeholder><a href="window_favorite_hubs.html">Favorite Hubs</a></placeholder> window.</div>
-	<div>Use the arrow placed on the right of the icon to easily connect to one of your favorite hubs without having to open the <placeholder><a href="window_favorite_hubs.html">Favorite Hubs</a></placeholder> window.</div>
-	<div>Consult the help topic associated to the <placeholder><a href="dialog_fav_hub_groups.html">Favorite hub groups</a></placeholder> dialog to find out how to add sub-menus to the menu that appears under the arrow.</div>
-    </dd>
-
-    <dt>Users</dt>
-	<dd cshelp="IDH_TOOLBAR_USERS">Open the <placeholder><a href="window_users.html">Users</a></placeholder> window.</dd>
-
-    <dt>Download Queue</dt>
-	<dd cshelp="IDH_TOOLBAR_QUEUE">Open the <placeholder><a href="window_download_queue.html">Download Queue</a></placeholder> window.</dd>
-
-    <dt>Finished Downloads</dt>
-	<dd cshelp="IDH_TOOLBAR_FINISHED_DL">Open the <placeholder><a href="window_finished_downloads.html">Finished Downloads</a></placeholder> window.</dd>
-
-    <dt>Finished Uploads</dt>
-    <dd cshelp="IDH_TOOLBAR_FINISHED_UL">Open the <placeholder><a href="window_finished_uploads.html">Finished Uploads</a></placeholder> window.</dd>
-
-    <dt>Search</dt>
-    <dd cshelp="IDH_TOOLBAR_SEARCH">Open the <placeholder><a href="window_search.html">Search</a></placeholder> window.</dd>
-
-    <dt>ADL Search</dt>
-    <dd cshelp="IDH_TOOLBAR_ADL_SEARCH">Open the <placeholder><a href="window_adlsearch.html">ADL Search</a></placeholder> window.</dd>
-
-	<dt>Network Statistics</dt>
-	<dd cshelp="IDH_TOOLBAR_NET_STATS">Open the <placeholder><a href="window_network_stats.html">Network Statistics</a></placeholder> window.</dd>
-
-	<dt id="tb_opendldir">Open downloads directory</dt>
-	<dd cshelp="IDH_TOOLBAR_DOWNLOADS_DIR">
-	Opens your default finished downloads folder in Windows Explorer. Useful for quick accessing your downloaded files.
-	</dd>
-
-    <dt id="tb_openfl">Open file list...</dt>
-	<dd cshelp="IDH_TOOLBAR_FILE_LIST">
-	Open a file list previously saved on your disk (a dialog will appear so you can pick the one you wish to open).
-	</dd>
-
-	<dt id="tb_openownfl">Open own list</dt>
-	<dd cshelp="IDH_TOOLBAR_OWN_FILE_LIST">
-	You can open and check how your own file list looks like. Useful to see what's displayed to
-	others when they get your file list.
-	</dd>
-
-	<dt id="tb_refresh">Refresh file list</dt>
-    <dd cshelp="IDH_TOOLBAR_REFRESH">This will immediately rescan your shared directories for new or changed content and updates your file list.</dd>
-
-	<dt id="#tb_recent">Recent windows</dt>
-	<dd cshelp="IDH_TOOLBAR_RECENT">
-	Open menus with <acronym title="Most Recently Used">MRU</acronym> lists of recently opened windows. The list is saved across DC++ restarts.
-	</dd>
-
-    <dt id="tb_settings">Settings</dt>
-    <dd cshelp="IDH_TOOLBAR_SETTINGS">Open the Settings dialog.</dd>
-
-    <dt>Notepad</dt>
-	<dd cshelp="IDH_TOOLBAR_NOTEPAD">Open the <placeholder><a href="window_notepad.html">Notepad</a></placeholder> window.</dd>
-
-	<dt id="#tb_plugins">Plugins</dt>
-	<dd cshelp="IDH_TOOLBAR_PLUGINS">
-	<p>
-	Open the <placeholder><a href="settings_plugins.html">Plugins</a></placeholder> configuration
-	page.
-	</p>
-	<p>
-	Use the arrow placed on the right of the icon to manage plugins:
-	</p>
+<dt>Public Hubs</dt>
+<dd cshelp="IDH_TOOLBAR_PUBLIC_HUBS">Open the <placeholder><a href="window_public_hubs.html">Public Hubs</a></placeholder> window.</dd>
+<dt id="tb_reconnect">Reconnect</dt>
+<dd cshelp="IDH_TOOLBAR_RECONNECT">Reconnect (disconnect and connect again) the hub which is currently in the foreground.</dd>
+<dt id="tb_favhubs">Favorite Hubs</dt>
+<dd cshelp="IDH_TOOLBAR_FAVORITE_HUBS">
+<div>Open the <placeholder><a href="window_favorite_hubs.html">Favorite Hubs</a></placeholder> window.</div>
+<div>Use the arrow placed on the right of the icon to easily connect to one of your favorite hubs without having to open the <placeholder><a href="window_favorite_hubs.html">Favorite Hubs</a></placeholder> window.</div>
+<div>Consult the help topic associated to the <placeholder><a href="dialog_fav_hub_groups.html">Favorite hub groups</a></placeholder> dialog to find out how to add sub-menus to the menu that appears under the arrow.</div>
+</dd>
+<dt>Users</dt>
+<dd cshelp="IDH_TOOLBAR_USERS">Open the <placeholder><a href="window_users.html">Users</a></placeholder> window.</dd>
+<dt>Download Queue</dt>
+<dd cshelp="IDH_TOOLBAR_QUEUE">Open the <placeholder><a href="window_download_queue.html">Download Queue</a></placeholder> window.</dd>
+<dt>Finished Downloads</dt>
+<dd cshelp="IDH_TOOLBAR_FINISHED_DL">Open the <placeholder><a href="window_finished_downloads.html">Finished Downloads</a></placeholder> window.</dd>
+<dt>Finished Uploads</dt>
+<dd cshelp="IDH_TOOLBAR_FINISHED_UL">Open the <placeholder><a href="window_finished_uploads.html">Finished Uploads</a></placeholder> window.</dd>
+<dt>Search</dt>
+<dd cshelp="IDH_TOOLBAR_SEARCH">Open the <placeholder><a href="window_search.html">Search</a></placeholder> window.</dd>
+<dt>ADL Search</dt>
+<dd cshelp="IDH_TOOLBAR_ADL_SEARCH">Open the <placeholder><a href="window_adlsearch.html">ADL Search</a></placeholder> window.</dd>
+<dt>Network Statistics</dt>
+<dd cshelp="IDH_TOOLBAR_NET_STATS">Open the <placeholder><a href="window_network_stats.html">Network Statistics</a></placeholder> window.</dd>
+<dt id="tb_opendldir">Open downloads directory</dt>
+<dd cshelp="IDH_TOOLBAR_DOWNLOADS_DIR">
+Opens your default finished downloads folder in Windows Explorer. Useful for quick accessing your downloaded files.
+</dd>
+<dt id="tb_openfl">Open file list...</dt>
+<dd cshelp="IDH_TOOLBAR_FILE_LIST">
+Open a file list previously saved on your disk (a dialog will appear so you can pick the one you wish to open).
+</dd>
+<dt id="tb_openownfl">Open own list</dt>
+<dd cshelp="IDH_TOOLBAR_OWN_FILE_LIST">
+You can open and check how your own file list looks like. Useful to see what's displayed to
+others when they get your file list.
+</dd>
+<dt id="tb_refresh">Refresh file list</dt>
+<dd cshelp="IDH_TOOLBAR_REFRESH">This will immediately rescan your shared directories for new or changed content and updates your file list.</dd>
+<dt id="#tb_recent">Recent windows</dt>
+<dd cshelp="IDH_TOOLBAR_RECENT">
+Open menus with <acronym title="Most Recently Used">MRU</acronym> lists of recently opened windows. The list is saved across DC++ restarts.
+</dd>
+<dt id="tb_settings">Settings</dt>
+<dd cshelp="IDH_TOOLBAR_SETTINGS">Open the Settings dialog.</dd>
+<dt>Notepad</dt>
+<dd cshelp="IDH_TOOLBAR_NOTEPAD">Open the <placeholder><a href="window_notepad.html">Notepad</a></placeholder> window.</dd>
+<dt id="#tb_plugins">Plugins</dt>
+<dd cshelp="IDH_TOOLBAR_PLUGINS">
+<p>
+Open the <placeholder><a href="settings_plugins.html">Plugins</a></placeholder> configuration
+page.
+</p>
+<p>
+Use the arrow placed on the right of the icon to manage plugins:
+</p>
 	<!--#include virtual="menu_plugins.inc" -->
-	</dd>
-
-    <dt id="tb_whats_this">What's This?</dt>
-    <dd cshelp="IDH_TOOLBAR_WHATS_THIS">
-        You can get help on specific parts of DC++ by using the &quot;What's This?&quot; help button: click it once, and your mouse cursor will change into a help cursor; then click on the control you wish to get help for.
-    </dd>
+</dd>
+<dt id="tb_whats_this">What's This?</dt>
+<dd cshelp="IDH_TOOLBAR_WHATS_THIS">
+You can get help on specific parts of DC++ by using the &quot;What's This?&quot; help button: click it once, and your mouse cursor will change into a help cursor; then click on the control you wish to get help for.
+</dd>
 </dl>
-
 <h2>Tabs</h2>
 <p>Each window opened in DC++ has a corresponding tab, which appears in the global tab control.</p>
 <p>Tabs in DC++ behave the same as in standard Windows applications; moreover, they have the
@@ -322,13 +284,13 @@ following additional features:</p>
 <li>They can be moved around in a drag-and-drop fashion.</li>
 <li>There are some easy ways to switch between them: with mouse extra buttons or using Ctrl+Tab.</li>
 <li>When many tabs are opened, and they can't fit into a single row, they will automatically occupy more rows.</li>
-<li>Each tab has its own context-menu which provides commands related to the window the tab belongs to. 
-	Description of the common context menu options are listed in the <a href="index.html#menucommands">
-    General Menu Commands</a> page.</li>
+<li>Each tab has its own context-menu which provides commands related to the window the tab belongs to.
+Description of the common context menu options are listed in the <a href="index.html#menucommands">
+General Menu Commands</a> page.</li>
 <li>Tabs can be closed with: <ul>
 <li>Middle mouse click</li>
 <li>Shift + left mouse click</li>
-<li>Left mouse click on the <img src="Exit.ico" width="16" height="16" alt="Close tab button"/> button on the right of the tabs (appears only if <a href="settings_tabs.html#tabstyle">DC++'s own tab style</a> is used)</li>
+<li>Left mouse click on the <img src="Exit.ico" width="16" height="16" alt="Close tab button" /> button on the right of the tabs (appears only if <a href="settings_tabs.html#tabstyle">DC++'s own tab style</a> is used)</li>
 <li>The &quot;Close&quot; command from the tab context-menu</li>
 <li>Ctrl+W</li>
 <li>Ctrl+F4</li>
@@ -336,51 +298,41 @@ following additional features:</p>
 </ul>
 You can customize the look and behavior of tabs from the <a href="settings_tabs.html">Tabs settings</a> and
 <a href="settings_windows.html">Windows settings</a> respectively.
-
 <h2>Status bar (bottom)</h2>
 The main status bar is always visible in the bottom of the DC++ window. You can get information from the current state of several parameters of DC++ here. The status bar is divided into sections for better visibility. Their meaning from left to right:
 <dl style="margin-left: 40px;">
-    <dt>System messages</dt>
-    <dd cshelp="IDH_MAIN_STATUS">The first part of the status bar contains the last system message with a timestamp. To see more from the recent system messages you can move the mouse pointer above the statusbar - the last 10 lines of the messages will be shown as a tooltip shortly. To see all system messages of the current session open the <a href="window_system_log.html">System Log</a> window from the <a href="#viewmenu">View menu</a> or simply double-click on this part of the status bar.</dd>
-
-    <dt id="awayindic"><img src="User.ico" width="16" height="16" alt="Online user"/><img src="UserAway.ico" width="16" height="16" alt="Away user"/> Away indicator</dt>
-	<dd cshelp="IDH_MAIN_AWAY">The user icon turns from green to grey when DC++ is in <a href="settings_general.html#away">away mode</a>.<br/>
-	Double-click to switch away mode on and off.</dd>
-
-    <dt><img src="HubOn.ico" width="16" height="16" alt="Hubs"/> Hubs</dt>
-    <dd cshelp="IDH_MAIN_HUBS">Shows the number of hubs you are currently connected to in the following format: x/y/z, where:
-    	<p style="margin-left: 20px;">
-		x = number of connected hubs where you're not a registered user;<br/>
-		y = number of connected hubs where you're registered in;<br/>
-		z = number of connected hubs where you're an operator;
-    	</p>
-        just the same way as in the <a href="faq_plusplus_tag.html">DC++ tags</a> of the users listed on a hub.
-    </dd>
-
-    <dt><img src="Slots.ico" width="16" height="16" alt="Slots"/><img src="SlotsFull.ico" width="16" height="16" alt="Slots full"/> Slots</dt>
-    <dd cshelp="IDH_MAIN_SLOTS">Indicates the number of currently free upload slots out of the total number of slots opened.</dd>
-
-    <dt><img src="Download.ico" width="16" height="16" alt="Downloaded bytes"/> Total downloaded bytes</dt>
-	<dd cshelp="IDH_MAIN_DOWN_TOTAL"><div>Shows the total number of bytes received in the current session, including file transfers, hub-client communication and hublists.</div>
-	<div>Double-click to open the <placeholder><a href="window_network_stats.html">Network Statistics</a></placeholder> window.</div></dd>
-
-    <dt><img src="Upload.ico" width="16" height="16" alt="Uploaded bytes"/> Total uploaded bytes</dt>
-	<dd cshelp="IDH_MAIN_UP_TOTAL"><div>Shows the total number of bytes sent in the current session, including file transfers and hub-client communication.</div>
-	<div>Double-click to open the <placeholder><a href="window_network_stats.html">Network Statistics</a></placeholder> window.</div></dd>
-
-    <dt><img src="Download.ico" width="16" height="16" alt="Download speed"/> Current download speed</dt>
-	<dd cshelp="IDH_MAIN_DOWN_DIFF"><div>Shows the current overall download speed and the number of current download connections in parentheses (updated in every second).</div>
-	<div>Double-click to open the <placeholder><a href="window_network_stats.html">Network Statistics</a></placeholder> window.</div></dd>
-
-    <dt><img src="Upload.ico" width="16" height="16" alt="Upload speed"/> Current upload speed</dt>
-	<dd cshelp="IDH_MAIN_UP_DIFF"><div>Shows the current overall upload speed and the number of current upload connections in parentheses (updated in every second).</div>
-	<div>Double-click to open the <placeholder><a href="window_network_stats.html">Network Statistics</a></placeholder> window.</div></dd>
-
-    <dt><img src="Dlimit.ico" width="16" height="16" alt="Download speed limit"/> Current download limit</dt>
-	<dd cshelp="IDH_MAIN_DOWN_LIMIT">Shows the current maximum download rate. Zero speed value means that download limiting is disabled.</dd>
-
-    <dt><img src="Ulimit.ico" width="16" height="16" alt="Upload speed limit"/> Current upload limit</dt>
-	<dd cshelp="IDH_MAIN_UP_LIMIT">Shows the current maximum upload rate. Zero speed value means that upload limiting is disabled.</dd>
+<dt>System messages</dt>
+<dd cshelp="IDH_MAIN_STATUS">The first part of the status bar contains the last system message with a timestamp. To see more from the recent system messages you can move the mouse pointer above the statusbar - the last 10 lines of the messages will be shown as a tooltip shortly. To see all system messages of the current session open the <a href="window_system_log.html">System Log</a> window from the <a href="#viewmenu">View menu</a> or simply double-click on this part of the status bar.</dd>
+<dt id="awayindic"><img src="User.ico" width="16" height="16" alt="Online user" /><img src="UserAway.ico" width="16" height="16" alt="Away user" /> Away indicator</dt>
+<dd cshelp="IDH_MAIN_AWAY">The user icon turns from green to grey when DC++ is in <a href="settings_general.html#away">away mode</a>.<br />
+Double-click to switch away mode on and off.</dd>
+<dt><img src="HubOn.ico" width="16" height="16" alt="Hubs" /> Hubs</dt>
+<dd cshelp="IDH_MAIN_HUBS">Shows the number of hubs you are currently connected to in the following format: x/y/z, where:
+<p style="margin-left: 20px;">
+x = number of connected hubs where you're not a registered user;<br />
+y = number of connected hubs where you're registered in;<br />
+z = number of connected hubs where you're an operator;
+</p>
+just the same way as in the <a href="faq_plusplus_tag.html">DC++ tags</a> of the users listed on a hub.
+</dd>
+<dt><img src="Slots.ico" width="16" height="16" alt="Slots" /><img src="SlotsFull.ico" width="16" height="16" alt="Slots full" /> Slots</dt>
+<dd cshelp="IDH_MAIN_SLOTS">Indicates the number of currently free upload slots out of the total number of slots opened.</dd>
+<dt><img src="Download.ico" width="16" height="16" alt="Downloaded bytes" /> Total downloaded bytes</dt>
+<dd cshelp="IDH_MAIN_DOWN_TOTAL"><div>Shows the total number of bytes received in the current session, including file transfers, hub-client communication and hublists.</div>
+<div>Double-click to open the <placeholder><a href="window_network_stats.html">Network Statistics</a></placeholder> window.</div></dd>
+<dt><img src="Upload.ico" width="16" height="16" alt="Uploaded bytes" /> Total uploaded bytes</dt>
+<dd cshelp="IDH_MAIN_UP_TOTAL"><div>Shows the total number of bytes sent in the current session, including file transfers and hub-client communication.</div>
+<div>Double-click to open the <placeholder><a href="window_network_stats.html">Network Statistics</a></placeholder> window.</div></dd>
+<dt><img src="Download.ico" width="16" height="16" alt="Download speed" /> Current download speed</dt>
+<dd cshelp="IDH_MAIN_DOWN_DIFF"><div>Shows the current overall download speed and the number of current download connections in parentheses (updated in every second).</div>
+<div>Double-click to open the <placeholder><a href="window_network_stats.html">Network Statistics</a></placeholder> window.</div></dd>
+<dt><img src="Upload.ico" width="16" height="16" alt="Upload speed" /> Current upload speed</dt>
+<dd cshelp="IDH_MAIN_UP_DIFF"><div>Shows the current overall upload speed and the number of current upload connections in parentheses (updated in every second).</div>
+<div>Double-click to open the <placeholder><a href="window_network_stats.html">Network Statistics</a></placeholder> window.</div></dd>
+<dt><img src="Dlimit.ico" width="16" height="16" alt="Download speed limit" /> Current download limit</dt>
+<dd cshelp="IDH_MAIN_DOWN_LIMIT">Shows the current maximum download rate. Zero speed value means that download limiting is disabled.</dd>
+<dt><img src="Ulimit.ico" width="16" height="16" alt="Upload speed limit" /> Current upload limit</dt>
+<dd cshelp="IDH_MAIN_UP_LIMIT">Shows the current maximum upload rate. Zero speed value means that upload limiting is disabled.</dd>
 </dl>
 
 </body>

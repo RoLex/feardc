@@ -1,7 +1,26 @@
--- 0.872 20##-##-## --
+-- 0.880 202#-##-## --
+* [L#1970416] Set the focus properly on the active window at startup (emtee)
+* Add new hublist server hublist.pwiam.com; blacklist and remove discontinued or inaccessible server addresses
+* Add AboutConfig frame for testing and debugging purposes (iceman50, emtee)
+* [L#1682791] Block possible unencrypted direct private message connection attempts (fix adapted from AirDC++) (emtee)
+* Upgrade compiler for better performance; allows further optimizations to modern Windows versions (cologic, emtee)
+* Allow copy of hub address with keyprint on secure hubs (code adapted from AirDC++) (emtee)
+* Require SSSE3 for 64-bit builds (cologic)
 * Add support for TTHS NMDC extension to save traffic on both sides with short TTH searches, widely supported by Verlihub (RoLex)
-* Add support for BotList NMDC extension, widely supported by Verlihub (RoLex)
+* Add support for BotList, HubTopic and MCTo NMDC extensions, widely supported by Verlihub (RoLex)
+* Add /mcpm command for private main chat messages, currently only for NMDC hubs that support MCTo extension (RoLex)
 * Don't waste our and NMDC hub resources when we don't want user commands (RoLex)
+* Update zlib to version 1.2.12 (RoLex)
+* Update Boost to version 1.79 (RoLex)
+* Update MiniUPnPc to version 2.2.3 (RoLex)
+* Add settings to show user IP and country in main and private chats when available (RoLex)
+* Add %[extra] variable support to main and private chat log formats when available, this shows user IP and country (RoLex)
+* Add setting to disable TLS NMDC client-client connections, this allows transfers between us and old clients (RoLex)
+* Add setting to skip tray icon notification on PM from bots or hub (RoLex)
+* Add setting to disable creation of taskbar menu with list of open windows (RoLex)
+* Properly show away, fireball and server status in MyINFO on NMDC hubs (RoLex)
+* Save last away status on restart (RoLex)
+* Fix locale detection when building help files on CygWin (RoLex)
 
 -- 0.871 2022-04-01 --
 * Update OpenSSL to version 1.1.1n

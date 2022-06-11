@@ -24,6 +24,8 @@ which means the files will be created and loaded from a subfolder named 'Certifi
 <dl style="margin-left: 40px;">
   <dt>Require TLS ADC client-client connections</dt>
   <dd cshelp="IDH_SETTINGS_CERTIFICATES_REQUIRE_TLS">Enable this to force encrypted only transfers between clients in ADC hubs. Note that this may result connection problems to clients that doesn't properly support TLS versions and / or safe encryption methods that DC++ require.</dd>
+  <dt>Disable TLS NMDC client-client connections</dt>
+  <dd cshelp="IDH_SETTINGS_CERTIFICATES_DISABLE_NMDC_TLS_CTM">Disable this to force non-encrypted transfers between clients in NMDC hubs. Note that this may resolve connection issues to clients that use outdated TLS versions.</dd>
   <dt>Allow TLS connections to hubs without trusted certificate</dt>
   <dd cshelp="IDH_SETTINGS_CERTIFICATES_ALLOW_UNTRUSTED_HUBS">With this option disabled, all hubs you connect to must have a certificate in your Trusted certificate folder.</dd>
   <dt>Allow TLS connections to clients without trusted certificate</dt>

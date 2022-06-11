@@ -3,7 +3,7 @@
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -12,8 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include "stdinc.h"
@@ -62,6 +61,7 @@ const string SettingsManager::settingTags[] =
 	"Language", "Toolbar", "LastSearchType", "Mapper", "Mapper6",
 	"SoundMainChat", "SoundPM", "SoundPMWindow", "SoundFinishedDL", "SoundFinishedFL", "LastSharedFolder",
 	"SharingSkiplistExtensions", "SharingSkiplistRegEx", "SharingSkiplistPaths", "WhitelistOpenURIs",
+	"ACFrameOrder", "ACFrameWidths",
 	"SENTRY",
 	// Ints
 	"IncomingConnections", "IncomingConnections6", "OutgoingConnections", "InPort", "InPort6", 
@@ -90,7 +90,7 @@ const string SettingsManager::settingTags[] =
 	"SENTRY",
 	// Bools
 	"AddFinishedInstantly", "AdlsBreakOnFirst",
-	"AllowUntrustedClients", "AllowUntrustedHubs", "AlwaysCCPM", "AlwaysTray", "AutoAway",
+	"AllowUntrustedClients", "AllowUntrustedHubs", "AlwaysCCPM", "AlwaysTray", "AutoAway", "LastAway",
 	"AutoDetectIncomingConnection", "AutoFollow", "AutoKick", "AutoKickNoFavs", "AutoSearch",
 	"AutoSearchAutoMatch", "AutoDropAll", "AutoDropDisconnect", "AutoDropFilelists",
 	"AwayCompLock", "AwayTimeStamp", "BoldFinishedDownloads", "BoldFinishedUploads", "BoldFL",
@@ -100,20 +100,20 @@ const string SettingsManager::settingTags[] =
 	"ConfirmHubRemoval", "ConfirmItemRemoval", "ConfirmUserRemoval", "DcextRegister",
 	"DontDlAlreadyQueued", "DontDLAlreadyShared", "EnableCCPM", "FavShowJoins",
 	"FilterMessages",
-	"FinishedDLOnlyFull", "FollowLinks", "GeoCity", "GeoRegion", "GetUserCountry", "GetUserInfo",
-	"HubUserCommands", "IgnoreBotPms", "IgnoreHubPms", "OpenNewWindow", "KeepFinishedFiles",
+	"FinishedDLOnlyFull", "FollowLinks", "GeoCity", "GeoRegion", "GetUserCountry", "ShowUserIp", "ShowUserCountry", "GetUserInfo",
+	"HubUserCommands", "IgnoreBotPms", "IgnoreHubPms", "SkipTrayBotPms", "DisableTaskbarMenu", "OpenNewWindow", "KeepFinishedFiles",
 	"KeepLists", "ListDuplicates", "LogDownloads", "LogFilelistTransfers", "LogFinishedDownloads",
 	"LogMainChat", "LogPrivateChat", "LogStatusMessages", "LogSystem", "LogUploads", "MagnetAsk",
 	"MagnetRegister", "MinimizeToTray", "NoAwayMsgToBots", "NoIpOverride", "NoIpOverride6", "OpenUserCmdHelp",
 	"OwnerDrawnMenus", "PopupBotPms", "PopupHubPms", "PopupPMs", "PopunderFilelist", "PopunderPm",
-	"LowestPrio", "PromptPassword", "QueueFrameShowTree", "RequireTLS", "SearchFilterShared",
+	"LowestPrio", "PromptPassword", "QueueFrameShowTree", "RequireTLS", "DisableNmdcCtmTLS", "SearchFilterShared",
 	"SearchOnlyFreeSlots", "SegmentedDL", "SendBloom", "SendUnknownCommands",
 	"SFVCheck", "ShareHidden", "ShowJoins", "ShowMenuBar", "ShowStatusbar", "ShowToolbar",
 	"ShowTransferview", "SkipZeroByte", "SocksResolve", "SortFavUsersFirst",
 	"StatusInChat", "TimeDependentThrottle", "TimeStamps",
 	"ToggleActiveTab", "UrlHandler", "UseCTRLForLineHistory", "UseSystemIcons",
 	"UsersFilterFavorite", "UsersFilterOnline", "UsersFilterQueue", "UsersFilterWaiting",
-	"RegisterSystemStartup", "DontLogCCPMChat",
+	"RegisterSystemStartup", "DontLogCCPMChat", "AboutCfgDisclaimer",
 	"SENTRY",
 	// Int64
 	"TotalUpload", "TotalDownload", "SharingSkiplistMinSize", "SharingSkiplistMaxSize",
@@ -192,9 +192,11 @@ SettingsManager::SettingsManager() {
 	setDefault(POPUP_BOT_PMS, true);
 	setDefault(IGNORE_HUB_PMS, false);
 	setDefault(IGNORE_BOT_PMS, false);
+	setDefault(SKIP_TRAY_BOT_PMS, false);
+	setDefault(DISABLE_TASKBAR_MENU, false);
 	setDefault(LIST_DUPES, true);
 	setDefault(BUFFER_SIZE, 64);
-	setDefault(HUBLIST_SERVERS, "https://www.te-home.net/?do=hublist&get=hublist.xml.bz2;https://dchublist.org/hublist.xml.bz2;https://dchublist.ru/hublist.xml.bz2;https://tankafett.biz/?do=hublist&get=hublist.xml.bz2;https://dcnf.github.io/Hublist/hublist.xml.bz2;");
+	setDefault(HUBLIST_SERVERS, "https://www.te-home.net/?do=hublist&get=hublist.xml.bz2;https://dchublist.org/hublist.xml.bz2;https://dchublist.ru/hublist.xml.bz2;https://hublist.pwiam.com/hublist.xml.bz2;https://dcnf.github.io/Hublist/hublist.xml.bz2;");
 	setDefault(DOWNLOAD_SLOTS, 6);
 	setDefault(MAX_DOWNLOAD_SPEED, 0);
 	setDefault(LOG_DIRECTORY, Util::getPath(Util::PATH_USER_LOCAL) + "Logs" PATH_SEPARATOR_STR);
@@ -236,6 +238,7 @@ SettingsManager::SettingsManager() {
 	setDefault(COMPRESS_TRANSFERS, true);
 	setDefault(SFV_CHECK, true);
 	setDefault(AUTO_AWAY, false);
+	setDefault(LAST_AWAY, false);
 	setDefault(AWAY_COMP_LOCK, true);
 	setDefault(AWAY_IDLE, 10);
 	setDefault(AWAY_TIMESTAMP, false);
@@ -255,6 +258,8 @@ SettingsManager::SettingsManager() {
 	setDefault(GEO_CITY, false);
 	setDefault(GEO_REGION, false);
 	setDefault(GET_USER_COUNTRY, true);
+	setDefault(SHOW_USER_IP, false);
+	setDefault(SHOW_USER_COUNTRY, false);
 	setDefault(FAV_SHOW_JOINS, false);
 	setDefault(LOG_STATUS_MESSAGES, false);
 	setDefault(SHOW_MENU_BAR, true);
@@ -360,6 +365,7 @@ SettingsManager::SettingsManager() {
 	setDefault(USERS_FILTER_WAITING, false);
 	setDefault(MAX_PM_WINDOWS, 50);
 	setDefault(REQUIRE_TLS, true); // True by default: We assume TLS is commonplace enough among ADC clients.
+	setDefault(DISABLE_NMDC_TLS_CTM, false);
 	setDefault(ENABLE_CCPM, true);
 	setDefault(ALWAYS_CCPM, false);
 	setDefault(DONT_LOG_CCPM, false);
@@ -373,6 +379,7 @@ SettingsManager::SettingsManager() {
 	setDefault(MAX_EXTRA_SLOTS, 3);
 	setDefault(TESTING_STATUS, TESTING_ENABLED);
 	setDefault(WHITELIST_OPEN_URIS, "http:;https:;www;mailto:");
+	setDefault(AC_DISCLAIM, true);
 
 	setSearchTypeDefaults();
 

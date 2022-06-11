@@ -3,7 +3,7 @@
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -12,8 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #ifndef DCPLUSPLUS_DCPP_UPLOAD_MANAGER_H
@@ -77,6 +76,9 @@ public:
 	void reserveSlot(const HintedUser& aUser);
 	bool isConnecting(const UserPtr& aUser) const { return connectingUsers.find(aUser) != connectingUsers.end(); }
 
+	bool getFireballStatus() const { return isFireball; }
+	bool getFileServerStatus() const { return isFileServer; }
+
 	typedef set<string> FileSet;
 	typedef unordered_map<UserPtr, FileSet, User::Hash> FilesMap;
 	void clearUserFiles(const UserPtr&);
@@ -94,6 +96,10 @@ public:
 private:
 	UploadList uploads;
 	mutable CriticalSection cs;
+
+	bool isFireball;
+	bool isFileServer;
+	uint64_t m_iHighSpeedStartTick;
 
 	typedef unordered_set<UserPtr, User::Hash> SlotSet;
 	typedef SlotSet::iterator SlotIter;

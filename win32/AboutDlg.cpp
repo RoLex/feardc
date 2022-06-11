@@ -3,7 +3,7 @@
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -12,8 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include "stdafx.h"
@@ -43,7 +42,8 @@ static const char thanks[] = "Big thanks to all donators and people who have con
 "and code! Thanks go out to sourceforge.net for hosting the project. "
 "This product uses bzip2 <www.bzip.org>, thanks to Julian Seward and team for providing it. "
 "This product uses zlib <www.zlib.net>, thanks to Jean-loup Gailly and Mark Adler for providing it. "
-"This product includes GeoIP data created by MaxMind, available from <https://maxmind.com/>. "
+"This product includes parts of the geoip-api-c library created by MaxMind, Inc., available from <https://github.com/maxmind/geoip-api-c>. "
+"This product includes free updated GeoIP legacy databases provided by mailfud.org, available from <https://mailfud.org/geoip-legacy/>. "
 "This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit <https://www.openssl.org/>. "
 "This product uses the MiniUPnP client library <https://miniupnp.tuxfamily.org> and libnatpmp by Thomas Bernard. "
 "This product uses libdwarf <https://www.prevanders.net/dwarf.html> by SGI & David Anderson. "
@@ -101,7 +101,7 @@ bool AboutDlg::handleInitDialog() {
 		cur->addChild(Label::Seed(WinUtil::createIcon(IDI_DCPP, 48)));
 
 		ls.caption = Text::toT(dcpp::fullVersionString) + _T("\n(c) Copyright 2001-2022 Jacek Sieka\n");
-		ls.caption += T_("Leading project contributor: poy\nEx-project contributor: Todd Pederzani\nEx-codeveloper: Per Lind\303\251n\nOriginal DC++ logo design: Martin Skogevall\nGraphics: Radox and various GPL and CC authors\n\nDC++ is licenced under GPL.");
+		ls.caption += T_("Ex-main project contributors: Todd Pederzani, poy\nEx-codeveloper: Per Lind\303\251n\nOriginal DC++ logo design: Martin Skogevall\nGraphics: Radox and various GPL and CC authors\n\nDC++ is licenced under GPL.");
 		cur->addChild(ls);
 
 		cur->addChild(Link::Seed(_T("https://dcplusplus.sourceforge.io/"), true));

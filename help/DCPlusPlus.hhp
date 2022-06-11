@@ -44,6 +44,7 @@ IDH_TEXT_VIEWER=window_text_viewer.html
 IDH_SYSTEM_LOG=window_system_log.html
 IDH_NET_STATS=window_network_stats.html
 IDH_TRANSFERS=window_transfers.html
+IDH_ABOUTCONFIG=window_about_config.html
 IDH_HASH_PROGRESS=dialog_indexing_progress.html
 IDH_USER_COMMAND=dialog_user_command.html
 IDH_USER_MATCH=dialog_user_matching.html

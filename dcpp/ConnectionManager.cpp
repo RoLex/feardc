@@ -3,7 +3,7 @@
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -12,8 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include "stdinc.h"
@@ -741,8 +740,16 @@ void ConnectionManager::on(AdcCommand::INF, UserConnection* aSource, const AdcCo
 		type = tokCheck.second;
 
 		// set the PM flag now in order to send a INF with PM1
-		if((type == CONNECTION_TYPE_PM || cmd.hasFlag("PM", 0)) && !aSource->isSet(UserConnection::FLAG_PM)) {
-			aSource->setFlag(UserConnection::FLAG_PM);
+		if(type == CONNECTION_TYPE_PM || cmd.hasFlag("PM", 0)) {
+			if(!aSource->isSet(UserConnection::FLAG_PM)) {
+				aSource->setFlag(UserConnection::FLAG_PM);
+			}
+
+			if (!aSource->getUser()->isSet(User::TLS)) {
+				aSource->send(AdcCommand(AdcCommand::SEV_FATAL, AdcCommand::ERROR_GENERIC, "Unencrypted CCPM connections aren't allowed"));
+				putConnection(aSource);
+				return;
+			}
 		}
 
 		aSource->inf(false);

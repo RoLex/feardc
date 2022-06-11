@@ -3,7 +3,7 @@
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -12,8 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #ifndef DCPLUSPLUS_DCPP_UTIL_H
@@ -145,6 +144,8 @@ public:
 	static string getHubListsPath() { return getPath(PATH_HUB_LISTS); }
 	/** Notepad filename */
 	static string getNotepadFile() { return getPath(PATH_NOTEPAD); }
+
+	static time_t getStartTime() { return startTime; }
 
 	/** IETF language tag of the language currently in use. */
 	static string getIETFLang();
@@ -484,6 +485,7 @@ private:
 	static uint8_t away; // in away mode when != 0.
 	static string awayMsg;
 	static time_t awayTime;
+	static time_t startTime;
 
 	static void loadBootConfig();
 	static void setAwayCounter(uint8_t i);

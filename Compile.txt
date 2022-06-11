@@ -6,9 +6,9 @@
 		Some tools can be found on <https://sourceforge.net/projects/dcplusplus/files/Dev/>,
 		although I recommend getting them directly from their hosts.
 
-		* A modern C++ compiler. I am currently using these 2 packages by the MinGW-w64 project:
-		- 64-bit: <https://sf.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/6.3.0/threads-win32/seh/x86_64-6.3.0-release-win32-seh-rt_v5-rev2.7z>
-		- 32-bit: <https://sf.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/6.3.0/threads-win32/dwarf/i686-6.3.0-release-win32-dwarf-rt_v5-rev2.7z>
+		* A modern C++ compiler. We are currently using these 2 packages by the MinGW-w64 project:
+		- 64-bit: <https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-win32/seh/x86_64-8.1.0-release-win32-seh-rt_v6-rev0.7z>
+		- 32-bit: <https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/8.1.0/threads-win32/dwarf/i686-8.1.0-release-win32-dwarf-rt_v6-rev0.7z>
 
 		Make sure that the compiler's "bin" directory is in your PATH environment variable.
 
@@ -19,13 +19,14 @@
 		<https://www.python.org>
 		Make sure that Python is in your PATH environment variable.
 
-		* SCons - 3.x
+		* SCons - 4.0.x
 		<https://scons.org/pages/download.html>
 
 		Note: SCons relies on Python so you need to have Python installed first.
 
 		On Windows you can install scons from the Python Package Index (PyPi) only.
-		"python -m pip install scons==3.1.2" will install the latest scons version available. 
+		"python -m pip install scons==4.0.1" will install the newest scons version
+		that is tested and usable to build DC++ at the moment.
 		This command installs scons into the Python\Scripts folder.
 
 		Make sure that SCons is in your PATH environment variable. 
@@ -117,11 +118,11 @@
 
 		If you have problems, use google. It works for me.
 
-		Example: scons tools=mingw mode=release arch=x64 help=no prefix=x86_64-w64-mingw32-
+		Example: scons tools=mingw mode=release arch=x64 i18n=yes help=yes prefix=x86_64-w64-mingw32-
 
 4. Alternative compilers
 
-	a. Various versions of MinGW (GCC 6.2 or later):
+	a. Various versions of MinGW (GCC 8.1 or later):
 	<https://sourceforge.net/projects/mingw-w64/files/>
 	<https://sourceforge.net/projects/mingw/files/>
 
@@ -130,9 +131,9 @@
 		Prefer DWARF versions (usually marked with a "-dw") of 32-bit compilers; SJLJ ones should
 		be avoided for performance reasons.
 
-		I am currently using these 2 packages by the MinGW-w64 project:
-		- 64-bit: <https://sf.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/6.3.0/threads-win32/seh/x86_64-6.3.0-release-win32-seh-rt_v5-rev2.7z>
-		- 32-bit: <https://sf.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/6.3.0/threads-win32/dwarf/i686-6.3.0-release-win32-dwarf-rt_v5-rev2.7z>
+		We are currently using these 2 packages by the MinGW-w64 project:
+		- 64-bit: <https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-win32/seh/x86_64-8.1.0-release-win32-seh-rt_v6-rev0.7z>
+		- 32-bit: <https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/8.1.0/threads-win32/dwarf/i686-8.1.0-release-win32-dwarf-rt_v6-rev0.7z>
 
 		To install compilers from regular MinGW (not MinGW-w64), the easiest way is to use
 		mingw-get. Extract it to C:\MinGW and run:
@@ -153,6 +154,9 @@
 
 	b. Microsoft Visual Studio 2013:
 	<https://msdn.microsoft.com/en-us/visualc/default.aspx>
+
+		Note: the following information is outdated; we accept patches to the build system
+		that would allow building DC++ on any supported edition of MSVS.
 
 		Make sure VS is up-to-date; in particular, you will need the Nov 2013 CTP from
 		<https://www.microsoft.com/en-us/download/details.aspx?id=41151>. Use the patch in

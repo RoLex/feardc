@@ -3,7 +3,7 @@
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -12,8 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include "stdinc.h"
@@ -32,6 +31,7 @@
 #include "ThrottleManager.h"
 #include "PluginManager.h"
 #include "UserCommand.h"
+#include "UploadManager.h"
 #include "version.h"
 
 namespace dcpp {
@@ -341,7 +341,7 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 	} else if (cmd == "$SA") { // tths extension, active search
 		checkstate();
 
-		if (!(supportFlags & SUPPORTS_TTHS))
+		if (!haveSupports(SUPPORTS_TTHS))
 			return;
 
 		string::size_type pos = param.find(' ');
@@ -390,7 +390,7 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 	} else if (cmd == "$SP") { // tths extension, passive search
 		checkstate();
 
-		if (!(supportFlags & SUPPORTS_TTHS))
+		if (!haveSupports(SUPPORTS_TTHS))
 			return;
 
 		if (!ClientManager::getInstance()->isActive()) // we are also passive
@@ -534,39 +534,51 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 
 			putUser(nick);
 		}
-	} else if(cmd == "$ConnectToMe") {
-		if(state != STATE_NORMAL) {
-			return;
-		}
+
+	} else if (cmd == "$ConnectToMe") {
+		checkstate();
 		string::size_type i = param.find(' ');
 		string::size_type j;
-		if( (i == string::npos) || ((i + 1) >= param.size()) ) {
+
+		if ((i == string::npos) || ((i + 1) >= param.size()))
 			return;
-		}
+
 		i++;
 		j = param.find(':', i);
-		if(j == string::npos) {
+
+		if (j == string::npos)
 			return;
-		}
-		string server = Socket::resolve(param.substr(i, j-i), AF_INET);
-		if(isProtectedIP(server))
+
+		string server = Socket::resolve(param.substr(i, j - i), AF_INET);
+
+		if (isProtectedIP(server))
 			return;
-		if(j+1 >= param.size()) {
+
+		if (j + 1 >= param.size())
 			return;
-		}
 
 		string port = param.substr(j + 1);
+
+		if (port.empty())
+			return;
+
 		bool secure = false;
 
-		if (port.size() && port[port.size() - 1] == 'S') {
+		if (port[port.size() - 1] == 'S') {
+			// sadly we have this disabled, we should never get such requests
+			// even from old clients because we did not state tls flag in myinfo
+			if (SETTING(DISABLE_NMDC_TLS_CTM))
+				return;
+
 			port.erase(port.size() - 1);
 
 			if (CryptoManager::getInstance()->TLSOk())
 				secure = true;
 		}
 
-		// For simplicity, we make the assumption that users on a hub have the same character encoding
+		// for simplicity, we make the assumption that users on a hub have the same character encoding
 		ConnectionManager::getInstance()->nmdcConnect(server, port, getMyNick(), getHubUrl(), getEncoding(), secure);
+
 	} else if(cmd == "$RevConnectToMe") {
 		if(state != STATE_NORMAL) {
 			return;
@@ -595,25 +607,35 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 		}
 	} else if(cmd == "$SR") {
 		SearchManager::getInstance()->onData(aLine);
-	} else if(cmd == "$HubName") {
+
+	} else if (cmd == "$HubName") {
 		// If " - " found, the first part goes to hub name, rest to description
 		// If no " - " found, first word goes to hub name, rest to description
 
 		string::size_type i = param.find(" - ");
-		if(i == string::npos) {
+
+		if (i == string::npos) {
 			i = param.find(' ');
-			if(i == string::npos) {
+
+			if (i == string::npos) {
 				getHubIdentity().setNick(unescape(param));
 				getHubIdentity().setDescription(Util::emptyString);
+
 			} else {
 				getHubIdentity().setNick(unescape(param.substr(0, i)));
-				getHubIdentity().setDescription(unescape(param.substr(i+1)));
+				getHubIdentity().setDescription(unescape(param.substr(i + 1)));
 			}
+
 		} else {
 			getHubIdentity().setNick(unescape(param.substr(0, i)));
-			getHubIdentity().setDescription(unescape(param.substr(i+3)));
+			getHubIdentity().setDescription(unescape(param.substr(i + 3)));
 		}
+
 		fire(ClientListener::HubUpdated(), this);
+
+	} else if (cmd == "$HubTopic") {
+		if (haveSupports(SUPPORTS_HUBTOPIC) && param.size())
+			getHubIdentity().setDescription(unescape(param));
 
 	} else if (cmd == "$Supports") {
 		StringTokenizer<string> st(param, ' ');
@@ -630,11 +652,17 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 				supportFlags |= SUPPORTS_TTHS;
 			else if (i == "TLS")
 				supportFlags |= SUPPORTS_TLS;
+			else if (i == "BotList")
+				supportFlags |= SUPPORTS_BOTLIST;
+			else if (i == "HubTopic")
+				supportFlags |= SUPPORTS_HUBTOPIC;
+			else if (i == "MCTo")
+				supportFlags |= SUPPORTS_MCTO;
 		}
 
 	} else if (cmd == "$UserCommand") {
 		// we dont want this or hub didnt state support for this
-		if (!SETTING(HUB_USER_COMMANDS) || !(supportFlags & SUPPORTS_USERCOMMAND))
+		if (!SETTING(HUB_USER_COMMANDS) || !haveSupports(SUPPORTS_USERCOMMAND))
 			return;
 
 		string::size_type i = 0;
@@ -699,10 +727,12 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 				feat.push_back("UserIP2");
 				feat.push_back("BotList");
 				feat.push_back("TTHSearch");
+				feat.push_back("HubTopic");
+				feat.push_back("MCTo");
 				feat.push_back("TTHS"); // https://www.te-home.net/?do=work&id=verlihub&page=nmdc#tths
 				feat.push_back("ZPipe0");
 
-				if (CryptoManager::getInstance()->TLSOk())
+				if (!SETTING(DISABLE_NMDC_TLS_CTM) && CryptoManager::getInstance()->TLSOk()) // if not disabled by user
 					feat.push_back("TLS");
 
 				supports(feat);
@@ -782,7 +812,7 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 				v.push_back(&getUser(it));
 			}
 
-			if(!(supportFlags & SUPPORTS_NOGETINFO)) {
+			if(!haveSupports(SUPPORTS_NOGETINFO)) {
 				string tmp;
 				// Let's assume 10 characters per nick...
 				tmp.reserve(v.size() * (11 + 10 + getMyNick().length()));
@@ -825,7 +855,7 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 		}
 
 	} else if (cmd == "$BotList") { // botlist extension
-		if (param.empty())
+		if (!haveSupports(SUPPORTS_BOTLIST) || param.empty())
 			return;
 
 		OnlineUserList v;
@@ -839,9 +869,8 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 			OnlineUser& ou = getUser(it);
 			ou.getIdentity().setBot(true);
 
-			if (ou.getUser() == getMyIdentity().getUser()) {
+			if (ou.getUser() == getMyIdentity().getUser()) // this is wrong, but keep anyway
 				setMyIdentity(ou.getIdentity());
-			}
 
 			v.push_back(&ou);
 		}
@@ -911,6 +940,60 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 
 		fire(ClientListener::Message(), this, ChatMessage(chatMessage, from, &getUser(getMyNick()), replyTo));
 
+	} else if (cmd == "$MCTo:") {
+		if (!haveSupports(SUPPORTS_MCTO) || param.empty())
+			return;
+
+		string::size_type i = param.find(" $");
+
+		if (i == string::npos)
+			return;
+
+		string nick = param.substr(0, i);
+
+		if (nick.empty() || (Util::stricmp(nick.c_str(), getMyNick().c_str()) != 0)) // not for us
+			return;
+
+		i += 2;
+		string::size_type j = param.find(' ', i);
+
+		if (j == string::npos)
+			return;
+
+		nick = param.substr(i, j - i);
+
+		if (nick.empty())
+			return;
+
+		string msg = param.substr(j + 1);
+
+		if (msg.empty())
+			return;
+
+		auto from = findUser(nick);
+
+		if (from && from->getIdentity().noChat())
+			return;
+
+		if (!from) { // assume that messages from unknown users come from the hub
+			OnlineUser& ou = getUser(nick);
+			ou.getIdentity().setHub(true);
+			ou.getIdentity().setHidden(true);
+			updated(ou);
+			from = &ou;
+		}
+
+		auto chatMessage = unescape(msg);
+
+		if (PluginManager::getInstance()->runHook(HOOK_CHAT_IN, this, chatMessage))
+			return;
+
+		//fire(ClientListener::Message(), this, ChatMessage(chatMessage, from));
+		// above looks more correct, be we want user to know that this is different type of message
+		// the only disadvantage is that we cant see user ip directly in chat as in other public messages
+		// todo: any better ideas are welcome
+		fire(ClientListener::HubMCTo(), this, nick, chatMessage);
+
 	} else if(cmd == "$GetPass") {
 		OnlineUser& ou = getUser(getMyNick());
 		ou.getIdentity().set("RG", "1");
@@ -940,11 +1023,20 @@ void NmdcHub::checkNick(string& nick) {
 
 void NmdcHub::connectToMe(const OnlineUser& aUser) {
 	checkstate();
-	dcdebug("NmdcHub::connectToMe %s\n", aUser.getIdentity().getNick().c_str());
-	string nick = fromUtf8(aUser.getIdentity().getNick());
-	ConnectionManager::getInstance()->nmdcExpect(nick, getMyNick(), getHubUrl());
-	bool secure = CryptoManager::getInstance()->TLSOk() && aUser.getUser()->isSet(User::TLS);
-	send("$ConnectToMe " + nick + " " + localIp + ":" + ConnectionManager::getInstance()->getPort() + (secure ? "S" : "") + "|");
+	string nick = aUser.getIdentity().getNick();
+	dcdebug("NmdcHub::connectToMe %s\n", nick.c_str());
+	bool secure = false;
+
+	if (!SETTING(DISABLE_NMDC_TLS_CTM)) // if not disabled by user
+		secure = (CryptoManager::getInstance()->TLSOk() && aUser.getUser()->isSet(User::TLS));
+
+	const string port = (secure ? ConnectionManager::getInstance()->getSecurePort() : ConnectionManager::getInstance()->getPort());
+
+	if (port.size()) {
+		nick = fromUtf8(nick);
+		ConnectionManager::getInstance()->nmdcExpect(nick, getMyNick(), getHubUrl());
+		send("$ConnectToMe " + nick + " " + localIp + ":" + port + (secure ? "S" : "") + "|");
+	}
 }
 
 void NmdcHub::revConnectToMe(const OnlineUser& aUser) {
@@ -957,6 +1049,13 @@ void NmdcHub::hubMessage(const string& aMessage, bool thirdPerson) {
 	checkstate();
 	if(!PluginManager::getInstance()->runHook(HOOK_CHAT_OUT, this, aMessage))
 		send(fromUtf8( "<" + getMyNick() + "> " + escape(thirdPerson ? "/me " + aMessage : aMessage) + "|" ) );
+}
+
+void NmdcHub::hubMCTo(const string& aNick, const string& aMessage) {
+	checkstate();
+
+	if (!PluginManager::getInstance()->runHook(HOOK_CHAT_OUT, this, aMessage))
+		send(fromUtf8("$MCTo: " + aNick + " $" + getMyNick() + " " + escape(aMessage) + "|"));
 }
 
 void NmdcHub::myInfo(bool alwaysSend) {
@@ -994,7 +1093,16 @@ void NmdcHub::myInfo(bool alwaysSend) {
 		uploadSpeed = SETTING(UPLOAD_SPEED);
 	}
 
-	if (CryptoManager::getInstance()->TLSOk())
+	if (Util::getAway())
+		StatusMode |= Identity::AWAY;
+
+	if (UploadManager::getInstance()->getFileServerStatus())
+		StatusMode |= Identity::SERVER;
+
+	if (UploadManager::getInstance()->getFireballStatus())
+		StatusMode |= Identity::FIREBALL;
+
+	if (!SETTING(DISABLE_NMDC_TLS_CTM) && CryptoManager::getInstance()->TLSOk()) // if not disabled by user
 		StatusMode |= Identity::TLS;
 
 	string uMin = (SETTING(MIN_UPLOAD_SPEED) == 0) ? Util::emptyString : tmp5 + Util::toString(SETTING(MIN_UPLOAD_SPEED));
@@ -1021,7 +1129,7 @@ void NmdcHub::myInfo(bool alwaysSend) {
 void NmdcHub::search(int aSizeType, int64_t aSize, int aFileType, const string& aString, const string&, const StringList&) {
 	checkstate();
 
-	if ((aFileType == SearchManager::TYPE_TTH) && (supportFlags & SUPPORTS_TTHS)) { // tths extension
+	if ((aFileType == SearchManager::TYPE_TTH) && haveSupports(SUPPORTS_TTHS)) { // tths extension
 		if (aString.size() != 39) // validate tth length
 			return;
 

@@ -3,7 +3,7 @@
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -12,8 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include "stdafx.h"
@@ -204,6 +203,32 @@ void PrivateFrame::addedChat(const tstring& message) {
 	}
 }
 
+void PrivateFrame::addedChat(const ChatMessage& message) {
+	setDirty(SettingsManager::BOLD_PM);
+
+	if (ccReady() && SETTING(DONT_LOG_CCPM))
+		return;
+
+	if (SETTING(LOG_PRIVATE_CHAT)) {
+		const tstring msg = Text::toT(message.message);
+		ParamMap params;
+		params["message"] = [&msg] { return Text::toDOS(Text::fromT(msg)); };
+		fillLogParams(params);
+		auto ou = ClientManager::getInstance()->findOnlineUserHint(replyTo.getUser().user->getCID(), replyTo.getUser().hint);
+		string extra;
+
+		if (ou && !ou->getIdentity().isBot() && ou->getIdentity().getIp().size()) {
+			extra += " | " + ou->getIdentity().getIp();
+
+			if (ou->getIdentity().getCountry().size())
+				extra += " | " + ou->getIdentity().getCountry();
+		}
+
+		params["extra"] = [extra] { return extra; };
+		LOG(LogManager::PM, params);
+	}
+}
+
 void PrivateFrame::addStatus(const tstring& text) {
 	status->setText(STATUS_STATUS, Text::toT("[" + Util::getShortTimeString() + "] ") + text);
 
@@ -314,6 +339,7 @@ void PrivateFrame::startCC(bool silent) {
 		}
 
 		tstring err = ou->getUser()->isNMDC() ? T_("A secure ADC hub is required; this feature is not supported on NMDC hubs") :
+			!ou->getUser()->isSet(User::TLS) ? T_("The user does not support secure encrypted connections") :
 			!ou->getIdentity().supports(AdcHub::CCPM_FEATURE) ? T_("The user does not support the CCPM ADC extension") : _T("");
 		if(!err.empty()) {
 			if(!silent) { addStatus(str(TF_("Cannot start the direct encrypted channel: %1%") % err)); }

@@ -3,7 +3,7 @@
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -12,8 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include "stdinc.h"
@@ -37,7 +36,15 @@
 
 namespace dcpp {
 
-UploadManager::UploadManager() noexcept : running(0), extra(0), lastGrant(0), lastFreeSlots(-1) {
+UploadManager::UploadManager() noexcept:
+	running(0),
+	extra(0),
+	lastGrant(0),
+	lastFreeSlots(-1),
+	m_iHighSpeedStartTick(0),
+	isFireball(false),
+	isFileServer(false)
+{
 	ClientManager::getInstance()->addListener(this);
 	TimerManager::getInstance()->addListener(this);
 }
@@ -585,7 +592,7 @@ void UploadManager::on(AdcCommand::GFI, UserConnection* aSource, const AdcComman
 }
 
 // TimerManagerListener
-void UploadManager::on(TimerManagerListener::Second, uint64_t) noexcept {
+void UploadManager::on(TimerManagerListener::Second, uint64_t aTick) noexcept {
 	{
 		Lock l(cs);
 		UploadList ticks;
@@ -602,6 +609,35 @@ void UploadManager::on(TimerManagerListener::Second, uint64_t) noexcept {
 	}
 		
 	notifyQueuedUsers();
+
+	if (!isFireball) {
+		if (getRunningAverage() >= 102400) { // > 100k/s upload
+			if (m_iHighSpeedStartTick > 0) {
+				if ((aTick - m_iHighSpeedStartTick) > 60000) {
+					isFireball = true;
+					ClientManager::getInstance()->infoUpdated();
+					return;
+				}
+
+			} else {
+				m_iHighSpeedStartTick = aTick;
+			}
+
+		} else {
+			m_iHighSpeedStartTick = 0;
+		}
+
+		if (!isFileServer) {
+			if (
+				((time(NULL) - Util::getStartTime()) > 7200) && // > 2h uptime
+				(Socket::getTotalUp() > 209715200) && // > 200m uploaded
+				(ShareManager::getInstance()->getSharedSize() > 2147483648) // > 2g shared
+			) {
+				isFileServer = true;
+				ClientManager::getInstance()->infoUpdated();
+			}
+		}
+	}
 }
 
 void UploadManager::on(ClientManagerListener::UserDisconnected, const UserPtr& aUser) noexcept {
