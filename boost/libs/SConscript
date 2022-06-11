@@ -7,7 +7,7 @@ env, target, sources = dev.prepare_build(
     recursive=True,
 )
 
-env.Append(CPPPATH=['#/boost'])
+env.Append(CPPPATH=['#/boost', '#/boost/libs/atomic/src'])
 
 ret = dev.build_lib(env, target, sources)
 Return('ret')
