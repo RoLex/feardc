@@ -141,5 +141,5 @@ bool SystemFrame::handleDoubleClick(const dwt::MouseEvent& mouseEvent) {
 }
 
 void SystemFrame::on(Message, time_t t, const string& message) noexcept {
-	callAsync([=] { addLine(t, Text::toT(message)); });
+	callAsync([=, this] { addLine(t, Text::toT(message)); });
 }

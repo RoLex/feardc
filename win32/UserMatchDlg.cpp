@@ -213,7 +213,7 @@ void UserMatchDlg::addRow(const UserMatch::Rule* rule) {
 		seed.padding.x = 10;
 		auto remove = rules->addChild(seed);
 		remove->setHelpId(IDH_USER_MATCH_RULE_REMOVE);
-		remove->onClicked([this, remove] { callAsync([=] {
+		remove->onClicked([this, remove] { callAsync([=, this] {
 			rules->removeRow(remove);
 			layoutRules();
 		}); });

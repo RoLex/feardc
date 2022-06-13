@@ -437,6 +437,7 @@ void DownloadManager::on(AdcCommand::STA, UserConnection* aSource, const AdcComm
 			noSlots(aSource, cmd.getParam("QP", 0, param) ? param : Util::emptyString);
 			return;
 		}
+		break;
 	case AdcCommand::SEV_SUCCESS:
 		// We don't know any messages that would give us these...
 		dcdebug("Unknown success message %s %s", err.c_str(), cmd.getParam(1).c_str());

@@ -245,8 +245,9 @@ void Canvas::invert(const Region& region) {
 }
 
 void Canvas::drawIcon(const IconPtr& icon, const Rectangle& rectangle) {
-	if(!::DrawIconEx(itsHdc, rectangle.left(), rectangle.top(), icon->handle(), rectangle.width(), rectangle.height(), 0, 0, DI_NORMAL))
+	if(!::DrawIconEx(itsHdc, rectangle.left(), rectangle.top(), icon->handle(), rectangle.width(), rectangle.height(), 0, 0, DI_NORMAL)) {
 		dwtWin32DebugFail("DrawIconEx failed in Canvas::drawIcon");
+	}
 }
 
 int Canvas::drawText(const tstring& text, Rectangle& rect, unsigned format) {

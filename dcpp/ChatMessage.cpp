@@ -57,7 +57,7 @@ messageTimestamp(messageTimestamp)
 	if (SETTING(TIME_STAMPS)) {
 		tmp = "[" + Util::getShortTimeString(timestamp);
 
-		if (!from->getIdentity().isBot() && from->getIdentity().getIp().size()) {
+		if (!from->getIdentity().isHub() && !from->getIdentity().isBot() && from->getIdentity().getIp().size()) {
 			if (SETTING(SHOW_USER_IP))
 				tmp += " | " + from->getIdentity().getIp();
 

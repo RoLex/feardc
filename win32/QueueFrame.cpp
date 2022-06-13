@@ -1041,7 +1041,7 @@ bool QueueFrame::addUsers(Menu* menu, void (QueueFrame::*handler)(const HintedUs
 	for(const auto& source: sources) {
 		const HintedUser& user = source.getUser();
 		if(offline || user.user->isOnline()) {
-			menu->appendItem(escapeMenu(WinUtil::getNicks(user)), [=] { (this->*handler)(user); });
+			menu->appendItem(escapeMenu(WinUtil::getNicks(user)), [=, this] { (this->*handler)(user); });
 			added = true;
 		}
 	}
@@ -1159,29 +1159,29 @@ void QueueFrame::onUpdated(QueueItem* qi) {
 }
 
 void QueueFrame::onRechecked(const string& target, const tstring& message) {
-	callAsync([=] { status->setText(STATUS_STATUS,
+	callAsync([=, this] { status->setText(STATUS_STATUS,
 		str(TF_("Integrity check: %1% (%2%)") % message % Text::toT(target)), false); });
 }
 
 void QueueFrame::on(QueueManagerListener::Added, QueueItem* aQI) noexcept {
 	auto qii = new QueueItemInfo(*aQI);
-	callAsync([=] { onAdded(qii); });
+	callAsync([=, this] { onAdded(qii); });
 }
 
 void QueueFrame::on(QueueManagerListener::Removed, QueueItem* aQI) noexcept {
 	auto target = aQI->getTarget();
-	callAsync([=] { onRemoved(target); });
+	callAsync([=, this] { onRemoved(target); });
 }
 
 void QueueFrame::on(QueueManagerListener::Moved, QueueItem* aQI, const string& oldTarget) noexcept {
 	auto qii = new QueueItemInfo(*aQI);
-	callAsync([=] { onRemoved(oldTarget); });
-	callAsync([=] { onAdded(qii); });
+	callAsync([=, this] { onRemoved(oldTarget); });
+	callAsync([=, this] { onAdded(qii); });
 }
 
 void QueueFrame::on(QueueManagerListener::SourcesUpdated, QueueItem* aQI) noexcept {
 	auto qi = new QueueItem(*aQI);
-	callAsync([=] { onUpdated(qi); });
+	callAsync([=, this] { onUpdated(qi); });
 }
 
 void QueueFrame::on(QueueManagerListener::RecheckStarted, const string& target) noexcept {

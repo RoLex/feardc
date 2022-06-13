@@ -468,10 +468,10 @@ void FavHubsFrame::on(FavoriteRemoved, const FavoriteHubEntryPtr e) noexcept {
 
 void FavHubsFrame::on(ClientManagerListener::ClientConnected, Client*) noexcept
 {
-	callAsync([=] { refresh(); });
+	callAsync([=, this] { refresh(); });
 }
 
 void FavHubsFrame::on(ClientManagerListener::ClientDisconnected, Client*) noexcept
 {
-	callAsync([=] { refresh(); });
+	callAsync([=, this] { refresh(); });
 }

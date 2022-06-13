@@ -82,11 +82,19 @@ bool GeoIP::decompress() const {
 }
 
 void GeoIP::open() {
-#ifdef _WIN32
-	geo = GeoIP_open(Text::toT(path).c_str(), GEOIP_STANDARD);
-#else
-	geo = GeoIP_open(path.c_str(), GEOIP_STANDARD);
+	int flags = GEOIP_STANDARD;
+
+#ifndef _DEBUG
+	flags |= GEOIP_SILENCE;
 #endif
+
+/*
+#ifdef _WIN32
+	geo = GeoIP_open(Text::toT(path).c_str(), flags);
+#else
+*/
+	geo = GeoIP_open(path.c_str(), flags);
+//#endif
 	if(geo) {
 		GeoIP_set_charset(geo, GEOIP_CHARSET_UTF8);
 	}
@@ -123,20 +131,21 @@ void countryParams(ParamMap& params, int id) {
 	params["2code"] = [id] { return forwardRet(GeoIP_code_by_id(id)); };
 	params["3code"] = [id] { return forwardRet(GeoIP_code3_by_id(id)); };
 	params["continent"] = [id] { return forwardRet(GeoIP_continent_by_id(id)); };
-	params["engname"] = [id] { return forwardRet(GeoIP_name_by_id(id)); };
+	params["engname"] = [id] { return forwardRet(GeoIP_name_by_id_utf8(id)); };
 #ifdef _WIN32
 	params["name"] = [id]() -> string {
 		auto str = getGeoInfo(id, GEO_FRIENDLYNAME);
-		return str.empty() ? forwardRet(GeoIP_name_by_id(id)) : str;
+		return str.empty() ? forwardRet(GeoIP_name_by_id_utf8(id)) : str;
 	};
 	params["officialname"] = [id]() -> string {
 		auto str = getGeoInfo(id, GEO_OFFICIALNAME);
-		return str.empty() ? forwardRet(GeoIP_name_by_id(id)) : str;
+		return str.empty() ? forwardRet(GeoIP_name_by_id_utf8(id)) : str;
 	};
 #else
 	/// @todo any way to get localized country names on non-Windows?
-	params["name"] = [id] { return forwardRet(GeoIP_name_by_id(id)); };
-	params["officialname"] = [id] { return forwardRet(GeoIP_name_by_id(id)); };
+	// yes - use libmaxminddb
+	params["name"] = [id] { return forwardRet(GeoIP_name_by_id_utf8(id)); };
+	params["officialname"] = [id] { return forwardRet(GeoIP_name_by_id_utf8(id)); };
 #endif
 }
 
@@ -191,7 +200,7 @@ void GeoIP::rebuild_cities() {
 	while(!GeoIP_next_record(geo, &record, &id) && record) {
 
 		ParamMap params;
-		countryParams(params, record->country);
+		countryParams(params, record->country_id);
 
 		params["areacode"] = [record] { return Util::toString(record->area_code); };
 		params["city"] = [record] { return forwardRet(record->city); };
@@ -200,7 +209,7 @@ void GeoIP::rebuild_cities() {
 		params["metrocode"] = [record] { return Util::toString(record->metro_code); };
 		params["postcode"] = [record] { return forwardRet(record->postal_code); };
 		params["region"] = [record, &regions]() -> string {
-			auto country = GeoIP_code_by_id(record->country);
+			auto country = GeoIP_code_by_id(record->country_id);
 			auto region = record->region;
 			if(country && region) {
 				return regionName(regions, country, region);

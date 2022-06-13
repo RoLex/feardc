@@ -176,7 +176,7 @@ selected(-1)
 			addWidget(box);
 			box->setText(text);
 			box->setChecked(SettingsManager::getInstance()->get(setting, true));
-			box->onClicked([=] {
+			box->onClicked([=, this] {
 				SettingsManager::getInstance()->set(setting, box->getChecked());
 				updateList();
 			});
@@ -558,59 +558,59 @@ UsersFrame::UserInfoList UsersFrame::selectedUsersImpl() const {
 
 void UsersFrame::on(UserAdded, const FavoriteUser& aUser) noexcept {
 	auto u = aUser.getUser();
-	callAsync([=] { addUser(u); });
+	callAsync([=, this] { addUser(u); });
 }
 
 void UsersFrame::on(FavoriteManagerListener::UserUpdated, const FavoriteUser& aUser) noexcept {
 	auto u = aUser.getUser();
-	callAsync([=] { updateUser(u); });
+	callAsync([=, this] { updateUser(u); });
 }
 void UsersFrame::on(UserRemoved, const FavoriteUser& aUser) noexcept {
 	auto u = aUser.getUser();
-	callAsync([=] { updateUser(u); });
+	callAsync([=, this] { updateUser(u); });
 }
 
 void UsersFrame::on(StatusChanged, const UserPtr& aUser) noexcept {
-	callAsync([=] { updateUser(aUser); });
+	callAsync([=, this] { updateUser(aUser); });
 }
 
 void UsersFrame::on(UserConnected, const UserPtr& aUser) noexcept {
-	callAsync([=] { addUser(aUser); });
+	callAsync([=, this] { addUser(aUser); });
 }
 
 void UsersFrame::on(ClientManagerListener::UserUpdated, const UserPtr& aUser) noexcept {
-	callAsync([=] { updateUser(aUser); });
+	callAsync([=, this] { updateUser(aUser); });
 }
 
 void UsersFrame::on(UserDisconnected, const UserPtr& aUser) noexcept {
-	callAsync([=] { updateUser(aUser); });
+	callAsync([=, this] { updateUser(aUser); });
 }
 
 void UsersFrame::on(WaitingAddFile, const HintedUser& aUser, const string&) noexcept {
-	callAsync([=] { addUser(aUser); });
+	callAsync([=, this] { addUser(aUser); });
 }
 
 void UsersFrame::on(WaitingRemoveUser, const HintedUser& aUser) noexcept {
-	callAsync([=] { updateUser(aUser); });
+	callAsync([=, this] { updateUser(aUser); });
 }
 
 void UsersFrame::on(Added, QueueItem* qi) noexcept {
 	for(auto& i: qi->getSources()) {
 		auto u = i.getUser().user;
-		callAsync([=] { addUser(u); });
+		callAsync([=, this] { addUser(u); });
 	}
 }
 
 void UsersFrame::on(SourcesUpdated, QueueItem* qi) noexcept {
 	for(auto& i: qi->getSources()) {
 		auto u = i.getUser().user;
-		callAsync([=] { updateUser(u); });
+		callAsync([=, this] { updateUser(u); });
 	}
 }
 
 void UsersFrame::on(Removed, QueueItem* qi) noexcept {
 	for(auto& i: qi->getSources()) {
 		auto u = i.getUser().user;
-		callAsync([=] { updateUser(u); });
+		callAsync([=, this] { updateUser(u); });
 	}
 }

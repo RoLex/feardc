@@ -160,15 +160,15 @@ private:
 	bool closing;
 
 	void addDlgCodeMessage(ComboBox* widget, bool autoTab = true) {
-		widget->onRaw([=](WPARAM w, LPARAM) { return this->handleGetDlgCode(w, autoTab); }, dwt::Message(WM_GETDLGCODE));
+		widget->onRaw([=, this](WPARAM w, LPARAM) { return this->handleGetDlgCode(w, autoTab); }, dwt::Message(WM_GETDLGCODE));
 		auto text = widget->getTextBox();
 		if(text)
-			text->onRaw([=](WPARAM w, LPARAM) { return this->handleGetDlgCode(w, autoTab); }, dwt::Message(WM_GETDLGCODE));
+			text->onRaw([=, this](WPARAM w, LPARAM) { return this->handleGetDlgCode(w, autoTab); }, dwt::Message(WM_GETDLGCODE));
 	}
 
 	template<typename W>
 	void addDlgCodeMessage(W* widget, bool autoTab = true) {
-		widget->onRaw([=](WPARAM w, LPARAM) { return this->handleGetDlgCode(w, autoTab); }, dwt::Message(WM_GETDLGCODE));
+		widget->onRaw([=, this](WPARAM w, LPARAM) { return this->handleGetDlgCode(w, autoTab); }, dwt::Message(WM_GETDLGCODE));
 	}
 
 	void addColor(ComboBox* widget) {

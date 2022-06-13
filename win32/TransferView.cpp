@@ -1145,21 +1145,21 @@ void TransferView::on(HttpManagerListener::Removed, HttpConnection* c) noexcept 
 
 void TransferView::addedConn(UpdateInfo* ui) {
 	callAsync([this, ui] {
-		tasks.emplace_back([=](const UpdateInfo& ui) { ui.isHttp() ? addHttpConn(ui) : addConn(ui); }, unique_ptr<UpdateInfo>(ui));
+		tasks.emplace_back([=, this](const UpdateInfo& ui) { ui.isHttp() ? addHttpConn(ui) : addConn(ui); }, unique_ptr<UpdateInfo>(ui));
 		updateList = true;
 	});
 }
 
 void TransferView::updatedConn(UpdateInfo* ui) {
 	callAsync([this, ui] {
-		tasks.emplace_back([=](const UpdateInfo& ui) { ui.isHttp() ? updateHttpConn(ui) : updateConn(ui); }, unique_ptr<UpdateInfo>(ui));
+		tasks.emplace_back([=, this](const UpdateInfo& ui) { ui.isHttp() ? updateHttpConn(ui) : updateConn(ui); }, unique_ptr<UpdateInfo>(ui));
 		updateList = true;
 	});
 }
 
 void TransferView::removedConn(UpdateInfo* ui) {
 	callAsync([this, ui] {
-		tasks.emplace_back([=](const UpdateInfo& ui) { ui.isHttp() ? removeHttpConn(ui) : removeConn(ui); }, unique_ptr<UpdateInfo>(ui));
+		tasks.emplace_back([=, this](const UpdateInfo& ui) { ui.isHttp() ? removeHttpConn(ui) : removeConn(ui); }, unique_ptr<UpdateInfo>(ui));
 		updateList = true;
 	});
 }

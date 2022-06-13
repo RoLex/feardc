@@ -110,7 +110,7 @@ void ShellMenu::appendShellMenu(const StringList& paths) {
 	auto addCB = [this](UINT messageId, auto callback) {
 		dwt::Message message { messageId };
 		callbacks.emplace_back(message, getParent()->addCallback(message,
-			[=](auto&... args) { return (this->*callback)(args...); }));
+			[=, this](auto&... args) { return (this->*callback)(args...); }));
 	};
 	addCB(WM_DRAWITEM, &ShellMenu::handleDrawItem);
 	addCB(WM_MEASUREITEM, &ShellMenu::handleMeasureItem);

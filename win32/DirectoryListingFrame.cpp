@@ -600,18 +600,18 @@ void DirectoryListingFrame::loadFile(const tstring& dir) {
 		setDirty(SettingsManager::BOLD_FL);
 	};
 
-	loader = new FileListLoader(*this, [this, dir, finishLoad] { callAsync([=] {
+	loader = new FileListLoader(*this, [this, dir, finishLoad] { callAsync([=, this] {
 		// success callback
 		loaded = true;
 		finishLoad();
 		addRecent();
 		refreshTree(dir);
 		initStatusText();
-	}); }, [this, finishLoad](tstring s) { callAsync([=] {
+	}); }, [this, finishLoad](tstring s) { callAsync([=, this] {
 		// error callback
 		error = std::move(s);
 		finishLoad();
-	}); }, [this] { callAsync([=] {
+	}); }, [this] { callAsync([=, this] {
 		// ending callback
 		delete loader;
 		loader = nullptr;

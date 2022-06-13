@@ -98,7 +98,7 @@ public:
 	bool isRegistered() const { return isClientType(CT_REGGED) || isSet("RG"); }
 	bool isHidden() const { return isClientType(CT_HIDDEN) || isSet("HI"); }
 	bool isBot() const { return isClientType(CT_BOT) || isSet("BO"); }
-	bool isAway() const { return isSet("AW"); }
+	bool isAway() const { return (getStatus() & AWAY) || isSet("AW"); }
 	bool isTcpActive() const;
 	bool isTcp4Active() const;
 	bool isTcp6Active() const;

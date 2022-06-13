@@ -899,7 +899,7 @@ void SearchFrame::addTargetMenu(Menu* menu, const StringPairList& favoriteDirs, 
 	int n = 0;
 	if(!favoriteDirs.empty()) {
 		for(auto i = favoriteDirs.begin(); i != favoriteDirs.end(); ++i, ++n)
-			sub->appendItem(Text::toT(i->second), [=] { handleDownloadFavoriteDirs(n); });
+			sub->appendItem(Text::toT(i->second), [=, this] { handleDownloadFavoriteDirs(n); });
 		sub->appendSeparator();
 	}
 
@@ -908,7 +908,7 @@ void SearchFrame::addTargetMenu(Menu* menu, const StringPairList& favoriteDirs, 
 	if(!WinUtil::lastDirs.empty()) {
 		sub->appendSeparator();
 		for(auto i = WinUtil::lastDirs.begin(); i != WinUtil::lastDirs.end(); ++i, ++n)
-			sub->appendItem(*i, [=] { handleDownloadTarget(n); });
+			sub->appendItem(*i, [=, this] { handleDownloadTarget(n); });
 	}
 
 	if(checkTTH.hasTTH) {
@@ -916,7 +916,7 @@ void SearchFrame::addTargetMenu(Menu* menu, const StringPairList& favoriteDirs, 
 		if(!targets.empty()) {
 			sub->appendSeparator();
 			for(auto i = targets.begin(); i != targets.end(); ++i, ++n)
-				sub->appendItem(Text::toT(*i), [=] { handleDownloadTarget(n); });
+				sub->appendItem(Text::toT(*i), [=, this] { handleDownloadTarget(n); });
 		}
 	}
 }
@@ -927,7 +927,7 @@ void SearchFrame::addTargetDirMenu(Menu* menu, const StringPairList& favoriteDir
 	int n = 0;
 	if(!favoriteDirs.empty()) {
 		for(auto i = favoriteDirs.begin(); i != favoriteDirs.end(); ++i, ++n)
-			sub->appendItem(Text::toT(i->second), [=] { handleDownloadWholeFavoriteDirs(n); });
+			sub->appendItem(Text::toT(i->second), [=, this] { handleDownloadWholeFavoriteDirs(n); });
 		sub->appendSeparator();
 	}
 
@@ -936,7 +936,7 @@ void SearchFrame::addTargetDirMenu(Menu* menu, const StringPairList& favoriteDir
 	if(!WinUtil::lastDirs.empty()) {
 		sub->appendSeparator();
 		for(auto i = WinUtil::lastDirs.begin(); i != WinUtil::lastDirs.end(); ++i, ++n)
-			sub->appendItem(*i, [=] { handleDownloadWholeTarget(n); });
+			sub->appendItem(*i, [=, this] { handleDownloadWholeTarget(n); });
 	}
 }
 
@@ -1217,17 +1217,17 @@ bool SearchFrame::handleSearchChar(int c) {
 
 void SearchFrame::on(ClientConnected, Client* c) noexcept {
 	auto hi = new HubInfo(c);
-	callAsync([=] { onHubAdded(hi); });
+	callAsync([=, this] { onHubAdded(hi); });
 }
 
 void SearchFrame::on(ClientUpdated, Client* c) noexcept {
 	auto hi = new HubInfo(c);
-	callAsync([=] { onHubChanged(hi); });
+	callAsync([=, this] { onHubChanged(hi); });
 }
 
 void SearchFrame::on(ClientDisconnected, Client* c) noexcept {
 	auto hi = new HubInfo(c);
-	callAsync([=] { onHubRemoved(hi); });
+	callAsync([=, this] { onHubRemoved(hi); });
 }
 
 void SearchFrame::on(SettingsManagerListener::SearchTypesChanged) noexcept {

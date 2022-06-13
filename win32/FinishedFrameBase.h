@@ -684,41 +684,41 @@ private:
 
 	virtual void on(AddedFile, bool upload, const string& file, const FinishedFileItemPtr& entry) noexcept {
 		if(upload == in_UL)
-			this->callAsync([=] { this->onAddedFile(file, entry); });
+			this->callAsync([=, this] { this->onAddedFile(file, entry); });
 	}
 
 	virtual void on(AddedUser, bool upload, const HintedUser& user, const FinishedUserItemPtr& entry) noexcept {
 		if(upload == in_UL)
-			this->callAsync([=] { this->onAddedUser(user, entry); });
+			this->callAsync([=, this] { this->onAddedUser(user, entry); });
 	}
 
 	virtual void on(UpdatedFile, bool upload, const string& file, const FinishedFileItemPtr& entry) noexcept {
 		if(upload == in_UL) {
 			if(bOnlyFull && entry->isFull())
-				this->callAsync([=] { this->onAddedFile(file, entry); });
+				this->callAsync([=, this] { this->onAddedFile(file, entry); });
 			else
-				this->callAsync([=] { this->onUpdatedFile(file); });
+				this->callAsync([=, this] { this->onUpdatedFile(file); });
 		}
 	}
 
 	virtual void on(UpdatedUser, bool upload, const HintedUser& user) noexcept {
 		if(upload == in_UL)
-			this->callAsync([=] { this->onUpdatedUser(user); });
+			this->callAsync([=, this] { this->onUpdatedUser(user); });
 	}
 
 	virtual void on(RemovedFile, bool upload, const string& file) noexcept {
 		if(upload == in_UL)
-			this->callAsync([=] { this->onRemovedFile(file); });
+			this->callAsync([=, this] { this->onRemovedFile(file); });
 	}
 
 	virtual void on(RemovedUser, bool upload, const HintedUser& user) noexcept {
 		if(upload == in_UL)
-			this->callAsync([=] { this->onRemovedUser(user); });
+			this->callAsync([=, this] { this->onRemovedUser(user); });
 	}
 
 	virtual void on(RemovedAll, bool upload) noexcept {
 		if(upload == in_UL)
-			this->callAsync([=] { this->onRemovedAll(); });
+			this->callAsync([=, this] { this->onRemovedAll(); });
 	}
 };
 

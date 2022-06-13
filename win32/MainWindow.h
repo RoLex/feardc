@@ -163,8 +163,8 @@ private:
 
 	HANDLE stopperThread;
 
-	int64_t lastUp;
-	int64_t lastDown;
+	uint64_t lastUp;
+	uint64_t lastDown;
 	uint64_t lastTick;
 	bool away;
 	bool awayIdle;

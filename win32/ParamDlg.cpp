@@ -32,14 +32,14 @@ ParamDlg::ParamDlg(dwt::Widget* parent, const tstring& title) :
 GridDialog(parent, width),
 left(0)
 {
-	onInitDialog([=] { return initDialog(title); });
+	onInitDialog([=, this] { return initDialog(title); });
 }
 
 ParamDlg::ParamDlg(dwt::Widget* parent, const tstring& title, const tstring& name, const tstring& value, bool password) :
 GridDialog(parent, width),
 left(0)
 {
-	onInitDialog([=] { return initDialog(title); });
+	onInitDialog([=, this] { return initDialog(title); });
 	addTextBox(name, value, password);
 }
 
@@ -47,20 +47,20 @@ ParamDlg::ParamDlg(dwt::Widget* parent, const tstring& title, const tstring& nam
 GridDialog(parent, width),
 left(0)
 {
-	onInitDialog([=] { return initDialog(title); });
+	onInitDialog([=, this] { return initDialog(title); });
 	addComboBox(name, choices, sel, edit);
 }
 
 void ParamDlg::addTextBox(const tstring& name, const tstring& value, bool password) {
-	initFs.push_back([=] { initTextBox(name, value, password); });
+	initFs.push_back([=, this] { initTextBox(name, value, password); });
 }
 
 void ParamDlg::addIntTextBox(const tstring& name, const tstring& value, const int min, const int max) {
-	initFs.push_back([=] { initIntTextBox(name, value, min, max); });
+	initFs.push_back([=, this] { initIntTextBox(name, value, min, max); });
 }
 
 void ParamDlg::addComboBox(const tstring& name, const TStringList& choices, size_t sel, bool edit) {
-	initFs.push_back([=] { initComboBox(name, choices, sel, edit); });
+	initFs.push_back([=, this] { initComboBox(name, choices, sel, edit); });
 }
 
 void ParamDlg::initTextBox(const tstring& name, const tstring& value, bool password) {

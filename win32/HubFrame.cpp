@@ -690,10 +690,11 @@ void HubFrame::addedChat(const ChatMessage& message) {
 		auto ou = ClientManager::getInstance()->findOnlineUserHint(message.from->getCID(), url);
 		string extra;
 
-		if (ou && !ou->getIdentity().isBot() && ou->getIdentity().getIp().size()) {
-			extra += " | " + ou->getIdentity().getIp();
+		if (ou && !ou->getIdentity().isHub() && !ou->getIdentity().isBot() && ou->getIdentity().getIp().size()) {
+			if (SETTING(SHOW_USER_IP))
+				extra += " | " + ou->getIdentity().getIp();
 
-			if (ou->getIdentity().getCountry().size())
+			if (SETTING(SHOW_USER_COUNTRY) && ou->getIdentity().getCountry().size())
 				extra += " | " + ou->getIdentity().getCountry();
 		}
 
@@ -1035,7 +1036,7 @@ void HubFrame::on(ClientListener::UserUpdated, Client*, const OnlineUser& user) 
 
 	auto task = new UserTask(user);
 	callAsync([this, task] {
-		tasks.emplace_back([=](const UserTask& u) {
+		tasks.emplace_back([=, this](const UserTask& u) {
 			if(updateUser(u)) {
 				if(client->get(HubSettings::ShowJoins) ||
 					(client->get(HubSettings::FavShowJoins) && FavoriteManager::getInstance()->isFavoriteUser(u.user)))
@@ -1056,7 +1057,7 @@ void HubFrame::on(UsersUpdated, Client*, const OnlineUserList& aList) noexcept {
 		}
 
 		auto task = new UserTask(*i);
-		callAsync([this, task] { tasks.emplace_back([=](const UserTask& u) { updateUser(u); }, unique_ptr<UserTask>(task)); });
+		callAsync([this, task] { tasks.emplace_back([=, this](const UserTask& u) { updateUser(u); }, unique_ptr<UserTask>(task)); });
 	}
 	callAsync([this] { updateUsers = true; });
 }
@@ -1064,7 +1065,7 @@ void HubFrame::on(UsersUpdated, Client*, const OnlineUserList& aList) noexcept {
 void HubFrame::on(ClientListener::UserRemoved, Client*, const OnlineUser& user) noexcept {
 	auto task = new UserTask(user);
 	callAsync([this, task] {
-		tasks.emplace_back([=](const UserTask& u) {
+		tasks.emplace_back([=, this](const UserTask& u) {
 			removeUser(u.user);
 			if(client->get(HubSettings::ShowJoins) ||
 				(client->get(HubSettings::FavShowJoins) && FavoriteManager::getInstance()->isFavoriteUser(u.user)))
@@ -1144,16 +1145,16 @@ void HubFrame::on(NickTaken, Client*) noexcept {
 }
 
 void HubFrame::on(SearchFlood, Client*, const string& line) noexcept {
-	callAsync([=] { onStatusMessage(str(F_("Search spam detected from %1%") % line), ClientListener::FLAG_IS_SPAM); });
+	callAsync([=, this] { onStatusMessage(str(F_("Search spam detected from %1%") % line), ClientListener::FLAG_IS_SPAM); });
 }
 
 void HubFrame::on(ClientLine, Client*, const string& line, int type) noexcept {
 	if(type == MSG_STATUS) {
-		callAsync([=] { onStatusMessage(line, ClientListener::FLAG_IS_SPAM); });
+		callAsync([=, this] { onStatusMessage(line, ClientListener::FLAG_IS_SPAM); });
 	} else if(type == MSG_SYSTEM) {
-		callAsync([=] { onStatusMessage(line, ClientListener::FLAG_NORMAL); });
+		callAsync([=, this] { onStatusMessage(line, ClientListener::FLAG_NORMAL); });
 	} else {
-		callAsync([=] { addChat(Text::toT(line)); });
+		callAsync([=, this] { addChat(Text::toT(line)); });
 	}
 }
 
@@ -1166,7 +1167,7 @@ void HubFrame::on(HubMCTo, Client*, const string& nick, const string& line) noex
 }
 
 void HubFrame::onStatusMessage(const string& line, int flags) {
-	callAsync([=] { addStatus(Text::toT(line),
+	callAsync([=, this] { addStatus(Text::toT(line),
 		!(flags & ClientListener::FLAG_IS_SPAM) || !SETTING(FILTER_MESSAGES)); });
 }
 

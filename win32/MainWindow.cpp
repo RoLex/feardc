@@ -809,7 +809,7 @@ void MainWindow::handleFavHubsDropDown(const dwt::ScreenCoordinate& pt) {
 	for(auto& i: groupMenus) {
 		i.second = menu->appendPopup(escapeMenu(Text::toT(i.first)));
 		auto group = i.first;
-		i.second->appendItem(T_("Connect to all hubs in this group"), [=] { multiConnect(group, getTabView()); });
+		i.second->appendItem(T_("Connect to all hubs in this group"), [=, this] { multiConnect(group, getTabView()); });
 		i.second->appendSeparator();
 	}
 
@@ -1165,7 +1165,11 @@ void MainWindow::updateStatus() {
 	lastUp = up;
 	lastDown = down;
 
-	/** @todo move this to client/ */
+	/*
+		todo: move this to client
+		<TotalUpload type="int64">-1654786742</TotalUpload>
+		int64_t lastUp > uint64_t lastUp
+	*/
 	SettingsManager::getInstance()->set(SettingsManager::TOTAL_UPLOAD, SETTING(TOTAL_UPLOAD) + static_cast<int64_t>(updiff));
 	SettingsManager::getInstance()->set(SettingsManager::TOTAL_DOWNLOAD, SETTING(TOTAL_DOWNLOAD) + static_cast<int64_t>(downdiff));
 
@@ -1819,7 +1823,7 @@ bool MainWindow::handleToolbarContextMenu(const dwt::ScreenCoordinate& pt) {
 		int setting = SETTING(TOOLBAR_SIZE);
 		for(size_t i = 0, iend = sizeof(sizes) / sizeof(int); i < iend; ++i) {
 			int n = sizes[i];
-			unsigned pos = size->appendItem(Text::toT(Util::toString(n)), [=] { handleToolbarSize(n); });
+			unsigned pos = size->appendItem(Text::toT(Util::toString(n)), [=, this] { handleToolbarSize(n); });
 			if(n == setting)
 				size->checkItem(pos);
 		}
@@ -1906,7 +1910,7 @@ void MainWindow::switchStatus() {
 }
 
 void MainWindow::handleSlotsMenu() {
-	auto changeSlots = [this](int slots) -> function<void ()> { return [=] {
+	auto changeSlots = [this](int slots) -> function<void ()> { return [=, this] {
 		SettingsManager::getInstance()->set(SettingsManager::SLOTS, slots);
 		ThrottleManager::setSetting(ThrottleManager::getCurSetting(SettingsManager::SLOTS), slots);
 		updateStatus();
@@ -2085,7 +2089,7 @@ void MainWindow::on(HttpManagerListener::ResetStream, HttpConnection* c) noexcep
 }
 
 void MainWindow::on(LogManagerListener::Message, time_t t, const string& m) noexcept {
-	callAsync([=] { statusMessage(t, m); });
+	callAsync([=, this] { statusMessage(t, m); });
 }
 
 void MainWindow::on(QueueManagerListener::Finished, QueueItem* qi, const string& dir, int64_t speed) noexcept {
@@ -2095,7 +2099,7 @@ void MainWindow::on(QueueManagerListener::Finished, QueueItem* qi, const string&
 			auto user = qi->getDownloads()[0]->getHintedUser();
 			callAsync([this, file, dir, user, speed] {
 				DirectoryListingFrame::openWindow(getTabView(), Text::toT(file), Text::toT(dir), user, speed);
-				WinUtil::notify(WinUtil::NOTIFICATION_FINISHED_FL, Text::toT(Util::getFileName(file)), [=] {
+				WinUtil::notify(WinUtil::NOTIFICATION_FINISHED_FL, Text::toT(Util::getFileName(file)), [=, this] {
 					DirectoryListingFrame::activateWindow(user);
 				});
 			});
@@ -2111,7 +2115,7 @@ void MainWindow::on(QueueManagerListener::Finished, QueueItem* qi, const string&
 	if(!qi->isSet(QueueItem::FLAG_USER_LIST)) {
 		auto file = qi->getTarget();
 		callAsync([this, file] {
-			WinUtil::notify(WinUtil::NOTIFICATION_FINISHED_DL, Text::toT(file), [=] {
+			WinUtil::notify(WinUtil::NOTIFICATION_FINISHED_DL, Text::toT(file), [=, this] {
 				FinishedDLFrame::focusFile(getTabView(), file);
 			});
 		});

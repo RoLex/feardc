@@ -498,6 +498,13 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 		u.getIdentity().set("CO", connection);
 		u.getIdentity().setStatus(Util::toString(param[j - 1]));
 
+		/*
+		if (u.getIdentity().getStatus() & Identity::AWAY) // added in OnlineUser.h instead
+			u.getIdentity().set("AW", "1");
+		else
+			u.getIdentity().set("AW", Util::emptyString);
+		*/
+
 		if (u.getIdentity().getStatus() & Identity::TLS)
 			u.getUser()->setFlag(User::TLS);
 		else

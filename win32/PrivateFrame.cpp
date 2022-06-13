@@ -214,13 +214,14 @@ void PrivateFrame::addedChat(const ChatMessage& message) {
 		ParamMap params;
 		params["message"] = [&msg] { return Text::toDOS(Text::fromT(msg)); };
 		fillLogParams(params);
-		auto ou = ClientManager::getInstance()->findOnlineUserHint(replyTo.getUser().user->getCID(), replyTo.getUser().hint);
+		auto ou = ClientManager::getInstance()->findOnlineUserHint(message.from->getCID(), replyTo.getUser().hint);
 		string extra;
 
-		if (ou && !ou->getIdentity().isBot() && ou->getIdentity().getIp().size()) {
-			extra += " | " + ou->getIdentity().getIp();
+		if (ou && !ou->getIdentity().isHub() && !ou->getIdentity().isBot() && ou->getIdentity().getIp().size()) {
+			if (SETTING(SHOW_USER_IP))
+				extra += " | " + ou->getIdentity().getIp();
 
-			if (ou->getIdentity().getCountry().size())
+			if (SETTING(SHOW_USER_COUNTRY) && ou->getIdentity().getCountry().size())
 				extra += " | " + ou->getIdentity().getCountry();
 		}
 

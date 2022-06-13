@@ -142,13 +142,13 @@ bool SettingsDialog::initDialog() {
 		auto addPage = [&](const tstring& title, PropPage* page, unsigned icon, HTREEITEM parent) -> HTREEITEM {
 			auto index = pages.size();
 			images->add(dwt::Icon(icon, size));
-			page->onVisibilityChanged([=](bool b) { if(b) {
+			page->onVisibilityChanged([=, this](bool b) { if(b) {
 				setSmallIcon(WinUtil::createIcon(icon, 16));
 				setLargeIcon(WinUtil::createIcon(icon, 32));
 			} });
 			auto item = tree->insert(title, parent, TVI_LAST, 0, true, index);
 			if(index == setting)
-				callAsync([=] { tree->setSelected(item); tree->ensureVisible(item); });
+				callAsync([=, this] { tree->setSelected(item); tree->ensureVisible(item); });
 			pages.emplace_back(page, item);
 			return item;
 		};

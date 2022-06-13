@@ -45,7 +45,7 @@ editBtn(0),
 remove(0),
 unique(ensureUniqueness)
 {
-	onInitDialog([=] { return handleInitDialog(initialValues); });
+	onInitDialog([=, this] { return handleInitDialog(initialValues); });
 	onHelp(&WinUtil::help);
 }
 

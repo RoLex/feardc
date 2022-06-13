@@ -534,6 +534,7 @@ void PluginManager::enable(Plugin& plugin, bool install, bool runtime) {
 	bool unload = true;
 	ScopedFunctor(([&plugin, &unload] { if(unload) { FREE_LIBRARY(plugin.handle); plugin.handle = nullptr; plugin.dcMain = nullptr; } }));
 
+	// todo: -Wcast-function-type
 	auto pluginInfo = reinterpret_cast<DCMAIN (DCAPI *)(MetaDataPtr)>(GET_ADDRESS(plugin.handle, "pluginInit"));
 	MetaData info { };
 	if(!pluginInfo || !(plugin.dcMain = pluginInfo(&info))) {

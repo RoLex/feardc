@@ -97,10 +97,6 @@ private:
 	UploadList uploads;
 	mutable CriticalSection cs;
 
-	bool isFireball;
-	bool isFileServer;
-	uint64_t m_iHighSpeedStartTick;
-
 	typedef unordered_set<UserPtr, User::Hash> SlotSet;
 	typedef SlotSet::iterator SlotIter;
 	SlotSet reservedSlots;
@@ -109,7 +105,10 @@ private:
 	typedef SlotMap::iterator SlotMapIter;
 	SlotMap connectingUsers;
 
-	int lastFreeSlots; /// amount of free slots at the previous minute
+	int lastFreeSlots; // amount of free slots at the previous minute
+	bool isFireball;
+	bool isFileServer;
+	uint64_t m_iHighSpeedStartTick;
 
 	typedef list<WaitingUser> WaitingUserList;
 
