@@ -114,7 +114,7 @@ languages(0)
 		languages->setHelpId(IDH_SETTINGS_APPEARANCE_LANGUAGE);
 	}
 
-	auto label = grid->addChild(Label::Seed(T_("Note: some of these options require that you restart DC++")));
+	auto label = grid->addChild(Label::Seed(T_("Note: some of these options require that you restart FearDC")));
 	label->setHelpId(IDH_SETTINGS_APPEARANCE_REQUIRES_RESTART);
 
 	PropPage::read(items);

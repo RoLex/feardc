@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2022-06-11 11:58+0200\n"
+"POT-Creation-Date: 2022-06-19 19:37+0200\n"
 "PO-Revision-Date: 2014-10-27 11:18+0000\n"
 "Last-Translator: Hafo <hafo@abv.bg>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
@@ -83,18 +83,18 @@ msgid "%1% (Nick unknown)"
 msgstr "%1% (неизвестен псевдоним)"
 
 #: dcpp/PluginManager.cpp:155 dcpp/PluginManager.cpp:175
-#: dcpp/PluginManager.cpp:578
+#: dcpp/PluginManager.cpp:579
 #, boost-format
 msgid "%1% is already installed"
 msgstr "%1% вече е инсталиран"
 
-#: dcpp/PluginManager.cpp:141 dcpp/PluginManager.cpp:540
+#: dcpp/PluginManager.cpp:141 dcpp/PluginManager.cpp:541
 #, boost-format
 msgid "%1% is not a valid plugin"
 msgstr "%1% не е валидна приставка"
 
 #: dcpp/PluginManager.cpp:107 dcpp/PluginManager.cpp:144
-#: dcpp/PluginManager.cpp:545
+#: dcpp/PluginManager.cpp:546
 #, boost-format
 msgid "%1% is not compatible with %2%"
 msgstr "%1% е несъвместим с %2%"
@@ -132,7 +132,7 @@ msgstr "%1%/s"
 msgid "%1%: %2%"
 msgstr ""
 
-#: dcpp/DownloadManager.cpp:460
+#: dcpp/DownloadManager.cpp:461
 #, boost-format
 msgid "%1%: File not available"
 msgstr "%1%: Файла не е достъпен"
@@ -400,7 +400,7 @@ msgstr "Грешка при генериране на сертификат"
 msgid "Error hashing %1%: %2%"
 msgstr "Грешка при хеширане %1%: %2%"
 
-#: dcpp/PluginManager.cpp:600
+#: dcpp/PluginManager.cpp:601
 #, fuzzy, boost-format
 msgid "Error loading %1%"
 msgstr "Грешка при зареждане на %1%: %2%"
@@ -616,7 +616,7 @@ msgstr ""
 msgid "Maximum command length exceeded"
 msgstr "Максималната дължина на командата е превишена"
 
-#: dcpp/PluginManager.cpp:551
+#: dcpp/PluginManager.cpp:552
 #, boost-format
 msgid "Missing dependencies for %1%"
 msgstr "Липсват зависимости за %1%"
@@ -829,7 +829,7 @@ msgstr "Този файл вече е свален"
 msgid "This file is already queued"
 msgstr "Този файл вече е на опашката"
 
-#: dcpp/NmdcHub.cpp:1252
+#: dcpp/NmdcHub.cpp:1255
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "
@@ -911,7 +911,7 @@ msgstr "Неизвестна грешка: 0x%1$x"
 msgid "Unknown protocol %d"
 msgstr "Неизвестен протокол %d"
 
-#: dcpp/PluginManager.cpp:565
+#: dcpp/PluginManager.cpp:566
 #, boost-format
 msgid "Updating the %1% plugin from version %2% to version %3%"
 msgstr "Актуализиране на приставката %1% от врсия %2% до версия %3%"

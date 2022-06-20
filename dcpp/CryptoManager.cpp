@@ -76,7 +76,7 @@ CryptoManager::CryptoManager()
 :
 	certsLoaded(false),
 	lock("EXTENDEDPROTOCOLABCABCABCABCABCABC"),
-	pk("DCPLUSPLUS" VERSIONSTRING)
+	pk("DCPLUSPLUS" DCVERSIONSTRING)
 {
 	cs = new CriticalSection[CRYPTO_num_locks()];
 	CRYPTO_set_locking_callback(locking_function);

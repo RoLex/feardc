@@ -286,7 +286,7 @@ void DirectoryListing::save(const string& path) const {
 	stream.write(user.user->getCID().toBase32());
 	stream.write(LIT("\" Base=\""));
 	stream.write(SimpleXML::escape(base, tmp, true));
-	stream.write(LIT("\" Generator=\"" APPNAME " " VERSIONSTRING "\">\r\n"));
+	stream.write(LIT("\" Generator=\"" DCAPPNAME " " DCVERSIONSTRING "\">\r\n"));
 
 	auto start = (base == "/") ? root : find(Util::toNmdcFile(base), root);
 	if(start) {

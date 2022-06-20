@@ -25,7 +25,7 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "Comments", "https://dcplusplus.sourceforge.io"
+            VALUE "Comments", "https://client.feardc.net"
             VALUE "FileDescription", "Test"
             VALUE "FileVersion", "1, 0, 0, 0"
             VALUE "InternalName", "Test"

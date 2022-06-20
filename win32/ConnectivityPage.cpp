@@ -61,7 +61,7 @@ edit(0)
 		cur2->column(1).mode = GridInfo::FILL;
 		cur2->column(1).align = GridInfo::BOTTOM_RIGHT;
 
-		autoDetect = cur2->addChild(CheckBox::Seed(T_("Let DC++ determine the best connectivity settings")));
+		autoDetect = cur2->addChild(CheckBox::Seed(T_("Let FearDC determine the best connectivity settings")));
 		items.emplace_back(autoDetect, SettingsManager::AUTO_DETECT_CONNECTION, PropPage::T_BOOL);
 		autoDetect->onClicked([this] { handleAutoClicked(); });
 

@@ -248,8 +248,8 @@ if 'gcc' in env['TOOLS']:
     # Require SSE3 for FISTTP
     if env['arch'] == 'x86':
         env.Append(CCFLAGS=['-march=nocona', '-mtune=generic']) # Through SSE3
-    elif env['arch'] == 'x64':
-        env.Append(CCFLAGS=['-march=native', '-mtune=generic']) # Through SSSE3
+    elif env['arch'] == 'x64': # native - for self only
+        env.Append(CCFLAGS=['-march=core2', '-mtune=generic', '-msse4.1']) # Through SSSE3
 
 if 'msvc' in env['TOOLS']:
     env['pch'] = True

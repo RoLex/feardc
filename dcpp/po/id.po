@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2022-06-11 11:58+0200\n"
+"POT-Creation-Date: 2022-06-19 19:37+0200\n"
 "PO-Revision-Date: 2008-03-13 23:09+0000\n"
 "Last-Translator: Jacek Sieka <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,18 +80,18 @@ msgid "%1% (Nick unknown)"
 msgstr ""
 
 #: dcpp/PluginManager.cpp:155 dcpp/PluginManager.cpp:175
-#: dcpp/PluginManager.cpp:578
+#: dcpp/PluginManager.cpp:579
 #, boost-format
 msgid "%1% is already installed"
 msgstr ""
 
-#: dcpp/PluginManager.cpp:141 dcpp/PluginManager.cpp:540
+#: dcpp/PluginManager.cpp:141 dcpp/PluginManager.cpp:541
 #, fuzzy, boost-format
 msgid "%1% is not a valid plugin"
 msgstr "Arsip tidak tersedia"
 
 #: dcpp/PluginManager.cpp:107 dcpp/PluginManager.cpp:144
-#: dcpp/PluginManager.cpp:545
+#: dcpp/PluginManager.cpp:546
 #, boost-format
 msgid "%1% is not compatible with %2%"
 msgstr ""
@@ -127,7 +127,7 @@ msgstr ""
 msgid "%1%: %2%"
 msgstr ""
 
-#: dcpp/DownloadManager.cpp:460
+#: dcpp/DownloadManager.cpp:461
 #, fuzzy, boost-format
 msgid "%1%: File not available"
 msgstr "Arsip tidak tersedia"
@@ -381,7 +381,7 @@ msgstr ""
 msgid "Error hashing %1%: %2%"
 msgstr ""
 
-#: dcpp/PluginManager.cpp:600
+#: dcpp/PluginManager.cpp:601
 #, boost-format
 msgid "Error loading %1%"
 msgstr ""
@@ -587,7 +587,7 @@ msgstr ""
 msgid "Maximum command length exceeded"
 msgstr ""
 
-#: dcpp/PluginManager.cpp:551
+#: dcpp/PluginManager.cpp:552
 #, boost-format
 msgid "Missing dependencies for %1%"
 msgstr ""
@@ -797,7 +797,7 @@ msgstr ""
 msgid "This file is already queued"
 msgstr ""
 
-#: dcpp/NmdcHub.cpp:1252
+#: dcpp/NmdcHub.cpp:1255
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "
@@ -875,7 +875,7 @@ msgstr ""
 msgid "Unknown protocol %d"
 msgstr ""
 
-#: dcpp/PluginManager.cpp:565
+#: dcpp/PluginManager.cpp:566
 #, boost-format
 msgid "Updating the %1% plugin from version %2% to version %3%"
 msgstr ""

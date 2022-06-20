@@ -17,11 +17,16 @@
 
 #include <string>
 
-#define APPNAME "DC++"
-
+#define APPNAME "FearDC"
+#define TAGNAME "FearDC"
 // don't forget to update the .rc file as well!
-#define VERSIONSTRING "0.880"
-#define VERSIONFLOAT 0.880
+#define VERSIONSTRING "1.3.0.0"
+#define VERSIONFLOAT 0.1300
+
+#define DCAPPNAME "DC++"
+#define DCTAGNAME "++"
+#define DCVERSIONSTRING "0.880"
+#define DCVERSIONFLOAT 0.880
 
 namespace dcpp {
 extern const std::string fullVersionString;

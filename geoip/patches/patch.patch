@@ -1,4 +1,4 @@
-Patches for DC++:
+Patches for FearDC:
 * A list of Windows GEOID and a conversion function GeoIP_Win_GEOID_by_id
 * GeoIP_name_by_id_utf8 to return UTF-8 names
 * Records coming from city-level databases also store a country ID

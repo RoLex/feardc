@@ -1,7 +1,7 @@
-DC++ translation process
+FearDC translation process
 ========================
 
-This document briefly describes the DC++ translation process.
+This document briefly describes the FearDC translation process.
 Translations currently happen in Launchpad <https://translations.launchpad.net/dcplusplus>.
 
 1) Creating translation templates
@@ -46,7 +46,7 @@ Download PO files from <https://translations.launchpad.net/dcplusplus/trunk/+exp
 
 Extract them to a directory, say C:/trans.
 
-Open a Cygwin command prompt in the scripts directory of the DC++ repo. Merge new translations::
+Open a Cygwin command prompt in the scripts directory of the FearDC repo. Merge new translations::
 
 	./update-languages.sh C:/trans
 

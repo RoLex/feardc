@@ -106,9 +106,9 @@ private:
 	SlotMap connectingUsers;
 
 	int lastFreeSlots; // amount of free slots at the previous minute
+	uint64_t m_iHighSpeedStartTick;
 	bool isFireball;
 	bool isFileServer;
-	uint64_t m_iHighSpeedStartTick;
 
 	typedef list<WaitingUser> WaitingUserList;
 

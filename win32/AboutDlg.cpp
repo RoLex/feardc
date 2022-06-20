@@ -38,8 +38,7 @@ using dwt::GridInfo;
 using dwt::Label;
 using dwt::Link;
 
-static const char thanks[] = "Big thanks to all donators and people who have contributed with ideas "
-"and code! Thanks go out to sourceforge.net for hosting the project. "
+static const char thanks[] = "Big thanks to all donators and people who have contributed with ideas and code! "
 "This product uses bzip2 <www.bzip.org>, thanks to Julian Seward and team for providing it. "
 "This product uses zlib <www.zlib.net>, thanks to Jean-loup Gailly and Mark Adler for providing it. "
 "This product includes parts of the geoip-api-c library created by MaxMind, Inc., available from <https://github.com/maxmind/geoip-api-c>. "
@@ -61,7 +60,7 @@ static const char thanks[] = "Big thanks to all donators and people who have con
 "stanislav maslovski, david grundberg, pavel andreev, yakov suraev, kulmegil, smir, emtee, individ, "
 "pseudonym, crise, ben, ximin luo, razzloss, andrew browne, darkklor, vasily.n, netcelli, "
 "gennady proskurin, iceman50, flow84, alexander sashnov, yorhel, irainman, maksis, "
-"pavel pimenov, konstantin, night, klondike. Keep it coming!";
+"pavel pimenov, konstantin, night, klondike, rolex. Keep it coming!";
 
 AboutDlg::AboutDlg(dwt::Widget* parent) :
 dwt::ModalDialog(parent),
@@ -100,11 +99,11 @@ bool AboutDlg::handleInitDialog() {
 
 		cur->addChild(Label::Seed(WinUtil::createIcon(IDI_DCPP, 48)));
 
-		ls.caption = Text::toT(dcpp::fullVersionString) + _T("\n(c) Copyright 2001-2022 Jacek Sieka\n");
-		ls.caption += T_("Ex-main project contributors: Todd Pederzani, poy\nEx-codeveloper: Per Lind\303\251n\nOriginal DC++ logo design: Martin Skogevall\nGraphics: Radox and various GPL and CC authors\n\nDC++ is licenced under GPL.");
+		ls.caption = Text::toT(dcpp::fullVersionString) + _T("\nBased on: " DCAPPNAME " " DCVERSIONSTRING "\n") + _T("\n(c) Copyright 2001-2022 Jacek Sieka\n");
+		ls.caption += T_("Ex-main project contributors: Todd Pederzani, poy\nEx-codeveloper: Per Lind\303\251n\nOriginal DC++ logo design: Martin Skogevall\nGraphics: Radox and various GPL and CC authors\n\nFearDC is licenced under GPL.");
 		cur->addChild(ls);
 
-		cur->addChild(Link::Seed(_T("https://dcplusplus.sourceforge.io/"), true));
+		cur->addChild(Link::Seed(_T("https://client.feardc.net"), true));
 
 		auto ts = WinUtil::Seeds::Dialog::textBox;
 		ts.style |= ES_READONLY;
@@ -169,7 +168,7 @@ bool AboutDlg::handleInitDialog() {
 	buttons.first->setFocus();
 	buttons.second->setVisible(false);
 
-	setText(T_("About DC++"));
+	setText(T_("About FearDC"));
 	setSmallIcon(WinUtil::createIcon(IDI_DCPP, 16));
 	setLargeIcon(WinUtil::createIcon(IDI_DCPP, 32));
 
@@ -178,7 +177,7 @@ bool AboutDlg::handleInitDialog() {
 
 	HttpManager::getInstance()->addListener(this);
 	onDestroy([this] { HttpManager::getInstance()->removeListener(this); });
-	c = HttpManager::getInstance()->download("https://dcplusplus.sourceforge.io/version.xml");
+	c = HttpManager::getInstance()->download("https://client.feardc.net/version.xml");
 
 	return false;
 }
@@ -191,20 +190,23 @@ void AboutDlg::layout() {
 void AboutDlg::completeDownload(bool success, const string& result) {
 	tstring str;
 
-	if(success && !result.empty()) {
+	if (success && result.size()) {
 		try {
 			SimpleXML xml;
 			xml.fromXML(result);
-			if(xml.findChild("DCUpdate")) {
+
+			if (xml.findChild("DCUpdate")) {
 				xml.stepIn();
-				if(xml.findChild("Version")) {
+
+				if (xml.findChild("VersionString")) {
 					const auto& ver = xml.getChildData();
-					if(!ver.empty()) {
+
+					if (ver.size())
 						str = Text::toT(ver);
-					}
 				}
 			}
-		} catch(const SimpleXMLException&) {
+
+		} catch (const SimpleXMLException&) {
 			str = T_("Error processing version information");
 		}
 	}

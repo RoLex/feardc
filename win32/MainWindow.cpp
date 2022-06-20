@@ -115,22 +115,22 @@ awayIdle(false),
 fullSlots(false)
 {
 	// Don't forget to update version.xml when changing these links!
-	links.homepage = _T("https://dcplusplus.sourceforge.io/");
-	links.downloads = links.homepage + _T("download/");
+	links.homepage = _T("https://client.feardc.net/");
+	links.downloads = links.homepage + _T("?do=download");
 	links.geoip6 = _T("https://geolite.maxmind.com/download/geoip/database/GeoIPv6.dat.gz");
 	links.geoip4 = _T("https://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz");
 	links.geoip6_city = _T("https://geolite.maxmind.com/download/geoip/database/GeoLiteCityv6-beta/GeoLiteCityv6.dat.gz");
 	links.geoip4_city = _T("https://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz");
 	links.geoip_regions = _T("https://dev.maxmind.com/static/csv/codes/maxmind/region.csv");
-	links.faq = links.homepage + _T("faq/");
-	links.help = links.homepage + _T("help/");
-	links.discuss = links.homepage + _T("discussion/");
-	links.features = links.homepage + _T("featurereq/");
-	links.bugs = links.homepage + _T("bugs/");
-	links.donate = links.homepage + _T("donate/");
+	links.faq = links.homepage + _T("?do=faq");
+	links.help = links.homepage + _T("?do=help");
+	links.discuss = _T("https://github.com/rolex/feardc/issues");
+	links.features = _T("https://github.com/rolex/feardc/issues");
+	links.bugs = _T("https://github.com/rolex/feardc/issues");
+	links.donate = _T("https://dcplusplus.sourceforge.io/donate.html");
 	links.blog = _T("https://dcpp.wordpress.com");
-	links.community = _T("https://www.dcbase.org/");
-	links.pluginrepo = links.homepage + _T("plugins/");
+	links.community = _T("https://www.dcbase.org");
+	links.pluginrepo = links.homepage + _T("?do=plugins");
 	links.contribute = _T("https://www.dcbase.org/contribute/");
 
 	initWindow();
@@ -188,7 +188,7 @@ fullSlots(false)
 
 	TimerManager::getInstance()->start();
 
-	conns[CONN_VERSION] = HttpManager::getInstance()->download("https://dcplusplus.sourceforge.io/version.xml");
+	conns[CONN_VERSION] = HttpManager::getInstance()->download("https://client.feardc.net/version.xml");
 
 	try {
 		ConnectivityManager::getInstance()->setup(true, true);
@@ -402,7 +402,7 @@ void MainWindow::initMenu() {
 		help->appendItem(T_("Get started"), [this] { WinUtil::helpId(this, IDH_GET_STARTED); }, WinUtil::menuIcon(IDI_GET_STARTED));
 		help->appendSeparator();
 		help->appendItem(T_("Change Log"), [this] { WinUtil::helpId(this, IDH_CHANGELOG); }, WinUtil::menuIcon(IDI_CHANGELOG));
-		help->appendItem(T_("About DC++"), [this] { handleAbout(); }, WinUtil::menuIcon(IDI_DCPP));
+		help->appendItem(T_("About FearDC"), [this] { handleAbout(); }, WinUtil::menuIcon(IDI_DCPP));
 		help->appendSeparator();
 
 		help = help->appendPopup(T_("Links"), WinUtil::menuIcon(IDI_LINKS));
@@ -756,7 +756,7 @@ void MainWindow::addPluginCommands(Menu* menu) {
 }
 
 void MainWindow::notify(const tstring& title, const tstring& message, function<void ()> callback, const dwt::IconPtr& balloonIcon) {
-	notifier->addMessage(str(TF_("DC++ - %1%") % title), message, [this, callback] { handleRestore(); if(callback) callback(); }, balloonIcon);
+	notifier->addMessage(str(TF_("%1% - %2%") % APPNAME % title), message, [this, callback] { handleRestore(); if(callback) callback(); }, balloonIcon);
 }
 
 void MainWindow::setStaticWindowState(const string& id, bool open) {
@@ -770,7 +770,8 @@ void MainWindow::setStaticWindowState(const string& id, bool open) {
 
 void MainWindow::TrayPM() {
 	if(!tray_pm && notifier->isVisible() && !onForeground()) {
-		notifier->setIcon(WinUtil::createIcon(IDI_TRAY_PM, 16));
+		//notifier->setIcon(WinUtil::createIcon(IDI_TRAY_PM, 16));
+		notifier->setIcon(WinUtil::mergeIcons({IDI_DCPP, IDI_TRAY_PM}));
 		tray_pm = true;
 	}
 }
@@ -1526,8 +1527,8 @@ void MainWindow::completeVersionUpdate(bool success, const string& result) {
 				// how awesome, the user is using a testing version!
 
 				if(SETTING(TESTING_STATUS) == SettingsManager::TESTING_ENABLED) {
-					notify(T_("Testing version of DC++"),
-						T_("Thank you for using a testing version of DC++!") + _T("\n\n") +
+					notify(T_("Testing version of FearDC"),
+						T_("Thank you for using a testing version of FearDC!") + _T("\n\n") +
 						T_("Feel free to report any bug via Help > Links > Report a bug.") + _T("\n\n") +
 						T_("This message will show up in the status bar in the future.") + _T("\n") +
 						T_("Testing nags can be fully disabled via Settings > Advanced."),
@@ -1538,7 +1539,7 @@ void MainWindow::completeVersionUpdate(bool success, const string& result) {
 				} else if(SETTING(TESTING_STATUS) == SettingsManager::TESTING_SEEN_ONCE) {
 					if(status) {
 						status->setText(STATUS_STATUS,
-							T_("Thank you for using a testing version of DC++!") + _T(" ") +
+							T_("Thank you for using a testing version of FearDC!") + _T(" ") +
 							T_("Feel free to report any bug via Help > Links > Report a bug."));
 					}
 				}
@@ -1977,7 +1978,7 @@ void MainWindow::handleTrayClicked() {
 }
 
 void MainWindow::handleTrayUpdate() {
-	notifier->setTooltip(Text::toT(str(F_("D: %1%/s (%2%)\r\nU: %3%/s (%4%)") %
+	notifier->setTooltip(Text::toT(str(F_(APPNAME " " VERSIONSTRING "\r\nD: %1%/s (%2%)\r\nU: %3%/s (%4%)") %
 		Util::formatBytes(DownloadManager::getInstance()->getRunningAverage()) %
 		DownloadManager::getInstance()->getDownloadCount() %
 		Util::formatBytes(UploadManager::getInstance()->getRunningAverage()) %

@@ -103,7 +103,7 @@ options(0)
 
 	options = grid->addChild(GroupBox::Seed(T_("Secure connection settings")))->addChild(WinUtil::Seeds::Dialog::optionsTable); 
 
-	grid->addChild(Label::Seed(T_("Most of these options require that you restart DC++.")));
+	grid->addChild(Label::Seed(T_("Most of these options require that you restart FearDC.")));
 	grid->addChild(Label::Seed(T_("Note: TLS might not protect search results and non-keyprinted hubs.")));
 
 	PropPage::read(items);

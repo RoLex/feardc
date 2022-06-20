@@ -1,4 +1,4 @@
-= Compiling DC++
+= Compiling FearDC
 
 
 1.	Application and Dependency versions needed
@@ -26,7 +26,7 @@
 
 		On Windows you can install scons from the Python Package Index (PyPi) only.
 		"python -m pip install scons==4.0.1" will install the newest scons version
-		that is tested and usable to build DC++ at the moment.
+		that is tested and usable to build FearDC at the moment.
 		This command installs scons into the Python\Scripts folder.
 
 		Make sure that SCons is in your PATH environment variable. 
@@ -66,7 +66,7 @@
 	a. HTML Help support (only for MinGW)
 
 		To build a version with HTML Help support, copy the following files from a Windows SDK
-		(Windows SDK path -> DC++ source code path):
+		(Windows SDK path -> FearDC source code path):
 		Include/shared/winapifamily.h -> mingw/include/winapifamily.h
 		Include/um/HtmlHelp.h -> mingw/include/htmlhelp.h
 		Lib/win8/um/x86/Htmlhelp.Lib -> mingw/lib/htmlhelp.lib
@@ -139,14 +139,14 @@
 		mingw-get. Extract it to C:\MinGW and run:
 			mingw-get install gcc g++
 		A graphical installer around mingw-get is also available to facilitate the above.
-		Note that building DC++ with MinGW (not MinGW-w64) is not often tested and may lead to
+		Note that building FearDC with MinGW (not MinGW-w64) is not often tested and may lead to
 		stability issues.
 
 		Make sure that MinGW\bin is in your PATH environment variable.
 
 		Alternatively, if you have Cygwin, a MinGW compiler can be installed as part of Cygwin:
 		select it in the "Devel" category when running the Cygwin installer.
-		To make DC++ use it, add "prefix=i686-pc-mingw32-" to the scons arguments or create a
+		To make FearDC use it, add "prefix=i686-pc-mingw32-" to the scons arguments or create a
 		custom.py file containing:
 			prefix='i686-pc-mingw32-'
 		Make sure that Cygwin\bin is in your PATH environment variable.
@@ -156,7 +156,7 @@
 	<https://msdn.microsoft.com/en-us/visualc/default.aspx>
 
 		Note: the following information is outdated; we accept patches to the build system
-		that would allow building DC++ on any supported edition of MSVS.
+		that would allow building FearDC on any supported edition of MSVS.
 
 		Make sure VS is up-to-date; in particular, you will need the Nov 2013 CTP from
 		<https://www.microsoft.com/en-us/download/details.aspx?id=41151>. Use the patch in
@@ -177,10 +177,10 @@
 		b. In the event you experience crashing you can check the howto guide for debugging
 		at <https://answers.launchpad.net/dcplusplus/+faq/337>
 
-		Note that DCPlusPlus.exe is stripped by default when it has been built with MinGW;
-		debugging symbols instead reside in DCPlusPlus.pdb. To get GDB to swallow it, start it with
+		Note that FearDC.exe is stripped by default when it has been built with MinGW;
+		debugging symbols instead reside in FearDC.pdb. To get GDB to swallow it, start it with
 		the following command:
-			gdb -e DCPlusPlus.exe -s DCPlusPlus.pdb
+			gdb -e FearDC.exe -s FearDC.pdb
 
 		c. Linux / Unix:
 

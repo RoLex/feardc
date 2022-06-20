@@ -53,7 +53,7 @@ socksSettings(0)
 		autoGroup = grid->addChild(GroupBox::Seed(T_("Automatic connectivity setup")));
 		autoGroup->setHelpId(IDH_SETTINGS_CONNECTIVITY_AUTODETECT);
 
-		autoDetect = autoGroup->addChild(CheckBox::Seed(T_("Let DC++ determine the best connectivity settings")));
+		autoDetect = autoGroup->addChild(CheckBox::Seed(T_("Let FearDC determine the best connectivity settings")));
 		autoDetect->onClicked([this] { handleAutoClicked(); });
 	}
 

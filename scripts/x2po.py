@@ -340,9 +340,9 @@ plural = plurals.get(locale, "plurals=2; plural=(n != 1);")
 language = langs.get(locale, "XXX");
 
 out.write(r"""
-# LANGUAGE translations for the DC++ package.
+# LANGUAGE translations for the FearDC package.
 # Copyright (C) 2008 The translators
-# This file is distributed under the same license as the DC++ package.
+# This file is distributed under the same license as the FearDC package.
 #  <TRANSLATOR>, 2008.
 #
 msgid ""

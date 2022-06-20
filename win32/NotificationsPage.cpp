@@ -114,7 +114,7 @@ balloonBg(0)
 	{
 		balloonGroup = grid->addChild(GroupBox::Seed(T_("Balloon settings")));
 
-		balloonBg = balloonGroup->addChild(CheckBox::Seed(T_("Display the balloon only when DC++ is in the background")));
+		balloonBg = balloonGroup->addChild(CheckBox::Seed(T_("Display the balloon only when FearDC is in the background")));
 		balloonBg->setHelpId(IDH_SETTINGS_NOTIFICATIONS_BALLOON_BG);
 		balloonBg->onClicked([this] { handleBalloonBgClicked(); });
 	}

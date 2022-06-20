@@ -63,7 +63,7 @@ bool HashProgressDlg::handleInitDialog() {
 	grid->row(3).mode = GridInfo::STATIC;
 	grid->row(3).align = GridInfo::STRETCH;
 
-	grid->addChild(Label::Seed(T_("Please wait while DC++ indexes your files (they won't be shared until they've been indexed)...")));
+	grid->addChild(Label::Seed(T_("Please wait while FearDC indexes your files (they won't be shared until they've been indexed)...")));
 
 	file = grid->addChild(Label::Seed());
 

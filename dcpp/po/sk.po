@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2022-06-11 11:58+0200\n"
+"POT-Creation-Date: 2022-06-19 19:37+0200\n"
 "PO-Revision-Date: 2013-09-15 14:06+0000\n"
 "Last-Translator: Gabriel O <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
@@ -80,18 +80,18 @@ msgid "%1% (Nick unknown)"
 msgstr "%1% (neznáma prezývka)"
 
 #: dcpp/PluginManager.cpp:155 dcpp/PluginManager.cpp:175
-#: dcpp/PluginManager.cpp:578
+#: dcpp/PluginManager.cpp:579
 #, boost-format
 msgid "%1% is already installed"
 msgstr "%1% je už nainštalovaný"
 
-#: dcpp/PluginManager.cpp:141 dcpp/PluginManager.cpp:540
+#: dcpp/PluginManager.cpp:141 dcpp/PluginManager.cpp:541
 #, boost-format
 msgid "%1% is not a valid plugin"
 msgstr "%1% nie je platný zásuvný modul"
 
 #: dcpp/PluginManager.cpp:107 dcpp/PluginManager.cpp:144
-#: dcpp/PluginManager.cpp:545
+#: dcpp/PluginManager.cpp:546
 #, boost-format
 msgid "%1% is not compatible with %2%"
 msgstr "%1% nie je kompatibilný s %2%"
@@ -128,7 +128,7 @@ msgstr "%1%/s"
 msgid "%1%: %2%"
 msgstr ""
 
-#: dcpp/DownloadManager.cpp:460
+#: dcpp/DownloadManager.cpp:461
 #, boost-format
 msgid "%1%: File not available"
 msgstr "%1%: Súbor nie je dostupný"
@@ -395,7 +395,7 @@ msgstr "Chyba pri tvorbe certifikátu"
 msgid "Error hashing %1%: %2%"
 msgstr "Chyba pri vytváraní hašu %1%: %2%"
 
-#: dcpp/PluginManager.cpp:600
+#: dcpp/PluginManager.cpp:601
 #, boost-format
 msgid "Error loading %1%"
 msgstr "Chyba načítavania %1%"
@@ -607,7 +607,7 @@ msgstr "Detekovaná lokálna sieť s možným NAT, pokus o namapovanie portov...
 msgid "Maximum command length exceeded"
 msgstr "Bola prekročená maximálna dĺžka príkazu"
 
-#: dcpp/PluginManager.cpp:551
+#: dcpp/PluginManager.cpp:552
 #, boost-format
 msgid "Missing dependencies for %1%"
 msgstr "Chýbajúce závislosti pre %1%"
@@ -819,7 +819,7 @@ msgstr "Sťahovanie tohto súboru už bolo dokončené"
 msgid "This file is already queued"
 msgstr "Tento súbor sa už nachádza vo fronte"
 
-#: dcpp/NmdcHub.cpp:1252
+#: dcpp/NmdcHub.cpp:1255
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "
@@ -899,7 +899,7 @@ msgstr "Neznáma chyba: 0x%1$x"
 msgid "Unknown protocol %d"
 msgstr "Neznámy protokol %d"
 
-#: dcpp/PluginManager.cpp:565
+#: dcpp/PluginManager.cpp:566
 #, boost-format
 msgid "Updating the %1% plugin from version %2% to version %3%"
 msgstr "Aktualizácia zásuvného modulu %1%  z verzie %2% na verziu %3%"

@@ -285,7 +285,7 @@ void PublicHubsFrame::updateList() {
 	} else {
 		blacklist->setText(str(TF_(
 			"Warning: fraudulent hub list detected!\r\n\r\n"
-			"The current hub list (%1%) has been blacklisted by DC++ for the following reason:\r\n"
+			"The current hub list (%1%) has been blacklisted by FearDC for the following reason:\r\n"
 			"%2%\r\n\r\n"
 			"It is strongly recommended that you do not connect to any of the hubs listed here "
 			"and that you remove this hub list from your collection by using the \"Configure\" "

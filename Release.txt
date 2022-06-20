@@ -1,7 +1,7 @@
-DC++ release process
+FearDC release process
 ====================
 
-This document describes the steps involved in producing a DC++ release:
+This document describes the steps involved in producing a FearDC release:
 
 0) Requirements
 1) Creating translation templates
@@ -92,7 +92,7 @@ The ``build/distro`` directory should contain 4 files; check their contents:
 - ``DCPlusPlus-xxx-x64.zip``: 64-bit binary arche. Should contain 8 regular files and a ``locale``
   directory with 5 files per language.
 
-- ``DCPlusPlus-xxx-src.zip``: Source code. Should be a direct extract of the DC++ repository.
+- ``DCPlusPlus-xxx-src.zip``: Source code. Should be a direct extract of the FearDC repository.
 
 **Don't forget to replace the "xxx" parts of the file names with the actual version number.**
 
@@ -113,7 +113,7 @@ The ``build/distro`` directory should contain 4 files; check their contents:
   marked as "testing".
 
 - The build step should also have generated ``build/webhelp``, which can be uploaded as is to the
-  corresponding directory of the DC++ website.
+  corresponding directory of the FearDC website.
 
 
 10) Update launchpad bugs

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2022-06-11 11:58+0200\n"
+"POT-Creation-Date: 2022-06-19 19:37+0200\n"
 "PO-Revision-Date: 2016-09-06 20:38+0000\n"
 "Last-Translator: eMTee <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -80,18 +80,18 @@ msgid "%1% (Nick unknown)"
 msgstr "%1% (Ismeretlen nick)"
 
 #: dcpp/PluginManager.cpp:155 dcpp/PluginManager.cpp:175
-#: dcpp/PluginManager.cpp:578
+#: dcpp/PluginManager.cpp:579
 #, boost-format
 msgid "%1% is already installed"
 msgstr "A(z) %1% már telepítve van"
 
-#: dcpp/PluginManager.cpp:141 dcpp/PluginManager.cpp:540
+#: dcpp/PluginManager.cpp:141 dcpp/PluginManager.cpp:541
 #, boost-format
 msgid "%1% is not a valid plugin"
 msgstr "Érvénytelen bővítmény: %1%"
 
 #: dcpp/PluginManager.cpp:107 dcpp/PluginManager.cpp:144
-#: dcpp/PluginManager.cpp:545
+#: dcpp/PluginManager.cpp:546
 #, boost-format
 msgid "%1% is not compatible with %2%"
 msgstr "%1% nem kompatibilis %2%-val"
@@ -128,7 +128,7 @@ msgstr "%1%/s"
 msgid "%1%: %2%"
 msgstr "%1%: %2%"
 
-#: dcpp/DownloadManager.cpp:460
+#: dcpp/DownloadManager.cpp:461
 #, boost-format
 msgid "%1%: File not available"
 msgstr "%1%: A fájl nem elérhető"
@@ -398,7 +398,7 @@ msgstr "Hiba a tanúsítvány készítésekor"
 msgid "Error hashing %1%: %2%"
 msgstr "Hiba a következő hashelésekor: %1%: %2%"
 
-#: dcpp/PluginManager.cpp:600
+#: dcpp/PluginManager.cpp:601
 #, boost-format
 msgid "Error loading %1%"
 msgstr "Hiba %1% betöltésekor"
@@ -615,7 +615,7 @@ msgstr ""
 msgid "Maximum command length exceeded"
 msgstr "A maximális parancs hossz túllépve"
 
-#: dcpp/PluginManager.cpp:551
+#: dcpp/PluginManager.cpp:552
 #, boost-format
 msgid "Missing dependencies for %1%"
 msgstr "Hiányzó függőségek a(z) %1%-hez"
@@ -834,7 +834,7 @@ msgstr "Ez a fájl már korábban letöltődött"
 msgid "This file is already queued"
 msgstr "A fájl már a sorban van"
 
-#: dcpp/NmdcHub.cpp:1252
+#: dcpp/NmdcHub.cpp:1255
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "
@@ -919,7 +919,7 @@ msgstr "Ismeretlen hiba: 0x%1$x"
 msgid "Unknown protocol %d"
 msgstr "Ismeretlen protokoll %d"
 
-#: dcpp/PluginManager.cpp:565
+#: dcpp/PluginManager.cpp:566
 #, boost-format
 msgid "Updating the %1% plugin from version %2% to version %3%"
 msgstr "A(z) %1% bővítmény frissítése %2% verzióról %3% verzióra"

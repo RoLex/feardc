@@ -1067,62 +1067,58 @@ void NmdcHub::hubMCTo(const string& aNick, const string& aMessage) {
 
 void NmdcHub::myInfo(bool alwaysSend) {
 	checkstate();
-
 	reloadSettings(false);
-	char StatusMode = Identity::NORMAL;
+	char statusChar = Identity::NORMAL;
+	char modeChar = 'P'; // '?' is unknown mode, use passive as default
 
-	string tmp1 = ";**\x1fU9";
-	string tmp2 = "+L9";
-	string tmp3 = "+G9";
-	string tmp4 = "+R9";
-	string tmp5 = "+N9";
-	string::size_type i;
-
-	for(i = 0; i < 6; i++) {
-		tmp1[i]++;
-	}
-	for(i = 0; i < 3; i++) {
-		tmp2[i]++; tmp3[i]++; tmp4[i]++; tmp5[i]++;
-	}
-	char modeChar = '?';
-	if(CONNSETTING(OUTGOING_CONNECTIONS) == SettingsManager::OUTGOING_SOCKS5)
+	if (CONNSETTING(OUTGOING_CONNECTIONS) == SettingsManager::OUTGOING_SOCKS5)
 		modeChar = '5';
-	else if(ClientManager::getInstance()->isActive())
+	else if (ClientManager::getInstance()->isActive())
 		modeChar = 'A';
-	else
-		modeChar = 'P';
 
 	string uploadSpeed;
 	int upLimit = ThrottleManager::getInstance()->getUpLimit();
-	if (upLimit > 0) {
+
+	if (upLimit > 0)
 		uploadSpeed = Util::toString(upLimit) + " KiB/s";
-	} else {
+	else
 		uploadSpeed = SETTING(UPLOAD_SPEED);
-	}
 
 	if (Util::getAway())
-		StatusMode |= Identity::AWAY;
+		statusChar |= Identity::AWAY;
 
 	if (UploadManager::getInstance()->getFileServerStatus())
-		StatusMode |= Identity::SERVER;
+		statusChar |= Identity::SERVER;
 
 	if (UploadManager::getInstance()->getFireballStatus())
-		StatusMode |= Identity::FIREBALL;
+		statusChar |= Identity::FIREBALL;
 
 	if (!SETTING(DISABLE_NMDC_TLS_CTM) && CryptoManager::getInstance()->TLSOk()) // if not disabled by user
-		StatusMode |= Identity::TLS;
+		statusChar |= Identity::TLS;
 
-	string uMin = (SETTING(MIN_UPLOAD_SPEED) == 0) ? Util::emptyString : tmp5 + Util::toString(SETTING(MIN_UPLOAD_SPEED));
+	string uMin = (SETTING(MIN_UPLOAD_SPEED) == 0) ? Util::emptyString : ",O:" + Util::toString(SETTING(MIN_UPLOAD_SPEED));
+
 	string myInfoA =
-		"$MyINFO $ALL " + fromUtf8(getMyNick()) + " " + fromUtf8(escape(get(Description))) +
-		tmp1 + VERSIONSTRING + tmp2 + modeChar + tmp3 + getCounts();
-	string myInfoB = tmp4 + Util::toString(SETTING(SLOTS));
+		"$MyINFO $ALL " + fromUtf8(getMyNick()) + ' ' + fromUtf8(escape(get(Description))) +
+		'<' + TAGNAME + " V:" + VERSIONSTRING + ",M:" + modeChar + ",H:" + getCounts();
+
+	string myInfoB = ",S:" + Util::toString(SETTING(SLOTS));
+
 	string myInfoC = uMin +
-		">$ $" + uploadSpeed + StatusMode + '$' + fromUtf8(escape(get(Email))) + '$';
+		">$ $" + uploadSpeed + statusChar + '$' + fromUtf8(escape(get(Email))) + '$';
+
 	string myInfoD = ShareManager::getInstance()->getShareSizeString() + "$|";
-	// we always send A and C; however, B (slots) and D (share size) can frequently change so we delay them if needed
- 	if(lastMyInfoA != myInfoA || lastMyInfoC != myInfoC ||
-		alwaysSend || ((lastMyInfoB != myInfoB || lastMyInfoD != myInfoD) && lastUpdate + 15*60*1000 < GET_TICK())) {
+
+	// we always send A and C, however, B (slots) and D (share size) can frequently change so we delay them if needed
+ 	if (
+		lastMyInfoA != myInfoA ||
+		lastMyInfoC != myInfoC ||
+		alwaysSend ||
+		(
+			(lastMyInfoB != myInfoB || lastMyInfoD != myInfoD) &&
+			lastUpdate + 15 * 60 * 1000 < GET_TICK()
+		)
+	) {
  		dcdebug("MyInfo %s...\n", getMyNick().c_str());
  		send(myInfoA + myInfoB + myInfoC + myInfoD);
  		lastMyInfoA = myInfoA;

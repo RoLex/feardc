@@ -35,7 +35,7 @@ SplashWindow::SplashWindow() :
 {
 	// 256x icons only work on >= Vista. on failure, try loading a 48x image.
 	try {
-		iconSize = 256;
+		iconSize = 128;
 		icon = WinUtil::createIcon(IDI_DCPP, iconSize);
 	} catch(const dwt::DWTException&) {
 		iconSize = 48;
@@ -60,7 +60,7 @@ SplashWindow::~SplashWindow() {
 }
 
 void SplashWindow::operator()(const string& status) {
-	this->status = str(TF_("Loading DC++, please wait... (%1%)") % Text::toT(status));
+	this->status = str(TF_("Loading FearDC, please wait... (%1%)") % Text::toT(status));
 	progress = 0;
 	callAsync([this] { draw(); });
 }

@@ -11,4 +11,4 @@ The exact version of OpenSSL can be found in include/openssl/opensslv.h
 (OPENSSL_VERSION_NUMBER macro).
 
 See "ThirdPartyLicenses.txt" at the root of this repository for license
-details. That file is also included into binary distributions of DC++.
+details. That file is also included into binary distributions of FearDC.

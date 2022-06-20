@@ -119,9 +119,20 @@ protected:
 	void handleAddFavorite() {
 		handleUserFunction([](UserInfoBase* u) { u->addFav(); });
 	}
+
 	void handlePrivateMessage(TabViewPtr parent) {
 		handleUserFunction([&](UserInfoBase* u) { u->pm(parent); });
 	}
+/*
+	<dt>Send public message</dt>
+	<dd>Prepend selected user nicks to public chat message input. Use this to address your message
+	to specific user or multiple users. Your message will be sent as public message as stated in
+	input field.</dd>
+
+	void handlePublicMessage(TabViewPtr parent) { // todo
+		handleUserFunction([&](UserInfoBase* u) { u->onPublicMessage(parent); });
+	}
+*/
 	void handleGrantSlot() {
 		handleUserFunction([](UserInfoBase* u) { u->grant(); });
 	}
@@ -154,8 +165,12 @@ protected:
 		menu->appendItem(T_("&Get file list"), [this, parent] { this->t().handleGetList(parent); }, dwt::IconPtr(), true, defaultIsGetList);
 		menu->appendItem(T_("&Browse file list"), [this, parent] { this->t().handleBrowseList(parent); });
 		menu->appendItem(T_("&Match queue"), [this] { this->t().handleMatchQueue(); });
-		if(includeSendPM)
+
+		if (includeSendPM) {
 			menu->appendItem(T_("&Send private message"), [this, parent] { this->t().handlePrivateMessage(parent); }, dwt::IconPtr(), true, !defaultIsGetList);
+			//menu->appendItem(T_("&Send public message"), [this, parent] { this->t().handlePublicMessage(parent); }, dwt::IconPtr(), true, !defaultIsGetList);
+		}
+
 		if(!traits.isSet(UserTraits::favOnly))
 			menu->appendItem(T_("Add To &Favorites"), [this] { this->t().handleAddFavorite(); }, WinUtil::menuIcon(IDI_FAVORITE_USER_ON));
 		menu->appendItem(T_("Grant &extra slot"), [this] { this->t().handleGrantSlot(); });

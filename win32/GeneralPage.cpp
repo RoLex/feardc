@@ -103,7 +103,7 @@ connections(0)
 		}
 
 		// dummy grid so that the check-box doesn't fill the whole row.
-		auto box = cur->addChild(Grid::Seed(1, 1))->addChild(CheckBox::Seed(T_("Enable away mode when DC++ is minimized")));
+		auto box = cur->addChild(Grid::Seed(1, 1))->addChild(CheckBox::Seed(T_("Enable away mode when FearDC is minimized")));
 		box->setHelpId(IDH_SETTINGS_GENERAL_AUTO_AWAY);
 		items.emplace_back(box, SettingsManager::AUTO_AWAY, PropPage::T_BOOL);
 

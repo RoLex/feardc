@@ -928,7 +928,7 @@ void ShareManager::generateXmlList() {
 				CalcOutputStream<TTFilter<1024*1024*1024>, false> newXmlFile(&count);
 
 				newXmlFile.write(SimpleXML::utf8Header);
-				newXmlFile.write("<FileListing Version=\"1\" CID=\"" + ClientManager::getInstance()->getMe()->getCID().toBase32() + "\" Base=\"/\" Generator=\"" APPNAME " " VERSIONSTRING "\">\r\n");
+				newXmlFile.write("<FileListing Version=\"1\" CID=\"" + ClientManager::getInstance()->getMe()->getCID().toBase32() + "\" Base=\"/\" Generator=\"" DCAPPNAME " " DCVERSIONSTRING "\">\r\n");
 				for(auto& i: directories) {
 					i.second->toXml(newXmlFile, indent, tmp2, -1);
 				}
@@ -975,7 +975,7 @@ MemoryInputStream* ShareManager::generatePartialList(const string& dir, bool rec
 
 	string xml = SimpleXML::utf8Header;
 	string tmp;
-	xml += "<FileListing Version=\"1\" CID=\"" + ClientManager::getInstance()->getMe()->getCID().toBase32() + "\" Base=\"" + SimpleXML::escape(dir, tmp, true) + "\" Generator=\"" APPNAME " " VERSIONSTRING "\">\r\n";
+	xml += "<FileListing Version=\"1\" CID=\"" + ClientManager::getInstance()->getMe()->getCID().toBase32() + "\" Base=\"" + SimpleXML::escape(dir, tmp, true) + "\" Generator=\"" DCAPPNAME " " DCVERSIONSTRING "\">\r\n";
 	StringRefOutputStream sos(xml);
 	string indent = "\t";
 

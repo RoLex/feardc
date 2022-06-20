@@ -52,7 +52,7 @@ tlstransferBox(0)
 	autoGroup = grid->addChild(GroupBox::Seed(T_("Automatic connectivity setup")));
 	autoGroup->setHelpId(IDH_SETTINGS_CONNECTIVITY_AUTODETECT);
 
-	autoDetect = autoGroup->addChild(CheckBox::Seed(T_("Let DC++ determine the best connectivity settings")));
+	autoDetect = autoGroup->addChild(CheckBox::Seed(T_("Let FearDC determine the best connectivity settings")));
 	autoDetect->onClicked([this] { handleAutoClicked(); });
 
 	portGrid = grid->addChild(Grid::Seed(1, 3));
@@ -185,7 +185,7 @@ void PageContent::initializeUI()
 		active = cur->addChild(RadioButton::Seed(T_("Active mode (I have no router / I have configured my router)")));
 		active->setHelpId(IDH_SETTINGS_CONNECTIVITY_ACTIVE);
 
-		upnp = cur->addChild(RadioButton::Seed(T_("Active mode (let DC++ configure my router with NAT-PMP / UPnP)")));
+		upnp = cur->addChild(RadioButton::Seed(T_("Active mode (let FearDC configure my router with NAT-PMP / UPnP)")));
 		upnp->setHelpId(IDH_SETTINGS_CONNECTIVITY_UPNP);
 
 		passive = cur->addChild(RadioButton::Seed(T_("Passive mode (last resort - has serious limitations)")));

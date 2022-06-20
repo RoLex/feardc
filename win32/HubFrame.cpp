@@ -538,7 +538,7 @@ void HubFrame::enterImpl(const tstring& s) {
 					+ _T("\r\n\t") + T_("Toggles visibility of the list of users for the current hub.")
 					+ _T("\r\n") _T("/connection")
 					+ _T("\r\n") _T("/conn")
-					+ _T("\r\n\t") + T_("Displays the connectivity status information, auto detected or manually chosen connection mode, IP and ports that DC++ is currently using for connections with all users.")
+					+ _T("\r\n\t") + T_("Displays the connectivity status information, auto detected or manually chosen connection mode, IP and ports that FearDC is currently using for connections with all users.")
 					+ _T("\r\n") _T("/favorite")
 					+ _T("\r\n") _T("/fav")
 					+ _T("\r\n\t") + T_("Adds the current hub (along with your nickname and password, if used) to the list of Favorite Hubs.")

@@ -514,10 +514,10 @@ void WinUtil::handleDblClicks(dwt::TextBoxBase* box) {
 	box->onLeftMouseDblClick([box](const dwt::MouseEvent& me) { return parseLink(box->textUnderCursor(me.pos)); });
 }
 
-#define LINE2 _T("-- https://dcplusplus.sourceforge.io <DC++ ") _T(VERSIONSTRING) _T(">")
+#define LINE2 _T("-- https://client.feardc.net <") _T(APPNAME) _T(" ") _T(VERSIONSTRING) _T(">")
 const TCHAR
 	*msgs[] = {
-		_T("\r\n-- I'm a happy DC++ user. You could be happy too.\r\n") LINE2,
+		_T("\r\n-- I'm a happy FearDC user. You could be happy too.\r\n") LINE2,
 		_T("\r\n-- Neo-...what? Nope...never heard of it...\r\n") LINE2,
 		_T("\r\n-- Evolution of species: Ape --> Man\r\n-- Evolution of science: \"The Earth is Flat\" --> \"The Earth is Round\"\r\n-- Evolution of DC: NMDC --> ADC\r\n") LINE2,
 		_T("\r\n-- I share, therefore I am.\r\n") LINE2,
@@ -548,7 +548,7 @@ const char* command_strings[] = {
 	"/dslots #",
 	"/search <string>",
 	"/clear [lines to keep]",
-	"/dc++",
+	"/feardc",
 	"/away [message]",
 	"/back",
 	"/d <search string>",
@@ -566,19 +566,19 @@ const char* command_strings[] = {
 };
 
 const char* command_helps[] = {
-	N_("Manually refreshes DC++'s share list by going through the shared directories and adding new folders and files. DC++ automatically refreshes once an hour by default, and also refreshes after the list of shared directories is changed."),
+	N_("Manually refreshes FearDC's share list by going through the shared directories and adding new folders and files. FearDC automatically refreshes once an hour by default, and also refreshes after the list of shared directories is changed."),
 	N_("Speak as a third person."),
 	N_("Sets the current number of upload slots to the number you specify. If this is less than the current number of slots, no uploads are cancelled."),
 	N_("Sets the current number of download slots to the number you specify. If this is less than the current number of slots, no downloads are cancelled."),
 	N_("Opens a new search window with the specified search string. It does not automatically send the search."),
 	N_("Clears the current window of all text. Optionally, you can specify how many of the latest (most recent) lines should be kept."),
-	N_("Sends a random DC++ advertising message to the chat, including a link to the DC++ homepage and the version number."),
+	N_("Sends a random FearDC advertising message to the chat, including a link to the FearDC homepage and the version number."),
 	N_("Sets Away status. New private message windows will be responded to, once, with the message you specified, or the default away message configured in the Personal information settings page."),
 	N_("Un-sets Away status."),
 	N_("Launches your default web browser to the DuckDuckGo search engine with the specified search."),
 	N_("Launches your default web browser to the Google search engine with the specified search."),
 	N_("Launches your default web browser to the Internet Movie Database (imdb) with the specified query."),
-	N_("Rebuilds the HashIndex.xml and HashData.dat files, removing entries to files that are no longer shared, or old hashes for files that have since changed. This runs in the main DC++ thread, so the interface will freeze until the rebuild is finished."),
+	N_("Rebuilds the HashIndex.xml and HashData.dat files, removing entries to files that are no longer shared, or old hashes for files that have since changed. This runs in the main FearDC thread, so the interface will freeze until the rebuild is finished."),
 	N_("If no parameter is specified, it launches the log for the hub or private chat with the associated application in Windows. If one of the parameters is specified it opens that log file. The status log is available only in the hub frame."),
 	N_("Displays available commands. (The ones listed on this page.) Optionally, you can specify \"brief\" to have a brief listing."),
 	N_("Launches your default web browser with the given URL."),
@@ -604,7 +604,7 @@ tstring WinUtil::getDescriptiveCommands() {
 
 tstring
 	WinUtil::commands =
-		_T("/refresh, /me <msg>, /slots #, /dslots #, /search <string>, /clear [lines to keep], /dc++, /away <msg>, /back, /d <searchstring>, /g <searchstring>, /imdb <imdbquery>, /rebuild, /log [type], /help [brief], /u <url>, /f <string>, /download [#], /upload [#], /close, /a[bout][:]c[onfig]");
+		_T("/refresh, /me <msg>, /slots #, /dslots #, /search <string>, /clear [lines to keep], /feardc, /away <msg>, /back, /d <searchstring>, /g <searchstring>, /imdb <imdbquery>, /rebuild, /log [type], /help [brief], /u <url>, /f <string>, /download [#], /upload [#], /close, /a[bout][:]c[onfig]");
 
 bool WinUtil::checkCommand(tstring& cmd, tstring& param, tstring& message, tstring& status, bool& thirdPerson) {
 	string::size_type i = cmd.find(' ');
@@ -658,7 +658,7 @@ bool WinUtil::checkCommand(tstring& cmd, tstring& param, tstring& message, tstri
 		} else {
 			status = T_("Specify a search string");
 		}
-	} else if(Util::stricmp(cmd.c_str(), _T("dc++")) == 0) {
+	} else if(Util::stricmp(cmd.c_str(), _T("feardc")) == 0) {
 		message = msgs[GET_TICK() % MSGS];
 
 	} else if (Util::stricmp(cmd.c_str(), _T("away")) == 0) {
@@ -1085,7 +1085,7 @@ void WinUtil::helpId(dwt::Control* widget, unsigned id) {
 		// context-sensitive help
 		new HelpPopup<false>(widget, Text::toT(getHelpText(id).second));
 
-	} else {
+	} else if (!helpPath.empty()) {
 #ifdef HAVE_HTMLHELP_H
 		if(id < IDH_BEGIN || id > IDH_END)
 			id = IDH_INDEX;
@@ -1475,7 +1475,7 @@ void WinUtil::setApplicationStartupRegister()
 
 		if(ret != ERROR_SUCCESS)
 		{
-			LogManager::getInstance()->message(str(F_("Error registering DC++ for automatic startup (could not find or create key)")));
+			LogManager::getInstance()->message(str(F_("Error registering FearDC for automatic startup (could not find or create key)")));
 			return;
 		}
 	}
@@ -1485,7 +1485,7 @@ void WinUtil::setApplicationStartupRegister()
 	ret = ::RegSetValueEx(hk, _T("DC++"), 0, REG_SZ, (LPBYTE) app.c_str(), sizeof(TCHAR) * (app.length() + 1));
 	if(ret != ERROR_SUCCESS)
 	{
-		LogManager::getInstance()->message(str(F_("Error registering DC++ for automatic startup (could not set key value)")));
+		LogManager::getInstance()->message(str(F_("Error registering FearDC for automatic startup (could not set key value)")));
 	}
 
 	::RegCloseKey(hk);
@@ -1520,7 +1520,7 @@ void WinUtil::setApplicationStartupUnregister()
 			ret = ::RegDeleteValue(hk, _T("DC++"));
 			if(ret != ERROR_SUCCESS)
 			{
-				LogManager::getInstance()->message(str(F_("Error unregistering DC++ for automatic startup (could not delete key value)")));
+				LogManager::getInstance()->message(str(F_("Error unregistering FearDC for automatic startup (could not delete key value)")));
 			}
 		}
 	}
@@ -1570,7 +1570,7 @@ bool WinUtil::parseLink(const tstring& str, bool followExternal) {
 			MagnetDlg(mainWindow, Text::toT(hash), Text::toT(name), Text::toT(key)).run();
 		} else {
 			dwt::MessageBox(mainWindow).show(
-				T_("A MAGNET link was given to DC++, but it didn't contain a valid file hash for use on the Direct Connect network.  No action will be taken."),
+				T_("A MAGNET link was given to FearDC, but it didn't contain a valid file hash for use on the Direct Connect network.  No action will be taken."),
 				T_("MAGNET Link detected"), dwt::MessageBox::BOX_OK, dwt::MessageBox::BOX_ICONEXCLAMATION);
 		}
 		return true;
@@ -1594,7 +1594,7 @@ bool WinUtil::parseLink(const tstring& str, bool followExternal) {
 									T_(
 									"Warning: Allowing content to open a program can be useful, but it can potentially harm your computer. "
 									"Do not allow it unless you trust the source of the content.") + _T("\n\n") +
-									T_("Any program that is launched will have the same access rights as DC++.") + _T("\n\n") +
+									T_("Any program that is launched will have the same access rights as FearDC.") + _T("\n\n") +
 									T_("The requested link is ") + str + _T("\n\n") +
 									T_("Do you still want to allow to open a program on your computer?"),
 									T_("External protocol request"),

@@ -1,4 +1,4 @@
-# Build help files for DC++
+# Build help files for FearDC
 # Dependencies:
 # - Perl, in order to use po4a <https://www.po4a.org/>
 # - Microsoft HTML Help Workshop
@@ -17,7 +17,7 @@ array_remove(static_HTMLs, 'changelog.html')
 array_remove(static_HTMLs, 'compile.html')
 array_remove(static_HTMLs, 'fdl.html')
 
-# cshelp.h is included in resource.h, which in turn is included in the DC++
+# cshelp.h is included in resource.h, which in turn is included in the FearDC
 # source; hence, we generate it even when help files are not being compiled.
 from gen_cshelp import gen_cshelp
 env.Command('cshelp.h', static_HTMLs, Action(

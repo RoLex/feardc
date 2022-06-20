@@ -18,7 +18,7 @@ parser = OptionParser(usage='%prog version [bugs_to_exclude]')
 options, args = parser.parse_args()
 if len(args) < 1:
     parser.error('No version defined')
-message = 'Fixed in DC++ ' + args[0] + '.'
+message = 'Fixed in FearDC ' + args[0] + '.'
 exclude = list()
 if len(args) > 1:
     exclude = [int(string) for string in args[1:]]
@@ -26,7 +26,7 @@ if len(args) > 1:
 from launchpadlib.launchpad import Launchpad
 from launchpadlib.errors import HTTPError
 
-launchpad = Launchpad.login_with('DC++ release script', 'production')
+launchpad = Launchpad.login_with('FearDC release script', 'production')
 project = launchpad.projects['dcplusplus']
 
 bug_tasks = project.searchTasks(status='Fix Committed')
