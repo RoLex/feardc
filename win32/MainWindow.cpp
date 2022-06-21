@@ -116,21 +116,21 @@ fullSlots(false)
 {
 	// Don't forget to update version.xml when changing these links!
 	links.homepage = _T("https://client.feardc.net/");
-	links.downloads = links.homepage + _T("?do=download");
+	links.downloads = links.homepage + _T("download.html");
 	links.geoip6 = _T("https://geolite.maxmind.com/download/geoip/database/GeoIPv6.dat.gz");
 	links.geoip4 = _T("https://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz");
 	links.geoip6_city = _T("https://geolite.maxmind.com/download/geoip/database/GeoLiteCityv6-beta/GeoLiteCityv6.dat.gz");
 	links.geoip4_city = _T("https://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz");
 	links.geoip_regions = _T("https://dev.maxmind.com/static/csv/codes/maxmind/region.csv");
-	links.faq = links.homepage + _T("?do=faq");
-	links.help = links.homepage + _T("?do=help");
+	links.faq = links.homepage + _T("faq.html");
+	links.help = links.homepage + _T("help.html");
 	links.discuss = _T("https://github.com/rolex/feardc/issues");
 	links.features = _T("https://github.com/rolex/feardc/issues");
 	links.bugs = _T("https://github.com/rolex/feardc/issues");
 	links.donate = _T("https://dcplusplus.sourceforge.io/donate.html");
 	links.blog = _T("https://dcpp.wordpress.com");
 	links.community = _T("https://www.dcbase.org");
-	links.pluginrepo = links.homepage + _T("?do=plugins");
+	links.pluginrepo = links.homepage + _T("plugins.html");
 	links.contribute = _T("https://www.dcbase.org/contribute/");
 
 	initWindow();

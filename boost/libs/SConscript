@@ -7,6 +7,9 @@ env, target, sources = dev.prepare_build(
     recursive=True,
 )
 
+if env['arch'] == 'x64':
+    env.Append(CCFLAGS=['-msse4.1']) # sse4.1 is required by find_address since boost 1.75
+
 env.Append(CPPPATH=['#/boost', '#/boost/libs/atomic/src'])
 
 ret = dev.build_lib(env, target, sources)
