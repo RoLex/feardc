@@ -1,5 +1,6 @@
 # FearDC - DC++ fork with NMDC TLS
 Based on: DC++ 0.880
+For official DC++ look here: https://dcplusplus.sourceforge.io
 # New in 1.3.0.0
 * Merge with DC++ 0.880 (RoLex)
 * Add support for TTHS NMDC extension to save traffic on both sides with short TTH searches, widely supported by Verlihub (RoLex)
