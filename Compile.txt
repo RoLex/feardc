@@ -79,9 +79,9 @@
 	b. OpenSSL (currently only for MinGW)
 
 		Download OpenSSL from www.openssl.org, copy the 'openssl-*.tar.gz' archive to the openssl/build folder
-		and compile it using the build.bat script. It will copy the compiled libraries to openssl/lib.
-		The build process needs Cygwin and above the basic (default) packages it requires the following 
-		additional packages to be installed under Cygwin:
+		and compile it using the build.bat script, alternatively build.sh script for CygWin users. It will copy
+		the compiled libraries to openssl/lib. The build process needs CygWin and above the basic (default)
+		packages it requires the following additional packages to be installed under CygWin:
 
 		- perl (Perl builds for Windows are unsuitable for this process)
 		- make

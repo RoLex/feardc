@@ -124,6 +124,29 @@ tstring UserInfoBase::getInfo(int flags) const {
 	if(id.isAway())
 		addLine(T_("In away mode"));
 
+	tstring sts;
+
+	if (id.getStatus() & Identity::NORMAL)
+		sts += T_("Normal");
+
+	if (id.getStatus() & Identity::AWAY)
+		sts += (sts.size() ? Text::toT(", ") : Text::toT("")) + T_("Away");
+
+	if (id.getStatus() & Identity::SERVER)
+		sts += (sts.size() ? Text::toT(", ") : Text::toT("")) + T_("Server");
+
+	if (id.getStatus() & Identity::FIREBALL)
+		sts += (sts.size() ? Text::toT(", ") : Text::toT("")) + T_("Fireball");
+
+	if (id.getStatus() & Identity::TLS)
+		sts += (sts.size() ? Text::toT(", ") : Text::toT("")) + T_("TLS");
+
+	//if (id.getStatus() & Identity::NAT)
+		//sts += (sts.size() ? Text::toT(", ") : Text::toT("")) + T_("NAT");
+
+	if (sts.size())
+		addLine(str(TF_("Status: %1%") % sts));
+
 	addValue(T_("Shared"), Util::formatBytes(id.getBytesShared()));
 	addValue(T_("Description"), id.getDescription());
 	addValue(T_("Tag"), id.getTag());
