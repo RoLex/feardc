@@ -24,7 +24,7 @@ const string HubSettings::stringNames[StringCount] = {
 	"Nick", "UserDescription", "Email", "UserIp", "UserIp6", // not "Description" for compat with prev fav hub lists
 };
 const string HubSettings::boolNames[BoolCount] = {
-	"ShowJoins", "FavShowJoins", "LogMainChat"
+	"ShowJoins", "FavShowJoins", "LogMainChat", "DisableCtmTLS"
 };
 
 const string HubSettings::intNames[IntCount] = {

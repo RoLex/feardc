@@ -700,6 +700,7 @@ HubSettings SettingsManager::getHubSettings() const {
 	ret.get(HubSettings::ShowJoins) = get(SHOW_JOINS);
 	ret.get(HubSettings::FavShowJoins) = get(FAV_SHOW_JOINS);
 	ret.get(HubSettings::LogMainChat) = get(LOG_MAIN_CHAT);
+	ret.get(HubSettings::DisableCtmTLS) = get(DISABLE_NMDC_TLS_CTM);
 
 	ret.get(HubSettings::Connection) = CONNSETTING(INCOMING_CONNECTIONS);
 	ret.get(HubSettings::Connection6) = CONNSETTING(INCOMING_CONNECTIONS6);

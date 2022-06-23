@@ -735,16 +735,22 @@ void FavoriteManager::refresh(bool forceDownload /* = false */) {
 				Lock l(cs);
 				publicListMatrix[publicListServer].clear();
 			}
+
 			listType = (Util::stricmp(path.substr(path.size() - 4), ".bz2") == 0) ? TYPE_BZIP2 : TYPE_NORMAL;
+
 			try {
 				File cached(path, File::READ, File::OPEN);
-				buf = cached.read();
-				char dateBuf[20];
 				time_t fd = cached.getLastModified();
-				if (strftime(dateBuf, 20, "%x", localtime(&fd))) {
-					fileDate = string(dateBuf);
+
+				if (difftime(time(NULL), fd) < 60 * 60 * 24) { // force update after 24 hours
+					buf = cached.read();
+					char dateBuf[20];
+
+					if (strftime(dateBuf, 20, "%x", localtime(&fd)))
+						fileDate = string(dateBuf);
 				}
-			} catch(const FileException&) { }
+			} catch (const FileException&) { }
+
 			if(!buf.empty()) {
 				if(onHttpFinished(buf)) {
 					fire(FavoriteManagerListener::LoadedFromCache(), publicListServer, fileDate);

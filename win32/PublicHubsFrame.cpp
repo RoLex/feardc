@@ -224,7 +224,7 @@ users(0)
 	if(FavoriteManager::getInstance()->isDownloading()) {
 		status->setText(STATUS_STATUS, T_("Downloading public hub list..."));
 		listsGrid->setEnabled(false);
-	} else if(entries.empty()) {
+	} else /*if(entries.empty())*/ { // always refresh, otherwise we see "cached" status only once
 		FavoriteManager::getInstance()->refresh();
 	}
 }

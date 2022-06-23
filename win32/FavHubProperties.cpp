@@ -52,6 +52,7 @@ encoding(0),
 showJoins(0),
 favShowJoins(0),
 logMainChat(0),
+disableCtmTLS(0),
 groups(0),
 entry(_entry)
 {
@@ -152,7 +153,9 @@ bool FavHubProperties::handleInitDialog() {
 	}
 
 	{
-		auto cur = grid->addChild(Grid::Seed(3, 2));
+		bool isAdcHub = Util::isAdcUrl(entry->getServer()) || Util::isAdcsUrl(entry->getServer());
+		int rows = isAdcHub ? 3 : 4;
+		auto cur = grid->addChild(Grid::Seed(rows, 2));
 		grid->setWidget(cur, 2, 0, 1, 2);
 		cur->column(0).mode = GridInfo::FILL;
 		cur->column(0).align = GridInfo::BOTTOM_RIGHT;
@@ -171,6 +174,13 @@ bool FavHubProperties::handleInitDialog() {
 		logMainChat = cur->addChild(WinUtil::Seeds::Dialog::comboBox);
 		WinUtil::fillTriboolCombo(logMainChat);
 		logMainChat->setSelected(toInt(entry->get(HubSettings::LogMainChat)));
+
+		if (!isAdcHub) {
+			cur->addChild(Label::Seed(T_("Disable TLS client-client connections")));
+			disableCtmTLS = cur->addChild(WinUtil::Seeds::Dialog::comboBox);
+			WinUtil::fillTriboolCombo(disableCtmTLS);
+			disableCtmTLS->setSelected(toInt(entry->get(HubSettings::DisableCtmTLS)));
+		}
 	}
 
 	{
@@ -227,6 +237,7 @@ void FavHubProperties::handleOKClicked() {
 	entry->get(HubSettings::ShowJoins) = to3bool(showJoins->getSelected());
 	entry->get(HubSettings::FavShowJoins) = to3bool(favShowJoins->getSelected());
 	entry->get(HubSettings::LogMainChat) = to3bool(logMainChat->getSelected());
+	entry->get(HubSettings::DisableCtmTLS) = to3bool(disableCtmTLS->getSelected());
 	entry->setGroup(Text::fromT(groups->getText()));
 	FavoriteManager::getInstance()->save();
 	endDialog(IDOK);

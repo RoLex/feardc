@@ -574,7 +574,7 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 		if (port[port.size() - 1] == 'S') {
 			// sadly we have this disabled, we should never get such requests
 			// even from old clients because we did not state tls flag in myinfo
-			if (SETTING(DISABLE_NMDC_TLS_CTM))
+			if (get(HubSettings::DisableCtmTLS))
 				return;
 
 			port.erase(port.size() - 1);
@@ -739,7 +739,7 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 				feat.push_back("TTHS"); // https://www.te-home.net/?do=work&id=verlihub&page=nmdc#tths
 				feat.push_back("ZPipe0");
 
-				if (!SETTING(DISABLE_NMDC_TLS_CTM) && CryptoManager::getInstance()->TLSOk()) // if not disabled by user
+				if (!get(HubSettings::DisableCtmTLS) && CryptoManager::getInstance()->TLSOk()) // if not disabled by user
 					feat.push_back("TLS");
 
 				supports(feat);
@@ -1034,7 +1034,7 @@ void NmdcHub::connectToMe(const OnlineUser& aUser) {
 	dcdebug("NmdcHub::connectToMe %s\n", nick.c_str());
 	bool secure = false;
 
-	if (!SETTING(DISABLE_NMDC_TLS_CTM)) // if not disabled by user
+	if (!get(HubSettings::DisableCtmTLS)) // if not disabled by user
 		secure = (CryptoManager::getInstance()->TLSOk() && aUser.getUser()->isSet(User::TLS));
 
 	const string port = (secure ? ConnectionManager::getInstance()->getSecurePort() : ConnectionManager::getInstance()->getPort());
@@ -1093,7 +1093,7 @@ void NmdcHub::myInfo(bool alwaysSend) {
 	if (UploadManager::getInstance()->getFireballStatus())
 		statusChar |= Identity::FIREBALL;
 
-	if (!SETTING(DISABLE_NMDC_TLS_CTM) && CryptoManager::getInstance()->TLSOk()) // if not disabled by user
+	if (!get(HubSettings::DisableCtmTLS) && CryptoManager::getInstance()->TLSOk()) // if not disabled by user
 		statusChar |= Identity::TLS;
 
 	string uMin = (SETTING(MIN_UPLOAD_SPEED) == 0) ? Util::emptyString : ",O:" + Util::toString(SETTING(MIN_UPLOAD_SPEED));

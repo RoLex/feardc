@@ -45,6 +45,7 @@ private:
 	ComboBoxPtr showJoins;
 	ComboBoxPtr favShowJoins;
 	ComboBoxPtr logMainChat;
+	ComboBoxPtr disableCtmTLS;
 	ComboBoxPtr groups;
 
 	FavoriteHubEntry *entry;
