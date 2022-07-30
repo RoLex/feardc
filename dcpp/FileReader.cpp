@@ -176,7 +176,7 @@ size_t FileReader::readDirect(const string& file, const DataCallback& callback) 
 			}
 		}
 
-		*((DWORD*)&over.Offset) += rn;
+		*((uint64_t*)&over.Offset) += rn; // DWORD
 
 		swap(rbuf, hbuf);
 		swap(rn, hn);
@@ -187,7 +187,7 @@ size_t FileReader::readDirect(const string& file, const DataCallback& callback) 
 		callback(hbuf, hn);
 	}
 
-	return *((DWORD*)&over.Offset);
+	return *((uint64_t*)&over.Offset); // DWORD
 }
 
 #else
