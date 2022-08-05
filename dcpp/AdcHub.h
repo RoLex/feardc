@@ -89,6 +89,8 @@ private:
 	string salt;
 	uint32_t sid;
 
+	uint64_t sinceConnect;
+
 	std::unordered_set<uint32_t> forbiddenCommands;
 
 	static const vector<StringList> searchExts;

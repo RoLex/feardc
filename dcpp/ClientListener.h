@@ -47,6 +47,7 @@ public:
 	typedef X<18> AdcSearch;
 	typedef X<19> ClientLine;
 	typedef X<20> HubMCTo;
+	typedef X<21> LoginTimeout;
 
 	enum StatusFlags {
 		FLAG_NORMAL = 0x00,
@@ -67,6 +68,7 @@ public:
 	virtual void on(HubUserCommand, Client*, int, int, const string&, const string&) noexcept { }
 	virtual void on(HubFull, Client*) noexcept { }
 	virtual void on(NickTaken, Client*) noexcept { }
+	virtual void on(LoginTimeout, Client*) noexcept { }
 	virtual void on(SearchFlood, Client*, const string&) noexcept { }
 	virtual void on(NmdcSearch, Client*, const string&, int, int64_t, int, const string&) noexcept { }
 	virtual void on(AdcSearch, Client*, const AdcCommand&, const OnlineUser&) noexcept { }

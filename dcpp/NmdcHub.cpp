@@ -40,7 +40,8 @@ NmdcHub::NmdcHub(const string& aHubURL, bool secure):
 	Client(aHubURL, '|', secure),
 	supportFlags(0),
 	lastUpdate(0),
-	lastProtectedIPsUpdate(0)
+	lastProtectedIPsUpdate(0),
+	sinceConnect(0)
 {}
 
 NmdcHub::~NmdcHub() {
@@ -1306,6 +1307,7 @@ void NmdcHub::on(Connected) noexcept {
 	lastMyInfoC.clear();
 	lastMyInfoD.clear();
 	lastUpdate = 0;
+	sinceConnect = GET_TICK();
 	refreshLocalIp();
 }
 
@@ -1326,13 +1328,25 @@ void NmdcHub::on(Failed, const string& aLine) noexcept {
 void NmdcHub::on(Second, uint64_t aTick) noexcept {
 	Client::on(Second(), aTick);
 
+	/*
+		after 2 minutes we force disconnect due to unfinished login
+		this check was missing in all clients since the beginning
+	*/
+	if ((state != STATE_NORMAL) && (sinceConnect > 0) && (aTick >= (sinceConnect + 120 * 1000))) {
+		sinceConnect = 0;
+		disconnect(true);
+		fire(ClientListener::LoginTimeout(), this);
+		return;
+	}
+
 	if(state == STATE_NORMAL && (aTick > (getLastActivity() + 120*1000)) ) {
 		send("|", 1);
 	}
 }
 
 void NmdcHub::on(Minute, uint64_t aTick) noexcept {
-	if(!sock) return;
+	if (!sock)
+		return;
 
 	refreshLocalIp();
 

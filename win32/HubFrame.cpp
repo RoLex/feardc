@@ -1144,6 +1144,14 @@ void HubFrame::on(NickTaken, Client*) noexcept {
 	callAsync([this] { addStatus(T_("Your nick was already taken, please change to something else!"), true); });
 }
 
+void HubFrame::on(LoginTimeout, Client*) noexcept {
+	callAsync(
+		[this] {
+			addStatus(T_("Login timeout, disconnecting and waiting for next attempt..."), true);
+		}
+	);
+}
+
 void HubFrame::on(SearchFlood, Client*, const string& line) noexcept {
 	callAsync([=, this] { onStatusMessage(str(F_("Search spam detected from %1%") % line), ClientListener::FLAG_IS_SPAM); });
 }

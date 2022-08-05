@@ -282,6 +282,7 @@ private:
 	virtual void on(Message, Client*, const ChatMessage&) noexcept;
 	virtual void on(StatusMessage, Client*, const string&, int = ClientListener::FLAG_NORMAL) noexcept;
 	virtual void on(NickTaken, Client*) noexcept;
+	virtual void on(LoginTimeout, Client*) noexcept;
 	virtual void on(SearchFlood, Client*, const string&) noexcept;
 	virtual void on(ClientLine, Client*, const string& line, int type) noexcept;
 	virtual void on(HubMCTo, Client*, const string&, const string&) noexcept;

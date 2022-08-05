@@ -63,8 +63,13 @@ const string AdcHub::ZLIF_SUPPORT("ADZLIF");
 
 const vector<StringList> AdcHub::searchExts;
 
-AdcHub::AdcHub(const string& aHubURL, bool secure) :
-	Client(aHubURL, '\n', secure), oldPassword(false), udp(Socket::TYPE_UDP), sid(0) {
+AdcHub::AdcHub(const string& aHubURL, bool secure):
+	Client(aHubURL, '\n', secure),
+	oldPassword(false),
+	udp(Socket::TYPE_UDP),
+	sid(0),
+	sinceConnect(0)
+{
 	TimerManager::getInstance()->addListener(this);
 }
 
@@ -1105,13 +1110,14 @@ void AdcHub::on(Connected c) noexcept {
 	if(SETTING(HUB_USER_COMMANDS)) {
 		cmd.addParam(UCM0_SUPPORT);
 	}
+
 	if(SETTING(SEND_BLOOM)) {
 		cmd.addParam(BLO0_SUPPORT);
 	}
-	
+
 	cmd.addParam(ZLIF_SUPPORT);
-	
 	send(cmd);
+	sinceConnect = GET_TICK();
 }
 
 void AdcHub::on(Line l, const string& aLine) noexcept {
@@ -1135,6 +1141,18 @@ void AdcHub::on(Failed f, const string& aLine) noexcept {
 
 void AdcHub::on(Second s, uint64_t aTick) noexcept {
 	Client::on(s, aTick);
+
+	/*
+		after 2 minutes we force disconnect due to unfinished login
+		this check was missing in all clients since the beginning
+	*/
+	if ((state != STATE_NORMAL) && (sinceConnect > 0) && (aTick >= (sinceConnect + 120 * 1000))) {
+		sinceConnect = 0;
+		disconnect(true);
+		fire(ClientListener::LoginTimeout(), this);
+		return;
+	}
+
 	if(state == STATE_NORMAL && (aTick > (getLastActivity() + 120*1000))) {
 		send("\n", 1);
 	}
