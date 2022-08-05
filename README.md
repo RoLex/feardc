@@ -6,6 +6,7 @@
 # New in 1.3.0.0
 
 ```
+* Missing in all clients - force login timeout after 2 minutes (RoLex)
 * Merge with DC++ 0.880 (RoLex)
 * Add support for TTHS NMDC extension to save traffic on both sides with short TTH searches, widely supported by Verlihub (RoLex)
 * Add support for BotList, HubTopic and MCTo NMDC extensions, widely supported by Verlihub (RoLex)
