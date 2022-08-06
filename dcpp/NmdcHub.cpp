@@ -1332,16 +1332,15 @@ void NmdcHub::on(Second, uint64_t aTick) noexcept {
 		after 2 minutes we force disconnect due to unfinished login
 		this check was missing in all clients since the beginning
 	*/
-	if ((state != STATE_NORMAL) && (sinceConnect > 0) && (aTick >= (sinceConnect + 120 * 1000))) {
+	if ((state > STATE_CONNECTING) && (state < STATE_NORMAL) && (sinceConnect > 0) && (aTick >= ((sinceConnect + 120) * 1000))) {
 		sinceConnect = 0;
 		disconnect(true);
 		fire(ClientListener::LoginTimeout(), this);
 		return;
 	}
 
-	if(state == STATE_NORMAL && (aTick > (getLastActivity() + 120*1000)) ) {
+	if ((state == STATE_NORMAL) && (aTick > ((getLastActivity() + 120) * 1000)))
 		send("|", 1);
-	}
 }
 
 void NmdcHub::on(Minute, uint64_t aTick) noexcept {
@@ -1350,14 +1349,16 @@ void NmdcHub::on(Minute, uint64_t aTick) noexcept {
 
 	refreshLocalIp();
 
-	if(aTick > (lastProtectedIPsUpdate + 24*3600*1000)) {
+	if (aTick > (((lastProtectedIPsUpdate + 24) * 3600) * 1000)) {
 		protectedIPs = {
 			"dchublist.org",
 			"dcbase.org"
 		};
-		for(auto i = protectedIPs.begin(); i != protectedIPs.end();) {
+
+		for (auto i = protectedIPs.begin(); i != protectedIPs.end();) {
 			*i = Socket::resolve(*i, AF_INET);
-			if(Util::isPrivateIp(*i, false))
+
+			if (Util::isPrivateIp(*i, false))
 				i = protectedIPs.erase(i);
 			else
 				i++;

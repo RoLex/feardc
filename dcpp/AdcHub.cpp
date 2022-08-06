@@ -1146,16 +1146,15 @@ void AdcHub::on(Second s, uint64_t aTick) noexcept {
 		after 2 minutes we force disconnect due to unfinished login
 		this check was missing in all clients since the beginning
 	*/
-	if ((state != STATE_NORMAL) && (sinceConnect > 0) && (aTick >= (sinceConnect + 120 * 1000))) {
+	if ((state > STATE_CONNECTING) && (state < STATE_NORMAL) && (sinceConnect > 0) && (aTick >= ((sinceConnect + 120) * 1000))) {
 		sinceConnect = 0;
 		disconnect(true);
 		fire(ClientListener::LoginTimeout(), this);
 		return;
 	}
 
-	if(state == STATE_NORMAL && (aTick > (getLastActivity() + 120*1000))) {
+	if ((state == STATE_NORMAL) && (aTick > ((getLastActivity() + 120) * 1000)))
 		send("\n", 1);
-	}
 }
 
 OnlineUserList AdcHub::getUsers() const {
