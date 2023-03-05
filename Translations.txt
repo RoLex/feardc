@@ -11,7 +11,9 @@ Translations currently happen in Launchpad <https://translations.launchpad.net/d
 1) Creating translation templates
 ---------------------------------
 
-Translation templates are .pot files.
+Translation templates are .pot files. They're stored as Unix-type text files in the repo. Therefore it's best to produce them
+using a Unix/like environment such as Cygwin (perl and gettext-devel packages need to be installed).
+Templates produced on Windows needs to be flipped to Unix format before committing.
 
 First, clean up with::
 

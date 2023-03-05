@@ -20,9 +20,8 @@
 
 #include <boost/smart_ptr/intrusive_ptr.hpp>
 
+#include <atomic>
 #include <memory>
-
-#include "atomic.h"
 
 namespace dcpp {
 
@@ -44,7 +43,7 @@ private:
 	friend void intrusive_ptr_add_ref(intrusive_ptr_base* p) { ++p->ref; }
 	friend void intrusive_ptr_release(intrusive_ptr_base* p) { if(--p->ref == 0) { delete static_cast<T*>(p); } }
 
-	atomic<long> ref;
+	std::atomic_long ref;
 };
 
 struct DeleteFunction {

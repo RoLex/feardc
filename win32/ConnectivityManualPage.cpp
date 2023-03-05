@@ -331,7 +331,7 @@ PageContentV6::PageContentV6(dwt::GridPtr grid) : PageContent(grid)
 	settingExternalIP = SettingsManager::EXTERNAL_IP6;
 	settingNoIPOverride = SettingsManager::NO_IP_OVERRIDE6;
 	settingBindAddress = SettingsManager::BIND_ADDRESS6;
-	settingMapper = SettingsManager::MAPPER;
+	settingMapper = SettingsManager::MAPPER6;
 
 	isV6 = true;
 

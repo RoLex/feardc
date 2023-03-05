@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp-installer VERSION\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2022-06-20 07:02+0300\n"
+"POT-Creation-Date: 2022-09-18 17:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -150,4 +150,16 @@ msgstr ""
 #: installer/Strings.xml:22
 #, no-wrap
 msgid "Donate / Contribute"
+msgstr ""
+
+#. type: Content of: <Strings><OSVERSION_WARNING>
+#: installer/Strings.xml:23
+#, no-wrap
+msgid "DC++ may not support this version of Windows. Do you want to continue?"
+msgstr ""
+
+#. type: Content of: <Strings><CPU_FATAL_ERROR>
+#: installer/Strings.xml:24
+#, no-wrap
+msgid "The CPU of this computer is too old to run DC++."
 msgstr ""

@@ -48,8 +48,8 @@ namespace dcpp {
 using boost::adaptors::map_values;
 using boost::range::for_each;
 
-atomic_flag QueueManager::Rechecker::active = ATOMIC_FLAG_INIT;
-atomic_flag QueueManager::FileMover::active = ATOMIC_FLAG_INIT;
+std::atomic_flag QueueManager::Rechecker::active = ATOMIC_FLAG_INIT;
+std::atomic_flag QueueManager::FileMover::active = ATOMIC_FLAG_INIT;
 
 QueueManager::FileQueue::~FileQueue() {
 	for_each(queue | map_values, DeleteFunction());

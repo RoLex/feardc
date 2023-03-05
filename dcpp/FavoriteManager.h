@@ -54,7 +54,7 @@ public:
 	StringList getHubLists();
 	void setHubList(int aHubList);
 	int getSelectedHubList() { return lastServer; }
-	void refresh(bool forceDownload = false);
+	void refresh(bool forceDownload = false, bool forceCached = false);
 	HubTypes getHubListType() { return listType; }
 	HubEntryList getPublicHubs() {
 		Lock l(cs);
@@ -144,6 +144,7 @@ private:
 	int lastServer;
 	HubTypes listType;
 	StringMap blacklist;
+	string cachedFileName;
 
 	/** Used during loading to prevent saving. */
 	bool dontSave;

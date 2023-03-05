@@ -437,33 +437,54 @@ void WinUtil::updateFont(dwt::FontPtr& font, int setting) {
 void WinUtil::initUserMatching() {
 	// make sure predefined definitions are here.
 	auto here = UserMatchManager::getInstance()->checkPredef();
+	auto newList = UserMatchManager::getInstance()->getList();
 
-	if(!here.first || !here.second) {
-		auto newList = UserMatchManager::getInstance()->getList();
-
-		if(!here.first) {
-			// add a matcher for favs.
-			UserMatch matcher;
-			matcher.setFlag(UserMatch::PREDEFINED);
-			matcher.setFlag(UserMatch::FAVS);
-			matcher.name = str(F_("Favorite users (added by %1%)") % APPNAME);
-			matcher.style.font = Text::fromT(encodeFont(font->makeBold()->getLogFont()));
-			matcher.style.textColor = modRed(SETTING(TEXT_COLOR), 127); // more red
-			newList.push_back(std::move(matcher));
-		}
-
-		if(!here.second) {
-			// add a matcher for ops.
-			UserMatch matcher;
-			matcher.setFlag(UserMatch::PREDEFINED);
-			matcher.setFlag(UserMatch::OPS);
-			matcher.name = str(F_("Operators (added by %1%)") % APPNAME);
-			matcher.style.textColor = modBlue(SETTING(TEXT_COLOR), 127); // more blue
-			newList.push_back(std::move(matcher));
-		}
-
-		UserMatchManager::getInstance()->setList(std::move(newList));
+	if(!here.first) {
+		// add a matcher for favs.
+		UserMatch matcher;
+		matcher.setFlag(UserMatch::PREDEFINED);
+		matcher.setFlag(UserMatch::FAVS);
+		matcher.name = str(F_("Favorite users (added by %1%)") % APPNAME);
+		matcher.style.font = Text::fromT(encodeFont(font->makeBold()->getLogFont()));
+		matcher.style.textColor = modGreen(modRed(SETTING(TEXT_COLOR), 255), 127); // more orange
+		newList.push_back(std::move(matcher));
 	}
+
+	if(!here.second) {
+		// add a matcher for ops.
+		UserMatch matcher;
+		matcher.setFlag(UserMatch::PREDEFINED);
+		matcher.setFlag(UserMatch::OPS);
+		matcher.name = str(F_("Operators (added by %1%)") % APPNAME);
+		matcher.style.textColor = modRed(SETTING(TEXT_COLOR), 127); // more red
+		newList.push_back(std::move(matcher));
+	}
+
+	/*
+	auto have = UserMatchManager::getInstance()->checkPredef2();
+
+	if (!have.first) { // add a matcher for bots
+		UserMatch matcher;
+		matcher.setFlag(UserMatch::PREDEFINED);
+		matcher.setFlag(UserMatch::BOTS);
+		matcher.name = str(F_("Hub bots (added by %1%)") % APPNAME);
+		matcher.style.font = Text::fromT(encodeFont(font->makeBold()->getLogFont()));
+		matcher.style.textColor = modBlue(modGreen(modRed(SETTING(TEXT_COLOR), 127), 127), 127); // more gray
+		newList.push_back(std::move(matcher));
+	}
+
+	if (!have.second) { // add a matcher for avdb
+		UserMatch matcher;
+		matcher.setFlag(UserMatch::PREDEFINED);
+		matcher.setFlag(UserMatch::AVDB);
+		matcher.name = str(F_("Infected users (added by %1%)") % APPNAME);
+		matcher.style.textColor = modBlue(SETTING(TEXT_COLOR), 127); // more blue
+		newList.push_back(std::move(matcher));
+	}
+	*/
+
+	if (!here.first || !here.second/* || !have.first || !have.second*/)
+		UserMatchManager::getInstance()->setList(std::move(newList));
 
 	updateUserMatchFonts();
 }
@@ -706,12 +727,20 @@ bool WinUtil::checkCommand(tstring& cmd, tstring& param, tstring& message, tstri
 		HashManager::getInstance()->rebuild();
 	} else if(Util::stricmp(cmd.c_str(), _T("upload")) == 0) {
 		auto value = Util::toInt(Text::fromT(param));
-		ThrottleManager::setSetting(ThrottleManager::getCurSetting(SettingsManager::MAX_UPLOAD_SPEED_MAIN), value);
-		status = value ? str(TF_("Upload limit set to %1% KiB/s") % value) : T_("Upload limit disabled");
+		if(value >= 0) {
+			ThrottleManager::setSetting(ThrottleManager::getCurSetting(SettingsManager::MAX_UPLOAD_SPEED_MAIN), value);
+			status = value ? str(TF_("Upload limit set to %1% KiB/s") % value) : T_("Upload limit disabled");
+		} else {
+			status = T_("Invalid speed value");
+		}
 	} else if(Util::stricmp(cmd.c_str(), _T("download")) == 0) {
 		auto value = Util::toInt(Text::fromT(param));
-		ThrottleManager::setSetting(ThrottleManager::getCurSetting(SettingsManager::MAX_DOWNLOAD_SPEED_MAIN), value);
-		status = value ? str(TF_("Download limit set to %1% KiB/s") % value) : T_("Download limit disabled");
+		if(value >= 0) {
+			ThrottleManager::setSetting(ThrottleManager::getCurSetting(SettingsManager::MAX_DOWNLOAD_SPEED_MAIN), value);
+			status = value ? str(TF_("Download limit set to %1% KiB/s") % value) : T_("Download limit disabled");
+		} else {
+			status = T_("Invalid speed value");
+		}
 	} else if(Util::stricmp(cmd.c_str(), _T("about:config")) == 0 || Util::stricmp(cmd.c_str(), _T("ac")) == 0 || Util::stricmp(cmd.c_str(), _T("a:c")) == 0) {
 		ACFrame::openWindow(mainWindow->getTabView());
 	} else {

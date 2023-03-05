@@ -1,11 +1,26 @@
--- 0.880 202#-##-## --
+-- 0.88x --
+* Display originating hub info on new incoming private messages (iceman50)
+* [L#1494814] Support MSVC project generation for Visual Studio 2022 (iceman50)
+* Fix saving preferred port mapper setting for IPv4 (emtee) 
+* Update OpenSSL to version 1.1.1q
+
+-- 0.880 2022-10-20 --
+* Upgrade license to GPLv3 for future license compatibility with some libraries
+* Add OS and UAC compatibility manifests (emtee, iceman50)
+* [L#1774502] Restore automatic downloading of up-to-date GeoIP databases
+* Set cached hublists to expire in 24 hours, keep them longer only in case of download problems (emtee, rolex)
+* [L#1979900] Prefer attempting outgoing connections on IPv4 when there's no IPv6 connectivity (emtee)
+* Introduce the naming "Optimized" and "Legacy" for the 64-bit and 32-bit builds of DC++ respectively; the former gains advantage
+  of modern OSes and hardware while the latter makes DC++ remain compatible with the 32-bit architecture and / or old hardware.
+* Installer: detect available CPU features and offer the best DC++ binary for the current system (emtee)
 * [L#1970416] Set the focus properly on the active window at startup (emtee)
-* Add new hublist server hublist.pwiam.com; blacklist and remove discontinued or inaccessible server addresses
+* [L#1952754] Add new hublist server hublist.pwiam.com; blacklist and remove discontinued or inaccessible server addresses
 * Add AboutConfig frame for testing and debugging purposes (iceman50, emtee)
 * [L#1682791] Block possible unencrypted direct private message connection attempts (fix adapted from AirDC++) (emtee)
 * Upgrade compiler for better performance; allows further optimizations to modern Windows versions (cologic, emtee)
 * Allow copy of hub address with keyprint on secure hubs (code adapted from AirDC++) (emtee)
 * Require SSSE3 for 64-bit builds (cologic)
+* Documentation and translations updated as usual, thanks everyone
 
 -- 0.871 2022-04-01 --
 * Update OpenSSL to version 1.1.1n
@@ -2309,7 +2324,7 @@ Minor:
   open or granting). We'll see how long it takes until someone reports this as a bug...
 * Added ability to set default away message (hm...perhaps this should use the last message set?)
 * Redesigned the appearance dialog a bit (like the advanced options now)
-* If DC++ receives "banned" during the login phase, it'll stop automatically reconnecting (n�jd nu, nev? =)
+* If DC++ receives "banned" during the login phase, it'll stop automatically reconnecting (nojd nu, nev? =)
 * The splash screen no longer shows on the task bar (avoids flicker when loading is fast) and is not topmost (use
   alt-esc instead of alt-tab to switch to it if you lose it...and it can't be an option because it's shown prior to
   any settings being loaded).
@@ -2431,7 +2446,7 @@ Minor:
 * Collective thanks to all who have donated $$$ to me, I didn't think people would do it, but they
   actually have, amounts ranging from $1 to $200...keep 'em coming =) (keep in mind tho that paypal steals 30 cents
   and some percentage (4 i think) from me when you pay with a credit card). Oh, I think you can also donate in 
-  � (euros) now, which is, of course, my preferred currency =)
+  (euros) now, which is, of course, my preferred currency =)
 * The forum and lichlord.org are currently down for maintenance, and the owner is waiting for new network equipment. 
   I would open an alternative forum if I could get the old posts, but because all network connections to the server are      
   broken it's difficult to get the old posts out of it for the moment (physical access to the server is somewhat 

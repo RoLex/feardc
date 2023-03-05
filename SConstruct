@@ -42,12 +42,16 @@ msvc_flags = {
     # 4100: unreferenced formal parameter
     # 4121: alignment of member sensitive to packing
     # 4127: conditional expression is constant
+    # 4131: 'function' : uses old-style declarator - mainly geoip
     # 4189: var init'd, unused
     # 4244: possible loss of data on conversion
     # 4290: exception spec ignored
     # 4307: integral constant overflow (size_t -1 in boost lockfree)
     # 4324: structure padded due to __declspec(align())
     # 4355: "this" used in a constructor
+    # 4456: declaration of 'identifier' hides previous local declaration
+    # 4457: declaration of 'identifier' hides function parameter
+    # 4458: declaration of 'identifier' hides class member
     # 4510: no default constructor
     # 4512: assn not generated
     # 4610: no default constructor
@@ -55,17 +59,18 @@ msvc_flags = {
     # 4800: converting from BOOL to bool
     # 4996: fn unsafe, use fn_s
     'common': [
-        '/W4', '/EHsc', '/Zi', '/Zm200', '/GR', '/FC', '/wd4100', '/wd4121',
-        '/wd4127', '/wd4189', '/wd4244', '/wd4290', '/wd4307', '/wd4324',
-        '/wd4355', '/wd4510', '/wd4512', '/wd4610', '/wd4706', '/wd4800',
-        '/wd4996'
+        '/W4', '/EHsc', '/Zi', '/Zm200', '/GR', '/FC', '/wd4100',
+        '/wd4121', '/wd4127', '/wd4131', '/wd4189', '/wd4244',
+        '/wd4290', '/wd4307', '/wd4324', '/wd4355', '/wd4456',
+        '/wd4457', '/wd4458','/wd4510', '/wd4512', '/wd4610',
+        '/wd4706', '/wd4800', '/wd4996', '/wd4005'
     ],
     'debug': ['/MDd'],
     'release': ['/MD', '/O2']
 }
 
 msvc_xxflags = {
-    'common': [],
+    'common': ['/std:c++20'],
     'debug': [],
     'release': []
 }
@@ -93,8 +98,7 @@ msvc_link_flags = {
 
 msvc_defs = {
     'common': [
-        '_REENTRANT', 'BOOST_MOVE_USE_STANDARD_LIBRARY_MOVE',
-        'snprintf=_snprintf',
+        '_REENTRANT', 'BOOST_MOVE_USE_STANDARD_LIBRARY_MOVE'
     ],
     'debug': ['_DEBUG', '_HAS_ITERATOR_DEBUGGING=0', '_SECURE_SCL=0'],
     'release': ['NDEBUG']
@@ -179,11 +183,9 @@ TARGET_ARCH = defEnv['arch']
 if TARGET_ARCH == 'x64':
     TARGET_ARCH = 'amd64'
 
-# TODO MSVC_USE_SCRIPT disables SCons' automatic env setup as it doesn't know
-# about VC 12 yet.
 env = Environment(
     ENV=os.environ, tools=[defEnv['tools']], options=opts,
-    TARGET_ARCH=TARGET_ARCH, MSVS_ARCH=TARGET_ARCH, MSVC_USE_SCRIPT=False
+    TARGET_ARCH=TARGET_ARCH, MSVS_ARCH=TARGET_ARCH, MSVC_USE_SCRIPT=True
 )
 
 if env['distro']:
@@ -243,12 +245,14 @@ if 'gcc' in env['TOOLS']:
 
     # require i686 instructions for atomic<int64_t>, used by boost::lockfree
     # (otherwise lockfree lists won't actually be lock-free).
-    # Require SSE2 for e.g., significantly faster Tiger hashing
+    # Require SSE2 for e.g., significantly faster Tiger hashing and generally
+    # to allow 32-bit builds to perform 64-bit arithmetic with more facility
     # https://www.cryptopp.com/benchmarks.html
-    # Require SSE3 for FISTTP
+    # Require SSE3 for fisttp
     if env['arch'] == 'x86':
         env.Append(CCFLAGS=['-march=nocona', '-mtune=generic', '-msse3']) # Through SSE3
     elif env['arch'] == 'x64': # native - for self only
+        # Require SSSE3 for pshufb, which, e.g., helps bzip2 compression speed
         env.Append(CCFLAGS=['-march=core2', '-mtune=generic', '-mssse3']) # Through SSSE3
 
 if 'msvc' in env['TOOLS']:

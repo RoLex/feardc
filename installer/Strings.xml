@@ -20,4 +20,6 @@
 	<DONATION_INFO_4>* Certificates for supported projects</DONATION_INFO_4>
 	<DONATION_INFO_5>All donations are completly transparent, will be individually listed and published on the DCNF website, either under your own name or as an anonymous donation, according to your choice.</DONATION_INFO_5>
 	<DONATE_BUTTON>Donate / Contribute</DONATE_BUTTON>
+	<OSVERSION_WARNING>DC++ may not support this version of Windows. Do you want to continue?</OSVERSION_WARNING>
+	<CPU_FATAL_ERROR>The CPU of this computer is too old to run DC++.</CPU_FATAL_ERROR>
 </Strings>

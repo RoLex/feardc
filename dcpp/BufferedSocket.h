@@ -18,6 +18,7 @@
 #ifndef DCPLUSPLUS_DCPP_BUFFERED_SOCKET_H
 #define DCPLUSPLUS_DCPP_BUFFERED_SOCKET_H
 
+#include <atomic>
 #include <deque>
 #include <memory>
 
@@ -28,7 +29,6 @@
 #include "Thread.h"
 #include "Speaker.h"
 #include "Socket.h"
-#include "atomic.h"
 
 namespace dcpp {
 
@@ -169,7 +169,7 @@ private:
 
 	std::unique_ptr<Socket> sock;
 	State state;
-	atomic<bool> disconnecting;
+	std::atomic_bool disconnecting;
 	bool v4only;
 
 	virtual int run();
@@ -181,7 +181,7 @@ private:
 	void threadSendData();
 
 	void fail(const string& aError);
-	static atomic<long> sockets;
+	static std::atomic_long sockets;
 
 	bool checkEvents();
 	void checkSocket();

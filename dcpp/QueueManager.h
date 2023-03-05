@@ -18,12 +18,12 @@
 #ifndef DCPLUSPLUS_DCPP_QUEUE_MANAGER_H
 #define DCPLUSPLUS_DCPP_QUEUE_MANAGER_H
 
+#include <atomic>
 #include <functional>
 #include <unordered_map>
 
 #include <boost/lockfree/queue.hpp>
 
-#include "atomic.h"
 #include "BundleItem.h"
 #include "ClientManagerListener.h"
 #include "CriticalSection.h"
@@ -152,7 +152,7 @@ private:
 		virtual int run();
 
 	private:
-		static atomic_flag active;
+		static std::atomic_flag active;
 		typedef pair<string, string> FilePair;
 		boost::lockfree::queue<FilePair*> files;
 	} mover;
@@ -172,7 +172,7 @@ private:
 
 	private:
 		QueueManager* qm;
-		static atomic_flag active;
+		static std::atomic_flag active;
 		boost::lockfree::queue<string*> files;
 	} rechecker;
 

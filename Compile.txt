@@ -6,7 +6,7 @@
 		Some tools can be found on <https://sourceforge.net/projects/dcplusplus/files/Dev/>,
 		although I recommend getting them directly from their hosts.
 
-		* A modern C++ compiler. We are currently using these 2 packages by the MinGW-w64 project:
+		* A modern C++ compiler. We are currently using these 2 packages by the MinGW-w64 project for official releases:
 		- 64-bit: <https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/8.1.0/threads-win32/seh/x86_64-8.1.0-release-win32-seh-rt_v6-rev0.7z>
 		- 32-bit: <https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/8.1.0/threads-win32/dwarf/i686-8.1.0-release-win32-dwarf-rt_v6-rev0.7z>
 
@@ -19,15 +19,13 @@
 		<https://www.python.org>
 		Make sure that Python is in your PATH environment variable.
 
-		* SCons - 4.0.x
+		* SCons - 4.x.x
 		<https://scons.org/pages/download.html>
 
 		Note: SCons relies on Python so you need to have Python installed first.
 
 		On Windows you can install scons from the Python Package Index (PyPi) only.
-		"python -m pip install scons==4.0.1" will install the newest scons version
-		that is tested and usable to build FearDC at the moment.
-		This command installs scons into the Python\Scripts folder.
+		The "python -m pip install scons" command installs scons into the Python\Scripts folder.
 
 		Make sure that SCons is in your PATH environment variable. 
 
@@ -52,7 +50,12 @@
 		Make sure that asciidoc3 is in your PATH environment variable.
 
 		* NSIS - 3.0 or later (only needed to build the installer)
-		<http://nsis.sourceforge.net> 
+		<https://nsis.sourceforge.io>
+
+		After installing NSIS, download the CPUFeatures plug-in from <https://nsis.sourceforge.io/CPUFeatures_plug-in>.
+		From the .zip archive you have to unpack the following files:
+		 - Plugins\Release_Unicode\CPUFeatures.dll to <NSIS installation folder>\Plugins\x86-unicode\
+		 - Include\CPUFeatures.nsh to <NSIS installation folder>\Include\
 
 		Make sure that makensis.exe is in your PATH environment variable.
 
@@ -76,25 +79,52 @@
 		<https://msdn.microsoft.com/en-US/windows/desktop/hh852363>; it installs into
 		"C:\Program Files (x86)\Windows Kits\8.0".
 
-	b. OpenSSL (currently only for MinGW)
+	b. OpenSSL
 
-		Download OpenSSL from www.openssl.org, copy the 'openssl-*.tar.gz' archive to the openssl/build folder
-		and compile it using the build.bat script, alternatively build.sh script for CygWin users. It will copy
-		the compiled libraries to openssl/lib. The build process needs CygWin and above the basic (default)
-		packages it requires the following additional packages to be installed under CygWin:
+		Download OpenSSL from www.openssl.org, copy the 'openssl-*.tar.gz' archive to the openssl/build folder.
 
-		- perl (Perl builds for Windows are unsuitable for this process)
-		- make
+		Compiling with MinGW
 
-		<https://bennierobinson.com/programming/2016/01/24/perl-windows-2016.html> explains how to set up these
-		packages in detail.
+			Use the build_mingw.bat script provided in the openssl/build folder. It will copy the compiled libraries to openssl/lib.
+			The build process needs Cygwin installed. Above the basic (default) packages the following additional packages needs
+			to be installed under Cygwin:
 
-		Make sure that Cygwin's 'bin' folder is in your PATH environment variable.
+			* perl (Perl builds for Windows are unsuitable for this process)
+			* make
 
-		You'll also need a GNU Patch executable for the operation in your PATH. It can be either the GNU Win32 binary
-		or a package installed under Cygwin or even any patch executable that may come with your versioning system.
+			<https://bennierobinson.com/programming/2016/01/24/perl-windows-2016.html> explains how to set up these
+			packages in detail.
 
-		You may also ask around in the DCDev hub; someone might have already built a package.
+			You'll also need a GNU Patch executable for the operation in your PATH. It can be either the GNU Win32 binary
+			or a package installed under Cygwin or even any patch executable that may come with your versioning system.
+
+			Make sure that Cygwin's 'bin' folder is in your PATH environment variable.
+
+		Compiling with MSVC
+
+			Compilation requires the following additional packages to be installed above MSVS 2022:
+
+			* Perl v5.32.1 or later (from Strawberry [tested] or ActiveState)
+			  <https://www.perl.org/get.html>
+
+			* NASM version 2.15 or later
+			  <https://www.nasm.us>
+
+			Make sure both tools' executables are added in your PATH environment variable.
+
+			For generating the 64-bit library open [x64 Native Tools Command Prompt for VS 2022] prompt and run:
+				perl Configure no-shared no-capieng -DOPENSSL_SYS_WIN32 -DOPENSSL_NO_CAPIENG VC-WIN64A --prefix=%CD%
+
+			For generating the 32-bit library open [x86 Native Tools Command Prompt for VS 2022] prompt and run:
+				perl Configure no-shared no-capieng -DOPENSSL_SYS_WIN32 -DOPENSSL_NO_CAPIENG VC-WIN32 --prefix=%CD%
+
+			Then run:
+				nmake
+			which will compile the makefile and generate your libs and
+				nmake install_sw
+			This will move all of your libs to the path specified in --openssldir switch
+
+		You may also ask around for help and pre-compiled libs in the DCDev hub; someone might have already built a package.
 
 
 3. Starting the build process
@@ -119,6 +149,7 @@
 		If you have problems, use google. It works for me.
 
 		Example: scons tools=mingw mode=release arch=x64 i18n=yes help=yes prefix=x86_64-w64-mingw32-
+
 
 4. Alternative compilers
 
@@ -152,20 +183,10 @@
 		Make sure that Cygwin\bin is in your PATH environment variable.
 		Note that building with MinGW compilers provided by Cygwin is not often tested.
 
-	b. Microsoft Visual Studio 2013:
-	<https://msdn.microsoft.com/en-us/visualc/default.aspx>
-
-		Note: the following information is outdated; we accept patches to the build system
-		that would allow building FearDC on any supported edition of MSVS.
-
-		Make sure VS is up-to-date; in particular, you will need the Nov 2013 CTP from
-		<https://www.microsoft.com/en-us/download/details.aspx?id=41151>. Use the patch in
-		msvc/nov2013ctp.patch to patch your VC/vcvarsall.bat file to make use of it (if you
-		generate project files and compile from the VS GUI, that won't be necessary).
+	b. Microsoft Visual Studio 2022:
+		<https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022>
 
 		To generate project files for MSVC, run "scons" with "msvcproj=1" and "tools=default".
-		[Temporary until SCons fully supports VS 2013: the above command has to be run from a VS
-		command prompt.]
 		The resulting solution file (DCPlusPlus.sln) will be in msvc/[mode-arch]/.
 
 

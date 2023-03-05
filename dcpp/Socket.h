@@ -45,6 +45,7 @@ const int INVALID_SOCKET = -1;
 #include "Exception.h"
 
 #include <boost/core/noncopyable.hpp>
+#include <atomic>
 #include <memory>
 
 namespace dcpp {
@@ -208,8 +209,8 @@ protected:
 
 	class Stats {
 	public:
-		uint64_t totalDown;
-		uint64_t totalUp;
+		std::atomic<uint64_t> totalDown;
+		std::atomic<uint64_t> totalUp;
 	};
 	static Stats stats;
 

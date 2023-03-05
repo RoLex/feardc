@@ -407,7 +407,7 @@ void ConnectionManager::adcConnect(const OnlineUser& aUser, const string& aPort,
 	}
 
 	try {
-		uc->connect(aUser.getIdentity().getIp(), aPort, localPort, natRole, aUser.getUser());
+		uc->connect(ConnectivityManager::getInstance()->getConnectivityStatus(true /*V6*/) ? aUser.getIdentity().getIp() : aUser.getIdentity().getIp4(), aPort, localPort, natRole, aUser.getUser());
 	} catch(const Exception&) {
 		putConnection(uc);
 		delete uc;

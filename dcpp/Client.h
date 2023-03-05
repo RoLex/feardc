@@ -20,7 +20,6 @@
 
 #include "compiler.h"
 
-#include "atomic.h"
 #include "BufferedSocketListener.h"
 #include "ClientListener.h"
 #include "ConnectionType.h"
@@ -32,6 +31,7 @@
 #include "TimerManager.h"
 
 #include <boost/core/noncopyable.hpp>
+#include <atomic>
 
 namespace dcpp {
 
@@ -133,7 +133,7 @@ protected:
 		COUNT_UNCOUNTED,
 	};
 
-	static atomic<long> counts[COUNT_UNCOUNTED];
+	static std::atomic_long counts[COUNT_UNCOUNTED];
 
 	enum State {
 		STATE_CONNECTING,	///< Waiting for socket to connect
@@ -143,7 +143,7 @@ protected:
 		STATE_NORMAL,		///< Running
 		STATE_DISCONNECTED,	///< Nothing in particular
 	};
-	atomic<State> state;
+	std::atomic<State> state;
 
 	BufferedSocket *sock;
 

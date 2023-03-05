@@ -1,5 +1,9 @@
--- 1.3.0.0 2022-##-## --
+-- 1.3.0.0 2023-##-## --
 
+* Temporarily fix buffer overflow error when receiving large chat messages, needs a complete rewrite (RoLex)
+* Add hublist.pwiam.com to list protected against CTM requests (RoLex)
+* Remove dchublist.org and hublist.pwiam.com hublists due to user count falsification for own interests (RoLex)
+* $MaxedOut sends queue position parameter on NMDC hubs, thanks to iceman50 (RoLex)
 * Missing in all clients - force login timeout after 2 minutes (RoLex)
 * Merge with DC++ 0.880 (RoLex)
 * Add support for TTHS NMDC extension to save traffic on both sides with short TTH searches, widely supported by Verlihub (RoLex)
@@ -10,7 +14,7 @@
 * Update Boost to version 1.79 (RoLex)
 * Update MiniUPnPc to version 2.2.3 (RoLex)
 * Update GeoIP to version 1.7.0 (RoLex)
-* Update OpenSSL to version 1.1.1p (RoLex)
+* Update OpenSSL to version 1.1.1t (RoLex)
 * Add settings to show user IP and country in main and private chats when available (RoLex)
 * Add %[extra] variable support to main and private chat log formats when available, this shows user IP and country (RoLex)
 * Add global and favorite hub settings to disable TLS NMDC client-client connections, this allows transfers between us and old clients (RoLex)
@@ -24,8 +28,6 @@
 * Fix negative upload and download statistics due to int64_t declaration (RoLex)
 * Fix C++20 deprecation warnings (RoLex)
 * Fix crash on missing help files (RoLex)
-* Always refresh public hubs when opening, otherwise we see "cached" status only once (RoLex)
-* Force refreshing public hubs when cache is 24 hours old (RoLex)
 * [LB#841189] [LQ#698901] Add support for secure NMDC client to hub connections, port defaults to 411, requires nmdcs:// in URL (RoLex)
 * Add support for secure hub address when available in public hubs (RoLex)
 * Add support for secure NMDC client to client connections, requires successful TLS configuration on our side and specified TLS flag in remote user $MyINFO (RoLex)

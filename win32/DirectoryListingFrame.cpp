@@ -18,9 +18,9 @@
 #include "stdafx.h"
 #include "DirectoryListingFrame.h"
 
+#include <atomic>
 #include <boost/range/adaptor/reversed.hpp>
 
-#include <dcpp/atomic.h>
 #include <dcpp/ADLSearch.h>
 #include <dcpp/ClientManager.h>
 #include <dcpp/FavoriteManager.h>
@@ -415,7 +415,7 @@ DirectoryListingFrame::~DirectoryListingFrame() {
 namespace {
 	/* items cached by all open file lists. caching can take up a lot of memory so we use this
 	counter to keep tabs on the caches and make sure they don't grow too big. */
-	atomic<uint32_t> cacheCount(0);
+	std::atomic<uint32_t> cacheCount(0);
 
 	/* minimum amount of items to require a cache. this helps skip directories that don't have many
 	files: file information for small directories is easy to build up on-the-fly without inducing

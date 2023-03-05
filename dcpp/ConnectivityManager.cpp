@@ -330,6 +330,10 @@ const string& ConnectivityManager::getStatus(bool v6) const {
 	return v6 ? statusV6 : statusV4; 
 }
 
+bool ConnectivityManager::getConnectivityStatus(bool v6) const {
+	return get(v6 ? SettingsManager::INCOMING_CONNECTIONS6 : SettingsManager::INCOMING_CONNECTIONS) != SettingsManager::INCOMING_DISABLED;
+}
+
 void ConnectivityManager::startSocket() {
 	autoDetected = false;
 

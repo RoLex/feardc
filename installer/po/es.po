@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2018-11-12 00:08+0100\n"
-"PO-Revision-Date: 2015-01-05 04:55+0000\n"
+"POT-Creation-Date: 2022-09-18 17:19+0300\n"
+"PO-Revision-Date: 2022-09-25 14:41+0000\n"
 "Last-Translator: Francisco Blas Izquierdo Riera (klondike) "
 "<franxisco1988@gmail.com>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2018-11-11 22:50+0000\n"
-"X-Generator: Launchpad (build 18816)\n"
+"X-Launchpad-Export-Date: 2022-10-18 11:21+0000\n"
+"X-Generator: Launchpad (build 25877e98ba44ca75f9c22db1fc37efee03e4606a)\n"
 
 #. type: Content of: <Strings><SECTION_DCPP>
 #: installer/Strings.xml:3
@@ -107,34 +107,46 @@ msgstr "¿También elimina la cola, los ajustes y el directorio entero del progr
 #: installer/Strings.xml:17
 #, no-wrap
 msgid "Contribute to the Direct Connect Network Foundation"
-msgstr ""
+msgstr "Contribuye a la Fundación de la Red Direct Connect (DCNF)"
 
 #. type: Content of: <Strings><DONATION_INFO_2>
 #: installer/Strings.xml:18
 #, no-wrap
 msgid "To help the development of DC++ and other DC related software, please consider contributing or donating. Your generous donations will be used for the following:"
-msgstr ""
+msgstr "Para ayudar con el desarrollo de DC++ y otro software relaccionado con el DC, por favor, considera contribuir o donar. Tus generosas donaciones serán usadas para lo siguiente:"
 
 #. type: Content of: <Strings><DONATION_INFO_3>
 #: installer/Strings.xml:19
 #, no-wrap
 msgid "* Development infrastructure (domains, server costs)"
-msgstr ""
+msgstr "* Infrastructura de desarrollo (dominios, servidores)"
 
 #. type: Content of: <Strings><DONATION_INFO_4>
 #: installer/Strings.xml:20
 #, no-wrap
 msgid "* Certificates for supported projects"
-msgstr ""
+msgstr "* Certificados de los proyectos soportados"
 
 #. type: Content of: <Strings><DONATION_INFO_5>
 #: installer/Strings.xml:21
 #, no-wrap
 msgid "All donations are completly transparent, will be individually listed and published on the DCNF website, either under your own name or as an anonymous donation, according to your choice."
-msgstr ""
+msgstr "Todas las donaciones son completamente transparentes, serán listadas de forma individual y publicadas en la página web de la DCNF, usando, a tu elección, tu nombre o de forma anónima."
 
 #. type: Content of: <Strings><DONATE_BUTTON>
 #: installer/Strings.xml:22
 #, no-wrap
 msgid "Donate / Contribute"
-msgstr ""
+msgstr "Donar / Contribuir"
+
+#. type: Content of: <Strings><OSVERSION_WARNING>
+#: installer/Strings.xml:23
+#, no-wrap
+msgid "DC++ may not support this version of Windows. Do you want to continue?"
+msgstr "Puede que DC++ no soporte esta versión de Windows. ¿Desea continuar?"
+
+#. type: Content of: <Strings><CPU_FATAL_ERROR>
+#: installer/Strings.xml:24
+#, no-wrap
+msgid "The CPU of this computer is too old to run DC++."
+msgstr "El procesador de este ordenador es muy viejo para ejecutar DC++."

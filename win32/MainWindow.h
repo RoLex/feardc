@@ -18,9 +18,10 @@
 #ifndef DCPLUSPLUS_WIN32_MAIN_WINDOW_H
 #define DCPLUSPLUS_WIN32_MAIN_WINDOW_H
 
+#include <atomic>
+
 #include <dcpp/forward.h>
 
-#include <dcpp/atomic.h>
 #include <dcpp/ConnectionManagerListener.h>
 #include <dcpp/CriticalSection.h>
 #include <dcpp/HttpManagerListener.h>
@@ -156,7 +157,7 @@ private:
 	plugin GUID -> { command name -> pair<callback, icon path> } */
 	static unordered_map<string, map<tstring, pair<function<void ()>, tstring>, noCaseStringLess>> pluginCommands;
 
-	atomic<HttpConnection*> conns[CONN_LAST];
+	std::atomic<HttpConnection*> conns[CONN_LAST];
 	unique_ptr<File> geo6File, geo4File;
 	enum { GeoRegion_Idle, GeoRegion_FromV4, GeoRegion_FromV6 } geoRegion;
 	bool geoStaticServe; /// signals when GeoIP databases are not updated frequently for some reason

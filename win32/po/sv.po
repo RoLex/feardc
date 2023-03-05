@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2022-06-20 06:45+0200\n"
+"POT-Creation-Date: 2022-09-18 17:19+0200\n"
 "PO-Revision-Date: 2016-09-06 21:33+0000\n"
 "Last-Translator: Fredrik Ullner <ullner@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -19,24 +19,20 @@ msgstr ""
 "X-Launchpad-Export-Date: 2018-11-11 22:48+0000\n"
 "X-Generator: Launchpad (build 18816)\n"
 
-#: win32/MainWindow.cpp:1981
-msgid " "
-msgstr ""
-
-#: win32/ACFrame.cpp:226
+#: win32\ACFrame.cpp:226
 msgid " Matched setting(s) found"
 msgstr ""
 
-#: win32/ACFrame.cpp:201
+#: win32\ACFrame.cpp:201
 #, fuzzy
 msgid " settings loaded"
 msgstr "Ljudinställningar"
 
-#: win32/FinishedFrameBase.h:732
+#: win32\FinishedFrameBase.h:732
 msgid "% transferred"
 msgstr "% överfört"
 
-#: win32/MainWindow.cpp:1517
+#: win32\MainWindow.cpp:1507
 #, boost-format
 msgid ""
 "%1%\n"
@@ -45,447 +41,441 @@ msgstr ""
 "%1%\n"
 "Öppna nedladdningssidan?"
 
-#: win32/UserMatchPage.cpp:218
+#: win32\UserMatchPage.cpp:218
 #, boost-format
 msgid "%1% %2%: %3%"
 msgstr "%1% %2%: %3%"
 
-#: win32/TransferView.cpp:206
+#: win32\TransferView.cpp:206
 #, boost-format
 msgid "%1% (%2$0.2f)"
 msgstr "%1% (%2$0.2f)"
 
-#: win32/SearchFrame.cpp:546
+#: win32\SearchFrame.cpp:546
 #, boost-format
 msgid "%1% (%2%)"
 msgstr "%1% (%2%)"
 
-#: win32/MainWindow.cpp:759
-#, fuzzy, boost-format
-msgid "%1% - %2%"
-msgstr "%1%: %2%"
-
-#: win32/SearchFrame.cpp:1127
+#: win32\SearchFrame.cpp:1127
 #, boost-format
 msgid "%1% / %2% item"
 msgid_plural "%1% / %2% items"
 msgstr[0] "%1% / %2% objekt"
 msgstr[1] "%1% / %2% objekt"
 
-#: win32/SearchFrame.cpp:1158
+#: win32\SearchFrame.cpp:1158
 #, boost-format
 msgid "%1% / %2% sources ignored: %3%"
 msgstr "%1% / %2% källor ignorerade: %3%"
 
-#: win32/PluginApiWin.cpp:92
+#: win32\PluginApiWin.cpp:92
 #, boost-format
 msgid "%1% doesn't need any additional configuration"
 msgstr "%1% behöver ingen ytterligare konfiguration"
 
-#: win32/SearchFrame.cpp:1133
+#: win32\SearchFrame.cpp:1133
 #, boost-format
 msgid "%1% dropped"
 msgstr "%1% tappat"
 
-#: win32/PluginApiWin.cpp:70 win32/PluginApiWin.cpp:71 win32/QueueFrame.cpp:948
-#: win32/WinUtil.cpp:877 win32/FinishedFrameBase.h:460
+#: win32\PluginApiWin.cpp:70 win32\PluginApiWin.cpp:71 win32\QueueFrame.cpp:948
+#: win32\WinUtil.cpp:880 win32\FinishedFrameBase.h:460
 #, boost-format
 msgid "%1% files"
 msgstr "%1% filer"
 
-#: win32/HashProgressDlg.cpp:160
+#: win32\HashProgressDlg.cpp:160
 #, boost-format
 msgid "%1% files/h, %2% files left"
 msgstr "%1% filer/h, %2% filer kvar"
 
-#: win32/MainWindow.cpp:1200
+#: win32\MainWindow.cpp:1190
 #, boost-format
 msgid "%1% free slots of %2% total upload slots - Click to adjust"
 msgstr ""
 "%1% lediga slots av totalt %2%  uppladdningsslots - Klicka för att justera"
 
-#: win32/FavHubsFrame.cpp:362 win32/TransferView.cpp:358
+#: win32\FavHubsFrame.cpp:362 win32\TransferView.cpp:358
 #, boost-format
 msgid "%1% hubs"
 msgstr "%1% hubbar"
 
-#: win32/SearchFrame.cpp:1125 win32/FinishedFrameBase.h:571
+#: win32\SearchFrame.cpp:1125 win32\FinishedFrameBase.h:571
 #, boost-format
 msgid "%1% item"
 msgid_plural "%1% items"
 msgstr[0] "%1% objekt"
 msgstr[1] "%1% objekt"
 
-#: win32/ADLSearchFrame.cpp:317 win32/DirectoryListingFrame.cpp:876
-#: win32/TransferView.cpp:498
+#: win32\ADLSearchFrame.cpp:317 win32\DirectoryListingFrame.cpp:876
+#: win32\TransferView.cpp:498
 #, boost-format
 msgid "%1% items"
 msgstr "%1% objekt"
 
-#: win32/HashProgressDlg.cpp:149 win32/HashProgressDlg.cpp:164
+#: win32\HashProgressDlg.cpp:149 win32\HashProgressDlg.cpp:164
 #, boost-format
 msgid "%1% left"
 msgstr "%1% kvar"
 
-#: win32/ConnectivityManualPage.cpp:62
+#: win32\ConnectivityManualPage.cpp:62
 #, boost-format
 msgid "%1% port"
 msgstr "%1% port"
 
-#: win32/ConnectivityManualPage.cpp:151
+#: win32\ConnectivityManualPage.cpp:151
 #, boost-format
 msgid "%1% port cannot be the same as the %2% port"
 msgstr "%1%-port kan inte vara samma som %2%-porten"
 
-#: win32/MainWindow.cpp:880
+#: win32\MainWindow.cpp:874
 #, boost-format
 msgid "%1% recent items will be saved from now on."
 msgstr "%1% nya objekt kommer att sparas från och med nu."
 
-#: win32/SearchFrame.cpp:868
+#: win32\SearchFrame.cpp:868
 #, boost-format
 msgid "%1% results"
 msgstr "%1% resultat"
 
-#: win32/SearchFrame.cpp:1159
+#: win32\SearchFrame.cpp:1159
 #, boost-format
 msgid "%1% sources added"
 msgstr "%1% källor tillagda"
 
-#: win32/HubFrame.cpp:365
+#: win32\HubFrame.cpp:364
 #, boost-format
 msgid "%1% user"
 msgid_plural "%1% users"
 msgstr[0] "%1% användare"
 msgstr[1] "%1% användare"
 
-#: win32/HubFrame.cpp:1360 win32/TransferView.cpp:354 win32/UsersFrame.cpp:461
-#: win32/FinishedFrameBase.h:489
+#: win32\HubFrame.cpp:1287 win32\TransferView.cpp:354 win32\UsersFrame.cpp:461
+#: win32\FinishedFrameBase.h:489
 #, boost-format
 msgid "%1% users"
 msgstr "%1% användare"
 
-#: win32/MainWindow.cpp:1666
+#: win32\MainWindow.cpp:1656
 #, boost-format
 msgid "%1%-level %2%"
 msgstr "%1%-nivå %2%"
 
-#: win32/MainWindow.cpp:1199 win32/UserInfoBase.cpp:139
+#: win32\MainWindow.cpp:1189 win32\UserInfoBase.cpp:139
 #, boost-format
 msgid "%1%/%2%"
 msgstr "%1%/%2%"
 
-#: win32/MainWindow.cpp:925 win32/MainWindow.cpp:1215 win32/MainWindow.cpp:1219
-#: win32/MainWindow.cpp:1223 win32/MainWindow.cpp:1227
-#: win32/TransferView.cpp:226 win32/TransferView.cpp:366
-#: win32/TransferView.cpp:451 win32/UsersFrame.cpp:72
-#: win32/FinishedFrameBase.h:573
+#: win32\MainWindow.cpp:919 win32\MainWindow.cpp:1205 win32\MainWindow.cpp:1209
+#: win32\MainWindow.cpp:1213 win32\MainWindow.cpp:1217
+#: win32\TransferView.cpp:226 win32\TransferView.cpp:366
+#: win32\TransferView.cpp:451 win32\UsersFrame.cpp:72
+#: win32\FinishedFrameBase.h:573
 #, boost-format
 msgid "%1%/s"
 msgstr "%1%/s"
 
-#: win32/HashProgressDlg.cpp:161
+#: win32\HashProgressDlg.cpp:161
 #, boost-format
 msgid "%1%/s, %2% left"
 msgstr "%1%/s, %2% kvar"
 
-#: win32/DirectoryListingFrame.cpp:832 win32/UserInfoBase.cpp:115
-#: win32/UserInfoBase.cpp:140 win32/WinUtil.cpp:1740
+#: win32\DirectoryListingFrame.cpp:832 win32\UserInfoBase.cpp:115
+#: win32\UserInfoBase.cpp:140 win32\WinUtil.cpp:1738
 #, boost-format
 msgid "%1%: %2%"
 msgstr "%1%: %2%"
 
-#: win32/FavHubGroupsDlg.cpp:97 win32/PluginPage.cpp:93
-#: win32/PluginPage.cpp:253 win32/SearchTypesPage.cpp:81
-#: win32/StringListDlg.cpp:123 win32/UCPage.cpp:59 win32/UserMatchPage.cpp:81
+#: win32\FavHubGroupsDlg.cpp:97 win32\PluginPage.cpp:93
+#: win32\PluginPage.cpp:253 win32\SearchTypesPage.cpp:81
+#: win32\StringListDlg.cpp:123 win32\UCPage.cpp:59 win32\UserMatchPage.cpp:81
 msgid "&Add"
 msgstr "&Lägg till"
 
-#: win32/FavoriteDirsPage.cpp:71 win32/UploadPage.cpp:84
+#: win32\FavoriteDirsPage.cpp:71 win32\UploadPage.cpp:84
 msgid "&Add folder"
 msgstr "&Lägg till mapp"
 
-#: win32/WinUtil.cpp:1672 win32/UserInfoBase.h:166
+#: win32\WinUtil.cpp:1670 win32\UserInfoBase.h:155
 msgid "&Browse file list"
 msgstr "&Bläddra i fillistan"
 
-#: win32/DirectoryListingFrame.cpp:931 win32/LogPage.cpp:79
-#: win32/NotificationsPage.cpp:111 win32/SearchFrame.cpp:907
-#: win32/SearchFrame.cpp:935
+#: win32\DirectoryListingFrame.cpp:931 win32\LogPage.cpp:79
+#: win32\NotificationsPage.cpp:111 win32\SearchFrame.cpp:907
+#: win32\SearchFrame.cpp:935
 msgid "&Browse..."
 msgstr "&Bläddra..."
 
-#: win32/UCPage.cpp:63
+#: win32\UCPage.cpp:63
 msgid "&Change"
 msgstr "&Ändra"
 
-#: win32/FavHubGroupsDlg.cpp:189 win32/MDIChildFrame.h:232
+#: win32\FavHubGroupsDlg.cpp:189 win32\MDIChildFrame.h:232
 msgid "&Close"
 msgstr "&Stäng"
 
-#: win32/PluginPage.cpp:97 win32/PluginPage.cpp:255
-#: win32/PublicHubsFrame.cpp:192
+#: win32\PluginPage.cpp:97 win32\PluginPage.cpp:255
+#: win32\PublicHubsFrame.cpp:192
 msgid "&Configure"
 msgstr "&Konfigurera"
 
-#: win32/MainWindow.cpp:834
+#: win32\MainWindow.cpp:828
 msgid "&Configure..."
 msgstr "&Konfigurera..."
 
-#: win32/FavHubsFrame.cpp:103 win32/FavHubsFrame.cpp:363
-#: win32/PublicHubsFrame.cpp:401
+#: win32\FavHubsFrame.cpp:103 win32\FavHubsFrame.cpp:363
+#: win32\PublicHubsFrame.cpp:401
 msgid "&Connect"
 msgstr "&Anslut"
 
-#: win32/RichTextBox.cpp:104
+#: win32\RichTextBox.cpp:104
 msgid "&Copy"
 msgstr "&Kopiera"
 
-#: win32/dwtTexts.cpp:32
+#: win32\dwtTexts.cpp:32
 msgid "&Copy\tCtrl+C"
 msgstr "&Kopiera\tCtrl+C"
 
-#: win32/MainWindow.cpp:1818
+#: win32\MainWindow.cpp:1806
 msgid "&Customize\tDouble-click"
 msgstr "&Anpassa\tDubbelklicka"
 
-#: win32/SearchTypesPage.cpp:97
+#: win32\SearchTypesPage.cpp:97
 msgid "&Defaults"
 msgstr "&Standard"
 
-#: win32/dwtTexts.cpp:34
+#: win32\dwtTexts.cpp:34
 msgid "&Delete\tDel"
 msgstr "Ra&dera\tDel"
 
-#: win32/UsersFrame.cpp:464
+#: win32\UsersFrame.cpp:464
 msgid "&Description"
 msgstr "&Beskrivning"
 
-#: win32/HubFrame.cpp:1386 win32/TransferView.cpp:563
+#: win32\HubFrame.cpp:1313 win32\TransferView.cpp:563
 msgid "&Disconnect"
 msgstr "&Koppla ifrån"
 
-#: win32/DirectoryListingFrame.cpp:851 win32/DirectoryListingFrame.cpp:878
-#: win32/DirectoryListingFrame.cpp:891 win32/SearchFrame.cpp:871
+#: win32\DirectoryListingFrame.cpp:851 win32\DirectoryListingFrame.cpp:878
+#: win32\DirectoryListingFrame.cpp:891 win32\SearchFrame.cpp:871
 msgid "&Download"
 msgstr "La&dda ned"
 
-#: win32/MainWindow.cpp:346
+#: win32\MainWindow.cpp:344
 msgid "&Download Queue\tCtrl+D"
 msgstr "Ne&dladdningskö\tCtrl+D"
 
-#: win32/StringListDlg.cpp:154 win32/UserMatchPage.cpp:85
+#: win32\StringListDlg.cpp:154 win32\UserMatchPage.cpp:85
 msgid "&Edit"
 msgstr "R&edigera"
 
-#: win32/MainWindow.cpp:341
+#: win32\MainWindow.cpp:339
 msgid "&Favorite Hubs\tCtrl+H"
 msgstr "&Favorithubbar\tCtrl+H"
 
-#: win32/MainWindow.cpp:304
+#: win32\MainWindow.cpp:302
 msgid "&File"
 msgstr "&Arkiv"
 
-#: win32/RichTextBox.cpp:96
+#: win32\RichTextBox.cpp:96
 msgid "&Find...\tCtrl+F"
 msgstr "&Sök...\tCtrl+F"
 
-#: win32/TransferView.cpp:556
+#: win32\TransferView.cpp:556
 msgid "&Force attempt"
 msgstr "&Tvinga försök"
 
-#: win32/QueueFrame.cpp:1002 win32/WinUtil.cpp:1669 win32/UserInfoBase.h:165
+#: win32\QueueFrame.cpp:1002 win32\WinUtil.cpp:1667 win32\UserInfoBase.h:154
 msgid "&Get file list"
 msgstr "&Hämta fillista"
 
-#: win32/DirectoryListingFrame.cpp:865
+#: win32\DirectoryListingFrame.cpp:865
 msgid "&Go to directory"
 msgstr "&Gå till mapp"
 
-#: win32/MainWindow.cpp:399
+#: win32\MainWindow.cpp:397
 msgid "&Help"
 msgstr "&Hjälp"
 
-#: win32/MainWindow.cpp:1834
+#: win32\MainWindow.cpp:1822
 msgid "&Hide\tCtrl+1"
 msgstr "&Dölj\tCtrl+1"
 
-#: win32/WinUtil.cpp:1675 win32/UserInfoBase.h:167
+#: win32\WinUtil.cpp:1673 win32\UserInfoBase.h:156
 msgid "&Match queue"
 msgstr "&Matcha kö"
 
-#: win32/ACFrame.cpp:375
+#: win32\ACFrame.cpp:375
 #, fuzzy
 msgid "&Modify"
 msgstr "&Ändra"
 
-#: win32/FavHubsFrame.cpp:146 win32/FavHubsFrame.cpp:373
-#: win32/FavHubsFrame.cpp:375
+#: win32\FavHubsFrame.cpp:146 win32\FavHubsFrame.cpp:373
+#: win32\FavHubsFrame.cpp:375
 msgid "&Move to group"
 msgstr "&Flytta till grupp"
 
-#: win32/QueueFrame.cpp:931 win32/QueueFrame.cpp:950 win32/QueueFrame.cpp:966
+#: win32\QueueFrame.cpp:931 win32\QueueFrame.cpp:950 win32\QueueFrame.cpp:966
 msgid "&Move/Rename"
 msgstr "&Flytta/Byt namn"
 
-#: win32/ADLSearchFrame.cpp:85 win32/ADLSearchFrame.cpp:318
-#: win32/FavHubsFrame.cpp:110 win32/FavHubsFrame.cpp:365
+#: win32\ADLSearchFrame.cpp:85 win32\ADLSearchFrame.cpp:318
+#: win32\FavHubsFrame.cpp:110 win32\FavHubsFrame.cpp:365
 msgid "&New..."
 msgstr "&Ny..."
 
-#: win32/MainWindow.cpp:357
+#: win32\MainWindow.cpp:355
 msgid "&Notepad\tCtrl+N"
 msgstr "&Anteckningar\tCtrl+N"
 
-#: win32/RichTextBox.cpp:103 win32/SystemFrame.cpp:125
-#: win32/FinishedFrameBase.h:463
+#: win32\RichTextBox.cpp:103 win32\SystemFrame.cpp:125
+#: win32\FinishedFrameBase.h:463
 msgid "&Open"
 msgstr "&Öppna"
 
-#: win32/dwtTexts.cpp:33
+#: win32\dwtTexts.cpp:33
 msgid "&Paste\tCtrl+V"
 msgstr "&Klistra in\tCtrl+V"
 
-#: win32/ADLSearchFrame.cpp:91 win32/ADLSearchFrame.cpp:319
-#: win32/FavHubsFrame.cpp:118 win32/FavHubsFrame.cpp:366
+#: win32\ADLSearchFrame.cpp:91 win32\ADLSearchFrame.cpp:319
+#: win32\FavHubsFrame.cpp:118 win32\FavHubsFrame.cpp:366
 msgid "&Properties"
 msgstr "&Egenskaper"
 
-#: win32/MainWindow.cpp:339
+#: win32\MainWindow.cpp:337
 msgid "&Public Hubs\tCtrl+P"
 msgstr "&Publika Hubbar\tCtrl+P"
 
-#: win32/MainWindow.cpp:306
+#: win32\MainWindow.cpp:304
 msgid "&Quick connect...\tCtrl+Q"
 msgstr "&Snabbanslutning...\tCtrl+Q"
 
-#: win32/HubFrame.cpp:1381 win32/MainWindow.cpp:310
+#: win32\HubFrame.cpp:1308 win32\MainWindow.cpp:308
 msgid "&Reconnect\tCtrl+R"
 msgstr "&Återanslut\tCtrl+R"
 
-#: win32/PublicHubsFrame.cpp:197
+#: win32\PublicHubsFrame.cpp:197
 msgid "&Refresh"
 msgstr "Uppdate&ra"
 
-#: win32/ADLSearchFrame.cpp:109 win32/ADLSearchFrame.cpp:320
-#: win32/FavHubGroupsDlg.cpp:107 win32/FavHubsFrame.cpp:139
-#: win32/FavHubsFrame.cpp:370 win32/FavoriteDirsPage.cpp:77
-#: win32/PluginPage.cpp:119 win32/PluginPage.cpp:262 win32/QueueFrame.cpp:940
-#: win32/QueueFrame.cpp:954 win32/QueueFrame.cpp:968 win32/SearchFrame.cpp:887
-#: win32/SearchTypesPage.cpp:93 win32/StringListDlg.cpp:159 win32/UCPage.cpp:75
-#: win32/UploadPage.cpp:89 win32/UserMatchPage.cpp:97 win32/UsersFrame.cpp:465
-#: win32/FinishedFrameBase.h:466 win32/FinishedFrameBase.h:491
+#: win32\ADLSearchFrame.cpp:109 win32\ADLSearchFrame.cpp:320
+#: win32\FavHubGroupsDlg.cpp:107 win32\FavHubsFrame.cpp:139
+#: win32\FavHubsFrame.cpp:370 win32\FavoriteDirsPage.cpp:77
+#: win32\PluginPage.cpp:119 win32\PluginPage.cpp:262 win32\QueueFrame.cpp:940
+#: win32\QueueFrame.cpp:954 win32\QueueFrame.cpp:968 win32\SearchFrame.cpp:887
+#: win32\SearchTypesPage.cpp:93 win32\StringListDlg.cpp:159 win32\UCPage.cpp:75
+#: win32\UploadPage.cpp:89 win32\UserMatchPage.cpp:97 win32\UsersFrame.cpp:465
+#: win32\FinishedFrameBase.h:466 win32\FinishedFrameBase.h:491
 msgid "&Remove"
 msgstr "Ta bo&rt"
 
-#: win32/TransferView.cpp:559
+#: win32\TransferView.cpp:559
 msgid "&Remove file from queue"
 msgstr "&Radera fil från kö"
 
-#: win32/MainWindow.cpp:353
+#: win32\MainWindow.cpp:351
 msgid "&Search\tCtrl+S"
 msgstr "&Sök\tCtrl+S"
 
-#: win32/HubFrame.cpp:1385
+#: win32\HubFrame.cpp:1312
 msgid "&Search hub"
 msgstr "&Sök i hubb"
 
-#: win32/QueueFrame.cpp:1009 win32/WinUtil.cpp:1678 win32/UserInfoBase.h:170
+#: win32\QueueFrame.cpp:1009 win32\WinUtil.cpp:1676 win32\UserInfoBase.h:158
 msgid "&Send private message"
 msgstr "&Skicka privat meddelande"
 
-#: win32/ACFrame.cpp:381
+#: win32\ACFrame.cpp:381
 msgid "&Set Default Value"
 msgstr ""
 
-#: win32/ACFrame.cpp:373
+#: win32\ACFrame.cpp:373
 msgid "&Toggle"
 msgstr ""
 
-#: win32/dwtTexts.cpp:30
+#: win32\dwtTexts.cpp:30
 msgid "&Undo\tCtrl+Z"
 msgstr "&Ångra\tCtrl+Z"
 
-#: win32/FavHubGroupsDlg.cpp:102
+#: win32\FavHubGroupsDlg.cpp:102
 msgid "&Update"
 msgstr "&Uppdatera"
 
-#: win32/MainWindow.cpp:343
+#: win32\MainWindow.cpp:341
 msgid "&Users\tCtrl+U"
 msgstr "&Användare\tCtrl+U"
 
-#: win32/MainWindow.cpp:337
+#: win32\MainWindow.cpp:335
 msgid "&View"
 msgstr "&Visa"
 
-#: win32/DirectoryListingFrame.cpp:855 win32/SearchFrame.cpp:875
-#: win32/FinishedFrameBase.h:462
+#: win32\DirectoryListingFrame.cpp:855 win32\SearchFrame.cpp:875
+#: win32\FinishedFrameBase.h:462
 msgid "&View as text"
 msgstr "&Visa som text"
 
-#: win32/MainWindow.cpp:377
+#: win32\MainWindow.cpp:375
 msgid "&Window"
 msgstr "&Fönster"
 
-#: win32/TransferView.cpp:1008
+#: win32\TransferView.cpp:1008
 #, boost-format
 msgid "(%1%)"
 msgstr "(%1%)"
 
-#: win32/MainWindow.cpp:841
+#: win32\MainWindow.cpp:835
 msgid "(No recent item found)"
 msgstr "(Inget nytt objekt hittades)"
 
-#: win32/PrivateFrame.cpp:518
+#: win32\PrivateFrame.cpp:491
 msgid "(User offline)"
 msgstr "(Användare offline)"
 
-#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:420
-#: win32/PrivateFrame.cpp:427
+#: win32\HubFrame.cpp:520 win32\HubFrame.cpp:530 win32\PrivateFrame.cpp:393
+#: win32\PrivateFrame.cpp:400
 msgid "*** Keyboard commands:"
 msgstr "*** Kortkommandon:"
 
-#: win32/HashProgressDlg.cpp:144
+#: win32\HashProgressDlg.cpp:144
 #, boost-format
 msgid "-.-- B/s, %1% left"
 msgstr "-.-- B/s, %1% kvar"
 
-#: win32/HashProgressDlg.cpp:143
+#: win32\HashProgressDlg.cpp:143
 #, boost-format
 msgid "-.-- files/h, %1% files left"
 msgstr "-.-- filer/h, %1% filer kvar"
 
-#: win32/HashProgressDlg.cpp:149 win32/HashProgressDlg.cpp:164
+#: win32\HashProgressDlg.cpp:149 win32\HashProgressDlg.cpp:164
 msgid "-:--:--"
 msgstr "-:--:--"
 
-#: win32/PluginInfoDlg.cpp:84 win32/PluginPage.cpp:227
+#: win32\PluginInfoDlg.cpp:84 win32\PluginPage.cpp:227
 msgid "<Information unavailable>"
 msgstr "<Information ej tillgänglig>"
 
-#: win32/WinUtil.cpp:1573
-#, fuzzy
+#: win32\WinUtil.cpp:1571
 msgid ""
-"A MAGNET link was given to FearDC, but it didn't contain a valid file hash "
-"for use on the Direct Connect network.  No action will be taken."
+"A MAGNET link was given to DC++, but it didn't contain a valid file hash for "
+"use on the Direct Connect network.  No action will be taken."
 msgstr ""
 "En MAGNET-länk gavs till DC++, men den innehöll ingen giltig filhash för "
 "användning i Direct Connect-nätverket. Inga åtgärder kommer att vidtas."
 
-#: win32/PrivateFrame.cpp:582
+#: win32\PrivateFrame.cpp:555
 msgid "A direct encrypted channel has been established"
 msgstr "En krypterad direktkanal har upprättats"
 
-#: win32/PrivateFrame.cpp:330
+#: win32\PrivateFrame.cpp:303
 msgid "A direct encrypted channel is already available"
 msgstr "En krypterad direktkanal finns redan"
 
-#: win32/PrivateFrame.cpp:342
+#: win32\PrivateFrame.cpp:315
 msgid ""
 "A secure ADC hub is required; this feature is not supported on NMDC hubs"
 msgstr "En säker ADC-hub krävs. Denna funktion stöds inte av NMDC-hubbar"
 
-#: win32/UploadPage.cpp:301
+#: win32\UploadPage.cpp:301
 #, boost-format
 msgid ""
 "A virtual directory named %1% already exists, do you wish to merge the "
@@ -493,75 +483,73 @@ msgid ""
 msgstr ""
 "En virtuell mapp med namnet %1% finns redan. Vill du slå ihop innehållet?"
 
-#: win32/MainWindow.cpp:354 win32/MainWindow.cpp:464
+#: win32\MainWindow.cpp:352 win32\MainWindow.cpp:462
 msgid "ADL Search"
 msgstr "ADL-sökning"
 
-#: win32/ADLSProperties.cpp:125
+#: win32\ADLSProperties.cpp:125
 msgid "ADLSearch Properties"
 msgstr "Egenskaper för ADL-sökning"
 
-#: win32/AboutDlg.cpp:171 win32/MainWindow.cpp:405
-#, fuzzy
-msgid "About FearDC"
+#: win32\AboutDlg.cpp:172 win32\MainWindow.cpp:403
+msgid "About DC++"
 msgstr "Om DC++"
 
-#: win32/ACFrame.cpp:58 win32/MainWindow.cpp:364
+#: win32\ACFrame.cpp:58 win32\MainWindow.cpp:362
 msgid "About:config"
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:75
+#: win32\UploadFilteringPage.cpp:75
 msgid "Above (minimum size)"
 msgstr "Över (minimum storlek)"
 
-#: win32/AdvancedPage.cpp:43
+#: win32\AdvancedPage.cpp:43
 msgid "Accept custom user commands from hub"
 msgstr "Acceptera anpassade användarkommandon från hubben"
 
-#: win32/ConnectivityManualPage.cpp:185
+#: win32\ConnectivityManualPage.cpp:185
 msgid "Active mode (I have no router / I have configured my router)"
 msgstr "Aktivt läge (Jag har ingen router / Jag har konfigurerat min router)"
 
-#: win32/ConnectivityManualPage.cpp:188
-#, fuzzy
-msgid "Active mode (let FearDC configure my router with NAT-PMP / UPnP)"
+#: win32\ConnectivityManualPage.cpp:188
+msgid "Active mode (let DC++ configure my router with NAT-PMP / UPnP)"
 msgstr "Aktivt läge (låt DC++ konfigurera min router med NAT-PMP / UPnP)"
 
-#: win32/MainWindow.cpp:721
+#: win32\MainWindow.cpp:716
 msgid "Add"
 msgstr "Lägg till"
 
-#: win32/HubFrame.cpp:1378 win32/PublicHubsFrame.cpp:402 win32/WinUtil.cpp:1681
-#: win32/UserInfoBase.h:175
+#: win32\HubFrame.cpp:1305 win32\PublicHubsFrame.cpp:402 win32\WinUtil.cpp:1679
+#: win32\UserInfoBase.h:160
 msgid "Add To &Favorites"
 msgstr "Lägg till i &Favoriter"
 
-#: win32/UserMatchDlg.cpp:87
+#: win32\UserMatchDlg.cpp:87
 msgid "Add a rule"
 msgstr "Lägg till en regel"
 
-#: win32/AdvancedPage.cpp:45
+#: win32\AdvancedPage.cpp:45
 msgid "Add finished files to share instantly (if shared)"
 msgstr "Lägg till nedladdade filer för utdelning direkt (om de är utdelade)"
 
-#: win32/GeneralPage.cpp:100
+#: win32\GeneralPage.cpp:100
 msgid "Add timestamp to the end of away messages"
 msgstr "Lägg till tidsstämpel i slutet av  bortameddelanden"
 
-#: win32/QueueFrame.cpp:60
+#: win32\QueueFrame.cpp:60
 msgid "Added"
 msgstr "Tillagd"
 
-#: win32/PluginInfoDlg.cpp:107
+#: win32\PluginInfoDlg.cpp:107
 msgid "Adding a plugin"
 msgstr "Lägg till en plugin"
 
-#: win32/FavHubProperties.cpp:89 win32/HubListsDlg.cpp:51
-#: win32/PublicHubsFrame.cpp:47
+#: win32\FavHubProperties.cpp:89 win32\HubListsDlg.cpp:51
+#: win32\PublicHubsFrame.cpp:47
 msgid "Address"
 msgstr "Adress"
 
-#: win32/PrivateFrame.cpp:440
+#: win32\PrivateFrame.cpp:413
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to ignore chat messages from the current user."
@@ -569,7 +557,7 @@ msgstr ""
 "Lägger till en användarmatchad definition (eller modifierar en befintlig, om "
 "möjligt) för ignorering av chattmeddelanden från den nuvarande användaren."
 
-#: win32/HubFrame.cpp:555
+#: win32\HubFrame.cpp:554
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to ignore chat messages from the specified user."
@@ -577,7 +565,7 @@ msgstr ""
 "Lägger till en användarmatchad definition (eller modifierar en befintlig, om "
 "möjligt) för ignorering av chattmeddelanden från den valda användaren."
 
-#: win32/PrivateFrame.cpp:442
+#: win32\PrivateFrame.cpp:415
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to stop ignoring chat messages from the current user."
@@ -586,7 +574,7 @@ msgstr ""
 "möjligt) för att sluta ignorera chattmeddelanden från den nuvarande "
 "användaren."
 
-#: win32/HubFrame.cpp:557
+#: win32\HubFrame.cpp:556
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to stop ignoring chat messages from the specified user."
@@ -594,7 +582,7 @@ msgstr ""
 "Lägger till en användarmatchad definition (eller modifierar en befintlig, om "
 "möjligt) för att sluta ignorera chattmeddelanden från den valda användaren."
 
-#: win32/HubFrame.cpp:544
+#: win32\HubFrame.cpp:545
 msgid ""
 "Adds the current hub (along with your nickname and password, if used) to the "
 "list of Favorite Hubs."
@@ -602,148 +590,146 @@ msgstr ""
 "Lägger till den nuvarande hubben (tillsammans med användarnamn och lösenord, "
 "om tillgängligt) till listan av favorithubbar."
 
-#: win32/PrivateFrame.cpp:438
+#: win32\PrivateFrame.cpp:411
 msgid "Adds the current user to the list of Favorite Users."
 msgstr "Lägger till den nuvarande användaren till listan av favoritanvändare."
 
-#: win32/PrivateFrame.cpp:433
+#: win32\PrivateFrame.cpp:406
 msgid "Adds the current user's list to the Download Queue."
 msgstr "Lägger till den aktuella användarens fillista till nerladdningskön."
 
-#: win32/HubFrame.cpp:553
+#: win32\HubFrame.cpp:552
 msgid "Adds the user's list to the Download Queue."
 msgstr "Lägger till användarens fillista till nerladdningskön."
 
-#: win32/SettingsDialog.cpp:191
+#: win32\SettingsDialog.cpp:191
 msgid "Advanced"
 msgstr "Avancerat"
 
-#: win32/QueueFrame.cpp:1017 win32/QueueFrame.cpp:1026 win32/WinUtil.cpp:1636
+#: win32\QueueFrame.cpp:1017 win32\QueueFrame.cpp:1026 win32\WinUtil.cpp:1634
 msgid "All"
 msgstr "Alla"
 
-#: win32/QueueFrame.cpp:382
+#: win32\QueueFrame.cpp:382
 #, boost-format
 msgid "All %1% users offline"
 msgstr "Alla %1% användare offline"
 
-#: win32/WinUtil.cpp:1734
+#: win32\WinUtil.cpp:1732
 msgid "All columns"
 msgstr "Alla kolumner"
 
-#: win32/WinUtil.cpp:880 win32/WinUtil.cpp:887
+#: win32\WinUtil.cpp:883 win32\WinUtil.cpp:890
 msgid "All files"
 msgstr "Alla filer"
 
-#: win32/CertificatesPage.cpp:39
+#: win32\CertificatesPage.cpp:38
 msgid "Allow TLS connections to clients without trusted certificate"
 msgstr "Tillåt TLS-anslutningar till klienter utan betrodda certifikat"
 
-#: win32/CertificatesPage.cpp:38
+#: win32\CertificatesPage.cpp:37
 msgid "Allow TLS connections to hubs without trusted certificate"
 msgstr "Tillåt TLS-anslutningar till hubbar utan betrodda certifikat"
 
-#: win32/CertificatesPage.cpp:41
+#: win32\CertificatesPage.cpp:40
 msgid "Always attempt to establish direct encrypted private message channels"
 msgstr ""
 "Försök alltid att etablera direkta och krypterade kanaler för privata "
 "meddelanden"
 
-#: win32/AppearancePage.cpp:39
+#: win32\AppearancePage.cpp:39
 msgid "Always display tray icon"
 msgstr "Visa alltid ikon i meddelandefältet"
 
-#: win32/CommandDlg.cpp:157
+#: win32\CommandDlg.cpp:157
 msgid "Always open help file with this dialog"
 msgstr "Öppna alltid hjälpavnittet till denna dialogruta"
 
-#: win32/UserMatchDlg.cpp:96 win32/UserMatchPage.cpp:222
+#: win32\UserMatchDlg.cpp:96 win32\UserMatchPage.cpp:222
 msgid "Always show chat messages"
 msgstr "Visa alltid chatmeddelanden"
 
-#: win32/FavHubGroupsDlg.cpp:324
+#: win32\FavHubGroupsDlg.cpp:324
 #, boost-format
 msgid "Another group with the name \"%1%\" already exists"
 msgstr "Det finns redan en grupp som heter \"%1%\""
 
-#: win32/ListFilter.cpp:46
+#: win32\ListFilter.cpp:46
 msgid "Any"
 msgstr "Alla"
 
-#: win32/WinUtil.cpp:1597
-#, fuzzy
-msgid ""
-"Any program that is launched will have the same access rights as FearDC."
+#: win32\WinUtil.cpp:1595
+msgid "Any program that is launched will have the same access rights as DC++."
 msgstr "Alla program som öppnas kommer att ha samma rättigheter som DC++."
 
-#: win32/SettingsDialog.cpp:177
+#: win32\SettingsDialog.cpp:177
 msgid "Appearance"
 msgstr "Utseende"
 
-#: win32/UsersFrame.cpp:96
+#: win32\UsersFrame.cpp:96
 msgid "Application"
 msgstr "Program"
 
-#: win32/UsersFrame.cpp:95
+#: win32\UsersFrame.cpp:95
 msgid "Application version"
 msgstr "Programversion"
 
-#: win32/SearchFrame.cpp:192
+#: win32\SearchFrame.cpp:192
 msgid "At least"
 msgstr "Minst"
 
-#: win32/SearchFrame.cpp:193
+#: win32\SearchFrame.cpp:193
 msgid "At most"
 msgstr "Högst"
 
-#: win32/PluginInfoDlg.cpp:91 win32/PluginPage.cpp:236
+#: win32\PluginInfoDlg.cpp:91 win32\PluginPage.cpp:236
 msgid "Author: "
 msgstr "Upphovsman: "
 
-#: win32/UsersFrame.cpp:53
+#: win32\UsersFrame.cpp:53
 msgid "Auto grant slot"
 msgstr "Bevilja plats automatiskt"
 
-#: win32/QueuePage.cpp:58
+#: win32\QueuePage.cpp:58
 msgid "Auto priority settings"
 msgstr "Inställningar för autoprioritering"
 
-#: win32/ExpertsPage.cpp:51
+#: win32\ExpertsPage.cpp:51
 msgid "Auto refresh time"
 msgstr "Auto-uppdat. tid"
 
-#: win32/ExpertsPage.cpp:47
+#: win32\ExpertsPage.cpp:47
 msgid "Auto-search interval"
 msgstr "Intervall för automatisk sökning"
 
-#: win32/ExpertsPage.cpp:46
+#: win32\ExpertsPage.cpp:46
 msgid "Auto-search limit"
 msgstr "Auto-sökgräns"
 
-#: win32/QueuePage.cpp:94
+#: win32\QueuePage.cpp:94
 msgid "Autodrop settings"
 msgstr "Inställningar för \"Auto-Ta bort\""
 
-#: win32/QueuePage.cpp:35
+#: win32\QueuePage.cpp:35
 msgid "Autodrop slow sources for all queue items (except filelists)"
 msgstr ""
 "\"Auto-Ta bort\" - Ta bort långsamma källor automatiskt för alla objekt i "
 "nerladdningskön (förutom fillistor)"
 
-#: win32/ADLSearchFrame.cpp:52
+#: win32\ADLSearchFrame.cpp:52
 msgid "Automatic Directory Listing Search"
 msgstr "Automatisk mapplistningssökning"
 
-#: win32/ConnectivityManualPage.cpp:52 win32/ConnectivityPage.cpp:52
-#: win32/ProxyPage.cpp:53
+#: win32\ConnectivityManualPage.cpp:52 win32\ConnectivityPage.cpp:52
+#: win32\ProxyPage.cpp:53
 msgid "Automatic connectivity setup"
 msgstr "Automatisk anslutningsinställning"
 
-#: win32/ConnectivityPage.cpp:103
+#: win32\ConnectivityPage.cpp:103
 msgid "Automatic connectivity setup is currently disabled"
 msgstr "Automatisk anslutningsinställning är för närvarande inaktiverat"
 
-#: win32/ConnectivityPage.cpp:121
+#: win32\ConnectivityPage.cpp:121
 msgid ""
 "Automatic connectivity setup will be disabled.\n"
 "\n"
@@ -759,190 +745,190 @@ msgstr ""
 "\n"
 "Fortsätt?"
 
-#: win32/AdvancedPage.cpp:38
+#: win32\AdvancedPage.cpp:38
 msgid "Automatically disconnect users who leave the hub"
 msgstr "Koppla bort användare som lämnar hubben"
 
-#: win32/AdvancedPage.cpp:31
+#: win32\AdvancedPage.cpp:31
 msgid "Automatically follow redirects"
 msgstr "Följ omdirigeringar automatiskt"
 
-#: win32/QueuePage.cpp:39
+#: win32\QueuePage.cpp:39
 msgid "Automatically match queue for search hits"
 msgstr "Matcha nerladdade fillistor automatiskt"
 
-#: win32/UploadPage.cpp:116
+#: win32\UploadPage.cpp:116
 msgid "Automatically open an extra slot if speed is below (0 = disable)"
 msgstr "Öppna en extra kanal om hastigheten är under (0 = inaktiverad)"
 
-#: win32/QueuePage.cpp:38
+#: win32\QueuePage.cpp:38
 msgid "Automatically search for alternative download locations"
 msgstr "Sök efter alternativa nerladdningsplatser automatiskt"
 
-#: win32/HubFrame.cpp:1209
+#: win32\HubFrame.cpp:1136
 #, boost-format
 msgid "Average: %1%"
 msgstr "Genomsnitt: %1%"
 
-#: win32/UsersFrame.cpp:78
+#: win32\UsersFrame.cpp:78
 msgid "Away"
 msgstr "Inte vid datorn"
 
-#: win32/GeneralPage.cpp:90
+#: win32\GeneralPage.cpp:90
 msgid "Away message (empty = no away message)"
 msgstr "Frånvaromeddelande (tom = inget frånvaromeddelande)"
 
-#: win32/GeneralPage.cpp:82
+#: win32\GeneralPage.cpp:82
 msgid "Away mode"
 msgstr "Frånvaroläge"
 
-#: win32/WinUtil.cpp:667 win32/WinUtil.cpp:680
+#: win32\WinUtil.cpp:666 win32\WinUtil.cpp:675
 msgid "Away mode off"
 msgstr "Frånvaroläge av"
 
-#: win32/WinUtil.cpp:673
+#: win32\WinUtil.cpp:671
 #, boost-format
 msgid "Away mode on: %1%"
 msgstr "Frånvaroläge på: %1%"
 
-#: win32/ADLSProperties.cpp:99 win32/ExpertsPage.cpp:53
-#: win32/ExpertsPage.cpp:54 win32/ExpertsPage.cpp:56 win32/SearchFrame.cpp:203
-#: win32/UploadFilteringPage.cpp:75 win32/UploadFilteringPage.cpp:80
+#: win32\ADLSProperties.cpp:99 win32\ExpertsPage.cpp:53
+#: win32\ExpertsPage.cpp:54 win32\ExpertsPage.cpp:56 win32\SearchFrame.cpp:203
+#: win32\UploadFilteringPage.cpp:75 win32\UploadFilteringPage.cpp:80
 msgid "B"
 msgstr "B"
 
-#: win32/QueuePage.cpp:108
+#: win32\QueuePage.cpp:108
 msgid "B/s"
 msgstr "B/s"
 
-#: win32/DirectoryListingFrame.cpp:345
+#: win32\DirectoryListingFrame.cpp:345
 msgid "Back"
 msgstr "Tillbaka"
 
-#: win32/NotificationsPage.cpp:38
+#: win32\NotificationsPage.cpp:38
 msgid "Balloon"
 msgstr "Ballong"
 
-#: win32/NotificationsPage.cpp:274
+#: win32\NotificationsPage.cpp:274
 msgid "Balloon popup example"
 msgstr "Exempel på ballongpopup"
 
-#: win32/NotificationsPage.cpp:115
+#: win32\NotificationsPage.cpp:115
 msgid "Balloon settings"
 msgstr "Ballonginställningar"
 
-#: win32/SettingsDialog.cpp:161
+#: win32\SettingsDialog.cpp:161
 msgid "Bandwidth limiting"
 msgstr "Bandbreddsbegränsning"
 
-#: win32/NotificationsPage.cpp:280
+#: win32\NotificationsPage.cpp:280
 msgid "Beep"
 msgstr "Pip"
 
-#: win32/UploadFilteringPage.cpp:80
+#: win32\UploadFilteringPage.cpp:80
 msgid "Below (maximum size)"
 msgstr "Under (maximum storlek)"
 
-#: win32/ConnectivityManualPage.cpp:226
+#: win32\ConnectivityManualPage.cpp:226
 msgid "Bind Address"
 msgstr "Bindningsadress"
 
-#: win32/MainWindow.cpp:418
+#: win32\MainWindow.cpp:416
 msgid "Blog"
 msgstr "Blogg"
 
-#: win32/UserInfoBase.cpp:121
+#: win32\UserInfoBase.cpp:121
 msgid "Bot"
 msgstr "Bot"
 
-#: win32/AdvancedPage.cpp:41
+#: win32\AdvancedPage.cpp:41
 msgid "Break on first ADLSearch match"
 msgstr "Avbryt vid första träff med funktionen 'AMLSökning'"
 
-#: win32/DownloadPage.cpp:60 win32/DownloadPage.cpp:72
+#: win32\DownloadPage.cpp:60 win32\DownloadPage.cpp:72
 msgid "Browse..."
 msgstr "Bläddra..."
 
-#: win32/TabsPage.cpp:98
+#: win32\TabsPage.cpp:98
 msgid "Browser theme"
 msgstr "Läsartema"
 
-#: win32/TabsPage.cpp:86
+#: win32\TabsPage.cpp:86
 msgid "Button style"
 msgstr "Knappstil"
 
-#: win32/HubFrame.cpp:67 win32/SearchFrame.cpp:61 win32/UserInfoBase.cpp:143
-#: win32/UserMatchDlg.cpp:222 win32/UserMatchPage.cpp:215
-#: win32/UsersFrame.cpp:58 win32/UsersFrame.cpp:97
+#: win32\HubFrame.cpp:66 win32\SearchFrame.cpp:61 win32\UserInfoBase.cpp:143
+#: win32\UserMatchDlg.cpp:222 win32\UserMatchPage.cpp:215
+#: win32\UsersFrame.cpp:58 win32\UsersFrame.cpp:97
 msgid "CID"
 msgstr "CID"
 
-#: win32/FinishedFrameBase.h:734
+#: win32\FinishedFrameBase.h:734
 msgid "CRC Checked"
 msgstr "CRC kontrollerad"
 
-#: win32/QueueFrame.cpp:430
+#: win32\QueueFrame.cpp:430
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "CRC32 inkonsistens (SFV-kontroll)"
 
-#: win32/PublicHubsFrame.cpp:495
+#: win32\PublicHubsFrame.cpp:495
 msgid "Cached hub list is corrupted or unsupported"
 msgstr "Den lagrade hubblistan är skadad eller är i ett format som inte stöds"
 
-#: win32/WinUtil.cpp:1152
+#: win32\WinUtil.cpp:1155
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: win32/PluginApiWin.cpp:104
+#: win32\PluginApiWin.cpp:104
 msgid "Cannot enable the plugin:"
 msgstr "Kan inte aktivera pluginen:"
 
-#: win32/PluginApiWin.cpp:82 win32/PluginInfoDlg.cpp:132
+#: win32\PluginApiWin.cpp:82 win32\PluginInfoDlg.cpp:132
 msgid "Cannot install the plugin:"
 msgstr "Kan inte installera pluginen:"
 
-#: win32/PrivateFrame.cpp:346
+#: win32\PrivateFrame.cpp:319
 #, boost-format
 msgid "Cannot start the direct encrypted channel: %1%"
 msgstr "Kan inte starta den direkta och krypterade kanalen: %1%"
 
-#: win32/CertificatesPage.cpp:124
+#: win32\CertificatesPage.cpp:123
 msgid "Certificate generation"
 msgstr "Certifikatgenering"
 
-#: win32/MainWindow.cpp:404
+#: win32\MainWindow.cpp:402
 msgid "Change Log"
 msgstr "Logg över programvaruändringar"
 
-#: win32/TextFrame.cpp:90
+#: win32\TextFrame.cpp:90
 msgid "Change the text viewer font"
 msgstr "Ändra textvisartypsnittet"
 
-#: win32/CommandDlg.cpp:90 win32/StylesPage.cpp:148
+#: win32\CommandDlg.cpp:90 win32\StylesPage.cpp:148
 msgid "Chat"
 msgstr "Chatt"
 
-#: win32/HistoryPage.cpp:77
+#: win32\HistoryPage.cpp:77
 msgid "Chat lines to recall from history when opening a window"
 msgstr "Antal rader att återställa från historiken när ett fönster öppnas"
 
-#: win32/QueuePage.cpp:110
+#: win32\QueuePage.cpp:110
 msgid "Check every"
 msgstr "Kontrollera var"
 
-#: win32/TransferView.cpp:56
+#: win32\TransferView.cpp:56
 msgid "Cipher"
 msgstr "Chiffer"
 
-#: win32/AppearancePage.cpp:49
+#: win32\AppearancePage.cpp:47
 msgid "City-level geolocation database (allows parameters such as %[city])"
 msgstr "Lokaliseringsdatabas på stadsnivå (tillåter parametrar som %[city])"
 
-#: win32/AdvancedPage.cpp:32
+#: win32\AdvancedPage.cpp:32
 msgid "Clear search box after each search"
 msgstr "Rensa sökfältet efter varje sökning"
 
-#: win32/WinUtil.cpp:574
+#: win32\WinUtil.cpp:574
 msgid ""
 "Clears the current window of all text. Optionally, you can specify how many "
 "of the latest (most recent) lines should be kept."
@@ -950,388 +936,396 @@ msgstr ""
 "Rensar det aktuella fönstret från all text. Alternativt kan du ange hur "
 "många av de senaste raderna som ska sparas."
 
-#: win32/dwtTexts.cpp:36
+#: win32\dwtTexts.cpp:36
 msgid "Click and drag to resize"
 msgstr "Klicka och dra för att ändra storlek"
 
-#: win32/AdvancedPage.cpp:50
+#: win32\AdvancedPage.cpp:50
 msgid "Clickable chat links (disable on Wine)"
 msgstr "Klickbara chattlänkar (avstängd med Wine)"
 
-#: win32/UsersFrame.cpp:100
+#: win32\UsersFrame.cpp:100
 msgid "Client type"
 msgstr "Klienttyp"
 
-#: win32/dwtTexts.cpp:37
+#: win32\dwtTexts.cpp:37
 msgid "Close"
 msgstr "Stäng"
 
-#: win32/MainWindow.cpp:388
+#: win32\MainWindow.cpp:386
 msgid "Close all PM windows"
 msgstr "Stäng alla PM-fönster"
 
-#: win32/MainWindow.cpp:392
+#: win32\MainWindow.cpp:390
 msgid "Close all file list windows"
 msgstr "Stäng alla fillistfönster"
 
-#: win32/MainWindow.cpp:382
+#: win32\MainWindow.cpp:380
 msgid "Close all hubs"
 msgstr "Stäng alla hubbar"
 
-#: win32/MainWindow.cpp:384 win32/MainWindow.cpp:1784
+#: win32\MainWindow.cpp:382 win32\MainWindow.cpp:1772
 msgid "Close all hubs of a favorite group"
 msgstr "Stäng alla hubbar i en favoritgrupp"
 
-#: win32/MainWindow.cpp:389
+#: win32\MainWindow.cpp:387
 msgid "Close all offline PM windows"
 msgstr "Stäng alla frånkopplade PM-fönster"
 
-#: win32/MainWindow.cpp:395
+#: win32\MainWindow.cpp:393
 msgid "Close all search windows"
 msgstr "Stäng alla sökfönster"
 
-#: win32/MainWindow.cpp:383
+#: win32\MainWindow.cpp:381
 msgid "Close disconnected hubs"
 msgstr "Stäng frånkopplade hubbar"
 
-#: win32/MainWindow.cpp:385 win32/MainWindow.cpp:1784
+#: win32\MainWindow.cpp:383 win32\MainWindow.cpp:1772
 msgid "Close hubs not in a favorite group"
 msgstr "Stäng hubbar som inte tillhör en favoritgrupp"
 
-#: win32/WinUtil.cpp:588
+#: win32\WinUtil.cpp:588
 #, fuzzy
 msgid "Closes the current window."
 msgstr "Stäng alla PM-fönster"
 
-#: win32/CommandDlg.cpp:136 win32/UCPage.cpp:37
+#: win32\CommandDlg.cpp:136 win32\UCPage.cpp:37
 msgid "Command"
 msgstr "Kommando"
 
-#: win32/CommandDlg.cpp:79
+#: win32\CommandDlg.cpp:79
 msgid "Command Type"
 msgstr "Typ av kommando"
 
-#: win32/PrivateFrame.cpp:513
+#: win32\PrivateFrame.cpp:486
 msgid "Communication channel"
 msgstr "Kommunikationskanal"
 
-#: win32/AboutDlg.cpp:116
+#: win32\AboutDlg.cpp:117
 msgid "Compiler"
 msgstr "Kompilator"
 
-#: win32/MainWindow.cpp:722 win32/MainWindow.cpp:740
+#: win32\MainWindow.cpp:717 win32\MainWindow.cpp:735
 msgid "Configure"
 msgstr "Konfigurera"
 
-#: win32/DownloadPage.cpp:120
+#: win32\DownloadPage.cpp:120
 msgid "Configure Public Hub Lists"
 msgstr "Konfigurera Publika Hubblistor"
 
-#: win32/UserMatchPage.cpp:102
+#: win32\UserMatchPage.cpp:102
 msgid "Configure styles (fonts / colors) for these user matching definitions"
 msgstr ""
 "Konfigurera stiler (typsnitt / färger) för dessa användarmatchande "
 "definitioner"
 
-#: win32/StylesPage.cpp:133
+#: win32\StylesPage.cpp:133
 msgid "Configure user matching definitions"
 msgstr "Konfigurera användarmatchande definitioner"
 
-#: win32/HubListsDlg.cpp:43 win32/PublicHubsFrame.cpp:178
+#: win32\HubListsDlg.cpp:43 win32\PublicHubsFrame.cpp:178
 msgid "Configured Public Hub Lists"
 msgstr "Konfigurerade Publika Hubblistor"
 
-#: win32/WindowsPage.cpp:53
+#: win32\WindowsPage.cpp:51
 msgid "Confirm ADL Search removal"
 msgstr "Bekräfta vid borttagning av ADL sökning"
 
-#: win32/WindowsPage.cpp:48
+#: win32\WindowsPage.cpp:46
 msgid "Confirm application exit"
 msgstr "Bekräfta stängning av DC++"
 
-#: win32/WindowsPage.cpp:71
+#: win32\WindowsPage.cpp:69
 msgid "Confirm dialog options"
 msgstr "Alternativ för bekräftelsedialogrutor"
 
-#: win32/WindowsPage.cpp:50
+#: win32\WindowsPage.cpp:48
 msgid "Confirm favorite hub removal"
 msgstr "Bekräfta borttagning av favorithubbar"
 
-#: win32/WindowsPage.cpp:51
+#: win32\WindowsPage.cpp:49
 msgid "Confirm favorite user removal"
 msgstr "Bekräfta vid borttagning av favoritanvändare"
 
-#: win32/WindowsPage.cpp:49
+#: win32\WindowsPage.cpp:47
 msgid "Confirm hub closing"
 msgstr "Bekräfta vid stängning av hubb"
 
-#: win32/WindowsPage.cpp:52
+#: win32\WindowsPage.cpp:50
 msgid "Confirm item removal in download queue"
 msgstr "Bekräfta borttagning av objekt i nerladdningskön"
 
-#: win32/MainWindow.cpp:307
+#: win32\MainWindow.cpp:305
 msgid "Connect to a favorite hub &group...\tCtrl+G"
 msgstr "Anslut till en favorit&grupp...\tCtrl+G"
 
-#: win32/MainWindow.cpp:975
+#: win32\MainWindow.cpp:969
 msgid "Connect to a favorite hub group"
 msgstr "Anslut till en favoritgrupp"
 
-#: win32/MainWindow.cpp:813
+#: win32\MainWindow.cpp:807
 msgid "Connect to all hubs in this group"
 msgstr "Anslut till alla hubbar i den här gruppen"
 
-#: win32/UserInfoBase.h:178
+#: win32\UserInfoBase.h:163
 msgid "Connect to hub"
 msgstr "Anslut till hubb"
 
-#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1802
+#: win32\HubFrame.cpp:680 win32\WinUtil.cpp:1800
 msgid "Connected"
 msgstr "Ansluten"
 
-#: win32/TransferView.cpp:976 win32/TransferView.cpp:996
+#: win32\TransferView.cpp:976 win32\TransferView.cpp:996
 msgid "Connecting"
 msgstr "Ansluter"
 
-#: win32/HubFrame.cpp:1018
+#: win32\HubFrame.cpp:952
 #, boost-format
 msgid "Connecting to %1%..."
 msgstr "Ansluter till %1%..."
 
-#: win32/HubFrame.cpp:63 win32/SearchFrame.cpp:56 win32/UserInfoBase.cpp:130
-#: win32/UsersFrame.cpp:99
+#: win32\HubFrame.cpp:62 win32\SearchFrame.cpp:56 win32\UserInfoBase.cpp:130
+#: win32\UsersFrame.cpp:99
 msgid "Connection"
 msgstr "Anslutning"
 
-#: win32/SettingsDialog.cpp:159
+#: win32\SettingsDialog.cpp:159
 msgid "Connectivity"
 msgstr "Anslutbarhet"
 
-#: win32/CommandDlg.cpp:104
+#: win32\CommandDlg.cpp:104
 msgid "Context"
 msgstr "Snabbvalsmeny"
 
-#: win32/MainWindow.cpp:417
+#: win32\MainWindow.cpp:415
 msgid "Contribute"
 msgstr "Bidra"
 
-#: win32/WinUtil.cpp:1716
+#: win32\WinUtil.cpp:1714
 msgid "Copy"
 msgstr "Kopiera"
 
-#: win32/ACFrame.cpp:379
+#: win32\ACFrame.cpp:379
 msgid "Copy &Name"
 msgstr ""
 
-#: win32/ACFrame.cpp:380
+#: win32\ACFrame.cpp:380
 #, fuzzy
 msgid "Copy &Value"
 msgstr "Värde"
 
-#: win32/HubFrame.cpp:1382
+#: win32\HubFrame.cpp:1309
 msgid "Copy &address to clipboard"
 msgstr "Kopiera &adress"
 
-#: win32/HubFrame.cpp:1384
+#: win32\HubFrame.cpp:1311
 #, fuzzy
 msgid "Copy address with &keyprint to clipboard"
 msgstr "Kopiera &adress"
 
-#: win32/WinUtil.cpp:830
+#: win32\WinUtil.cpp:833
 msgid "Copy magnet link to clipboard"
 msgstr "Kopiera MAGNET-länk"
 
-#: win32/UserInfoBase.h:189
+#: win32\UserInfoBase.h:174
 msgid "Copy user information"
 msgstr "Kopiera användarinformation"
 
-#: win32/HubFrame.cpp:65 win32/PublicHubsFrame.cpp:48 win32/TransferView.cpp:58
-#: win32/UserInfoBase.cpp:132
+#: win32\HubFrame.cpp:64 win32\PublicHubsFrame.cpp:48 win32\TransferView.cpp:58
+#: win32\UserInfoBase.cpp:132
 msgid "Country"
 msgstr "Nationskod"
 
-#: win32/AppearancePage.cpp:76
+#: win32\AppearancePage.cpp:74
 msgid "Country format"
 msgstr "Landsformat"
 
-#: win32/CommandDlg.cpp:213
+#: win32\CommandDlg.cpp:213
 msgid "Create / Modify User Command"
 msgstr "Skapa / Ändra användarkommandon"
 
-#: win32/HashProgressDlg.cpp:108
+#: win32\HashProgressDlg.cpp:108
 msgid "Creating file index..."
 msgstr "Skapar TTH-filindex..."
 
-#: win32/dwtTexts.cpp:31
+#: win32\dwtTexts.cpp:31
 msgid "Cu&t\tCtrl+X"
 msgstr "Klipp &ut\tCtrl+X"
 
-#: win32/PrivateFrame.cpp:163
+#: win32\PrivateFrame.cpp:163
 msgid "Current communication channel - click to change"
 msgstr "Nuvarande kommunikationskanal - klicka för att ändra"
 
-#: win32/HubFrame.cpp:515
+#: win32\HubFrame.cpp:514
 #, boost-format
 msgid "Current hub topic: %1%"
 msgstr "Nuvarande hubrubrik: %1%"
 
-#: win32/NotificationsPage.cpp:280
+#: win32\NotificationsPage.cpp:280
 msgid "Custom"
 msgstr "Anpassad"
 
-#: win32/StylesPage.cpp:124 win32/UserMatchPage.cpp:231
+#: win32\StylesPage.cpp:124 win32\UserMatchPage.cpp:231
 msgid "Custom background color"
 msgstr "Anpassad bakgrundsfärg"
 
-#: win32/StylesPage.cpp:101 win32/UserMatchPage.cpp:227
+#: win32\StylesPage.cpp:101 win32\UserMatchPage.cpp:227
 msgid "Custom font"
 msgstr "Anpassat typsnitt"
 
-#: win32/StylesPage.cpp:110 win32/UserMatchPage.cpp:229
+#: win32\StylesPage.cpp:110 win32\UserMatchPage.cpp:229
 msgid "Custom text color"
 msgstr "Anpassad textfärg"
 
-#: win32/MainWindow.cpp:934
+#: win32\MainWindow.cpp:928
 msgid "Custom..."
 msgstr "Anpassad..."
 
-#: win32/MainWindow.cpp:1208
+#: win32\MainWindow.cpp:1198
 #, boost-format
 msgid "D: %1%"
 msgstr "D: %1%"
 
-#: win32/MainWindow.cpp:1216
+#: win32\MainWindow.cpp:1206
 #, boost-format
 msgid "D: %1%/s (%2%)"
 msgstr "D: %1%/s (%2%)"
 
-#: win32/MainWindow.cpp:419
+#: win32\MainWindow.cpp:1969
+#, boost-format
+msgid ""
+"D: %1%/s (%2%)\r\n"
+"U: %3%/s (%4%)"
+msgstr ""
+"N: %1%/s (%2%)\r\n"
+"U: %3%/s (%4%)"
+
+#: win32\MainWindow.cpp:417
 msgid "DC Network Foundation community"
 msgstr "Gemenskap DC Network Foundation"
 
-#: win32/QueueFrame.cpp:132
+#: win32\MainWindow.cpp:754
+#, boost-format
+msgid "DC++ - %1%"
+msgstr "DC++ - %1%"
+
+#: win32\MagnetDlg.cpp:70
+msgid ""
+"DC++ has detected a MAGNET link with a file hash that can be searched for on "
+"the Direct Connect network.  What would you like to do?"
+msgstr ""
+"DC++ har upptäckt en MAGNET-länk med en kontrollsumma som kan användas för "
+"att söka i DC-nätverket. Vad vill du göra?"
+
+#: win32\QueueFrame.cpp:132
 msgid "Decrease priority"
 msgstr "Sänk prioritet"
 
-#: win32/AppearancePage.cpp:143 win32/AppearancePage.cpp:176
-#: win32/ConnectivityManualPage.cpp:260 win32/FavHubProperties.cpp:268
-#: win32/WinUtil.cpp:1196 win32/ACFrame.h:140
+#: win32\AppearancePage.cpp:141 win32\AppearancePage.cpp:174
+#: win32\ConnectivityManualPage.cpp:260 win32\FavHubProperties.cpp:268
+#: win32\WinUtil.cpp:1199 win32\ACFrame.h:140
 msgid "Default"
 msgstr "Standard"
 
-#: win32/DownloadPage.cpp:52
+#: win32\DownloadPage.cpp:52
 msgid "Default download directory"
 msgstr "Standard nedladdningsmapp"
 
-#: win32/FavHubsFrame.cpp:397
+#: win32\FavHubsFrame.cpp:397
 msgid "Default group"
 msgstr "Standardgrupp"
 
-#: win32/TabsPage.cpp:96
+#: win32\TabsPage.cpp:96
 msgid "Default theme"
 msgstr "Standardtema"
 
-#: win32/FavHubGroupsDlg.cpp:140 win32/FavHubProperties.cpp:95
-#: win32/FavHubProperties.cpp:131 win32/FavHubsFrame.cpp:50
-#: win32/GeneralPage.cpp:59 win32/HubFrame.cpp:61 win32/HubFrame.cpp:441
-#: win32/PublicHubsFrame.cpp:45 win32/UserInfoBase.cpp:128
-#: win32/UsersFrame.cpp:57 win32/UsersFrame.cpp:79 win32/UsersFrame.cpp:427
+#: win32\FavHubGroupsDlg.cpp:140 win32\FavHubProperties.cpp:95
+#: win32\FavHubProperties.cpp:131 win32\FavHubsFrame.cpp:50
+#: win32\GeneralPage.cpp:59 win32\HubFrame.cpp:60 win32\HubFrame.cpp:440
+#: win32\PublicHubsFrame.cpp:45 win32\UserInfoBase.cpp:128
+#: win32\UsersFrame.cpp:57 win32\UsersFrame.cpp:79 win32\UsersFrame.cpp:427
 msgid "Description"
 msgstr "Beskrivning"
 
-#: win32/PluginInfoDlg.cpp:90 win32/PluginPage.cpp:235
+#: win32\PluginInfoDlg.cpp:90 win32\PluginPage.cpp:235
 msgid "Description: "
 msgstr "Beskrivning: "
 
-#: win32/ADLSearchFrame.cpp:46 win32/ADLSProperties.cpp:105
+#: win32\ADLSearchFrame.cpp:46 win32\ADLSProperties.cpp:105
 msgid "Destination Directory"
 msgstr "Målmapp"
 
-#: win32/ConnectivityPage.cpp:68
+#: win32\ConnectivityPage.cpp:68
 msgid "Detect now"
 msgstr "Kontrollera nu"
 
-#: win32/ConnectivityPage.cpp:72
+#: win32\ConnectivityPage.cpp:72
 msgid "Detection log"
 msgstr "Anslutningslog"
 
-#: win32/ProxyPage.cpp:69
+#: win32\ProxyPage.cpp:69
 msgid "Direct connection"
 msgstr "Direkt anslutning"
 
-#: win32/PrivateFrame.cpp:323
+#: win32\PrivateFrame.cpp:296
 msgid "Direct encrypted channel"
 msgstr "Direkt och krypterad kanal"
 
-#: win32/TransferView.cpp:975
+#: win32\TransferView.cpp:975
 msgid "Direct encrypted private message channel"
 msgstr "Direkt och krypterad privatmeddelandekanal"
 
-#: win32/DownloadPage.cpp:46
+#: win32\DownloadPage.cpp:46
 msgid "Directories"
 msgstr "Mappar"
 
-#: win32/ADLSProperties.cpp:76 win32/DirectoryListingFrame.cpp:1572
-#: win32/FavoriteDirsPage.cpp:40 win32/LogPage.cpp:74 win32/SearchFrame.cpp:510
-#: win32/UploadPage.cpp:46
+#: win32\ADLSProperties.cpp:76 win32\DirectoryListingFrame.cpp:1572
+#: win32\FavoriteDirsPage.cpp:40 win32\LogPage.cpp:74 win32\SearchFrame.cpp:510
+#: win32\UploadPage.cpp:46
 msgid "Directory"
 msgstr "Mapp"
 
-#: win32/FavoriteDirsPage.cpp:152 win32/FavoriteDirsPage.cpp:181
+#: win32\FavoriteDirsPage.cpp:152 win32\FavoriteDirsPage.cpp:181
 msgid "Directory or directory name already exists"
 msgstr "Mappen eller mappnamnet finns redan"
 
-#: win32/MainWindow.cpp:737 win32/PluginPage.cpp:105 win32/PluginPage.cpp:257
+#: win32\MainWindow.cpp:732 win32\PluginPage.cpp:105 win32\PluginPage.cpp:257
 msgid "Disable"
 msgstr "Avaktivera"
 
-#: win32/CertificatesPage.cpp:37
-#, fuzzy
-msgid "Disable TLS NMDC client-client connections"
-msgstr "Kräv TLS för anslutningar för ADC klient-klient"
-
-#: win32/ConnectivityManualPage.cpp:194
+#: win32\ConnectivityManualPage.cpp:194
 msgid "Disable connectivity"
 msgstr "Stäng av anslutning"
 
-#: win32/WindowsPage.cpp:41
-msgid "Disable taskbar menu creation"
-msgstr ""
-
-#: win32/MainWindow.cpp:925
+#: win32\MainWindow.cpp:919
 msgid "Disabled"
 msgstr "Inaktiverad"
 
-#: win32/PrivateFrame.cpp:537
+#: win32\PrivateFrame.cpp:510
 msgid "Disconnect the direct encrypted channel"
 msgstr "Koppla ner från den direkta och krypterade kanalen"
 
-#: win32/WinUtil.cpp:1807
+#: win32\WinUtil.cpp:1805
 msgid "Disconnected"
 msgstr "Frånkopplad"
 
-#: win32/PrivateFrame.cpp:357
+#: win32\PrivateFrame.cpp:330
 msgid "Disconnecting the direct encrypted channel..."
 msgstr "Kopplar ner från den direkta och krypterade kanalen..."
 
-#: win32/MainWindow.cpp:413
+#: win32\MainWindow.cpp:411
 msgid "Discussion forum"
 msgstr "Diskussionsforum"
 
-#: win32/NotificationsPage.cpp:92
+#: win32\NotificationsPage.cpp:92
 msgid "Display a balloon popup"
 msgstr "Visa en ballongpopup"
 
-#: win32/AdvancedPage.cpp:53
-msgid "Display testing nags"
-msgstr ""
-
-#: win32/NotificationsPage.cpp:117
-#, fuzzy
-msgid "Display the balloon only when FearDC is in the background"
+#: win32\NotificationsPage.cpp:117
+msgid "Display the balloon only when DC++ is in the background"
 msgstr "Visa endast ballongen när DC++ är i bakgrunden"
 
-#: win32/WinUtil.cpp:583
+#: win32\WinUtil.cpp:583
 #, fuzzy
 msgid ""
 "Displays available commands. (The ones listed on this page.) Optionally, you "
@@ -1340,337 +1334,331 @@ msgstr ""
 "Visar tillgängliga kommandon. (De som visas på denna sida.) Alternativt, du "
 "kan specifera &quot;brief&quot; för att ha en kort lista."
 
-#: win32/HubFrame.cpp:541
-#, fuzzy
+#: win32\HubFrame.cpp:542
 msgid ""
 "Displays the connectivity status information, auto detected or manually "
-"chosen connection mode, IP and ports that FearDC is currently using for "
+"chosen connection mode, IP and ports that DC++ is currently using for "
 "connections with all users."
 msgstr ""
 "Visar anslutningsstatus, automatiskt eller manuellt angiven anslutningsläge, "
 "IP och portar som DC++ använder för att ansluta till alla användare."
 
-#: win32/LogPage.cpp:99
+#: win32\LogPage.cpp:99
 #, fuzzy
 msgid "Do not log the direct encrypted secure private chat"
 msgstr "Koppla ner från den direkta och krypterade kanalen"
 
-#: win32/MagnetDlg.cpp:112
+#: win32\MagnetDlg.cpp:112
 msgid "Do nothing"
 msgstr "Gör inget"
 
-#: win32/UserMatchPage.cpp:307
+#: win32\UserMatchPage.cpp:307
 msgid "Do you really want to delete selected user matching definitions?"
 msgstr "Vill du verkligen ta bort valda användarmatchande definitioner?"
 
-#: win32/SearchTypesPage.cpp:243
+#: win32\SearchTypesPage.cpp:243
 msgid "Do you really want to delete this search type?"
 msgstr "Vill du verkligen ta bort den här söktypen?"
 
-#: win32/WinUtil.cpp:1599
+#: win32\WinUtil.cpp:1597
 msgid "Do you still want to allow to open a program on your computer?"
 msgstr "Vill du fortfarande tillåta att öppna ett program på din dator?"
 
-#: win32/ConnectivityManualPage.cpp:211
+#: win32\ConnectivityManualPage.cpp:211
 msgid "Don't allow hubs/NAT-PMP/UPnP to override"
 msgstr "Tillåt inte att hubbar/NAT-PMP/UPnP to ändrar"
 
-#: win32/AdvancedPage.cpp:47
+#: win32\AdvancedPage.cpp:47
 msgid "Don't automatically disconnect favorite users who leave the hub"
 msgstr "Koppla inte automatiskt ner favoritanvändare som lämnar hubben"
 
-#: win32/AdvancedPage.cpp:37
+#: win32\AdvancedPage.cpp:37
 msgid "Don't delete file lists when exiting"
 msgstr "Ta inte bort fillistor vid avslut"
 
-#: win32/QueuePage.cpp:41
+#: win32\QueuePage.cpp:41
 msgid "Don't download files already in share"
 msgstr "Ladda inte ner filer som redan delas"
 
-#: win32/QueuePage.cpp:42
+#: win32\QueuePage.cpp:42
 msgid "Don't download files already in the queue"
 msgstr "Ladda inte ner filer som redan finns i kön"
 
-#: win32/HubFrame.cpp:621
+#: win32\HubFrame.cpp:589
 msgid "Don't remove /password before your password"
 msgstr "Ta inte bort /password före ditt lösenord"
 
-#: win32/QueuePage.cpp:37
+#: win32\QueuePage.cpp:37
 msgid "Don't remove the source when autodropping, only disconnect"
 msgstr "Ta inte bort långsamma källor ur nerladdningskön, koppla bara ner"
 
-#: win32/AdvancedPage.cpp:40
+#: win32\AdvancedPage.cpp:40
 msgid "Don't send the away message to bots"
 msgstr "Sänd inte 'BORTA'-medelande till botar"
 
-#: win32/MainWindow.cpp:416
+#: win32\MainWindow.cpp:414
 msgid "Donate (paypal)"
 msgstr "Donera (paypal)"
 
-#: win32/HashProgressDlg.cpp:137
+#: win32\HashProgressDlg.cpp:137
 msgid "Done"
 msgstr "Klar"
 
-#: win32/QueueFrame.cpp:1206
+#: win32\QueueFrame.cpp:1206
 msgid "Done."
 msgstr "Färdig."
 
-#: win32/DirectoryListingFrame.cpp:920
+#: win32\DirectoryListingFrame.cpp:920
 msgid "Download &to..."
 msgstr "Ladda ner &till..."
 
-#: win32/ADLSProperties.cpp:116
+#: win32\ADLSProperties.cpp:116
 msgid "Download Matches"
 msgstr "Ladda ner träffar"
 
-#: win32/MainWindow.cpp:456 win32/QueueFrame.cpp:66 win32/TabsPage.cpp:41
+#: win32\MainWindow.cpp:454 win32\QueueFrame.cpp:66 win32\TabsPage.cpp:41
 msgid "Download Queue"
 msgstr "Nedladdningskö"
 
-#: win32/PublicHubsFrame.cpp:482
+#: win32\PublicHubsFrame.cpp:482
 #, boost-format
 msgid "Download failed: %1%"
 msgstr "Nerladdning misslyckades: %1%"
 
-#: win32/TransferView.cpp:1134 win32/WinUtil.cpp:91
+#: win32\TransferView.cpp:1134 win32\WinUtil.cpp:91
 msgid "Download finished"
 msgstr "Nerladdning klar"
 
-#: win32/DirectoryListingFrame.cpp:368
+#: win32\DirectoryListingFrame.cpp:368
 msgid "Download full list"
 msgstr "Ladde ner hel lista"
 
-#: win32/MainWindow.cpp:901 win32/MainWindow.cpp:1962
+#: win32\MainWindow.cpp:895 win32\MainWindow.cpp:1950
 msgid "Download limit"
 msgstr "Nerladdningsbegränsning"
 
-#: win32/WinUtil.cpp:714
+#: win32\WinUtil.cpp:714
 msgid "Download limit disabled"
 msgstr "Nerladdningsbegränsning avstängd"
 
-#: win32/WinUtil.cpp:714
+#: win32\WinUtil.cpp:714
 #, boost-format
 msgid "Download limit set to %1% KiB/s"
 msgstr "Nerladdningsbegränsning satt till %1% KiB/s"
 
-#: win32/MainWindow.cpp:1224
+#: win32\MainWindow.cpp:1214
 #, boost-format
 msgid "Download limit: %1%/s - Click to adjust"
 msgstr "Nerladdningsbegränsning: %1%/s -Klicka för att justera"
 
-#: win32/WinUtil.cpp:651
+#: win32\WinUtil.cpp:651
 msgid "Download slots set"
 msgstr "Antalet nerladdnings platser har satts"
 
-#: win32/UsersFrame.cpp:84
+#: win32\UsersFrame.cpp:84
 msgid "Download speed"
 msgstr "Nerladdningshastighet"
 
-#: win32/SearchFrame.cpp:897
+#: win32\SearchFrame.cpp:897
 msgid "Download to..."
 msgstr "Ladda ner till..."
 
-#: win32/SearchFrame.cpp:873
+#: win32\SearchFrame.cpp:873
 msgid "Download whole directory"
 msgstr "Ladda ned hela mappen"
 
-#: win32/SearchFrame.cpp:925
+#: win32\SearchFrame.cpp:925
 msgid "Download whole directory to..."
 msgstr "Ladda ned hela mappen till..."
 
-#: win32/QueueFrame.cpp:54
+#: win32\QueueFrame.cpp:54
 msgid "Downloaded"
 msgstr "Nerladdad"
 
-#: win32/PublicHubsFrame.cpp:497
+#: win32\PublicHubsFrame.cpp:497
 #, boost-format
 msgid "Downloaded hub list is corrupted or unsupported (%1%)"
 msgstr ""
 "Den nerladdade hubblistan är skadad eller i ett format som inte stöds (%1%)"
 
-#: win32/TransferView.cpp:1104
+#: win32\TransferView.cpp:1104
 msgid "Downloading"
 msgstr "Hämtar"
 
-#: win32/TransferView.cpp:1040
+#: win32\TransferView.cpp:1040
 #, boost-format
 msgid "Downloading %1%"
 msgstr "Hämtar %1%"
 
-#: win32/TransferView.cpp:349
+#: win32\TransferView.cpp:349
 #, boost-format
 msgid "Downloading from %1% users"
 msgstr "Hämtar från %1% användare"
 
-#: win32/DirectoryListingFrame.cpp:1261
+#: win32\DirectoryListingFrame.cpp:1261
 msgid "Downloading list..."
 msgstr "Hämtar lista..."
 
-#: win32/PublicHubsFrame.cpp:225 win32/PublicHubsFrame.cpp:412
+#: win32\PublicHubsFrame.cpp:225 win32\PublicHubsFrame.cpp:412
 msgid "Downloading public hub list..."
 msgstr "Hämtar publik hubblista..."
 
-#: win32/PublicHubsFrame.cpp:478
+#: win32\PublicHubsFrame.cpp:478
 #, boost-format
 msgid "Downloading public hub list... (%1%)"
 msgstr "Hämtar publik hubblista... (%1%)"
 
-#: win32/AboutDlg.cpp:162
+#: win32\AboutDlg.cpp:163
 msgid "Downloading..."
 msgstr "Hämtar..."
 
-#: win32/MainWindow.cpp:410 win32/SettingsDialog.cpp:166
-#: win32/StylesPage.cpp:164
+#: win32\MainWindow.cpp:408 win32\SettingsDialog.cpp:166
+#: win32\StylesPage.cpp:164
 msgid "Downloads"
 msgstr "Hämtningar"
 
-#: win32/QueueFrame.cpp:1197
+#: win32\QueueFrame.cpp:1197
 msgid "Downloads running, please disconnect them"
 msgstr "Hämtningar pågår, avbryt dem"
 
-#: win32/QueuePage.cpp:104
+#: win32\QueuePage.cpp:104
 msgid "Drop sources below"
 msgstr "Stäng källor under"
 
-#: win32/MainWindow.cpp:333
+#: win32\MainWindow.cpp:331
 msgid "E&xit\tAlt+F4"
 msgstr "&Avsluta\tAlt+F4"
 
-#: win32/HubFrame.cpp:66 win32/UsersFrame.cpp:80
+#: win32\HubFrame.cpp:65 win32\UsersFrame.cpp:80
 msgid "E-Mail"
 msgstr "E-post"
 
-#: win32/UserInfoBase.cpp:133
+#: win32\UserInfoBase.cpp:133
 msgid "E-mail"
 msgstr "E-post"
 
-#: win32/ConnectivityPage.cpp:81
+#: win32\ConnectivityPage.cpp:81
 msgid "Edit detected settings"
 msgstr "Ändra detekterade inställningar"
 
-#: win32/FinishedFrameBase.h:736 win32/FinishedFrameBase.h:747
+#: win32\FinishedFrameBase.h:736 win32\FinishedFrameBase.h:747
 msgid "Elapsed"
 msgstr "Förflutit"
 
-#: win32/FavHubGroupsDlg.cpp:144 win32/FavHubProperties.cpp:136
-#: win32/GeneralPage.cpp:64 win32/HubFrame.cpp:442
+#: win32\FavHubGroupsDlg.cpp:144 win32\FavHubProperties.cpp:136
+#: win32\GeneralPage.cpp:64 win32\HubFrame.cpp:441
 msgid "Email"
 msgstr "Epost"
 
-#: win32/HubFrame.cpp:76
+#: win32\HubFrame.cpp:75
 msgid "Empty hub address specified"
 msgstr "Tom hubbaddress angiven"
 
-#: win32/MainWindow.cpp:736 win32/PluginPage.cpp:101 win32/PluginPage.cpp:256
+#: win32\MainWindow.cpp:731 win32\PluginPage.cpp:101 win32\PluginPage.cpp:256
 msgid "Enable"
 msgstr "Aktivera"
 
-#: win32/AdvancedPage.cpp:39
+#: win32\AdvancedPage.cpp:39
 msgid "Enable automatic SFV checking"
 msgstr "Tillåt automatisk SFV-kontrollering"
 
-#: win32/GeneralPage.cpp:120
+#: win32\GeneralPage.cpp:120
 msgid "Enable away mode after"
 msgstr "Aktivera bortaläge efter"
 
-#: win32/GeneralPage.cpp:106
-#, fuzzy
-msgid "Enable away mode when FearDC is minimized"
+#: win32\GeneralPage.cpp:106
+msgid "Enable away mode when DC++ is minimized"
 msgstr "Aktivera bortaläge när DC++ minimeras"
 
-#: win32/GeneralPage.cpp:110
+#: win32\GeneralPage.cpp:110
 msgid "Enable away mode when the Windows session is locked"
 msgstr "Aktivera bortaläge när Windowssessionen låses"
 
-#: win32/AdvancedPage.cpp:42
+#: win32\AdvancedPage.cpp:42
 msgid "Enable safe and compressed transfers"
 msgstr "Tillåt säkra och komprimerade överföringar"
 
-#: win32/AdvancedPage.cpp:51
+#: win32\AdvancedPage.cpp:51
 msgid "Enable segmented downloads"
 msgstr "Aktivera segmenterade nerladdningar"
 
-#: win32/ADLSProperties.cpp:113
+#: win32\ADLSProperties.cpp:113
 msgid "Enabled"
 msgstr "Aktiverad"
 
-#: win32/ADLSearchFrame.cpp:43
+#: win32\ADLSearchFrame.cpp:43
 msgid "Enabled / Search String"
 msgstr "Aktiverad / Söksträng"
 
-#: win32/FavHubProperties.cpp:102
+#: win32\FavHubProperties.cpp:102
 msgid "Encoding"
 msgstr "Teckenkodning"
 
-#: win32/ConnectivityManualPage.cpp:78 win32/ConnectivityManualPage.cpp:144
+#: win32\ConnectivityManualPage.cpp:78 win32\ConnectivityManualPage.cpp:144
 msgid "Encrypted transfer"
 msgstr "Krypterad överföring"
 
-#: win32/ACFrame.cpp:250
+#: win32\ACFrame.cpp:250
 msgid "Enter a new value"
 msgstr ""
 
-#: win32/SearchFrame.cpp:161
+#: win32\SearchFrame.cpp:161
 msgid "Enter search here"
 msgstr "Sök här"
 
-#: win32/ConnectivityManualPage.cpp:207
+#: win32\ConnectivityManualPage.cpp:207
 msgid "Enter your external address here"
 msgstr "Skriv in din externa adress här"
 
-#: win32/CertificatesPage.cpp:126
+#: win32\CertificatesPage.cpp:125
 msgid "Error generating certificate"
 msgstr "Fel vid skapandet av ceritikat"
 
-#: win32/NotepadFrame.cpp:51
+#: win32\NotepadFrame.cpp:51
 #, boost-format
 msgid "Error loading the notepad file: %1%"
 msgstr "Fel när anteckningsfilen skulle öppnas: %1%"
 
-#: win32/AboutDlg.cpp:210
+#: win32\AboutDlg.cpp:208
 msgid "Error processing version information"
 msgstr "Fel när versionsinformationen processades"
 
-#: win32/WinUtil.cpp:1478
-#, fuzzy
+#: win32\WinUtil.cpp:1478
 msgid ""
-"Error registering FearDC for automatic startup (could not find or create key)"
+"Error registering DC++ for automatic startup (could not find or create key)"
 msgstr ""
 "Fel vid registrering av automatisk uppstart (kunde inte hitta eller skapa "
 "nyckel)"
 
-#: win32/WinUtil.cpp:1488
-#, fuzzy
-msgid ""
-"Error registering FearDC for automatic startup (could not set key value)"
+#: win32\WinUtil.cpp:1488
+msgid "Error registering DC++ for automatic startup (could not set key value)"
 msgstr ""
 "Fel vid registrering av automatisk start (kunde inte sätta nyckelvärde)"
 
-#: win32/WinUtil.cpp:1417
+#: win32\WinUtil.cpp:1420
 #, boost-format
 msgid "Error registering the %1% handler"
 msgstr "Fel vid registrering av hanteraren för %1%"
 
-#: win32/WinUtil.cpp:1523
-#, fuzzy
+#: win32\WinUtil.cpp:1523
 msgid ""
-"Error unregistering FearDC for automatic startup (could not delete key value)"
+"Error unregistering DC++ for automatic startup (could not delete key value)"
 msgstr ""
 "Fel vid registrering av automatisk start (kunde inte ta bort nyckelvärde)"
 
-#: win32/QueueFrame.cpp:59
+#: win32\QueueFrame.cpp:59
 msgid "Errors"
 msgstr "Fel"
 
-#: win32/PrivateFrame.cpp:351
+#: win32\PrivateFrame.cpp:324
 msgid "Establishing a direct encrypted channel..."
 msgstr "Etablerar en direkt och krypterad kanal"
 
-#: win32/NotificationsPage.cpp:36
+#: win32\NotificationsPage.cpp:36
 msgid "Event"
 msgstr "Händelse"
 
-#: win32/AboutDlg.cpp:103
+#: win32\AboutDlg.cpp:104
 #, fuzzy
 msgid ""
 "Ex-main project contributors: Todd Pederzani, poy\n"
@@ -1678,7 +1666,7 @@ msgid ""
 "Original DC++ logo design: Martin Skogevall\n"
 "Graphics: Radox and various GPL and CC authors\n"
 "\n"
-"FearDC is licenced under GPL."
+"DC++ is licenced under GPL."
 msgstr ""
 "Ledande huvudutvecklare: poy\n"
 "F.d. projektutvecklare: Todd Pederzani\n"
@@ -1688,66 +1676,66 @@ msgstr ""
 "\n"
 "DC++ är licenserat under GPL."
 
-#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1191
+#: win32\UserMatchPage.cpp:216 win32\WinUtil.cpp:1194
 msgid "Exact match"
 msgstr "Exakt matchning"
 
-#: win32/DirectoryListingFrame.cpp:66 win32/QueueFrame.cpp:58
-#: win32/SearchFrame.cpp:58
+#: win32\DirectoryListingFrame.cpp:66 win32\QueueFrame.cpp:58
+#: win32\SearchFrame.cpp:58
 msgid "Exact size"
 msgstr "Exakt storlek"
 
-#: win32/TabsPage.cpp:190
+#: win32\TabsPage.cpp:190
 msgid "Example hub tab"
 msgstr "Exempel på hubflik"
 
-#: win32/MainWindow.cpp:1965
+#: win32\MainWindow.cpp:1953
 msgid "Exit"
 msgstr "Avsluta"
 
-#: win32/SettingsDialog.cpp:192
+#: win32\SettingsDialog.cpp:192
 msgid "Experts only"
 msgstr "Enbart experter"
 
-#: win32/ACFrame.cpp:174
+#: win32\ACFrame.cpp:174
 #, fuzzy
 msgid "Export settings"
 msgstr "Inställningar för autoprioritering"
 
-#: win32/SearchTypeDlg.cpp:46
+#: win32\SearchTypeDlg.cpp:46
 msgid "Extension"
 msgstr "Filändelse"
 
-#: win32/SearchTypeDlg.cpp:42
+#: win32\SearchTypeDlg.cpp:42
 msgid "Extension edition"
 msgstr "Editera filändelse"
 
-#: win32/SearchTypesPage.cpp:41
+#: win32\SearchTypesPage.cpp:41
 msgid "Extensions"
 msgstr "Filändelser"
 
-#: win32/SearchTypeDlg.cpp:38
+#: win32\SearchTypeDlg.cpp:38
 #, boost-format
 msgid "Extensions for the %1% search type"
 msgstr "Filändelser för söktypen %1%"
 
-#: win32/HubFrame.cpp:443
+#: win32\HubFrame.cpp:442
 msgid "External / WAN IP"
 msgstr "Extern / WAN IP"
 
-#: win32/ConnectivityManualPage.cpp:200
+#: win32\ConnectivityManualPage.cpp:200
 msgid "External / WAN IP address"
 msgstr "Extern / WAN IP adress"
 
-#: win32/WinUtil.cpp:1600
+#: win32\WinUtil.cpp:1598
 msgid "External protocol request"
 msgstr "Extern protokollförfrågan"
 
-#: win32/ACFrame.cpp:121 win32/PublicHubsFrame.cpp:160
+#: win32\ACFrame.cpp:121 win32\PublicHubsFrame.cpp:160
 msgid "F&ilter"
 msgstr "F&ilter"
 
-#: win32/HubFrame.cpp:814
+#: win32\HubFrame.cpp:750
 msgid ""
 "Failed to create a new PM window; check the \"Max PM windows\" value in "
 "Settings > Experts only"
@@ -1755,287 +1743,278 @@ msgstr ""
 "Kunde inte skapa ett nytt PM-fönster; kontrollera värdet för \"Max PM fönster"
 "\" i Inställningar - Expertinställningar"
 
-#: win32/UsersFrame.cpp:52 win32/UsersFrame.cpp:186
+#: win32\UsersFrame.cpp:52 win32\UsersFrame.cpp:186
 msgid "Favorite"
 msgstr "Favorit"
 
-#: win32/FavHubProperties.cpp:199
+#: win32\FavHubProperties.cpp:199
 msgid "Favorite Hub Properties"
 msgstr "Egenskaper för favorithub"
 
-#: win32/FavHubsFrame.cpp:59 win32/MainWindow.cpp:451
+#: win32\FavHubsFrame.cpp:59 win32\MainWindow.cpp:449
 msgid "Favorite Hubs"
 msgstr "Favorithubbar"
 
-#: win32/FavoriteDirsPage.cpp:55
+#: win32\FavoriteDirsPage.cpp:55
 msgid "Favorite download directories"
 msgstr "Favoritmappar för nedladdningar"
 
-#: win32/HubFrame.cpp:1237
+#: win32\HubFrame.cpp:1164
 msgid "Favorite hub added"
 msgstr "Favorithub inlagd"
 
-#: win32/FavHubGroupsDlg.cpp:209
+#: win32\FavHubGroupsDlg.cpp:209
 msgid "Favorite hub groups"
 msgstr "Favoritgrupper"
 
-#: win32/HubFrame.cpp:1247
+#: win32\HubFrame.cpp:1174
 msgid "Favorite hub removed"
 msgstr "Hub borttagen ur favoriter"
 
-#: win32/FavoriteDirsPage.cpp:39 win32/FavoriteDirsPage.cpp:146
-#: win32/FavoriteDirsPage.cpp:175
+#: win32\FavoriteDirsPage.cpp:39 win32\FavoriteDirsPage.cpp:146
+#: win32\FavoriteDirsPage.cpp:175
 msgid "Favorite name"
 msgstr "Favoritnamn"
 
-#: win32/PrivateFrame.cpp:404
+#: win32\PrivateFrame.cpp:377
 msgid "Favorite user added"
 msgstr "Favoritanvändare inlagd"
 
-#: win32/WinUtil.cpp:449
+#: win32\WinUtil.cpp:449
 #, boost-format
 msgid "Favorite users (added by %1%)"
 msgstr "Favoritanvändare (tillagd av %1%)"
 
-#: win32/SettingsDialog.cpp:167
+#: win32\SettingsDialog.cpp:167
 msgid "Favorites"
 msgstr "Favoriter"
 
-#: win32/MagnetDlg.cpp:70
-#, fuzzy
-msgid ""
-"FearDC has detected a MAGNET link with a file hash that can be searched for "
-"on the Direct Connect network.  What would you like to do?"
-msgstr ""
-"DC++ har upptäckt en MAGNET-länk med en kontrollsumma som kan användas för "
-"att söka i DC-nätverket. Vad vill du göra?"
-
-#: win32/UsersFrame.cpp:94
+#: win32\UsersFrame.cpp:94
 msgid "Features"
 msgstr "Funktioner"
 
-#: win32/MainWindow.cpp:1532 win32/MainWindow.cpp:1543
+#: win32\MainWindow.cpp:1522 win32\MainWindow.cpp:1533
 msgid "Feel free to report any bug via Help > Links > Report a bug."
 msgstr ""
 
-#: win32/DirectoryListingFrame.cpp:63 win32/DirectoryListingFrame.cpp:1565
-#: win32/SearchFrame.cpp:49 win32/TransferView.cpp:47
+#: win32\DirectoryListingFrame.cpp:63 win32\DirectoryListingFrame.cpp:1565
+#: win32\SearchFrame.cpp:49 win32\TransferView.cpp:47
 msgid "File"
 msgstr "Fil"
 
-#: win32/MagnetDlg.cpp:82
+#: win32\MagnetDlg.cpp:82
 msgid "File Hash:"
 msgstr "Fil TTH:"
 
-#: win32/QueueFrame.cpp:462 win32/TabsPage.cpp:38
+#: win32\QueueFrame.cpp:462 win32\TabsPage.cpp:38
 msgid "File List"
 msgstr "Fillista"
 
-#: win32/QueueFrame.cpp:506 win32/WinUtil.cpp:887
+#: win32\QueueFrame.cpp:506 win32\WinUtil.cpp:890
 msgid "File Lists"
 msgstr "Fillistor"
 
-#: win32/UploadFilteringPage.cpp:102
+#: win32\UploadFilteringPage.cpp:102
 msgid "File extension filtering"
 msgstr "Filändelsefiltrering"
 
-#: win32/UploadFilteringPage.cpp:112
+#: win32\UploadFilteringPage.cpp:112
 msgid "File extensions"
 msgstr "Filändelser"
 
-#: win32/QueueFrame.cpp:1203
+#: win32\QueueFrame.cpp:1203
 msgid "File is already finished"
 msgstr "Filen är redan färdig"
 
-#: win32/WinUtil.cpp:92
+#: win32\WinUtil.cpp:92
 msgid "File list downloaded"
 msgstr "Fillista nerladdad"
 
-#: win32/UploadFilteringPage.cpp:86
+#: win32\UploadFilteringPage.cpp:86
 msgid "File name filtering with regular expressions"
 msgstr "Filnamnfiltrering med regular expressions"
 
-#: win32/PluginPage.cpp:238
+#: win32\PluginPage.cpp:238
 msgid "File name: "
 msgstr "Filnamn: "
 
-#: win32/QueueFrame.cpp:426
+#: win32\QueueFrame.cpp:426
 msgid "File not available"
 msgstr "Filen är inte tillgänglig"
 
-#: win32/FinishedFrameBase.h:731
+#: win32\FinishedFrameBase.h:731
 msgid "File size"
 msgstr "Filstorlek"
 
-#: win32/SearchFrame.cpp:209
+#: win32\SearchFrame.cpp:209
 msgid "File type"
 msgstr "Filtyp"
 
-#: win32/CommandDlg.cpp:121
+#: win32\CommandDlg.cpp:121
 msgid "Filelist Menu"
 msgstr "Fillistmeny"
 
-#: win32/ADLSProperties.cpp:75 win32/LogPage.cpp:94 win32/QueueFrame.cpp:51
-#: win32/UsersFrame.cpp:417 win32/FinishedFrameBase.h:727
+#: win32\ADLSProperties.cpp:75 win32\LogPage.cpp:94 win32\QueueFrame.cpp:51
+#: win32\UsersFrame.cpp:417 win32\FinishedFrameBase.h:727
 msgid "Filename"
 msgstr "Filnamn"
 
-#: win32/MagnetDlg.cpp:91
+#: win32\MagnetDlg.cpp:91
 msgid "Filename:"
 msgstr "Filnamn:"
 
-#: win32/FinishedFrameBase.h:745
+#: win32\FinishedFrameBase.h:745
 msgid "Files"
 msgstr "Filer"
 
-#: win32/DirectoryListingFrame.cpp:1217
+#: win32\DirectoryListingFrame.cpp:1217
 #, boost-format
 msgid "Files (total): %1%"
 msgstr "Filer (totalt): %1%"
 
-#: win32/DirectoryListingFrame.cpp:1233 win32/QueueFrame.cpp:270
+#: win32\DirectoryListingFrame.cpp:1233 win32\QueueFrame.cpp:270
 #, boost-format
 msgid "Files: %1%"
 msgstr "Filer: %1%"
 
-#: win32/PublicHubsFrame.cpp:169
+#: win32\PublicHubsFrame.cpp:169
 msgid "Filter hubs"
 msgstr "Filtrera hubbar"
 
-#: win32/SearchFrame.cpp:285
+#: win32\SearchFrame.cpp:285
 msgid "Filter search results"
 msgstr "Filtrera sökresultat"
 
-#: win32/SearchFrame.cpp:281
+#: win32\SearchFrame.cpp:281
 msgid "Filter search results:"
 msgstr "Filtrera sökresultat:"
 
-#: win32/ACFrame.cpp:131
+#: win32\ACFrame.cpp:131
 #, fuzzy
 msgid "Filter settings"
 msgstr "Filtrering"
 
-#: win32/AppearancePage.cpp:42
+#: win32\AppearancePage.cpp:42
 msgid "Filter spam messages"
 msgstr "Filtrera skräpmeddelanden"
 
-#: win32/HubFrame.cpp:224 win32/UsersFrame.cpp:162
+#: win32\HubFrame.cpp:223 win32\UsersFrame.cpp:162
 msgid "Filter users"
 msgstr "Filtrera användare"
 
-#: win32/UsersFrame.cpp:157
+#: win32\UsersFrame.cpp:157
 msgid "Filter:"
 msgstr "Filtrera:"
 
-#: win32/SettingsDialog.cpp:173
+#: win32\SettingsDialog.cpp:173
 msgid "Filtering"
 msgstr "Filtrering"
 
-#: win32/DirectoryListingFrame.cpp:371
+#: win32\DirectoryListingFrame.cpp:371
 msgid "Find"
 msgstr "Sök"
 
-#: win32/RichTextBox.cpp:97
+#: win32\RichTextBox.cpp:97
 msgid "Find &Next\tF3"
 msgstr "Sök &Nästa\tF3"
 
-#: win32/DirectoryListingFrame.cpp:261
+#: win32\DirectoryListingFrame.cpp:261
 msgid "Find files"
 msgstr "Sök filer"
 
-#: win32/DirectoryListingFrame.cpp:286
+#: win32\DirectoryListingFrame.cpp:286
 msgid "Find next"
 msgstr "Sök nästa"
 
-#: win32/DirectoryListingFrame.cpp:279
+#: win32\DirectoryListingFrame.cpp:279
 msgid "Find previous"
 msgstr "Sök föregående"
 
-#: win32/QueueFrame.cpp:388
+#: win32\QueueFrame.cpp:388
 msgid "Finished"
 msgstr "Klart"
 
-#: win32/FinishedDLFrame.cpp:27 win32/MainWindow.cpp:348
-#: win32/MainWindow.cpp:458 win32/TabsPage.cpp:42
+#: win32\FinishedDLFrame.cpp:27 win32\MainWindow.cpp:346
+#: win32\MainWindow.cpp:456 win32\TabsPage.cpp:42
 msgid "Finished Downloads"
 msgstr "Färdiga nerladdningar"
 
-#: win32/FinishedULFrame.cpp:27 win32/MainWindow.cpp:350
-#: win32/MainWindow.cpp:460 win32/TabsPage.cpp:43
+#: win32\FinishedULFrame.cpp:27 win32\MainWindow.cpp:348
+#: win32\MainWindow.cpp:458 win32\TabsPage.cpp:43
 msgid "Finished Uploads"
 msgstr "Färdiga uppladdningar"
 
-#: win32/NotificationsPage.cpp:123
+#: win32\NotificationsPage.cpp:123
 msgid "Fire a balloon popup example"
 msgstr "Visa ett ballong-popup exempel"
 
-#: win32/LogPage.cpp:91
+#: win32\LogPage.cpp:91
 msgid "Format"
 msgstr "Format"
 
-#: win32/DirectoryListingFrame.cpp:346
+#: win32\DirectoryListingFrame.cpp:346
 msgid "Forward"
 msgstr "Framåt"
 
-#: win32/UsersFrame.cpp:86
+#: win32\UsersFrame.cpp:86
 msgid "Free slots"
 msgstr "Lediga slottar"
 
-#: win32/MainWindow.cpp:411
+#: win32\MainWindow.cpp:409
 msgid "Frequently asked questions"
 msgstr "Vanliga frågor"
 
-#: win32/ADLSProperties.cpp:77
+#: win32\ADLSProperties.cpp:77
 msgid "Full Path"
 msgstr "Fullständig sökväg"
 
-#: win32/QueueFrame.cpp:432
+#: win32\QueueFrame.cpp:432
 msgid "Full tree does not match TTH root"
 msgstr "Fullt träd matchar inte TTH-roten"
 
-#: win32/ListFilter.cpp:162
+#: win32\ListFilter.cpp:162
 msgid "GB"
 msgstr "GB"
 
-#: win32/StylesPage.cpp:146
+#: win32\StylesPage.cpp:146
 msgid "General"
 msgstr "Generell"
 
-#: win32/UsersFrame.cpp:374
+#: win32\UsersFrame.cpp:374
 msgid "General information"
 msgstr "Allmän information"
 
-#: win32/CertificatesPage.cpp:98
+#: win32\CertificatesPage.cpp:97
 msgid "Generate certificates"
 msgstr "Skapa certifikat"
 
-#: win32/UserMatchPage.cpp:203
+#: win32\UserMatchPage.cpp:203
 #, boost-format
 msgid "Generated by %1%"
 msgstr "Genererat av %1%"
 
-#: win32/MainWindow.cpp:326
+#: win32\MainWindow.cpp:324
 msgid "GeoIP database update"
 msgstr "Uppdatera GeoIP databasen"
 
-#: win32/MainWindow.cpp:402
+#: win32\MainWindow.cpp:400
 msgid "Get started"
 msgstr "Kom igång"
 
-#: win32/ADLSProperties.cpp:102 win32/ListFilter.cpp:154
-#: win32/SearchFrame.cpp:206
+#: win32\ADLSProperties.cpp:102 win32\ListFilter.cpp:154
+#: win32\SearchFrame.cpp:206
 msgid "GiB"
 msgstr "GiB"
 
-#: win32/StylesPage.cpp:159
+#: win32\StylesPage.cpp:159
 msgid "Global application style"
 msgstr "Global programstil"
 
-#: win32/WinUtil.cpp:1684 win32/UserInfoBase.h:176
+#: win32\WinUtil.cpp:1682 win32\UserInfoBase.h:161
 msgid "Grant &extra slot"
 msgstr "Bevilja &extra slot"
 
-#: win32/PrivateFrame.cpp:435
+#: win32\PrivateFrame.cpp:408
 msgid ""
 "Grants the remote user a slot. Once they connect, or if they don't connect "
 "in 10 minutes, the granted slot is removed."
@@ -2043,241 +2022,241 @@ msgstr ""
 "Beviljar fjärranvändaren en slot. När de har anslutit, eller om de inte "
 "ansluter inom 10 minuter, tages sloten bort."
 
-#: win32/AboutDlg.cpp:139
+#: win32\AboutDlg.cpp:140
 msgid "Greetz and Contributors"
 msgstr "Hälsningar och bidragsgivare"
 
-#: win32/FavHubProperties.cpp:177 win32/FavHubsFrame.cpp:55
+#: win32\FavHubProperties.cpp:177 win32\FavHubsFrame.cpp:55
 msgid "Group"
 msgstr "Grupp"
 
-#: win32/FavHubGroupsDlg.cpp:38
+#: win32\FavHubGroupsDlg.cpp:38
 msgid "Group name"
 msgstr "Gruppnamn"
 
-#: win32/FavHubGroupsDlg.cpp:114
+#: win32\FavHubGroupsDlg.cpp:114
 msgid "Group properties"
 msgstr "Gruppegenskaper"
 
-#: win32/FinishedFrameBase.h:89
+#: win32\FinishedFrameBase.h:89
 msgid "Grouped by files"
 msgstr "Gruppera filer"
 
-#: win32/FinishedFrameBase.h:97
+#: win32\FinishedFrameBase.h:97
 msgid "Grouped by users"
 msgstr "Gruppera användare"
 
-#: win32/AppearancePage.cpp:46
+#: win32\AppearancePage.cpp:46
 msgid "Guess user country from IP"
 msgstr "Gissa användarland från IP"
 
-#: win32/DownloadPage.cpp:126
+#: win32\DownloadPage.cpp:126
 msgid "HTTP Proxy (for hublist only)"
 msgstr "HTTP Proxy (enbart för hubblistor)"
 
-#: win32/AppearancePage.cpp:83
+#: win32\AppearancePage.cpp:81
 msgid "Height of the message editing box"
 msgstr "Höjd på meddelandefältet"
 
-#: win32/WinUtil.cpp:1164
+#: win32\WinUtil.cpp:1167
 msgid "Help"
 msgstr "Hjälp"
 
-#: win32/MainWindow.cpp:401
+#: win32\MainWindow.cpp:399
 msgid "Help &Contents\tF1"
 msgstr "Hjälp &innehåll\tF1"
 
-#: win32/MainWindow.cpp:412
+#: win32\MainWindow.cpp:410
 msgid "Help center"
 msgstr "Hjälpcenter"
 
-#: win32/UserInfoBase.cpp:119
+#: win32\UserInfoBase.cpp:119
 msgid "Hidden user"
 msgstr "Dold användare"
 
-#: win32/SearchFrame.cpp:232
+#: win32\SearchFrame.cpp:232
 msgid "Hide files already in share"
 msgstr "Göm filer som redan är utdelade"
 
-#: win32/QueueFrame.cpp:407 win32/QueueFrame.cpp:996 win32/TransferView.cpp:552
+#: win32\QueueFrame.cpp:407 win32\QueueFrame.cpp:996 win32\TransferView.cpp:552
 msgid "High"
 msgstr "Hög"
 
-#: win32/QueuePage.cpp:74
+#: win32\QueuePage.cpp:74
 msgid "High prio max size"
 msgstr "Hög prio största storlek"
 
-#: win32/QueueFrame.cpp:408 win32/QueueFrame.cpp:997 win32/TransferView.cpp:553
+#: win32\QueueFrame.cpp:408 win32\QueueFrame.cpp:997 win32\TransferView.cpp:553
 msgid "Highest"
 msgstr "Högsta"
 
-#: win32/QueuePage.cpp:68
+#: win32\QueuePage.cpp:68
 msgid "Highest prio max size"
 msgstr "Högsta prio största storlek"
 
-#: win32/TabsPage.cpp:193
+#: win32\TabsPage.cpp:193
 msgid "Highlighted tab"
 msgstr "Markerad flik"
 
-#: win32/WinUtil.cpp:585
+#: win32\WinUtil.cpp:585
 msgid ""
 "Highlights the last occourrence of the specified search string in the chat "
 "window."
 msgstr "Markerar den sista förekomsten av söksträngen i chattfönstret"
 
-#: win32/SettingsDialog.cpp:186
+#: win32\SettingsDialog.cpp:186
 msgid "History"
 msgstr "Historik"
 
-#: win32/SearchFrame.cpp:50
+#: win32\SearchFrame.cpp:50
 msgid "Hits"
 msgstr "Träffar"
 
-#: win32/MainWindow.cpp:409
+#: win32\MainWindow.cpp:407
 msgid "Homepage"
 msgstr "Hemsida"
 
-#: win32/FavHubProperties.cpp:73 win32/SearchFrame.cpp:57 win32/TabsPage.cpp:36
-#: win32/TransferView.cpp:51 win32/UCPage.cpp:38 win32/FinishedFrameBase.h:742
+#: win32\FavHubProperties.cpp:73 win32\SearchFrame.cpp:57 win32\TabsPage.cpp:36
+#: win32\TransferView.cpp:51 win32\UCPage.cpp:38 win32\FinishedFrameBase.h:742
 msgid "Hub"
 msgstr "Hubb"
 
-#: win32/HubFrame.cpp:437
+#: win32\HubFrame.cpp:436
 msgid "Hub IP & port"
 msgstr "Hubb IP & port"
 
-#: win32/CommandDlg.cpp:112
+#: win32\CommandDlg.cpp:112
 msgid "Hub Menu"
 msgstr "Hubbmeny"
 
-#: win32/HubFrame.cpp:436 win32/UserMatchDlg.cpp:222
-#: win32/UserMatchPage.cpp:215
+#: win32\HubFrame.cpp:435 win32\UserMatchDlg.cpp:222
+#: win32\UserMatchPage.cpp:215
 msgid "Hub address"
 msgstr "Hubbaddress"
 
-#: win32/CommandDlg.cpp:143
+#: win32\CommandDlg.cpp:143
 msgid "Hub address (see help for usage)"
 msgstr "Hubadress"
 
-#: win32/FavHubProperties.cpp:210
+#: win32\FavHubProperties.cpp:210
 msgid "Hub address cannot be empty"
 msgstr "Hubbadressen får inte vara tom"
 
-#: win32/MainWindow.cpp:964
+#: win32\MainWindow.cpp:958
 msgid "Hub address or Magnet link"
 msgstr "Hubbaddress eller Magnetlänk"
 
-#: win32/FavHubsFrame.cpp:232 win32/HubFrame.cpp:1239
+#: win32\FavHubsFrame.cpp:232 win32\HubFrame.cpp:1166
 msgid "Hub already exists as a favorite"
 msgstr "Hubben finns redan som favorit"
 
-#: win32/PublicHubsFrame.cpp:486
+#: win32\PublicHubsFrame.cpp:486
 #, fuzzy, boost-format
 msgid "Hub list downloaded (%1%)"
 msgstr "Hubblista nedladdad %1% (%2%)"
 
-#: win32/HubFrame.cpp:635
+#: win32\HubFrame.cpp:603
 msgid "Hub offline"
 msgstr "Hubb avstängd"
 
-#: win32/UserInfoBase.cpp:123
+#: win32\UserInfoBase.cpp:123
 msgid "Hub operator"
 msgstr "Huboperatör"
 
-#: win32/UsersFrame.cpp:55
+#: win32\UsersFrame.cpp:55
 msgid "Hub(s)"
 msgstr "Hubb(ar)"
 
-#: win32/HubListsDlg.cpp:47
+#: win32\HubListsDlg.cpp:47
 msgid "Hublist"
 msgstr "Hubblista"
 
-#: win32/HistoryPage.cpp:80 win32/SearchFrame.cpp:238
+#: win32\HistoryPage.cpp:80 win32\SearchFrame.cpp:238
 msgid "Hubs"
 msgstr "Hubbar"
 
-#: win32/UsersFrame.cpp:87
+#: win32\UsersFrame.cpp:87
 msgid "Hubs (normal)"
 msgstr "Hubbar (normal)"
 
-#: win32/UsersFrame.cpp:89
+#: win32\UsersFrame.cpp:89
 msgid "Hubs (op)"
 msgstr "Hubbar (op)"
 
-#: win32/UsersFrame.cpp:88
+#: win32\UsersFrame.cpp:88
 msgid "Hubs (registered)"
 msgstr "Hubbar (registrerade)"
 
-#: win32/SearchFrame.cpp:252
+#: win32\SearchFrame.cpp:252
 msgid "Hubs where I'm op"
 msgstr "Hubbar där jag är operatör"
 
-#: win32/SearchFrame.cpp:254
+#: win32\SearchFrame.cpp:254
 msgid "Hubs with secure transfers"
 msgstr "Hubbar med säker överföring"
 
-#: win32/MainWindow.cpp:1195 win32/PublicHubsFrame.cpp:260
-#: win32/UserInfoBase.cpp:105
+#: win32\MainWindow.cpp:1185 win32\PublicHubsFrame.cpp:260
+#: win32\UserInfoBase.cpp:105
 #, boost-format
 msgid "Hubs: %1%"
 msgstr "Hubbar: %1%"
 
-#: win32/PublicHubsFrame.cpp:258
+#: win32\PublicHubsFrame.cpp:258
 #, boost-format
 msgid "Hubs: %1% / %2%"
 msgstr "Hubbar: %1% / %2%"
 
-#: win32/HubFrame.cpp:64 win32/ProxyPage.cpp:79 win32/SearchFrame.cpp:59
-#: win32/TransferView.cpp:57 win32/UserInfoBase.cpp:131
-#: win32/UserMatchDlg.cpp:222 win32/UserMatchPage.cpp:215
+#: win32\HubFrame.cpp:63 win32\ProxyPage.cpp:79 win32\SearchFrame.cpp:59
+#: win32\TransferView.cpp:57 win32\UserInfoBase.cpp:131
+#: win32\UserMatchDlg.cpp:222 win32\UserMatchPage.cpp:215
 msgid "IP"
 msgstr "IP"
 
-#: win32/UsersFrame.cpp:90
+#: win32\UsersFrame.cpp:90
 msgid "IP (v4)"
 msgstr "IP (v4)"
 
-#: win32/UsersFrame.cpp:91
+#: win32\UsersFrame.cpp:91
 msgid "IP (v6)"
 msgstr "IP (v6)"
 
-#: win32/MainWindow.cpp:1660
+#: win32\MainWindow.cpp:1650
 msgid ""
 "IP -> country mappings are disabled. Turn them back on via Settings > "
 "Appearance."
 msgstr ""
 "IP -> landmappning är avstängt. Sätt igång dem via Settings > Utseende."
 
-#: win32/ConnectivityManualPage.cpp:83 win32/FavHubGroupsDlg.cpp:148
-#: win32/FavHubProperties.cpp:141
+#: win32\ConnectivityManualPage.cpp:83 win32\FavHubGroupsDlg.cpp:148
+#: win32\FavHubProperties.cpp:141
 msgid "IPv4"
 msgstr "IPv4"
 
-#: win32/ConnectivityPage.cpp:97
+#: win32\ConnectivityPage.cpp:97
 #, boost-format
 msgid "IPv4: %1%"
 msgstr "IPv4: %1%"
 
-#: win32/ConnectivityManualPage.cpp:86 win32/FavHubGroupsDlg.cpp:153
-#: win32/FavHubProperties.cpp:147
+#: win32\ConnectivityManualPage.cpp:86 win32\FavHubGroupsDlg.cpp:153
+#: win32\FavHubProperties.cpp:147
 msgid "IPv6"
 msgstr "IPv6"
 
-#: win32/ConnectivityPage.cpp:100
+#: win32\ConnectivityPage.cpp:100
 #, boost-format
 msgid "IPv6: %1%"
 msgstr "IPv6: %1%"
 
-#: win32/FavHubGroupsDlg.cpp:129 win32/FavHubProperties.cpp:111
+#: win32\FavHubGroupsDlg.cpp:129 win32\FavHubProperties.cpp:111
 msgid "Identification (leave blank for defaults)"
 msgstr "Identifikation (lämna tomt för standard)"
 
-#: win32/TransferView.cpp:166 win32/TransferView.cpp:352
-#: win32/TransferView.cpp:1189
+#: win32\TransferView.cpp:166 win32\TransferView.cpp:352
+#: win32\TransferView.cpp:1189
 msgid "Idle"
 msgstr "Inaktiv"
 
-#: win32/WinUtil.cpp:582
+#: win32\WinUtil.cpp:582
 msgid ""
 "If no parameter is specified, it launches the log for the hub or private "
 "chat with the associated application in Windows. If one of the parameters is "
@@ -2288,158 +2267,163 @@ msgstr ""
 "är associerat med logfiler i Windows. Anges en parameter så öppnas den filen "
 "istället. Statusloggen kan bara öppnas ifrån respektive hubbfönster."
 
-#: win32/UserInfoBase.h:184
+#: win32\UserInfoBase.h:169
 msgid "Ignore chat"
 msgstr "Ignorera chatt"
 
-#: win32/UserMatchDlg.cpp:100 win32/UserMatchPage.cpp:224
+#: win32\UserMatchDlg.cpp:100 win32\UserMatchPage.cpp:224
 msgid "Ignore chat messages"
 msgstr "Ignorera chattmeddelanden"
 
-#: win32/WindowsPage.cpp:39
+#: win32\WindowsPage.cpp:39
 msgid "Ignore private messages from bots"
 msgstr "Ignorera privata meddelanden från botar"
 
-#: win32/WindowsPage.cpp:38
+#: win32\WindowsPage.cpp:38
 msgid "Ignore private messages from the hub"
 msgstr "Ignorera privata meddelanden från hubben"
 
-#: win32/HubFrame.cpp:809
+#: win32\HubFrame.cpp:745
 #, boost-format
 msgid "Ignored message: %1%"
 msgstr "Ignorerat meddelande: %1%"
 
-#: win32/UserInfoBase.cpp:125
+#: win32\UserInfoBase.cpp:125
 msgid "In away mode"
 msgstr "I bortaläge"
 
-#: win32/QueueFrame.cpp:131
+#: win32\QueueFrame.cpp:131
 msgid "Increase priority"
 msgstr "Höj prioritet"
 
-#: win32/MainWindow.cpp:368
+#: win32\MainWindow.cpp:366
 msgid "Indexing progress"
 msgstr "Visa pågående indexering"
 
-#: win32/PluginInfoDlg.cpp:104
+#: win32\PluginInfoDlg.cpp:104
 msgid "Install the plugin"
 msgstr "Installera pluginet"
 
-#: win32/PluginPage.cpp:239
+#: win32\PluginPage.cpp:239
 msgid "Installation path: "
 msgstr "Sökväg för installation: "
 
-#: win32/PluginPage.cpp:71
+#: win32\PluginPage.cpp:71
 msgid "Installed Plugins"
 msgstr "Installerade insticksmoduler"
 
-#: win32/QueueFrame.cpp:1163
+#: win32\QueueFrame.cpp:1163
 #, boost-format
 msgid "Integrity check: %1% (%2%)"
 msgstr "Integritetskontroll: %1% (%2%)"
 
-#: win32/SearchTypeDlg.cpp:85
+#: win32\SearchTypeDlg.cpp:85
 #, boost-format
 msgid "Invalid extension: %1%"
 msgstr "Ogiltig filändelse: %1%"
 
-#: win32/MainWindow.cpp:1404
+#: win32\MainWindow.cpp:1394
 msgid "Invalid file list name"
 msgstr "Ogiltigt namn på fillista"
 
-#: win32/SearchFrame.cpp:1020
+#: win32\SearchFrame.cpp:1020
 msgid "Invalid input value for TTH search"
 msgstr "Ogiltigt värde för TTH-sökning"
 
-#: win32/WinUtil.cpp:645 win32/WinUtil.cpp:653
+#: win32\WinUtil.cpp:645 win32\WinUtil.cpp:653
 msgid "Invalid number of slots"
 msgstr "Ogiltigt antal slottar"
 
-#: win32/ConnectivityManualPage.cpp:151
+#: win32\WinUtil.cpp:708 win32\WinUtil.cpp:716
+#, fuzzy
+msgid "Invalid speed value"
+msgstr "Ogiltigt värde"
+
+#: win32\ConnectivityManualPage.cpp:151
 msgid "Invalid value"
 msgstr "Ogiltigt värde"
 
-#: win32/StringListDlg.cpp:80
+#: win32\StringListDlg.cpp:80
 msgid "Item edition"
 msgstr "Föremålsutgåva"
 
-#: win32/QueueFrame.cpp:263
+#: win32\QueueFrame.cpp:263
 #, boost-format
 msgid "Items: %1%"
 msgstr "Objekt: %1%"
 
-#: win32/HubFrame.cpp:475
+#: win32\HubFrame.cpp:474
 msgid "Join/part of favorite users showing off"
 msgstr "Visa inte när en favoritanvändare loggar in eller ut"
 
-#: win32/HubFrame.cpp:473
+#: win32\HubFrame.cpp:472
 msgid "Join/part of favorite users showing on"
 msgstr "Visa när en favoritanvändare loggar in eller ut"
 
-#: win32/HubFrame.cpp:468
+#: win32\HubFrame.cpp:467
 msgid "Join/part showing off"
 msgstr "Anslutningsmeddelanden av"
 
-#: win32/HubFrame.cpp:466
+#: win32\HubFrame.cpp:465
 msgid "Join/part showing on"
 msgstr "Anslutningsmeddelanden på"
 
-#: win32/HubFrame.cpp:532
+#: win32\HubFrame.cpp:533
 msgid "Joins <hub-ip>. See also Open new window when using /join."
 msgstr ""
 "Anslutar till <hub-ip>. Se också Öppna nytt fönster vid användning av "
 "kommandot /join."
 
-#: win32/HubFrame.cpp:1044
+#: win32\HubFrame.cpp:978
 #, boost-format
 msgid "Joins: %1%"
 msgstr "Ansluter till: %1%"
 
-#: win32/ListFilter.cpp:166
+#: win32\ListFilter.cpp:166
 msgid "KB"
 msgstr "KB"
 
-#: win32/AdvancedPage.cpp:33
+#: win32\AdvancedPage.cpp:33
 msgid "Keep duplicate files in your file list"
 msgstr "Behåll dublettfiler i din fillista"
 
-#: win32/QueuePage.cpp:43
+#: win32\QueuePage.cpp:43
 msgid "Keep finished files in the queue"
 msgstr "Behåll färdiga filer i kön"
 
-#: win32/AppearancePage.cpp:92
+#: win32\AppearancePage.cpp:90
 msgid "Keep it between"
 msgstr "Ligg mellan"
 
-#: win32/MagnetDlg.cpp:87
+#: win32\MagnetDlg.cpp:87
 msgid "Key Search:"
 msgstr "Nyckelsökning"
 
-#: win32/ADLSProperties.cpp:100 win32/ExpertsPage.cpp:45
-#: win32/ExpertsPage.cpp:48 win32/ListFilter.cpp:158 win32/QueuePage.cpp:72
-#: win32/QueuePage.cpp:78 win32/QueuePage.cpp:84 win32/QueuePage.cpp:90
-#: win32/QueuePage.cpp:138 win32/SearchFrame.cpp:204
+#: win32\ADLSProperties.cpp:100 win32\ExpertsPage.cpp:45
+#: win32\ExpertsPage.cpp:48 win32\ListFilter.cpp:158 win32\QueuePage.cpp:72
+#: win32\QueuePage.cpp:78 win32\QueuePage.cpp:84 win32\QueuePage.cpp:90
+#: win32\QueuePage.cpp:138 win32\SearchFrame.cpp:204
 msgid "KiB"
 msgstr "KiB"
 
-#: win32/UploadPage.cpp:126
+#: win32\UploadPage.cpp:126
 msgid "KiB/s"
 msgstr "KiB/s"
 
-#: win32/AppearancePage.cpp:110
+#: win32\AppearancePage.cpp:108
 msgid "Language"
 msgstr "Språk"
 
-#: win32/PrivateFrame.cpp:414
+#: win32\PrivateFrame.cpp:387
 #, boost-format
 msgid "Last message occured %1%"
 msgstr "Senaste meddelande var %1%"
 
-#: win32/AboutDlg.cpp:161
+#: win32\AboutDlg.cpp:162
 msgid "Latest stable version"
 msgstr "Senaste stabila version"
 
-#: win32/WinUtil.cpp:578
+#: win32\WinUtil.cpp:578
 msgid ""
 "Launches your default web browser to the DuckDuckGo search engine with the "
 "specified search."
@@ -2447,14 +2431,14 @@ msgstr ""
 "Öppnar DuckDuckGos söksida i din standardwebbläsaren med den inskrivna "
 "sökningen."
 
-#: win32/WinUtil.cpp:579
+#: win32\WinUtil.cpp:579
 msgid ""
 "Launches your default web browser to the Google search engine with the "
 "specified search."
 msgstr ""
 "Öppnar Googles söksida i din standardwebbläsare med den inskrivna sökningen."
 
-#: win32/WinUtil.cpp:580
+#: win32\WinUtil.cpp:580
 msgid ""
 "Launches your default web browser to the Internet Movie Database (imdb) with "
 "the specified query."
@@ -2462,576 +2446,567 @@ msgstr ""
 "Öppnar Internet Movie Database, IMDB, i din standardwebbläsare med den valda "
 "frågan."
 
-#: win32/WinUtil.cpp:584
+#: win32\WinUtil.cpp:584
 msgid "Launches your default web browser with the given URL."
 msgstr "Startar din standardwebläsare med den angivna adressen."
 
-#: win32/ConnectivityManualPage.cpp:55 win32/ConnectivityPage.cpp:64
-#: win32/ProxyPage.cpp:56
-#, fuzzy
-msgid "Let FearDC determine the best connectivity settings"
+#: win32\ConnectivityManualPage.cpp:55 win32\ConnectivityPage.cpp:64
+#: win32\ProxyPage.cpp:56
+msgid "Let DC++ determine the best connectivity settings"
 msgstr "Låt DC++ välja de bästa anslutningsinställningarna"
 
-#: win32/TabsPage.cpp:70
-#, fuzzy
-msgid "Let FearDC draw tabs"
+#: win32\TabsPage.cpp:70
+msgid "Let DC++ draw tabs"
 msgstr "Låt DC++ rita flikarna"
 
-#: win32/DownloadPage.cpp:78
+#: win32\DownloadPage.cpp:78
 msgid "Limits"
 msgstr "Begränsningar"
 
-#: win32/GeneralPage.cpp:69
+#: win32\GeneralPage.cpp:69
 msgid "Line speed (upload)"
 msgstr "Uppladdningshastighet"
 
-#: win32/MainWindow.cpp:408 win32/StylesPage.cpp:167
+#: win32\MainWindow.cpp:406 win32\StylesPage.cpp:167
 msgid "Links"
 msgstr "Länkar"
 
-#: win32/StringListDlg.cpp:76
+#: win32\StringListDlg.cpp:76
 msgid "List configuration"
 msgstr "Visa inställningar"
 
-#: win32/PrivateFrame.cpp:444
+#: win32\PrivateFrame.cpp:417
 msgid "Lists the date and time when the last message was sent or received."
 msgstr ""
 "Visa datum och tid när det senaste meddelandet skickades eller togs emot."
 
-#: win32/SplashWindow.cpp:63
-#, fuzzy, boost-format
-msgid "Loading FearDC, please wait... (%1%)"
+#: win32\SplashWindow.cpp:63
+#, boost-format
+msgid "Loading DC++, please wait... (%1%)"
 msgstr "Laddar DC++, var god vänta... (%1%)"
 
-#: win32/DirectoryListingFrame.cpp:839
+#: win32\DirectoryListingFrame.cpp:839
 #, boost-format
 msgid "Loading file list: %1%"
 msgstr "Laddar fillista: %1%"
 
-#: win32/PublicHubsFrame.cpp:490
+#: win32\PublicHubsFrame.cpp:490
 #, boost-format
 msgid "Locally cached (as of %1%) version of the hub list loaded (%2%)"
 msgstr "Lokalt cachad version av hublistan (%1%) laddades (%2%)"
 
-#: win32/LogPage.cpp:38
+#: win32\LogPage.cpp:38
 msgid "Log downloaded segments"
 msgstr "Logga nerladdade segment"
 
-#: win32/LogPage.cpp:43
+#: win32\LogPage.cpp:43
 msgid "Log filelist transfers"
 msgstr "Logga fillistöverföringar"
 
-#: win32/LogPage.cpp:39
+#: win32\LogPage.cpp:39
 msgid "Log finished downloads"
 msgstr "Logga avslutade nerladdningar"
 
-#: win32/FavHubGroupsDlg.cpp:174 win32/FavHubProperties.cpp:170
-#: win32/LogPage.cpp:36
+#: win32\FavHubGroupsDlg.cpp:174 win32\FavHubProperties.cpp:170
+#: win32\LogPage.cpp:36
 msgid "Log main chat"
 msgstr "Logga main chat"
 
-#: win32/LogPage.cpp:37
+#: win32\LogPage.cpp:37
 msgid "Log private chat"
 msgstr "Logga privat chat"
 
-#: win32/LogPage.cpp:42
+#: win32\LogPage.cpp:42
 msgid "Log status messages"
 msgstr "Logga statusmeddelanden"
 
-#: win32/LogPage.cpp:41
+#: win32\LogPage.cpp:41
 msgid "Log system messages"
 msgstr "Logga systemmeddelanden"
 
-#: win32/LogPage.cpp:40
+#: win32\LogPage.cpp:40
 msgid "Log uploaded segments"
 msgstr "Logga uppladdade segment"
 
-#: win32/LogPage.cpp:62
+#: win32\LogPage.cpp:62
 msgid "Logging"
 msgstr "Loggning"
 
-#: win32/ProxyPage.cpp:94
+#: win32\ProxyPage.cpp:94
 msgid "Login"
 msgstr "Logga in"
 
-#: win32/SettingsDialog.cpp:187 win32/StylesPage.cpp:168
+#: win32\SettingsDialog.cpp:187 win32\StylesPage.cpp:168
 msgid "Logs"
 msgstr "Loggar"
 
-#: win32/QueueFrame.cpp:405 win32/QueueFrame.cpp:994 win32/TransferView.cpp:550
+#: win32\QueueFrame.cpp:405 win32\QueueFrame.cpp:994 win32\TransferView.cpp:550
 msgid "Low"
 msgstr "Låg"
 
-#: win32/QueuePage.cpp:86
+#: win32\QueuePage.cpp:86
 msgid "Low prio max size"
 msgstr "Låg prio största storlek"
 
-#: win32/QueueFrame.cpp:404 win32/QueueFrame.cpp:993 win32/TransferView.cpp:549
+#: win32\QueueFrame.cpp:404 win32\QueueFrame.cpp:993 win32\TransferView.cpp:549
 msgid "Lowest"
 msgstr "Lägsta"
 
-#: win32/ExpertsPage.cpp:110 win32/SearchTypesPage.cpp:85
-#: win32/UploadFilteringPage.cpp:95 win32/UploadFilteringPage.cpp:111
-#: win32/UploadFilteringPage.cpp:127
+#: win32\ExpertsPage.cpp:110 win32\SearchTypesPage.cpp:85
+#: win32\UploadFilteringPage.cpp:95 win32\UploadFilteringPage.cpp:111
+#: win32\UploadFilteringPage.cpp:127
 msgid "M&odify"
 msgstr "&Ändra"
 
-#: win32/MagnetDlg.cpp:121 win32/WinUtil.cpp:1574
+#: win32\MagnetDlg.cpp:121 win32\WinUtil.cpp:1572
 msgid "MAGNET Link detected"
 msgstr "Magnetlänk upptäck"
 
-#: win32/ListFilter.cpp:164
+#: win32\ListFilter.cpp:164
 msgid "MB"
 msgstr "MB"
 
-#: win32/WinUtil.cpp:93
+#: win32\WinUtil.cpp:93
 msgid "Main chat message received"
 msgstr "Huvudchattmeddande mottaget"
 
-#: win32/FavHubProperties.cpp:188 win32/FavHubsFrame.cpp:153
-#: win32/FavHubsFrame.cpp:377
+#: win32\FavHubProperties.cpp:188 win32\FavHubsFrame.cpp:153
+#: win32\FavHubsFrame.cpp:377
 msgid "Manage &groups"
 msgstr "Hantera &grupper"
 
-#: win32/SettingsDialog.cpp:160
+#: win32\SettingsDialog.cpp:160
 msgid "Manual configuration"
 msgstr "Manuell konfiguration"
 
-#: win32/WinUtil.cpp:569
-#, fuzzy
+#: win32\WinUtil.cpp:569
 msgid ""
-"Manually refreshes FearDC's share list by going through the shared "
-"directories and adding new folders and files. FearDC automatically refreshes "
-"once an hour by default, and also refreshes after the list of shared "
-"directories is changed."
+"Manually refreshes DC++'s share list by going through the shared directories "
+"and adding new folders and files. DC++ automatically refreshes once an hour "
+"by default, and also refreshes after the list of shared directories is "
+"changed."
 msgstr ""
 "Uppdatera DC++ utdelningslista manuellt genom att gå igenom de delade "
 "katalogerna och lägg till nya mappar och filer. DC++ uppdaterar "
 "utdelningslistan automatiskt en gång i timmen som standard, samt då de "
 "delade katalogerna eller filerna ändrats."
 
-#: win32/UserMatchDlg.cpp:76 win32/UserMatchPage.cpp:213
+#: win32\UserMatchDlg.cpp:76 win32\UserMatchPage.cpp:213
 msgid "Match bots"
 msgstr "Matcha bottar"
 
-#: win32/MainWindow.cpp:315
+#: win32\MainWindow.cpp:313
 msgid "Match downloaded lists"
 msgstr "Matcha nerladdade listor"
 
-#: win32/UserMatchPage.cpp:206
+#: win32\UserMatchPage.cpp:206
 msgid "Match every user"
 msgstr "Matcha varje användare"
 
-#: win32/UserMatchDlg.cpp:70 win32/UserMatchPage.cpp:209
+#: win32\UserMatchDlg.cpp:70 win32\UserMatchPage.cpp:209
 msgid "Match favorite users"
 msgstr "Matcha favoritanvändare"
 
-#: win32/UserMatchDlg.cpp:73 win32/UserMatchPage.cpp:211
+#: win32\UserMatchDlg.cpp:73 win32\UserMatchPage.cpp:211
 msgid "Match operators"
 msgstr "Matcha operatörer"
 
-#: win32/DirectoryListingFrame.cpp:367
+#: win32\DirectoryListingFrame.cpp:367
 msgid "Match queue"
 msgstr "Matcha kön"
 
-#: win32/DirectoryListingFrame.cpp:755
+#: win32\DirectoryListingFrame.cpp:755
 #, boost-format
 msgid "Matched %1% file"
 msgid_plural "Matched %1% files"
 msgstr[0] "Matchade %1% fil"
 msgstr[1] "Matchade %1% filer"
 
-#: win32/ADLSProperties.cpp:90
+#: win32\ADLSProperties.cpp:90
 msgid "Max FileSize"
 msgstr "Max filstorlek"
 
-#: win32/ExpertsPage.cpp:55
+#: win32\ExpertsPage.cpp:55
 msgid "Max PM windows"
 msgstr "Max PM fönster"
 
-#: win32/ADLSearchFrame.cpp:48
+#: win32\ADLSearchFrame.cpp:48
 msgid "Max Size"
 msgstr "Max storlek"
 
-#: win32/UploadPage.cpp:128
+#: win32\UploadPage.cpp:128
 msgid "Max extra upload slots"
 msgstr "Max extra uppladdningsplatser"
 
-#: win32/ExpertsPage.cpp:49
+#: win32\ExpertsPage.cpp:49
 msgid "Max filelist size"
 msgstr "Max storlek fillista"
 
-#: win32/ExpertsPage.cpp:44
+#: win32\ExpertsPage.cpp:44
 msgid "Max hash speed"
 msgstr "Indexeringshastighet"
 
-#: win32/PublicHubsFrame.cpp:52
+#: win32\PublicHubsFrame.cpp:52
 msgid "Max hubs"
 msgstr "Max hubbar"
 
-#: win32/QueuePage.cpp:122
+#: win32\QueuePage.cpp:122
 msgid "Max inactivity"
 msgstr "Längsta inaktivitet"
 
-#: win32/ExpertsPage.cpp:56
+#: win32\ExpertsPage.cpp:56
 msgid "Max protocol command length"
 msgstr "Max protokollkommandolängd"
 
-#: win32/PublicHubsFrame.cpp:53
+#: win32\PublicHubsFrame.cpp:53
 msgid "Max users"
 msgstr "Max användare"
 
-#: win32/BandwidthLimitPage.cpp:79 win32/BandwidthLimitPage.cpp:138
+#: win32\BandwidthLimitPage.cpp:79 win32\BandwidthLimitPage.cpp:138
 msgid "Maximum Download Rate (KiB/s) (0 = infinite)"
 msgstr "Maximal nedladdningshastighet (KiB/s) (0 = oändlig)"
 
-#: win32/BandwidthLimitPage.cpp:69 win32/BandwidthLimitPage.cpp:128
+#: win32\BandwidthLimitPage.cpp:69 win32\BandwidthLimitPage.cpp:128
 msgid "Maximum Upload Rate (KiB/s) (0 = infinite)"
 msgstr "Maximal Uppladdningshastighet (KiB/s) (0 = oändlig)"
 
-#: win32/HistoryPage.cpp:85 win32/MainWindow.cpp:876
+#: win32\HistoryPage.cpp:85 win32\MainWindow.cpp:870
 msgid "Maximum number of recent items to save"
 msgstr "Maximalt antal nya objekt för att spara"
 
-#: win32/DownloadPage.cpp:95
+#: win32\DownloadPage.cpp:95
 msgid "Maximum simultaneous downloads (0 = infinite)"
 msgstr "Maximalt antal nerladdningar (0 = oändligt)"
 
-#: win32/MainWindow.cpp:370
+#: win32\MainWindow.cpp:368
 msgid "Menu bar\tCtrl+0"
 msgstr "Menybar\tCtrl+0"
 
-#: win32/ADLSProperties.cpp:101 win32/ExpertsPage.cpp:49
-#: win32/ListFilter.cpp:156 win32/SearchFrame.cpp:205
+#: win32\ADLSProperties.cpp:101 win32\ExpertsPage.cpp:49
+#: win32\ListFilter.cpp:156 win32\SearchFrame.cpp:205
 msgid "MiB"
 msgstr "MiB"
 
-#: win32/ExpertsPage.cpp:44
+#: win32\ExpertsPage.cpp:44
 msgid "MiB/s"
 msgstr "MiB/s"
 
-#: win32/GeneralPage.cpp:77
+#: win32\GeneralPage.cpp:77
 msgid "MiBits/s"
 msgstr "MiBits/s"
 
-#: win32/BandwidthLimitPage.cpp:104
+#: win32\BandwidthLimitPage.cpp:104
 msgid "Midnight"
 msgstr "Midnatt"
 
-#: win32/ADLSProperties.cpp:85
+#: win32\ADLSProperties.cpp:85
 msgid "Min FileSize"
 msgstr "Min filstorlek"
 
-#: win32/ADLSearchFrame.cpp:47
+#: win32\ADLSearchFrame.cpp:47
 msgid "Min Size"
 msgstr "Min Storlek"
 
-#: win32/QueuePage.cpp:116
+#: win32\QueuePage.cpp:116
 msgid "Min elapsed"
 msgstr "Ï mer än"
 
-#: win32/QueuePage.cpp:134
+#: win32\QueuePage.cpp:134
 msgid "Min filesize"
 msgstr "Min filstorlek"
 
-#: win32/PublicHubsFrame.cpp:50
+#: win32\PublicHubsFrame.cpp:50
 msgid "Min share"
 msgstr "Min utdelat"
 
-#: win32/PublicHubsFrame.cpp:51
+#: win32\PublicHubsFrame.cpp:51
 msgid "Min slots"
 msgstr "Min slottar"
 
-#: win32/QueuePage.cpp:128
+#: win32\QueuePage.cpp:128
 msgid "Min sources online"
 msgstr "Min källor online"
 
-#: win32/ExpertsPage.cpp:48
+#: win32\ExpertsPage.cpp:48
 msgid "Mini slot size"
 msgstr "Storlek minislottar"
 
-#: win32/AppearancePage.cpp:38
+#: win32\AppearancePage.cpp:38
 msgid "Minimize to tray"
 msgstr "Minimera till aktivitetsfältet"
 
-#: win32/HubFrame.cpp:595 win32/HubFrame.cpp:602
-msgid "Missing command parameters: /mcpm <user> <message>"
-msgstr ""
-
-#: win32/ACFrame.cpp:156
+#: win32\ACFrame.cpp:156
 #, fuzzy
 msgid "Modify value"
 msgstr "&Ändra"
 
-#: win32/CertificatesPage.cpp:106
-#, fuzzy
-msgid "Most of these options require that you restart FearDC."
+#: win32\CertificatesPage.cpp:105
+msgid "Most of these options require that you restart DC++."
 msgstr "De flesta av dessa inställningar kräver att DC++ startas om"
 
-#: win32/ADLSearchFrame.cpp:103 win32/FavHubsFrame.cpp:132
-#: win32/FavHubsFrame.cpp:368 win32/PluginPage.cpp:114 win32/PluginPage.cpp:260
-#: win32/StringListDlg.cpp:149 win32/UCPage.cpp:71 win32/UserMatchPage.cpp:93
+#: win32\ADLSearchFrame.cpp:103 win32\FavHubsFrame.cpp:132
+#: win32\FavHubsFrame.cpp:368 win32\PluginPage.cpp:114 win32\PluginPage.cpp:260
+#: win32\StringListDlg.cpp:149 win32\UCPage.cpp:71 win32\UserMatchPage.cpp:93
 msgid "Move &Down"
 msgstr "Flytta &ner"
 
-#: win32/ADLSearchFrame.cpp:97 win32/FavHubsFrame.cpp:125
-#: win32/FavHubsFrame.cpp:367 win32/PluginPage.cpp:109 win32/PluginPage.cpp:259
-#: win32/StringListDlg.cpp:144 win32/UCPage.cpp:67 win32/UserMatchPage.cpp:89
+#: win32\ADLSearchFrame.cpp:97 win32\FavHubsFrame.cpp:125
+#: win32\FavHubsFrame.cpp:367 win32\PluginPage.cpp:109 win32\PluginPage.cpp:259
+#: win32\StringListDlg.cpp:144 win32\UCPage.cpp:67 win32\UserMatchPage.cpp:89
 msgid "Move &Up"
 msgstr "Flytta &upp"
 
-#: win32/DirectoryListingFrame.cpp:1563
+#: win32\DirectoryListingFrame.cpp:1563
 msgid "NONE"
 msgstr "INGET"
 
-#: win32/CommandDlg.cpp:132 win32/FavHubGroupsDlg.cpp:123
-#: win32/FavHubProperties.cpp:84 win32/FavHubsFrame.cpp:49
-#: win32/PublicHubsFrame.cpp:44 win32/UCPage.cpp:36 win32/UserMatchDlg.cpp:63
+#: win32\CommandDlg.cpp:132 win32\FavHubGroupsDlg.cpp:123
+#: win32\FavHubProperties.cpp:84 win32\FavHubsFrame.cpp:49
+#: win32\PublicHubsFrame.cpp:44 win32\UCPage.cpp:36 win32\UserMatchDlg.cpp:63
 msgid "Name"
 msgstr "Namn"
 
-#: win32/CommandDlg.cpp:230
+#: win32\CommandDlg.cpp:230
 msgid "Name and command must not be empty"
 msgstr "Hubbadressen får inte vara tom"
 
-#: win32/SearchTypesPage.cpp:155
+#: win32\SearchTypesPage.cpp:155
 msgid "Name of the new search type"
 msgstr "Namn för ny söktyp"
 
-#: win32/UploadPage.cpp:239 win32/UploadPage.cpp:296
+#: win32\UploadPage.cpp:239 win32\UploadPage.cpp:296
 msgid "Name under which the others see the directory"
 msgstr "Mappnamn som andra användare ser"
 
-#: win32/PluginInfoDlg.cpp:88 win32/PluginPage.cpp:233
+#: win32\PluginInfoDlg.cpp:88 win32\PluginPage.cpp:233
 msgid "Name: "
 msgstr "Namn: "
 
-#: win32/UserMatchPage.cpp:192
+#: win32\UserMatchPage.cpp:192
 #, boost-format
 msgid "Name: %1%"
 msgstr "Namn: %1%"
 
-#: win32/MainWindow.cpp:361 win32/MainWindow.cpp:466 win32/StatsFrame.cpp:31
+#: win32\MainWindow.cpp:359 win32\MainWindow.cpp:464 win32\StatsFrame.cpp:31
 msgid "Network Statistics"
 msgstr "Nätverksstatistik"
 
-#: win32/CertificatesPage.cpp:124
+#: win32\CertificatesPage.cpp:123
 msgid "New certificates are successfully generated."
 msgstr "Nya certifikat är korrekt skapade."
 
-#: win32/MainWindow.cpp:936
+#: win32\MainWindow.cpp:930
 msgid "New limit (KiB/s) (0 = infinite)"
 msgstr "Ny gräns (KiB/s) (0 = ingen begränsning)"
 
-#: win32/SearchTypesPage.cpp:226
+#: win32\SearchTypesPage.cpp:226
 msgid "New name"
 msgstr "Nytt namn"
 
-#: win32/SearchTypesPage.cpp:155
+#: win32\SearchTypesPage.cpp:155
 msgid "New search type"
 msgstr "Ny söktyp"
 
-#: win32/UploadPage.cpp:248
+#: win32\UploadPage.cpp:248
 msgid "New virtual name matches old name, skipping..."
 msgstr "Nytt virtuellt namn matchade gammalt namn, hoppar över..."
 
-#: win32/FavHubGroupsDlg.cpp:135 win32/FavHubProperties.cpp:118
-#: win32/FavHubsFrame.cpp:51 win32/GeneralPage.cpp:53 win32/HubFrame.cpp:59
-#: win32/HubFrame.cpp:440 win32/UserMatchDlg.cpp:222
-#: win32/UserMatchPage.cpp:215 win32/UsersFrame.cpp:54 win32/UsersFrame.cpp:77
-#: win32/FinishedFrameBase.h:741
+#: win32\FavHubGroupsDlg.cpp:135 win32\FavHubProperties.cpp:118
+#: win32\FavHubsFrame.cpp:51 win32\GeneralPage.cpp:53 win32\HubFrame.cpp:58
+#: win32\HubFrame.cpp:439 win32\UserMatchDlg.cpp:222
+#: win32\UserMatchPage.cpp:215 win32\UsersFrame.cpp:54 win32\UsersFrame.cpp:77
+#: win32\FinishedFrameBase.h:741
 msgid "Nick"
 msgstr "Smeknamn"
 
-#: win32/FinishedFrameBase.h:729
+#: win32\FinishedFrameBase.h:729
 msgid "Nicks"
 msgstr "Smeknamn"
 
-#: win32/ADLSearchFrame.cpp:330 win32/NotificationsPage.cpp:280
-#: win32/NotificationsPage.cpp:286 win32/WinUtil.cpp:1198
-#: win32/FinishedFrameBase.h:262
+#: win32\ADLSearchFrame.cpp:330 win32\NotificationsPage.cpp:280
+#: win32\NotificationsPage.cpp:286 win32\WinUtil.cpp:1201
+#: win32\FinishedFrameBase.h:262
 msgid "No"
 msgstr "Nej"
 
-#: win32/WinUtil.cpp:673
+#: win32\WinUtil.cpp:671
 msgid "No away message"
 msgstr "Inget bortameddelande"
 
-#: win32/PrivateFrame.cpp:360
+#: win32\PrivateFrame.cpp:333
 msgid "No direct encrypted channel available"
 msgstr "Inga direkta och krypterade kanaler tillgängliga"
 
-#: win32/QueueFrame.cpp:447
+#: win32\QueueFrame.cpp:447
 msgid "No errors"
 msgstr "Inga fel"
 
-#: win32/MainWindow.cpp:1031
+#: win32\MainWindow.cpp:1025
 msgid "No favorite hub group found"
 msgstr "Inga favoritgrupper funna"
 
-#: win32/ACFrame.cpp:228
+#: win32\ACFrame.cpp:228
 msgid "No filtering terms specified"
 msgstr ""
 
-#: win32/QueueFrame.cpp:434 win32/QueueFrame.cpp:1200
+#: win32\QueueFrame.cpp:434 win32\QueueFrame.cpp:1200
 msgid "No full tree available"
 msgstr "Inget komplett träd tillgängligt"
 
-#: win32/WinUtil.cpp:1129
+#: win32\WinUtil.cpp:1132
 msgid "No help information available"
 msgstr "Ingen hjälpinformation tillgänglig"
 
-#: win32/DirectoryListingFrame.cpp:1535
+#: win32\DirectoryListingFrame.cpp:1535
 #, boost-format
 msgid "No matches found for: %1%"
 msgstr "Inga matcher funna för: %1%"
 
-#: win32/DownloadPage.cpp:105
+#: win32\DownloadPage.cpp:105
 msgid "No new downloads if speed exceeds (KiB/s, 0 = disable)"
 msgstr "Inga nya DL:s om hastigheten överstiger (kB/s, 0 = oändligt)"
 
-#: win32/PluginPage.cpp:204
+#: win32\PluginPage.cpp:204
 msgid "No plugin has been selected"
 msgstr "Ingen plugin har blivit vald"
 
-#: win32/AboutDlg.cpp:157
+#: win32\AboutDlg.cpp:158
 msgid "No transfers yet"
 msgstr "Inga överföringar ännu"
 
-#: win32/QueueFrame.cpp:366
+#: win32\QueueFrame.cpp:366
 msgid "No users"
 msgstr "Inga användare"
 
-#: win32/QueueFrame.cpp:378
+#: win32\QueueFrame.cpp:378
 msgid "No users to download from"
 msgstr "Inga användare att ladda ner från"
 
-#: win32/BandwidthLimitPage.cpp:107
+#: win32\BandwidthLimitPage.cpp:107
 msgid "Noon"
 msgstr "Middag"
 
-#: win32/QueueFrame.cpp:406 win32/QueueFrame.cpp:995 win32/SearchFrame.cpp:191
-#: win32/TransferView.cpp:551
+#: win32\QueueFrame.cpp:406 win32\QueueFrame.cpp:995 win32\SearchFrame.cpp:191
+#: win32\TransferView.cpp:551
 msgid "Normal"
 msgstr "Normal"
 
-#: win32/QueuePage.cpp:80
+#: win32\QueuePage.cpp:80
 msgid "Normal prio max size"
 msgstr "Normal prio största storlek"
 
-#: win32/CertificatesPage.cpp:107
+#: win32\CertificatesPage.cpp:106
 msgid "Note: TLS might not protect search results and non-keyprinted hubs."
 msgstr ""
 "OBS: TLS kanske inte skyddar sökresultat och hubbar som inte har keyprint."
 
-#: win32/AppearancePage.cpp:117
-#, fuzzy
-msgid "Note: some of these options require that you restart FearDC"
+#: win32\AppearancePage.cpp:115
+msgid "Note: some of these options require that you restart DC++"
 msgstr "OBS: vissa av dessa inställningar kräver att du startar om DC++"
 
-#: win32/SearchTypesPage.cpp:102
+#: win32\SearchTypesPage.cpp:102
 msgid "Note; Custom search types will only be applied to ADC hubs!"
 msgstr "OBS! Egna söktyper kommer enbart att användas i ADC hubbar!"
 
-#: win32/UploadPage.cpp:93
+#: win32\UploadPage.cpp:93
 msgid "Note; Files appear in the share only after they've been hashed!"
 msgstr "OBS! Nya filer delas endast ut när de har blivit indexerade!"
 
-#: win32/DownloadPage.cpp:108
+#: win32\DownloadPage.cpp:108
 #, no-c-format
 msgid "Note; because of changing download speeds, this is not 100% accurate..."
 msgstr "OBS! Pga varierande nerladdningshastighet är detta inte 100% rätt..."
 
-#: win32/MainWindow.cpp:478 win32/NotepadFrame.cpp:32
+#: win32\MainWindow.cpp:476 win32\NotepadFrame.cpp:32
 msgid "Notepad"
 msgstr "Anteckningar"
 
-#: win32/NotificationsPage.cpp:64 win32/SettingsDialog.cpp:183
+#: win32\NotificationsPage.cpp:64 win32\SettingsDialog.cpp:183
 msgid "Notifications"
 msgstr "Aviseringar"
 
-#: win32/WinUtil.cpp:1144
+#: win32\WinUtil.cpp:1147
 msgid "OK"
 msgstr "Ok"
 
-#: win32/UsersFrame.cpp:268 win32/UsersFrame.cpp:283 win32/WinUtil.cpp:766
+#: win32\UsersFrame.cpp:268 win32\UsersFrame.cpp:283 win32\WinUtil.cpp:769
 msgid "Offline"
 msgstr "Frånkopplad"
 
-#: win32/UsersFrame.cpp:185 win32/UsersFrame.cpp:265 win32/UsersFrame.cpp:280
+#: win32\UsersFrame.cpp:185 win32\UsersFrame.cpp:265 win32\UsersFrame.cpp:280
 msgid "Online"
 msgstr "Ansluten"
 
-#: win32/HubFrame.cpp:438
+#: win32\HubFrame.cpp:437
 msgid "Online users"
 msgstr "Inloggade användare"
 
-#: win32/UploadFilteringPage.cpp:67
+#: win32\UploadFilteringPage.cpp:67
 msgid "Only share files whose file size is above/below"
 msgstr "Dela endast filer vars storlekt är över/under"
 
-#: win32/FinishedFrameBase.h:145
+#: win32\FinishedFrameBase.h:145
 msgid "Only show fully downloaded files"
 msgstr "Visa endast fullständigt nerladdade filer"
 
-#: win32/AppearancePage.cpp:44 win32/FavHubGroupsDlg.cpp:169
-#: win32/FavHubProperties.cpp:165
+#: win32\AppearancePage.cpp:44 win32\FavHubGroupsDlg.cpp:169
+#: win32\FavHubProperties.cpp:165
 msgid "Only show joins / parts for favorite users"
 msgstr "Visa när favoritanvändare ansluter/lämnar hubben"
 
-#: win32/SearchFrame.cpp:226
+#: win32\SearchFrame.cpp:226
 msgid "Only users with free slots"
 msgstr "Endast användare med lediga slottar"
 
-#: win32/SystemFrame.cpp:126 win32/FinishedFrameBase.h:464
+#: win32\SystemFrame.cpp:126 win32\FinishedFrameBase.h:464
 msgid "Open &folder"
 msgstr "Öppna &mapp"
 
-#: win32/MainWindow.cpp:320
+#: win32\MainWindow.cpp:318
 msgid "Open crash log"
 msgstr "Öppna kraschlogg"
 
-#: win32/MainWindow.cpp:319 win32/MainWindow.cpp:468 win32/MainWindow.cpp:1959
+#: win32\MainWindow.cpp:317 win32\MainWindow.cpp:466 win32\MainWindow.cpp:1947
 msgid "Open downloads directory"
 msgstr "Öppna nedladdningsmappen"
 
-#: win32/MainWindow.cpp:470
+#: win32\MainWindow.cpp:468
 msgid "Open file list..."
 msgstr "Öppna fillista..."
 
-#: win32/MainWindow.cpp:313
+#: win32\MainWindow.cpp:311
 msgid "Open file list...\tCtrl+L"
 msgstr "Öppna fillista...\tCtrl+L"
 
-#: win32/WindowsPage.cpp:35
+#: win32\WindowsPage.cpp:35
 msgid "Open new file list windows in the background"
 msgstr "Öppna nya fillistor i bakgrunden"
 
-#: win32/WindowsPage.cpp:36
+#: win32\WindowsPage.cpp:36
 msgid "Open new private message windows in the background"
 msgstr "Öppna nya privata meddelanden i bakgrunden"
 
-#: win32/WindowsPage.cpp:37
+#: win32\WindowsPage.cpp:37
 msgid "Open new window when using /join"
 msgstr "Öppna nytt fönster vid användning av kommandot /join"
 
-#: win32/MainWindow.cpp:314 win32/MainWindow.cpp:472
+#: win32\MainWindow.cpp:312 win32\MainWindow.cpp:470
 msgid "Open own list"
 msgstr "Öppna egen lista"
 
-#: win32/WindowsPage.cpp:33
+#: win32\WindowsPage.cpp:33
 msgid "Open private messages from bots in their own window"
 msgstr "Öppna privata meddelanden från botar i eget fönster"
 
-#: win32/WindowsPage.cpp:34
+#: win32\WindowsPage.cpp:34
 msgid "Open private messages from the hub in their own window"
 msgstr "Öppna privata meddelanden från hubben i eget fönster"
 
-#: win32/WindowsPage.cpp:32
+#: win32\WindowsPage.cpp:32
 msgid "Open private messages in their own window"
 msgstr "Öppna privata meddelanden i eget fönster"
 
-#: win32/WinUtil.cpp:573
+#: win32\WinUtil.cpp:573
 msgid ""
 "Opens a new search window with the specified search string. It does not "
 "automatically send the search."
@@ -3039,7 +3014,7 @@ msgstr ""
 "Öppnar ett nytt sökfönster med den valda söksträngen. Skickar inte "
 "automatiskt sökningen."
 
-#: win32/HubFrame.cpp:549
+#: win32\HubFrame.cpp:550
 msgid ""
 "Opens a private message window to the user, and optionally sends the "
 "message, if one was specified."
@@ -3047,173 +3022,172 @@ msgstr ""
 "Öppnar ett privat meddelandefönster till användaren, och skickar ett "
 "automatiskt meddelandet (valbart) om ett sådant angets."
 
-#: win32/WinUtil.cpp:589
+#: win32\WinUtil.cpp:589
 msgid "Opens the internal settings list debugging tool window."
 msgstr ""
 
-#: win32/WinUtil.cpp:460
+#: win32\WinUtil.cpp:460
 #, boost-format
 msgid "Operators (added by %1%)"
 msgstr "Operatörer (tillagda av %1%)"
 
-#: win32/ACFrame.cpp:142 win32/AppearancePage.cpp:65
-#: win32/UploadFilteringPage.cpp:58
+#: win32\ACFrame.cpp:142 win32\AppearancePage.cpp:63
+#: win32\UploadFilteringPage.cpp:58
 msgid "Options"
 msgstr "Inställningar"
 
-#: win32/QueuePage.cpp:141
+#: win32\QueuePage.cpp:141
 msgid "Other queue options"
 msgstr "Andra köinställningar"
 
-#: win32/CertificatesPage.cpp:78
+#: win32\CertificatesPage.cpp:77
 msgid "Own certificate file"
 msgstr "Egen certifikatfil"
 
-#: win32/ExpertsPage.cpp:50
+#: win32\ExpertsPage.cpp:50
 msgid "PID"
 msgstr "PID"
 
-#: win32/CommandDlg.cpp:98
+#: win32\CommandDlg.cpp:98
 msgid "PM"
 msgstr "PM"
 
-#: win32/CommandDlg.cpp:126
+#: win32\CommandDlg.cpp:126
 msgid "Parameters"
 msgstr "Parametrar"
 
-#: win32/DirectoryListingFrame.cpp:681
+#: win32\DirectoryListingFrame.cpp:681
 msgid "Partial file list loaded"
 msgstr "Partiell fillista laddad"
 
-#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1191
+#: win32\UserMatchPage.cpp:216 win32\WinUtil.cpp:1194
 msgid "Partial match"
 msgstr "Delmatchning"
 
-#: win32/HubFrame.cpp:1073
+#: win32\HubFrame.cpp:1007
 #, boost-format
 msgid "Parts: %1%"
 msgstr "Delar: %1%"
 
-#: win32/ConnectivityManualPage.cpp:191
+#: win32\ConnectivityManualPage.cpp:191
 msgid "Passive mode (last resort - has serious limitations)"
 msgstr "Passivt läge (Sista utvägen - har allvarliga begränsningar)"
 
-#: win32/QueueFrame.cpp:428
+#: win32\QueueFrame.cpp:428
 msgid "Passive user"
 msgstr "Passiv användare"
 
-#: win32/FavHubProperties.cpp:124 win32/FavHubsFrame.cpp:52
-#: win32/ProxyPage.cpp:96
+#: win32\FavHubProperties.cpp:124 win32\FavHubsFrame.cpp:52
+#: win32\ProxyPage.cpp:96
 msgid "Password"
 msgstr "Lösenord"
 
-#: win32/QueueFrame.cpp:57 win32/SearchFrame.cpp:54 win32/TransferView.cpp:48
-#: win32/FinishedFrameBase.h:728
+#: win32\QueueFrame.cpp:57 win32\SearchFrame.cpp:54 win32\TransferView.cpp:48
+#: win32\FinishedFrameBase.h:728
 msgid "Path"
 msgstr "Sökväg"
 
-#: win32/UploadFilteringPage.cpp:118
+#: win32\UploadFilteringPage.cpp:118
 msgid "Path filtering"
 msgstr "Sökvägsfiltrering"
 
-#: win32/UploadFilteringPage.cpp:128
+#: win32\UploadFilteringPage.cpp:128
 msgid "Paths"
 msgstr "Sökvägar"
 
-#: win32/QueueFrame.cpp:130
+#: win32\QueueFrame.cpp:130
 msgid "Pause"
 msgstr "Paus"
 
-#: win32/HashProgressDlg.cpp:185
+#: win32\HashProgressDlg.cpp:185
 msgid "Pause hashing"
 msgstr "Pausa hashning"
 
-#: win32/HashProgressDlg.cpp:146 win32/QueueFrame.cpp:403
-#: win32/QueueFrame.cpp:992 win32/TransferView.cpp:548
+#: win32\HashProgressDlg.cpp:146 win32\QueueFrame.cpp:403
+#: win32\QueueFrame.cpp:992 win32\TransferView.cpp:548
 msgid "Paused"
 msgstr "Pausad"
 
-#: win32/UsersFrame.cpp:187
+#: win32\UsersFrame.cpp:187
 msgid "Pending download"
 msgstr "Väntande nerladdning"
 
-#: win32/UsersFrame.cpp:397
+#: win32\UsersFrame.cpp:397
 msgid "Pending downloads information"
 msgstr "Väntande nerladdningsinformation"
 
-#: win32/UsersFrame.cpp:188
+#: win32\UsersFrame.cpp:188
 msgid "Pending upload"
 msgstr "Vantande uppladdning"
 
-#: win32/UsersFrame.cpp:412
+#: win32\UsersFrame.cpp:412
 msgid "Pending uploads information"
 msgstr "Väntande uppladdningsinformation"
 
-#: win32/GeneralPage.cpp:45 win32/SettingsDialog.cpp:156
+#: win32\GeneralPage.cpp:45 win32\SettingsDialog.cpp:156
 msgid "Personal information"
 msgstr "Personlig information"
 
-#: win32/NotificationsPage.cpp:104
+#: win32\NotificationsPage.cpp:104
 msgid "Play"
 msgstr "Spela"
 
-#: win32/NotificationsPage.cpp:88
+#: win32\NotificationsPage.cpp:88
 msgid "Play a sound"
 msgstr "Spela ljud"
 
-#: win32/WinUtil.cpp:504
+#: win32\WinUtil.cpp:504
 msgid "Please enter a nickname in the settings dialog!"
 msgstr "Ange ett användarnamn i inställningarna!"
 
-#: win32/HubFrame.cpp:763
+#: win32\HubFrame.cpp:699
 msgid "Please enter a password"
 msgstr "Var god skriv in ett lösenord"
 
-#: win32/HashProgressDlg.cpp:66
-#, fuzzy
+#: win32\HashProgressDlg.cpp:66
 msgid ""
-"Please wait while FearDC indexes your files (they won't be shared until "
+"Please wait while DC++ indexes your files (they won't be shared until "
 "they've been indexed)..."
 msgstr ""
 "Vänta medan DC++ indexerar dina filer (dom kommer inte att vara utdelade "
 "innan dom har blivit indexerade)..."
 
-#: win32/PluginPage.cpp:127
+#: win32\PluginPage.cpp:127
 msgid "Plugin information"
 msgstr "Insticksmodulsinformation"
 
-#: win32/MainWindow.cpp:420
+#: win32\MainWindow.cpp:418
 msgid "Plugin repository"
 msgstr "Insticksmoduls lagringsplats"
 
-#: win32/MainWindow.cpp:329 win32/MainWindow.cpp:482 win32/MainWindow.cpp:889
-#: win32/PluginPage.cpp:252 win32/PluginPage.cpp:337
-#: win32/SettingsDialog.cpp:199
+#: win32\MainWindow.cpp:327 win32\MainWindow.cpp:480 win32\MainWindow.cpp:883
+#: win32\PluginPage.cpp:252 win32\PluginPage.cpp:337
+#: win32\SettingsDialog.cpp:199
 msgid "Plugins"
 msgstr "Insticksmoduler"
 
-#: win32/WindowsPage.cpp:43
+#: win32\WindowsPage.cpp:41
 msgid "Popup box to input password for hubs"
 msgstr "Popupbox för hublösenord"
 
-#: win32/ProxyPage.cpp:81
+#: win32\ProxyPage.cpp:81
 msgid "Port"
 msgstr "Port"
 
-#: win32/SearchTypesPage.cpp:40 win32/SearchTypesPage.cpp:259
-#: win32/UserMatchPage.cpp:201
+#: win32\SearchTypesPage.cpp:40 win32\SearchTypesPage.cpp:259
+#: win32\UserMatchPage.cpp:201
 msgid "Predefined"
 msgstr "Fördefinierad"
 
-#: win32/ConnectivityManualPage.cpp:221
+#: win32\ConnectivityManualPage.cpp:221
 msgid "Preferred port mapper"
 msgstr "Föredragen portmappare"
 
-#: win32/TabsPage.cpp:125
+#: win32\TabsPage.cpp:125
 msgid "Preview"
 msgstr "Förhandsgranska"
 
-#: win32/HubFrame.cpp:559
+#: win32\HubFrame.cpp:558
 msgid ""
 "Prints the current hub's topic. Useful if you want to copy the topic or it "
 "contains a link you'd like to easily open."
@@ -3221,387 +3195,376 @@ msgstr ""
 "Skriver ut den nuvarande hubbens ämne. Användsningsbart om du vill kopiera "
 "ämnet eller om det innehåller en länk som man kan enkelt öppna."
 
-#: win32/QueueFrame.cpp:55
+#: win32\QueueFrame.cpp:55
 msgid "Priority"
 msgstr "Prioritet"
 
-#: win32/CertificatesPage.cpp:70
+#: win32\CertificatesPage.cpp:69
 msgid "Private key file"
 msgstr "Privat nyckelfil"
 
-#: win32/HubFrame.cpp:1164
-#, fuzzy, boost-format
-msgid "Private main chat message from %1%: %2%"
-msgstr "Privat meddelande från %1%: %2%"
-
-#: win32/HubFrame.cpp:609
-#, fuzzy, boost-format
-msgid "Private main chat message was sent to %1%: %2%"
-msgstr "Privat meddelande från %1%: %2%"
-
-#: win32/TabsPage.cpp:37
+#: win32\TabsPage.cpp:37
 msgid "Private message"
 msgstr "Privat meddelande"
 
-#: win32/HubFrame.cpp:818
+#: win32\HubFrame.cpp:754
 #, boost-format
 msgid "Private message from %1%: %2%"
 msgstr "Privat meddelande från %1%: %2%"
 
-#: win32/WinUtil.cpp:94
+#: win32\WinUtil.cpp:94
 msgid "Private message received"
 msgstr "Privat meddelande mottaget"
 
-#: win32/WinUtil.cpp:95
+#: win32\WinUtil.cpp:95
 msgid "Private message window opened"
 msgstr "Privatmeddelandefönster öppnat"
 
-#: win32/HistoryPage.cpp:81
+#: win32\HistoryPage.cpp:81
 msgid "Private messages"
 msgstr "Privata meddelanden"
 
-#: win32/SettingsDialog.cpp:162
+#: win32\SettingsDialog.cpp:162
 msgid "Proxy"
 msgstr "Proxyserver"
 
-#: win32/ProxyPage.cpp:61
+#: win32\ProxyPage.cpp:61
 msgid "Proxy settings for outgoing connections"
 msgstr "Proxyinställningar för utgående anslutningar"
 
-#: win32/MainWindow.cpp:447 win32/PublicHubsFrame.cpp:88
+#: win32\MainWindow.cpp:445 win32\PublicHubsFrame.cpp:88
 msgid "Public Hubs"
 msgstr "Publika hubbar"
 
-#: win32/DownloadPage.cpp:112 win32/DownloadPage.cpp:157
+#: win32\DownloadPage.cpp:112 win32\DownloadPage.cpp:157
 msgid "Public Hubs list"
 msgstr "Publik hubblista"
 
-#: win32/DownloadPage.cpp:115
+#: win32\DownloadPage.cpp:115
 msgid "Public Hubs list URL"
 msgstr "Adress till publik hublista"
 
-#: win32/SearchFrame.cpp:170
+#: win32\SearchFrame.cpp:170
 msgid "Purge"
 msgstr "Rensa"
 
-#: win32/SettingsDialog.cpp:168
+#: win32\SettingsDialog.cpp:168
 msgid "Queue"
 msgstr "Kö"
 
-#: win32/UsersFrame.cpp:405
+#: win32\UsersFrame.cpp:405
 msgid "Queued bytes"
 msgstr "Bytes i kö"
 
-#: win32/UsersFrame.cpp:401
+#: win32\UsersFrame.cpp:401
 msgid "Queued files"
 msgstr "Filer i kö"
 
-#: win32/MainWindow.cpp:964
+#: win32\MainWindow.cpp:958
 msgid "Quick Connect"
 msgstr "Snabbanslutning"
 
-#: win32/PublicHubsFrame.cpp:55
+#: win32\PublicHubsFrame.cpp:55
 msgid "Rating"
 msgstr "Betyg"
 
-#: win32/AboutDlg.cpp:156
+#: win32\AboutDlg.cpp:157
 #, c-format, boost-format
 msgid "Ratio (up/down): %1$0.2f"
 msgstr "Ratio (upp/ner): %1$0.2f"
 
-#: win32/CommandDlg.cpp:94
+#: win32\CommandDlg.cpp:94
 msgid "Raw"
 msgstr "Rå"
 
-#: win32/QueueFrame.cpp:932 win32/QueueFrame.cpp:951
+#: win32\QueueFrame.cpp:932 win32\QueueFrame.cpp:951
 msgid "Re&check integrity"
 msgstr "V&erifiera filintegritet"
 
-#: win32/FavoriteDirsPage.cpp:74 win32/SearchTypesPage.cpp:89
-#: win32/UploadPage.cpp:86
+#: win32\FavoriteDirsPage.cpp:74 win32\SearchTypesPage.cpp:89
+#: win32\UploadPage.cpp:86
 msgid "Re&name"
 msgstr "&Byt namn"
 
-#: win32/QueueFrame.cpp:1016
+#: win32\QueueFrame.cpp:1016
 msgid "Re-add source"
 msgstr "Lägg till källa igen"
 
-#: win32/DirectoryListingFrame.cpp:1525
+#: win32\DirectoryListingFrame.cpp:1525
 #, boost-format
 msgid "Reached the %1% of the file list, continuing from the %2%"
 msgstr "Nått %1% i fillistan, fortsätter med %2%"
 
-#: win32/SearchFrame.cpp:1149
+#: win32\SearchFrame.cpp:1149
 msgid "Ready to search..."
 msgstr "Färdig att söka..."
 
-#: win32/HubFrame.cpp:116
+#: win32\HubFrame.cpp:115
 #, boost-format
 msgid "Really close %1% hub windows?"
 msgstr "Verkligen stänga %1% hubbfönster?"
 
-#: win32/HubFrame.cpp:298
+#: win32\HubFrame.cpp:297
 msgid "Really close?"
 msgstr "Är du säker på att du vill stänga?"
 
-#: win32/MainWindow.cpp:1092
+#: win32\MainWindow.cpp:1086
 msgid "Really exit?"
 msgstr "Är du säker på att du vill avsluta?"
 
-#: win32/ADLSearchFrame.cpp:249 win32/FavHubsFrame.cpp:302
-#: win32/PluginPage.cpp:337 win32/QueueFrame.cpp:666 win32/QueueFrame.cpp:671
-#: win32/UsersFrame.cpp:437
+#: win32\ADLSearchFrame.cpp:249 win32\FavHubsFrame.cpp:302
+#: win32\PluginPage.cpp:337 win32\QueueFrame.cpp:666 win32\QueueFrame.cpp:671
+#: win32\UsersFrame.cpp:437
 msgid "Really remove?"
 msgstr "Är du säker på att du vill ta bort?"
 
-#: win32/WinUtil.cpp:581
-#, fuzzy
+#: win32\WinUtil.cpp:581
 msgid ""
 "Rebuilds the HashIndex.xml and HashData.dat files, removing entries to files "
 "that are no longer shared, or old hashes for files that have since changed. "
-"This runs in the main FearDC thread, so the interface will freeze until the "
+"This runs in the main DC++ thread, so the interface will freeze until the "
 "rebuild is finished."
 msgstr ""
 "Återuppbygger filerna HashIndex.xml och HashData.dat från början, tar bort "
 "poster till filer eller hashkoder som inte längre behövs. När detta sker "
 "kommer användargränssnittet inte vara tillängligt förrän det är klart."
 
-#: win32/HubFrame.cpp:1090
+#: win32\HubFrame.cpp:1024
 #, boost-format
 msgid "Received a redirect request to %1%, click here to follow it"
 msgstr "Mottaget en omdirigeringsförfrågan till %1%, klicka här för att följa"
 
-#: win32/HistoryPage.cpp:91 win32/MainWindow.cpp:868
+#: win32\HistoryPage.cpp:91 win32\MainWindow.cpp:862
 msgid "Recent PMs"
 msgstr "Senaste PM"
 
-#: win32/HistoryPage.cpp:94 win32/MainWindow.cpp:869
+#: win32\HistoryPage.cpp:94 win32\MainWindow.cpp:863
 msgid "Recent file lists"
 msgstr "Senaste fillistor"
 
-#: win32/HistoryPage.cpp:88 win32/MainWindow.cpp:867
+#: win32\HistoryPage.cpp:88 win32\MainWindow.cpp:861
 msgid "Recent hubs"
 msgstr "Senaste hubbar"
 
-#: win32/MainWindow.cpp:474
+#: win32\MainWindow.cpp:472
 msgid "Recent windows"
 msgstr "Senaste fönster"
 
-#: win32/MainWindow.cpp:449
+#: win32\MainWindow.cpp:447
 msgid "Reconnect"
 msgstr "Återanslut"
 
-#: win32/MainWindow.cpp:379
+#: win32\MainWindow.cpp:377
 msgid "Reconnect disconnected hubs"
 msgstr "Återanslut till nerkopplade hubbar"
 
-#: win32/HubFrame.cpp:1082 win32/HubFrame.cpp:1587
+#: win32\HubFrame.cpp:1016 win32\HubFrame.cpp:1514
 msgid "Redirect request received to a hub that's already connected"
 msgstr "Omdirigering begärd till en redan ansluten hub"
 
-#: win32/HubFrame.cpp:1582
+#: win32\HubFrame.cpp:1509
 msgid "Redirect request to an empty hub address"
 msgstr "Omdirigeringsförfrågan till en tom hubbadress"
 
-#: win32/MainWindow.cpp:480
+#: win32\MainWindow.cpp:478
 msgid "Refresh file list"
 msgstr "Uppdatera fillista"
 
-#: win32/MainWindow.cpp:316
+#: win32\MainWindow.cpp:314
 msgid "Refresh file list\tF5"
 msgstr "Uppdatera fillista\tF5"
 
-#: win32/ACFrame.cpp:180
+#: win32\ACFrame.cpp:180
 #, fuzzy
 msgid "Refresh settings"
 msgstr "Uppdatera fillista"
 
-#: win32/AppearancePage.cpp:50
+#: win32\AppearancePage.cpp:48
 msgid "Region name geolocation database (allows %[region])"
 msgstr "Lokaliseringsdatabas för region (tillåter (%[region])"
 
-#: win32/AdvancedPage.cpp:36
+#: win32\AdvancedPage.cpp:36
 msgid "Register with Windows to handle .dcext files"
 msgstr "Registrera med Windows för att hantera .dcext-filer"
 
-#: win32/AdvancedPage.cpp:34
+#: win32\AdvancedPage.cpp:34
 msgid "Register with Windows to handle dchub://, adc:// and adcs:// URL links"
 msgstr ""
 "Registrera med Windows för att hantera dchub://, adc:// och adcs:// länkar"
 
-#: win32/AdvancedPage.cpp:35
+#: win32\AdvancedPage.cpp:35
 msgid "Register with Windows to handle magnet: URI links"
 msgstr "Registrera DC++ som applikation för magnetlänkar"
 
-#: win32/ADLSearchFrame.cpp:44 win32/ADLSProperties.cpp:67
-#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1191
+#: win32\ADLSearchFrame.cpp:44 win32\ADLSProperties.cpp:67
+#: win32\UserMatchPage.cpp:216 win32\WinUtil.cpp:1194
 msgid "Regular Expression"
 msgstr "Reguljära uttryck"
 
-#: win32/UploadFilteringPage.cpp:96
+#: win32\UploadFilteringPage.cpp:96
 msgid "Regular expressions"
 msgstr "Reguljära uttryck"
 
-#: win32/PublicHubsFrame.cpp:54
+#: win32\PublicHubsFrame.cpp:54
 msgid "Reliability"
 msgstr "Pålitlighet"
 
-#: win32/QueueFrame.cpp:442
+#: win32\QueueFrame.cpp:442
 msgid "Remote ADC client does not use TLS encryption"
 msgstr "Den andra ADC-klienten använder inte TLS-kryptering"
 
-#: win32/QueueFrame.cpp:438 win32/TransferView.cpp:988
+#: win32\QueueFrame.cpp:438 win32\TransferView.cpp:988
 msgid "Remote client does not fully support TTH - cannot download"
 msgstr ""
 "Den andra klienten har inte fullt stöd för TTH - kan inte ladda från den"
 
-#: win32/FinishedFrameBase.h:467 win32/FinishedFrameBase.h:492
+#: win32\FinishedFrameBase.h:467 win32\FinishedFrameBase.h:492
 msgid "Remove &all"
 msgstr "Ta bort &alla"
 
-#: win32/QueueFrame.cpp:133
+#: win32\QueueFrame.cpp:133
 msgid "Remove file"
 msgstr "Ta bort fil"
 
-#: win32/QueuePage.cpp:36
+#: win32\QueuePage.cpp:36
 msgid "Remove slow filelists"
 msgstr "Ta bort långsamma fillistor ur kön"
 
-#: win32/QueueFrame.cpp:1025
+#: win32\QueueFrame.cpp:1025
 msgid "Remove source"
 msgstr "Ta bort källa"
 
-#: win32/QueueFrame.cpp:1034 win32/WinUtil.cpp:1687 win32/UserInfoBase.h:180
+#: win32\QueueFrame.cpp:1034 win32\WinUtil.cpp:1685 win32\UserInfoBase.h:165
 msgid "Remove user from queue"
 msgstr "Ta bort användare från kön"
 
-#: win32/HubFrame.cpp:547
+#: win32\HubFrame.cpp:548
 msgid "Removes the current hub from the list of Favorite Hubs."
 msgstr "Raderar den nuvarande hubben från listan av favorithubbar."
 
-#: win32/SearchTypesPage.cpp:226
+#: win32\SearchTypesPage.cpp:226
 msgid "Rename a search type"
 msgstr "Döp om en söktyp"
 
-#: win32/MainWindow.cpp:415
+#: win32\MainWindow.cpp:413
 msgid "Report a bug"
 msgstr "Rapportera ett fel"
 
-#: win32/MainWindow.cpp:414
+#: win32\MainWindow.cpp:412
 msgid "Request a feature"
 msgstr "Föreslå en funktion"
 
-#: win32/TransferView.cpp:1056
+#: win32\TransferView.cpp:1056
 #, boost-format
 msgid "Requesting %1%"
 msgstr "Föreslår %1%"
 
-#: win32/CertificatesPage.cpp:36
+#: win32\CertificatesPage.cpp:36
 msgid "Require TLS ADC client-client connections"
 msgstr "Kräv TLS för anslutningar för ADC klient-klient"
 
-#: win32/DownloadPage.cpp:122
+#: win32\DownloadPage.cpp:122
 #, fuzzy
 msgid "Reset Public Hub Lists"
 msgstr "Konfigurera Publika Hubblistor"
 
-#: win32/HashProgressDlg.cpp:185
+#: win32\HashProgressDlg.cpp:185
 msgid "Resume hashing"
 msgstr "Återuppta hashning"
 
-#: win32/HashProgressDlg.cpp:91
+#: win32\HashProgressDlg.cpp:91
 msgid "Run in background"
 msgstr "Kör i bakgrunden"
 
-#: win32/QueueFrame.cpp:386
+#: win32\QueueFrame.cpp:386
 msgid "Running..."
 msgstr "Kör..."
 
-#: win32/ProxyPage.cpp:72 win32/ProxyPage.cpp:76
+#: win32\ProxyPage.cpp:72 win32\ProxyPage.cpp:76
 msgid "SOCKS5"
 msgstr "SOCKS5"
 
-#: win32/ACFrame.cpp:168
+#: win32\ACFrame.cpp:168
 #, fuzzy
 msgid "Save settings now"
 msgstr "Ljudinställningar"
 
-#: win32/ConnectivityManualPage.cpp:81 win32/MainWindow.cpp:462
-#: win32/NotepadFrame.cpp:108 win32/RichTextBox.cpp:111
-#: win32/SearchFrame.cpp:124 win32/SearchFrame.cpp:176 win32/TabsPage.cpp:39
+#: win32\ConnectivityManualPage.cpp:81 win32\MainWindow.cpp:460
+#: win32\NotepadFrame.cpp:108 win32\RichTextBox.cpp:111
+#: win32\SearchFrame.cpp:124 win32\SearchFrame.cpp:176 win32\TabsPage.cpp:39
 msgid "Search"
 msgstr "Sök"
 
-#: win32/SearchFrame.cpp:1022 win32/SearchFrame.cpp:1103
-#: win32/SearchFrame.cpp:1115 win32/SearchFrame.cpp:1145
+#: win32\SearchFrame.cpp:1022 win32\SearchFrame.cpp:1103
+#: win32\SearchFrame.cpp:1115 win32\SearchFrame.cpp:1145
 #, boost-format
 msgid "Search - %1%"
 msgstr "Sök - %1%"
 
-#: win32/SearchFrame.cpp:1150
+#: win32\SearchFrame.cpp:1150
 msgid "Search - Ready to search..."
 msgstr "Sök - Färdig att söka..."
 
-#: win32/CommandDlg.cpp:115
+#: win32\CommandDlg.cpp:115
 msgid "Search Menu"
 msgstr "Sökmeny"
 
-#: win32/ADLSProperties.cpp:58
+#: win32\ADLSProperties.cpp:58
 msgid "Search String"
 msgstr "Söksträng"
 
-#: win32/NotepadFrame.cpp:109
+#: win32\NotepadFrame.cpp:109
 msgid "Search by TTH"
 msgstr "Sök med TTH"
 
-#: win32/SearchFrame.cpp:151
+#: win32\SearchFrame.cpp:151
 msgid "Search for"
 msgstr "Sök efter"
 
-#: win32/WinUtil.cpp:829
+#: win32\WinUtil.cpp:832
 msgid "Search for alternates"
 msgstr "Sök alternativa nerladdningskällor"
 
-#: win32/HistoryPage.cpp:98 win32/HistoryPage.cpp:99
+#: win32\HistoryPage.cpp:98 win32\HistoryPage.cpp:99
 msgid "Search history"
 msgstr "Sökhistorik"
 
-#: win32/SearchFrame.cpp:221
+#: win32\SearchFrame.cpp:221
 msgid "Search options"
 msgstr "Sökinställningar"
 
-#: win32/UsersFrame.cpp:92
+#: win32\UsersFrame.cpp:92
 msgid "Search port (v4)"
 msgstr "Sökport (v4)"
 
-#: win32/UsersFrame.cpp:93
+#: win32\UsersFrame.cpp:93
 msgid "Search port (v6)"
 msgstr "Sökport (v6)"
 
-#: win32/HubFrame.cpp:1148
+#: win32\HubFrame.cpp:1082
 #, boost-format
 msgid "Search spam detected from %1%"
 msgstr "Sökspam upptäckt från %1%"
 
-#: win32/SearchTypesPage.cpp:39
+#: win32\SearchTypesPage.cpp:39
 msgid "Search type"
 msgstr "Söktyp"
 
-#: win32/SearchTypesPage.cpp:58 win32/SettingsDialog.cpp:195
+#: win32\SearchTypesPage.cpp:58 win32\SettingsDialog.cpp:195
 msgid "Search types"
 msgstr "Söktyper"
 
-#: win32/SearchFrame.cpp:1097
+#: win32\SearchFrame.cpp:1097
 #, boost-format
 msgid "Searching for %1%..."
 msgstr "Söker efter %1%..."
 
-#: win32/DirectoryListingFrame.cpp:1416
+#: win32\DirectoryListingFrame.cpp:1416
 #, boost-format
 msgid "Searching for: %1%"
 msgstr "Söker efter: %1%"
 
-#: win32/SearchFrame.cpp:1113 win32/SearchFrame.cpp:1143
+#: win32\SearchFrame.cpp:1113 win32\SearchFrame.cpp:1143
 #, boost-format
 msgid "Searching too soon, next search in %1% second"
 msgid_plural "Searching too soon, next search in %1% seconds"
@@ -3610,100 +3573,94 @@ msgstr[0] ""
 msgstr[1] ""
 "Du måsta vänta innan du kan söka igen, nästa sökning om %1% sekunder"
 
-#: win32/BandwidthLimitPage.cpp:83
+#: win32\BandwidthLimitPage.cpp:83
 msgid "Secondary Transfer Rate Limiting"
 msgstr "Sekundär överföringshastighet begränsa"
 
-#: win32/BandwidthLimitPage.cpp:115
+#: win32\BandwidthLimitPage.cpp:115
 msgid "Secondary Transfer Rate Limiting Settings"
 msgstr "Sekundär överföringshastighet begränsning Inställningar"
 
-#: win32/CertificatesPage.cpp:104
+#: win32\CertificatesPage.cpp:103
 msgid "Secure connection settings"
 msgstr "Inställningar för säkra anslutningar"
 
-#: win32/SettingsDialog.cpp:194
+#: win32\SettingsDialog.cpp:194
 msgid "Security & certificates"
 msgstr "Säkerhet och certifikat"
 
-#: win32/CertificatesPage.cpp:56
+#: win32\CertificatesPage.cpp:55
 msgid "Security certificates"
 msgstr "Säkerhetscertifikat"
 
-#: win32/dwtTexts.cpp:35
+#: win32\dwtTexts.cpp:35
 msgid "Select &All\tCtrl+A"
 msgstr "Markera &Allt\tCtrl+A"
 
-#: win32/MainWindow.cpp:1039
+#: win32\MainWindow.cpp:1033
 msgid "Select a favorite hub group"
 msgstr "Välj en favoritgrupp"
 
-#: win32/StylesPage.cpp:113 win32/StylesPage.cpp:127
+#: win32\StylesPage.cpp:113 win32\StylesPage.cpp:127
 msgid "Select color"
 msgstr "Välj färg"
 
-#: win32/StylesPage.cpp:104
+#: win32\StylesPage.cpp:104
 msgid "Select font"
 msgstr "Välj typsnitt"
 
-#: win32/TabsPage.cpp:192
+#: win32\TabsPage.cpp:192
 msgid "Selected tab"
 msgstr "Vald flik"
 
-#: win32/CommandDlg.cpp:153
+#: win32\CommandDlg.cpp:153
 msgid "Send once per nick"
 msgstr "Skicka en gång per användarnamn"
 
-#: win32/AdvancedPage.cpp:44
+#: win32\AdvancedPage.cpp:44
 msgid "Send unknown /commands to the hub"
 msgstr "Skicka okända /kommandon till hubben"
 
-#: win32/HubFrame.cpp:551
+#: win32\WinUtil.cpp:575
 msgid ""
-"Sends a private main chat message to the user if supported by hub, NMDC only."
-msgstr ""
-
-#: win32/WinUtil.cpp:575
-#, fuzzy
-msgid ""
-"Sends a random FearDC advertising message to the chat, including a link to "
-"the FearDC homepage and the version number."
+"Sends a random DC++ advertising message to the chat, including a link to the "
+"DC++ homepage and the version number."
 msgstr ""
 "Skickar ett slumpmässigt reklammeddelande för DC++ till chatten, och "
 "inkluderar en länk till DC++ hemsida och versionsnummer."
 
-#: win32/CommandDlg.cpp:86 win32/UCPage.cpp:135 win32/UCPage.cpp:194
+#: win32\CommandDlg.cpp:86 win32\UCPage.cpp:135 win32\UCPage.cpp:194
 msgid "Separator"
 msgstr "Avskiljare"
 
-#: win32/FavHubsFrame.cpp:53
+#: win32\FavHubsFrame.cpp:53
 msgid "Server"
 msgstr "Server"
 
-#: win32/ACFrame.cpp:162
+#: win32\ACFrame.cpp:162
 msgid "Set default value"
 msgstr ""
 
-#: win32/QueuePage.cpp:34
+#: win32\QueuePage.cpp:34
 msgid "Set lowest prio for newly added files larger than Low prio size"
 msgstr "Sätt lägsta prioritet för nya filer större än Låg prioritets storlek"
 
-#: win32/QueueFrame.cpp:991 win32/TransferView.cpp:547
+#: win32\QueueFrame.cpp:991 win32\TransferView.cpp:547
 msgid "Set priority"
 msgstr "Ändra prioritet"
 
-#: win32/WinUtil.cpp:586
+#: win32\WinUtil.cpp:586
 msgid ""
 "Set the download speed limit in KiBs. Zero or omitted value disables the "
 "limit."
 msgstr ""
 
-#: win32/WinUtil.cpp:587
+#: win32\WinUtil.cpp:587
 msgid ""
 "Set the upload speed limit in KiBs. Zero or omitted value disables the limit."
 msgstr ""
 
-#: win32/WinUtil.cpp:576
+#: win32\WinUtil.cpp:576
 msgid ""
 "Sets Away status. New private message windows will be responded to, once, "
 "with the message you specified, or the default away message configured in "
@@ -3713,7 +3670,7 @@ msgstr ""
 "gång, med meddelandet du anger eller standardmeddelandet för bortastatus "
 "konfigurerat i inställningssidan för Personlig information."
 
-#: win32/WinUtil.cpp:572
+#: win32\WinUtil.cpp:572
 msgid ""
 "Sets the current number of download slots to the number you specify. If this "
 "is less than the current number of slots, no downloads are cancelled."
@@ -3722,7 +3679,7 @@ msgstr ""
 "väljer. Även om det nya antalet nedladdningsslottar är mindre än de pågående "
 "antalet nedladdningar avbryts de inte."
 
-#: win32/WinUtil.cpp:571
+#: win32\WinUtil.cpp:571
 msgid ""
 "Sets the current number of upload slots to the number you specify. If this "
 "is less than the current number of slots, no uploads are cancelled."
@@ -3731,228 +3688,213 @@ msgstr ""
 "väljer. Även om det nya antalet uppladdningsslottar är mindre än de pågående "
 "antalet uppladdningar avbryts de inte."
 
-#: win32/ACFrame.cpp:37
+#: win32\ACFrame.cpp:37
 #, fuzzy
 msgid "Setting name"
 msgstr "Inställningar"
 
-#: win32/MainWindow.cpp:476 win32/MainWindow.cpp:1961
-#: win32/SettingsDialog.cpp:372
+#: win32\MainWindow.cpp:474 win32\MainWindow.cpp:1949
+#: win32\SettingsDialog.cpp:372
 msgid "Settings"
 msgstr "Inställningar"
 
-#: win32/MainWindow.cpp:323
+#: win32\MainWindow.cpp:321
 msgid "Settings\tCtrl+F3"
 msgstr "Inställningar\tCtrl+F3"
 
-#: win32/ExpertsPage.cpp:52
+#: win32\ExpertsPage.cpp:52
 msgid "Settings save interval"
 msgstr "Intervall för att spara inställningar"
 
-#: win32/ACFrame.cpp:171
+#: win32\ACFrame.cpp:171
 #, fuzzy
 msgid "Settings saved"
 msgstr "Inställningar"
 
-#: win32/ACFrame.cpp:316
+#: win32\ACFrame.cpp:316
 msgid "Settings were exported to: "
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:61
+#: win32\UploadFilteringPage.cpp:61
 msgid "Share hidden files"
 msgstr "Dela gömda filer"
 
-#: win32/HubFrame.cpp:60 win32/HubFrame.cpp:439 win32/PublicHubsFrame.cpp:49
-#: win32/UserInfoBase.cpp:127
+#: win32\HubFrame.cpp:59 win32\HubFrame.cpp:438 win32\PublicHubsFrame.cpp:49
+#: win32\UserInfoBase.cpp:127
 msgid "Shared"
 msgstr "Utdelat"
 
-#: win32/UsersFrame.cpp:81
+#: win32\UsersFrame.cpp:81
 msgid "Shared bytes"
 msgstr "Delade bytes"
 
-#: win32/UploadPage.cpp:64
+#: win32\UploadPage.cpp:64
 msgid "Shared directories"
 msgstr "Delade mappar"
 
-#: win32/UsersFrame.cpp:82
+#: win32\UsersFrame.cpp:82
 msgid "Shared files"
 msgstr "Delade filer"
 
-#: win32/SettingsDialog.cpp:172
+#: win32\SettingsDialog.cpp:172
 msgid "Sharing"
 msgstr "Utdelning"
 
-#: win32/ShellMenu.cpp:103
+#: win32\ShellMenu.cpp:103
 msgid "Shell menu"
 msgstr "Shellmeny"
 
-#: win32/ShellMenu.cpp:105
+#: win32\ShellMenu.cpp:105
 msgid "Shell menus"
 msgstr "Systemmenyer"
 
-#: win32/MainWindow.cpp:1958
+#: win32\MainWindow.cpp:1946
 msgid "Show"
 msgstr "Visa"
 
-#: win32/AppearancePage.cpp:43 win32/FavHubGroupsDlg.cpp:164
-#: win32/FavHubProperties.cpp:160
+#: win32\AppearancePage.cpp:43 win32\FavHubGroupsDlg.cpp:164
+#: win32\FavHubProperties.cpp:160
 msgid "Show joins / parts in chat by default"
 msgstr "Visa när användare ansluter/lämnar hubben"
 
-#: win32/StylesPage.cpp:138
-#, fuzzy
-msgid "Show those generated by FearDC"
+#: win32\AdvancedPage.cpp:53
+msgid "Show testing release announcements and information"
+msgstr ""
+
+#: win32\StylesPage.cpp:138
+msgid "Show those generated by DC++"
 msgstr "Visar de som är skapade av DC++"
 
-#: win32/AppearancePage.cpp:40
+#: win32\AppearancePage.cpp:40
 msgid "Show timestamps in chat by default"
 msgstr "Visa tid i chatten"
 
-#: win32/AppearancePage.cpp:47
-msgid "Show user IP in chat"
-msgstr ""
-
-#: win32/AppearancePage.cpp:48
-msgid "Show user country in chat"
-msgstr ""
-
-#: win32/DirectoryListingFrame.cpp:65 win32/MainWindow.cpp:1822
-#: win32/QueueFrame.cpp:53 win32/SearchFrame.cpp:53 win32/SearchFrame.cpp:181
-#: win32/TransferView.cpp:55 win32/UploadPage.cpp:47
+#: win32\DirectoryListingFrame.cpp:65 win32\MainWindow.cpp:1810
+#: win32\QueueFrame.cpp:53 win32\SearchFrame.cpp:53 win32\SearchFrame.cpp:181
+#: win32\TransferView.cpp:55 win32\UploadPage.cpp:47
 msgid "Size"
 msgstr "Storlek"
 
-#: win32/DirectoryListingFrame.cpp:1218
+#: win32\DirectoryListingFrame.cpp:1218
 #, boost-format
 msgid "Size (total): %1%"
 msgstr "Storlekt (totalt): %1%"
 
-#: win32/ADLSProperties.cpp:96
+#: win32\ADLSProperties.cpp:96
 msgid "Size Type"
 msgstr "Storlekstyp"
 
-#: win32/DirectoryListingFrame.cpp:1235 win32/QueueFrame.cpp:264
-#: win32/QueueFrame.cpp:271
+#: win32\DirectoryListingFrame.cpp:1235 win32\QueueFrame.cpp:264
+#: win32\QueueFrame.cpp:271
 #, boost-format
 msgid "Size: %1%"
 msgstr "Storlek: %1%"
 
-#: win32/WindowsPage.cpp:40
-msgid "Skip tray icon notification on PM from bots and hub"
-msgstr ""
-
-#: win32/QueuePage.cpp:40
+#: win32\QueuePage.cpp:40
 msgid "Skip zero-byte files"
 msgstr "Skippa noll-byte filer"
 
-#: win32/PrivateFrame.cpp:397
+#: win32\PrivateFrame.cpp:370
 msgid "Slot granted"
 msgstr "Slots givna"
 
-#: win32/SearchFrame.cpp:55 win32/UserInfoBase.cpp:140
+#: win32\SearchFrame.cpp:55 win32\UserInfoBase.cpp:140
 msgid "Slots"
 msgstr "Slots"
 
-#: win32/WinUtil.cpp:643
+#: win32\WinUtil.cpp:643
 msgid "Slots set"
 msgstr "Slots satta"
 
-#: win32/ExpertsPage.cpp:53
+#: win32\ExpertsPage.cpp:53
 msgid "Socket read buffer"
 msgstr "Socket läsbuffert"
 
-#: win32/ExpertsPage.cpp:54
+#: win32\ExpertsPage.cpp:54
 msgid "Socket write buffer"
 msgstr "Socket skrivbuffert"
 
-#: win32/PluginPage.cpp:138
+#: win32\PluginPage.cpp:138
 #, boost-format
 msgid "Some plugins may require you to restart %1%"
 msgstr "Vissa insticksmoduler kan kräva att du startar om %1%"
 
-#: win32/AppearancePage.cpp:45
+#: win32\AppearancePage.cpp:45
 msgid "Sort favorite users first"
 msgstr "Sortera favoriter först"
 
-#: win32/NotificationsPage.cpp:37
+#: win32\NotificationsPage.cpp:37
 msgid "Sound"
 msgstr "Ljud"
 
-#: win32/NotificationsPage.cpp:98
+#: win32\NotificationsPage.cpp:98
 msgid "Sound settings"
 msgstr "Ljudinställningar"
 
-#: win32/ADLSearchFrame.cpp:45 win32/ADLSProperties.cpp:72
+#: win32\ADLSearchFrame.cpp:45 win32\ADLSProperties.cpp:72
 msgid "Source Type"
 msgstr "Källtyp"
 
-#: win32/QueueFrame.cpp:436
+#: win32\QueueFrame.cpp:436
 msgid "Source too slow"
 msgstr "Källan är för långsam"
 
-#: win32/WinUtil.cpp:570
+#: win32\WinUtil.cpp:570
 msgid "Speak as a third person."
 msgstr ""
 
-#: win32/HubFrame.cpp:605
-#, boost-format
-msgid "Specified user is not online: %1%"
-msgstr ""
-
-#: win32/WinUtil.cpp:701
+#: win32\WinUtil.cpp:696
 msgid "Specify a URL"
 msgstr "Specificera URL"
 
-#: win32/UserMatchDlg.cpp:147
+#: win32\UserMatchDlg.cpp:147
 msgid "Specify a name for this user matching definition"
 msgstr "Specifiera namnet för denna användarmatchningsdefinitionen"
 
-#: win32/WinUtil.cpp:659 win32/WinUtil.cpp:683 win32/WinUtil.cpp:689
-#: win32/WinUtil.cpp:695
+#: win32\WinUtil.cpp:659 win32\WinUtil.cpp:678 win32\WinUtil.cpp:684
+#: win32\WinUtil.cpp:690
 msgid "Specify a search string"
 msgstr "Specificera en söksträng"
 
-#: win32/HubFrame.cpp:457
+#: win32\HubFrame.cpp:456
 msgid "Specify a server to connect to"
 msgstr "Specificera en server att koppa upp till"
 
-#: win32/RichTextBox.cpp:111
+#: win32\RichTextBox.cpp:111
 msgid "Specify search string"
 msgstr "Ange söksträng"
 
-#: win32/TransferView.cpp:53 win32/FinishedFrameBase.h:733
-#: win32/FinishedFrameBase.h:744
+#: win32\TransferView.cpp:53 win32\FinishedFrameBase.h:733
+#: win32\FinishedFrameBase.h:744
 msgid "Speed"
 msgstr "Hastighet"
 
-#: win32/DirectoryListingFrame.cpp:1219
+#: win32\DirectoryListingFrame.cpp:1219
 #, boost-format
 msgid "Speed: %1%/s"
 msgstr "Hastighet: %1%/s"
 
-#: win32/QueueFrame.cpp:129
+#: win32\QueueFrame.cpp:129
 msgid "Start"
 msgstr "Start"
 
-#: win32/AdvancedPage.cpp:52
-#, fuzzy
-msgid "Start FearDC when Windows starts"
+#: win32\AdvancedPage.cpp:52
+msgid "Start DC++ when Windows starts"
 msgstr "Starta DC++ när Windows startar"
 
-#: win32/PrivateFrame.cpp:539
+#: win32\PrivateFrame.cpp:512
 msgid "Start a direct encrypted channel"
 msgstr "Starta en direkt och krypterad kanal"
 
-#: win32/MagnetDlg.cpp:106
+#: win32\MagnetDlg.cpp:106
 msgid "Start a search for this file"
 msgstr "Starta en sökning efter den här filen"
 
-#: win32/QueueFrame.cpp:1188
+#: win32\QueueFrame.cpp:1188
 msgid "Started..."
 msgstr "Startad..."
 
-#: win32/PrivateFrame.cpp:431
+#: win32\PrivateFrame.cpp:404
 msgid ""
 "Starts a direct encrypted communication channel to avoid spying on your "
 "private messages."
@@ -3960,112 +3902,112 @@ msgstr ""
 "Startar en direkt och krypterad kommunikationskanal för att undvika att "
 "andra kan spionera på dina privata meddelanden."
 
-#: win32/HashProgressDlg.cpp:71
+#: win32\HashProgressDlg.cpp:71
 msgid "Statistics"
 msgstr "Statistik"
 
-#: win32/ACFrame.cpp:38 win32/FavHubsFrame.cpp:48 win32/PublicHubsFrame.cpp:43
-#: win32/QueueFrame.cpp:52 win32/TransferView.cpp:49
+#: win32\ACFrame.cpp:38 win32\FavHubsFrame.cpp:48 win32\PublicHubsFrame.cpp:43
+#: win32\QueueFrame.cpp:52 win32\TransferView.cpp:49
 msgid "Status"
 msgstr "Status"
 
-#: win32/UsersFrame.cpp:56
+#: win32\UsersFrame.cpp:56
 msgid "Status / Time last seen"
 msgstr "Status / Tid senaste syntes"
 
-#: win32/MainWindow.cpp:373
+#: win32\MainWindow.cpp:371
 msgid "Status bar\tCtrl+3"
 msgstr "Statusrad\tCtrl+3"
 
-#: win32/MainWindow.cpp:1234
+#: win32\MainWindow.cpp:1224
 msgid "Status: Available - Double-click to switch to Away"
 msgstr "Status: Tillgänglig - Dubbelklicka för att byta till Bortaläge"
 
-#: win32/MainWindow.cpp:1233
+#: win32\MainWindow.cpp:1223
 msgid "Status: Away - Double-click to switch to Available"
 msgstr "Status: Bortaläge - Dubbelklicka för att byta till Tillgänglig"
 
-#: win32/HubFrame.cpp:759
+#: win32\HubFrame.cpp:695
 msgid "Stored password sent..."
 msgstr "Lagrat lösenord sänt..."
 
-#: win32/SettingsDialog.cpp:178 win32/StylesPage.cpp:67
+#: win32\SettingsDialog.cpp:178 win32\StylesPage.cpp:67
 msgid "Styles"
 msgstr "Stilar"
 
-#: win32/DirectoryListingFrame.cpp:366
+#: win32\DirectoryListingFrame.cpp:366
 msgid "Subtract list"
 msgstr "Ta-bort lista"
 
-#: win32/CertificatesPage.cpp:40
+#: win32\CertificatesPage.cpp:39
 msgid "Support direct encrypted private message channels"
 msgstr "Stöd direkta och krypterade privata meddelandekanaler"
 
-#: win32/MainWindow.cpp:359 win32/SystemFrame.cpp:36 win32/TabsPage.cpp:40
+#: win32\MainWindow.cpp:357 win32\SystemFrame.cpp:36 win32\TabsPage.cpp:40
 msgid "System Log"
 msgstr "Systemlogg"
 
-#: win32/ListFilter.cpp:160
+#: win32\ListFilter.cpp:160
 msgid "TB"
 msgstr "TB"
 
-#: win32/UsersFrame.cpp:98
+#: win32\UsersFrame.cpp:98
 msgid "TLS Keyprint"
 msgstr "TLS Keyprint"
 
-#: win32/AboutDlg.cpp:112 win32/DirectoryListingFrame.cpp:67
-#: win32/QueueFrame.cpp:61 win32/SearchFrame.cpp:60 win32/TransferView.cpp:1003
+#: win32\AboutDlg.cpp:113 win32\DirectoryListingFrame.cpp:67
+#: win32\QueueFrame.cpp:61 win32\SearchFrame.cpp:60 win32\TransferView.cpp:1003
 msgid "TTH"
 msgstr "TTH"
 
-#: win32/TabsPage.cpp:137
+#: win32\TabsPage.cpp:137
 msgid "Tab highlight on content change"
 msgstr "Markera flik när innehållet ändras"
 
-#: win32/TabsPage.cpp:84
+#: win32\TabsPage.cpp:84
 msgid "Tab style"
 msgstr "Flikstil"
 
-#: win32/TabsPage.cpp:109
+#: win32\TabsPage.cpp:109
 msgid "Tab width"
 msgstr "Flikbredd"
 
-#: win32/SettingsDialog.cpp:179
+#: win32\SettingsDialog.cpp:179
 msgid "Tabs"
 msgstr "Flikar"
 
-#: win32/HubFrame.cpp:62 win32/UserInfoBase.cpp:129 win32/UsersFrame.cpp:101
+#: win32\HubFrame.cpp:61 win32\UserInfoBase.cpp:129 win32\UsersFrame.cpp:101
 msgid "Tag"
 msgstr "Tagg"
 
-#: win32/MainWindow.cpp:1534
+#: win32\MainWindow.cpp:1524
 msgid "Testing nags can be fully disabled via Settings > Advanced."
 msgstr ""
 
-#: win32/MainWindow.cpp:1530
-msgid "Testing version of FearDC"
+#: win32\MainWindow.cpp:1520
+msgid "Testing version of DC++"
 msgstr ""
 
-#: win32/MainWindow.cpp:1531 win32/MainWindow.cpp:1542
-msgid "Thank you for using a testing version of FearDC!"
+#: win32\MainWindow.cpp:1521 win32\MainWindow.cpp:1532
+msgid "Thank you for using a testing version of DC++!"
 msgstr ""
 
-#: win32/MainWindow.cpp:1678 win32/MainWindow.cpp:1748
+#: win32\MainWindow.cpp:1668 win32\MainWindow.cpp:1738
 #, boost-format
 msgid "The %1% GeoIP database could not be updated"
 msgstr "Lokaliseringsdatabasen %1% kunde inte uppdateras"
 
-#: win32/MainWindow.cpp:1707 win32/MainWindow.cpp:1709
-#: win32/MainWindow.cpp:1737
+#: win32\MainWindow.cpp:1697 win32\MainWindow.cpp:1699
+#: win32\MainWindow.cpp:1727
 #, boost-format
 msgid "The %1% GeoIP database has been successfully updated"
 msgstr "Lokaliseringsdatabasen %1% har blivit uppdaterad"
 
-#: win32/PrivateFrame.cpp:595
+#: win32\PrivateFrame.cpp:568
 msgid "The direct encrypted channel has been disconnected"
 msgstr "Den direkta och krypterade kanalen har blivit nerstängd"
 
-#: win32/FavHubGroupsDlg.cpp:338
+#: win32\FavHubGroupsDlg.cpp:338
 #, boost-format
 msgid ""
 "The group \"%1%\" contains %2% hubs; remove all of the hubs as well?\n"
@@ -4079,7 +4021,7 @@ msgstr ""
 "Om du väljer \"Ja\" kommer alla hubbar att raderas!\n"
 "Om du väljer \"Nej\" kommer hubbar att flyttas till huvudgruppen."
 
-#: win32/MainWindow.cpp:1853
+#: win32\MainWindow.cpp:1841
 msgid ""
 "The menu bar is now hidden. Press Alt or F10 to temporarily bring it back "
 "into view."
@@ -4087,50 +4029,41 @@ msgstr ""
 "Menyn är nu dold. Tryck på Alt eller F10 för att temporärt ta tillbaka den i "
 "vyn."
 
-#: win32/HubFrame.cpp:635
+#: win32\HubFrame.cpp:603
 msgid "The message cannot be delivered because the hub is offline."
 msgstr "Meddelandet kunde inte skickas för att hubben är inte igång."
 
-#: win32/PrivateFrame.cpp:462
+#: win32\PrivateFrame.cpp:435
 msgid "The message cannot be delivered because the user is offline."
 msgstr ""
 "Meddelandet kunde inte skickas för att användaren är inte längre tillgänglig."
 
-#: win32/WinUtil.cpp:1598
+#: win32\WinUtil.cpp:1596
 msgid "The requested link is "
 msgstr "Den begärda länken är "
 
-#: win32/PrivateFrame.cpp:343
+#: win32\PrivateFrame.cpp:316
 #, fuzzy
 msgid "The user does not support secure encrypted connections"
 msgstr "Användaren stödjer inte CCPM i ADC"
 
-#: win32/PrivateFrame.cpp:344
+#: win32\PrivateFrame.cpp:317
 msgid "The user does not support the CCPM ADC extension"
 msgstr "Användaren stödjer inte CCPM i ADC"
 
-#: win32/HubFrame.cpp:586
-msgid "This command is not yet supported on ADC hubs."
-msgstr ""
-
-#: win32/HubFrame.cpp:589
-#, fuzzy
-msgid "This hub does not support MCTo extension."
-msgstr "Användaren stödjer inte CCPM i ADC"
-
-#: win32/HubFrame.cpp:1249
+#: win32\HubFrame.cpp:1176
 msgid "This hub is not a favorite hub"
 msgstr "Denna hubb är inte din föredragna hubb"
 
-#: win32/NotificationsPage.cpp:274
+#: win32\NotificationsPage.cpp:274
 msgid "This is an example of a balloon popup notification!"
 msgstr "Detta är ett exempel på en balongnotifiering!"
 
-#: win32/MainWindow.cpp:1533
+#: win32\MainWindow.cpp:1523
 msgid "This message will show up in the status bar in the future."
 msgstr ""
 
-#: win32/SearchTypesPage.cpp:212
+#: win32\SearchTypesPage.cpp:212
 msgid ""
 "This will delete all defined search types and restore the default ones. Do "
 "you want to continue?"
@@ -4138,7 +4071,7 @@ msgstr ""
 "Detta kommer att ta bort alla egna söktyper och återställa till standard. "
 "Vill du fortsätta?"
 
-#: win32/DownloadPage.cpp:157
+#: win32\DownloadPage.cpp:157
 #, fuzzy
 msgid ""
 "This will remove all existing hublist entries and reset to the default "
@@ -4147,31 +4080,31 @@ msgstr ""
 "Detta kommer att ta bort alla egna söktyper och återställa till standard. "
 "Vill du fortsätta?"
 
-#: win32/ListFilter.cpp:152
+#: win32\ListFilter.cpp:152
 msgid "TiB"
 msgstr "TiB"
 
-#: win32/FinishedFrameBase.h:735 win32/FinishedFrameBase.h:746
+#: win32\FinishedFrameBase.h:735 win32\FinishedFrameBase.h:746
 msgid "Time"
 msgstr "Tid"
 
-#: win32/TransferView.cpp:52
+#: win32\TransferView.cpp:52
 msgid "Time left"
 msgstr "Tid kvar"
 
-#: win32/AppearancePage.cpp:71
+#: win32\AppearancePage.cpp:69
 msgid "Timestamp format"
 msgstr "Format för tidsstämpel"
 
-#: win32/CommandDlg.cpp:148
+#: win32\CommandDlg.cpp:148
 msgid "To"
 msgstr "till"
 
-#: win32/WindowsPage.cpp:42
+#: win32\WindowsPage.cpp:40
 msgid "Toggle window when selecting an active tab"
 msgstr "Visa fönster när du väljer en aktiv flik"
 
-#: win32/HubFrame.cpp:536
+#: win32\HubFrame.cpp:537
 msgid ""
 "Toggles the displaying of favorite users joining the hub. Does not require /"
 "showjoins to be enabled."
@@ -4179,7 +4112,7 @@ msgstr ""
 "Växlar visning av favoritanvändare som ansluter sig till hubben. Kräver inte "
 "att /showjoins är aktiverat."
 
-#: win32/HubFrame.cpp:534
+#: win32\HubFrame.cpp:535
 msgid ""
 "Toggles the displaying of users joining the hub. This only takes effect for "
 "freshly-arriving users."
@@ -4187,82 +4120,82 @@ msgstr ""
 "Växlar visning av användare som ansluter sig till hubben. Detta ger bara "
 "effekt på nyligen anslutna användare."
 
-#: win32/HubFrame.cpp:538
+#: win32\HubFrame.cpp:539
 msgid "Toggles visibility of the list of users for the current hub."
 msgstr "Växlar synligheten av listan över användare för den aktuella hubben."
 
-#: win32/MainWindow.cpp:1816
+#: win32\MainWindow.cpp:1804
 msgid "Toolbar"
 msgstr "Verktygsfält"
 
-#: win32/MainWindow.cpp:371
+#: win32\MainWindow.cpp:369
 msgid "Toolbar\tCtrl+1"
 msgstr "Verktygsfält \tCtrl+1"
 
-#: win32/UploadPage.cpp:81
+#: win32\UploadPage.cpp:81
 msgid "Total size:"
 msgstr "Total storlek:"
 
-#: win32/UsersFrame.cpp:85
+#: win32\UsersFrame.cpp:85
 msgid "Total slots"
 msgstr "Totala slottar"
 
-#: win32/AboutDlg.cpp:148
+#: win32\AboutDlg.cpp:149
 msgid "Totals"
 msgstr "Totalt"
 
-#: win32/ConnectivityManualPage.cpp:75 win32/ConnectivityManualPage.cpp:140
+#: win32\ConnectivityManualPage.cpp:75 win32\ConnectivityManualPage.cpp:140
 msgid "Transfer"
 msgstr "Överföring"
 
-#: win32/BandwidthLimitPage.cpp:56
+#: win32\BandwidthLimitPage.cpp:56
 msgid "Transfer Rate Limiting"
 msgstr "Överföringsbegränsning"
 
-#: win32/MainWindow.cpp:372
+#: win32\MainWindow.cpp:370
 msgid "Transfer view\tCtrl+2"
 msgstr "Överföringsöversikt\tCtrl+2"
 
-#: win32/FinishedFrameBase.h:730 win32/FinishedFrameBase.h:743
+#: win32\FinishedFrameBase.h:730 win32\FinishedFrameBase.h:743
 msgid "Transferred"
 msgstr "Överförd"
 
-#: win32/TransferView.cpp:54
+#: win32\TransferView.cpp:54
 msgid "Transferred (Ratio)"
 msgstr "Överfört (förhållande)"
 
-#: win32/StylesPage.cpp:147
+#: win32\StylesPage.cpp:147
 msgid "Transfers"
 msgstr "Överföringar"
 
-#: win32/CertificatesPage.cpp:86
+#: win32\CertificatesPage.cpp:85
 msgid "Trusted certificates path"
 msgstr "Sökväg för pålitliga certifikat"
 
-#: win32/ACFrame.cpp:39 win32/DirectoryListingFrame.cpp:64
-#: win32/QueueFrame.cpp:62 win32/SearchFrame.cpp:52
+#: win32\ACFrame.cpp:39 win32\DirectoryListingFrame.cpp:64
+#: win32\QueueFrame.cpp:62 win32\SearchFrame.cpp:52
 msgid "Type"
 msgstr "Typ"
 
-#: win32/MainWindow.cpp:1212
+#: win32\MainWindow.cpp:1202
 #, boost-format
 msgid "U: %1%"
 msgstr "U: %1%"
 
-#: win32/MainWindow.cpp:1220
+#: win32\MainWindow.cpp:1210
 #, boost-format
 msgid "U: %1%/s (%2%)"
 msgstr "U: %1%/s (%2%)"
 
-#: win32/UserInfoBase.h:186
+#: win32\UserInfoBase.h:171
 msgid "Un-ignore chat"
 msgstr "Ej ignorera chatten"
 
-#: win32/WinUtil.cpp:577
+#: win32\WinUtil.cpp:577
 msgid "Un-sets Away status."
 msgstr "Avmarkerar Ivägstatus"
 
-#: win32/MainWindow.cpp:1391
+#: win32\MainWindow.cpp:1381
 #, boost-format
 msgid ""
 "Unable to open %1% port. Searching or file transfers will not work correctly "
@@ -4273,235 +4206,235 @@ msgstr ""
 "fungera förrän du ändrar inställningar eller avslutar de applikationer som "
 "använder denna port."
 
-#: win32/FavoriteDirsPage.cpp:146 win32/FavoriteDirsPage.cpp:175
+#: win32\FavoriteDirsPage.cpp:146 win32\FavoriteDirsPage.cpp:175
 msgid "Under what name you see the directory"
 msgstr "Under vilket namn du ser mappen"
 
-#: win32/DownloadPage.cpp:64
+#: win32\DownloadPage.cpp:64
 msgid "Unfinished downloads directory"
 msgstr "Mapp för pågående nedladdningar"
 
-#: win32/QueueFrame.cpp:1191
+#: win32\QueueFrame.cpp:1191
 msgid "Unfinished file not found"
 msgstr "Den oavslutade filen kunde inte hittas"
 
-#: win32/QueueFrame.cpp:1194
+#: win32\QueueFrame.cpp:1194
 msgid "Unfinished file too small"
 msgstr "Den oavslutad filen är för liten"
 
-#: win32/QueueFrame.cpp:392 win32/QueueFrame.cpp:393
+#: win32\QueueFrame.cpp:392 win32\QueueFrame.cpp:393
 msgid "Unknown"
 msgstr "Okänd"
 
-#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:451
+#: win32\HubFrame.cpp:585 win32\PrivateFrame.cpp:424
 #, boost-format
 msgid "Unknown command: %1%"
 msgstr "Okänt kommando: %1%"
 
-#: win32/DirectoryListingFrame.cpp:348
+#: win32\DirectoryListingFrame.cpp:348
 msgid "Up one level"
 msgstr "Upp en nivå"
 
-#: win32/PluginInfoDlg.cpp:104
+#: win32\PluginInfoDlg.cpp:104
 msgid "Update the plugin"
 msgstr "Uppdatera insticksmodul"
 
-#: win32/PluginInfoDlg.cpp:107
+#: win32\PluginInfoDlg.cpp:107
 msgid "Updating a plugin"
 msgstr "Uppdaterar insticksmodul"
 
-#: win32/MainWindow.cpp:1682
+#: win32\MainWindow.cpp:1672
 #, boost-format
 msgid "Updating the %1% GeoIP database..."
 msgstr "Uppdaterar lokaliseringsdatabasen %1%"
 
-#: win32/BandwidthLimitPage.cpp:148
+#: win32\BandwidthLimitPage.cpp:148
 msgid "Upload Slots"
 msgstr "Uppladdningsplatser"
 
-#: win32/MainWindow.cpp:901 win32/MainWindow.cpp:1963
+#: win32\MainWindow.cpp:895 win32\MainWindow.cpp:1951
 msgid "Upload limit"
 msgstr "Uppladdningsbegränsning"
 
-#: win32/WinUtil.cpp:710
+#: win32\WinUtil.cpp:706
 msgid "Upload limit disabled"
 msgstr "Ingen uppladdningsbegränsning"
 
-#: win32/WinUtil.cpp:710
+#: win32\WinUtil.cpp:706
 #, boost-format
 msgid "Upload limit set to %1% KiB/s"
 msgstr "Uppladdningsbegränsning är %1% KiB/s"
 
-#: win32/MainWindow.cpp:1228
+#: win32\MainWindow.cpp:1218
 #, boost-format
 msgid "Upload limit: %1%/s - Click to adjust"
 msgstr "Uppladdningsbegränsning: %1%/s - Klicka för att ändra"
 
-#: win32/MainWindow.cpp:1922 win32/UploadPage.cpp:104
+#: win32\MainWindow.cpp:1910 win32\UploadPage.cpp:104
 msgid "Upload slots"
 msgstr "Ladda upp plats"
 
-#: win32/UsersFrame.cpp:83
+#: win32\UsersFrame.cpp:83
 msgid "Upload speed"
 msgstr "Uppladdningshastighet"
 
-#: win32/AboutDlg.cpp:152
+#: win32\AboutDlg.cpp:153
 #, boost-format
 msgid "Upload: %1%, Download: %2%"
 msgstr "Uppladdning: %1%, Nedladdning: %2%"
 
-#: win32/TransferView.cpp:1083
+#: win32\TransferView.cpp:1083
 #, boost-format
 msgid "Uploading %1%"
 msgstr "Uppladdning: %1%"
 
-#: win32/TransferView.cpp:350
+#: win32\TransferView.cpp:350
 #, boost-format
 msgid "Uploading to %1% users"
 msgstr "Laddar upp till %1% användare"
 
-#: win32/StylesPage.cpp:162
+#: win32\StylesPage.cpp:162
 msgid "Uploads"
 msgstr "Uppladdningar"
 
-#: win32/AdvancedPage.cpp:46
+#: win32\AdvancedPage.cpp:46
 msgid "Use CTRL for line history"
 msgstr "Använd CTRL för linjehistorik"
 
-#: win32/ProxyPage.cpp:108
+#: win32\ProxyPage.cpp:108
 msgid "Use SOCKS5 server to resolve host names"
 msgstr "Använd SOCKS5 för att avgöra värdnamn"
 
-#: win32/AdvancedPage.cpp:48
+#: win32\AdvancedPage.cpp:48
 msgid "Use extended menus with icons and titles"
 msgstr "Använd utsträckta menyer med ikoner och titlar"
 
-#: win32/BandwidthLimitPage.cpp:93
+#: win32\BandwidthLimitPage.cpp:93
 msgid "Use second set of bandwidth limits from"
 msgstr "Använd andra grupp av bandbredd begränsningar från"
 
-#: win32/UploadFilteringPage.cpp:114
+#: win32\UploadFilteringPage.cpp:114
 msgid "Use semicolon to separate multiple extensions."
 msgstr "Använd semikolon för att separera flera filändelser."
 
-#: win32/UploadFilteringPage.cpp:130
+#: win32\UploadFilteringPage.cpp:130
 msgid "Use semicolon to separate multiple paths."
 msgstr "Använd semikolon för att separera flera sökvägar."
 
-#: win32/UploadFilteringPage.cpp:98
+#: win32\UploadFilteringPage.cpp:98
 msgid "Use semicolon to separate multiple regular expressions."
 msgstr "Använd semikolon för att separera flera reguljära uttryck"
 
-#: win32/TabsPage.cpp:73
+#: win32\TabsPage.cpp:73
 msgid "Use standard Windows tabs"
 msgstr "Använd Windows standardflikar"
 
-#: win32/AdvancedPage.cpp:49
+#: win32\AdvancedPage.cpp:49
 msgid "Use system icons when browsing files (slows browsing down a bit)"
 msgstr ""
 "Använd systemikoner när du bläddrar igenom filer (saktar ner bläddrandet en "
 "del)"
 
-#: win32/DirectoryListingFrame.cpp:916 win32/SearchFrame.cpp:51
-#: win32/TransferView.cpp:50
+#: win32\DirectoryListingFrame.cpp:916 win32\SearchFrame.cpp:51
+#: win32\TransferView.cpp:50
 msgid "User"
 msgstr "Användare"
 
-#: win32/FavHubsFrame.cpp:54
+#: win32\FavHubsFrame.cpp:54
 msgid "User Description"
 msgstr "Användarbeskrivning"
 
-#: win32/CommandDlg.cpp:118
+#: win32\CommandDlg.cpp:118
 msgid "User Menu"
 msgstr "Användarmeny"
 
-#: win32/QueueFrame.cpp:440
+#: win32\QueueFrame.cpp:440
 msgid "User certificate not trusted"
 msgstr "Användarcertifidat ej betrott"
 
-#: win32/SettingsDialog.cpp:193
+#: win32\SettingsDialog.cpp:193
 msgid "User commands"
 msgstr "Användarkommandon"
 
-#: win32/SettingsDialog.cpp:196
+#: win32\SettingsDialog.cpp:196
 msgid "User matching"
 msgstr "Användarmatchning"
 
-#: win32/UserMatchDlg.cpp:135
+#: win32\UserMatchDlg.cpp:135
 msgid "User matching definition"
 msgstr "Användarmatchningsdefinition"
 
-#: win32/UserMatchPage.cpp:62
+#: win32\UserMatchPage.cpp:62
 msgid "User matching definitions"
 msgstr "Användarmatchningsdefinitioner"
 
-#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:338
-#: win32/PrivateFrame.cpp:462 win32/QueueFrame.cpp:380
+#: win32\DirectoryListingFrame.cpp:1266 win32\PrivateFrame.cpp:311
+#: win32\PrivateFrame.cpp:435 win32\QueueFrame.cpp:380
 msgid "User offline"
 msgstr "Användare offline"
 
-#: win32/ACFrame.h:140
+#: win32\ACFrame.h:140
 #, fuzzy
 msgid "User set"
 msgstr "Användare"
 
-#: win32/PrivateFrame.cpp:299
+#: win32\PrivateFrame.cpp:272
 msgid "User went offline"
 msgstr "Användaren blev offline"
 
-#: win32/PrivateFrame.cpp:299
+#: win32\PrivateFrame.cpp:272
 msgid "User went online"
 msgstr "Användaren kopplade ner"
 
-#: win32/MainWindow.cpp:454 win32/PublicHubsFrame.cpp:46
-#: win32/QueueFrame.cpp:56 win32/StylesPage.cpp:149 win32/UsersFrame.cpp:107
+#: win32\MainWindow.cpp:452 win32\PublicHubsFrame.cpp:46
+#: win32\QueueFrame.cpp:56 win32\StylesPage.cpp:149 win32\UsersFrame.cpp:107
 msgid "Users"
 msgstr "Användare"
 
-#: win32/PublicHubsFrame.cpp:261
+#: win32\PublicHubsFrame.cpp:261
 #, boost-format
 msgid "Users: %1%"
 msgstr "Användare: %1%"
 
-#: win32/ACFrame.cpp:40 win32/StringListDlg.cpp:84
+#: win32\ACFrame.cpp:40 win32\StringListDlg.cpp:84
 msgid "Value"
 msgstr "Värde"
 
-#: win32/PluginInfoDlg.cpp:89 win32/PluginPage.cpp:234
+#: win32\PluginInfoDlg.cpp:89 win32\PluginPage.cpp:234
 msgid "Version: "
 msgstr "Version: "
 
-#: win32/AppearancePage.cpp:41
+#: win32\AppearancePage.cpp:41
 msgid "View status messages in chat"
 msgstr "Visa statusmeddelanden i chatten"
 
-#: win32/TextFrame.cpp:98
+#: win32\TextFrame.cpp:98
 #, boost-format
 msgid "Viewing text file: %1%"
 msgstr "Visar textfil: %1%"
 
-#: win32/UploadPage.cpp:45 win32/UploadPage.cpp:239 win32/UploadPage.cpp:296
+#: win32\UploadPage.cpp:45 win32\UploadPage.cpp:239 win32\UploadPage.cpp:296
 msgid "Virtual name"
 msgstr "Virtuellt namn"
 
-#: win32/PluginPage.cpp:139
+#: win32\PluginPage.cpp:139
 msgid "Visit the DC plugin repository"
 msgstr "Gå till lagringsplats för insticksmoduler för DC"
 
-#: win32/QueueFrame.cpp:374
+#: win32\QueueFrame.cpp:374
 #, boost-format
 msgid "Waiting (%1% of %2% users online)"
 msgstr "Väntar (%1% av %2% användare online)"
 
-#: win32/QueueFrame.cpp:372
+#: win32\QueueFrame.cpp:372
 msgid "Waiting (User online)"
 msgstr "Väntar (Användare online)"
 
-#: win32/TransferView.cpp:996
+#: win32\TransferView.cpp:996
 msgid "Waiting to retry"
 msgstr "Väntar på att försöka igen"
 
-#: win32/ACFrame.cpp:270
+#: win32\ACFrame.cpp:270
 msgid ""
 "Warning!\r\n"
 "Changing these settings can be harmful to the stability, security and "
@@ -4510,7 +4443,7 @@ msgid ""
 "Click here to proceed."
 msgstr ""
 
-#: win32/WinUtil.cpp:1595
+#: win32\WinUtil.cpp:1593
 msgid ""
 "Warning: Allowing content to open a program can be useful, but it can "
 "potentially harm your computer. Do not allow it unless you trust the source "
@@ -4519,12 +4452,12 @@ msgstr ""
 "Varning: Att tillåta ett program att öppnas kan vara användbart, men det kan "
 "potentiellt skada din dator. Öppna bara om du litar på källan."
 
-#: win32/PublicHubsFrame.cpp:287
+#: win32\PublicHubsFrame.cpp:287
 #, fuzzy, boost-format
 msgid ""
 "Warning: fraudulent hub list detected!\r\n"
 "\r\n"
-"The current hub list (%1%) has been blacklisted by FearDC for the following "
+"The current hub list (%1%) has been blacklisted by DC++ for the following "
 "reason:\r\n"
 "%2%\r\n"
 "\r\n"
@@ -4543,125 +4476,110 @@ msgstr ""
 "lista och att du tar bort denna hubblista från din samling genom att använda "
 "\"Konfigurations\" knappen nedanför."
 
-#: win32/PluginInfoDlg.cpp:92 win32/PluginPage.cpp:237
+#: win32\PluginInfoDlg.cpp:92 win32\PluginPage.cpp:237
 msgid "Website: "
 msgstr "Webbsida: "
 
-#: win32/MainWindow.cpp:485
+#: win32\MainWindow.cpp:483
 msgid "What's This?"
 msgstr "Vad är detta?"
 
-#: win32/ExpertsPage.cpp:99 win32/ExpertsPage.cpp:113
+#: win32\ExpertsPage.cpp:99 win32\ExpertsPage.cpp:113
 msgid "Whitelisted URIs to open"
 msgstr "Vitlistade URIs att öppna"
 
-#: win32/WindowsPage.cpp:70
+#: win32\WindowsPage.cpp:68
 msgid "Window options"
 msgstr "Fönsteralternativ"
 
-#: win32/SettingsDialog.cpp:180
+#: win32\SettingsDialog.cpp:180
 msgid "Windows"
 msgstr "Fönster"
 
-#: win32/ExpertsPage.cpp:45
+#: win32\ExpertsPage.cpp:45
 msgid "Write buffer size"
 msgstr "Skriv bufferstorlek"
 
-#: win32/ADLSearchFrame.cpp:330 win32/NotificationsPage.cpp:287
-#: win32/WinUtil.cpp:1197 win32/FinishedFrameBase.h:262
+#: win32\ADLSearchFrame.cpp:330 win32\NotificationsPage.cpp:287
+#: win32\WinUtil.cpp:1200 win32\FinishedFrameBase.h:262
 msgid "Yes"
 msgstr "Ja"
 
-#: win32/NotificationsPage.cpp:287
+#: win32\NotificationsPage.cpp:287
 msgid "Yes (bg)"
 msgstr "Ja (bg)"
 
-#: win32/TabsPage.cpp:195
+#: win32\TabsPage.cpp:195
 msgid "Yet another tab"
 msgstr "Ytterligare en flik"
 
-#: win32/FavHubGroupsDlg.cpp:315
+#: win32\FavHubGroupsDlg.cpp:315
 msgid "You must enter a name"
 msgstr "Du måste ange ett användarnamn"
 
-#: win32/HubFrame.cpp:1144
+#: win32\HubFrame.cpp:1078
 msgid "Your nick was already taken, please change to something else!"
 msgstr "Ditt nick är redan upptaget, ändra till något annat, tack!"
 
-#: win32/DirectoryListingFrame.cpp:1541
+#: win32\DirectoryListingFrame.cpp:1541
 msgid "[Ignored some incomplete directories]"
 msgstr "[Ignorera några inkompletta mappar]"
 
-#: win32/AppearancePage.cpp:99
+#: win32\AppearancePage.cpp:97
 msgid "and"
 msgstr "och"
 
-#: win32/DirectoryListingFrame.cpp:1524
+#: win32\DirectoryListingFrame.cpp:1524
 msgid "beginning"
 msgstr "Start"
 
-#: win32/MainWindow.cpp:1666
+#: win32\MainWindow.cpp:1656
 msgid "city"
 msgstr "stad"
 
-#: win32/MainWindow.cpp:1666
+#: win32\MainWindow.cpp:1656
 msgid "country"
 msgstr "land"
 
-#: win32/ConnectivityManualPage.cpp:140
+#: win32\ConnectivityManualPage.cpp:140
 msgid "encrypted transfer"
 msgstr "krypterad överföring"
 
-#: win32/DirectoryListingFrame.cpp:1524
+#: win32\DirectoryListingFrame.cpp:1524
 msgid "end"
 msgstr "slut"
 
-#: win32/TransferView.cpp:1006
+#: win32\TransferView.cpp:1006
 msgid "file list"
 msgstr "fillista"
 
-#: win32/AppearancePage.cpp:106
+#: win32\AppearancePage.cpp:104
 msgid "lines"
 msgstr "rader"
 
-#: win32/ExpertsPage.cpp:51 win32/ExpertsPage.cpp:52
+#: win32\ExpertsPage.cpp:51 win32\ExpertsPage.cpp:52
 msgid "minutes"
 msgstr "minuter"
 
-#: win32/GeneralPage.cpp:126
+#: win32\GeneralPage.cpp:126
 msgid "minutes of inactivity (0 = disabled)"
 msgstr "minuter av inaktivitet (0 = stäng av)"
 
-#: win32/QueuePage.cpp:114 win32/QueuePage.cpp:120 win32/QueuePage.cpp:126
+#: win32\QueuePage.cpp:114 win32\QueuePage.cpp:120 win32\QueuePage.cpp:126
 msgid "s"
 msgstr "s"
 
-#: win32/ExpertsPage.cpp:47
+#: win32\ExpertsPage.cpp:47
 msgid "seconds"
 msgstr "sekunder"
 
-#: win32/BandwidthLimitPage.cpp:99
+#: win32\BandwidthLimitPage.cpp:99
 msgid "to"
 msgstr "till"
 
-#: win32/ConnectivityManualPage.cpp:144
+#: win32\ConnectivityManualPage.cpp:144
 msgid "transfer"
 msgstr "överförings"
-
-#~ msgid "About DC++"
-#~ msgstr "Om DC++"
-
-#, boost-format
-#~ msgid ""
-#~ "D: %1%/s (%2%)\r\n"
-#~ "U: %3%/s (%4%)"
-#~ msgstr ""
-#~ "N: %1%/s (%2%)\r\n"
-#~ "U: %3%/s (%4%)"
-
-#, boost-format
-#~ msgid "DC++ - %1%"
-#~ msgstr "DC++ - %1%"
 
 #~ msgid ""
 #~ "The connection to the ADC hub used to initiate the channel must be "

@@ -357,16 +357,26 @@ bool FavoriteManager::onHttpFinished(const string& buf) noexcept {
 		}
 	} catch(const Exception&) {
 		success = false;
-		fire(FavoriteManagerListener::Corrupted(), useHttp ? publicListServer : Util::emptyString);
 	}
 
-	if(useHttp) {
-		try {
-			File f(Util::getHubListsPath() + Util::validateFileName(publicListServer), File::WRITE, File::CREATE | File::TRUNCATE);
-			f.write(buf);
-			f.close();
-		} catch(const FileException&) { }
-	}
+	if(success) {
+		if (useHttp) { // Cache only successfully processeed lists
+			try {
+				File f(cachedFileName, File::WRITE, File::CREATE | File::TRUNCATE);
+				f.write(buf);
+				f.close();
+			} catch(const FileException&) { }
+		}
+	} else { // List processing failed
+		bool haveCached = false;
+		if (useHttp) { // The corrupted list is from HTTP source so let's see if we have any usable cached version
+			haveCached = (File::getSize(cachedFileName) > 0);
+		} else {
+			// Corrupted cached content - delete?
+		}
+
+		fire(FavoriteManagerListener::Corrupted(), useHttp ? publicListServer : Util::emptyString, haveCached);
+	} 
 
 	return success;
 }
@@ -712,23 +722,24 @@ void FavoriteManager::setHubList(int aHubList) {
 	refresh();
 }
 
-void FavoriteManager::refresh(bool forceDownload /* = false */) {
+void FavoriteManager::refresh(bool forceDownload /* = false */, bool forceCached /* = false */) {
 	StringList sl = getHubLists();
 	if(sl.empty()) {
-		fire(FavoriteManagerListener::DownloadFailed(), Util::emptyString);
+		fire(FavoriteManagerListener::DownloadFailed(), Util::emptyString, false);
 		return;
 	}
 
 	publicListServer = sl[(lastServer) % sl.size()];
 	if(Util::findSubString(publicListServer, "http://") != 0 && Util::findSubString(publicListServer, "https://") != 0) {
 		lastServer++;
-		fire(FavoriteManagerListener::DownloadFailed(), str(F_("Invalid URL: %1%") % Util::addBrackets(publicListServer)));
+		fire(FavoriteManagerListener::DownloadFailed(), str(F_("Invalid URL: %1%") % Util::addBrackets(publicListServer)), false);
 		return;
 	}
 
+	cachedFileName = Util::getHubListsPath() + Util::validateFileName(publicListServer);
+
 	if(!forceDownload) {
-		string path = Util::getHubListsPath() + Util::validateFileName(publicListServer);
-		if(File::getSize(path) > 0) {
+		if(File::getSize(cachedFileName) > 0) {
 			useHttp = false;
 			string buf, fileDate;
 			{
@@ -736,24 +747,25 @@ void FavoriteManager::refresh(bool forceDownload /* = false */) {
 				publicListMatrix[publicListServer].clear();
 			}
 
-			listType = (Util::stricmp(path.substr(path.size() - 4), ".bz2") == 0) ? TYPE_BZIP2 : TYPE_NORMAL;
+			listType = (Util::stricmp(cachedFileName.substr(cachedFileName.size() - 4), ".bz2") == 0) ? TYPE_BZIP2 : TYPE_NORMAL;
 
 			try {
-				File cached(path, File::READ, File::OPEN);
+				File cached(cachedFileName, File::READ, File::OPEN);
 				time_t fd = cached.getLastModified();
 
-				if (difftime(time(NULL), fd) < 60 * 60 * 24) { // force update after 24 hours
+				if (forceCached || difftime(time(NULL), fd) < 60 * 60 * 24) { // cache expires in 24 hours
 					buf = cached.read();
 					char dateBuf[20];
-
 					if (strftime(dateBuf, 20, "%x", localtime(&fd)))
 						fileDate = string(dateBuf);
 				}
-			} catch (const FileException&) { }
+			} catch(const FileException&) { }
 
 			if(!buf.empty()) {
 				if(onHttpFinished(buf)) {
-					fire(FavoriteManagerListener::LoadedFromCache(), publicListServer, fileDate);
+					fire(FavoriteManagerListener::LoadedFromCache(), publicListServer, fileDate, forceCached);
+				} else {
+					lastServer++;
 				}
 				return;
 			}
@@ -846,10 +858,13 @@ void FavoriteManager::on(HttpManagerListener::Added, HttpConnection* c) noexcept
 void FavoriteManager::on(HttpManagerListener::Failed, HttpConnection* c, const string& str) noexcept {
 	if(c != this->c) { return; }
 	this->c = nullptr;
-	lastServer++;
+	
+	bool isCached = File::getSize(cachedFileName) > 0;
+	if (!isCached) lastServer++;
+
 	running = false;
 	if(useHttp) {
-		fire(FavoriteManagerListener::DownloadFailed(), str);
+		fire(FavoriteManagerListener::DownloadFailed(), str, isCached);
 	}
 }
 

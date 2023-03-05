@@ -18,6 +18,7 @@
 #ifndef DCPLUSPLUS_DCPP_SHARE_MANAGER_H
 #define DCPLUSPLUS_DCPP_SHARE_MANAGER_H
 
+#include <atomic>
 #include <functional>
 #include <list>
 #include <map>
@@ -42,8 +43,6 @@
 #include "MerkleTree.h"
 #include "Pointer.h"
 #include "StringMatch.h"
-
-#include "atomic.h"
 
 namespace dcpp {
 
@@ -258,7 +257,7 @@ private:
 
 	int listN;
 
-	static atomic_flag refreshing;
+	static std::atomic_flag refreshing;
 
 	uint64_t lastXmlUpdate;
 	uint64_t lastFullUpdate;

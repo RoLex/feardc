@@ -55,7 +55,7 @@ namespace dcpp {
 
 using std::numeric_limits;
 
-atomic_flag ShareManager::refreshing = ATOMIC_FLAG_INIT;
+std::atomic_flag ShareManager::refreshing = ATOMIC_FLAG_INIT;
 
 ShareManager::ShareManager() : hits(0), sharedSize(0), xmlListLen(0), bzXmlListLen(0),
 	xmlDirty(true), forceXmlRefresh(true), refreshDirs(false), update(false), listN(0),

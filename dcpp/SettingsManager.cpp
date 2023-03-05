@@ -196,7 +196,7 @@ SettingsManager::SettingsManager() {
 	setDefault(DISABLE_TASKBAR_MENU, false);
 	setDefault(LIST_DUPES, true);
 	setDefault(BUFFER_SIZE, 64);
-	setDefault(HUBLIST_SERVERS, "https://www.te-home.net/?do=hublist&get=hublist.xml.bz2;https://dchublist.org/hublist.xml.bz2;https://dchublist.ru/hublist.xml.bz2;https://hublist.pwiam.com/hublist.xml.bz2;https://dcnf.github.io/Hublist/hublist.xml.bz2;");
+	setDefault(HUBLIST_SERVERS, "https://www.te-home.net/?do=hublist&get=hublist.xml.bz2;https://dchublist.ru/hublist.xml.bz2;https://dcnf.github.io/Hublist/hublist.xml.bz2;");
 	setDefault(DOWNLOAD_SLOTS, 6);
 	setDefault(MAX_DOWNLOAD_SPEED, 0);
 	setDefault(LOG_DIRECTORY, Util::getPath(Util::PATH_USER_LOCAL) + "Logs" PATH_SEPARATOR_STR);
@@ -490,7 +490,7 @@ void SettingsManager::load(string const& aFileName)
 		 *
 		 * if(v < 0.x) { // Fix old settings here } */
 
-		if(v < VERSIONFLOAT && SETTING(TESTING_STATUS) != TESTING_DISABLED) {
+		if(v < DCVERSIONFLOAT && SETTING(TESTING_STATUS) != TESTING_DISABLED) {
 			// moving up to a new version; reset preferences when not disabled.
 			unset(TESTING_STATUS);
 		}
@@ -567,6 +567,12 @@ void SettingsManager::load(string const& aFileName)
 		}
 
 		if(v <= 0.868) {
+			// Move back to default as this is now true by default:
+			// We assume TLS is commonplace enough among ADC clients.
+			unset(REQUIRE_TLS);
+		}
+
+		if(v <= 0.871) {
 			// add all the newly introduced default hublist servers automatically. 
 			// change this to the version number of the previous release each time a new default hublist server entry added.
 			string lists = get(HUBLIST_SERVERS);
@@ -577,10 +583,6 @@ void SettingsManager::load(string const& aFileName)
 					lists += ";" + i;
 			}
 			set(HUBLIST_SERVERS, lists);
-
-			// Move back to default as this is now true by default:
-			// We assume TLS is commonplace enough among ADC clients.
-			unset(REQUIRE_TLS);
 		}
 
 		if(SETTING(SET_MINISLOT_SIZE) < 512)

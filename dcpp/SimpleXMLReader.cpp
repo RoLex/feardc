@@ -74,16 +74,16 @@ SimpleXMLReader::SimpleXMLReader(SimpleXMLReader::CallBack* callback) :
 }
 
 void SimpleXMLReader::append(std::string& str, size_t maxLen, int c) {
-	if(str.size() + 1 > maxLen) {
+	if (str.size() + 1 > maxLen)
 		error("Buffer overflow");
-	}
+
 	str.append(1, (std::string::value_type)c);
 }
 
 void SimpleXMLReader::append(std::string& str, size_t maxLen, std::string::const_iterator begin, std::string::const_iterator end) {
-	if(str.size() + (end - begin) > maxLen) {
+	if (str.size() + (end - begin) > maxLen)
 		error("Buffer overflow");
-	}
+
 	str.append(begin, end);
 }
 
@@ -409,17 +409,16 @@ bool SimpleXMLReader::cdata() {
 			}
 		}
 
-		append(value, MAX_VALUE_SIZE, c);
+		append(value, MAX_CONTENT_SIZE, c);
 		advancePos(1);
 	}
 
 	return true;
 }
 
-bool SimpleXMLReader::entref(string& d) {
-	if(d.size() + 1 >= MAX_VALUE_SIZE) {
+bool SimpleXMLReader::entref(string& d) { // todo: needs rewrite
+	if (d.size() + 1 >= MAX_CONTENT_SIZE)
 		error("Buffer overflow");
-	}
 
 	if(bufSize() > 6) {
 		if(charAt(1) == 'l' && charAt(2) == 't' && charAt(3) == ';') {
@@ -491,7 +490,7 @@ bool SimpleXMLReader::content() {
 		return entref(value);
 	}
 
-	append(value, MAX_VALUE_SIZE, c);
+	append(value, MAX_CONTENT_SIZE, c);
 
 	advancePos(1);
 
@@ -534,7 +533,7 @@ bool SimpleXMLReader::elementEndEnd() {
 	return false;
 }
 
-bool SimpleXMLReader::skipSpace(bool store) {
+bool SimpleXMLReader::skipSpace(bool store) { // todo: needs rewrite
 	if(!needChars(1)) {
 		return true;
 	}
@@ -542,7 +541,7 @@ bool SimpleXMLReader::skipSpace(bool store) {
 	int c;
 	while(needChars(1) && isSpace(c = charAt(0))) {
 		if(store) {
-			append(value, MAX_VALUE_SIZE, c);
+			append(value, MAX_CONTENT_SIZE, c);
 		}
 		advancePos();
 		skipped = true;

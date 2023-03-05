@@ -81,9 +81,11 @@ protected:
 
 		PluginManager::getInstance()->onChatTags(tags);
 
-		string htmlMessage = "<span id=\"message\" style=\"white-space: pre-wrap;\">"
+		string htmlMessage =
+			"<span id=\"message\" style=\"white-space: pre-wrap;\">"
 			"<span id=\"timestamp\">" + SimpleXML::escape("[" + Util::getShortTimeString() + "]", tmp, false) + "</span> "
-			"<span id=\"text\">" + tags.merge(tmp) + "</span></span>";
+			"<span id=\"text\">" + tags.merge(tmp) + "</span>"
+			"</span>";
 
 		PluginManager::getInstance()->onChatDisplay(htmlMessage);
 

@@ -36,8 +36,6 @@ import SCons.Scanner.C
 import SCons.Util
 import SCons.Script
 
-SCons.Script.EnsureSConsVersion(0,96,92)
-
 GchAction = SCons.Action.Action('$GCHCOM', '$GCHCOMSTR')
 GchShAction = SCons.Action.Action('$GCHSHCOM', '$GCHSHCOMSTR')
 
@@ -57,7 +55,7 @@ GchBuilder = SCons.Builder.Builder(action = GchAction,
 def pch_emitter(target, source, env, emitter, gchstr):
     emitter(target, source, env)
 
-    if env.has_key(gchstr) and env[gchstr]:
+    if gchstr in env and env[gchstr]:
         scanner = SCons.Scanner.C.CScanner()
         path = scanner.path(env)
 

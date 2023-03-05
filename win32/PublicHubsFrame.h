@@ -119,15 +119,15 @@ private:
 	void openSelected();
 	string getText(const HubEntry& entry, size_t column) const;
 
-	void onFinished(const tstring& s, bool success);
+	void onFinished(const tstring& s, bool success, bool isCached);
 
 	void changeHubStatus(const string& aUrl);
 
 	virtual void on(DownloadStarting, const string& l) noexcept;
-	virtual void on(DownloadFailed, const string& l) noexcept;
+	virtual void on(DownloadFailed, const string& l, bool isCached) noexcept;
 	virtual void on(DownloadFinished, const string& l) noexcept;
-	virtual void on(LoadedFromCache, const string& l, const string& d) noexcept;
-	virtual void on(Corrupted, const string& l) noexcept;
+	virtual void on(LoadedFromCache, const string& l, const string& d, bool isForced) noexcept;
+	virtual void on(Corrupted, const string& l, bool isCached) noexcept;
 
 	// ClientManagerListener
 	virtual void on(ClientManagerListener::ClientConnected, Client*) noexcept;

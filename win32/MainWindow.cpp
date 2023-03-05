@@ -117,11 +117,11 @@ fullSlots(false)
 	// Don't forget to update version.xml when changing these links!
 	links.homepage = _T("https://client.feardc.net/");
 	links.downloads = links.homepage + _T("download.html");
-	links.geoip6 = _T("https://geolite.maxmind.com/download/geoip/database/GeoIPv6.dat.gz");
-	links.geoip4 = _T("https://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz");
-	links.geoip6_city = _T("https://geolite.maxmind.com/download/geoip/database/GeoLiteCityv6-beta/GeoLiteCityv6.dat.gz");
-	links.geoip4_city = _T("https://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz");
-	links.geoip_regions = _T("https://dev.maxmind.com/static/csv/codes/maxmind/region.csv");
+	links.geoip6 = _T("https://dcplusplus.sourceforge.io/geoip/GeoIPv6.dat.gz");
+	links.geoip4 = _T("https://dcplusplus.sourceforge.io/geoip/GeoIP.dat.gz");
+	links.geoip6_city = _T("https://dcplusplus.sourceforge.io/geoip/GeoIPCityv6.dat.gz");
+	links.geoip4_city = _T("https://dcplusplus.sourceforge.io/geoip/GeoIPCity.dat.gz");
+	links.geoip_regions = _T("https://dcplusplus.sourceforge.io/geoip/region.csv");
 	links.faq = links.homepage + _T("faq.html");
 	links.help = links.homepage + _T("help.html");
 	links.discuss = _T("https://github.com/rolex/feardc/issues");

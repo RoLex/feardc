@@ -43,7 +43,8 @@ public:
 		CT_SU = 8,
 		CT_OWNER = 16,
 		CT_HUB = 32,
-		CT_HIDDEN = 64
+		CT_HIDDEN = 64//,
+		//CT_AVDB = 128
 	};
 
 	enum StatusFlags {
@@ -87,6 +88,7 @@ public:
 	void setOp(bool op) { set("OP", op ? "1" : Util::emptyString); }
 	void setHub(bool hub) { set("HU", hub ? "1" : Util::emptyString); }
 	void setBot(bool bot) { set("BO", bot ? "1" : Util::emptyString); }
+	//void setAVDB(bool av) { set("AV", av ? "1" : Util::emptyString); }
 	void setHidden(bool hidden) { set("HI", hidden ? "1" : Util::emptyString); }
 	string getTag() const;
 	string getApplication() const;
@@ -98,6 +100,7 @@ public:
 	bool isRegistered() const { return isClientType(CT_REGGED) || isSet("RG"); }
 	bool isHidden() const { return isClientType(CT_HIDDEN) || isSet("HI"); }
 	bool isBot() const { return isClientType(CT_BOT) || isSet("BO"); }
+	//bool isAVDB() const { return isClientType(CT_AVDB) || isSet("AV"); }
 	bool isAway() const { return (getStatus() & AWAY) || isSet("AW"); }
 	bool isTcpActive() const;
 	bool isTcp4Active() const;

@@ -189,7 +189,9 @@ int Socket::getLastError() { return errno; }
 
 #endif
 
-Socket::Stats Socket::stats = { 0, 0 };
+// https://en.cppreference.com/w/cpp/language/default_initialization
+// Initialized to 0
+Socket::Stats Socket::stats;
 
 static const uint32_t SOCKS_TIMEOUT = 30000;
 

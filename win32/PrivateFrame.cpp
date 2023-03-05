@@ -62,10 +62,13 @@ bool PrivateFrame::gotMessage(TabViewPtr parent, const ChatMessage& message, con
 			return false;
 		}
 
-		auto p = new PrivateFrame(parent, HintedUser(user, hubHint));
+		auto hintedUser = HintedUser(user, hubHint);
+		auto p = new PrivateFrame(parent, hintedUser);
+
 		if(!SETTING(POPUNDER_PM))
 			p->activate();
 
+		p->addStatus(Text::toT(str(F_("Message through hub: %1%") % ClientManager::getInstance()->getHubName(hintedUser))));
 		p->addChat(message);
 		p->lastMessageTime = message.timestamp;
 
@@ -296,7 +299,7 @@ void PrivateFrame::updateOnlineStatus(bool newChannel) {
 		online = !hubs.empty();
 
 		if(!newChannel) {
-			addStatus(online ? T_("User went online") : T_("User went offline"));
+			addStatus((online ? T_("User went online") : T_("User went offline")) + _T(" - ") + WinUtil::getHubName(replyTo.getUser()));
 		}
 		setIcon(online ? IDI_PRIVATE : IDI_PRIVATE_OFF);
 		status->setIcon(STATUS_CHANNEL, WinUtil::statusIcon(ccReady() ? IDI_SECURE : online ? IDI_HUB : IDI_HUB_OFF));

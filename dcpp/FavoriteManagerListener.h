@@ -44,7 +44,7 @@ public:
 	typedef X<10> Corrupted;
 	
 	virtual void on(DownloadStarting, const string&) noexcept { }
-	virtual void on(DownloadFailed, const string&) noexcept { }
+	virtual void on(DownloadFailed, const string&, bool isCached) noexcept { }
 	virtual void on(DownloadFinished, const string&) noexcept { }
 	virtual void on(FavoriteAdded, const FavoriteHubEntryPtr) noexcept { }
 	virtual void on(FavoriteRemoved, const FavoriteHubEntryPtr) noexcept { }
@@ -52,8 +52,8 @@ public:
 	virtual void on(UserUpdated, const FavoriteUser&) noexcept { }
 	virtual void on(UserRemoved, const FavoriteUser&) noexcept { }
 	virtual void on(StatusChanged, const UserPtr&) noexcept { }
-	virtual void on(LoadedFromCache, const string&, const string&) noexcept { }
-	virtual void on(Corrupted, const string&) noexcept { }
+	virtual void on(LoadedFromCache, const string&, const string&, bool isForced) noexcept { }
+	virtual void on(Corrupted, const string&, bool isCached) noexcept { }
 };
 
 } // namespace dcpp

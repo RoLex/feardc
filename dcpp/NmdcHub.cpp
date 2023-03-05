@@ -1352,6 +1352,7 @@ void NmdcHub::on(Minute, uint64_t aTick) noexcept {
 	if (aTick > (((lastProtectedIPsUpdate + 24) * 3600) * 1000)) {
 		protectedIPs = {
 			"dchublist.org",
+			"hublist.pwiam.com",
 			"dcbase.org"
 		};
 

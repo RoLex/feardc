@@ -224,7 +224,7 @@ users(0)
 	if(FavoriteManager::getInstance()->isDownloading()) {
 		status->setText(STATUS_STATUS, T_("Downloading public hub list..."));
 		listsGrid->setEnabled(false);
-	} else /*if(entries.empty())*/ { // always refresh, otherwise we see "cached" status only once
+	} else if(entries.empty()) {
 		FavoriteManager::getInstance()->refresh();
 	}
 }
@@ -465,10 +465,15 @@ void PublicHubsFrame::handleListSelChanged() {
 	updateList();
 }
 
-void PublicHubsFrame::onFinished(const tstring& s, bool success) {
+void PublicHubsFrame::onFinished(const tstring& s, bool success, bool isCached) {
 	if(success) {
 		entries = FavoriteManager::getInstance()->getPublicHubs();
 		updateList();
+	} else if (isCached) {
+		// The HTTP resource has failed but we've got a cached version so let's queue another refresh to load that
+		// We don't interact with the user about what to do here so this is a hack.
+		// @todo make all the checks, decisions and load in the manager and fire the events only once, depending on the outcome.
+		FavoriteManager::getInstance()->refresh(false, true);
 	}
 	status->setText(STATUS_STATUS, s);
 	listsGrid->setEnabled(true);
@@ -478,23 +483,24 @@ void PublicHubsFrame::on(DownloadStarting, const string& l) noexcept {
 	callAsync([=, this] { status->setText(STATUS_STATUS, str(TF_("Downloading public hub list... (%1%)") % Text::toT(l)), false); });
 }
 
-void PublicHubsFrame::on(DownloadFailed, const string& l) noexcept {
-	callAsync([=, this] { onFinished(str(TF_("Download failed: %1%") % Text::toT(l)), false); });
+void PublicHubsFrame::on(DownloadFailed, const string& l, bool isCached) noexcept {
+	callAsync([=, this] { onFinished(str(TF_("Download failed: %1%") % Text::toT(l)), false, isCached); });
 }
 
 void PublicHubsFrame::on(DownloadFinished, const string& l) noexcept {
-	callAsync([=, this] { onFinished(str(TF_("Hub list downloaded (%1%)") % Text::toT(l)), true); });
+	callAsync([=, this] { onFinished(str(TF_("Hub list downloaded (%1%)") % Text::toT(l)), true, false); });
 }
 
-void PublicHubsFrame::on(LoadedFromCache, const string& l, const string& d) noexcept {
-	callAsync([=, this] { onFinished(str(TF_("Locally cached (as of %1%) version of the hub list loaded (%2%)") % Text::toT(d) % Text::toT(l)), true); });
+void PublicHubsFrame::on(LoadedFromCache, const string& l, const string& d, bool isForced) noexcept {
+	tstring s = isForced ? str(TF_("Download failed")) + _T(" - ") : Util::emptyStringT;
+	callAsync([=, this] { onFinished(s + str(TF_("Locally cached (as of %1%) version of the hub list loaded (%2%)") % Text::toT(d) % Text::toT(l)), true, false); });
 }
 
-void PublicHubsFrame::on(Corrupted, const string& l) noexcept {
+void PublicHubsFrame::on(Corrupted, const string& l, bool isCached) noexcept {
 	if(l.empty()) {
-		callAsync([this] { onFinished(T_("Cached hub list is corrupted or unsupported"), false); });
+		callAsync([this] { onFinished(T_("Cached hub list is corrupted or unsupported"), false, false); });
 	} else {
-		callAsync([=, this] { onFinished(str(TF_("Downloaded hub list is corrupted or unsupported (%1%)") % Text::toT(l)), false); });
+		callAsync([=, this] { onFinished(str(TF_("Downloaded hub list is corrupted or unsupported (%1%)") % Text::toT(l)), false, isCached); });
 	}
 }
 

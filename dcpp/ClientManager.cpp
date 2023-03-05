@@ -456,7 +456,8 @@ void ClientManager::sendUDP(AdcCommand& cmd, const OnlineUser& user) {
 		cmd.setTo(user.getIdentity().getSID());
 		const_cast<Client&>(user.getClient()).send(cmd);
 	} else {
-		sendUDP(user.getIdentity().getIp(), user.getIdentity().getUdpPort(), cmd.toString(getMe()->getCID()));
+		auto v6Status = ConnectivityManager::getInstance()->getConnectivityStatus(true);
+		sendUDP(v6Status ? user.getIdentity().getIp() : user.getIdentity().getIp4(), v6Status ? user.getIdentity().getUdpPort() : user.getIdentity().getUdp4Port(), cmd.toString(getMe()->getCID()));
 	}
 }
 

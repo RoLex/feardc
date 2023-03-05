@@ -47,7 +47,7 @@ disconnecting(false), v4only(v4only)
 	++sockets;
 }
 
-atomic<long> BufferedSocket::sockets(0);
+std::atomic_long BufferedSocket::sockets(0);
 
 BufferedSocket::~BufferedSocket() {
 	--sockets;

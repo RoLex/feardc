@@ -30,7 +30,7 @@
 
 namespace dcpp {
 
-atomic<long> Client::counts[COUNT_UNCOUNTED];
+std::atomic_long Client::counts[COUNT_UNCOUNTED];
 
 uint32_t idCounter = 0;
 

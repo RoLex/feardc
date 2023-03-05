@@ -64,6 +64,7 @@ public:
 	bool isRunning() const { return running; }
 	const string& getStatus(bool v6) const;
 	string getInformation() const;
+	bool getConnectivityStatus(bool v6) const;
 
 private:
 	friend class Singleton<ConnectivityManager>;

@@ -31,7 +31,7 @@
 
 namespace dcpp {
 
-atomic_flag MappingManager::busy = ATOMIC_FLAG_INIT;
+std::atomic_flag MappingManager::busy = ATOMIC_FLAG_INIT;
 
 MappingManager::MappingManager() :
 needsV4PortMap(false),

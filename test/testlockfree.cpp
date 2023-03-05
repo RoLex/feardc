@@ -1,20 +1,19 @@
 #include "testbase.h"
 
-#include <dcpp/atomic.h>
-
 #include <boost/lockfree/queue.hpp>
 #include <boost/lockfree/spsc_queue.hpp>
 #include <boost/lockfree/stack.hpp>
+#include <atomic>
 
 using namespace dcpp;
 
 TEST(testlockfree, test_atomic)
 {
-	ASSERT_TRUE(atomic<bool>().is_lock_free());
-	ASSERT_TRUE(atomic<int32_t>().is_lock_free());
-	ASSERT_TRUE(atomic<uint32_t>().is_lock_free());
-	ASSERT_TRUE(atomic<int64_t>().is_lock_free());
-	ASSERT_TRUE(atomic<uint64_t>().is_lock_free());
+	ASSERT_TRUE(std::atomic_bool().is_lock_free());
+	ASSERT_TRUE(std::atomic<int32_t>().is_lock_free());
+	ASSERT_TRUE(std::atomic<uint32_t>().is_lock_free());
+	ASSERT_TRUE(std::atomic<int64_t>().is_lock_free());
+	ASSERT_TRUE(std::atomic<uint64_t>().is_lock_free());
 }
 
 TEST(testlockfree, test_queue)
