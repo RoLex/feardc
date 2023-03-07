@@ -1353,7 +1353,8 @@ void NmdcHub::on(Minute, uint64_t aTick) noexcept {
 		protectedIPs = {
 			"dchublist.org",
 			"hublist.pwiam.com",
-			"dcbase.org"
+			"dcbase.org",
+			"dchublist.biz"
 		};
 
 		for (auto i = protectedIPs.begin(); i != protectedIPs.end();) {
