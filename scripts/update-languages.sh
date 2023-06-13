@@ -16,6 +16,11 @@ DIR=$2
 
 echo Processing $PREFIX...
 
+# todo: all files are moved to same directory
+# files with same name will be overwritten
+# rewrite this script completely as it does bad stuff
+# make copy of your work before proceeding
+
 # move all files to the root dir
 find $SOURCE -type f -exec mv '{}' $SOURCE \;
 

@@ -18,12 +18,12 @@
 #ifndef DCPLUSPLUS_DCPP_GEO_MANAGER_H
 #define DCPLUSPLUS_DCPP_GEO_MANAGER_H
 
+#include "forward.h"
+#include "GeoIP2.h"
+#include "Singleton.h"
+
 #include <memory>
 #include <string>
-
-#include "forward.h"
-#include "GeoIP.h"
-#include "Singleton.h"
 
 namespace dcpp {
 
@@ -34,27 +34,25 @@ using std::unique_ptr;
 class GeoManager : public Singleton<GeoManager>
 {
 public:
-	/** Prepare the databases and fill internal caches. */
+	/** Prepare the database. */
 	void init();
-	/** Update a database and its internal caches. Call after a new one have been downloaded. */
-	void update(bool v6);
+	/** Update a database. Call after a new one have been downloaded. */
+	void update();
 	/** Rebuild the internal caches. Call after a change of country settings. */
-	void rebuild();
-	/** Unload databases and clear internal caches. */
+	//void rebuild();
+	/** Unload database. */
 	void close();
 
-	enum { V6 = 1 << 1, V4 = 1 << 2 };
-	/** Map an IP address to a country. The flags specify which database(s) to look into. */
-	const string& getCountry(const string& ip, int flags = V6 | V4);
+	/** Map an IP address to a country. */
+	string getCountry(const string& ip) const;
 
-	static string getDbPath(bool v6);
-	static string getRegionDbPath();
+	static string getDbPath();
 
 private:
 	friend class Singleton<GeoManager>;
 
-	// only these 2 for now. in the future, more databases could be added (region / city info...).
-	unique_ptr<GeoIP> geo6, geo4;
+	// for now city is enough for supported parameters
+	unique_ptr<GeoIP> geo;
 
 	GeoManager() { }
 	virtual ~GeoManager() { }

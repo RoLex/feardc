@@ -20,8 +20,8 @@
 #define APPNAME "FearDC"
 #define TAGNAME "FearDC"
 // don't forget to update the .rc file as well!
-#define VERSIONSTRING "1.3.0.0"
-#define VERSIONFLOAT 0.1300
+#define VERSIONSTRING "1.3.1.0"
+#define VERSIONFLOAT 0.1310
 
 #define DCAPPNAME "DC++"
 #define DCTAGNAME "++"

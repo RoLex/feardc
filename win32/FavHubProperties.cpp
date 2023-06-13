@@ -237,7 +237,10 @@ void FavHubProperties::handleOKClicked() {
 	entry->get(HubSettings::ShowJoins) = to3bool(showJoins->getSelected());
 	entry->get(HubSettings::FavShowJoins) = to3bool(favShowJoins->getSelected());
 	entry->get(HubSettings::LogMainChat) = to3bool(logMainChat->getSelected());
-	entry->get(HubSettings::DisableCtmTLS) = to3bool(disableCtmTLS->getSelected());
+
+	if (disableCtmTLS)
+		entry->get(HubSettings::DisableCtmTLS) = to3bool(disableCtmTLS->getSelected());
+
 	entry->setGroup(Text::fromT(groups->getText()));
 	FavoriteManager::getInstance()->save();
 	endDialog(IDOK);

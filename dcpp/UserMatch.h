@@ -42,7 +42,6 @@ struct UserMatch : public Flags {
 		FAVS_BIT,
 		OPS_BIT,
 		BOTS_BIT,
-		//AVDB_BIT,
 		FORCE_CHAT_BIT,
 		IGNORE_CHAT_BIT
 	};
@@ -56,8 +55,6 @@ struct UserMatch : public Flags {
 		FAVS = 1 << FAVS_BIT,
 		OPS = 1 << OPS_BIT,
 		BOTS = 1 << BOTS_BIT,
-		//AVDB = 1 << AVDB_BIT,
-
 		FORCE_CHAT = 1 << FORCE_CHAT_BIT,
 		IGNORE_CHAT = 1 << IGNORE_CHAT_BIT
 	};

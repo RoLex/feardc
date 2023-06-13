@@ -35,7 +35,7 @@ void UserMatch::addRule(Rule&& rule) {
 }
 
 bool UserMatch::empty() const {
-	return !isSet(FAVS) && !isSet(OPS) && !isSet(BOTS) /*&& !isSet(AVDB) */&& rules.empty();
+	return !isSet(FAVS) && !isSet(OPS) && !isSet(BOTS) && rules.empty();
 }
 
 bool UserMatch::match(OnlineUser& user) const {
@@ -52,11 +52,6 @@ bool UserMatch::match(OnlineUser& user) const {
 	if(isSet(BOTS) && !identity.isBot()) {
 		return false;
 	}
-
-	/*
-	if (isSet(AVDB) && !identity.isAVDB())
-		return false;
-	*/
 
 	for(auto& i: rules) {
 		string str;

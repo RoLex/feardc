@@ -42,7 +42,6 @@ name(0),
 favs(0),
 ops(0),
 bots(0),
-//avdb(0),
 rules(0),
 forceChat(0),
 ignoreChat(0)
@@ -76,11 +75,6 @@ bool UserMatchDlg::handleInitDialog(const UserMatch* initialMatcher) {
 
 		bots = cur->addChild(CheckBox::Seed(T_("Match bots")));
 		bots->setHelpId(IDH_USER_MATCH_BOTS);
-
-		/*
-		avdb = cur->addChild(CheckBox::Seed(T_("Match infected")));
-		avdb->setHelpId(IDH_USER_MATCH_AVDB);
-		*/
 	}
 
 	{
@@ -128,11 +122,6 @@ bool UserMatchDlg::handleInitDialog(const UserMatch* initialMatcher) {
 		if(initialMatcher->isSet(UserMatch::OPS)) { ops->setChecked(true); }
 		if(initialMatcher->isSet(UserMatch::BOTS)) { bots->setChecked(true); }
 
-		/*
-		if (initialMatcher->isSet(UserMatch::AVDB))
-			avdb->setChecked(true);
-		*/
-
 		for(auto& i: initialMatcher->rules) {
 			addRow(&i);
 		}
@@ -163,11 +152,6 @@ void UserMatchDlg::handleOKClicked() {
 	if(favs->getChecked()) { result.setFlag(UserMatch::FAVS); }
 	if(ops->getChecked()) { result.setFlag(UserMatch::OPS); }
 	if(bots->getChecked()) { result.setFlag(UserMatch::BOTS); }
-
-	/*
-	if (avdb->getChecked())
-		result.setFlag(UserMatch::AVDB);
-	*/
 
 	auto controls = rules->getChildren<Control>();
 	int8_t counter = -1;

@@ -1,6 +1,7 @@
--- 1.3.0.0 2023-##-## --
+-- 1.3.1.0 2023-##-## --
 
-* Update OpenSSL to version 1.1.1t (RoLex)
+* Update PO4A to version 0.69 (RoLex)
+* Update OpenSSL to version 3.1.1 (RoLex)
 * Temporarily fix buffer overflow error when receiving large chat messages, needs a complete rewrite (RoLex)
 * Add hublist.pwiam.com and dchublist.biz to list protected against CTM requests (RoLex)
 * Add dchublist.biz hublist by default (RoLex)
@@ -12,10 +13,11 @@
 * Add support for BotList, HubTopic and MCTo NMDC extensions, widely supported by Verlihub (RoLex)
 * Add /mcpm command for private main chat messages, currently only for NMDC hubs that support MCTo extension (RoLex)
 * Don't waste our and NMDC hub resources when we don't want user commands (RoLex)
-* Update zlib to version 1.2.12 (RoLex)
-* Update Boost to version 1.79 (RoLex)
-* Update MiniUPnPc to version 2.2.3 (RoLex)
-* Update GeoIP to version 1.7.0 (RoLex)
+* Update ZLib to version 1.2.13 (RoLex)
+* Update Boost to version 1.82 (RoLex)
+* Update MiniUPnPc to version 2.2.5 (RoLex)
+* Update NAT-PMP to version 20230423 (RoLex)
+* Replace GeoIP with MaxMindDB version 1.7.1 (RoLex)
 * Add settings to show user IP and country in main and private chats when available (RoLex)
 * Add %[extra] variable support to main and private chat log formats when available, this shows user IP and country (RoLex)
 * Add global and favorite hub settings to disable TLS NMDC client-client connections, this allows transfers between us and old clients (RoLex)

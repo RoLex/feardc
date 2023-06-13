@@ -100,7 +100,7 @@ const string SettingsManager::settingTags[] =
 	"ConfirmHubRemoval", "ConfirmItemRemoval", "ConfirmUserRemoval", "DcextRegister",
 	"DontDlAlreadyQueued", "DontDLAlreadyShared", "EnableCCPM", "FavShowJoins",
 	"FilterMessages",
-	"FinishedDLOnlyFull", "FollowLinks", "GeoCity", "GeoRegion", "GetUserCountry", "ShowUserIp", "ShowUserCountry", "GetUserInfo",
+	"FinishedDLOnlyFull", "FollowLinks", "GetUserCountry", "ShowUserIp", "ShowUserCountry", "GetUserInfo",
 	"HubUserCommands", "IgnoreBotPms", "IgnoreHubPms", "SkipTrayBotPms", "DisableTaskbarMenu", "OpenNewWindow", "KeepFinishedFiles",
 	"KeepLists", "ListDuplicates", "LogDownloads", "LogFilelistTransfers", "LogFinishedDownloads",
 	"LogMainChat", "LogPrivateChat", "LogStatusMessages", "LogSystem", "LogUploads", "MagnetAsk",
@@ -255,8 +255,6 @@ SettingsManager::SettingsManager() {
 	setDefault(SEND_UNKNOWN_COMMANDS, true);
 	setDefault(MAX_HASH_SPEED, 0);
 	setDefault(OPEN_USER_CMD_HELP, true);
-	setDefault(GEO_CITY, false);
-	setDefault(GEO_REGION, false);
 	setDefault(GET_USER_COUNTRY, true);
 	setDefault(SHOW_USER_IP, false);
 	setDefault(SHOW_USER_COUNTRY, false);
