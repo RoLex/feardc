@@ -136,7 +136,7 @@ pluginInfo(0)
 		cur->column(0).mode = GridInfo::FILL;
 		cur->column(1).align = GridInfo::BOTTOM_RIGHT;
 		cur->addChild(Label::Seed(str(TF_("Some plugins may require you to restart %1%") % Text::toT(APPNAME))));
-		cur->addChild(Link::Seed(_T("<a href=\"https://dcplusplus.sourceforge.io/plugins/\">") + T_("Visit the DC plugin repository") + _T("</a>")));
+		cur->addChild(Link::Seed(_T("<a href=\"https://client.feardc.net/plugins.html\">") + T_("Visit the plugin repository") + _T("</a>")));
 	}
 
 	WinUtil::makeColumns(plugins, columns, COLUMN_COUNT);

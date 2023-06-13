@@ -15,12 +15,14 @@
 #include <boost/config/warning_disable.hpp>
 
 #include <boost/filesystem/config.hpp>
-#include <boost/filesystem/path_traits.hpp>
+#include <boost/filesystem/detail/path_traits.hpp>
 #include <boost/system/error_category.hpp>
 #include <locale>
 #include <string>
 
 #include "private_config.hpp"
+
+#include <boost/filesystem/detail/header.hpp> // must be the last #include
 
 //--------------------------------------------------------------------------------------//
 
@@ -114,3 +116,5 @@ const codecvt_error_category_initializer g_codecvt_error_category_initializer;
 
 } // namespace filesystem
 } // namespace boost
+
+#include <boost/filesystem/detail/footer.hpp>

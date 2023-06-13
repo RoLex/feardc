@@ -1,6 +1,6 @@
-/* $Id: natpmp.c,v 1.20 2015/05/27 12:43:15 nanard Exp $ */
+/* $Id: natpmp.c,v 1.21 2023/04/23 10:50:11 nanard Exp $ */
 /* libnatpmp
-Copyright (c) 2007-2015, Thomas BERNARD
+Copyright (c) 2007-2018, Thomas BERNARD
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -27,14 +27,14 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 */
 #ifdef __linux__
-#define _BSD_SOURCE 1
+#define _DEFAULT_SOURCE 1
 #endif
 #include <string.h>
 #include <time.h>
 #if !defined(_MSC_VER)
 #include <sys/time.h>
 #endif
-#ifdef WIN32
+#ifdef _WIN32
 #include <errno.h>
 #include <winsock2.h>
 #include <ws2tcpip.h>
@@ -63,7 +63,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 LIBSPEC int initnatpmp(natpmp_t * p, int forcegw, in_addr_t forcedgw)
 {
-#ifdef WIN32
+#ifdef _WIN32
 	u_long ioctlArg = 1;
 #else
 	int flags;
@@ -75,7 +75,7 @@ LIBSPEC int initnatpmp(natpmp_t * p, int forcegw, in_addr_t forcedgw)
 	p->s = socket(PF_INET, SOCK_DGRAM, 0);
 	if(p->s < 0)
 		return NATPMP_ERR_SOCKETERROR;
-#ifdef WIN32
+#ifdef _WIN32
 	if(ioctlsocket(p->s, FIONBIO, &ioctlArg) == SOCKET_ERROR)
 		return NATPMP_ERR_FCNTLERROR;
 #else
@@ -122,7 +122,7 @@ int sendpendingrequest(natpmp_t * p)
 	addr.sin_addr.s_addr = p->gateway;
 	r = (int)sendto(p->s, p->pending_request, p->pending_request_len, 0,
 	                   (struct sockaddr *)&addr, sizeof(addr));*/
-	r = (int)send(p->s, (const char *)p->pending_request, p->pending_request_len, 0);
+	r = (int)send(p->s, p->pending_request, p->pending_request_len, 0);
 	return (r<0) ? NATPMP_ERR_SENDERR : r;
 }
 
@@ -207,13 +207,17 @@ LIBSPEC int readnatpmpresponse(natpmp_t * p, natpmpresp_t * response)
 	unsigned char buf[16];
 	struct sockaddr_in addr;
 	socklen_t addrlen = sizeof(addr);
+#ifdef _WIN32
 	int n;
+#else
+	ssize_t n;
+#endif
 	if(!p)
 		return NATPMP_ERR_INVALIDARGS;
-	n = recvfrom(p->s, (char *)buf, sizeof(buf), 0,
+	n = recvfrom(p->s, buf, sizeof(buf), 0,
 	             (struct sockaddr *)&addr, &addrlen);
 	if(n<0)
-#ifdef WIN32
+#ifdef _WIN32
 		switch(WSAGetLastError()) {
 #else
 		switch(errno) {
@@ -260,21 +264,28 @@ LIBSPEC int readnatpmpresponse(natpmp_t * p, natpmpresp_t * response)
 			}
 		} else {
 			response->type = buf[1] & 0x7f;
-			if(buf[1] == 128)
+			if(buf[1] == 128) {
 				//response->publicaddress.addr = *((uint32_t *)(buf + 8));
 				response->pnu.publicaddress.addr.s_addr = *((uint32_t *)(buf + 8));
-			else {
-				response->pnu.newportmapping.privateport = ntohs(*((uint16_t *)(buf + 8)));
-				response->pnu.newportmapping.mappedpublicport = ntohs(*((uint16_t *)(buf + 10)));
-				response->pnu.newportmapping.lifetime = ntohl(*((uint32_t *)(buf + 12)));
+				n = 0;
+			} else {
+				/* check that the private port matches our current request */
+				if(*(uint16_t*)(p->pending_request + 4) == *((uint16_t*)(buf + 8))) {
+					response->pnu.newportmapping.privateport = ntohs(*((uint16_t*)(buf + 8)));
+					response->pnu.newportmapping.mappedpublicport = ntohs(*((uint16_t*)(buf + 10)));
+					response->pnu.newportmapping.lifetime = ntohl(*((uint32_t*)(buf + 12)));
+					n = 0;
+				} else {
+					/* ignore the old response and continue waiting */
+					n = NATPMP_TRYAGAIN;
+				}
 			}
-			n = 0;
 		}
 	}
 	return n;
 }
 
-int readnatpmpresponseorretry(natpmp_t * p, natpmpresp_t * response)
+LIBSPEC int readnatpmpresponseorretry(natpmp_t * p, natpmpresp_t * response)
 {
 	int n;
 	if(!p || !response)
@@ -288,7 +299,7 @@ int readnatpmpresponseorretry(natpmp_t * p, natpmpresp_t * response)
 			gettimeofday(&now, NULL);	// check errors !
 			if(timercmp(&now, &p->retry_time, >=)) {
 				int delay, r;
-				if(p->try_number >= 9) {
+				if(p->try_number >= NATPMP_MAX_RETRIES) {
 					return NATPMP_ERR_NOGATEWAYSUPPORT;
 				}
 				/*printf("retry! %d\n", p->try_number);*/
@@ -328,7 +339,7 @@ LIBSPEC const char * strnatpmperr(int r)
 		s = "cannot get default gateway ip address";
 		break;
 	case NATPMP_ERR_CLOSEERR:
-#ifdef WIN32
+#ifdef _WIN32
 		s = "closesocket() failed";
 #else
 		s = "close() failed";

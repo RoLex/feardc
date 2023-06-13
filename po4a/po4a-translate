@@ -1,10 +1,10 @@
 #! /usr/bin/env perl
 eval 'exec perl -S $0 ${1+"$@"}'
-    if $running_under_some_shell;
+  if $running_under_some_shell;
 
 # po4a-translate -- translate doc files using a message catalog(ie, PO file)
 #
-# Copyright 2002-2012 by SPI, inc.
+# Copyright 2002-2020 by SPI, inc.
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of GPL (see COPYING).
@@ -75,15 +75,16 @@ File from which the message catalog should be read.
 
 =item B<-o>, B<--option>
 
-Extra option(s) to pass to the format plugin. Specify each option in the
-'I<name>B<=>I<value>' format. See the documentation of each plugin for more
-information about the valid options and their meanings.
+Extra option(s) to pass to the format plugin. See the documentation of each
+plugin for more information about the valid options and their meanings. For 
+example, you could pass '-o tablecells' to the AsciiDoc parser, while the 
+text parser would accept '-o tabs=split'.
 
 =item B<-k>, B<--keep>
 
 Minimal threshold for translation percentage to keep (i.e. write) the
 resulting file (default: 80). I.e. by default, files have to be translated
-at at least 80% to get written.
+at least at 80% to get written.
 
 =item B<-w>, B<--width>
 
@@ -109,13 +110,43 @@ Increase the verbosity of the program.
 
 Output some debugging information.
 
+=item B<--porefs> I<type>[,B<wrap>|B<nowrap>]
+
+Specify the reference format. Argument I<type> can be one of B<never>
+to not produce any reference, B<file> to only specify the file
+without the line number, B<counter> to replace line number by an
+increasing counter, and B<full> to include complete references (default: full).
+
+Argument can be followed by a comma and either B<wrap> or B<nowrap> keyword.
+References are written by default on a single line.  The B<wrap> option wraps
+references on several lines, to mimic B<gettext> tools (B<xgettext> and
+B<msgmerge>).  This option will become the default in a future release, because
+it is more sensible.  The B<nowrap> option is available so that users who want
+to keep the old behavior can do so.
+
+=item B<--wrap-po> B<no>|B<newlines>|I<number> (default: 76)
+
+Specify how the po file should be wrapped. This gives the choice between either
+files that are nicely wrapped but could lead to git conflicts, or files that are
+easier to handle automatically, but harder to read for humans.
+
+Historically, the gettext suite has reformatted the po files at the 77th column
+for cosmetics. This option specifies the behavior of po4a. If set to a numerical
+value, po4a will wrap the po file after this column and after newlines in the
+content. If set to B<newlines>, po4a will only split the msgid and msgstr after
+newlines in the content. If set to B<no>, po4a will not wrap the po file at all.
+The wrapping of the reference comments is controlled by the B<--porefs> option.
+
+Note that this option has no impact on how the msgid and msgstr are wrapped, ie
+on how newlines are added to the content of these strings.
+
 =back
 
 =head1 Adding content (beside translations) to generated files
 
 To add some extra content to the generated document beside what you
-translated (like the name of the translator, or a "About this translation"
-section), you should use the B<--addendum> option. 
+translated (like the name of the translator, or an "About this translation"
+section), you should use the B<--addendum> option.
 
 The first line of the addendum must be a header indicating where to put
 it in the document (it can be before or after a given part of the
@@ -145,7 +176,7 @@ L<po4a(7)>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2002-2012 by SPI, inc.
+Copyright 2002-2020 by SPI, inc.
 
 This program is free software; you may redistribute it and/or modify it
 under the terms of GPL (see the COPYING file).
@@ -170,120 +201,131 @@ sub show_version {
     exit 0;
 }
 
-
-Getopt::Long::Configure('no_auto_abbrev','no_ignore_case');
-my ($outfile,$width,$threshold)=('-',80,80);
-my ($help,$help_fmt,@verbose,$debug,@addfiles,$format,@options);
-my ($master_filename,$po_filename);
-my ($mastchar,$locchar,$addchar);
+Getopt::Long::Configure( 'no_auto_abbrev', 'no_ignore_case' );
+my ( $outfile,         $width,    $threshold ) = ( '-', 80, 80 );
+my ( $help,            $help_fmt, @verbose, $debug, $wrappo, @addfiles, $format, @options, $no_deprecation );
+my ( $master_filename, $po_filename );
+my ( $mastchar,        $locchar, $addchar );
 GetOptions(
-	'help|h'        => \$help,
-	'help-format'   => \$help_fmt,
+    'help|h'      => \$help,
+    'help-format' => \$help_fmt,
 
-	'master|m=s'    => \$master_filename,
-	'localized|l=s' => \$outfile,
-	'po|p=s'        => \$po_filename,
-	'addendum|a=s'  => \@addfiles,
-	'format|f=s'    => \$format,
+    'master|m=s'    => \$master_filename,
+    'localized|l=s' => \$outfile,
+    'po|p=s'        => \$po_filename,
+    'addendum|a=s'  => \@addfiles,
+    'format|f=s'    => \$format,
 
-	'master-charset|M=s'    => \$mastchar,
-	'localized-charset|L=s' => \$locchar,
-	'addendum-charset|A=s' => \$addchar,
+    'master-charset|M=s'    => \$mastchar,
+    'localized-charset|L=s' => \$locchar,
+    'addendum-charset|A=s'  => \$addchar,
+    'wrap-po=s'             => \$wrappo,
 
-	'option|o=s'    => \@options,
+    'option|o=s' => \@options,
 
-	'width|w=s'     => \$width,
-	'verbose|v'     => \@verbose,
-	'debug|d'       => \$debug,
-	'keep|k=s'      => \$threshold,
+    # undocumented option to silence the warning about po4a-translate being deprecated
+    'no-deprecation' => \$no_deprecation,
 
-	'version|V'     => \&show_version
+    'width|w=s' => \$width,
+    'verbose|v' => \@verbose,
+    'debug|d'   => \$debug,
+    'keep|k=s'  => \$threshold,
+
+    'version|V' => \&show_version
 ) or pod2usage();
 
-$help && pod2usage(-verbose => 1, -exitval => 0);
+$help     && pod2usage( -verbose => 1, -exitval => 0 );
 $help_fmt && Locale::Po4a::Chooser::list(0);
 
-(defined($master_filename) && length($master_filename))||pod2usage();
-(defined($po_filename)     && length($po_filename))    ||pod2usage();
--e $master_filename || die wrap_msg(gettext("File %s does not exist."), $master_filename);
--e $po_filename || die wrap_msg(gettext("File %s does not exist."), $po_filename);
+( defined($master_filename) && length($master_filename) ) || pod2usage();
+( defined($po_filename) && length($po_filename) )         || pod2usage();
+-e $master_filename || die wrap_msg( gettext("File %s does not exist."), $master_filename );
+-e $po_filename     || die wrap_msg( gettext("File %s does not exist."), $po_filename );
 
-my (@pos,@masters);
-push @pos,$po_filename;
-push @masters,$master_filename;
+my ( @pos, @masters );
+push @pos,     $po_filename;
+push @masters, $master_filename;
 
 my %options = (
     "verbose" => scalar @verbose,
-    "debug" => $debug);
+    "debug"   => $debug
+);
 
 foreach (@options) {
     if (m/^([^=]*)=(.*)$/) {
-	$options{$1}="$2";
+        $options{$1} = "$2";
     } else {
-	$options{$_}=1;
+        $options{$_} = 1;
     }
 }
-# parser
-my $doc=Locale::Po4a::Chooser::new($format,%options);
 
+unless ($no_deprecation) {
+    print wrap_msg(
+        gettext("po4a-translate is deprecated. The unified po4a(1) program is more convenient and less error prone.") );
+}
+
+# parser
+my $doc = Locale::Po4a::Chooser::new( $format, %options );
 
 # Prepare the document to be used as translator, but not parser
-$doc->process('po_in_name'       => \@pos,
-	      'file_in_name'     => \@masters,
-	      'file_in_charset'  => $mastchar,
-	      'file_out_charset' => $locchar,
-	      'addendum_charset' => $addchar);
+$doc->process(
+    'po_in_name'       => \@pos,
+    'file_in_name'     => \@masters,
+    'file_in_charset'  => $mastchar,
+    'file_out_charset' => $locchar,
+    'addendum_charset' => $addchar,
+    'wrap-po'          => $wrappo
+);
 
-my ($percent,$hit,$queries) = $doc->stats();
-my $error=0;
+my ( $percent, $hit, $queries ) = $doc->stats();
+my $error = 0;
 
-print STDERR wrap_msg(gettext("%s is %s%% translated (%s of %s strings)."),
-    $master_filename, $percent, $hit, $queries)
-  if (scalar @verbose) && ($percent>=$threshold);
+print STDERR wrap_msg( gettext("%s is %s%% translated (%s of %s strings)."),
+    $master_filename, $percent, $hit, $queries )
+  if ( scalar @verbose ) && ( $percent >= $threshold );
 
-
-if ($percent<$threshold)  {
-    print STDERR wrap_msg(gettext("Discard the translation of %s (only %s%% translated; need %s%%)."),
-	$master_filename, $percent, $threshold);
-    unlink($outfile) if (-e $outfile);
+if ( $percent < $threshold ) {
+    print STDERR wrap_msg( gettext("Discard the translation of %s (only %s%% translated; need %s%%)."),
+        $master_filename, $percent, $threshold );
+    unlink($outfile) if ( -e $outfile );
 } else {
     my %discarded = ();
-    my @files = ();
+    my @files     = ();
     while (@addfiles) {
-	my $add = shift(@addfiles);
-	my $modifiers;
-	$add =~ s/^([@!?]+)// and $modifiers = $1;
-	next if defined($discarded{$add});
-	if (defined $modifiers) {
-	    if ($modifiers =~ m/!/) {
-		$discarded{$add} = 1;
-		next;
-	    }
-	    next if ($modifiers =~ m/\?/ and not -e $add);
-	    if ($modifiers =~ m/@/) {
-		open LIST,"<","$add" or die wrap_msg(gettext("Can't open %s: %s"), $add, $!);
-		my @new_list = ();
-		while(<LIST>) {
-		    chomp;
-		    s/\s+$//;
-		    next if length($_) == 0 or $_ =~ m/^\s*#/;
-		    push(@new_list, $_);
-		}
-		close LIST;
-		unshift(@addfiles, @new_list);
-	    } else {
-		push @files,$add;
-	    }
-	} else {
-	    push @files,$add;
-	}
+        my $add = shift(@addfiles);
+        my $modifiers;
+        $add =~ s/^([@!?]+)// and $modifiers = $1;
+        next if defined( $discarded{$add} );
+        if ( defined $modifiers ) {
+            if ( $modifiers =~ m/!/ ) {
+                $discarded{$add} = 1;
+                next;
+            }
+            next if ( $modifiers =~ m/\?/ and not -e $add );
+            if ( $modifiers =~ m/@/ ) {
+                open LIST, "<", "$add" or die wrap_msg( gettext("Cannot open %s: %s"), $add, $! );
+                my @new_list = ();
+                while (<LIST>) {
+                    chomp;
+                    s/\s+$//;
+                    next if length($_) == 0 or $_ =~ m/^\s*#/;
+                    push( @new_list, $_ );
+                }
+                close LIST;
+                unshift( @addfiles, @new_list );
+            } else {
+                push @files, $add;
+            }
+        } else {
+            push @files, $add;
+        }
     }
     for my $add (@files) {
-	unless ($doc->addendum($add)) {
-	    unlink($outfile) if (-e $outfile);
-	    die wrap_msg(gettext("Discard the translation of %s (addendum %s does not apply)."),
-		$master_filename, $add);
-	}
+        unless ( $doc->addendum($add) ) {
+            unlink($outfile) if ( -e $outfile );
+            die wrap_msg( gettext("Discard the translation of %s (addendum %s does not apply)."),
+                $master_filename, $add );
+        }
     }
     $doc->write($outfile);
 }

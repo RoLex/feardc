@@ -437,54 +437,31 @@ void WinUtil::updateFont(dwt::FontPtr& font, int setting) {
 void WinUtil::initUserMatching() {
 	// make sure predefined definitions are here.
 	auto here = UserMatchManager::getInstance()->checkPredef();
-	auto newList = UserMatchManager::getInstance()->getList();
 
-	if(!here.first) {
-		// add a matcher for favs.
-		UserMatch matcher;
-		matcher.setFlag(UserMatch::PREDEFINED);
-		matcher.setFlag(UserMatch::FAVS);
-		matcher.name = str(F_("Favorite users (added by %1%)") % APPNAME);
-		matcher.style.font = Text::fromT(encodeFont(font->makeBold()->getLogFont()));
-		matcher.style.textColor = modGreen(modRed(SETTING(TEXT_COLOR), 255), 127); // more orange
-		newList.push_back(std::move(matcher));
-	}
+	if (!here.first || !here.second) {
+		auto newList = UserMatchManager::getInstance()->getList();
 
-	if(!here.second) {
-		// add a matcher for ops.
-		UserMatch matcher;
-		matcher.setFlag(UserMatch::PREDEFINED);
-		matcher.setFlag(UserMatch::OPS);
-		matcher.name = str(F_("Operators (added by %1%)") % APPNAME);
-		matcher.style.textColor = modRed(SETTING(TEXT_COLOR), 127); // more red
-		newList.push_back(std::move(matcher));
-	}
+		if (!here.first) { // add a matcher for favs.
+			UserMatch matcher;
+			matcher.setFlag(UserMatch::PREDEFINED);
+			matcher.setFlag(UserMatch::FAVS);
+			matcher.name = str(F_("Favorite users (added by %1%)") % APPNAME);
+			matcher.style.font = Text::fromT(encodeFont(font->makeBold()->getLogFont()));
+			matcher.style.textColor = modGreen(modRed(SETTING(TEXT_COLOR), 255), 127); // more orange
+			newList.push_back(std::move(matcher));
+		}
 
-	/*
-	auto have = UserMatchManager::getInstance()->checkPredef2();
+		if (!here.second) { // add a matcher for ops.
+			UserMatch matcher;
+			matcher.setFlag(UserMatch::PREDEFINED);
+			matcher.setFlag(UserMatch::OPS);
+			matcher.name = str(F_("Operators (added by %1%)") % APPNAME);
+			matcher.style.textColor = modRed(SETTING(TEXT_COLOR), 127); // more red
+			newList.push_back(std::move(matcher));
+		}
 
-	if (!have.first) { // add a matcher for bots
-		UserMatch matcher;
-		matcher.setFlag(UserMatch::PREDEFINED);
-		matcher.setFlag(UserMatch::BOTS);
-		matcher.name = str(F_("Hub bots (added by %1%)") % APPNAME);
-		matcher.style.font = Text::fromT(encodeFont(font->makeBold()->getLogFont()));
-		matcher.style.textColor = modBlue(modGreen(modRed(SETTING(TEXT_COLOR), 127), 127), 127); // more gray
-		newList.push_back(std::move(matcher));
-	}
-
-	if (!have.second) { // add a matcher for avdb
-		UserMatch matcher;
-		matcher.setFlag(UserMatch::PREDEFINED);
-		matcher.setFlag(UserMatch::AVDB);
-		matcher.name = str(F_("Infected users (added by %1%)") % APPNAME);
-		matcher.style.textColor = modBlue(SETTING(TEXT_COLOR), 127); // more blue
-		newList.push_back(std::move(matcher));
-	}
-	*/
-
-	if (!here.first || !here.second/* || !have.first || !have.second*/)
 		UserMatchManager::getInstance()->setList(std::move(newList));
+	}
 
 	updateUserMatchFonts();
 }

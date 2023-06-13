@@ -102,27 +102,6 @@ pair<bool, bool> UserMatchManager::checkPredef() const {
 	return ret;
 }
 
-/*
-pair<bool, bool> UserMatchManager::checkPredef2() const {
-	boost::shared_lock<boost::shared_mutex> lock(mutex);
-	pair<bool, bool> ret(false, false);
-
-	for (auto& i: list) {
-		if (i.isSet(UserMatch::PREDEFINED)) {
-			if (i.isSet(UserMatch::BOTS))
-				ret.first = true;
-			else if (i.isSet(UserMatch::AVDB))
-				ret.second = true;
-
-			if (ret.first && ret.second)
-				break;
-		}
-	}
-
-	return ret;
-}
-*/
-
 unordered_set<string> UserMatchManager::getFonts() const {
 	boost::shared_lock<boost::shared_mutex> lock(mutex);
 	unordered_set<string> ret;
@@ -207,12 +186,6 @@ void UserMatchManager::on(SettingsManagerListener::Load, SimpleXML& xml) noexcep
 			if(xml.getBoolChildAttrib("Favs")) { match.setFlag(UserMatch::FAVS); }
 			if(xml.getBoolChildAttrib("Ops")) { match.setFlag(UserMatch::OPS); }
 			if(xml.getBoolChildAttrib("Bots")) { match.setFlag(UserMatch::BOTS); }
-
-			/*
-			if (xml.getBoolChildAttrib("AVDB"))
-				match.setFlag(UserMatch::AVDB);
-			*/
-
 			if(xml.getBoolChildAttrib("ForceChat")) { match.setFlag(UserMatch::FORCE_CHAT); }
 			if(xml.getBoolChildAttrib("IgnoreChat")) { match.setFlag(UserMatch::IGNORE_CHAT); }
 
@@ -258,12 +231,6 @@ void UserMatchManager::on(SettingsManagerListener::Save, SimpleXML& xml) noexcep
 		if(i.isSet(UserMatch::FAVS)) { xml.addChildAttrib("Favs", true); }
 		if(i.isSet(UserMatch::OPS)) { xml.addChildAttrib("Ops", true); }
 		if(i.isSet(UserMatch::BOTS)) { xml.addChildAttrib("Bots", true); }
-
-		/*
-		if (i.isSet(UserMatch::AVDB))
-			xml.addChildAttrib("AVDB", true);
-		*/
-
 		if(i.isSet(UserMatch::FORCE_CHAT)) { xml.addChildAttrib("ForceChat", true); }
 		if(i.isSet(UserMatch::IGNORE_CHAT)) { xml.addChildAttrib("IgnoreChat", true); }
 
