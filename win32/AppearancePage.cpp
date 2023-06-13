@@ -46,6 +46,8 @@ PropPage::ListItem AppearancePage::listItems[] = {
 	{ SettingsManager::GET_USER_COUNTRY, N_("Guess user country from IP"), IDH_SETTINGS_APPEARANCE_GET_USER_COUNTRY },
 	{ SettingsManager::SHOW_USER_IP, N_("Show user IP in chat"), IDH_SETTINGS_APPEARANCE_SHOW_USER_IP },
 	{ SettingsManager::SHOW_USER_COUNTRY, N_("Show user country in chat"), IDH_SETTINGS_APPEARANCE_SHOW_USER_COUNTRY },
+	{ SettingsManager::GEO_CITY, N_("City-level geolocation database (allows parameters such as %[city])"), IDH_SETTINGS_APPEARANCE_GEO_CITY },
+	{ SettingsManager::GEO_REGION, N_("Region name geolocation database (allows %[region])"), IDH_SETTINGS_APPEARANCE_GEO_REGION },
 	{ 0, 0 }
 };
 

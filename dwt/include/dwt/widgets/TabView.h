@@ -130,7 +130,6 @@ public:
 	using Widget::layout;
 
 	// tab controls only use WM_DRAWITEM
-	// todo: https://bugs.launchpad.net/dcplusplus/+bug/2019492
 	static bool handlePainting(DRAWITEMSTRUCT& t) {
 		TabInfo* ti = reinterpret_cast<TabInfo*>(t.itemData);
 		return ti->control->handlePainting(t, ti);

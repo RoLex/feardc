@@ -104,6 +104,7 @@ transfers(0),
 toolbar(0),
 tabs(0),
 tray_pm(false),
+geoRegion(GeoRegion_Idle),
 geoStaticServe(false),
 stopperThread(NULL),
 lastUp(0),
@@ -116,15 +117,19 @@ fullSlots(false)
 	// Don't forget to update version.xml when changing these links!
 	links.homepage = _T("https://client.feardc.net/");
 	links.downloads = links.homepage + _T("download.html");
-	links.geoip_city = _T("https://client.feardc.net/geoip/GeoLite2-City.mmdb.gz");
+	links.geoip6 = _T("https://dcplusplus.sourceforge.io/geoip/GeoIPv6.dat.gz");
+	links.geoip4 = _T("https://dcplusplus.sourceforge.io/geoip/GeoIP.dat.gz");
+	links.geoip6_city = _T("https://dcplusplus.sourceforge.io/geoip/GeoIPCityv6.dat.gz");
+	links.geoip4_city = _T("https://dcplusplus.sourceforge.io/geoip/GeoIPCity.dat.gz");
+	links.geoip_regions = _T("https://dcplusplus.sourceforge.io/geoip/region.csv");
 	links.faq = links.homepage + _T("faq.html");
 	links.help = links.homepage + _T("help.html");
-	links.discuss = _T("https://github.com/rolex/feardc/issues/");
-	links.features = _T("https://github.com/rolex/feardc/issues/");
-	links.bugs = _T("https://github.com/rolex/feardc/issues/");
-	links.donate = _T("https://www.paypal.com/paypalme/feardc/");
-	links.blog = _T("https://dcpp.wordpress.com/");
-	links.community = _T("https://www.dcbase.org/");
+	links.discuss = _T("https://github.com/rolex/feardc/issues");
+	links.features = _T("https://github.com/rolex/feardc/issues");
+	links.bugs = _T("https://github.com/rolex/feardc/issues");
+	links.donate = _T("https://dcplusplus.sourceforge.io/donate.html");
+	links.blog = _T("https://dcpp.wordpress.com");
+	links.community = _T("https://www.dcbase.org");
 	links.pluginrepo = links.homepage + _T("plugins.html");
 	links.contribute = _T("https://www.dcbase.org/contribute/");
 
@@ -1276,6 +1281,9 @@ void MainWindow::handleSettings() {
 	auto prevProxy = CONNSETTING(OUTGOING_CONNECTIONS);
 
 	auto prevGeo = SETTING(GET_USER_COUNTRY);
+	auto prevGeoCity = SETTING(GEO_CITY);
+	auto prevGeoRegion = SETTING(GEO_REGION);
+	auto prevGeoFormat = SETTING(COUNTRY_FORMAT);
 
 	auto prevFont = SETTING(MAIN_FONT);
 	auto prevUploadFont = SETTING(UPLOAD_FONT);
@@ -1310,13 +1318,22 @@ void MainWindow::handleSettings() {
 
 		ClientManager::getInstance()->infoUpdated();
 
-		if(SETTING(GET_USER_COUNTRY) != prevGeo) {
+		bool rebuildGeo = prevGeo && SETTING(COUNTRY_FORMAT) != prevGeoFormat;
+		if(SETTING(GET_USER_COUNTRY) != prevGeo || SETTING(GEO_CITY) != prevGeoCity || SETTING(GEO_REGION) != prevGeoRegion) {
 			if(SETTING(GET_USER_COUNTRY)) {
 				GeoManager::getInstance()->init();
-				checkGeoUpdate();
+				if(SETTING(GEO_CITY) != prevGeoCity || (SETTING(GEO_CITY) && SETTING(GEO_REGION) != prevGeoRegion)) {
+					updateGeo();
+				} else {
+					checkGeoUpdate();
+				}
 			} else {
 				GeoManager::getInstance()->close();
+				rebuildGeo = false;
 			}
+		}
+		if(rebuildGeo) {
+			GeoManager::getInstance()->rebuild();
 		}
 
 		if(SETTING(MAIN_FONT) != prevFont) {
@@ -1540,8 +1557,24 @@ void MainWindow::completeVersionUpdate(bool success, const string& result) {
 				links.downloads = Text::toT(xml.getChildData());
 			}
 			xml.resetCurrentChild();
-			if(xml.findChild("GeoIP_City")) {
-				links.geoip_city = Text::toT(xml.getChildData());
+			if(xml.findChild("GeoIPv6")) {
+				links.geoip6 = Text::toT(xml.getChildData());
+			}
+			xml.resetCurrentChild();
+			if(xml.findChild("GeoIPv4")) {
+				links.geoip4 = Text::toT(xml.getChildData());
+			}
+			xml.resetCurrentChild();
+			if(xml.findChild("GeoIPv6_City")) {
+				links.geoip6_city = Text::toT(xml.getChildData());
+			}
+			xml.resetCurrentChild();
+			if(xml.findChild("GeoIPv4_City")) {
+				links.geoip4_city = Text::toT(xml.getChildData());
+			}
+			xml.resetCurrentChild();
+			if(xml.findChild("GeoIP_Regions")) {
+				links.geoip_regions = Text::toT(xml.getChildData());
 			}
 			xml.resetCurrentChild();
 			if(xml.findChild("Faq")) {
@@ -1597,72 +1630,122 @@ void MainWindow::completeVersionUpdate(bool success, const string& result) {
 		xml.stepOut();
 	} catch (const Exception&) { } }
 
-	// check after the version.xml download in case it contains updated GeoIP2 links.
+	// check after the version.xml download in case it contains updated GeoIP links.
 	if(SETTING(GET_USER_COUNTRY)) {
 		checkGeoUpdate();
 	}
 }
 
 void MainWindow::checkGeoUpdate() {
-	checkGeoUpdateDB();
+	checkGeoUpdate(true);
+	checkGeoUpdate(false);
 }
 
-void MainWindow::checkGeoUpdateDB() {
-	// update when the database is non-existent, older than 16 days and it is frequently updated (GeoIP2 updates every 14 days)
-
+void MainWindow::checkGeoUpdate(bool v6) {
+	// update when the database is non-existent, older than 16 days and it is frequently updated (GeoIP updates every month) 
 	try {
-		File f(GeoManager::getDbPath() + ".gz", File::READ, File::OPEN);
-
-		if (f.getSize() > 0 && (geoStaticServe || static_cast<time_t>(f.getLastModified()) > GET_TIME() - 3600 * 24 * 16))
+		File f(GeoManager::getDbPath(v6) + ".gz", File::READ, File::OPEN);
+		if(f.getSize() > 0 && (geoStaticServe || static_cast<time_t>(f.getLastModified()) > GET_TIME() - 3600 * 24 * 16)) {
 			return;
-
-	} catch (const FileException&) { }
-
-	updateGeoDB();
+		}
+	} catch(const FileException&) { }
+	updateGeo(v6);
 }
 
 void MainWindow::updateGeo() {
-	if (SETTING(GET_USER_COUNTRY)) {
-		updateGeoDB();
-
+	if(SETTING(GET_USER_COUNTRY)) {
+		updateGeo(true);
+		updateGeo(false);
 	} else {
 		dwt::MessageBox(this).show(T_("IP -> country mappings are disabled. Turn them back on via Settings > Appearance."),
 			_T(APPNAME) _T(" ") _T(VERSIONSTRING), dwt::MessageBox::BOX_OK, dwt::MessageBox::BOX_ICONEXCLAMATION);
 	}
 }
 
-void MainWindow::updateGeoDB() {
-	auto& conn = conns[CONN_GEOIP];
+namespace { string geoType(bool v6) {
+	return str(F_("%1%-level %2%") % (SETTING(GEO_CITY) ? _("city") : _("country")) % (v6 ? "IPv6" : "IPv4"));
+} }
 
-	if (static_cast<HttpConnection*>(conn))
+void MainWindow::updateGeo(bool v6) {
+	auto& conn = conns[v6 ? CONN_GEO_V6 : CONN_GEO_V4];
+	if(static_cast<HttpConnection*>(conn))
 		return;
 
-	auto& file = geoFile;
-
+	auto& file = v6 ? geo6File : geo4File;
 	try {
-		file.reset(new File(GeoManager::getDbPath() + ".gz.tmp", File::WRITE, File::CREATE | File::TRUNCATE));
+		file.reset(new File(GeoManager::getDbPath(v6) + ".gz.tmp", File::WRITE, File::CREATE | File::TRUNCATE));
 	} catch(const FileException&) {
-		LogManager::getInstance()->message("The GeoIP2 database could not be updated");
+		LogManager::getInstance()->message(str(F_("The %1% GeoIP database could not be updated") % geoType(v6)));
 		return;
 	}
 
-	LogManager::getInstance()->message("Updating the GeoIP2 database...");
-	conn = HttpManager::getInstance()->download(Text::fromT(links.geoip_city), file.get());
+	LogManager::getInstance()->message(str(F_("Updating the %1% GeoIP database...") % geoType(v6)));
+	conn = HttpManager::getInstance()->download(Text::fromT(SETTING(GEO_CITY) ?
+		(v6 ? links.geoip6_city : links.geoip4_city) : (v6 ? links.geoip6 : links.geoip4)), file.get());
 }
 
-void MainWindow::completeGeoUpdate(bool success) {
+void MainWindow::completeGeoUpdate(bool v6, bool success) {
+	/* careful, no GUI call here! this runs in the socket thread so as not to freeze the GUI while
+	regenerating GeoIP caches. */
+
 	if(success) {
+
+		/* this is tricky: the region file covers both v6 & v4 databases so we try our best to
+		download it only once. both databases are refreshed after a succesful region download. */
+		if(SETTING(GEO_CITY) && SETTING(GEO_REGION)) {
+
+			if(geoRegion == (v6 ? GeoRegion_FromV6 : GeoRegion_FromV4)) {
+				geoRegion = GeoRegion_Idle;
+
+				try {
+					File::renameFile(GeoManager::getDbPath(true) + ".gz.tmp", GeoManager::getDbPath(true) + ".gz");
+					File::renameFile(GeoManager::getDbPath(false) + ".gz.tmp", GeoManager::getDbPath(false) + ".gz");
+					File::renameFile(GeoManager::getRegionDbPath() + ".tmp", GeoManager::getRegionDbPath());
+				} catch(const FileException&) { }
+
+				GeoManager::getInstance()->update(true);
+				LogManager::getInstance()->message(str(F_("The %1% GeoIP database has been successfully updated") % geoType(true)));
+				GeoManager::getInstance()->update(false);
+				LogManager::getInstance()->message(str(F_("The %1% GeoIP database has been successfully updated") % geoType(false)));
+
+			} else if(geoRegion == GeoRegion_Idle) {
+
+				/* do nothing if the other download is running - regions will be downloaded and
+				both databases will be refreshed once it completes. */
+				if(static_cast<HttpConnection*>(conns[v6 ? CONN_GEO_V4 : CONN_GEO_V6]))
+					return;
+
+				geoRegion = v6 ? GeoRegion_FromV6 : GeoRegion_FromV4;
+				auto& file = v6 ? geo6File : geo4File;
+				try {
+					file.reset(new File(GeoManager::getRegionDbPath() + ".tmp", File::WRITE, File::CREATE | File::TRUNCATE));
+					conns[v6 ? CONN_GEO_V6 : CONN_GEO_V4] = HttpManager::getInstance()->download(Text::fromT(links.geoip_regions), file.get());
+				} catch(const FileException&) {
+					geoRegion = GeoRegion_Idle;
+				}
+			}
+
+			return;
+		}
+
 		try {
-			File::renameFile(GeoManager::getDbPath() + ".gz.tmp", GeoManager::getDbPath() + ".gz");
+			File::renameFile(GeoManager::getDbPath(v6) + ".gz.tmp", GeoManager::getDbPath(v6) + ".gz");
 		} catch(const FileException&) { }
 
-		GeoManager::getInstance()->update();
+		GeoManager::getInstance()->update(v6);
 
-		LogManager::getInstance()->message("The GeoIP2 database has been successfully updated");
+		LogManager::getInstance()->message(str(F_("The %1% GeoIP database has been successfully updated") % geoType(v6)));
 
 	} else {
-		File::deleteFile(GeoManager::getDbPath() + ".gz.tmp");
-		LogManager::getInstance()->message("The GeoIP2 database could not be updated");
+
+		if(geoRegion == (v6 ? GeoRegion_FromV6 : GeoRegion_FromV4)) {
+			File::deleteFile(GeoManager::getRegionDbPath() + ".tmp");
+			geoRegion = GeoRegion_Idle;
+		} else {
+			File::deleteFile(GeoManager::getDbPath(v6) + ".gz.tmp");
+		}
+
+		LogManager::getInstance()->message(str(F_("The %1% GeoIP database could not be updated") % geoType(v6)));
 	}
 }
 
@@ -1957,12 +2040,20 @@ void MainWindow::on(UserConnectionListener::PrivateMessage, UserConnection* uc, 
 void MainWindow::on(HttpManagerListener::Failed, HttpConnection* c, const string&) noexcept {
 	if(c == conns[CONN_VERSION]) {
 		conns[CONN_VERSION] = nullptr;
+
 		callAsync([this] { completeVersionUpdate(false, Util::emptyString); });
 
-	} else if(c == conns[CONN_GEOIP]) {
-		conns[CONN_GEOIP] = nullptr;
-		geoFile.reset();
-		completeGeoUpdate(false);
+	} else if(c == conns[CONN_GEO_V6]) {
+		conns[CONN_GEO_V6] = nullptr;
+		geo6File.reset();
+
+		completeGeoUpdate(true, false);
+
+	} else if(c == conns[CONN_GEO_V4]) {
+		conns[CONN_GEO_V4] = nullptr;
+		geo4File.reset();
+
+		completeGeoUpdate(false, false);
 	}
 }
 
@@ -1973,17 +2064,28 @@ void MainWindow::on(HttpManagerListener::Complete, HttpConnection* c, OutputStre
 		auto str = static_cast<StringOutputStream*>(stream)->getString();
 		callAsync([str, this] { completeVersionUpdate(true, str); });
 
-	} else if(c == conns[CONN_GEOIP]) {
-		conns[CONN_GEOIP] = nullptr;
-		geoFile.reset();
-		completeGeoUpdate(true);
+	} else if(c == conns[CONN_GEO_V6]) {
+		conns[CONN_GEO_V6] = nullptr;
+		geo6File.reset();
+
+		completeGeoUpdate(true, true);
+
+	} else if(c == conns[CONN_GEO_V4]) {
+		conns[CONN_GEO_V4] = nullptr;
+		geo4File.reset();
+
+		completeGeoUpdate(false, true);
 	}
 }
 
 void MainWindow::on(HttpManagerListener::ResetStream, HttpConnection* c) noexcept {
-	if(c == conns[CONN_GEOIP]) {
-		geoFile->setPos(0);
-		geoFile->setEOF();
+	if(c == conns[CONN_GEO_V6]) {
+		geo6File->setPos(0);
+		geo6File->setEOF();
+
+	} else if(c == conns[CONN_GEO_V4]) {
+		geo4File->setPos(0);
+		geo4File->setEOF();
 	}
 }
 

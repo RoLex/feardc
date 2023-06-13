@@ -1,4 +1,4 @@
-/* $Id: getgateway.c,v 1.26 2023/04/23 10:59:48 nanard Exp $ */
+/* $Id: getgateway.c,v 1.25 2014/04/22 10:28:57 nanard Exp $ */
 /* libnatpmp
 
 Copyright (c) 2007-2014, Thomas BERNARD
@@ -29,7 +29,7 @@ POSSIBILITY OF SUCH DAMAGE.
 */
 #include <stdio.h>
 #include <ctype.h>
-#ifndef _WIN32
+#ifndef WIN32
 #include <netinet/in.h>
 #endif
 #if !defined(_MSC_VER)
@@ -67,7 +67,7 @@ POSSIBILITY OF SUCH DAMAGE.
 #undef USE_SYSCTL_NET_ROUTE
 #endif
 
-#ifdef _WIN32
+#ifdef WIN32
 #undef USE_PROC_NET_ROUTE
 #undef USE_SOCKET_ROUTE
 #undef USE_SYSCTL_NET_ROUTE
@@ -116,20 +116,19 @@ POSSIBILITY OF SUCH DAMAGE.
 #endif
 
 #ifdef USE_WIN32_CODE_2
-#include <winsock2.h>
 #include <windows.h>
+#include <winsock2.h>
 #include <iphlpapi.h>
 #endif
 
 #include "getgateway.h"
 
-#ifndef _WIN32
+#ifndef WIN32
 #define SUCCESS (0)
 #define FAILED  (-1)
 #endif
 
-#if defined(USE_PROC_NET_ROUTE)
-
+#ifdef USE_PROC_NET_ROUTE
 /*
  parse /proc/net/route which is as follow :
 
@@ -174,8 +173,10 @@ int getdefaultgateway(in_addr_t * addr)
 		fclose(f);
 	return FAILED;
 }
+#endif /* #ifdef USE_PROC_NET_ROUTE */
 
-#elif defined(USE_SYSCTL_NET_ROUTE)
+
+#ifdef USE_SYSCTL_NET_ROUTE
 
 #define ROUNDUP(a) \
 	((a) > 0 ? (1 + (((a) - 1) | (sizeof(long) - 1))) : sizeof(long))
@@ -230,9 +231,10 @@ int getdefaultgateway(in_addr_t * addr)
 	}
 	return r;
 }
+#endif /* #ifdef USE_SYSCTL_NET_ROUTE */
 
-#elif defined(USE_SOCKET_ROUTE)
 
+#ifdef USE_SOCKET_ROUTE
 /* Thanks to Darren Kenny for this code */
 #define NEXTADDR(w, u) \
         if (rtm_addrs & (w)) {\
@@ -270,9 +272,7 @@ int getdefaultgateway(in_addr_t *addr)
   rtm.rtm_addrs = rtm_addrs;
 
   so_dst.sa_family = AF_INET;
-  so_dst.sa_len = sizeof(struct sockaddr);
   so_mask.sa_family = AF_INET;
-  so_mask.sa_len = sizeof(struct sockaddr);
 
   NEXTADDR(RTA_DST, so_dst);
   NEXTADDR(RTA_NETMASK, so_mask);
@@ -316,9 +316,9 @@ int getdefaultgateway(in_addr_t *addr)
       return FAILED;
   }
 }
+#endif /* #ifdef USE_SOCKET_ROUTE */
 
-#elif defined(USE_WIN32_CODE)
-
+#ifdef USE_WIN32_CODE
 int getdefaultgateway(in_addr_t * addr)
 {
 	HKEY networkCardsKey;
@@ -499,9 +499,9 @@ int getdefaultgateway(in_addr_t * addr)
 
 	return -1;
 }
+#endif /* #ifdef USE_WIN32_CODE */
 
-#elif defined(USE_WIN32_CODE_2)
-
+#ifdef USE_WIN32_CODE_2
 int getdefaultgateway(in_addr_t *addr)
 {
 	MIB_IPFORWARDROW ip_forward;
@@ -511,9 +511,9 @@ int getdefaultgateway(in_addr_t *addr)
 	*addr = ip_forward.dwForwardNextHop;
 	return 0;
 }
+#endif /* #ifdef USE_WIN32_CODE_2 */
 
-#elif defined(USE_HAIKU_CODE)
-
+#ifdef USE_HAIKU_CODE
 int getdefaultgateway(in_addr_t *addr)
 {
     int fd, ret = -1;
@@ -564,13 +564,11 @@ fail:
     close(fd);
     return ret;
 }
+#endif /* #ifdef USE_HAIKU_CODE */
 
-#else /* fallback */
-
+#if !defined(USE_PROC_NET_ROUTE) && !defined(USE_SOCKET_ROUTE) && !defined(USE_SYSCTL_NET_ROUTE) && !defined(USE_WIN32_CODE) && !defined(USE_WIN32_CODE_2) && !defined(USE_HAIKU_CODE)
 int getdefaultgateway(in_addr_t * addr)
 {
-    (void)addr;
-    return -1;
+	return -1;
 }
-
 #endif

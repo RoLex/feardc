@@ -1,10 +1,10 @@
 #! /usr/bin/env perl
 eval 'exec perl -S $0 ${1+"$@"}'
-  if $running_under_some_shell;
+    if $running_under_some_shell;
 
 # po4a-gettextize -- convert an original file to a PO file
 #
-# Copyright 2002-2020 by SPI, inc.
+# Copyright 2002-2012 by SPI, inc.
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of GPL (see COPYING).
@@ -17,32 +17,43 @@ po4a-gettextize - convert an original file (and its translation) to a PO file
 
 =head1 SYNOPSIS
 
-B<po4a-gettextize> B<-f> I<fmt> B<-m> I<master.doc> B<-l> I<XX.doc> B<-p> I<XX.po>
+B<po4a-gettextize> B<-f> I<fmt> B<-m> I<master.doc> [B<-l> I<XX.doc>] B<-p> I<XX.po>
 
 (I<XX.po> is the output, all others are inputs)
 
 =head1 DESCRIPTION
 
-po4a (PO for anything) eases the maintenance of documentation translation using
-the classical gettext tools. The main feature of po4a is that it decouples the
-translation of content from its document structure.  Please refer to the page
-L<po4a(7)> for a gentle introduction to this project.
+The po4a (PO for anything) project goal is to ease translations (and more
+interestingly, the maintenance of translations) using gettext tools on
+areas where they were not expected like documentation.
 
-The B<po4a-gettextize> script helps you converting your previously existing
-translations into a po4a-based workflow. This is only to be done once to salvage
-an existing translation while converting to po4a, not on a regular basis after
-the conversion of your project. This tedious process is explained in details in
-Section 'Converting a manual translation to po4a' below.
+The B<po4a-gettextize> script is in charge of converting documentation
+files to PO files.  If you start a new translation, B<po4a-gettextize>
+will extract the translatable strings from the documentation file and
+write a POT file from it.
 
-You must provide both a master file (e.g., the source in English) and an
-existing translated file (e.g., a previous translation attempt without po4a). If
-you provide more than one master or translation files, they will be used in
-sequence, but it may be easier to gettextize each page or chapter separately and
-then use B<msgmerge> to merge all produced PO files. As you wish.
+If you already have a translated file, B<po4a-gettextize> will try to
+extract the translations it contains and put them in place in the written
+PO file. Be warned that very few intelligence is used in this process: the
+Nth string of the translated file is supposed to be the translation of the
+Nth string in the original. If it's not the case, you're dead. That's why
+it is very important that both files share exactly the same structure.
 
-If the master document has non-ASCII characters, the new generated PO file will
-be in UTF-8. If the master document is completely in ASCII, the generated
-PO will use the encoding of the translated input document.
+However, B<po4a-gettextize> will diagnose your death by detecting any
+desynchronisation between files, and reporting where they occur. In that
+case, you should edit manually the files to solve the reported
+disparity. Even if no error were reported, you should check carefully that the
+generated PO file is correct (i.e. that each msgstr is the translation of
+the associated msgid, and not the one before or after).
+
+Even if the script manages to do its job without any apparent problem, it still
+marks all extracted translations as fuzzy, to make sure that the translator
+will have a look at them, and detect any remaining problem.
+
+If the master document has non-ASCII characters, the new generated PO file
+will be in UTF-8, in order to allow non-standard characters in a culture
+independent way. Else (if the master document is completely in ASCII), the
+generated PO will use the encoding of the translated input document.
 
 =head1 OPTIONS
 
@@ -79,10 +90,9 @@ catalog will be written to the standard output.
 
 =item B<-o>, B<--option>
 
-Extra option(s) to pass to the format plugin. See the documentation of each
-plugin for more information about the valid options and their meanings. For
-example, you could pass '-o tablecells' to the AsciiDoc parser, while the
-text parser would accept '-o tabs=split'.
+Extra option(s) to pass to the format plugin. Specify each option in the
+'I<name>B<=>I<value>' format. See the documentation of each plugin for more
+information about the valid options and their meanings.
 
 =item B<-h>, B<--help>
 
@@ -91,11 +101,6 @@ Show a short help message.
 =item B<--help-format>
 
 List the documentation formats understood by po4a.
-
-=item B<-k> B<--keep-temps>
-
-Keep the temporary master and localized POT files built before merging.
-This can be useful to understand why these files get desynchronized, leading to gettextization problems
 
 =item B<-V>, B<--version>
 
@@ -129,196 +134,12 @@ Set the package version for the POT header. The default is "VERSION".
 
 =back
 
-=head2 Converting a manual translation to po4a
-
-B<po4a-gettextize> synchronizes the master and localized files to extract their
-content into a PO file. The content of the master file gives the B<msgid> while
-the content of the localized file gives the B<msgstr>. This process is somewhat
-fragile: the Nth string of the translated file is supposed to be the translation
-of the Nth string in the original.
-
-Gettextization works best if you manage to retrieve the exact version of the
-original document that was used for translation. Even so, you may need to fiddle
-with both master and localized files to align their structure if it was changed
-by the original translator, so working on files' copies is advised.
-
-Internally, each po4a parser reports the syntactical type of each extracted
-strings. This is how desynchronization are detected during the gettextization.
-In the example depicted below, it is very unlikely that the 4th string in
-translation (of type 'chapter') is the translation of the 4th string in original
-(of type 'paragraph'). It is more likely that a new paragraph was added to the
-original, or that two original paragraphs were merged together in the
-translation.
-
-    Original         Translation
-
-  chapter            chapter
-    paragraph          paragraph
-    paragraph          paragraph
-    paragraph        chapter
-  chapter              paragraph
-    paragraph          paragraph
-
-B<po4a-gettextize> will verbosely diagnose any structure desynchronization. When
-this happens, you should manually edit the files to add fake paragraphs or
-remove some content here and there until the structure of both files actually
-match. Some tricks are given below to salvage the most of the existing
-translation while doing so.
-
-If you are lucky enough to have a perfect match in the file structures out of
-the box, building a correct PO file is a matter of seconds. Otherwise, you will
-soon understand why this process has such an ugly name :) Even so,
-gettextization often remains faster than translating everything again. I
-gettextized the French translation of the whole Perl documentation in one day
-despite the I<many> synchronization issues. Given the amount of text (2Mb of
-original text), restarting the translation without first salvaging the old
-translations would have required several months of work. In addition, this grunt
-work is the price to pay to get the comfort of po4a. Once converted, the
-synchronization between master documents and translations will always be fully
-automatic.
-
-After a successful gettextization, the produced documents should be manually
-checked for undetected disparities and silent errors, as explained below.
-
-=head3 Hints and tricks for the gettextization process
-
-The gettextization stops as soon as a desynchronization is detected. When this
-happens, you need to edit the files as much as needed to re-align the files'
-structures. B<po4a-gettextize> is rather verbose when things go wrong. It
-reports the strings that don't match, their positions in the text, and the type
-of each of them. Moreover, the PO file generated so far is dumped as
-F<gettextization.failed.po> for further inspection.
-
-Here are some tricks to help you in this tedious process and ensure that you
-salvage the most of the previous translation:
-
-=over
-
-=item
-
-Remove all extra content of the translations, such as the section giving credits
-to the translators. They should be added separately to B<po4a> as addendas (see
-L<po4a(7)>).
-
-=item
-
-When editing the files to align their structures, prefer editing the translation
-if possible. Indeed, if the changes to the original are too intrusive, the old
-and new versions will not be matched during the first po4a run after
-gettextization (see below). Any unmatched translation will be dumped anyway.
-That being said, you still want to edit the original document if it's too hard
-to get the gettextization to proceed otherwise, even if it means that one
-paragraph of the translation is dumped. The important thing is to get a first PO
-file to start with.
-
-=item
-
-Do not hesitate to kill any original content that would not exist in the
-translated version. This content will be automatically reintroduced afterward,
-when synchronizing the PO file with the document.
-
-=item
-
-You should probably inform the original author of any structural change in the
-translation that seems justified. Issues in the original document should
-reported to the author. Fixing them in your translation only fixes them for a
-part of the community. Plus, it is impossible to do so when using po4a ;) But
-you probably want to wait until the end of the conversion to B<po4a> before
-changing the original files.
-
-=item
-
-Sometimes, the paragraph content does match, but not their types. Fixing it is
-rather format-dependent. In POD and man, it often comes from the fact that one
-of them contains a line beginning with a white space while the other does not.
-In those formats, such paragraph cannot be wrapped and thus become a different
-type. Just remove the space and you are fine. It may also be a typo in the tag
-name in XML.
-
-Likewise, two paragraphs may get merged together in POD when the separating
-line contains some spaces, or when there is no empty line between the B<=item>
-line and the content of the item.
-
-=item
-
-Sometimes, the desynchronization message seems odd because the translation is
-attached to the wrong original paragraph. It is the sign of an undetected issue
-earlier in the process. Search for the actual desynchronization point by
-inspecting the file F<gettextization.failed.po> that was produced, and fix the
-problem where it really is.
-
-=item
-
-Other issues may come from duplicated strings in either the original or
-translation. Duplicated strings are merged in PO files, with two references.
-This constitutes a difficulty for the gettextization algorithm, that is a simple
-one to one pairing between the B<msgid>s of both the master and the localized
-files. It is however believed that recent versions of po4a deal properly with
-duplicated strings, so you should report any remaining issue that you may encounter.
-
-=back
-
-=head2 Reviewing files produced by B<po4a-gettextize>
-
-Any file produced by B<po4a-gettextize> should be manually reviewed, even when
-the script terminates successfully. You should skim over the PO file, ensuring
-that the B<msgid> and B<msgstr> actually match. It is not necessary to ensure
-that the translation is perfectly correct yet, as all entries are marked as
-fuzzy translations anyway. You only need to check for obvious matching issues
-because badly matched translations will be dumped in subsequent steps while you
-want to salvage them.
-
-Fortunately, this step does not require to master the target languages as you
-only want to recognize similar elements in each B<msgid> and its corresponding
-B<msgstr>. As a speaker of French, English, and some German myself, I can do
-this for all European languages at least, even if I cannot say one word of most
-of these languages. I sometimes manage to detect matching issues in non-Latin
-languages by looking at string length, phrase structures (does the amount of
-interrogation marks match?) and other clues, but I prefer when someone else can
-review those languages.
-
-If you detect a mismatch, edit the original and translation files as if
-B<po4a-gettextize> reported an error, and try again. Once you have a decent PO
-file for your previous translation, backup it until you get po4a working
-correctly.
-
-=head2 Running B<po4a> for the first time
-
-The easiest way to setup po4a is to write a B<po4a.conf> configuration file, and
-use the integrated po4a program (B<po4a-updatepo> and B<po4a-translate> are
-deprecated). Please check the "CONFIGURATION FILE" Section in L<po4a(1)>
-documentation for more details.
-
-When B<po4a> runs for the first time, the current version of the master
-documents will be used to update the PO files containing the old translations
-that you salvaged through gettextization. This can take quite a long time,
-because many of the B<msgid>s of from the gettextization do not exactly match
-the elements of the POT file built from the recent master files. This forces
-gettext to search for the closest one using a costly string proximity algorithm.
-For example, the first run over the Perl documentation's French translation (5.5
-MB PO file) took about 48 hours (yes, two days) while the subsequent ones only
-take seconds.
-
-=head2 Moving your translations to production
-
-After this first run, the PO files are ready to be reviewed by translators. All
-entries were marked as fuzzy in the PO file by B<po4a-gettextization>, forcing
-their careful review before use. Translators should take each entry to verify
-that the salvaged translation actually match the current original text, update
-the translation on need, and remove the fuzzy markers.
-
-Once enough fuzzy markers are removed, B<po4a> will start generating the
-translation files on disk, and you're ready to move your translation workflow to
-production. Some projects find it useful to rely on weblate to coordinate
-between translators and maintainers, but that's beyond B<po4a>' scope.
-
 =head1 SEE ALSO
 
-L<po4a(1)>,
 L<po4a-normalize(1)>,
 L<po4a-translate(1)>,
 L<po4a-updatepo(1)>,
-L<po4a(7)>.
+L<po4a(7)>
 
 =head1 AUTHORS
 
@@ -328,7 +149,7 @@ L<po4a(7)>.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2002-2022 by SPI, inc.
+Copyright 2002-2012 by SPI, inc.
 
 This program is free software; you may redistribute it and/or modify it
 under the terms of GPL (see the COPYING file).
@@ -347,168 +168,7 @@ use Locale::Po4a::Common;
 
 use Pod::Usage qw(pod2usage);
 
-our %debug = (
-    'encoding' => 0,
-);
-
 Locale::Po4a::Common::textdomain('po4a');
-
-# This function produces one translated message catalog from two catalogs, an
-# original and a translation. This process is described in L<po4a(7)|po4a.7>,
-# section I<Gettextization: how does it work?>.
-
-sub gettextize {
-    my ( $poorig, $potrans ) = ( shift, shift );
-
-    my $pores = Locale::Po4a::Po->new();
-
-    my $please_fail = 0;
-    my $toobad      = dgettext( "po4a",
-            "\nThe gettextization failed (once again). Don't give up, "
-          . "gettextizing is a subtle art, but this is only needed once "
-          . "to convert a project to the gorgeous luxus offered by po4a "
-          . "to translators."
-          . "\nPlease refer to the po4a(7) documentation, the section "
-          . "\"HOWTO convert a pre-existing translation to po4a?\" "
-          . "contains several hints to help you in your task" );
-
-    # Don't fail right now when the entry count does not match. Instead, give
-    # it a try so that the user can see where we fail (which is probably where
-    # the problem is).
-    if ( $poorig->count_entries_doc() > $potrans->count_entries_doc() ) {
-        warn wrap_mod(
-            "po4a gettextize",
-            dgettext(
-                "po4a",
-                "Original has more strings than the translation (%d>%d). "
-                  . "Please fix it by editing the translated version to add "
-                  . "some dummy entry."
-            ),
-            $poorig->count_entries_doc(),
-            $potrans->count_entries_doc()
-        );
-        $please_fail = 1;
-    } elsif ( $poorig->count_entries_doc() < $potrans->count_entries_doc() ) {
-        warn wrap_mod(
-            "po4a gettextize",
-            dgettext(
-                "po4a",
-                "Original has less strings than the translation (%d<%d). "
-                  . "Please fix it by removing the extra entry from the "
-                  . "translated file. You may need an addendum (cf po4a(7)) "
-                  . "to reput the chunk in place after gettextization. A "
-                  . "possible cause is that a text duplicated in the original "
-                  . "is not translated the same way each time. Remove one of "
-                  . "the translations, and you're fine."
-            ),
-            $poorig->count_entries_doc(),
-            $potrans->count_entries_doc()
-        );
-        $please_fail = 1;
-    }
-
-    if ( $poorig->get_charset =~ /^utf-8$/i ) {
-        $potrans->to_utf8;
-        $pores->set_charset("UTF-8");
-    } else {
-        my $charset = $potrans->get_charset();
-        $charset = "UTF-8" if $charset eq "CHARSET";
-        $pores->set_charset($charset);
-    }
-    print "Po character sets:\n"
-      . "  original="
-      . $poorig->get_charset . "\n"
-      . "  translated="
-      . $potrans->get_charset . "\n"
-      . "  result="
-      . $pores->get_charset . "\n"
-      if $debug{'encoding'};
-
-    for (
-        my ( $o, $t ) = ( 0, 0 ) ;
-        $o < $poorig->count_entries_doc() && $t < $potrans->count_entries_doc() ;
-        $o++, $t++
-      )
-    {
-        #
-        # Extract some informations
-
-        my ( $orig, $trans ) = ( $poorig->msgid_doc($o), $potrans->msgid_doc($t) );
-
-        #       print STDERR "Matches [[$orig]]<<$trans>>\n";
-
-        my ( $reforig,  $reftrans )  = ( $poorig->{po}{$orig}{'reference'}, $potrans->{po}{$trans}{'reference'} );
-        my ( $typeorig, $typetrans ) = ( $poorig->type_doc($o),             $potrans->type_doc($t) );
-
-        #
-        # Make sure the type of both string exist
-        #
-        die wrap_mod( "po4a gettextize", "Internal error: type of original string number %s isn't provided", $o )
-          if ( $typeorig eq '' );
-
-        die wrap_mod( "po4a gettextize", "Internal error: type of translated string number %s isn't provided", $o )
-          if ( $typetrans eq '' );
-
-        #
-        # Make sure both type are the same
-        #
-        if ( $typeorig ne $typetrans ) {
-            $pores->write("gettextization.failed.po");
-            eval {
-                # Recode $trans into current charset, if possible
-                require I18N::Langinfo;
-                I18N::Langinfo->import(qw(langinfo CODESET));
-                my $codeset = langinfo( CODESET() );
-                Encode::from_to( $trans, $potrans->get_charset, $codeset );
-            };
-            die wrap_msg(
-                dgettext( "po4a",
-                        "po4a gettextization: Structure disparity between "
-                      . "original and translated files:\n"
-                      . "msgid (at %s) is of type '%s' while\n"
-                      . "msgstr (at %s) is of type '%s'.\n"
-                      . "Original text: %s\n"
-                      . "Translated text: %s\n"
-                      . "(result so far dumped to gettextization.failed.po)" )
-                  . "%s",
-                $reforig,
-                $typeorig,
-                $reftrans,
-                $typetrans,
-                $orig, $trans, $toobad
-            );
-        }
-
-        #
-        # Push the entry
-        #
-        my $flags;
-        if ( defined $poorig->{po}{$orig}{'flags'} ) {
-            $flags = $poorig->{po}{$orig}{'flags'} . " fuzzy";
-        } else {
-            $flags = "fuzzy";
-        }
-        $pores->push_raw(
-            'msgid'     => $orig,
-            'msgstr'    => $trans,
-            'flags'     => $flags,
-            'type'      => $typeorig,
-            'reference' => $reforig,
-            'conflict'  => 1,
-            'transref'  => $potrans->{po}{$trans}{'reference'}
-          )
-          unless ( defined( $pores->{po}{$orig} )
-            and ( $pores->{po}{$orig}{'msgstr'} eq $trans ) )
-
-          # FIXME: maybe we should be smarter about what reference should be
-          #        sent to push_raw.
-    }
-
-    # make sure we return a useful error message when entry count differ
-    die "$toobad\n" if $please_fail;
-
-    return $pores;
-}
 
 
 sub show_version {
@@ -517,121 +177,89 @@ sub show_version {
 }
 
 my %opts = (
-    "verbose"            => 0,
-    "debug"              => 0,
-    "copyright-holder"   => undef,
-    "msgid-bugs-address" => undef,
-    "package-name"       => undef,
-    "package-version"    => undef
-);
+    "verbose"             => 0,
+    "debug"               => 0,
+    "copyright-holder"    => undef,
+    "msgid-bugs-address"  => undef,
+    "package-name"        => undef,
+    "package-version"     => undef);
 
-my ($pofile) = ('-');
-my ( @masterfile, @locfile, $help_fmt, $help, $keep_temps, $type, @options );
-my ( $mastchar, $locchar );
-Getopt::Long::config( 'bundling', 'no_getopt_compat', 'no_auto_abbrev' );
+my ($pofile)=('-');
+my (@masterfile,@locfile,$help_fmt,$help,$type,@options);
+my ($mastchar,$locchar);
+Getopt::Long::config('bundling', 'no_getopt_compat', 'no_auto_abbrev');
 GetOptions(
-    'help|h'       => \$help,
-    'help-format'  => \$help_fmt,
-    'keep-temps|k' => \$keep_temps,
+	'help|h'        => \$help,
+	'help-format'   => \$help_fmt,
 
-    'master|m=s'    => \@masterfile,
-    'localized|l=s' => \@locfile,
-    'po|p=s'        => \$pofile,
-    'format|f=s'    => \$type,
+	'master|m=s'    => \@masterfile,
+	'localized|l=s' => \@locfile,
+	'po|p=s'        => \$pofile,
+	'format|f=s'    => \$type,
 
-    'master-charset|M=s'    => \$mastchar,
-    'localized-charset|L=s' => \$locchar,
+	'master-charset|M=s'    => \$mastchar,
+	'localized-charset|L=s' => \$locchar,
 
-    'option|o=s' => \@options,
+	'option|o=s'            => \@options,
 
-    'copyright-holder=s'   => \$opts{"copyright-holder"},
-    'msgid-bugs-address=s' => \$opts{"msgid-bugs-address"},
-    'package-name=s'       => \$opts{"package-name"},
-    'package-version=s'    => \$opts{"package-version"},
+	'copyright-holder=s'    => \$opts{"copyright-holder"},
+	'msgid-bugs-address=s'  => \$opts{"msgid-bugs-address"},
+	'package-name=s'        => \$opts{"package-name"},
+	'package-version=s'     => \$opts{"package-version"},
 
-    'verbose|v' => \$opts{"verbose"},
-    'debug|d'   => \$opts{"debug"},
-    'version|V' => \&show_version
+	'verbose|v'             => \$opts{"verbose"},
+	'debug|d'               => \$opts{"debug"},
+	'version|V'             => \&show_version
 ) or pod2usage();
 
 # Argument check
-$help     && pod2usage( -verbose => 1, -exitval => 0 );
+$help && pod2usage (-verbose => 1, -exitval => 0);
 $help_fmt && Locale::Po4a::Chooser::list(0);
-pod2usage() if ( scalar @ARGV > 1 ) || ( scalar @masterfile < 1 );
-$locchar //= "UTF-8";
+pod2usage () if (scalar @ARGV > 1) || (scalar @masterfile < 1);
 
 foreach (@options) {
     if (m/^([^=]*)=(.*)$/) {
-        $opts{$1} = "$2";
+	$opts{$1}="$2";
     } else {
-        $opts{$_} = 1;
+	$opts{$_}=1;
     }
 }
-
-if (scalar @locfile == 0) {
-    die wrap_msg(gettext("You must provide the same amount of master files and localized files to synchronize them, ".
-                         "as po4a-gettextize is intended to synchronize master files and previously existing translations. ".
-                         "If just want to extract POT files of your master files, please use po4a-updatepo. ".
-                         "Please note that the most convenient way of using po4a is to write a po4a.conf file and use the integrated po4a(1) program."))
-}
-
 # Check file existence
-foreach my $file ( @masterfile, @locfile ) {
-    $file eq '-' || -e $file || die wrap_msg( gettext("File %s does not exist."), $file );
+foreach my $file (@masterfile, @locfile) {
+    $file eq '-' || -e $file || die wrap_msg(gettext("File %s does not exist."), $file);
 }
-
-print wrap_msg(
-    gettext(
-            "po4a-gettextize is only useful to convert previously existing translations to a PO based workflow. "
-          . "Once you successfully converted your project to po4a, you should use the po4a(1) program to maintain it and update your translations."
-    )
-);
 
 # Declare the TransTractor parsers
-my ( $mastertt, $transtt ) = ( Locale::Po4a::Chooser::new( $type, %opts ), Locale::Po4a::Chooser::new( $type, %opts ) );
+my ($mastertt,$transtt)=(Locale::Po4a::Chooser::new($type,%opts),
+			 Locale::Po4a::Chooser::new($type,%opts));
 
 # Parse master file forcing conversion to utf if it's not in ascii
 foreach my $file (@masterfile) {
-    $mastertt->read( $file, $file );
+  $mastertt->read($file);
 }
 $mastertt->{TT}{utf_mode} = 1;
-if ( $mastertt->{TT}{ascii_input} ) {
-    $mastertt->detected_charset('ascii');
-} elsif ( defined($mastchar) ) {
-    $mastertt->detected_charset($mastchar);
-    $mastertt->{TT}{po_in}->set_charset($mastchar);
-}
+$mastertt->{TT}{file_in_charset} = $mastchar;
 $mastertt->parse;
 
-# Implementation note:
-# In practice, po4a-gettextize uses the po4a parsers on both the original and the
-# translation files to extract two PO files. A third PO file is built from them
-# taking strings from the second as translation of strings from the first.
 
-# Let's merge the two transtractor files
+unless (scalar @locfile >= 1) {
+  # Ok, outputing the pot extracted from original is enough
+  $mastertt->writepo($pofile);
+} else {
+  # We have to merge two transtractor files
 
-foreach my $file (@locfile) {
-    $transtt->read( $file, $file );
+  foreach my $file (@locfile) {
+    $transtt->read($file);
+  }
+  # We force the conversion to utf if the master document wasn't in ascii
+  $transtt->{TT}{utf_mode} = !$mastertt->{TT}{ascii_input};
+  $transtt->{TT}{file_in_charset} = $locchar;
+  $transtt->parse;
+
+  my $mergedpo = Locale::Po4a::Po->gettextize($mastertt->getpoout(),
+                                              $transtt->getpoout());
+
+  $mergedpo->write($pofile);
 }
-
-# We force the conversion to utf if the master document wasn't in ascii
-$transtt->{TT}{utf_mode} = !$mastertt->{TT}{ascii_input};
-$transtt->detected_charset($locchar);
-$transtt->{TT}{po_in}->set_charset($locchar);
-$transtt->parse;
-
-if ($keep_temps) {
-    $mastertt->getpoout()->write("po4atemp.master.po");
-    $transtt->getpoout()->write("po4atemp.localized.po");
-    print wrap_msg(
-        dgettext(
-            "po4a",
-            "Temporary master and localized POT files dumped to po4atemp.master.po and po4atemp.localized.po"
-        )
-    );
-}
-my $mergedpo = gettextize( $mastertt->getpoout(), $transtt->getpoout() );
-
-$mergedpo->write($pofile);
 
 __END__

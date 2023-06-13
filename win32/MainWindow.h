@@ -106,7 +106,11 @@ private:
 	struct {
 		tstring homepage;
 		tstring downloads;
-		tstring geoip_city;
+		tstring geoip6;
+		tstring geoip4;
+		tstring geoip6_city;
+		tstring geoip4_city;
+		tstring geoip_regions;
 		tstring faq;
 		tstring help;
 		tstring discuss;
@@ -126,7 +130,8 @@ private:
 
 	enum {
 		CONN_VERSION,
-		CONN_GEOIP,
+		CONN_GEO_V6,
+		CONN_GEO_V4,
 
 		CONN_LAST
 	};
@@ -153,8 +158,9 @@ private:
 	static unordered_map<string, map<tstring, pair<function<void ()>, tstring>, noCaseStringLess>> pluginCommands;
 
 	std::atomic<HttpConnection*> conns[CONN_LAST];
-	unique_ptr<File> geoFile;
-	bool geoStaticServe; /// signals when GeoIP2 databases are not updated frequently for some reason
+	unique_ptr<File> geo6File, geo4File;
+	enum { GeoRegion_Idle, GeoRegion_FromV4, GeoRegion_FromV6 } geoRegion;
+	bool geoStaticServe; /// signals when GeoIP databases are not updated frequently for some reason
 
 	HANDLE stopperThread;
 
@@ -236,10 +242,10 @@ private:
 
 	void completeVersionUpdate(bool success, const string& result);
 	void checkGeoUpdate();
-	void checkGeoUpdateDB();
+	void checkGeoUpdate(bool v6);
 	void updateGeo();
-	void updateGeoDB();
-	void completeGeoUpdate(bool success);
+	void updateGeo(bool v6);
+	void completeGeoUpdate(bool v6, bool success);
 
 	bool filter(MSG& msg);
 

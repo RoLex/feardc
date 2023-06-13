@@ -1,14 +1,14 @@
 #!/usr/bin/perl
 
-# Po4a::Xhtml.pm
-#
+# Po4a::Xhtml.pm 
+# 
 # extract and translate translatable strings from XHTML documents.
-#
+# 
 # This code extracts plain text from tags and attributes from strict XHTML
 # documents.
 #
-# Copyright © 2005 Yves Rütschlé <po4a@rutschle.net>
-# Copyright © 2007-2008 Nicolas François <nicolas.francois@centraliens.net>
+# Copyright (c) 2005 by Yves Rütschlé <po4a@rutschle.net>
+# Copyright (c) 2007-2008 by Nicolas François <nicolas.francois@centraliens.net>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,8 +22,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc.,
-# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #
 ########################################################################
 
@@ -66,7 +65,8 @@ This module is fully functional, as it relies in the L<Locale::Po4a::Xml>
 module. This only defines the translatable tags and attributes.
 
 "It works for me", which means I use it successfully on my personal Web site.
-However, YMMV: please let me know if something doesn't work for you.
+However, YMMV: please let me know if something doesn't work for you. In
+particular, tables are getting no testing whatsoever, as we don't use them.
 
 =head1 SEE ALSO
 
@@ -79,8 +79,8 @@ L<Locale::Po4a::TransTractor(3pm)>, L<Locale::Po4a::Xml(3pm)>, L<po4a(7)|po4a.7>
 
 =head1 COPYRIGHT AND LICENSE
 
- Copyright © 2004 Yves Rütschlé <po4a@rutschle.net>
- Copyright © 2007-2008 Nicolas François <nicolas.francois@centraliens.net>
+ Copyright (c) 2004 by Yves Rütschlé <po4a@rutschle.net>
+ Copyright (c) 2007-2008 by Nicolas François <nicolas.francois@centraliens.net>
 
 This program is free software; you may redistribute it and/or modify it
 under the terms of GPL (see the COPYING file).
@@ -104,140 +104,132 @@ use vars qw(@ISA);
 @ISA = qw(Locale::Po4a::Xml);
 
 sub tag_extract_SSI {
-    my ( $self, $remove ) = ( shift, shift );
-    my ( $eof,  @tag )    = $self->get_string_until(
-        "-->",
-        {
-            include  => 1,
-            remove   => $remove,
-            unquoted => 1
-        }
-    );
-    my ( $t, $r ) = @tag;
-    if ( $t =~ m/<!--#include (file|virtual)="(.*?)"\s-->/s ) {
-        my $includefile;
-        if ( $1 eq "file" ) {
-            $includefile = ".";
-        } else {
-            $includefile = $self->{options}{'includessi'};
-        }
-        $includefile .= $2;
-        if ( !$remove ) {
-            $self->get_string_until(
-                "-->",
-                {
-                    include  => 1,
-                    remove   => 1,
-                    unquoted => 1
+        my ($self,$remove)=(shift,shift);
+        my ($eof,@tag)=$self->get_string_until("-->",
+                                               {include=>1,
+                                                remove=>$remove,
+                                                unquoted=>1});
+        my ($t,$r) = @tag;
+        if ($t =~ m/<!--#include (file|virtual)="(.*?)"\s-->/s) {
+                my $includefile;
+                if ($1 eq "file") {
+                        $includefile = ".";
+                } else {
+                        $includefile = $self->{options}{'includessi'};
                 }
-            );
-        }
-        my $linenum = 0;
-        my @include;
+                $includefile .= $2;
+                if (!$remove) {
+                        $self->get_string_until("-->",
+                                                {include=>1,
+                                                 remove=>1,
+                                                 unquoted=>1});
+                }
+                my $linenum=0;
+                my @include;
 
-        open( my $in, $includefile )
-          or croak wrap_mod( "po4a::xml", dgettext( "po4a", "Cannot read from %s: %s" ), $includefile, $! );
-        while ( defined( my $includeline = <$in> ) ) {
-            $linenum++;
-            my $includeref = $includefile . ":$linenum";
-            push @include, ( $includeline, $includeref );
-        }
-        close $in
-          or croak wrap_mod( "po4a::xml", dgettext( "po4a", "Cannot close %s after reading: %s" ), $includefile, $! );
+                open (my $in, $includefile)
+                    or croak wrap_mod("po4a::xml",
+                                     dgettext("po4a", "Can't read from %s: %s"),
+                                      $includefile, $!);
+                while (defined (my $includeline = <$in>)) {
+                        $linenum++;
+                        my $includeref=$includefile.":$linenum";
+                        push @include, ($includeline,$includeref);
+                }
+                close $in
+                    or croak wrap_mod("po4a::xml",
+                           dgettext("po4a", "Can't close %s after reading: %s"),
+                                      $includefile, $!);
 
-        while (@include) {
-            my ( $ir, $il ) = ( pop @include, pop @include );
-            $self->unshiftline( $il, $ir );
+                while (@include) {
+                        my ($ir, $il) = (pop @include, pop @include);
+                        $self->unshiftline($il,$ir);
+                }
         }
-    }
-    return ( $eof, @tag );
+        return ($eof,@tag);
 }
 
 sub initialize {
-    my $self    = shift;
-    my %options = @_;
+        my $self = shift;
+        my %options = @_;
 
-    $self->{options}{'includessi'} = '';
+        $self->{options}{'includessi'}='';
 
-    $self->SUPER::initialize(%options);
+        $self->SUPER::initialize(%options);
 
-    $self->{options}{'wrap'}    = 1;
-    $self->{options}{'doctype'} = $self->{options}{'doctype'} || 'html';
+        $self->{options}{'wrap'}=1;
+        $self->{options}{'doctype'}=$self->{options}{'doctype'} || 'html';
 
-    # Default tags are translated (text rewrapped), and introduce a break.
-    # The following list indicates the list of tags which should be
-    # translated without rewrapping.
-    $self->{options}{'_default_translated'} .= '
+        # Default tags are translated (text rewrapped), and introduce a
+        # break.
+        # The following list indicates the list of tags which should be
+        # translated without rewrapping.
+        $self->{options}{'_default_translated'}.='
                 W<pre>
         ';
 
-    # The following list indicates the list of tags which should be
-    # translated inside the current block, without introducing a break.
-    $self->{options}{'_default_inline'} .= '
-                <a>
-                <abbr>
-                <acronym>
-                <b>
-                <big>
-                <bdo>
-                <button>
-                <cite>
-                <code>
+        # The following list indicates the list of tags which should be
+        # translated inside the current block, whithout introducing a
+        # break.
+        $self->{options}{'_default_inline'}.='
+                <a> 
+                <abbr> 
+                <acronym> 
+                <b> 
+                <big> 
+                <bdo> 
+                <button> 
+                <cite> 
+                <code> 
                 <del>
-                <dfn>
-                <em>
-                <i>
-                <ins>
-                <input>
-                <kbd>
-                <label>
-                <object>
-                <q>
-                <samp>
-                <select>
-                <small>
-                <span>
-                <strong>
-                <sub>
-                <sup>
-                <textarea>
-                <tt>
+                <dfn> 
+                <em> 
+                <i> 
+                <ins> 
+                <input> 
+                <kbd> 
+                <label> 
+                <object> 
+                <q> 
+                <samp> 
+                <select> 
+                <small> 
+                <span> 
+                <strong> 
+                <sub> 
+                <sup> 
+                <textarea> 
+                <tt> 
                 <u>
-                <var>
+                <var> 
         ';
 
-    # Ignored tags: <img>
-    # Technically, <img> is an inline tag, but setting it as such is
-    # annoying, and not usually useful, unless you use images to
-    # write text (in which case you have bigger problems than this
-    # program not inlining img: you now have to translate all your
-    # images. That'll teach you).
-    # If you choose to translate images, you may also want to set
-    # <map> as placeholder and <area> as inline.
+        # Ignored tags: <img>
+        # Technically, <img> is an inline tag, but setting it as such is
+        # annoying, and not usually useful, unless you use images to
+        # write text (in which case you have bigger problems than this
+        # program not inlining img: you now have to translate all your
+        # images. That'll teach you).
+        # If you choose to translate images, you may also want to set
+        # <map> as placeholder and <area> as inline.
 
-    $self->{options}{'_default_attributes'} .= '
+        $self->{options}{'_default_attributes'}.='
                 alt
                 lang
                 title
-        ';
+                ';
+        $self->treat_options;
 
-    $self->{options}{'optionalclosingtag'} = 1;
-
-    print "Call treat_options\n" if $self->{options}{'debug'};
-    $self->treat_options;
-
-    if ( defined $self->{options}{'includessi'}
-        and length $self->{options}{'includessi'} )
-    {
-        foreach (@tag_types) {
-            if ( $_->{beginning} eq "!--#" ) {
-                $_->{f_extract} = \&tag_extract_SSI;
-            }
+        if (    defined $self->{options}{'includessi'}
+            and length $self->{options}{'includessi'}) {
+                foreach (@tag_types) {
+                        if ($_->{beginning} eq "!--#") {
+                                $_->{f_extract} = \&tag_extract_SSI;
+                        }
+                }
+                # FIXME: the directory may be named "1" ;(
+                if ($self->{options}{'includessi'} eq "1") {
+                        $self->{options}{'includessi'} = ".";
+                }
         }
-
-        # FIXME: the directory may be named "1" ;(
-        if ( $self->{options}{'includessi'} eq "1" ) {
-            $self->{options}{'includessi'} = ".";
-        }
-    }
 }

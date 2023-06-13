@@ -32,7 +32,7 @@ public:
 
 private:
 	TextBoxPtr name;
-	CheckBoxPtr favs, ops, bots;
+	CheckBoxPtr favs, ops, bots/*, avdb*/;
 	GridPtr rules;
 	CheckBoxPtr forceChat, ignoreChat;
 

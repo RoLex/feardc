@@ -20,7 +20,7 @@
 
 #include <dcpp/ClientManager.h>
 #include <dcpp/FavoriteManager.h>
-//#include <dcpp/GeoManager.h>
+#include <dcpp/GeoManager.h>
 #include <dcpp/version.h>
 
 #include <dwt/widgets/Grid.h>

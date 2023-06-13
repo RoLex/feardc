@@ -1,4 +1,4 @@
-/* $Id: natpmp.h,v 1.22 2023/04/23 10:50:11 nanard Exp $ */
+/* $Id: natpmp.h,v 1.20 2014/04/22 09:15:40 nanard Exp $ */
 /* libnatpmp
 Copyright (c) 2007-2014, Thomas BERNARD
 All rights reserved.
@@ -37,7 +37,7 @@ POSSIBILITY OF SUCH DAMAGE.
 #include <sys/time.h>
 #endif	/* !defined(_MSC_VER) */
 
-#ifdef _WIN32
+#ifdef WIN32
 #include <winsock2.h>
 #if !defined(_MSC_VER) || _MSC_VER >= 1600
 #include <stdint.h>
@@ -46,18 +46,14 @@ typedef unsigned long uint32_t;
 typedef unsigned short uint16_t;
 #endif	/* !defined(_MSC_VER) || _MSC_VER >= 1600 */
 #define in_addr_t uint32_t
-#else	/* _WIN32 */
-#include <netinet/in.h>
-#endif	/* _WIN32 */
-//#include "natpmp_declspec.h"
 #include "declspec.h"
+#else	/* WIN32 */
+#define LIBSPEC
+#include <netinet/in.h>
+#endif	/* WIN32 */
 
-/* Set to 9 by https://tools.ietf.org/html/rfc6886#section-3.1 which leads to a
- * maximum timeout of 127.75 seconds, due to the initial 250 ms timeout doubling
- * each time, so we allow a compile-time modification here.*/
-#ifndef NATPMP_MAX_RETRIES
-#define NATPMP_MAX_RETRIES (9)
-#endif
+/* causes problem when installing. Maybe should it be inlined ? */
+/* #include "declspec.h" */
 
 typedef struct {
 	int s;	/* socket */

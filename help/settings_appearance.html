@@ -40,14 +40,32 @@ to enable or disable it on already open hubs. <i>On large hubs, you don't want t
   <dd cshelp="IDH_SETTINGS_APPEARANCE_SORT_FAVUSERS_FIRST">With this option enabled, those users who are <a href=window_favorite_users.html>favorite users</a> will be sorted first in user lists.</dd>
   <dt id="guessip">Guess user country from IP</dt>
   <dd cshelp="IDH_SETTINGS_APPEARANCE_GET_USER_COUNTRY">
-  When selected, FearDC displays user country information when available. FearDC uses
-  <a href="https://www.maxmind.com/en/geoip2-databases/" target="_blank" class="external">MaxMind's GeoIP2</a>
+  When selected, DC++ displays user country information when available. DC++ uses
+  <a href="https://dev.maxmind.com/geoip/legacy/geolite/" target="_blank" class="external">MaxMind's GeoIP</a>
   databases in order to do so.
   </dd>
   <dt>Show user IP in chat</dt>
   <dd cshelp="IDH_SETTINGS_APPEARANCE_SHOW_USER_IP">Try to display user IP in chat when available.</dd>
   <dt>Show user country in chat</dt>
   <dd cshelp="IDH_SETTINGS_APPEARANCE_SHOW_USER_COUNTRY">Try to display user country in chat when available.</dd>
+  <dt>City-level geolocation database (allows parameters such as %[city])</dt>
+  <dd cshelp="IDH_SETTINGS_APPEARANCE_GEO_CITY">
+  Use a more detailed geolocation database that contains information such as the city, the region,
+  the latitude and longitude, etc. Compared to the default country-level geolocation database, the
+  city-level one is bigger and consumes more memory.<br/>
+  See <a href="https://www.maxmind.com/en/geoip2-city-database-accuracy" target="_blank" class="external">
+	  GeoIP2 City Accuracy</a> for more information.<br/>
+  Additional parameters that can be used in conjunction with the city-level geolocation database:
+  <b>%[areacode]</b>, <b>%[city]</b>, <b>%[lat]</b>, <b>%[long]</b>, <b>%[metrocode]</b>,
+  <b>%[postcode]</b>, <b>%[region]</b>.
+  </dd>
+  <dt>Region name geolocation database (allows %[region])</dt>
+  <dd cshelp="IDH_SETTINGS_APPEARANCE_GEO_REGION">
+  Complement the city-level geolocation database with one containing region names. By default, the
+  <b>%[region]</b> parameter of city-level databases contains cryptic codes that may be difficult
+  to relate to the actual region; enable this setting to download a database that will be used to
+  translate these codes into more understandable region names.
+  </dd>
 </dl>
 <h2>Miscellaneous</h2>
 <dl style="margin-left: 40px;">
@@ -63,6 +81,7 @@ interface. <b>Default: %[2code] - %[name]</b><br/><br/>
 Available variables:
 <ul>
 	<li><b>%[2code]</b> gets replaced by a 2-letters country code (eg DE, FR).</li>
+	<li><b>%[3code]</b> gets replaced by a 3-letters country code (eg DEU, FRA).</li>
 	<li><b>%[continent]</b> gets replaced by a continent code (AF, AS, EU, NA, OC, SA for Africa,
 	Asia, Europe, North America, Oceania and South America).</li>
 	<li><b>%[engname]</b> gets replaced by the English country friendly name (eg Germany, France).</li>
@@ -70,6 +89,9 @@ Available variables:
 	an English operating system).</li>
 	<li><b>%[officialname]</b> gets replaced by the localized country official name (eg Federal
 	Republic of Germany, French Republic on an English operating system).</li>
+</ul>
+Additional available variables when using the city-level database:
+<ul>
 	<li><b>%[areacode]</b> gets replaced by the area code (United States only).</li>
 	<li><b>%[city]</b> gets replaced by the city's name.</li>
 	<li><b>%[lat]</b> gets replaced by the latitude.</li>

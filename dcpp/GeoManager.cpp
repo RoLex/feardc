@@ -18,43 +18,74 @@
 #include "stdinc.h"
 #include "GeoManager.h"
 
-#include "GeoIP2.h"
+#include "GeoIP.h"
 #include "Util.h"
 
 namespace dcpp {
 
 void GeoManager::init() {
-	geo = make_unique<GeoIP>(getDbPath());
+	geo6.reset(new GeoIP(getDbPath(true)));
+	geo4.reset(new GeoIP(getDbPath(false)));
+
+	rebuild();
 }
 
-void GeoManager::update() {
-	if (geo) {
+void GeoManager::update(bool v6) {
+	auto geo = (v6 ? geo6 : geo4).get();
+	if(geo) {
 		geo->update();
-		//geo->rebuild();
-	}
-}
-
-/*
-void GeoManager::rebuild() {
-	if (geo) {
 		geo->rebuild();
 	}
 }
-*/
+
+void GeoManager::rebuild() {
+	geo6->rebuild();
+	geo4->rebuild();
+}
 
 void GeoManager::close() {
-	geo.reset();
+	geo6.reset();
+	geo4.reset();
 }
 
-string GeoManager::getCountry(const string& ip) const {
-	if (ip.empty() || !geo.get())
-		return Util::emptyString;
+const string& GeoManager::getCountry(const string& ip, int flags) {
+	if(!ip.empty()) {
 
-	return geo->getCountry(ip);
+		/*Check for the IP version when the caller didn't specify it.
+		  This hadn't needed for years but with GeoIP databases released 
+		  somewhere in mid 2018 and on for V4 addresses (and for any arbitrary
+		  string for the matter) the GeoIP_id_by_addr_v6 call, unlike before
+		  when it returned no hits, now always returns a specific id that is 
+		  actually in the database. This resulted the same invalid country
+		  returned by this function for V4 addresses in cases when called 
+		  with IP version unspecified.
+		  This also ensures that V4 IPs never looked up unnecessary in the 
+		  V6 database which should improve performance.*/
+
+		if((flags & V6) && (flags & V4)) {
+			flags = Util::isIpV4(ip) ? V4 : V6;
+		}
+
+		if((flags & V6) && geo6.get()) {
+			const auto& ret = geo6->getCountry(ip);
+			if(!ret.empty())
+				return ret;
+		}
+
+		if((flags & V4) && geo4.get()) {
+			return geo4->getCountry(ip);
+		}
+	}
+
+	return Util::emptyString;
 }
 
-string GeoManager::getDbPath() {
-	return Util::getPath(Util::PATH_USER_LOCAL) + "GeoLite2-City.mmdb";
+string GeoManager::getDbPath(bool v6) {
+	return Util::getPath(Util::PATH_USER_LOCAL) + (v6 ? "GeoIPv6.dat" : "GeoIP.dat");
+}
+
+string GeoManager::getRegionDbPath() {
+	return Util::getPath(Util::PATH_USER_LOCAL) + "GeoIP_Regions.csv";
 }
 
 } // namespace dcpp

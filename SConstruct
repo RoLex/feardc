@@ -34,7 +34,7 @@ gcc_flags = {
 
 gcc_xxflags = {
     'common': [],
-    'debug': ['-std=gnu++20'],
+    'debug': [],
     'release': ['-std=gnu++20']
 }
 
@@ -42,7 +42,7 @@ msvc_flags = {
     # 4100: unreferenced formal parameter
     # 4121: alignment of member sensitive to packing
     # 4127: conditional expression is constant
-    # 4131: 'function' : uses old-style declarator
+    # 4131: 'function' : uses old-style declarator - mainly geoip
     # 4189: var init'd, unused
     # 4244: possible loss of data on conversion
     # 4290: exception spec ignored
@@ -419,7 +419,7 @@ dev.dwarf = dev.build('dwarf/')
 dev.zlib = dev.build('zlib/')
 dev.build('zlib/test/')
 dev.bzip2 = dev.build('bzip2/') if dev.is_win32() else []
-dev.maxminddb = dev.build('maxminddb/')
+dev.geoip = dev.build('geoip/')
 dev.intl = dev.build('intl/') if dev.is_win32() else []
 dev.miniupnpc = dev.build('miniupnpc/')
 dev.natpmp = dev.build('natpmp/')

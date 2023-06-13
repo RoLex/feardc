@@ -57,6 +57,7 @@ public:
 	/** Helper function that tells whether predefined definitions for favorites (pair.first) and
 	operators (pair.second) are existing. */
 	pair<bool, bool> checkPredef() const;
+	//pair<bool, bool> checkPredef2() const;
 
 	/** Get a list of the fonts required by current user matching definitions. */
 	unordered_set<string> getFonts() const;
