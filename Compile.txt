@@ -71,13 +71,14 @@
 		To build a version with HTML Help support, copy the following files from a Windows SDK
 		(Windows SDK path -> FearDC source code path):
 		Include/shared/winapifamily.h -> mingw/include/winapifamily.h
+		Include/shared/winpackagefamily.h -> mingw/include/winpackagefamily.h (Windows 10 only)
 		Include/um/HtmlHelp.h -> mingw/include/htmlhelp.h
 		Lib/win8/um/x86/Htmlhelp.Lib -> mingw/lib/htmlhelp.lib
 		Lib/win8/um/x64/Htmlhelp.Lib -> mingw/lib/x64/htmlhelp.lib
 
 		The latest Windows SDK is currently at
-		<https://msdn.microsoft.com/en-US/windows/desktop/hh852363>; it installs into
-		"C:\Program Files (x86)\Windows Kits\8.0".
+		<https://developer.microsoft.com/windows/downloads/sdk-archive/>; it installs into
+		"C:\Program Files (x86)\Windows Kits\<version>".
 
 	b. OpenSSL
 

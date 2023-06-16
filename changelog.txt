@@ -1,8 +1,9 @@
 -- 0.88x --
+* [L#2019492] Fix a possible crash in DWT tab view control (emtee, iceman50)
 * Display originating hub info on new incoming private messages (iceman50)
 * [L#1494814] Support MSVC project generation for Visual Studio 2022 (iceman50)
 * Fix saving preferred port mapper setting for IPv4 (emtee) 
-* Update OpenSSL to version 1.1.1q
+* Update OpenSSL to version 3.1.1
 
 -- 0.880 2022-10-20 --
 * Upgrade license to GPLv3 for future license compatibility with some libraries

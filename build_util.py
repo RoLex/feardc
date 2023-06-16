@@ -476,7 +476,7 @@ def get_lcid(lang):
         if name.split('_')[0] == lang:
             return identifier
 
-    return 0x409  # default: en-US
+    return 0x0409  # default: en-US
 
 
 def get_win_cp(lcid):
@@ -486,15 +486,24 @@ def get_win_cp(lcid):
     LOCALE_RETURN_NUMBER = 0x20000000
 
     buf = ctypes.c_int()
+    kern32 = None
 
     if sys.platform == 'cygwin':
-        ctypes.cdll.kernel32.GetLocaleInfoA(lcid, LOCALE_RETURN_NUMBER | LOCALE_IDEFAULTANSICODEPAGE, ctypes.byref(buf), 6)
+        kern32 = ctypes.CDLL('kernel32.dll', use_errno=True)
     else:
-        ctypes.windll.kernel32.GetLocaleInfoA(lcid, LOCALE_RETURN_NUMBER | LOCALE_IDEFAULTANSICODEPAGE, ctypes.byref(buf), 6)
+        kern32 = ctypes.windll.kernel32
 
-    if buf.value != 0:
-        return 'cp' + str(buf.value)
-    return 'cp1252'
+    if not kern32:
+        print('Error: build_util/get_win_cp failed to load kernel32')
+        return 'cp1252'
+
+    kern32.GetLocaleInfoA(lcid, LOCALE_RETURN_NUMBER | LOCALE_IDEFAULTANSICODEPAGE, ctypes.byref(buf), 6)
+
+    if buf.value <= 0:
+        print('Error: build_util/get_win_cp failed to get locale info')
+        return 'cp1252'
+
+    return 'cp' + str(buf.value)
 
 
 def html_to_rtf(string):

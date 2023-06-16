@@ -2061,7 +2061,7 @@ sub translate_paragraph {
                     "Invalid placeholder in the translation (the 'type' and 'id' must be present, in this order).\n%s\n\nPlease fix your translation."
                 ),
                 $str
-            ) unless ( $str =~ m/^.*?<placeholder\s+type="[^"]+"\s+id="(\d+)"\s*\/>(.*)$/s );
+            ) unless ( $str =~ m/^.*?<placeholder\s+id=(\d+)\s*\/>(.*)$/s );
 
             $count += 1;
             $str = $2;

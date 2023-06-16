@@ -9,7 +9,7 @@ Display compile progress=Yes
 Enhanced decompilation=Yes
 Full-text search=Yes
 Index file=index.hhk
-Language=0x409
+Language=0x0409
 Title=Help for DC++
 
 [WINDOWS]

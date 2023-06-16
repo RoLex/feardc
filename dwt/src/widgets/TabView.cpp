@@ -170,6 +170,10 @@ void TabView::create(const Seed & cs) {
 	widthConfig = cs.widthConfig;
 	toggleActive = cs.toggleActive;
 
+	if (!TabCtrl_SetItemExtra(handle(), sizeof(TCITEMEXTRADATA))) {
+		throw Win32Exception("Error while trying to set extra tab item data size");
+	}
+
 	if(cs.style & TCS_OWNERDRAWFIXED) {
 		dwtassert(dynamic_cast<Control*>(getParent()), "Owner-drawn tabs must have a parent derived from dwt::Control");
 
@@ -229,18 +233,18 @@ void TabView::add(ContainerPtr w, const IconPtr& icon) {
 	const size_t pos = size();
 
 	TabInfo* ti = new TabInfo(this, w, icon);
-	TCITEM item = { TCIF_PARAM };
-	item.lParam = reinterpret_cast<LPARAM>(ti);
+	TCITEMEXTRA item = { { TCIF_PARAM } };
+	item.data.tabInfo = ti;
 
 	if(!hasStyle(TCS_OWNERDRAWFIXED)) {
 		ti->text = formatTitle(w->getText());
-		item.mask |= TCIF_TEXT;
-		item.pszText = const_cast<LPTSTR>(ti->text.c_str());
+		item.tabItem.mask |= TCIF_TEXT;
+		item.tabItem.pszText = const_cast<LPTSTR>(ti->text.c_str());
 	}
 
 	if(icon) {
-		item.mask |= TCIF_IMAGE;
-		item.iImage = addIcon(icon);
+		item.tabItem.mask |= TCIF_IMAGE;
+		item.tabItem.iImage = addIcon(icon);
 	}
 
 	int newIdx = TabCtrl_InsertItem(handle(), pos, &item);
@@ -458,9 +462,9 @@ TabView::TabInfo* TabView::getTabInfo(ContainerPtr w) const {
 
 TabView::TabInfo* TabView::getTabInfo(int i) const {
 	if(i != -1) {
-		TCITEM item = { TCIF_PARAM };
+		TCITEMEXTRA item = { { TCIF_PARAM } };
 		if(TabCtrl_GetItem(handle(), i, &item)) {
-			return reinterpret_cast<TabInfo*>(item.lParam);
+			return item.data.tabInfo;
 		}
 	}
 	return 0;

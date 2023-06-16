@@ -42,14 +42,15 @@ import re
 po4a_path = Dir('#/po4a').abspath + '/'
 env['po4a_cmd'] = lambda prog, options: (
     'perl -I"' + po4a_path + 'lib" "' + po4a_path + prog +
-    '" -f xml -M utf-8 -L utf-8 ' + options
+    '" -f xml -M utf-8 ' + options # -L utf-8
 )
 
 
 def gen_pot(target, source, env):
     """Create the translation template."""
     return env.Execute(env['po4a_cmd'](
-        'po4a-gettextize',
+        'po4a-updatepo',
+        '--no-deprecation '
         '-o "package-name=dcpp-installer" -o "copyright-holder=Jacek Sieka" '
         '-o "msgid-bugs-address=dcplusplus-devel@lists.sourceforge.net" '
         '-m "' + nixify(str(source[0])) + '" -p "' + nixify(str(target[0])) +
@@ -155,6 +156,7 @@ def gen_installer(target, source, env):
             # translate our strings
             env.Execute(env['po4a_cmd'](
                 'po4a-translate',
+                '--no-deprecation '
                 '-m "installer/Strings.xml" -l "' + xml_file + '" -p "' +
                 nixify(str(node)) + '" -k 0'
             ))

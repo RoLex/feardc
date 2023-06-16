@@ -41,13 +41,13 @@ using dwt::Label;
 using dwt::Link;
 
 static const char thanks[] = "Big thanks to all donators and people who have contributed with ideas and code! "
-"This product uses bzip2 <https://sourceware.org/bzip2/>, thanks to Julian Seward and team for providing it. "
-"This product uses zlib <https://www.zlib.net/>, thanks to Jean-loup Gailly and Mark Adler for providing it. "
+"This product uses BZip2 <https://sourceware.org/bzip2/>, thanks to Julian Seward and team for providing it. "
+"This product uses ZLib <https://www.zlib.net/>, thanks to Jean-loup Gailly and Mark Adler for providing it. "
 "This product includes parts of the MaxMindDB library created by MaxMind Inc, available from <https://github.com/maxmind/libmaxminddb/>. "
-"This product includes updated GeoIP2 databases provided by MaxMind Inc, available from <https://www.maxmind.com/en/geoip2-databases/>. "
+"This product includes updated GeoLite2 databases provided by MaxMind Inc, available from <https://www.maxmind.com/en/geoip2-databases/>. "
 "This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit <https://www.openssl.org/>. "
-"This product uses the MiniUPnP client library <https://miniupnp.tuxfamily.org/> and libnatpmp by Thomas Bernard. "
-"This product uses libdwarf <https://www.prevanders.net/dwarf.html> by SGI & David Anderson. "
+"This product uses the MiniUPnP client library <https://miniupnp.tuxfamily.org/> and NAT-PMP library by Thomas Bernard. "
+"This product uses DWARF library <https://www.prevanders.net/dwarf.html> by SGI & David Anderson. "
 "The following people have contributed code to DC++ and FearDC (I hope I haven't missed someone, they're "
 "roughly in chronological order... =):\r\n"
 "geoff, carxor, luca rota, dan kline, mike, anton, zc, sarf, farcry, kyrre aalerud, opera, "

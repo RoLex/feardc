@@ -110,7 +110,7 @@ env['po4a_cmd'] = lambda prog, options: (
     '" -f xhtml -o "translated=p<placeholder> p<placeholder><a>" '
     '-o "untranslated=<untranslated> <untranslated><a> <untranslated><li>" '
     '-o foldattributes -o "includessi=' + nixify(Dir('#/help').abspath) +
-    '/" -M utf-8 -L utf-8 ' + options
+    '/" -M utf-8 ' + options # -L utf-8
 )
 
 
@@ -133,7 +133,7 @@ def gen_CHM(target, source, env):
     template = po_node.path[-4:] == '.pot'
     if template:
         lang = 'en-US'
-        lcid = 0x409
+        lcid = 0x0409
     else:
         lang = os.path.basename(po_node.path).replace('.po', '')
         lcid = get_lcid(lang)
@@ -149,7 +149,7 @@ def gen_CHM(target, source, env):
         env.Execute([Delete(web_dir), Mkdir(web_dir)])
 
     # translate translatable source files, copy the others
-    cmd = env['po4a_cmd']('po4a-translate', '-p "' + nixify(str(po_node)) + '" -k 0')
+    cmd = env['po4a_cmd']('po4a-translate', '--no-deprecation -p "' + nixify(str(po_node)) + '" -k 0')
     if not template:
         cmd += ' -A utf-8 -a help/addendum.txt'
     for node in source:
@@ -185,7 +185,7 @@ def gen_CHM(target, source, env):
         env.Execute(Delete(target[1]))  # remove the wrong cshelp.rtf
         return 1
 
-    if lcid != 0x409:
+    if lcid != 0x0409:
         # edit the project file so it is set to the correct locale
         set_hhp_locale(build_path + 'DCPlusPlus.hhp', lcid)
 
@@ -239,7 +239,8 @@ hasHHC = env.WhereIs('hhc') is not None
 def gen_pot(target, source, env):
     """Create the translation template."""
     cmd = env['po4a_cmd'](
-        'po4a-gettextize',
+        'po4a-updatepo',
+        '--no-deprecation '
         '-o "package-name=dcpp-help" -o "copyright-holder=Jacek Sieka" '
         '-o "msgid-bugs-address=dcplusplus-devel@lists.sourceforge.net" '
         '-p "' + nixify(str(target[0])) + '"'
