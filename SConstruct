@@ -5,7 +5,7 @@ EnsureSConsVersion(4, 0, 0)
 import os
 import sys
 
-from build_util import Dev, gen_po_name
+from build_util import Dev, gen_po_name, set_lang_name
 
 # TODO enable "-fdebug-types-section" when
 # <https://sourceware.org/bugzilla/show_bug.cgi?id=20645> is resolved.
@@ -332,11 +332,19 @@ env.Append(SCANNERS=[SWIGScanner])
 # internationalization (ardour.org provided the initial idea)
 #
 
+# todo: --lang=<filename>
+# https://www.gnu.org/software/gettext/manual/html_node/msgmerge-Invocation.html#index-_002d_002dlang_002c-msgmerge-option
 po_args = ['msgmerge', '-q', '--update', '--backup=none', '$TARGET', '$SOURCE']
-po_bld = Builder(action=Action(
-    [po_args],
-    'Updating translation $TARGET from $SOURCES'
-))
+po_bld = Builder(action=[
+    Action(
+        [po_args],
+        'Updating translation $TARGET from $SOURCES'
+    ),
+    Action(
+        lambda target, source, env: set_lang_name(target[0], env),
+        'Setting language for $TARGET'
+    )
+])
 env.Append(BUILDERS={'PoBuild': po_bld})
 
 mo_args = ['msgfmt', '-c', '-o', '$TARGET', '$SOURCE']

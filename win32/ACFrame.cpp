@@ -267,9 +267,9 @@ void ACFrame::fillList() {
 			upper->row(0).mode = GridInfo::STATIC;
 			upper->layout();
 		} else {
-			disclaimer->setText(T_("Warning!\r\n"
-				"Changing these settings can be harmful to the stability, security and performance of this application.\r\n"
-				"You should only continue if you know what you're doing!\r\n"
+			disclaimer->setText(T_("Warning!\n"
+				"Changing these settings can be harmful to the stability, security and performance of this application.\n"
+				"You should only continue if you know what you're doing!\n"
 				"Click here to proceed."
 			));
 			disclaimer->setEnabled(true);

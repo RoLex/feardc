@@ -24,6 +24,9 @@ if dev.is_win32():
 if 'HAVE_HTMLHELP_H' in env['CPPDEFINES']:
     env.Append(LIBS=['htmlhelp'])
 
+headers = dev.get_sources(source_path, "*.h")
+dev.i18n(source_path, env, [sources, headers], 'dcpp-win32')
+
 prog_sources = sources
 
 if dev.is_win32():
@@ -37,9 +40,6 @@ if dev.is_win32():
     res = env.RES(dev.get_sources(source_path, '*.rc'))
     env.Depends(res, 'resource.h')
     prog_sources.append(res)
-
-headers = dev.get_sources(source_path, "*.h")
-dev.i18n(source_path, env, [sources, headers], 'dcpp-win32')
 
 if env['msvcproj']:
     ret = dev.build_lib(env, target, sources, dev.cpp_lib)

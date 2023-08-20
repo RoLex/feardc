@@ -401,6 +401,25 @@ class Dev:
         return asciidoc
 
 
+def set_lang_name(target, env):
+    lang = os.path.basename(str(target))[:-3]
+    file = open(str(target), 'rb')
+    data = file.read()
+    file.close()
+    import re
+
+    data = re.sub(
+        b'"Language: .*\\\\n"',
+        bytes('"Language: ' + lang + '\\\\n"', 'utf-8'),
+        data,
+        1
+    )
+
+    file = open(str(target), 'wb')
+    file.write(data)
+    file.close()
+
+
 def get_po_name(source):
     """"Rely on the comments at the beginning of the po file to find the
     language name.

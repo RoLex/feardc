@@ -6,6 +6,7 @@
 # New in 1.3.1.0
 
 ```
+* Correctly set language in PO files, language team remains to fix (RoLex)
 * Update PO4A to version 0.69 (RoLex)
 * Update OpenSSL to version 3.1.1 (RoLex)
 * Temporarily fix buffer overflow error when receiving large chat messages, needs a complete rewrite (RoLex)
