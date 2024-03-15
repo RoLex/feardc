@@ -352,6 +352,11 @@ extern int vsprintf (char *, const char *, va_list);
 #undef snprintf
 #define snprintf libintl_snprintf
 extern int snprintf (char *, size_t, const char *, ...);
+
+#endif
+
+#if 0
+
 #undef vsnprintf
 #define vsnprintf libintl_vsnprintf
 extern int vsnprintf (char *, size_t, const char *, va_list);

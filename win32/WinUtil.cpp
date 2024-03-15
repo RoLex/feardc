@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -63,6 +63,7 @@
 
 #ifndef _MSC_VER
 // HTML Help libs from recent MS SDKs are compiled with /GS, so link in the following.
+// See https://bugs.launchpad.net/dcplusplus/+bug/2028276 for __security_cookie 
 #ifdef _WIN64
 #define HH_GS_CALL __cdecl
 #else
@@ -71,7 +72,7 @@
 extern "C" {
 	void HH_GS_CALL __GSHandlerCheck() { }
 	void HH_GS_CALL __security_check_cookie(uintptr_t) { }
-#ifdef HAVE_OLD_MINGW
+#if __MINGW64_VERSION_MAJOR > 7
 	uintptr_t __security_cookie;
 #endif
 }
@@ -378,13 +379,13 @@ void WinUtil::initFont() {
 tstring WinUtil::encodeFont(LOGFONT const& font) {
 	tstring res(font.lfFaceName);
 	res += _T(',');
-	res += Text::toT(Util::toString(static_cast<int>(std::floor(static_cast<float>(font.lfHeight) / dwt::util::dpiFactor()))));
+	res += Text::toT(std::to_string(static_cast<int>(std::floor(static_cast<float>(font.lfHeight) / dwt::util::dpiFactor()))));
 	res += _T(',');
-	res += Text::toT(Util::toString(font.lfWeight));
+	res += Text::toT(std::to_string(font.lfWeight));
 	res += _T(',');
-	res += Text::toT(Util::toString(font.lfItalic));
+	res += Text::toT(std::to_string(font.lfItalic));
 	res += _T(',');
-	res += Text::toT(Util::toString(font.lfCharSet));
+	res += Text::toT(std::to_string(font.lfCharSet));
 	return res;
 }
 
@@ -394,7 +395,7 @@ std::string WinUtil::toString(const std::vector<int>& tokens) {
 	for(auto i = start, iend = tokens.cend(); i != iend; ++i) {
 		if(i != start)
 			ret += ',';
-		ret += Util::toString(*i);
+		ret += std::to_string(*i);
 	}
 	return ret;
 }
@@ -537,64 +538,35 @@ const TCHAR
 
 #define MSGS 19
 
-/// @todo improve - commands could be stored in a map...
-
-const char* command_strings[] = {
-	"/refresh",
-	"/me",
-	"/slots #", 
-	"/dslots #",
-	"/search <string>",
-	"/clear [lines to keep]",
-	"/feardc",
-	"/away [message]",
-	"/back",
-	"/d <search string>",
-	"/g <search string>",
-	"/imdb <imdb query>",
-	"/rebuild",
-	"/log <status, system, downloads, uploads>",
-	"/help",
-	"/u <url>",
-	"/f <search string>",
-	"/download #",
-	"/upload #",
-	"/close",
-	"/about:config, /a:c, /ac"
-};
-
-const char* command_helps[] = {
-	N_("Manually refreshes FearDC's share list by going through the shared directories and adding new folders and files. FearDC automatically refreshes once an hour by default, and also refreshes after the list of shared directories is changed."),
-	N_("Speak as a third person."),
-	N_("Sets the current number of upload slots to the number you specify. If this is less than the current number of slots, no uploads are cancelled."),
-	N_("Sets the current number of download slots to the number you specify. If this is less than the current number of slots, no downloads are cancelled."),
-	N_("Opens a new search window with the specified search string. It does not automatically send the search."),
-	N_("Clears the current window of all text. Optionally, you can specify how many of the latest (most recent) lines should be kept."),
-	N_("Sends a random FearDC advertising message to the chat, including a link to the FearDC homepage and the version number."),
-	N_("Sets Away status. New private message windows will be responded to, once, with the message you specified, or the default away message configured in the Personal information settings page."),
-	N_("Un-sets Away status."),
-	N_("Launches your default web browser to the DuckDuckGo search engine with the specified search."),
-	N_("Launches your default web browser to the Google search engine with the specified search."),
-	N_("Launches your default web browser to the Internet Movie Database (imdb) with the specified query."),
-	N_("Rebuilds the HashIndex.xml and HashData.dat files, removing entries to files that are no longer shared, or old hashes for files that have since changed. This runs in the main FearDC thread, so the interface will freeze until the rebuild is finished."),
-	N_("If no parameter is specified, it launches the log for the hub or private chat with the associated application in Windows. If one of the parameters is specified it opens that log file. The status log is available only in the hub frame."),
-	N_("Displays available commands. (The ones listed on this page.) Optionally, you can specify \"brief\" to have a brief listing."),
-	N_("Launches your default web browser with the given URL."),
-	N_("Highlights the last occourrence of the specified search string in the chat window."),
-	N_("Set the download speed limit in KiBs. Zero or omitted value disables the limit."),
-	N_("Set the upload speed limit in KiBs. Zero or omitted value disables the limit."),
-	N_("Closes the current window."),
-	N_("Opens the internal settings list debugging tool window.")
+static const map<tstring, tstring> cmdMap = {
+	{_T("/refresh"),								  T_("Manually refreshes FearDC's share list by going through the shared directories and adding new folders and files. FearDC automatically refreshes once an hour by default, and also refreshes after the list of shared directories is changed.")},
+	{_T("/me"),										  T_("Speak as a third person.")},
+	{_T("/slots #"),								  T_("Sets the current number of upload slots to the number you specify. If this is less than the current number of slots, no uploads are cancelled.")},
+	{_T("/dslots #"),								  T_("Sets the current number of download slots to the number you specify. If this is less than the current number of slots, no downloads are cancelled.")},
+	{_T("/search <string>"),						  T_("Opens a new search window with the specified search string. It does not automatically send the search.")},
+	{_T("/clear [lines to keep]"),					  T_("Clears the current window of all text. Optionally, you can specify how many of the latest (most recent) lines should be kept.")},
+	{_T("/feardc"),									  T_("Sends a random FearDC advertising message to the chat, including a link to the FearDC homepage and the version number.")},
+	{_T("/away [message]"),							  T_("Sets Away status. New private message windows will be responded to, once, with the message you specified, or the default away message configured in the Personal information settings page.")},
+	{_T("/back"),									  T_("Un-sets Away status.")},
+	{_T("/d <search string>"),						  T_("Launches your default web browser to the DuckDuckGo search engine with the specified search.")},
+	{_T("/g <search string>"),						  T_("Launches your default web browser to the Google search engine with the specified search.")},
+	{_T("/imdb <imdb query>"),						  T_("Launches your default web browser to the Internet Movie Database (imdb) with the specified query.")},
+	{_T("/rebuild"),								  T_("Rebuilds the HashIndex.xml and HashData.dat files, removing entries to files that are no longer shared, or old hashes for files that have since changed. This runs in the main FearDC thread, so the interface will freeze until the rebuild is finished.")},
+	{_T("/log <status, system, downloads, uploads>"), T_("If no parameter is specified, it launches the log for the hub or private chat with the associated application in Windows. If one of the parameters is specified it opens that log file. The status log is available only in the hub frame.")},
+	{_T("/help"),									  T_("Displays available commands. (The ones listed on this page.) Optionally, you can specify \"brief\" to have a brief listing.")},
+	{_T("/u <url>"),								  T_("Launches your default web browser with the given URL.")},
+	{_T("/f <search string>"),						  T_("Highlights the last occourrence of the specified search string in the chat window.")},
+	{_T("/download #"),								  T_("Set the download speed limit in KiBs. Zero or omitted value disables the limit.")},
+	{_T("/upload #"),								  T_("Set the upload speed limit in KiBs. Zero or omitted value disables the limit.")},
+	{_T("/close"),									  T_("Closes the current window.")},
+	{_T("/about:config, /a:c, /ac"),				  T_("Opens the internal settings list debugging tool window.")}
 };
 
 tstring WinUtil::getDescriptiveCommands() {
 	tstring ret;
 
-	int counter = 0;
-	for(auto& command_string: command_strings) {
-		ret +=
-			_T("\r\n") + Text::toT(command_string) +
-			_T("\r\n\t") + T_(command_helps[counter++]);
+	for(const auto& commands : cmdMap) {
+		ret += _T("\r\n") + commands.first + _T("\r\n\t") + commands.second;
 	}
 
 	return ret;
@@ -845,7 +817,7 @@ void WinUtil::copyMagnet(const TTHValue& aHash, const tstring& aFile, int64_t si
 string WinUtil::makeMagnet(const TTHValue& aHash, const string& aFile, int64_t size) {
 	string ret = "magnet:?xt=urn:tree:tiger:" + aHash.toBase32();
 	if(size > 0)
-		ret += "&xl=" + Util::toString(size);
+		ret += "&xl=" + std::to_string(size);
 	return ret + "&dn=" + Util::encodeURI(aFile);
 }
 

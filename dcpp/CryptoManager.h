@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,14 +39,6 @@ class CryptoManager : public Singleton<CryptoManager>
 public:
 	typedef pair<bool, string> SSLVerifyData;
 
-	enum TLSTmpKeys {
-		KEY_FIRST = 0,
-		KEY_DH_2048 = KEY_FIRST,
-		KEY_DH_4096,
-		KEY_RSA_2048,
-		KEY_LAST
-	};
-
 	enum SSLContext {
 		SSL_CLIENT,
 		SSL_SERVER
@@ -69,8 +61,6 @@ public:
 	bool TLSOk() const noexcept;
 
 	static void locking_function(int mode, int n, const char* /*file*/, int /*line*/);
-	static DH* tmp_dh_cb(SSL* /*ssl*/, int /*is_export*/, int keylength);
-	static RSA* tmp_rsa_cb(SSL* /*ssl*/, int /*is_export*/, int keylength);
 	static int verify_callback(int preverify_ok, X509_STORE_CTX *ctx);
 
 	static string keyprintToString(const ByteVector& kp) noexcept;
@@ -89,13 +79,8 @@ private:
 
 	void sslRandCheck();
 
-	int getKeyLength(TLSTmpKeys key);
-	DH* getTmpDH(int keyLen);
-	RSA* getTmpRSA(int keyLen);
-
 	bool certsLoaded;
 
-	static void* tmpKeysMap[KEY_LAST];
 	static CriticalSection* cs;
 	static char idxVerifyDataName[];
 	static SSLVerifyData trustedKeyprint;

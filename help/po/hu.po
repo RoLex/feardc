@@ -7,19 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2023-06-17 10:54+0200\n"
+"POT-Creation-Date: 2024-03-14 23:14+0100\n"
 "PO-Revision-Date: 2022-10-15 09:18+0000\n"
 "Last-Translator: eMTee <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
-"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "X-Launchpad-Export-Date: 2022-10-18 11:21+0000\n"
 "X-Generator: Launchpad (build 25877e98ba44ca75f9c22db1fc37efee03e4606a)\n"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div><placeholder><a>
-#: help/chat_commands.html:9 help/index.html:148 help/window_main.html:102
+#: help/chat_commands.html:9 help/index.html:148 help/window_main.html:116
 msgid "Chat Commands"
 msgstr "Chat parancsok"
 
@@ -89,7 +89,7 @@ msgstr ""
 "Eltávolítja az aktuális hubot a <a po4a-id=0>Kedvenc Hubok</a> listájáról."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:37
+#: help/chat_commands.html:36
 msgid ""
 "Opens a private message window to the user, and optionally sends the "
 "message, if one was specified."
@@ -98,18 +98,18 @@ msgstr ""
 "az meg van adva."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:40
+#: help/chat_commands.html:39
 msgid ""
 "Sends a private main chat message to the user if supported by hub, NMDC only."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:42
+#: help/chat_commands.html:41
 msgid "Adds the user's list to the Download Queue."
 msgstr "A megadott felhasználó fájl listáját a Letöltési sorhoz adja"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:44
+#: help/chat_commands.html:43
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to ignore chat messages from the specified user."
@@ -118,7 +118,7 @@ msgstr ""
 "létezik) a megadott felhasználó chat üzeneteinek mellőzésére."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:47
+#: help/chat_commands.html:46
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to stop ignoring chat messages from the specified user."
@@ -127,7 +127,7 @@ msgstr ""
 "létezik) a megadott felhasználó chat üzeneteinek újbóli engedélyezésére."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:50
+#: help/chat_commands.html:49
 msgid ""
 "Prints the current hub's topic. Useful if you want to copy the topic or it "
 "contains a link you'd like to easily open."
@@ -137,7 +137,7 @@ msgstr ""
 "megnyitható."
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
-#: help/chat_commands.html:52
+#: help/chat_commands.html:51
 #: /home/hundr/dcpp/help/commands_user_general.inc:11 help/index.html:30
 #: help/keyboard_commands.html:41 help/keyboard_commands.html:68
 #: help/keyboard_commands.html:70 help/keyboard_commands.html:72
@@ -146,13 +146,13 @@ msgstr ""
 #: help/settings_appearance.html:84 help/settings_expert.html:51
 #: help/settings_expert.html:53 help/settings_history.html:25
 #: help/settings_history.html:43 help/settings_notifications.html:37
-#: help/window_main.html:136 help/window_main.html:138 help/window_pm.html:10
+#: help/window_main.html:155 help/window_main.html:157 help/window_pm.html:10
 #: help/window_pm.html:11
 msgid "Private Message"
 msgstr "Privát üzenet"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:56
+#: help/chat_commands.html:55
 msgid ""
 "Starts a direct encrypted communication channel to avoid spying on your "
 "private messages."
@@ -161,12 +161,12 @@ msgstr ""
 "elkerülésére."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:58
+#: help/chat_commands.html:57
 msgid "Adds the current user's list to the Download Queue."
 msgstr "Az aktuális felhasználó fájl listáját a Letöltési sorhoz adja"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:60
+#: help/chat_commands.html:59
 msgid ""
 "Grants the remote user a slot. Once they connect, or if they don't connect "
 "in 10 minutes, the granted slot is removed."
@@ -176,14 +176,14 @@ msgstr ""
 "visszavonásra kerül."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:64
+#: help/chat_commands.html:63
 msgid "Adds the current user to the list of <a po4a-id=0>Favorite Users</a>."
 msgstr ""
 "Az aktuális felhasználót a <a po4a-id=0>Kedvenc Felhasználók</a> listájához "
 "adja."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:67
+#: help/chat_commands.html:66
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to ignore chat messages from the current user."
@@ -192,7 +192,7 @@ msgstr ""
 "létezik) az aktuális felhasználó chat üzeneteinek mellőzésére."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:70
+#: help/chat_commands.html:69
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to stop ignoring chat messages from the current user."
@@ -201,17 +201,17 @@ msgstr ""
 "létezik) az aktuális felhasználó chat üzeneteinek újbóli engedélyezésére."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:73
+#: help/chat_commands.html:72
 msgid "Lists the date and time when the last message was sent or received."
 msgstr "Kiírja az utolsó küldött vagy fogadott üzenet dátumát és idejét."
 
 #. type: Content of: <html><body><h2>
-#: help/chat_commands.html:75
+#: help/chat_commands.html:74
 msgid "Both"
 msgstr "Mind a privát, mind a közös chat-ben használható parancsok"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:78
+#: help/chat_commands.html:77
 msgid ""
 "Manually refreshes DC++'s share list by going through the shared directories "
 "and adding new folders and files. DC++ automatically refreshes once an hour "
@@ -224,12 +224,12 @@ msgstr ""
 "listája változik a megosztási beállításokban."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:83
+#: help/chat_commands.html:82
 msgid "Speak as a third person."
 msgstr "Beszélés harmadik személyként."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:85
+#: help/chat_commands.html:84
 msgid ""
 "Sets the current number of upload slots to the number you specify. If this "
 "is less than the current number of slots, no uploads are cancelled."
@@ -239,7 +239,7 @@ msgstr ""
 "slotszám."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:89
+#: help/chat_commands.html:88
 msgid ""
 "Sets the current number of download slots to the number you specify. If this "
 "is less than the current number of slots, no downloads are cancelled."
@@ -249,7 +249,7 @@ msgstr ""
 "slotszám."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:93
+#: help/chat_commands.html:92
 msgid ""
 "Opens a new search window with the specified search string.  It does <u>not</"
 "u> automatically send the search."
@@ -258,12 +258,12 @@ msgstr ""
 "automatikusan <u>nem</u> indul el."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:97
+#: help/chat_commands.html:96
 msgid "Closes the current window."
 msgstr "Bezárja az aktuális ablakot"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:99
+#: help/chat_commands.html:98
 msgid ""
 "Clears the current window of all text. Optionally, you can specify how many "
 "of the latest (most recent) lines should be kept."
@@ -272,7 +272,7 @@ msgstr ""
 "a szöveg utolsó hány sorát tartsa meg."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:102
+#: help/chat_commands.html:101
 msgid ""
 "Sends a random DC++ advertising message to the chat, including a link to the "
 "DC++ homepage and the version number."
@@ -282,7 +282,7 @@ msgstr ""
 "verziószám."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:105
+#: help/chat_commands.html:104
 msgid ""
 "Sets Away status. New private message windows will be responded to, once, "
 "with the message you specified, or the default away message configured in "
@@ -294,12 +294,12 @@ msgstr ""
 "üzenetet."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:110
+#: help/chat_commands.html:109
 msgid "Un-sets Away status."
 msgstr "Kikapcsolja a Távolléti módot"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:112
+#: help/chat_commands.html:111
 msgid ""
 "Launches your default web browser to the DuckDuckGo search engine with the "
 "specified search."
@@ -308,7 +308,7 @@ msgstr ""
 "megadott keresési kulcsszavakkal."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:115
+#: help/chat_commands.html:114
 msgid ""
 "Launches your default web browser to the Google search engine with the "
 "specified search."
@@ -317,7 +317,7 @@ msgstr ""
 "keresési kulcsszavakkal."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:118
+#: help/chat_commands.html:117
 msgid ""
 "Launches your default web browser to the Internet Movie Database (imdb) with "
 "the specified query."
@@ -326,7 +326,7 @@ msgstr ""
 "megadott keresési kulcsszavakkal."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:121
+#: help/chat_commands.html:120
 msgid ""
 "Rebuilds the HashIndex.xml and HashData.dat files, removing entries to files "
 "that are no longer shared, or old hashes for files that have since changed. "
@@ -340,7 +340,7 @@ msgstr ""
 "be nem fejeződik."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:126
+#: help/chat_commands.html:125
 msgid ""
 "If no parameter is specified, it launches the log for the hub or private "
 "chat with the associated application in Windows. If one of the parameters is "
@@ -354,7 +354,7 @@ msgstr ""
 "chatba beírt paranccsal van lehetőség."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:131
+#: help/chat_commands.html:130
 msgid ""
 "Displays available commands. (The ones listed on this page.) Optionally, you "
 "can specify &quot;brief&quot; to have a brief listing."
@@ -363,12 +363,12 @@ msgstr ""
 "brief&quot paraméter megadása rövid listát eredményez."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:133
+#: help/chat_commands.html:132
 msgid "Launches your default web browser with the given URL."
 msgstr "A megadott URL-t megnyitja az alapértelmezett web böngészőben."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:135
+#: help/chat_commands.html:134
 msgid ""
 "Highlights the last occourrence of the specified search string in the chat "
 "window."
@@ -376,7 +376,7 @@ msgstr ""
 "Megjelöli a keresett szöveg legutolsó előfordulási helyét a chat ablakban."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:138
+#: help/chat_commands.html:137
 msgid ""
 "Set the download speed limit in KiBs. Zero or omitted value disables the "
 "limit."
@@ -385,7 +385,7 @@ msgstr ""
 "limitert."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:140
+#: help/chat_commands.html:139
 msgid ""
 "Set the upload speed limit in KiBs. Zero or omitted value disables the limit."
 msgstr ""
@@ -393,7 +393,7 @@ msgstr ""
 "limitert."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/chat_commands.html:144
+#: help/chat_commands.html:143
 msgid ""
 "Opens the <a po4a-id=0>internal settings list</a> debugging and testing tool "
 "window. Note that this tool provides bulk access to the low level "
@@ -719,26 +719,27 @@ msgstr "Privát üzenet küldése"
 #: help/settings_user_matching.html:50 help/window_download_queue.html:54
 #: help/window_favorite_hubs.html:30 help/window_favorite_hubs.html:50
 #: help/window_favorite_hubs.html:51 help/window_hub.html:91
-#: help/window_main.html:26 help/window_main.html:27 help/window_main.html:45
-#: help/window_main.html:56 /home/hundr/dcpp/help/menu_plugins.inc:6
-#: help/window_main.html:68 help/window_main.html:71 help/window_main.html:74
-#: help/window_main.html:77 help/window_main.html:80 help/window_main.html:83
-#: help/window_main.html:86 help/window_main.html:89 help/window_main.html:92
-#: help/window_main.html:95 help/window_main.html:98 help/window_main.html:101
-#: help/window_main.html:102 help/window_main.html:104
-#: help/window_main.html:124 help/window_main.html:127
-#: help/window_main.html:128 help/window_main.html:132
-#: help/window_main.html:133 help/window_main.html:136
-#: help/window_main.html:138 help/window_main.html:142
-#: help/window_main.html:217 help/window_main.html:222
-#: help/window_main.html:223 help/window_main.html:224
-#: help/window_main.html:227 help/window_main.html:229
-#: help/window_main.html:231 help/window_main.html:233
-#: help/window_main.html:235 help/window_main.html:237
-#: help/window_main.html:239 help/window_main.html:262
-#: help/window_main.html:266 help/window_main.html:322
-#: help/window_main.html:325 help/window_main.html:328
-#: help/window_main.html:331 help/window_pm.html:27 help/window_pm.html:69
+#: help/window_main.html:28 help/window_main.html:29 help/window_main.html:47
+#: help/window_main.html:58 /home/hundr/dcpp/help/menu_plugins.inc:6
+#: help/window_main.html:71 help/window_main.html:75 help/window_main.html:79
+#: help/window_main.html:83 help/window_main.html:87 help/window_main.html:91
+#: help/window_main.html:95 help/window_main.html:99 help/window_main.html:103
+#: help/window_main.html:107 help/window_main.html:111
+#: help/window_main.html:115 help/window_main.html:116
+#: help/window_main.html:119 help/window_main.html:143
+#: help/window_main.html:146 help/window_main.html:147
+#: help/window_main.html:151 help/window_main.html:152
+#: help/window_main.html:155 help/window_main.html:157
+#: help/window_main.html:161 help/window_main.html:240
+#: help/window_main.html:247 help/window_main.html:248
+#: help/window_main.html:249 help/window_main.html:253
+#: help/window_main.html:256 help/window_main.html:259
+#: help/window_main.html:262 help/window_main.html:265
+#: help/window_main.html:268 help/window_main.html:271
+#: help/window_main.html:301 help/window_main.html:306
+#: help/window_main.html:369 help/window_main.html:373
+#: help/window_main.html:377 help/window_main.html:381 help/window_pm.html:27
+#: help/window_pm.html:69
 msgid "<placeholder id=0/>"
 msgstr "<placeholder id=0/>"
 
@@ -1266,8 +1267,8 @@ msgid ""
 "(add, remove, and rearrange) the toolbar items in the main DC++ window."
 msgstr ""
 "Egy a Windows-ba beépített  eszköztár testreszabás párbeszédablak "
-"segítségével lehet testreszabni (elemeket hozzáadni, evenni, átrendezni) a "
-"DC++ főablakában található eszköztárat."
+"segítségével lehet testreszabni (elemeket hozzáadni, evenni, átrendezni) a DC"
+"++ főablakában található eszköztárat."
 
 #. type: Content of: <html><body><h2>
 #: help/dialog_customize_tb.html:12
@@ -1298,9 +1299,9 @@ msgstr ""
 #. type: Content of: <html><body><ol><li>
 #: help/dialog_customize_tb.html:16
 msgid ""
-"To reposition a button on the toolbar, select it from the \"Toolbar "
-"buttons\" list box and click either \"Move Up\" or \"Move Down\" to move the "
-"button accordingly."
+"To reposition a button on the toolbar, select it from the \"Toolbar buttons"
+"\" list box and click either \"Move Up\" or \"Move Down\" to move the button "
+"accordingly."
 msgstr ""
 "Az eszköztárgombok sorrendjének megváltoztatásához válassz ki egyet az "
 "\"Eszköztárgombok\" listából, majd a \"Fel\" vagy \"Le\" gombokra "
@@ -1329,31 +1330,32 @@ msgstr ""
 #: help/dialog_favorite_hub.html:42 help/dialog_favorite_hub.html:43
 #: help/index.html:62 help/window_favorite_hubs.html:30
 #: help/window_favorite_hubs.html:50 help/window_favorite_hubs.html:51
-#: help/window_main.html:27 help/window_main.html:128 help/window_main.html:133
-#: help/window_main.html:224
+#: help/window_main.html:29 help/window_main.html:147
+#: help/window_main.html:152 help/window_main.html:249
 msgid "Favorite hub groups"
 msgstr "Kedvenc hub csoportok"
 
 #. type: Content of: <html><body><dl><dd><div><placeholder><a>
 #: help/dialog_fav_hub_groups.html:10 help/index.html:33
-#: help/keyboard_commands.html:46 help/window_main.html:70
-#: help/window_main.html:71 help/window_main.html:189 help/window_main.html:220
-#: help/window_main.html:222 help/window_main.html:223
+#: help/keyboard_commands.html:46 help/window_main.html:74
+#: help/window_main.html:75 help/window_main.html:212
+#: help/window_main.html:245 help/window_main.html:247
+#: help/window_main.html:248
 msgid "Favorite Hubs"
 msgstr "Kedvenc Hubok"
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/dialog_fav_hub_groups.html:10 help/window_main.html:24
+#: help/dialog_fav_hub_groups.html:10 help/window_main.html:26
 msgid "Connect to a favorite hub group"
 msgstr "Kapcsolódás egy kedvenc hub csoporthoz"
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/dialog_fav_hub_groups.html:10 help/window_main.html:125
+#: help/dialog_fav_hub_groups.html:10 help/window_main.html:144
 msgid "Close all hubs of a favorite group"
 msgstr "Egy kedvenc csoport összes hubjának bezárása"
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/dialog_fav_hub_groups.html:10 help/window_main.html:130
+#: help/dialog_fav_hub_groups.html:10 help/window_main.html:149
 msgid "Close hubs not in a favorite group"
 msgstr "Egy kedvenc csoporton kívüli összes hub bezárása"
 
@@ -1477,9 +1479,9 @@ msgstr "Kedvenc Hub Tulajdonságai"
 #: help/settings_tabs.html:41 /home/hundr/dcpp/help/window_hublists.inc:4
 #: /home/hundr/dcpp/help/window_hublists.inc:5
 #: help/window_finished_downloads.html:36 help/window_finished_uploads.html:36
-#: help/window_hub.html:10 help/window_hub.html:11 help/window_main.html:26
-#: help/window_main.html:124 help/window_main.html:127
-#: help/window_main.html:132 help/window_search.html:81
+#: help/window_hub.html:10 help/window_hub.html:11 help/window_main.html:28
+#: help/window_main.html:143 help/window_main.html:146
+#: help/window_main.html:151 help/window_search.html:81
 #: help/window_transfers.html:46
 msgid "Hub"
 msgstr "Hub"
@@ -1502,7 +1504,7 @@ msgstr "A hub címe."
 #. type: Content of: <html><body><dl><dt>
 #: help/dialog_favorite_hub.html:16 help/dialog_favorite_hub.html:27
 #: help/settings_general.html:25 /home/hundr/dcpp/help/window_hublists.inc:11
-#: help/window_hub.html:49 help/window_users.html:28 help/window_users.html:38
+#: help/window_hub.html:49 help/window_users.html:34 help/window_users.html:44
 msgid "Description"
 msgstr "Leírás"
 
@@ -1655,7 +1657,7 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
 #: help/dialog_indexing_progress.html:9 help/index.html:58
-#: help/window_main.html:103
+#: help/window_main.html:118
 msgid "Indexing progress"
 msgstr "Indexelés folyamata"
 
@@ -2319,9 +2321,9 @@ msgstr "Kedvenc felhasználók megfeleltetése"
 #: help/dialog_user_matching.html:27 help/index.html:34
 #: help/keyboard_commands.html:60 help/keyboard_commands.html:89
 #: help/settings_styles.html:47 help/window_download_queue.html:74
-#: help/window_hub.html:113 help/window_main.html:73 help/window_main.html:74
-#: help/window_main.html:190 help/window_main.html:226
-#: help/window_main.html:227 help/window_public_hubs.html:16
+#: help/window_hub.html:113 help/window_main.html:78 help/window_main.html:79
+#: help/window_main.html:213 help/window_main.html:252
+#: help/window_main.html:253 help/window_public_hubs.html:16
 #: help/window_public_hubs.html:84 help/window_users.html:10
 #: help/window_users.html:11
 msgid "Users"
@@ -2677,8 +2679,8 @@ msgid ""
 msgstr ""
 "Ha van routered akkor viszont CSAK az 1. vagy a 2. opció jöhet szóba : "
 "<i>Aktív mód (Nincs routerem / magam állítom be a routerem)</i> vagy az "
-"<i>Aktív mód (a router automatikus beállítása NAT-PMP v. UPnP "
-"használatával)</i>."
+"<i>Aktív mód (a router automatikus beállítása NAT-PMP v. UPnP használatával)"
+"</i>."
 
 #. type: Content of: <html><body><h2>
 #: help/faq_connection.html:93
@@ -2851,9 +2853,9 @@ msgstr ""
 #. type: Content of: <html><body><p><ul><li>
 #: help/faq_connection.html:151
 msgid ""
-"Select the <b>Active mode (let DC++ configure my router with NAT-PMP / "
-"UPnP)</b> radio button. Leave the fields in the &quot;External / WAN "
-"IP&quot; box blank."
+"Select the <b>Active mode (let DC++ configure my router with NAT-PMP / UPnP)"
+"</b> radio button. Leave the fields in the &quot;External / WAN IP&quot; box "
+"blank."
 msgstr ""
 "Válaszd ki az <b>Aktív mód (a router automatikus beállítása NAT-PMP v. UPnP "
 "használatával)</b> opciót és hagyj mindent a &quot;Külső / WAN IP&quot; "
@@ -3742,10 +3744,10 @@ msgstr ""
 #: help/faq_portforward.html:51
 msgid ""
 "The IP that you are forwarding to should be the <b>internal</b> IP address "
-"of your computer running DC++.  It usually begins with <a po4a-"
-"id=0>\"192.168\", \"172.16.\" or \"10.x.\"</a>. To see your internal IP "
-"address go to the command prompt and type: <i>ipconfig</i> (Start Menu -&gt; "
-"Run -&gt; <i>cmd /k ipconfig</i>)"
+"of your computer running DC++.  It usually begins with <a po4a-id=0>\"192.168"
+"\", \"172.16.\" or \"10.x.\"</a>. To see your internal IP address go to the "
+"command prompt and type: <i>ipconfig</i> (Start Menu -&gt; Run -&gt; <i>cmd /"
+"k ipconfig</i>)"
 msgstr ""
 "A portokat annak a számítógépnek a <b>belső</b> IP címére kell továbbítanod, "
 "amelyen a DC++-t futtatod. Ez az IP cím általában <a po4a-id=0>\"192.168\", "
@@ -3761,8 +3763,8 @@ msgid ""
 "no router / I have configured my router)</b>. In the port fields, enter the "
 "port number(s) that you forwarded on the router."
 msgstr ""
-"Ha elkészültél a port továbbítási beállításokkal a routerben, indítsd el a "
-"DC++-t és a <a po4a-id=0>Kapcsolat kézi beállításaiban</a> válaszd ki az "
+"Ha elkészültél a port továbbítási beállításokkal a routerben, indítsd el a DC"
+"++-t és a <a po4a-id=0>Kapcsolat kézi beállításaiban</a> válaszd ki az "
 "<b>Aktív mód (Nincs routerem / magam állítom be a routerem)</b> opciót. A "
 "Port mezőkbe írd be azon portok számát, amelyeket a routerrel továbbítasz."
 
@@ -4691,8 +4693,8 @@ msgstr "Megoldás: próbálj több forrást találni a letöltéseidhez:"
 #. type: Content of: <html><body><dl><dd><placeholder><a>
 #: help/faq_slowdownload.html:70 help/index.html:35
 #: help/keyboard_commands.html:35 help/settings_tabs.html:56
-#: help/window_main.html:76 help/window_main.html:77 help/window_main.html:191
-#: help/window_main.html:228 help/window_main.html:229
+#: help/window_main.html:82 help/window_main.html:83 help/window_main.html:214
+#: help/window_main.html:255 help/window_main.html:256
 msgid "Download Queue"
 msgstr "Letöltési sor"
 
@@ -4700,9 +4702,9 @@ msgstr "Letöltési sor"
 #: help/faq_slowdownload.html:73 help/index.html:38
 #: help/keyboard_commands.html:58 help/settings_history.html:58
 #: help/settings_search_types.html:12 help/settings_tabs.html:50
-#: help/window_main.html:85 help/window_main.html:86 help/window_main.html:142
-#: help/window_main.html:194 help/window_main.html:234
-#: help/window_main.html:235 help/window_search.html:10
+#: help/window_main.html:94 help/window_main.html:95 help/window_main.html:161
+#: help/window_main.html:217 help/window_main.html:264
+#: help/window_main.html:265 help/window_search.html:10
 #: help/window_search.html:11 help/window_search.html:42
 msgid "Search"
 msgstr "Keresés"
@@ -5151,8 +5153,8 @@ msgid ""
 "suitable to use by itself for protection. If it's enabled and you have "
 "problems accessing the Internet with DC++ the best practice is to check for "
 "and delete existing exception(s) for DC++ then let the operating system "
-"properly readd it at next start of the DC++ application. To do this, close "
-"DC++ and"
+"properly readd it at next start of the DC++ application. To do this, close DC"
+"++ and"
 msgstr ""
 "A legutóbbi Windows verziókban található tűzfal összetevő alapértelmezetten "
 "be van kapcsolva. Bár nem rendelkezik túl sok beállítási lehetőséggel, mégis "
@@ -5659,7 +5661,7 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
 #: help/get_started.html:4 help/get_started.html:11 help/index.html:16
-#: help/window_main.html:151
+#: help/window_main.html:170
 msgid "Get started"
 msgstr "Kezdőknek"
 
@@ -5685,8 +5687,8 @@ msgstr ""
 #, fuzzy
 msgid ""
 "The newest version of FearDC should work well on any officially supported "
-"Windows client operating systems, including Windows 8.1, 10 and 11; also "
-"runs on Windows 7 as unsupported for the time being. Some older versions "
+"Windows client operating systems, including Windows 10 and 11; also runs on "
+"Windows 7 and 8.1 as unsupported for the time being. Some older versions "
 "will run even on Windows XP or Vista, but using DC++ on these old, "
 "discontinued and vulnerable operating systems is neither recommended nor "
 "supported.  As long as it downloaded from the <a po4a-id=0>official site</"
@@ -5863,11 +5865,11 @@ msgstr ""
 "amelyek mindenképpen szükségesek a sikeres használathoz. (A leírás - lévén "
 "BCDC++-hoz készült - kis mértékben eltér a DC++-ban található "
 "beállításoktól, de az eltérés az alapvetően szükséges beállításokat nem "
-"érinti). Hasonlóan kitűnő, kezdőknek szóló leírás található a <a "
-"href=\"https://web.archive.org/web/20120430080612/http://dcpp.hu:80/\" "
-"target=\"_blank\" class=\"external\">dcpp.hu</a> portálon is. Az eredeti "
-"angol nyelvű DC++ gyorstalpaló <a po4a-id=0>itt</a> található. Semmiképpen "
-"ne hagyd ki az alapvetően szükséges DC++ beállítások áttekintését (pl. nick "
+"érinti). Hasonlóan kitűnő, kezdőknek szóló leírás található a <a href="
+"\"https://web.archive.org/web/20120430080612/http://dcpp.hu:80/\" target="
+"\"_blank\" class=\"external\">dcpp.hu</a> portálon is. Az eredeti angol "
+"nyelvű DC++ gyorstalpaló <a po4a-id=0>itt</a> található. Semmiképpen ne "
+"hagyd ki az alapvetően szükséges DC++ beállítások áttekintését (pl. nick "
 "megadása a <a po4a-id=1>Személyes beállításokban</a>, stb...), mivel ezek "
 "hiánya azt eredményezheti, hogy egyetlen hubhoz sem fogsz tudni kapcsolódni."
 
@@ -6003,9 +6005,9 @@ msgstr ""
 "További GYIK-ek, tippek és segítség található a <a href=\"https://web."
 "archive.org/web/20131115231608/http://bcdc.dccafe.org/hu\" target=\"_blank\" "
 "class=\"external\">BCDC++ magyar honlapon</a>, a <a href=\"https://web."
-"archive.org/web/20120531014530/http://dcpp.hu:80/\" target=\"_blank\" "
-"class=\"external\">Magyar Direct Connect portálon</a> és az angol nyelvű <a "
-"po4a-id=0>Direct Connect FAQ</a> oldalon."
+"archive.org/web/20120531014530/http://dcpp.hu:80/\" target=\"_blank\" class="
+"\"external\">Magyar Direct Connect portálon</a> és az angol nyelvű <a po4a-"
+"id=0>Direct Connect FAQ</a> oldalon."
 
 #. type: Content of: <html><body><ul><li>
 #: help/get_started.html:130
@@ -6102,7 +6104,7 @@ msgid "Windows"
 msgstr "Ablakok"
 
 #. type: Content of: <html><body><h1>
-#: help/index.html:28 help/window_main.html:11
+#: help/index.html:28 help/window_main.html:12
 msgid "Main DC++ window"
 msgstr "DC++ főablak"
 
@@ -6116,23 +6118,23 @@ msgstr "Fájl-lista"
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
 #: help/index.html:32 help/keyboard_commands.html:52
-#: help/keyboard_commands.html:89 help/window_main.html:67
-#: help/window_main.html:68 help/window_main.html:187 help/window_main.html:216
-#: help/window_main.html:217
+#: help/keyboard_commands.html:89 help/window_main.html:70
+#: help/window_main.html:71 help/window_main.html:210
+#: help/window_main.html:239 help/window_main.html:240
 msgid "Public Hubs"
 msgstr "Publikus Hubok"
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
-#: help/index.html:36 help/settings_tabs.html:59 help/window_main.html:79
-#: help/window_main.html:80 help/window_main.html:192 help/window_main.html:230
-#: help/window_main.html:231
+#: help/index.html:36 help/settings_tabs.html:59 help/window_main.html:86
+#: help/window_main.html:87 help/window_main.html:215
+#: help/window_main.html:258 help/window_main.html:259
 msgid "Finished Downloads"
 msgstr "Befejezett letöltések"
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
-#: help/index.html:37 help/settings_tabs.html:62 help/window_main.html:82
-#: help/window_main.html:83 help/window_main.html:193 help/window_main.html:232
-#: help/window_main.html:233
+#: help/index.html:37 help/settings_tabs.html:62 help/window_main.html:90
+#: help/window_main.html:91 help/window_main.html:216
+#: help/window_main.html:261 help/window_main.html:262
 msgid "Finished Uploads"
 msgstr "Befejezett feltöltések"
 
@@ -6142,30 +6144,30 @@ msgid "ADLSearch"
 msgstr "ADL keresés"
 
 #. type: Content of: <html><body><h1>
-#: help/index.html:40 help/keyboard_commands.html:48 help/window_main.html:91
-#: help/window_main.html:92 help/window_main.html:203 help/window_main.html:261
-#: help/window_main.html:262 help/window_notepad.html:10
-#: help/window_notepad.html:11
+#: help/index.html:40 help/keyboard_commands.html:48 help/window_main.html:102
+#: help/window_main.html:103 help/window_main.html:226
+#: help/window_main.html:300 help/window_main.html:301
+#: help/window_notepad.html:10 help/window_notepad.html:11
 msgid "Notepad"
 msgstr "Jegyzettömb"
 
 #. type: Content of: <html><body><h1>
-#: help/index.html:41 help/window_main.html:45 help/window_text_viewer.html:10
+#: help/index.html:41 help/window_main.html:47 help/window_text_viewer.html:10
 msgid "Text viewer"
 msgstr "Szöveges fájl nézegető"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div><placeholder><a>
 #: help/index.html:42 help/settings_connectivity.html:54
-#: help/window_main.html:94 help/window_main.html:95
+#: help/window_main.html:106 help/window_main.html:107
 msgid "System Log"
 msgstr "Rendszernapló"
 
 #. type: Content of: <html><body><dl><dd><div><placeholder><a>
-#: help/index.html:43 help/window_main.html:97 help/window_main.html:98
-#: help/window_main.html:196 help/window_main.html:238
-#: help/window_main.html:239 help/window_main.html:322
-#: help/window_main.html:325 help/window_main.html:328
-#: help/window_main.html:331
+#: help/index.html:43 help/window_main.html:110 help/window_main.html:111
+#: help/window_main.html:219 help/window_main.html:270
+#: help/window_main.html:271 help/window_main.html:369
+#: help/window_main.html:373 help/window_main.html:377
+#: help/window_main.html:381
 msgid "Network Statistics"
 msgstr "Hálózati Statisztika"
 
@@ -6195,8 +6197,8 @@ msgid "Dialogs"
 msgstr "Párbeszédablakok"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/index.html:70 help/window_main.html:47 help/window_main.html:202
-#: help/window_main.html:259
+#: help/index.html:70 help/window_main.html:49 help/window_main.html:225
+#: help/window_main.html:297
 msgid "Settings"
 msgstr "Beállítások"
 
@@ -6214,7 +6216,8 @@ msgstr "Kapcsolódás"
 
 #. type: Content of: <html><body><h1>
 #: help/index.html:75 help/settings_connectivity.html:17
-#: help/settings_connectivity.html:64 help/settings_connectivity_manual.html:10
+#: help/settings_connectivity.html:64
+#: help/settings_connectivity_manual.html:10
 msgid "Manual configuration"
 msgstr "Kézi beállítás"
 
@@ -6230,7 +6233,7 @@ msgstr "Proxy"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
 #: help/index.html:80 help/links.html:17 help/settings_downloads.html:9
-#: help/settings_styles.html:29 help/window_main.html:162
+#: help/settings_styles.html:29 help/window_main.html:182
 msgid "Downloads"
 msgstr "Letöltések"
 
@@ -6260,7 +6263,7 @@ msgid "Appearance"
 msgstr "Megjelenés"
 
 #. type: Content of: <html><body><h2>
-#: help/index.html:96 help/window_main.html:279
+#: help/index.html:96 help/window_main.html:321
 msgid "Tabs"
 msgstr "Fülek"
 
@@ -6300,9 +6303,9 @@ msgid "Search types"
 msgstr "Keresés típusok"
 
 #. type: Content of: <html><body><dl><dd><ul><li><placeholder><a>
-#: help/index.html:117 help/window_main.html:55 help/window_main.html:56
-#: /home/hundr/dcpp/help/menu_plugins.inc:6 help/window_main.html:204
-#: help/window_main.html:263 help/window_main.html:266
+#: help/index.html:117 help/window_main.html:57 help/window_main.html:58
+#: /home/hundr/dcpp/help/menu_plugins.inc:6 help/window_main.html:227
+#: help/window_main.html:303 help/window_main.html:306
 msgid "Plugins"
 msgstr "Bővítmények"
 
@@ -6395,7 +6398,7 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
 #: help/index.html:166 help/links.html:9 help/settings_styles.html:35
-#: help/window_main.html:157
+#: help/window_main.html:176
 msgid "Links"
 msgstr "Hivatkozások"
 
@@ -6506,7 +6509,7 @@ msgid "Ctrl + 0"
 msgstr "Ctrl + 0"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/keyboard_commands.html:25 help/window_main.html:108
+#: help/keyboard_commands.html:25 help/window_main.html:124
 msgid ""
 "Toggle the permanent visibility of the main menu bar. When it is hidden, the "
 "menu bar can be temporarily brought back into view with standard Windows "
@@ -6521,7 +6524,7 @@ msgid "Ctrl + 1"
 msgstr "Ctrl+1"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/keyboard_commands.html:29 help/window_main.html:112
+#: help/keyboard_commands.html:29 help/window_main.html:129
 msgid "Enable or disable the toolbar."
 msgstr "Az eszköztár engedélyezése vagy letiltása."
 
@@ -6531,7 +6534,7 @@ msgid "Ctrl + 2"
 msgstr "Ctrl+2"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/keyboard_commands.html:31 help/window_main.html:114
+#: help/keyboard_commands.html:31 help/window_main.html:132
 msgid "Enable or disable the transfer view."
 msgstr "Átviteli nézet engedélyezése vagy tiltása."
 
@@ -6541,7 +6544,7 @@ msgid "Ctrl + 3"
 msgstr "Ctrl+3"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/keyboard_commands.html:33 help/window_main.html:116
+#: help/keyboard_commands.html:33 help/window_main.html:135
 msgid "Enable or disable the status bar."
 msgstr "Az állapotsor engedélyezése vagy tiltása."
 
@@ -6554,15 +6557,16 @@ msgstr "Ctrl+D"
 #: help/keyboard_commands.html:35 help/keyboard_commands.html:46
 #: help/keyboard_commands.html:48 help/keyboard_commands.html:52
 #: help/keyboard_commands.html:58 help/keyboard_commands.html:60
-#: help/window_main.html:68 help/window_main.html:71 help/window_main.html:74
-#: help/window_main.html:77 help/window_main.html:80 help/window_main.html:83
-#: help/window_main.html:86 help/window_main.html:89 help/window_main.html:92
-#: help/window_main.html:95 help/window_main.html:98 help/window_main.html:101
-#: help/window_main.html:217 help/window_main.html:222
-#: help/window_main.html:227 help/window_main.html:229
-#: help/window_main.html:231 help/window_main.html:233
-#: help/window_main.html:235 help/window_main.html:237
-#: help/window_main.html:239 help/window_main.html:262
+#: help/window_main.html:71 help/window_main.html:75 help/window_main.html:79
+#: help/window_main.html:83 help/window_main.html:87 help/window_main.html:91
+#: help/window_main.html:95 help/window_main.html:99 help/window_main.html:103
+#: help/window_main.html:107 help/window_main.html:111
+#: help/window_main.html:115 help/window_main.html:240
+#: help/window_main.html:247 help/window_main.html:253
+#: help/window_main.html:256 help/window_main.html:259
+#: help/window_main.html:262 help/window_main.html:265
+#: help/window_main.html:268 help/window_main.html:271
+#: help/window_main.html:301
 msgid "Open the <placeholder id=0/> window."
 msgstr "Megnyitja a(z) <placeholder id=0/> ablakot."
 
@@ -6682,7 +6686,7 @@ msgid "Ctrl + F3"
 msgstr "Ctrl + F3"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/keyboard_commands.html:62 help/window_main.html:260
+#: help/keyboard_commands.html:62 help/window_main.html:298
 msgid "Open the Settings dialog."
 msgstr "Megnyitja a Beállítások párbeszédablakot"
 
@@ -6843,7 +6847,7 @@ msgid "FearDC homepage"
 msgstr "DC++ Honlap"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/links.html:21 help/window_main.html:164
+#: help/links.html:21 help/window_main.html:184
 msgid "Frequently asked questions"
 msgstr "Gyakran ismételt kérdések"
 
@@ -6859,12 +6863,12 @@ msgid "FearDC discussion forum"
 msgstr "DC++ fórum"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/links.html:33 help/window_main.html:170
+#: help/links.html:33 help/window_main.html:190
 msgid "Request a feature"
 msgstr "Új funkció kérése"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/links.html:37 help/window_main.html:172
+#: help/links.html:37 help/window_main.html:192
 msgid "Report a bug"
 msgstr "Hiba jelentése"
 
@@ -7012,10 +7016,9 @@ msgid ""
 "just like everbody else."
 msgstr ""
 "Mielőtt slotot kérnél, olvasd el az illető felhasználó leírását a "
-"felhasználói listában. Ha ott \"nem adok slotot\" (angolul \"NO "
-"SLOTBEGGING\") vagy valami hasonló szöveget találsz, a slot kérés nagy "
-"eséllyel nem fog sikerülni. Inkább légy türelmes és várd ki a sorod, mint "
-"mindenki más."
+"felhasználói listában. Ha ott \"nem adok slotot\" (angolul \"NO SLOTBEGGING"
+"\") vagy valami hasonló szöveget találsz, a slot kérés nagy eséllyel nem fog "
+"sikerülni. Inkább légy türelmes és várd ki a sorod, mint mindenki más."
 
 #. type: Content of: <html><body><ul><li>
 #: help/netiquette.html:62
@@ -7550,14 +7553,14 @@ msgstr ""
 "elindul."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:132
+#: help/settings_advanced.html:131
 msgid "Show testing release announcements and information"
 msgstr ""
 "Bejelentések és egyéb Információk megjelenítése új tesztverzió elérhetősége "
 "esetén"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:134
+#: help/settings_advanced.html:133
 msgid ""
 "Display occasional announcements of available new testing versions (that has "
 "not yet been marked as stable by the DC++ team) at startup as well as show "
@@ -7780,8 +7783,8 @@ msgid ""
 "displayed throughout the interface. <b>Default: %[2code] - %[name]</b>"
 msgstr ""
 "Ez a doboz a felhasználói felületen több helyen megjelenő országinformációk "
-"formátumának testreszabására szolgál.  <b>Alapértelmezett érték: %[2code] - "
-"%[name]</b>"
+"formátumának testreszabására szolgál.  <b>Alapértelmezett érték: %[2code] - %"
+"[name]</b>"
 
 #. type: Content of: <html><body><dl><dd>
 #: help/settings_appearance.html:63
@@ -9490,7 +9493,7 @@ msgid "Chat lines to recall from history when opening a window"
 msgstr "Chat előzmények sorainak száma ablak megnyitásakor"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_history.html:14 help/window_main.html:309
+#: help/settings_history.html:14 help/window_main.html:354
 #: help/window_public_hubs.html:81 help/window_search.html:58
 msgid "Hubs"
 msgstr "Hubok"
@@ -9890,34 +9893,34 @@ msgstr ""
 #: help/settings_logs.html:153
 msgid ""
 "<b>Default downloaded segments log format:</b> %Y-%m-%d %H:%M: %[target] "
-"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), "
-"%[speed], %[time], %[fileTR]"
+"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), %"
+"[speed], %[time], %[fileTR]"
 msgstr ""
-"<b>Alapértelmezett letöltött szálak napló formátum:</b> %Y-%m-%d %H:%M: "
-"%[target] downloaded from %[userNI] (%[userCID]), %[fileSI] "
-"(%[fileSIactual]), %[speed], %[time], %[fileTR]"
+"<b>Alapértelmezett letöltött szálak napló formátum:</b> %Y-%m-%d %H:%M: %"
+"[target] downloaded from %[userNI] (%[userCID]), %[fileSI] (%"
+"[fileSIactual]), %[speed], %[time], %[fileTR]"
 
 #. type: Content of: <html><body><dl><dd><div>
 #: help/settings_logs.html:154
 msgid ""
 "<b>Default finished downloads log format:</b> %Y-%m-%d %H:%M: %[target] "
-"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIsession]), "
-"%[speed], %[time], %[fileTR]"
+"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIsession]), %"
+"[speed], %[time], %[fileTR]"
 msgstr ""
 "<b>Alapértelmezett befejezett letöltések napló formátum:</b> %Y-%m-%d %H:%M: "
-"%[target] downloaded from %[userNI] (%[userCID]), %[fileSI] "
-"(%[fileSIsession]), %[speed], %[time], %[fileTR]"
+"%[target] downloaded from %[userNI] (%[userCID]), %[fileSI] (%"
+"[fileSIsession]), %[speed], %[time], %[fileTR]"
 
 #. type: Content of: <html><body><dl><dd><div>
 #: help/settings_logs.html:155
 msgid ""
 "<b>Default uploaded segments log format:</b> %Y-%m-%d %H:%M: %[source] "
-"uploaded to %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), %[speed], "
-"%[time], %[fileTR]"
+"uploaded to %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), %[speed], %"
+"[time], %[fileTR]"
 msgstr ""
-"<b>Alapértelmezett feltöltött szálak napló formátum :</b> %Y-%m-%d %H:%M: "
-"%[source] uploaded to %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), "
-"%[speed], %[time], %[fileTR]"
+"<b>Alapértelmezett feltöltött szálak napló formátum :</b> %Y-%m-%d %H:%M: %"
+"[source] uploaded to %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), %"
+"[speed], %[time], %[fileTR]"
 
 #. type: Content of: <html><body><dl><dt>
 #: help/settings_logs.html:157
@@ -10195,9 +10198,9 @@ msgid ""
 "org\\2004-12.log (if you are in the hub example.no-ip.org and it is december "
 "2004)"
 msgstr ""
-"Példa : Közös chat : %[hubaddr]\\%Y-%m.log - eredménye : peldahub.no-ip."
-"org\\2004-12.log (ha a peldahub.no-ip.org című hubra vagy kapcsolódva és "
-"2004 december havát írják)"
+"Példa : Közös chat : %[hubaddr]\\%Y-%m.log - eredménye : peldahub.no-ip.org"
+"\\2004-12.log (ha a peldahub.no-ip.org című hubra vagy kapcsolódva és 2004 "
+"december havát írják)"
 
 #. type: Content of: <html><body><dl><dd><p>
 #: help/settings_logs.html:228
@@ -10372,8 +10375,8 @@ msgstr ""
 #. type: Content of: <html><body><p>
 #: help/settings_notifications.html:57
 msgid ""
-"This box can be switched by double-clicking the balloon icon in the "
-"\"Balloon\" column of the desired event."
+"This box can be switched by double-clicking the balloon icon in the \"Balloon"
+"\" column of the desired event."
 msgstr ""
 "Ez a jelölőnégyzet ki-be kapcsolható a kiválasztott esemény \"Buborék\" "
 "oszlopában lévő buborék ikonra való dupla kattintással is."
@@ -11425,8 +11428,8 @@ msgstr "Feltöltések"
 #. type: Content of: <html><body><p>
 #: help/settings_styles.html:27
 msgid ""
-"The style used to paint upload transfer bars. Default background color: "
-"RGB(205, 60, 55)."
+"The style used to paint upload transfer bars. Default background color: RGB"
+"(205, 60, 55)."
 msgstr ""
 "Ez a stílus határozza meg a feltöltést jelző csíkok megjelenését "
 "(alapértelmezett: RGB(205, 60, 55))."
@@ -11434,8 +11437,8 @@ msgstr ""
 #. type: Content of: <html><body><p>
 #: help/settings_styles.html:31
 msgid ""
-"The style used to paint download transfer bars. Default background color: "
-"RGB(55, 170, 85)."
+"The style used to paint download transfer bars. Default background color: RGB"
+"(55, 170, 85)."
 msgstr ""
 "Ez a stílus határozza meg a letöltést jelző csíkok megjelenését "
 "(alapértelmezett : RGB(55, 170, 85))."
@@ -12158,7 +12161,7 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div><placeholder><a>
 #: help/window_about_config.html:11 help/window_about_config.html:12
-#: help/window_main.html:100 help/window_main.html:101
+#: help/window_main.html:114 help/window_main.html:115
 msgid "About:config"
 msgstr "About:config"
 
@@ -12315,7 +12318,7 @@ msgid "Sets the selected setting's value to the default one."
 msgstr "A kiválasztott beállítás értékét alapértelmezettre állítja."
 
 #. type: Content of: <html><body><h2>
-#: help/window_about_config.html:43 help/window_users.html:51
+#: help/window_about_config.html:43 help/window_users.html:58
 msgid "Filters (bottom)"
 msgstr "Szűrők (lent)"
 
@@ -12599,7 +12602,7 @@ msgstr "Letöltési sor"
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
 #: help/window_download_queue.html:13 help/window_file_list.html:14
-#: help/window_main.html:111
+#: help/window_main.html:128
 msgid "Toolbar"
 msgstr "Eszköztár"
 
@@ -12861,8 +12864,8 @@ msgid ""
 "parentheses. Possible errors are :"
 msgstr ""
 "Ha egy fájlal kapcsolatban bármilyen hiba keletkezik akkor a hibaüzenet "
-"ebben az oszlopban jelenik meg úgy, hogy kiírásra kerül(nek) a problémás "
-"nick(ek), majd a hozzátartozó hibaüzenet(ek) zárójelben."
+"ebben az oszlopban jelenik meg úgy, hogy kiírásra kerül(nek) a problémás nick"
+"(ek), majd a hozzátartozó hibaüzenet(ek) zárójelben."
 
 #. type: Content of: <html><body><dl><dd><ul><li><p>
 #: help/window_download_queue.html:83
@@ -13134,7 +13137,7 @@ msgstr ""
 #. type: Content of: <html><body><h2>
 #: help/window_download_queue.html:146 help/window_finished_downloads.html:58
 #: help/window_finished_uploads.html:58 help/window_hub.html:96
-#: help/window_main.html:115 help/window_pm.html:31
+#: help/window_main.html:134 help/window_pm.html:31
 #: help/window_public_hubs.html:69 help/window_search.html:127
 msgid "Status bar"
 msgstr "Állapotsor"
@@ -13269,7 +13272,8 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
 #: help/window_favorite_hubs.html:30 help/window_favorite_hubs.html:51
-#: help/window_main.html:27 help/window_main.html:128 help/window_main.html:133
+#: help/window_main.html:29 help/window_main.html:147
+#: help/window_main.html:152
 msgid ""
 "More information about the use of favorite hub groups in the help topics "
 "associated to the <placeholder id=0/> dialog."
@@ -13589,7 +13593,7 @@ msgid "User <b>&gt;</b>"
 msgstr "Felhasználó <b>&gt;</b>"
 
 #. type: Content of: <html><body><h2>
-#: help/window_file_list.html:96 help/window_main.html:301
+#: help/window_file_list.html:96 help/window_main.html:344
 msgid "Status bar (bottom)"
 msgstr "Állapotsor (alul)"
 
@@ -14125,7 +14129,8 @@ msgid "Their E-Mail address. Normally blank or false."
 msgstr "A felhasználó e-mail címe. Általában üres, vagy nem valós."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_hub.html:62 help/window_search.html:89 help/window_users.html:30
+#: help/window_hub.html:62 help/window_search.html:89
+#: help/window_users.html:36
 msgid "CID"
 msgstr "CID"
 
@@ -14163,9 +14168,9 @@ msgid ""
 "Eg, selecting 'Nick' in the drop down, and writing \"foo\" in the filter, "
 "will only display users that have \"foo\" in their nick."
 msgstr ""
-"Pl. a Nick-et kiválasztva a legördülő menüből, majd a beviteli mezőbe "
-"\"foo\"-t írva csak azok a felhasználók maradnak a listában, amelyek nevében "
-"van \"foo\"."
+"Pl. a Nick-et kiválasztva a legördülő menüből, majd a beviteli mezőbe \"foo"
+"\"-t írva csak azok a felhasználók maradnak a listában, amelyek nevében van "
+"\"foo\"."
 
 #. type: Content of: <html><body><p><div>
 #: help/window_hub.html:81
@@ -14277,8 +14282,8 @@ msgstr ""
 "problémák adódnak a hubhoz való kapcsolódáskor vagy a hub váratlanul "
 "megszakítja a kapcsolatot. Fontos tudni, hogy ezek az üzenetek közvetlenül "
 "az operációs rendszertől érkeznek, így mindíg a Windows terülelti "
-"beállítások által megadott nyelven jelennek meg, függetlenül attól, hogy a "
-"DC++ milyen nyelvi megjelenítésre van beállítva."
+"beállítások által megadott nyelven jelennek meg, függetlenül attól, hogy a DC"
+"++ milyen nyelvi megjelenítésre van beállítva."
 
 #. type: Content of: <html><body><dl><dd><ul><li>
 #: help/window_hub.html:108
@@ -14344,22 +14349,22 @@ msgid "Show or hide the users list using this check-box."
 msgstr "Megjeleníti / eltünteti a felhasználók listáját."
 
 #. type: Attribute 'alt' of: <html><body><h1><img>
-#: help/window_main.html:10
+#: help/window_main.html:11
 msgid "DC++"
 msgstr "DC++"
 
 #. type: Content of: <html><body><h2>
-#: help/window_main.html:13
+#: help/window_main.html:14
 msgid "Main Menu bar (top)"
 msgstr "Főmenü (fent)"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:15
+#: help/window_main.html:17
 msgid "File Menu"
 msgstr "Fájl menü"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:17
+#: help/window_main.html:19
 msgid ""
 "You can find the file input-output functions as well as the basic connection "
 "options and the settings in this menu."
@@ -14368,12 +14373,12 @@ msgstr ""
 "beállítások találhatóak ebben a menüben."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:19
+#: help/window_main.html:21
 msgid "Quick connect..."
 msgstr "Gyors Csatlakozás..."
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:21
+#: help/window_main.html:23
 msgid ""
 "Allows you to connect to a hub by specifying its address. This field also "
 "handles <a po4a-id=0>Magnet links</a>."
@@ -14382,7 +14387,7 @@ msgstr ""
 "mező a <a po4a-id=0>Magnet linkeket</a> is kezeli."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:26
+#: help/window_main.html:28
 msgid ""
 "Opens a dialog asking to select a favorite hub group; after pressing \"OK\" "
 "in that dialog, <placeholder id=0/> windows will be opened for every hub "
@@ -14393,12 +14398,13 @@ msgstr ""
 "egy-egy új <placeholder id=0/> ablakban."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:29 help/window_main.html:188 help/window_main.html:218
+#: help/window_main.html:31 help/window_main.html:211
+#: help/window_main.html:242
 msgid "Reconnect"
 msgstr "Újracsatlakozás"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:30
+#: help/window_main.html:32
 msgid ""
 "To reconnect (disconnect and connect again) the hub which is currently in "
 "the foreground. If the active window is not a hub, it does nothing."
@@ -14407,13 +14413,13 @@ msgstr ""
 "hubhoz. Ha az aktív ablak nem hub ablak, akkor semmi nem történik."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:31 help/window_main.html:140 help/window_main.html:198
-#: help/window_main.html:244
+#: help/window_main.html:33 help/window_main.html:159
+#: help/window_main.html:221 help/window_main.html:278
 msgid "Open file list..."
 msgstr "Fájl-lista megnyitása..."
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:32
+#: help/window_main.html:34
 msgid ""
 "This menu is for opening a previously downloaded filelist. It defaults to "
 "the FileLists folder inside the <a po4a-id=0>directory used to store DC++ "
@@ -14424,12 +14430,13 @@ msgstr ""
 "letöltött fájl-listákat tartalmazó FileLists nevű alkönyvtár nyílik meg."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:33 help/window_main.html:199 help/window_main.html:248
+#: help/window_main.html:35 help/window_main.html:222
+#: help/window_main.html:283
 msgid "Open own list"
 msgstr "Saját fájl-lista megnyitása"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:34 help/window_main.html:250
+#: help/window_main.html:36 help/window_main.html:285
 msgid ""
 "You can open and check how your own file list looks like. Useful to see "
 "what's displayed to others when they get your file list."
@@ -14439,12 +14446,12 @@ msgstr ""
 "letöltik."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:35
+#: help/window_main.html:37
 msgid "Match downloaded lists"
 msgstr "Összevetés a letöltött listákkal"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:36
+#: help/window_main.html:38
 msgid ""
 "This function is used to match your download queue for already downloaded "
 "file lists (they stored in the FileLists folder inside the <a po4a-"
@@ -14455,12 +14462,13 @@ msgstr ""
 "mappa</a> alatt található FileLists nevű könyvtárban vannak eltárolva)."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:37 help/window_main.html:200 help/window_main.html:253
+#: help/window_main.html:39 help/window_main.html:223
+#: help/window_main.html:289
 msgid "Refresh file list"
 msgstr "Fájl-lista frissítése"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:38 help/window_main.html:254
+#: help/window_main.html:40 help/window_main.html:290
 msgid ""
 "This will immediately rescan your shared directories for new or changed "
 "content and updates your file list."
@@ -14469,22 +14477,23 @@ msgstr ""
 "megváltozott tartalmat keresve majd frissíti a fájl-listádat."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:39 help/window_main.html:197 help/window_main.html:240
+#: help/window_main.html:41 help/window_main.html:220
+#: help/window_main.html:273
 msgid "Open downloads directory"
 msgstr "Letöltési könyvtár megnyitása"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:40
+#: help/window_main.html:42
 msgid "Opens your downloads folder in Windows Explorer."
 msgstr "Megnyitja a letöltési könyvtáradat a Windows Intézőben."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:41
+#: help/window_main.html:43
 msgid "Open crash log"
 msgstr "Összeomlás-napló megnyitása"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:43
+#: help/window_main.html:45
 msgid ""
 "When DC++ encounters a crash, it writes a \"CrashLog.txt\" file. This "
 "command helps view the contents of the crash log in a <placeholder id=0/> "
@@ -14498,43 +14507,43 @@ msgstr ""
 "hibajelentő oldalon.</a>"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:48
+#: help/window_main.html:50
 msgid "Opens the Settings panel."
 msgstr "Megnyitja a Beállítások alblakot."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:49
+#: help/window_main.html:51
 #, fuzzy
-msgid "GeoIP2 database update"
+msgid "GeoIP database update"
 msgstr "GeoIP adatbázis frissítés"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:50
+#: help/window_main.html:52
 #, fuzzy
 msgid ""
-"Starts downloading the latest GeoIP2 databases (provided they aren't already "
+"Starts downloading the latest GeoIP databases (provided they aren't already "
 "being downloaded) then handles saving them at the right place."
 msgstr ""
 "Azonnal elkezdi a legutolsó GeoIP adatbázisok letöltését (ha még nem voltak "
 "letöltve), majd ezután elmenti őket a megfelelő helyre."
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:52
+#: help/window_main.html:54
 msgid "Note that this operation is automatically run every 16 days."
 msgstr "Megjegyzendő, hogy ez a művelet 16 óránként automatikusan is lefut."
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:53
+#: help/window_main.html:55
 #, fuzzy
 msgid ""
-"<a po4a-id=0>MaxMind's GeoIP2</a> databases are used by FearDC to get "
+"<a po4a-id=0>MaxMind's GeoIP</a> databases are used by DC++ to get "
 "information about user countries."
 msgstr ""
 "A DC++ a <a po4a-id=0>MaxMind GeoIP</a> adatbázisait a felhasználók ország "
 "információinak lekérésére használja."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><p>
-#: help/window_main.html:56
+#: help/window_main.html:58
 msgid ""
 "Opens the <placeholder id=0/> configuration submenu containing the following "
 "commands:"
@@ -14571,22 +14580,22 @@ msgstr ""
 "almenühöz."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:59
+#: help/window_main.html:61
 msgid "Exit"
 msgstr "Kilépés"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:60
+#: help/window_main.html:62
 msgid "Closes DC++."
 msgstr "Bezárja a DC++-t."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:63
+#: help/window_main.html:65
 msgid "View Menu"
 msgstr "Nézet menü"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:65
+#: help/window_main.html:67
 msgid ""
 "You can open all DC++ tabs and windows with the sub-items of this menu. Some "
 "kind of tabbed windows can have only one instance opened while you are able "
@@ -14599,18 +14608,18 @@ msgstr ""
 "egy pédány lehet nyitva, a már megnyitott fül előtérbe kerül."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:69
+#: help/window_main.html:72
 msgid "In there, you can retreive lists of available hubs and connect to them."
 msgstr "Az elérhető hubok listájának lekérése és kapcsolódás történik itt."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:72
+#: help/window_main.html:76
 msgid ""
 "In there, you can store and manage you favorite places in the DC network."
 msgstr "Itt tárolhatod és állíthatod be a kedvenc helyeidet a DC hálózatban."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:75
+#: help/window_main.html:80
 msgid ""
 "You can see all the users of the connected hubs listed in there. "
 "Additionally you can manage your favorite DC users here as well as grant "
@@ -14621,44 +14630,44 @@ msgstr ""
 "állandó extra slotot is biztosíthatsz bármelyiküknek."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:78
+#: help/window_main.html:84
 msgid "In there, you can track and manage your files being downloaded."
 msgstr "Itt találhatóak és kezelhetőek a letöltés alatt lévő fájlok."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:81
+#: help/window_main.html:88
 msgid "It lists your downloaded files in the current session."
 msgstr ""
 "Itt a DC++ elindítása óta már letöltött és a még letöltés alatt lévő fájlok "
 "listája található."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:84
+#: help/window_main.html:92
 msgid "It lists the files uploaded from you in the current session."
 msgstr ""
 "Itt a DC++ elindítása óta részben vagy egészben feltöltődött fájlok listája "
 "található."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:87
+#: help/window_main.html:96
 msgid "This is the place where you can search for files to download."
 msgstr "Itt lehet fájlokra lehet keresni letöltés céljából."
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
-#: help/window_main.html:88 help/window_main.html:89 help/window_main.html:195
-#: help/window_main.html:236 help/window_main.html:237
+#: help/window_main.html:98 help/window_main.html:99 help/window_main.html:218
+#: help/window_main.html:267 help/window_main.html:268
 msgid "ADL Search"
 msgstr "ADL Keresés"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:90
+#: help/window_main.html:100
 msgid "It incorporates a tool for filtering file lists downloaded from users."
 msgstr ""
 "Ez egy szűrő eszköz, amely a felhasználóktól letöltött fájl-listák "
 "tartalmának szűrésére használható."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:93
+#: help/window_main.html:104
 msgid ""
 "In there, you can store random text. The text will be kept even if you close "
 "DC++."
@@ -14667,13 +14676,13 @@ msgstr ""
 "szöveg megmarad a DC++-ból való kilépés után is."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:96
+#: help/window_main.html:108
 msgid "It is where all the system messages of the current session are logged."
 msgstr ""
 "Ezen a helyen láthatóak a program indítása óta keletkezett rendszerüzenetek."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:99
+#: help/window_main.html:112
 msgid ""
 "It displays a real-time chart of the average speed of data sent and received "
 "by DC++."
@@ -14682,7 +14691,7 @@ msgstr ""
 "fogadás átlagos sebességét."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:102
+#: help/window_main.html:116
 msgid ""
 "It is an internal settings list debugging and testing helper tool window. "
 "This menu item exists only in development builds of DC++. See the /about:"
@@ -14694,17 +14703,17 @@ msgstr ""
 "<placeholder id=0/> listájában."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div><placeholder><a>
-#: help/window_main.html:104
+#: help/window_main.html:119
 msgid "Indexing progess"
 msgstr "Indexelés folyamata"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:104
+#: help/window_main.html:119
 msgid "Open the <placeholder id=0/> dialog."
 msgstr "Megnyitja a(z) <placeholder id=0/> párbeszédablakot."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:105
+#: help/window_main.html:120
 msgid ""
 "It shows you the current state of file hashing operation and how much time "
 "there is left from it."
@@ -14713,22 +14722,22 @@ msgstr ""
 "mennyi idő van hátra a folyamatból."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:106
+#: help/window_main.html:122
 msgid "Menu bar"
 msgstr "Menü léc"
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:113
+#: help/window_main.html:131
 msgid "Transfer view"
 msgstr "Fájl-átvitel nézet"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:119
+#: help/window_main.html:138
 msgid "Window Menu"
 msgstr "Ablak menü"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:121
+#: help/window_main.html:140
 msgid ""
 "You can find options here to close all instance of specific groups of tabs "
 "by one click."
@@ -14737,17 +14746,17 @@ msgstr ""
 "használhatóak."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:123
+#: help/window_main.html:142
 msgid "Close disconnected hubs"
 msgstr "Szétkapcsolódott hubok bezárása"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:124
+#: help/window_main.html:143
 msgid "Closes all disconnected <placeholder id=0/> windows."
 msgstr "Bezár minden szétkapcsolódott <placeholder id=0/> ablakot."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:127
+#: help/window_main.html:146
 msgid ""
 "Opens a dialog asking to select a favorite hub group; after pressing \"OK\" "
 "in that dialog, all opened <placeholder id=0/> windows that are part of the "
@@ -14758,7 +14767,7 @@ msgstr ""
 "ablak, amely a kiválasztott csoportban van."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:132
+#: help/window_main.html:151
 msgid ""
 "Opens a dialog asking to select a favorite hub group; after pressing \"OK\" "
 "in that dialog, all opened <placeholder id=0/> windows that are <b>not</b> "
@@ -14769,33 +14778,33 @@ msgstr ""
 "ablak, amely <b>nincs</b> a kiválasztott csoportban."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:135
+#: help/window_main.html:154
 msgid "Close all PM windows"
 msgstr "Minden privát ablak bezárása"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:136
+#: help/window_main.html:155
 msgid ""
 "Closes all <placeholder id=0/> windows regardless of their online status."
 msgstr "Bezár minden <placeholder id=0/> ablakot függetlenül azok állapotától."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:137
+#: help/window_main.html:156
 msgid "Close all offline PM windows"
 msgstr "Minden offline privát ablak bezárása"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:138
+#: help/window_main.html:157
 msgid "Closes all offline <placeholder id=0/> windows."
 msgstr "Bezár minden offline <placeholder id=0/> ablakot."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:139
+#: help/window_main.html:158
 msgid "Close all file list windows"
 msgstr "Minden fájl-lista ablak bezárása"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:140
+#: help/window_main.html:159
 msgid ""
 "Closes all opened file list windows. Saved file lists can be reopened by "
 "selecting \"<placeholder id=0/>\" from the <a po4a-id=0>File menu</a>."
@@ -14805,22 +14814,22 @@ msgstr ""
 "menüből</a>."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:141
+#: help/window_main.html:160
 msgid "Close all search windows"
 msgstr "Minden kereső-ablak bezárása"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:142
+#: help/window_main.html:161
 msgid "Closes all opened <placeholder id=0/> windows."
 msgstr "Bezárja az összes megnyitott <placeholder id=0/> ablakot."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:145
+#: help/window_main.html:164
 msgid "Help Menu"
 msgstr "Súgó menü"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:147
+#: help/window_main.html:166
 msgid ""
 "Here you can access the built-in Help, FAQs, guides and some documentation. "
 "It also contains hotlinks to reach the different parts of the DC++ online "
@@ -14831,27 +14840,27 @@ msgstr ""
 "online közösség különböző oldalainak eléréséhez."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:149
+#: help/window_main.html:168
 msgid "Help Contents"
 msgstr "Segítség"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:150
+#: help/window_main.html:169
 msgid "Opens the Overview page of the built-in Help."
 msgstr "Megnyitja a Súgó tartalomjegyzékét"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:152
+#: help/window_main.html:171
 msgid "The best way to start here if you are new to DC++."
 msgstr "Ha először használod a DC++-t, a legjobb itt kezdeni az ismerkedést."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:153
+#: help/window_main.html:172
 msgid "Change Log"
 msgstr "Változásnapló"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:154
+#: help/window_main.html:173
 msgid ""
 "You can follow what's been changed in the different DC++ versions since the "
 "development started."
@@ -14860,12 +14869,12 @@ msgstr ""
 "fejlesztés elkezdődött."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:155
+#: help/window_main.html:174
 msgid "About DC++"
 msgstr "A DC++-ról"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:156
+#: help/window_main.html:175
 msgid ""
 "You can see the copyrights, list of all names who ever contributed to DC++ "
 "as well as some useful statistical information about your up/download ratio. "
@@ -14879,70 +14888,70 @@ msgstr ""
 "a legújabb elérhető stabil DC++ verzió száma."
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:158
+#: help/window_main.html:177
 msgid "Web links that will open in your web browser."
 msgstr "Web-es hivatkozások, melyek a böngésződben nyílnak meg."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/window_main.html:160
+#: help/window_main.html:180
 msgid "Homepage"
 msgstr "Honlap"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:161
+#: help/window_main.html:181
 msgid "Opens the DC++ home page in your web browser."
 msgstr "A DC++ honlapjának megnyitása az alapértelmezett böngészővel."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:163
+#: help/window_main.html:183
 msgid "Opens the trusted DC++ download page in your web browser."
 msgstr ""
 "A megbízható DC++ letöltési lap megnyitása az alapértelmezett web "
 "böngészővel."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:165
+#: help/window_main.html:185
 msgid "Opens the DC++ FAQ page in your web browser."
 msgstr "Megnyitja a DC++ GYIK oldalt a böngésződben."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/window_main.html:166
+#: help/window_main.html:186
 msgid "Help center"
 msgstr "Segítségközpont"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:167
+#: help/window_main.html:187
 msgid "Points to the DC++ support forum."
 msgstr "A DC++ támogatási fórumra vezet el."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/window_main.html:168
+#: help/window_main.html:188
 msgid "Discussion forum"
 msgstr "Vitafórum"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:169
+#: help/window_main.html:189
 msgid "Points to the DC++ discussion forum."
 msgstr "A DC++ vitafórum oldalára vezet el."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:171
+#: help/window_main.html:191
 msgid "You can propose modifications or request new features here."
 msgstr ""
 "Itt lehet bármilyen módosítási javaslatot tenni vagy új funkciókat kérni."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:173
+#: help/window_main.html:193
 msgid "You can report problems about DC++ here."
 msgstr "Itt jelentheted a DC++-al kapcsolatos problémákat."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/window_main.html:174
+#: help/window_main.html:194
 msgid "Donate (paypal)"
 msgstr "Adományok (paypal)"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:175
+#: help/window_main.html:195
 msgid ""
 "Found this free program useful? Then you please consider donating some "
 "money... You can do it here, through the author's Paypal account."
@@ -14952,65 +14961,65 @@ msgstr ""
 "számláját."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/window_main.html:176
+#: help/window_main.html:196
 msgid "Blog"
 msgstr "Blog"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:177
+#: help/window_main.html:197
 msgid "Opens the DC++ blog in your web browser."
 msgstr "A DC++ blog megnyitása az alapértelmezett böngészővel."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/window_main.html:178
+#: help/window_main.html:198
 msgid "Community news"
 msgstr "Közösségi hírek"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:179
+#: help/window_main.html:199
 msgid "Opens the DCBase portal in your web browser."
 msgstr "A DCBase portál megnyitása az alapértelmezett böngészővel."
 
 #. type: Content of: <html><body><h2>
-#: help/window_main.html:185
+#: help/window_main.html:208
 msgid "Toolbar (top, icons below menus)"
 msgstr "Ikonsor (fent, a menük alatt)"
 
 #. type: Content of: <html><body><p><a>
-#: help/window_main.html:187
+#: help/window_main.html:210
 msgid "<a po4a-id=0>"
 msgstr "<a po4a-id=0>"
 
 #. type: Content of: <html><body><p><a>
-#: help/window_main.html:187 help/window_main.html:188
-#: help/window_main.html:189 help/window_main.html:190
-#: help/window_main.html:191 help/window_main.html:192
-#: help/window_main.html:193 help/window_main.html:194
-#: help/window_main.html:195 help/window_main.html:196
-#: help/window_main.html:197 help/window_main.html:198
-#: help/window_main.html:199 help/window_main.html:200
-#: help/window_main.html:201 help/window_main.html:202
-#: help/window_main.html:203 help/window_main.html:204
+#: help/window_main.html:210 help/window_main.html:211
+#: help/window_main.html:212 help/window_main.html:213
+#: help/window_main.html:214 help/window_main.html:215
+#: help/window_main.html:216 help/window_main.html:217
+#: help/window_main.html:218 help/window_main.html:219
+#: help/window_main.html:220 help/window_main.html:221
+#: help/window_main.html:222 help/window_main.html:223
+#: help/window_main.html:224 help/window_main.html:225
+#: help/window_main.html:226 help/window_main.html:227
 msgid "</a> <a po4a-id=0>"
 msgstr "</a> <a po4a-id=0>"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:201 help/window_main.html:255
+#: help/window_main.html:224 help/window_main.html:292
 msgid "Recent windows"
 msgstr "Utóljára megnyitott ablakok"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:205 help/window_main.html:274
+#: help/window_main.html:228 help/window_main.html:315
 msgid "What's This?"
 msgstr "Mi ez?"
 
 #. type: Content of: <html><body><p>
-#: help/window_main.html:205
+#: help/window_main.html:228
 msgid "</a>"
 msgstr "</a>"
 
 #. type: Content of: <html><body><p>
-#: help/window_main.html:207
+#: help/window_main.html:230
 msgid ""
 "The toolbar provides quick access to some regularly used parts and functions "
 "of DC++. You can customize the toolbar for yourself, add, remove and group "
@@ -15021,7 +15030,7 @@ msgstr ""
 "gombokat vagy tetszés szerinti csoportokba rendezheted őket."
 
 #. type: Content of: <html><body><ul><li>
-#: help/window_main.html:210
+#: help/window_main.html:233
 msgid ""
 "Holding the \"shift\" key you can drag &amp; drop toolbar buttons wherever "
 "you want."
@@ -15030,17 +15039,17 @@ msgstr ""
 "vidd módszerrel bárhová áthelyezhetőek."
 
 #. type: Content of: <html><body><ul><li>
-#: help/window_main.html:211
+#: help/window_main.html:234
 msgid ""
 "Right-click to the toolbar will bring up the toolbar context menu with a "
 "\"Customize\" item to open the <a po4a-id=0>Customize Toolbar dialog</a>."
 msgstr ""
-"Az eszköztárra jobb egérgombbal kattintva és az előugró menü "
-"\"Testreszabás\" elemét kiválasztva megnyílik az <a po4a-id=0>Eszköztár "
-"testreszabása párbeszédablak</a>."
+"Az eszköztárra jobb egérgombbal kattintva és az előugró menü \"Testreszabás"
+"\" elemét kiválasztva megnyílik az <a po4a-id=0>Eszköztár testreszabása "
+"párbeszédablak</a>."
 
 #. type: Content of: <html><body><ul><li>
-#: help/window_main.html:212
+#: help/window_main.html:235
 msgid ""
 "As a shortcut, double-click to the empty area of the toolbar will also open "
 "the <a po4a-id=0>Customize Toolbar dialog</a>."
@@ -15049,12 +15058,12 @@ msgstr ""
 "megnyitható az eszköztár üres részére történő dupla egérkattintásssal."
 
 #. type: Content of: <html><body><p>
-#: help/window_main.html:214
+#: help/window_main.html:237
 msgid "The toolbar can hold the following available icons:"
 msgstr "Az eszköztáron a következő ikonok jelenhetnek meg:"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:219
+#: help/window_main.html:243
 msgid ""
 "Reconnect (disconnect and connect again) the hub which is currently in the "
 "foreground."
@@ -15063,7 +15072,7 @@ msgstr ""
 "hubhoz."
 
 #. type: Content of: <html><body><dl><dd><div>
-#: help/window_main.html:223
+#: help/window_main.html:248
 msgid ""
 "Use the arrow placed on the right of the icon to easily connect to one of "
 "your favorite hubs without having to open the <placeholder id=0/> window."
@@ -15073,7 +15082,7 @@ msgstr ""
 "ablakot."
 
 #. type: Content of: <html><body><dl><dd><div>
-#: help/window_main.html:224
+#: help/window_main.html:249
 msgid ""
 "Consult the help topic associated to the <placeholder id=0/> dialog to find "
 "out how to add sub-menus to the menu that appears under the arrow."
@@ -15082,7 +15091,7 @@ msgstr ""
 "megnyíló menühöz további almenüket hozzáadni."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:242
+#: help/window_main.html:275
 msgid ""
 "Opens your default finished downloads folder in Windows Explorer. Useful for "
 "quick accessing your downloaded files."
@@ -15091,7 +15100,7 @@ msgstr ""
 "Intézőben. A letöltődött fájlok gyors elérésére használható."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:246
+#: help/window_main.html:280
 msgid ""
 "Open a file list previously saved on your disk (a dialog will appear so you "
 "can pick the one you wish to open)."
@@ -15104,7 +15113,7 @@ msgid "Most Recently Used"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:257
+#: help/window_main.html:294
 msgid ""
 "Open menus with <acronym po4a-id=0>MRU</acronym> lists of recently opened "
 "windows. The list is saved across DC++ restarts."
@@ -15114,17 +15123,17 @@ msgstr ""
 "id=0></acronym>"
 
 #. type: Content of: <html><body><dl><dd><p>
-#: help/window_main.html:266
+#: help/window_main.html:306
 msgid "Open the <placeholder id=0/> configuration page."
 msgstr "Megnyitja a <placeholder id=0/> konfigurációs panelt."
 
 #. type: Content of: <html><body><dl><dd><p>
-#: help/window_main.html:270
+#: help/window_main.html:310
 msgid "Use the arrow placed on the right of the icon to manage plugins:"
 msgstr "Kattints az ikon mellett jobbra lévő nyílra a bővítmények kezeléséhez:"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:276
+#: help/window_main.html:317
 msgid ""
 "You can get help on specific parts of DC++ by using the &quot;What's This?"
 "&quot; help button: click it once, and your mouse cursor will change into a "
@@ -15136,7 +15145,7 @@ msgstr ""
 "segítség kapható az adott rész funkciójáról."
 
 #. type: Content of: <html><body><p>
-#: help/window_main.html:280
+#: help/window_main.html:322
 msgid ""
 "Each window opened in DC++ has a corresponding tab, which appears in the "
 "global tab control."
@@ -15145,7 +15154,7 @@ msgstr ""
 "fülsoron jelenik meg."
 
 #. type: Content of: <html><body><p>
-#: help/window_main.html:281
+#: help/window_main.html:323
 msgid ""
 "Tabs in DC++ behave the same as in standard Windows applications; moreover, "
 "they have the following additional features:"
@@ -15154,12 +15163,12 @@ msgstr ""
 "működnek. Ezen felül az alábbi kiegészítő funkciókkal rendelkeznek:"
 
 #. type: Content of: <html><body><ul><li>
-#: help/window_main.html:284
+#: help/window_main.html:326
 msgid "They can be moved around in a drag-and-drop fashion."
 msgstr "Ide-oda húzhatóak fogd és vidd módszerrel."
 
 #. type: Content of: <html><body><ul><li>
-#: help/window_main.html:285
+#: help/window_main.html:327
 msgid ""
 "There are some easy ways to switch between them: with mouse extra buttons or "
 "using Ctrl+Tab."
@@ -15168,7 +15177,7 @@ msgstr ""
 "billentyűkombinációval is lehetséges."
 
 #. type: Content of: <html><body><ul><li>
-#: help/window_main.html:286
+#: help/window_main.html:328
 msgid ""
 "When many tabs are opened, and they can't fit into a single row, they will "
 "automatically occupy more rows."
@@ -15177,7 +15186,7 @@ msgstr ""
 "jelennek meg."
 
 #. type: Content of: <html><body><ul><li>
-#: help/window_main.html:287
+#: help/window_main.html:329
 msgid ""
 "Each tab has its own context-menu which provides commands related to the "
 "window the tab belongs to.  Description of the common context menu options "
@@ -15188,32 +15197,32 @@ msgstr ""
 "id=0>Általános menü parancsok</a> oldalon."
 
 #. type: Content of: <html><body><ul><li>
-#: help/window_main.html:290
+#: help/window_main.html:332
 msgid "Tabs can be closed with:"
 msgstr "A fülek a következő módokon zárhatók be:"
 
 #. type: Content of: <html><body><ul><li><ul><li>
-#: help/window_main.html:291
+#: help/window_main.html:333
 msgid "Middle mouse click"
 msgstr "Középső egérgombbal"
 
 #. type: Content of: <html><body><ul><li><ul><li>
-#: help/window_main.html:292
+#: help/window_main.html:334
 msgid "Shift + left mouse click"
 msgstr "Bal egérgombbal a Shift gomb nyomvatartása mellett"
 
 #. type: Content of: <html><body><ul><li><ul><li>
-#: help/window_main.html:293
+#: help/window_main.html:335
 msgid "Left mouse click on the"
 msgstr "Bal egérkattintással a fül jobb oldalán lévő"
 
 #. type: Attribute 'alt' of: <html><body><ul><li><ul><li><img>
-#: help/window_main.html:293
+#: help/window_main.html:335
 msgid "Close tab button"
 msgstr "Fül bezárása gomb"
 
 #. type: Content of: <html><body><ul><li><ul><li>
-#: help/window_main.html:293
+#: help/window_main.html:335
 msgid ""
 "button on the right of the tabs (appears only if <a po4a-id=0>DC++'s own tab "
 "style</a> is used)"
@@ -15222,22 +15231,22 @@ msgstr ""
 "jelenik meg)"
 
 #. type: Content of: <html><body><ul><li><ul><li>
-#: help/window_main.html:294
+#: help/window_main.html:336
 msgid "The &quot;Close&quot; command from the tab context-menu"
 msgstr "A &quot;Bezárás&quot; parancsot választva a jobb-click menüből"
 
 #. type: Content of: <html><body><ul><li><ul><li>
-#: help/window_main.html:295
+#: help/window_main.html:337
 msgid "Ctrl+W"
 msgstr "Ctrl+W kombinációval"
 
 #. type: Content of: <html><body><ul><li><ul><li>
-#: help/window_main.html:296
+#: help/window_main.html:338
 msgid "Ctrl+F4"
 msgstr "Ctrl+F4 megnyomásával"
 
 #. type: Content of: <html><body>
-#: help/window_main.html:299
+#: help/window_main.html:341
 msgid ""
 "You can customize the look and behavior of tabs from the <a po4a-id=0>Tabs "
 "settings</a> and <a po4a-id=1>Windows settings</a> respectively."
@@ -15246,7 +15255,7 @@ msgstr ""
 "<a po4a-id=1>Ablakok beállításai</a> oldalakon leírtak alapján állítható."
 
 #. type: Content of: <html><body>
-#: help/window_main.html:302
+#: help/window_main.html:345
 msgid ""
 "The main status bar is always visible in the bottom of the DC++ window. You "
 "can get information from the current state of several parameters of DC++ "
@@ -15258,12 +15267,12 @@ msgstr ""
 "az állapotsor részekre van bontva. Az egyes részek jelentése balról jobbra:"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:304
+#: help/window_main.html:347
 msgid "System messages"
 msgstr "Rendszerüzenetek"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:305
+#: help/window_main.html:348
 msgid ""
 "The first part of the status bar contains the last system message with a "
 "timestamp. To see more from the recent system messages you can move the "
@@ -15281,22 +15290,22 @@ msgstr ""
 "egyszerüen kattints kétszer az állapotsor ezen részére."
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:306
+#: help/window_main.html:350
 msgid "Online user"
 msgstr "Online felhasználó"
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:306
+#: help/window_main.html:350
 msgid "Away user"
 msgstr "Távol lévő felhasználó"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:306
+#: help/window_main.html:350
 msgid "Away indicator"
 msgstr "Távollét jelző"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:307
+#: help/window_main.html:351
 msgid ""
 "The user icon turns from green to grey when DC++ is in <a po4a-id=0>away "
 "mode</a>."
@@ -15305,36 +15314,36 @@ msgstr ""
 "id=0>távolléti módban</a> van."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:308
+#: help/window_main.html:352
 msgid "Double-click to switch away mode on and off."
 msgstr ""
 "Az Elérhető és a Távollét mód közötti váltáshoz kattints kétszer az "
 "állapotsor ezen részére!"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:310
+#: help/window_main.html:355
 msgid ""
 "Shows the number of hubs you are currently connected to in the following "
 "format: x/y/z, where:"
 msgstr "A kapcsolódott hubok számát mutatja x/y/z formában, ahol :"
 
 #. type: Content of: <html><body><dl><dd><p>
-#: help/window_main.html:312
+#: help/window_main.html:357
 msgid "x = number of connected hubs where you're not a registered user;"
 msgstr "x = azon hubok száma, ahol nem vagy regisztrált"
 
 #. type: Content of: <html><body><dl><dd><p>
-#: help/window_main.html:313
+#: help/window_main.html:358
 msgid "y = number of connected hubs where you're registered in;"
 msgstr "y = azon hubok száma, ahol regisztrált vagy"
 
 #. type: Content of: <html><body><dl><dd><p>
-#: help/window_main.html:314
+#: help/window_main.html:359
 msgid "z = number of connected hubs where you're an operator;"
 msgstr "z = azon hubok száma, ahol operátor vagy"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:316
+#: help/window_main.html:361
 msgid ""
 "just the same way as in the <a po4a-id=0>DC++ tags</a> of the users listed "
 "on a hub."
@@ -15343,17 +15352,17 @@ msgstr ""
 "ekben</a> ."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:318 help/window_search.html:75
+#: help/window_main.html:364 help/window_search.html:75
 msgid "Slots"
 msgstr "Slot-ok"
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:318
+#: help/window_main.html:364
 msgid "Slots full"
 msgstr "Nincs szabad slot"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:319
+#: help/window_main.html:365
 msgid ""
 "Indicates the number of currently free upload slots out of the total number "
 "of slots opened."
@@ -15362,17 +15371,17 @@ msgstr ""
 "megnyitott slot-ok száma mellett."
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:320
+#: help/window_main.html:367
 msgid "Downloaded bytes"
 msgstr "Letöltött byte-ok"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:320
+#: help/window_main.html:367
 msgid "Total downloaded bytes"
 msgstr "Összes letöltött byte"
 
 #. type: Content of: <html><body><dl><dd><div>
-#: help/window_main.html:321
+#: help/window_main.html:368
 msgid ""
 "Shows the total number of bytes received in the current session, including "
 "file transfers, hub-client communication and hublists."
@@ -15381,23 +15390,23 @@ msgstr ""
 "kommunikáció és a hublisták mérete."
 
 #. type: Content of: <html><body><dl><dd><div>
-#: help/window_main.html:322 help/window_main.html:325
-#: help/window_main.html:328 help/window_main.html:331
+#: help/window_main.html:369 help/window_main.html:373
+#: help/window_main.html:377 help/window_main.html:381
 msgid "Double-click to open the <placeholder id=0/> window."
 msgstr "Kattints rá duplán a(z) <placeholder id=0/> ablak megnyitásához."
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:323
+#: help/window_main.html:371
 msgid "Uploaded bytes"
 msgstr "Feltöltött byte-ok"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:323
+#: help/window_main.html:371
 msgid "Total uploaded bytes"
 msgstr "Összes feltöltött byte"
 
 #. type: Content of: <html><body><dl><dd><div>
-#: help/window_main.html:324
+#: help/window_main.html:372
 msgid ""
 "Shows the total number of bytes sent in the current session, including file "
 "transfers and hub-client communication."
@@ -15406,17 +15415,17 @@ msgstr ""
 "fájlokból és a hub-kliens kommunikációból áll."
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:326
+#: help/window_main.html:375
 msgid "Download speed"
 msgstr "Letöltési sebesség"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:326
+#: help/window_main.html:375
 msgid "Current download speed"
 msgstr "Aktuális letöltési sebesség"
 
 #. type: Content of: <html><body><dl><dd><div>
-#: help/window_main.html:327
+#: help/window_main.html:376
 msgid ""
 "Shows the current overall download speed and the number of current download "
 "connections in parentheses (updated in every second)."
@@ -15425,17 +15434,17 @@ msgstr ""
 "kapcsolatok számát mutatja (másodpercenként frissül)."
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:329
+#: help/window_main.html:379
 msgid "Upload speed"
 msgstr "Feltöltési sebesség"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:329
+#: help/window_main.html:379
 msgid "Current upload speed"
 msgstr "Aktuális feltöltési sebesség"
 
 #. type: Content of: <html><body><dl><dd><div>
-#: help/window_main.html:330
+#: help/window_main.html:380
 msgid ""
 "Shows the current overall upload speed and the number of current upload "
 "connections in parentheses (updated in every second)."
@@ -15444,17 +15453,17 @@ msgstr ""
 "feltöltési kapcsolatok számát mutatja (másodpercenként frissül)."
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:332
+#: help/window_main.html:383
 msgid "Download speed limit"
 msgstr "Aktuális letötlési korlát értéke"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:332
+#: help/window_main.html:383
 msgid "Current download limit"
 msgstr "Aktuális letötlési korlát értéke"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:333
+#: help/window_main.html:384
 msgid ""
 "Shows the current maximum download rate. Zero speed value means that "
 "download limiting is disabled."
@@ -15463,17 +15472,17 @@ msgstr ""
 "azt jelenti hogy a letöltés korlátozása ki van kapcsolva."
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:334
+#: help/window_main.html:386
 msgid "Upload speed limit"
 msgstr "Aktuális feltötlési korlát értéke"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:334
+#: help/window_main.html:386
 msgid "Current upload limit"
 msgstr "Aktuális feltötlési korlát értéke"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:335
+#: help/window_main.html:387
 msgid ""
 "Shows the current maximum upload rate. Zero speed value means that upload "
 "limiting is disabled."
@@ -15618,9 +15627,9 @@ msgstr ""
 #: help/window_pm.html:52
 msgid ""
 "The hub used to establish the initial peer-to-peer connection must be an ADC "
-"hub and the connection between the user and the hub must be encrypted "
-"(\"adcs\" scheme instead of \"adc\"). Additionally, both users must support "
-"the \"CCPM\" ADC extension."
+"hub and the connection between the user and the hub must be encrypted (\"adcs"
+"\" scheme instead of \"adc\"). Additionally, both users must support the "
+"\"CCPM\" ADC extension."
 msgstr ""
 "A közvetlen kapcsolat kezdeti felépítéséhez ADC hubra van szükség, valamint "
 "a hub és a felhasználó közötti kapcsolat titkosított (\"adcs\") kell hogy "
@@ -16645,8 +16654,8 @@ msgid ""
 "Port mapping: Successfully removed port mappings from the [router name] "
 "device with the [interface identification] interface"
 msgstr ""
-"Port-hozzárendelés: A port-hozzárendelések sikeresen el lettek távolítva "
-"a(z) [router név] eszközről a(z) [felület név] felülettel"
+"Port-hozzárendelés: A port-hozzárendelések sikeresen el lettek távolítva a"
+"(z) [router név] eszközről a(z) [felület név] felülettel"
 
 #. type: Content of: <html><body><dl><dd>
 #: help/window_system_log.html:48
@@ -17529,7 +17538,7 @@ msgid "User list columns"
 msgstr "A felhasználó lista oszlopai"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_users.html:18 help/window_users.html:68
+#: help/window_users.html:18 help/window_users.html:75
 msgid "Favorite"
 msgstr "Kedvenc"
 
@@ -17567,21 +17576,58 @@ msgstr "A felhasználó nick-je."
 
 #. type: Content of: <html><body><dl><dt>
 #: help/window_users.html:24
+msgid "Client"
+msgstr ""
+
+#. type: Content of: <html><body><dl><dd>
+#: help/window_users.html:25
+msgid ""
+"The name of the DC client the user is logged in with. This column is empty "
+"for offline users."
+msgstr ""
+
+#. type: Content of: <html><body><dl><dt>
+#: help/window_users.html:26
+#, fuzzy
+msgid "Version"
+msgstr "V(erzió)"
+
+#. type: Content of: <html><body><dl><dd>
+#: help/window_users.html:27
+msgid ""
+"The version of the DC client the user logged in with. This column is empty "
+"for offline users."
+msgstr ""
+
+#. type: Content of: <html><body><dl><dt>
+#: help/window_users.html:28
+msgid "Protocol"
+msgstr ""
+
+#. type: Content of: <html><body><dl><dd>
+#: help/window_users.html:29
+msgid ""
+"The DC protocol of the connection to the hub (ADC or NMDC) where the user is "
+"logged in. This column is empty for offline users."
+msgstr ""
+
+#. type: Content of: <html><body><dl><dt>
+#: help/window_users.html:30
 msgid "Hub (last seen in, if offline)"
 msgstr "Hub (utóljára itt járt, amennyiben offline)"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_users.html:25
+#: help/window_users.html:31
 msgid "Which hub you saw this user the last time."
 msgstr "Az a hub ahol a felhasználó (legutóljára) megtalálható (volt)."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_users.html:26
+#: help/window_users.html:32
 msgid "Status / Time last seen"
 msgstr "Állapot / Legutóljára online"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_users.html:27
+#: help/window_users.html:33
 msgid ""
 "For normal users this column shows the online status. For favorite users it "
 "shows which specific date and time you saw this user the last time; or "
@@ -17593,7 +17639,7 @@ msgstr ""
 "kedvenc éppen be van lépve."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_users.html:29
+#: help/window_users.html:35
 msgid ""
 "Brief description for the user. You can change this description by either "
 "selecting \"Description\" from the context menu or by pressing the Enter "
@@ -17604,22 +17650,22 @@ msgstr ""
 "kiválasztásával. A leírás csak kedvenc felhasználó esetén lesz elmentve."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_users.html:31
+#: help/window_users.html:37
 msgid "Client ID of the user."
 msgstr "A felhasználó kliens azonosítója (ID)."
 
 #. type: Content of: <html><body><h2>
-#: help/window_users.html:34
+#: help/window_users.html:40
 msgid "User list context menu commands"
 msgstr "Felhasználó lista jobb-click menü parancsai"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_users.html:36
+#: help/window_users.html:42
 msgid "Connect to hub"
 msgstr "Kapcsolódás a hubhoz"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_users.html:37
+#: help/window_users.html:43
 msgid ""
 "This menu item shows only for favorite users. If the user is online this "
 "will select the first hub where he/she is connected. If the user is offline "
@@ -17633,24 +17679,27 @@ msgstr ""
 "amelyen a kedvenc a legutóljára járt."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_users.html:39
+#: help/window_users.html:45
 msgid ""
 "Edit the brief description of the user (shown in the Description column)."
 msgstr "A Leírás oszlopban megjelenő rövid felhaszálói leírás szerkesztése."
 
 #. type: Content of: <html><body><h2>
-#: help/window_users.html:46
+#: help/window_users.html:52
 msgid "Details pane (right)"
 msgstr "Részletes információk panel (jobbra)"
 
 #. type: Content of: <html><body><p>
-#: help/window_users.html:48
+#: help/window_users.html:54
+#, fuzzy
 msgid ""
 "This pane shows you all the available details sent by the DC client of the "
 "selected user. The number of records shown can heavily depend on what kind "
 "of user selected, what protocol it uses, etc... For example you can get the "
 "most information from an ADC client user while the amount of available "
-"information from a hub bot is usually very small."
+"information from a hub bot is usually very small.  The content displayed in "
+"the pane is selectable and there's a right click menu function which allows "
+"you to select all the data and / or to copy the selection to the clipboard."
 msgstr ""
 "Ez a panel a kiválasztott felhasználó DC kliense által küldött részletes "
 "információkat mutatja. A rendelkezésre álló információk mennyisége nagyban "
@@ -17660,7 +17709,7 @@ msgstr ""
 "általában nagyon kevés."
 
 #. type: Content of: <html><body><p>
-#: help/window_users.html:52
+#: help/window_users.html:59
 msgid ""
 "The user list can be filtered by text, online status and file transfer "
 "activity. The following options are available:"
@@ -17669,12 +17718,12 @@ msgstr ""
 "aktivítás szerint. A következő lehetőségek érhetők el:"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_users.html:54
+#: help/window_users.html:61
 msgid "Text filter"
 msgstr "Szöveg szűrő"
 
 #. type: Content of: <html><body><dl><dd><p><div>
-#: help/window_users.html:59
+#: help/window_users.html:66
 msgid ""
 "Eg writing \"foo\" in the filter input box, selecting \"Nick\" and \"Partial "
 "match\" will only display users that have \"foo\" in their nick."
@@ -17685,12 +17734,12 @@ msgstr ""
 "szót."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_users.html:64
+#: help/window_users.html:71
 msgid "Online"
 msgstr "Online"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_users.html:66
+#: help/window_users.html:73
 msgid ""
 "If enabled the user list shows online users only, it will filter out all "
 "users who are currently offline (not connected to any hub where you are "
@@ -17700,19 +17749,19 @@ msgstr ""
 "mutatja és kiszűri azokat amelyek egyik kapcsolódott hubra sincsenek belépve."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_users.html:70
+#: help/window_users.html:77
 msgid "If enabled the user list shows only your favorite users."
 msgstr ""
 "Ha engedélyezett, akkor a felhasználók listája csak a kedvenc felhasználókat "
 "mutatja."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_users.html:72
+#: help/window_users.html:79
 msgid "Pending download"
 msgstr "Várakozó letöltés"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_users.html:74
+#: help/window_users.html:81
 msgid ""
 "If enabled the user list will show those users whom you're currently "
 "downloading from."
@@ -17721,12 +17770,12 @@ msgstr ""
 "mutatja, akiktől éppen letöltesz."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_users.html:76
+#: help/window_users.html:83
 msgid "Pending upload"
 msgstr "Várakozó feltöltés"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_users.html:78
+#: help/window_users.html:85
 msgid ""
 "If enabled the user list will show those users who are waiting for a free "
 "slot to be able to start downloading from you (functionality of the former "
@@ -17768,9 +17817,9 @@ msgstr ""
 #~ "<b>%[long]</b>, <b>%[metrocode]</b>, <b>%[postcode]</b>, <b>%[region]</b>."
 #~ msgstr ""
 #~ "A helység szintű adatbázis használatának engedélyezésével a következő "
-#~ "további paraméterek használhatók: <b>%[areacode]</b>, <b>%[city]</b>, "
-#~ "<b>%[lat]</b>, <b>%[long]</b>, <b>%[metrocode]</b>, <b>%[postcode]</b>, "
-#~ "<b>%[region]</b>."
+#~ "további paraméterek használhatók: <b>%[areacode]</b>, <b>%[city]</b>, <b>%"
+#~ "[lat]</b>, <b>%[long]</b>, <b>%[metrocode]</b>, <b>%[postcode]</b>, <b>%"
+#~ "[region]</b>."
 
 #~ msgid "Region name geolocation database (allows %[region])"
 #~ msgstr "Régiós geolokációs adatbázis (%[region] használatához)"

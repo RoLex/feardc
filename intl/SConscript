@@ -1,30 +1,31 @@
-Import('dev source_path')
+Import("dev source_path")
 
-env, target, sources = dev.prepare_build(
-    source_path,
-    'aintl',
-    '*.c',
-    in_bin=False
-)
+env, target, sources = dev.prepare_build(source_path, "aintl", "*.c", in_bin=False)
+
+if "gcc" in env["TOOLS"]:
+    env.Append(CCFLAGS=["-Wno-sign-compare"])
 
 empty_str = '"\\"\\""'
-env.Append(CPPDEFINES=[
-    'LOCALEDIR=' + empty_str,
-    'LOCALE_ALIAS_PATH=' + empty_str,
-    'INSTALLDIR=' + empty_str,
-    'LIBDIR=' + empty_str,
-    'IN_LIBINTL',
-    'ENABLE_RELOCATABLE=1',
-    'NO_XMALLOC',
-    'HAVE_CONFIG_H',
-    'set_relocation_prefix=libintl_set_relocation_prefix',
-    'relocate=libintl_relocate'
-])
-env.Append(CPPPATH='#/intl')
+env.Append(
+    CPPDEFINES=[
+        "LOCALEDIR=" + empty_str,
+        "LOCALE_ALIAS_PATH=" + empty_str,
+        "INSTALLDIR=" + empty_str,
+        "LIBDIR=" + empty_str,
+        "IN_LIBINTL",
+        "ENABLE_RELOCATABLE=1",
+        "NO_XMALLOC",
+        "HAVE_CONFIG_H",
+        "set_relocation_prefix=libintl_set_relocation_prefix",
+        "relocate=libintl_relocate",
+    ]
+)
+env.Append(CPPPATH="#/intl")
 
-dev.env.Append(LIBS=['aintl'])
+dev.env.Append(LIBS=["aintl"])
 import os
+
 dev.env.Append(LIBPATH=[os.path.dirname(target)])
 
 ret = dev.build_lib(env, target, sources, dev.c_lib)
-Return('ret')
+Return("ret")

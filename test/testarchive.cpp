@@ -2,7 +2,8 @@
 
 #include <dcpp/Archive.h>
 #include <dcpp/File.h>
-#include <dcpp/MD5Hash.h>
+#include <dcpp/HashValue.h>
+#include <dcpp/TigerHash.h>
 
 using namespace dcpp;
 
@@ -17,13 +18,13 @@ TEST(testarchive, test_archive)
 		FAIL() << e.getError();
 	}
 
-	auto md5 = [](string path) {
+	auto tiger = [](string path) {
 		File f(path, File::READ, File::OPEN);
-		MD5Hash h;
+		TigerHash h;
 		auto buf = f.read();
 		h.update(buf.c_str(), buf.size());
-		return MD5Value(h.finalize());
+		return TTHValue(h.finalize());
 	};
 
-	ASSERT_EQ(md5("test/gtest.h"), md5("test/data/out/gtest.h"));
+	ASSERT_EQ(tiger("test/gtest.h"), tiger("test/data/out/gtest.h"));
 }

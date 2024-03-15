@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,6 +29,9 @@
 extern "C" {
 #ifndef STATICLIB
 #define STATICLIB
+#endif
+#ifndef NATPMP_STATICLIB
+#define NATPMP_STATICLIB
 #endif
 #if defined(_WIN32) && !defined(WIN32)
 #define WIN32

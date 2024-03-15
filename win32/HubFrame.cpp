@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -361,7 +361,7 @@ void HubFrame::layout() {
 
 void HubFrame::updateStatus() {
 	auto users = getStatusUsers();
-	status->setText(STATUS_USERS, users.second + Text::toT(Util::toString(users.first)));
+	status->setText(STATUS_USERS, users.second + Text::toT(std::to_string(users.first)));
 	status->setToolTip(STATUS_USERS, users.second + str(TFN_("%1% user", "%1% users", users.first) % users.first));
 
 	auto shared = getStatusShared();
@@ -435,7 +435,7 @@ void HubFrame::enterImpl(const tstring& s) {
 			map<tstring, string> info;
 			info[T_("Hub address")] = url;
 			info[T_("Hub IP & port")] = client->getIpPort();
-			info[T_("Online users")] = Util::toString(getUserCount());
+			info[T_("Online users")] = std::to_string(getUserCount());
 			info[T_("Shared")] = Util::formatBytes(client->getAvailable());
 			info[T_("Nick")] = client->get(HubSettings::Nick);
 			info[T_("Description")] = client->get(HubSettings::Description);
@@ -1194,10 +1194,10 @@ pair<size_t, tstring> HubFrame::getStatusUsers() const {
 
 	tstring textForUsers;
 	if(selCount > 1)
-		textForUsers += Text::toT(Util::toString(selCount) + "/");
+		textForUsers += Text::toT(std::to_string(selCount) + "/");
 	auto filteredCount = users->size();
 	if(showUsers->getChecked() && filteredCount < userCount)
-		textForUsers += Text::toT(Util::toString(filteredCount) + "/");
+		textForUsers += Text::toT(std::to_string(filteredCount) + "/");
 
 	return make_pair(userCount, textForUsers);
 }

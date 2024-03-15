@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#@PydevCodeAnalysisIgnore
+# @PydevCodeAnalysisIgnore
 # $Id$
 #
 # SCons builder for gcc's precompiled headers
@@ -36,20 +36,21 @@ import SCons.Scanner.C
 import SCons.Util
 import SCons.Script
 
-GchAction = SCons.Action.Action('$GCHCOM', '$GCHCOMSTR')
-GchShAction = SCons.Action.Action('$GCHSHCOM', '$GCHSHCOMSTR')
+GchAction = SCons.Action.Action("$GCHCOM", "$GCHCOMSTR")
+GchShAction = SCons.Action.Action("$GCHSHCOM", "$GCHSHCOMSTR")
+
 
 def gen_suffix(env, sources):
-    return sources[0].get_suffix() + env['GCHSUFFIX']
+    return sources[0].get_suffix() + env["GCHSUFFIX"]
 
 
-GchShBuilder = SCons.Builder.Builder(action = GchShAction,
-                                     source_scanner = SCons.Scanner.C.CScanner(),
-                                     suffix = gen_suffix)
+GchShBuilder = SCons.Builder.Builder(
+    action=GchShAction, source_scanner=SCons.Scanner.C.CScanner(), suffix=gen_suffix
+)
 
-GchBuilder = SCons.Builder.Builder(action = GchAction,
-                                   source_scanner = SCons.Scanner.C.CScanner(),
-                                   suffix = gen_suffix)
+GchBuilder = SCons.Builder.Builder(
+    action=GchAction, source_scanner=SCons.Scanner.C.CScanner(), suffix=gen_suffix
+)
 
 
 def pch_emitter(target, source, env, emitter, gchstr):
@@ -68,44 +69,52 @@ def pch_emitter(target, source, env, emitter, gchstr):
     return (target, source)
 
 
-def static_pch_emitter(target,source,env):
+def static_pch_emitter(target, source, env):
     return pch_emitter(target, source, env, SCons.Defaults.StaticObjectEmitter, "Gch")
 
-def shared_pch_emitter(target,source,env):
+
+def shared_pch_emitter(target, source, env):
     return pch_emitter(target, source, env, SCons.Defaults.SharedObjectEmitter, "GchSh")
+
 
 def generate(env):
     """
     Add builders and construction variables for the DistTar builder.
     """
-    env.Append(BUILDERS = {
-        'gch': env.Builder(
-        action = GchAction,
-        target_factory = env.fs.File,
-        ),
-        'gchsh': env.Builder(
-        action = GchShAction,
-        target_factory = env.fs.File,
-        ),
-        })
+    env.Append(
+        BUILDERS={
+            "gch": env.Builder(
+                action=GchAction,
+                target_factory=env.fs.File,
+            ),
+            "gchsh": env.Builder(
+                action=GchShAction,
+                target_factory=env.fs.File,
+            ),
+        }
+    )
 
     try:
-        bld = env['BUILDERS']['Gch']
-        bldsh = env['BUILDERS']['GchSh']
+        bld = env["BUILDERS"]["Gch"]
+        bldsh = env["BUILDERS"]["GchSh"]
     except KeyError:
         bld = GchBuilder
         bldsh = GchShBuilder
-        env['BUILDERS']['Gch'] = bld
-        env['BUILDERS']['GchSh'] = bldsh
+        env["BUILDERS"]["Gch"] = bld
+        env["BUILDERS"]["GchSh"] = bldsh
 
-    env['GCHCOM']     = '$CXX -o $TARGET -x c++-header -c $CCFLAGS $CXXFLAGS $_CCCOMCOM $SOURCE'
-    env['GCHSHCOM']   = '$CXX -o $TARGET -x c++-header -c $SHCCFLAGS $SHCXXFLAGS $_CCCOMCOM $SOURCE'
-    env['GCHSUFFIX']  = '.gch'
+    env[
+        "GCHCOM"
+    ] = "$CXX -o $TARGET -x c++-header -c $CCFLAGS $CXXFLAGS $_CCCOMCOM $SOURCE"
+    env[
+        "GCHSHCOM"
+    ] = "$CXX -o $TARGET -x c++-header -c $SHCCFLAGS $SHCXXFLAGS $_CCCOMCOM $SOURCE"
+    env["GCHSUFFIX"] = ".gch"
 
-    for suffix in SCons.Util.Split('.c .C .cc .cxx .cpp .c++'):
-        env['BUILDERS']['StaticObject'].add_emitter( suffix, static_pch_emitter )
-        env['BUILDERS']['SharedObject'].add_emitter( suffix, shared_pch_emitter )
+    for suffix in SCons.Util.Split(".c .C .cc .cxx .cpp .c++"):
+        env["BUILDERS"]["StaticObject"].add_emitter(suffix, static_pch_emitter)
+        env["BUILDERS"]["SharedObject"].add_emitter(suffix, shared_pch_emitter)
 
 
 def exists(env):
-    return env.Detect('g++')
+    return env.Detect("g++")

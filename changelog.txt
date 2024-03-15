@@ -1,9 +1,25 @@
--- 0.88x --
+* Remove TLSv1.2 DHE-RSA-AES128-SHA256 ciphersuite support (cologic)
+* Increase minimum transfer segment size to 512KiB (cologic)
+
+-- 0.881 2023-11-06 --
+* Require SSE4.2 for 64-bit builds (cologic)
+* Upgrade compiler for better performance and security (emtee)
+* [L#2039677] Fix crash logging to work with modern compilers' defaults - allows enabling (HE)ASLR properly (emtee)
+* Modernize Users frame to show expanded and copyable user information (iceman50)
+* Add new icon set with a modern look and feel, partly based on https://github.com/elementary/icons (iceman50)
+* Add SetOverlayIcon to dwt::Taskbar, DC++ will now show a green or red icon overlay on the taskbar icon
+  depending on away status (iceman50)
 * [L#2019492] Fix a possible crash in DWT tab view control (emtee, iceman50)
 * Display originating hub info on new incoming private messages (iceman50)
 * [L#1494814] Support MSVC project generation for Visual Studio 2022 (iceman50)
-* Fix saving preferred port mapper setting for IPv4 (emtee) 
-* Update OpenSSL to version 3.1.1
+* Fix saving preferred port mapper setting for IPv4 (emtee)
+* Update OpenSSL to version 3.1.2
+* Update Boost to version 1.83
+* Update MiniUPnPc to version 2.2.5
+* Update the NAT-PMP library
+* Update zlib to version 1.3
+* Fix compression errors when uploading due to a change in zlib 1.2.12 (iceman50)
+* Documentation and translations updated as usual, thanks everyone
 
 -- 0.880 2022-10-20 --
 * Upgrade license to GPLv3 for future license compatibility with some libraries

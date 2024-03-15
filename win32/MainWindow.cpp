@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -176,6 +176,12 @@ fullSlots(false)
 	onRaw([this](WPARAM, LPARAM) { return handleEndSession(); }, dwt::Message(WM_ENDSESSION));
 	onRaw([this](WPARAM, LPARAM l) { return handleCopyData(l); }, dwt::Message(WM_COPYDATA));
 	onRaw([this](WPARAM, LPARAM) { return handleWhereAreYou(); }, dwt::Message(SingleInstance::WMU_WHERE_ARE_YOU));
+	//In the event that explorer.exe crashes lets make sure the overlay icon is reset
+	UINT tbcMsg = ::RegisterWindowMessage(L"TaskbarButtonCreated");
+	if(tbcMsg != WM_NULL) {
+		::ChangeWindowMessageFilterEx(this->handle(), tbcMsg, 1, 0);
+		onRaw([this, tbcMsg](WPARAM, LPARAM) { handleTaskbarOverlay(); return 0; }, dwt::Message(tbcMsg));
+	}
 
 	filterIter = dwt::Application::instance().addFilter([this](MSG &msg) { return filter(msg); });
 
@@ -264,6 +270,8 @@ fullSlots(false)
 
 	if(SETTING(SETTINGS_SAVE_INTERVAL) > 0)
 		setSaveTimer();
+
+	handleTaskbarOverlay();
 }
 
 void MainWindow::initWindow() {
@@ -352,7 +360,7 @@ void MainWindow::initMenu() {
 		viewIndexes[NotepadFrame::id] = viewMenu->appendItem(T_("&Notepad\tCtrl+N"),
 			[this] { NotepadFrame::openWindow(getTabView()); }, WinUtil::menuIcon(IDI_NOTEPAD));
 		viewIndexes[SystemFrame::id] = viewMenu->appendItem(T_("System Log"),
-			[this] { SystemFrame::openWindow(getTabView()); });
+			[this] { SystemFrame::openWindow(getTabView()); }, WinUtil::menuIcon(IDI_LOGS));
 		viewIndexes[StatsFrame::id] = viewMenu->appendItem(T_("Network Statistics"),
 			[this] { StatsFrame::openWindow(getTabView()); }, WinUtil::menuIcon(IDI_NET_STATS));
 #ifdef DEBUG
@@ -869,7 +877,7 @@ void MainWindow::handleRecent(const dwt::ScreenCoordinate& pt) {
 void MainWindow::handleConfigureRecent(const string& id, const tstring& title) {
 	ParamDlg dlg(this, title);
 	dlg.addIntTextBox(T_("Maximum number of recent items to save"),
-		Text::toT(Util::toString(WindowManager::getInstance()->getMaxRecentItems(id))), 0);
+		Text::toT(std::to_string(WindowManager::getInstance()->getMaxRecentItems(id))), 0);
 	if(dlg.run() == IDOK) {
 		const unsigned max = Util::toUInt(Text::fromT(dlg.getValue()));
 		dwt::MessageBox(this).show(str(TF_("%1% recent items will be saved from now on.") % max), title,
@@ -928,7 +936,7 @@ void MainWindow::fillLimiterMenu(Menu* menu, bool upload) {
 	menu->appendSeparator();
 	menu->appendItem(T_("Custom..."), [this, title, setting, x] {
 		ParamDlg dlg(this, title);
-		dlg.addIntTextBox(T_("New limit (KiB/s) (0 = infinite)"), Text::toT(Util::toString(x)), 0, ThrottleManager::MAX_LIMIT);
+		dlg.addIntTextBox(T_("New limit (KiB/s) (0 = infinite)"), Text::toT(std::to_string(x)), 0, ThrottleManager::MAX_LIMIT);
 		if(dlg.run() == IDOK) {
 			ThrottleManager::setSetting(setting, Util::toUInt(Text::fromT(dlg.getValue())));
 		}
@@ -950,6 +958,10 @@ void MainWindow::forwardHub(void (HubFrame::*f)()) {
 	if(active) {
 		(active->*f)();
 	}
+}
+
+void MainWindow::handleTaskbarOverlay() {
+	tabs->setOverlayIcon(tabs->getActive(), WinUtil::createIcon(away ? IDI_RED_BALL : IDI_GREEN_BALL, 16), away ? _T("Away") : _T("Available"));
 }
 
 void MainWindow::handleQuickConnect() {
@@ -1227,6 +1239,8 @@ void MainWindow::updateAwayStatus() {
 	status->setIcon(STATUS_AWAY, WinUtil::statusIcon(away ? IDI_USER_AWAY : IDI_USER));
 	status->setToolTip(STATUS_AWAY, away ? (T_("Status: Away - Double-click to switch to Available")) :
 		(T_("Status: Available - Double-click to switch to Away")));
+
+	handleTaskbarOverlay();
 }
 
 MainWindow::~MainWindow() {
@@ -1741,7 +1755,7 @@ bool MainWindow::handleToolbarContextMenu(const dwt::ScreenCoordinate& pt) {
 		int setting = SETTING(TOOLBAR_SIZE);
 		for(size_t i = 0, iend = sizeof(sizes) / sizeof(int); i < iend; ++i) {
 			int n = sizes[i];
-			unsigned pos = size->appendItem(Text::toT(Util::toString(n)), [=, this] { handleToolbarSize(n); });
+			unsigned pos = size->appendItem(Text::toT(std::to_string(n)), [=, this] { handleToolbarSize(n); });
 			if(n == setting)
 				size->checkItem(pos);
 		}
@@ -1840,7 +1854,7 @@ void MainWindow::handleSlotsMenu() {
 
 	auto setting = SETTING(SLOTS);
 	for(decltype(setting) i = 1; i < setting + 10; ++i) {
-		auto pos = menu->appendItem(Text::toT(Util::toString(i)), changeSlots(i), nullptr, true, i == setting);
+		auto pos = menu->appendItem(Text::toT(std::to_string(i)), changeSlots(i), nullptr, true, i == setting);
 		if(i == setting)
 			menu->checkItem(pos);
 	}

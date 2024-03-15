@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -101,8 +101,8 @@ public:
 
 	size_t getSharedFiles() const noexcept;
 
-	string getShareSizeString() const { return Util::toString(getShareSize()); }
-	string getShareSizeString(const string& aDir) const { return Util::toString(getShareSize(aDir)); }
+	string getShareSizeString() const { return std::to_string(getShareSize()); }
+	string getShareSizeString(const string& aDir) const { return std::to_string(getShareSize(aDir)); }
 
 	void getBloom(ByteVector& v, size_t k, size_t m, size_t h) const;
 

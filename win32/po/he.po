@@ -7,19 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2023-06-17 10:59+0200\n"
+"POT-Creation-Date: 2024-03-14 22:49+0100\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: he\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Launchpad-Export-Date: 2018-11-11 22:48+0000\n"
 "X-Generator: Launchpad (build 18816)\n"
 
-#: win32/MainWindow.cpp:1898
+#: win32/MainWindow.cpp:1912
 msgid " "
 msgstr ""
 
@@ -36,7 +36,7 @@ msgstr "הגדרות"
 msgid "% transferred"
 msgstr "% הועברו"
 
-#: win32/MainWindow.cpp:1500
+#: win32/MainWindow.cpp:1514
 #, boost-format
 msgid ""
 "%1%\n"
@@ -60,7 +60,7 @@ msgstr ""
 msgid "%1% (%2%)"
 msgstr "U: %1%/s (%2%)"
 
-#: win32/MainWindow.cpp:754
+#: win32/MainWindow.cpp:762
 #, fuzzy, boost-format
 msgid "%1% - %2%"
 msgstr "U: %1%/s (%2%)"
@@ -87,8 +87,9 @@ msgstr ""
 msgid "%1% dropped"
 msgstr "%1% סוננו"
 
-#: win32/PluginApiWin.cpp:70 win32/PluginApiWin.cpp:71 win32/QueueFrame.cpp:948
-#: win32/WinUtil.cpp:883 win32/FinishedFrameBase.h:460
+#: win32/PluginApiWin.cpp:70 win32/PluginApiWin.cpp:71
+#: win32/QueueFrame.cpp:948 win32/WinUtil.cpp:855
+#: win32/FinishedFrameBase.h:460
 #, boost-format
 msgid "%1% files"
 msgstr "%1% קבצים"
@@ -98,7 +99,7 @@ msgstr "%1% קבצים"
 msgid "%1% files/h, %2% files left"
 msgstr "%1% קבצים/לשעה, %2% קבצים נשארו"
 
-#: win32/MainWindow.cpp:1195
+#: win32/MainWindow.cpp:1207
 #, boost-format
 msgid "%1% free slots of %2% total upload slots - Click to adjust"
 msgstr ""
@@ -136,7 +137,7 @@ msgstr "%1% נותרו"
 msgid "%1% port cannot be the same as the %2% port"
 msgstr ""
 
-#: win32/MainWindow.cpp:875
+#: win32/MainWindow.cpp:883
 #, boost-format
 msgid "%1% recent items will be saved from now on."
 msgstr "%1% פריטים אחרונים יישמרו מעתה ואילך."
@@ -158,22 +159,22 @@ msgid_plural "%1% users"
 msgstr[0] "%1% משתמש"
 msgstr[1] "%1% משתמשים"
 
-#: win32/HubFrame.cpp:1368 win32/TransferView.cpp:354 win32/UsersFrame.cpp:461
+#: win32/HubFrame.cpp:1368 win32/TransferView.cpp:354 win32/UsersFrame.cpp:509
 #: win32/FinishedFrameBase.h:489
 #, fuzzy, boost-format
 msgid "%1% users"
 msgstr "%1% משתמש"
 
-#: win32/MainWindow.cpp:1194 win32/UserInfoBase.cpp:162
+#: win32/MainWindow.cpp:1206 win32/UserInfoBase.cpp:162
 #, fuzzy, boost-format
 msgid "%1%/%2%"
 msgstr "U: %1%/s (%2%)"
 
-#: win32/MainWindow.cpp:920 win32/MainWindow.cpp:1210 win32/MainWindow.cpp:1214
-#: win32/MainWindow.cpp:1218 win32/MainWindow.cpp:1222
-#: win32/TransferView.cpp:226 win32/TransferView.cpp:366
-#: win32/TransferView.cpp:451 win32/UsersFrame.cpp:72
-#: win32/FinishedFrameBase.h:573
+#: win32/MainWindow.cpp:928 win32/MainWindow.cpp:1222
+#: win32/MainWindow.cpp:1226 win32/MainWindow.cpp:1230
+#: win32/MainWindow.cpp:1234 win32/TransferView.cpp:226
+#: win32/TransferView.cpp:366 win32/TransferView.cpp:451
+#: win32/UsersFrame.cpp:75 win32/FinishedFrameBase.h:573
 #, boost-format
 msgid "%1%/s"
 msgstr ""
@@ -184,7 +185,7 @@ msgid "%1%/s, %2% left"
 msgstr ""
 
 #: win32/DirectoryListingFrame.cpp:832 win32/UserInfoBase.cpp:115
-#: win32/UserInfoBase.cpp:163 win32/WinUtil.cpp:1746
+#: win32/UserInfoBase.cpp:163 win32/WinUtil.cpp:1718
 #, fuzzy, boost-format
 msgid "%1%: %2%"
 msgstr "U: %1%/s (%2%)"
@@ -199,7 +200,7 @@ msgstr "ה&וספה"
 msgid "&Add folder"
 msgstr "הו&סף תיקיה"
 
-#: win32/WinUtil.cpp:1678 win32/UserInfoBase.h:166
+#: win32/WinUtil.cpp:1650 win32/UserInfoBase.h:166
 msgid "&Browse file list"
 msgstr "עיין ברשימת ה&קבצים"
 
@@ -222,7 +223,7 @@ msgstr "ס&גירה"
 msgid "&Configure"
 msgstr "&הגדר"
 
-#: win32/MainWindow.cpp:829
+#: win32/MainWindow.cpp:837
 msgid "&Configure..."
 msgstr "&הגדרות..."
 
@@ -239,7 +240,7 @@ msgstr "&העתק"
 msgid "&Copy\tCtrl+C"
 msgstr "ה&עתק\tCtrl+C"
 
-#: win32/MainWindow.cpp:1735
+#: win32/MainWindow.cpp:1749
 msgid "&Customize\tDouble-click"
 msgstr "&התאמה אישית\tלחיצה כפולה"
 
@@ -251,7 +252,7 @@ msgstr "&ברירות מחדל"
 msgid "&Delete\tDel"
 msgstr ""
 
-#: win32/UsersFrame.cpp:464
+#: win32/UsersFrame.cpp:512
 msgid "&Description"
 msgstr "&תיאור"
 
@@ -264,7 +265,7 @@ msgstr "&התנתק"
 msgid "&Download"
 msgstr "&הורד"
 
-#: win32/MainWindow.cpp:341
+#: win32/MainWindow.cpp:349
 msgid "&Download Queue\tCtrl+D"
 msgstr "&הורדות בהמתנה\tCtrl+D"
 
@@ -272,12 +273,12 @@ msgstr "&הורדות בהמתנה\tCtrl+D"
 msgid "&Edit"
 msgstr "&עריכה"
 
-#: win32/MainWindow.cpp:336
+#: win32/MainWindow.cpp:344
 #, fuzzy
 msgid "&Favorite Hubs\tCtrl+H"
 msgstr "&חיבורים מעודפים\tCtrl+F"
 
-#: win32/MainWindow.cpp:299
+#: win32/MainWindow.cpp:307
 msgid "&File"
 msgstr "&קובץ"
 
@@ -290,7 +291,7 @@ msgstr "&חפש...\tF3"
 msgid "&Force attempt"
 msgstr "&הכרח ניסיון"
 
-#: win32/QueueFrame.cpp:1002 win32/WinUtil.cpp:1675 win32/UserInfoBase.h:165
+#: win32/QueueFrame.cpp:1002 win32/WinUtil.cpp:1647 win32/UserInfoBase.h:165
 msgid "&Get file list"
 msgstr "&השג רשימת קבצים"
 
@@ -298,15 +299,15 @@ msgstr "&השג רשימת קבצים"
 msgid "&Go to directory"
 msgstr "&עבור אל התיקיה"
 
-#: win32/MainWindow.cpp:394
+#: win32/MainWindow.cpp:402
 msgid "&Help"
 msgstr "ע&זרה"
 
-#: win32/MainWindow.cpp:1751
+#: win32/MainWindow.cpp:1765
 msgid "&Hide\tCtrl+1"
 msgstr "&הסתר\tCtrl+1"
 
-#: win32/WinUtil.cpp:1681 win32/UserInfoBase.h:167
+#: win32/WinUtil.cpp:1653 win32/UserInfoBase.h:167
 #, fuzzy
 msgid "&Match queue"
 msgstr "התאם תור"
@@ -329,7 +330,7 @@ msgstr "&הזז/שנה שם"
 msgid "&New..."
 msgstr "&חדש..."
 
-#: win32/MainWindow.cpp:352
+#: win32/MainWindow.cpp:360
 msgid "&Notepad\tCtrl+N"
 msgstr "&כתבן\tCtrl+N"
 
@@ -347,16 +348,16 @@ msgstr "ה&דבק\tCtrl+V"
 msgid "&Properties"
 msgstr "&מאפיינים"
 
-#: win32/MainWindow.cpp:334
+#: win32/MainWindow.cpp:342
 #, fuzzy
 msgid "&Public Hubs\tCtrl+P"
 msgstr "האבים ציבוריים"
 
-#: win32/MainWindow.cpp:301
+#: win32/MainWindow.cpp:309
 msgid "&Quick connect...\tCtrl+Q"
 msgstr "&חיבור מהיר...\tCtrl+Q"
 
-#: win32/HubFrame.cpp:1389 win32/MainWindow.cpp:305
+#: win32/HubFrame.cpp:1389 win32/MainWindow.cpp:313
 msgid "&Reconnect\tCtrl+R"
 msgstr "&התחבר מחדש\tCTRL+R"
 
@@ -369,9 +370,10 @@ msgstr "רע&נן"
 #: win32/FavHubsFrame.cpp:370 win32/FavoriteDirsPage.cpp:77
 #: win32/PluginPage.cpp:119 win32/PluginPage.cpp:262 win32/QueueFrame.cpp:940
 #: win32/QueueFrame.cpp:954 win32/QueueFrame.cpp:968 win32/SearchFrame.cpp:887
-#: win32/SearchTypesPage.cpp:93 win32/StringListDlg.cpp:159 win32/UCPage.cpp:75
-#: win32/UploadPage.cpp:89 win32/UserMatchPage.cpp:97 win32/UsersFrame.cpp:465
-#: win32/FinishedFrameBase.h:466 win32/FinishedFrameBase.h:491
+#: win32/SearchTypesPage.cpp:93 win32/StringListDlg.cpp:159
+#: win32/UCPage.cpp:75 win32/UploadPage.cpp:89 win32/UserMatchPage.cpp:97
+#: win32/UsersFrame.cpp:513 win32/FinishedFrameBase.h:466
+#: win32/FinishedFrameBase.h:491
 msgid "&Remove"
 msgstr "ה&סר"
 
@@ -380,7 +382,7 @@ msgstr "ה&סר"
 msgid "&Remove file from queue"
 msgstr "הסר משתמש מהתור"
 
-#: win32/MainWindow.cpp:348
+#: win32/MainWindow.cpp:356
 msgid "&Search\tCtrl+S"
 msgstr "&חפש\tCtrl+S"
 
@@ -389,7 +391,7 @@ msgstr "&חפש\tCtrl+S"
 msgid "&Search hub"
 msgstr "Search Menu"
 
-#: win32/QueueFrame.cpp:1009 win32/WinUtil.cpp:1684 win32/UserInfoBase.h:170
+#: win32/QueueFrame.cpp:1009 win32/WinUtil.cpp:1656 win32/UserInfoBase.h:170
 msgid "&Send private message"
 msgstr "&שלח הודעה פרטית"
 
@@ -409,12 +411,12 @@ msgstr "&בטל פעולה אחרונה\tCtrl+Z"
 msgid "&Update"
 msgstr "&עדכן"
 
-#: win32/MainWindow.cpp:338
+#: win32/MainWindow.cpp:346
 #, fuzzy
 msgid "&Users\tCtrl+U"
 msgstr "משתמשים מועדפים"
 
-#: win32/MainWindow.cpp:332
+#: win32/MainWindow.cpp:340
 msgid "&View"
 msgstr "&תצוגה"
 
@@ -423,7 +425,7 @@ msgstr "&תצוגה"
 msgid "&View as text"
 msgstr "&הצג כמלל"
 
-#: win32/MainWindow.cpp:372
+#: win32/MainWindow.cpp:380
 msgid "&Window"
 msgstr "&חלון"
 
@@ -432,7 +434,7 @@ msgstr "&חלון"
 msgid "(%1%)"
 msgstr ""
 
-#: win32/MainWindow.cpp:836
+#: win32/MainWindow.cpp:844
 msgid "(No recent item found)"
 msgstr "(לא נמצאו פריטים אחרונים)"
 
@@ -467,7 +469,7 @@ msgstr "-:--:-- נותרו"
 msgid "<Information unavailable>"
 msgstr "הקובץ לא נגיש"
 
-#: win32/WinUtil.cpp:1579
+#: win32/WinUtil.cpp:1551
 #, fuzzy
 msgid ""
 "A MAGNET link was given to FearDC, but it didn't contain a valid file hash "
@@ -496,7 +498,11 @@ msgid ""
 "contents?"
 msgstr "תיקיה וירטואלית בשם %1% כבר קיימת. האם ברצונך למזג את תכנן של התיקיות?"
 
-#: win32/MainWindow.cpp:349 win32/MainWindow.cpp:459
+#: win32/UsersFrame.cpp:332
+msgid "ADC"
+msgstr ""
+
+#: win32/MainWindow.cpp:357 win32/MainWindow.cpp:467
 msgid "ADL Search"
 msgstr "חיפוש ADL"
 
@@ -504,12 +510,12 @@ msgstr "חיפוש ADL"
 msgid "ADLSearch Properties"
 msgstr "מאפייני חיפוש ADL"
 
-#: win32/AboutDlg.cpp:177 win32/MainWindow.cpp:400
+#: win32/AboutDlg.cpp:175 win32/MainWindow.cpp:408
 #, fuzzy
 msgid "About FearDC"
 msgstr "אודות DC++"
 
-#: win32/ACFrame.cpp:58 win32/MainWindow.cpp:359
+#: win32/ACFrame.cpp:58 win32/MainWindow.cpp:367
 msgid "About:config"
 msgstr ""
 
@@ -529,13 +535,13 @@ msgstr ""
 msgid "Active mode (let FearDC configure my router with NAT-PMP / UPnP)"
 msgstr ""
 
-#: win32/MainWindow.cpp:716
+#: win32/MainWindow.cpp:724
 #, fuzzy
 msgid "Add"
 msgstr "ה&וספה"
 
-#: win32/HubFrame.cpp:1386 win32/PublicHubsFrame.cpp:402 win32/WinUtil.cpp:1687
-#: win32/UserInfoBase.h:175
+#: win32/HubFrame.cpp:1386 win32/PublicHubsFrame.cpp:402
+#: win32/WinUtil.cpp:1659 win32/UserInfoBase.h:175
 msgid "Add To &Favorites"
 msgstr "הוסף ל&מועדפים"
 
@@ -610,7 +616,7 @@ msgstr ""
 msgid "Advanced"
 msgstr "מתקדם"
 
-#: win32/QueueFrame.cpp:1017 win32/QueueFrame.cpp:1026 win32/WinUtil.cpp:1642
+#: win32/QueueFrame.cpp:1017 win32/QueueFrame.cpp:1026 win32/WinUtil.cpp:1614
 msgid "All"
 msgstr "הכל"
 
@@ -619,12 +625,12 @@ msgstr "הכל"
 msgid "All %1% users offline"
 msgstr "כל %1% המשתמשים אינם מחוברים"
 
-#: win32/WinUtil.cpp:1740
+#: win32/WinUtil.cpp:1712
 #, fuzzy
 msgid "All columns"
 msgstr "כל הקבצים"
 
-#: win32/WinUtil.cpp:886 win32/WinUtil.cpp:893
+#: win32/WinUtil.cpp:858 win32/WinUtil.cpp:865
 msgid "All files"
 msgstr "כל הקבצים"
 
@@ -661,7 +667,7 @@ msgstr "קבוצה נוספת עם השם \"%1%\" כבר קיימת"
 msgid "Any"
 msgstr "הכול"
 
-#: win32/WinUtil.cpp:1603
+#: win32/WinUtil.cpp:1575
 msgid ""
 "Any program that is launched will have the same access rights as FearDC."
 msgstr ""
@@ -670,11 +676,11 @@ msgstr ""
 msgid "Appearance"
 msgstr "מראה"
 
-#: win32/UsersFrame.cpp:96
+#: win32/UsersFrame.cpp:99
 msgid "Application"
 msgstr ""
 
-#: win32/UsersFrame.cpp:95
+#: win32/UsersFrame.cpp:98
 #, fuzzy
 msgid "Application version"
 msgstr "בקש אישור ביציאה"
@@ -772,7 +778,7 @@ msgstr "חפש אוטומטית מקורות חלופיים"
 msgid "Average: %1%"
 msgstr "משתמשים"
 
-#: win32/UserInfoBase.cpp:133 win32/UsersFrame.cpp:78
+#: win32/UserInfoBase.cpp:133 win32/UsersFrame.cpp:81
 msgid "Away"
 msgstr ""
 
@@ -784,11 +790,11 @@ msgstr ""
 msgid "Away mode"
 msgstr ""
 
-#: win32/WinUtil.cpp:665 win32/WinUtil.cpp:678
+#: win32/WinUtil.cpp:637 win32/WinUtil.cpp:650
 msgid "Away mode off"
 msgstr "מצב 'לא נמצא' כבוי"
 
-#: win32/WinUtil.cpp:671
+#: win32/WinUtil.cpp:643
 #, fuzzy, boost-format
 msgid "Away mode on: %1%"
 msgstr "מצב 'לא נמצא' כבוי"
@@ -838,11 +844,12 @@ msgstr ""
 msgid "Bind Address"
 msgstr "Bind address"
 
-#: win32/MainWindow.cpp:413
+#: win32/MainWindow.cpp:421
 msgid "Blog"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:121
+#: win32/UserInfoBase.cpp:121 win32/UsersFrame.cpp:330
+#: win32/UsersFrame.cpp:331
 msgid "Bot"
 msgstr ""
 
@@ -864,7 +871,7 @@ msgstr ""
 
 #: win32/HubFrame.cpp:67 win32/SearchFrame.cpp:61 win32/UserInfoBase.cpp:166
 #: win32/UserMatchDlg.cpp:222 win32/UserMatchPage.cpp:215
-#: win32/UsersFrame.cpp:58 win32/UsersFrame.cpp:97
+#: win32/UsersFrame.cpp:61 win32/UsersFrame.cpp:100
 msgid "CID"
 msgstr ""
 
@@ -880,7 +887,7 @@ msgstr "CRC32 inconsistency (SFV-Check)"
 msgid "Cached hub list is corrupted or unsupported"
 msgstr ""
 
-#: win32/WinUtil.cpp:1158
+#: win32/WinUtil.cpp:1130
 #, fuzzy
 msgid "Cancel"
 msgstr "שינויים בגרסאות"
@@ -902,7 +909,7 @@ msgstr ""
 msgid "Certificate generation"
 msgstr ""
 
-#: win32/MainWindow.cpp:399
+#: win32/MainWindow.cpp:407
 msgid "Change Log"
 msgstr "שינויים בגרסאות"
 
@@ -930,7 +937,7 @@ msgstr ""
 msgid "Clear search box after each search"
 msgstr "נקה את תיבת החיפוש לאחר כל חיפוש"
 
-#: win32/WinUtil.cpp:572
+#: win32/WinUtil.cpp:547
 msgid ""
 "Clears the current window of all text. Optionally, you can specify how many "
 "of the latest (most recent) lines should be kept."
@@ -944,7 +951,12 @@ msgstr ""
 msgid "Clickable chat links (disable on Wine)"
 msgstr ""
 
-#: win32/UsersFrame.cpp:100
+#: win32/UsersFrame.cpp:55
+#, fuzzy
+msgid "Client"
+msgstr "סוג קובץ"
+
+#: win32/UsersFrame.cpp:103
 #, fuzzy
 msgid "Client type"
 msgstr "סוג קובץ"
@@ -954,42 +966,42 @@ msgstr "סוג קובץ"
 msgid "Close"
 msgstr "ס&גירה"
 
-#: win32/MainWindow.cpp:383
+#: win32/MainWindow.cpp:391
 msgid "Close all PM windows"
 msgstr ""
 
-#: win32/MainWindow.cpp:387
+#: win32/MainWindow.cpp:395
 msgid "Close all file list windows"
 msgstr ""
 
-#: win32/MainWindow.cpp:377
+#: win32/MainWindow.cpp:385
 msgid "Close all hubs"
 msgstr ""
 
-#: win32/MainWindow.cpp:379 win32/MainWindow.cpp:1701
+#: win32/MainWindow.cpp:387 win32/MainWindow.cpp:1715
 #, fuzzy
 msgid "Close all hubs of a favorite group"
 msgstr "שרת העברה זה אינו שרת מועדף"
 
-#: win32/MainWindow.cpp:384
+#: win32/MainWindow.cpp:392
 msgid "Close all offline PM windows"
 msgstr ""
 
-#: win32/MainWindow.cpp:390
+#: win32/MainWindow.cpp:398
 msgid "Close all search windows"
 msgstr ""
 
-#: win32/MainWindow.cpp:378
+#: win32/MainWindow.cpp:386
 #, fuzzy
 msgid "Close disconnected hubs"
 msgstr "סגור האבים מנותקים"
 
-#: win32/MainWindow.cpp:380 win32/MainWindow.cpp:1701
+#: win32/MainWindow.cpp:388 win32/MainWindow.cpp:1715
 #, fuzzy
 msgid "Close hubs not in a favorite group"
 msgstr "שרת העברה זה אינו שרת מועדף"
 
-#: win32/WinUtil.cpp:586
+#: win32/WinUtil.cpp:561
 msgid "Closes the current window."
 msgstr ""
 
@@ -1005,11 +1017,11 @@ msgstr ""
 msgid "Communication channel"
 msgstr ""
 
-#: win32/AboutDlg.cpp:122
+#: win32/AboutDlg.cpp:120
 msgid "Compiler"
 msgstr ""
 
-#: win32/MainWindow.cpp:717 win32/MainWindow.cpp:735
+#: win32/MainWindow.cpp:725 win32/MainWindow.cpp:743
 #, fuzzy
 msgid "Configure"
 msgstr "&הגדר"
@@ -1061,16 +1073,16 @@ msgstr ""
 msgid "Confirm item removal in download queue"
 msgstr "בקש אישור במחיקת פריט מתור ההורדה"
 
-#: win32/MainWindow.cpp:302
+#: win32/MainWindow.cpp:310
 msgid "Connect to a favorite hub &group...\tCtrl+G"
 msgstr ""
 
-#: win32/MainWindow.cpp:970
+#: win32/MainWindow.cpp:982
 #, fuzzy
 msgid "Connect to a favorite hub group"
 msgstr "בקש אישור במחיקת האב מועדף"
 
-#: win32/MainWindow.cpp:808
+#: win32/MainWindow.cpp:816
 msgid "Connect to all hubs in this group"
 msgstr ""
 
@@ -1078,7 +1090,7 @@ msgstr ""
 msgid "Connect to hub"
 msgstr ""
 
-#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1808
+#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1780
 msgid "Connected"
 msgstr "מחובר"
 
@@ -1093,7 +1105,7 @@ msgid "Connecting to %1%..."
 msgstr "חיבור"
 
 #: win32/HubFrame.cpp:63 win32/SearchFrame.cpp:56 win32/UserInfoBase.cpp:153
-#: win32/UsersFrame.cpp:99
+#: win32/UsersFrame.cpp:102
 msgid "Connection"
 msgstr "חיבור"
 
@@ -1106,11 +1118,11 @@ msgstr "מחובר"
 msgid "Context"
 msgstr ""
 
-#: win32/MainWindow.cpp:412
+#: win32/MainWindow.cpp:420
 msgid "Contribute"
 msgstr ""
 
-#: win32/WinUtil.cpp:1722
+#: win32/WinUtil.cpp:1694
 #, fuzzy
 msgid "Copy"
 msgstr "&העתק"
@@ -1133,7 +1145,7 @@ msgstr "העתק כתובת ללוח"
 msgid "Copy address with &keyprint to clipboard"
 msgstr "העתק כתובת ללוח"
 
-#: win32/WinUtil.cpp:836
+#: win32/WinUtil.cpp:808
 msgid "Copy magnet link to clipboard"
 msgstr "העתק כתובת ללוח"
 
@@ -1142,8 +1154,8 @@ msgstr "העתק כתובת ללוח"
 msgid "Copy user information"
 msgstr "מידע אישי"
 
-#: win32/HubFrame.cpp:65 win32/PublicHubsFrame.cpp:48 win32/TransferView.cpp:58
-#: win32/UserInfoBase.cpp:155
+#: win32/HubFrame.cpp:65 win32/PublicHubsFrame.cpp:48
+#: win32/TransferView.cpp:58 win32/UserInfoBase.cpp:155
 msgid "Country"
 msgstr "ארץ"
 
@@ -1192,21 +1204,21 @@ msgstr ""
 msgid "Custom text color"
 msgstr ""
 
-#: win32/MainWindow.cpp:929
+#: win32/MainWindow.cpp:937
 msgid "Custom..."
 msgstr ""
 
-#: win32/MainWindow.cpp:1203
+#: win32/MainWindow.cpp:1215
 #, boost-format
 msgid "D: %1%"
 msgstr ""
 
-#: win32/MainWindow.cpp:1211
+#: win32/MainWindow.cpp:1223
 #, boost-format
 msgid "D: %1%/s (%2%)"
 msgstr ""
 
-#: win32/MainWindow.cpp:414
+#: win32/MainWindow.cpp:422
 msgid "DC Network Foundation community"
 msgstr ""
 
@@ -1217,7 +1229,7 @@ msgstr "קבע עדיפות"
 
 #: win32/AppearancePage.cpp:141 win32/AppearancePage.cpp:174
 #: win32/ConnectivityManualPage.cpp:260 win32/FavHubProperties.cpp:282
-#: win32/WinUtil.cpp:1202 win32/ACFrame.h:140
+#: win32/WinUtil.cpp:1174 win32/ACFrame.h:140
 msgid "Default"
 msgstr ""
 
@@ -1239,7 +1251,7 @@ msgstr "&ברירות מחדל"
 #: win32/FavHubProperties.cpp:132 win32/FavHubsFrame.cpp:50
 #: win32/GeneralPage.cpp:59 win32/HubFrame.cpp:61 win32/HubFrame.cpp:441
 #: win32/PublicHubsFrame.cpp:45 win32/UserInfoBase.cpp:151
-#: win32/UsersFrame.cpp:57 win32/UsersFrame.cpp:79 win32/UsersFrame.cpp:427
+#: win32/UsersFrame.cpp:60 win32/UsersFrame.cpp:82 win32/UsersFrame.cpp:475
 msgid "Description"
 msgstr "תיאור"
 
@@ -1280,8 +1292,8 @@ msgid "Directories"
 msgstr "תיקיות"
 
 #: win32/ADLSProperties.cpp:76 win32/DirectoryListingFrame.cpp:1572
-#: win32/FavoriteDirsPage.cpp:40 win32/LogPage.cpp:74 win32/SearchFrame.cpp:510
-#: win32/UploadPage.cpp:46
+#: win32/FavoriteDirsPage.cpp:40 win32/LogPage.cpp:74
+#: win32/SearchFrame.cpp:510 win32/UploadPage.cpp:46
 msgid "Directory"
 msgstr "תיקיה"
 
@@ -1289,7 +1301,7 @@ msgstr "תיקיה"
 msgid "Directory or directory name already exists"
 msgstr "תיקיה או שם תיקיה כבר קיימים"
 
-#: win32/MainWindow.cpp:732 win32/PluginPage.cpp:105 win32/PluginPage.cpp:257
+#: win32/MainWindow.cpp:740 win32/PluginPage.cpp:105 win32/PluginPage.cpp:257
 #, fuzzy
 msgid "Disable"
 msgstr "מאופשר"
@@ -1311,7 +1323,7 @@ msgstr "מחובר"
 msgid "Disable taskbar menu creation"
 msgstr ""
 
-#: win32/MainWindow.cpp:920
+#: win32/MainWindow.cpp:928
 #, fuzzy
 msgid "Disabled"
 msgstr "מאופשר"
@@ -1320,7 +1332,7 @@ msgstr "מאופשר"
 msgid "Disconnect the direct encrypted channel"
 msgstr ""
 
-#: win32/WinUtil.cpp:1813
+#: win32/WinUtil.cpp:1785
 #, fuzzy
 msgid "Disconnected"
 msgstr "&התנתק"
@@ -1329,7 +1341,7 @@ msgstr "&התנתק"
 msgid "Disconnecting the direct encrypted channel..."
 msgstr ""
 
-#: win32/MainWindow.cpp:408
+#: win32/MainWindow.cpp:416
 #, fuzzy
 msgid "Discussion forum"
 msgstr "פורום דיון"
@@ -1342,7 +1354,7 @@ msgstr ""
 msgid "Display the balloon only when FearDC is in the background"
 msgstr ""
 
-#: win32/WinUtil.cpp:581
+#: win32/WinUtil.cpp:556
 msgid ""
 "Displays available commands. (The ones listed on this page.) Optionally, you "
 "can specify \"brief\" to have a brief listing."
@@ -1372,7 +1384,7 @@ msgstr ""
 msgid "Do you really want to delete this search type?"
 msgstr ""
 
-#: win32/WinUtil.cpp:1605
+#: win32/WinUtil.cpp:1577
 msgid "Do you still want to allow to open a program on your computer?"
 msgstr ""
 
@@ -1410,7 +1422,7 @@ msgstr ""
 msgid "Don't send the away message to bots"
 msgstr "אל תשלח הודעות 'לא נמצא' לבוטים"
 
-#: win32/MainWindow.cpp:411
+#: win32/MainWindow.cpp:419
 msgid "Donate (paypal)"
 msgstr "תרום למפתחים"
 
@@ -1432,7 +1444,7 @@ msgstr "...הורד ל"
 msgid "Download Matches"
 msgstr "הורד התאמות"
 
-#: win32/MainWindow.cpp:451 win32/QueueFrame.cpp:66 win32/TabsPage.cpp:41
+#: win32/MainWindow.cpp:459 win32/QueueFrame.cpp:66 win32/TabsPage.cpp:41
 msgid "Download Queue"
 msgstr "תור הורדה"
 
@@ -1446,7 +1458,7 @@ msgstr "הורד"
 msgid "Download failed: %1%"
 msgstr "הורד"
 
-#: win32/TransferView.cpp:1134 win32/WinUtil.cpp:91
+#: win32/TransferView.cpp:1134 win32/WinUtil.cpp:92
 #, fuzzy
 msgid "Download finished"
 msgstr "הורד"
@@ -1455,32 +1467,32 @@ msgstr "הורד"
 msgid "Download full list"
 msgstr ""
 
-#: win32/MainWindow.cpp:896 win32/MainWindow.cpp:1879
+#: win32/MainWindow.cpp:904 win32/MainWindow.cpp:1893
 #, fuzzy
 msgid "Download limit"
 msgstr "הורדות"
 
-#: win32/WinUtil.cpp:717
+#: win32/WinUtil.cpp:689
 #, fuzzy
 msgid "Download limit disabled"
 msgstr "הורדות"
 
-#: win32/WinUtil.cpp:717
+#: win32/WinUtil.cpp:689
 #, fuzzy, boost-format
 msgid "Download limit set to %1% KiB/s"
 msgstr "הורדות"
 
-#: win32/MainWindow.cpp:1219
+#: win32/MainWindow.cpp:1231
 #, fuzzy, boost-format
 msgid "Download limit: %1%/s - Click to adjust"
 msgstr "הורדות"
 
-#: win32/WinUtil.cpp:649
+#: win32/WinUtil.cpp:621
 #, fuzzy
 msgid "Download slots set"
 msgstr "הורדות"
 
-#: win32/UsersFrame.cpp:84
+#: win32/UsersFrame.cpp:87
 #, fuzzy
 msgid "Download speed"
 msgstr "הורד"
@@ -1534,11 +1546,11 @@ msgstr "...מוריד את רשימת ההאבים הציבורית"
 msgid "Downloading public hub list... (%1%)"
 msgstr "...מוריד את רשימת ההאבים הציבורית"
 
-#: win32/AboutDlg.cpp:168
+#: win32/AboutDlg.cpp:166
 msgid "Downloading..."
 msgstr "..מוריד"
 
-#: win32/MainWindow.cpp:405 win32/SettingsDialog.cpp:166
+#: win32/MainWindow.cpp:413 win32/SettingsDialog.cpp:166
 #: win32/StylesPage.cpp:164
 msgid "Downloads"
 msgstr "הורדות"
@@ -1551,11 +1563,11 @@ msgstr ""
 msgid "Drop sources below"
 msgstr ""
 
-#: win32/MainWindow.cpp:328
+#: win32/MainWindow.cpp:336
 msgid "E&xit\tAlt+F4"
 msgstr ""
 
-#: win32/HubFrame.cpp:66 win32/UsersFrame.cpp:80
+#: win32/HubFrame.cpp:66 win32/UsersFrame.cpp:83
 msgid "E-Mail"
 msgstr "דוא\"ל"
 
@@ -1583,7 +1595,7 @@ msgstr "דוא\"ל"
 msgid "Empty hub address specified"
 msgstr ""
 
-#: win32/MainWindow.cpp:731 win32/PluginPage.cpp:101 win32/PluginPage.cpp:256
+#: win32/MainWindow.cpp:739 win32/PluginPage.cpp:101 win32/PluginPage.cpp:256
 #, fuzzy
 msgid "Enable"
 msgstr "מאופשר"
@@ -1651,27 +1663,27 @@ msgstr ""
 msgid "Error loading the notepad file: %1%"
 msgstr ""
 
-#: win32/AboutDlg.cpp:216
+#: win32/AboutDlg.cpp:214
 #, fuzzy
 msgid "Error processing version information"
 msgstr "מידע אישי"
 
-#: win32/WinUtil.cpp:1484
+#: win32/WinUtil.cpp:1456
 msgid ""
 "Error registering FearDC for automatic startup (could not find or create key)"
 msgstr ""
 
-#: win32/WinUtil.cpp:1494
+#: win32/WinUtil.cpp:1466
 msgid ""
 "Error registering FearDC for automatic startup (could not set key value)"
 msgstr ""
 
-#: win32/WinUtil.cpp:1423
+#: win32/WinUtil.cpp:1395
 #, boost-format
 msgid "Error registering the %1% handler"
 msgstr ""
 
-#: win32/WinUtil.cpp:1529
+#: win32/WinUtil.cpp:1501
 msgid ""
 "Error unregistering FearDC for automatic startup (could not delete key value)"
 msgstr ""
@@ -1688,7 +1700,7 @@ msgstr ""
 msgid "Event"
 msgstr ""
 
-#: win32/AboutDlg.cpp:109
+#: win32/AboutDlg.cpp:107
 msgid ""
 "Ex-main project contributors: Todd Pederzani, poy\n"
 "Ex-codeveloper: Per Lindén\n"
@@ -1698,7 +1710,7 @@ msgid ""
 "FearDC is licenced under GPL."
 msgstr ""
 
-#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1197
+#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1169
 msgid "Exact match"
 msgstr ""
 
@@ -1711,7 +1723,7 @@ msgstr "גודל מדויק"
 msgid "Example hub tab"
 msgstr ""
 
-#: win32/MainWindow.cpp:1882
+#: win32/MainWindow.cpp:1896
 msgid "Exit"
 msgstr ""
 
@@ -1749,7 +1761,7 @@ msgstr ""
 msgid "External / WAN IP address"
 msgstr ""
 
-#: win32/WinUtil.cpp:1606
+#: win32/WinUtil.cpp:1578
 msgid "External protocol request"
 msgstr ""
 
@@ -1764,7 +1776,7 @@ msgid ""
 "Settings > Experts only"
 msgstr ""
 
-#: win32/UsersFrame.cpp:52 win32/UsersFrame.cpp:186
+#: win32/UsersFrame.cpp:52 win32/UsersFrame.cpp:204
 #, fuzzy
 msgid "Favorite"
 msgstr "האבים מועדפים"
@@ -1773,7 +1785,7 @@ msgstr "האבים מועדפים"
 msgid "Favorite Hub Properties"
 msgstr "מאפייני האב מועדף"
 
-#: win32/FavHubsFrame.cpp:59 win32/MainWindow.cpp:446
+#: win32/FavHubsFrame.cpp:59 win32/MainWindow.cpp:454
 msgid "Favorite Hubs"
 msgstr "האבים מועדפים"
 
@@ -1804,7 +1816,7 @@ msgstr "שם תיקיה מועדפת"
 msgid "Favorite user added"
 msgstr "משתמש מועדף התווסף"
 
-#: win32/WinUtil.cpp:448
+#: win32/WinUtil.cpp:449
 #, boost-format
 msgid "Favorite users (added by %1%)"
 msgstr ""
@@ -1820,11 +1832,11 @@ msgid ""
 "on the Direct Connect network.  What would you like to do?"
 msgstr ""
 
-#: win32/UsersFrame.cpp:94
+#: win32/UsersFrame.cpp:97
 msgid "Features"
 msgstr ""
 
-#: win32/MainWindow.cpp:1515 win32/MainWindow.cpp:1526
+#: win32/MainWindow.cpp:1529 win32/MainWindow.cpp:1540
 msgid "Feel free to report any bug via Help > Links > Report a bug."
 msgstr ""
 
@@ -1842,7 +1854,7 @@ msgstr ""
 msgid "File List"
 msgstr "Filelist Menu"
 
-#: win32/QueueFrame.cpp:506 win32/WinUtil.cpp:893
+#: win32/QueueFrame.cpp:506 win32/WinUtil.cpp:865
 #, fuzzy
 msgid "File Lists"
 msgstr "Filelist Menu"
@@ -1860,7 +1872,7 @@ msgstr ""
 msgid "File is already finished"
 msgstr "אל תוריד קבצים שכבר נמצאים בשיתוף"
 
-#: win32/WinUtil.cpp:92
+#: win32/WinUtil.cpp:93
 #, fuzzy
 msgid "File list downloaded"
 msgstr "הורדות שהסתיימו"
@@ -1892,11 +1904,11 @@ msgid "Filelist Menu"
 msgstr "Filelist Menu"
 
 #: win32/ADLSProperties.cpp:75 win32/LogPage.cpp:94 win32/QueueFrame.cpp:51
-#: win32/UsersFrame.cpp:417 win32/FinishedFrameBase.h:727
+#: win32/FinishedFrameBase.h:727
 msgid "Filename"
 msgstr "שם הקובץ"
 
-#: win32/MagnetDlg.cpp:91
+#: win32/MagnetDlg.cpp:91 win32/UsersFrame.cpp:464
 msgid "Filename:"
 msgstr ": שם קובץ"
 
@@ -1940,12 +1952,12 @@ msgstr "קובץ"
 msgid "Filter spam messages"
 msgstr "שמור הודעות מצב"
 
-#: win32/HubFrame.cpp:224 win32/UsersFrame.cpp:162
+#: win32/HubFrame.cpp:224 win32/UsersFrame.cpp:180
 #, fuzzy
 msgid "Filter users"
 msgstr "משתמשים מועדפים"
 
-#: win32/UsersFrame.cpp:157
+#: win32/UsersFrame.cpp:175
 #, fuzzy
 msgid "Filter:"
 msgstr "קובץ"
@@ -1982,13 +1994,13 @@ msgstr ""
 msgid "Finished"
 msgstr "חפש"
 
-#: win32/FinishedDLFrame.cpp:27 win32/MainWindow.cpp:343
-#: win32/MainWindow.cpp:453 win32/TabsPage.cpp:42
+#: win32/FinishedDLFrame.cpp:27 win32/MainWindow.cpp:351
+#: win32/MainWindow.cpp:461 win32/TabsPage.cpp:42
 msgid "Finished Downloads"
 msgstr "הורדות שהסתיימו"
 
-#: win32/FinishedULFrame.cpp:27 win32/MainWindow.cpp:345
-#: win32/MainWindow.cpp:455 win32/TabsPage.cpp:43
+#: win32/FinishedULFrame.cpp:27 win32/MainWindow.cpp:353
+#: win32/MainWindow.cpp:463 win32/TabsPage.cpp:43
 msgid "Finished Uploads"
 msgstr "העלאות שהסתיימו"
 
@@ -2009,12 +2021,12 @@ msgstr "מבנה"
 msgid "Forward"
 msgstr "מבנה"
 
-#: win32/UsersFrame.cpp:86
+#: win32/UsersFrame.cpp:89
 #, fuzzy
 msgid "Free slots"
 msgstr "מספר סלוטי העלאה מינימלי"
 
-#: win32/MainWindow.cpp:406
+#: win32/MainWindow.cpp:414
 msgid "Frequently asked questions"
 msgstr "שאלות נפוצות"
 
@@ -2035,11 +2047,6 @@ msgstr "GiB"
 msgid "General"
 msgstr ""
 
-#: win32/UsersFrame.cpp:374
-#, fuzzy
-msgid "General information"
-msgstr "מידע אישי"
-
 #: win32/CertificatesPage.cpp:98
 msgid "Generate certificates"
 msgstr ""
@@ -2049,11 +2056,11 @@ msgstr ""
 msgid "Generated by %1%"
 msgstr ""
 
-#: win32/MainWindow.cpp:321
+#: win32/MainWindow.cpp:329
 msgid "GeoIP database update"
 msgstr "עדכון מאגר זיהוי מדינה עפ\"י אייפי"
 
-#: win32/MainWindow.cpp:397
+#: win32/MainWindow.cpp:405
 msgid "Get started"
 msgstr ""
 
@@ -2067,7 +2074,7 @@ msgstr "GiB"
 msgid "Global application style"
 msgstr "בקש אישור ביציאה"
 
-#: win32/WinUtil.cpp:1690 win32/UserInfoBase.h:176
+#: win32/WinUtil.cpp:1662 win32/UserInfoBase.h:176
 msgid "Grant &extra slot"
 msgstr ""
 
@@ -2077,7 +2084,7 @@ msgid ""
 "in 10 minutes, the granted slot is removed."
 msgstr ""
 
-#: win32/AboutDlg.cpp:145
+#: win32/AboutDlg.cpp:143
 msgid "Greetz and Contributors"
 msgstr ""
 
@@ -2115,15 +2122,15 @@ msgstr "HTTP Proxy (for hublist only)"
 msgid "Height of the message editing box"
 msgstr ""
 
-#: win32/WinUtil.cpp:1170
+#: win32/WinUtil.cpp:1142
 msgid "Help"
 msgstr ""
 
-#: win32/MainWindow.cpp:396
+#: win32/MainWindow.cpp:404
 msgid "Help &Contents\tF1"
 msgstr ""
 
-#: win32/MainWindow.cpp:407
+#: win32/MainWindow.cpp:415
 msgid "Help center"
 msgstr ""
 
@@ -2137,7 +2144,8 @@ msgstr "משתמש פסיבי"
 msgid "Hide files already in share"
 msgstr "אל תוריד קבצים שכבר נמצאים בשיתוף"
 
-#: win32/QueueFrame.cpp:407 win32/QueueFrame.cpp:996 win32/TransferView.cpp:552
+#: win32/QueueFrame.cpp:407 win32/QueueFrame.cpp:996
+#: win32/TransferView.cpp:552
 msgid "High"
 msgstr "גבוהה"
 
@@ -2145,7 +2153,8 @@ msgstr "גבוהה"
 msgid "High prio max size"
 msgstr "High prio size"
 
-#: win32/QueueFrame.cpp:408 win32/QueueFrame.cpp:997 win32/TransferView.cpp:553
+#: win32/QueueFrame.cpp:408 win32/QueueFrame.cpp:997
+#: win32/TransferView.cpp:553
 msgid "Highest"
 msgstr "הכי גבוהה"
 
@@ -2157,7 +2166,7 @@ msgstr "Highest prio size"
 msgid "Highlighted tab"
 msgstr ""
 
-#: win32/WinUtil.cpp:583
+#: win32/WinUtil.cpp:558
 msgid ""
 "Highlights the last occourrence of the specified search string in the chat "
 "window."
@@ -2172,13 +2181,14 @@ msgstr "PM history"
 msgid "Hits"
 msgstr ""
 
-#: win32/MainWindow.cpp:404
+#: win32/MainWindow.cpp:412
 #, fuzzy
 msgid "Homepage"
 msgstr "דף הבית של דיסי"
 
-#: win32/FavHubProperties.cpp:74 win32/SearchFrame.cpp:57 win32/TabsPage.cpp:36
-#: win32/TransferView.cpp:51 win32/UCPage.cpp:38 win32/FinishedFrameBase.h:742
+#: win32/FavHubProperties.cpp:74 win32/SearchFrame.cpp:57
+#: win32/TabsPage.cpp:36 win32/TransferView.cpp:51 win32/UCPage.cpp:38
+#: win32/FinishedFrameBase.h:742
 msgid "Hub"
 msgstr "האב"
 
@@ -2204,7 +2214,7 @@ msgstr ""
 msgid "Hub address cannot be empty"
 msgstr ""
 
-#: win32/MainWindow.cpp:959
+#: win32/MainWindow.cpp:971
 msgid "Hub address or Magnet link"
 msgstr ""
 
@@ -2226,7 +2236,7 @@ msgstr "המשתמש מנותק"
 msgid "Hub operator"
 msgstr ""
 
-#: win32/UsersFrame.cpp:55
+#: win32/UsersFrame.cpp:58
 msgid "Hub(s)"
 msgstr ""
 
@@ -2239,16 +2249,16 @@ msgstr "האבים"
 msgid "Hubs"
 msgstr "האבים"
 
-#: win32/UsersFrame.cpp:87
+#: win32/UsersFrame.cpp:90
 msgid "Hubs (normal)"
 msgstr ""
 
-#: win32/UsersFrame.cpp:89
+#: win32/UsersFrame.cpp:92
 #, fuzzy
 msgid "Hubs (op)"
 msgstr "האבים"
 
-#: win32/UsersFrame.cpp:88
+#: win32/UsersFrame.cpp:91
 msgid "Hubs (registered)"
 msgstr ""
 
@@ -2261,7 +2271,7 @@ msgstr "רק היכן שאני מנהל"
 msgid "Hubs with secure transfers"
 msgstr ""
 
-#: win32/MainWindow.cpp:1190 win32/PublicHubsFrame.cpp:260
+#: win32/MainWindow.cpp:1202 win32/PublicHubsFrame.cpp:260
 #: win32/UserInfoBase.cpp:105
 #, fuzzy, boost-format
 msgid "Hubs: %1%"
@@ -2278,15 +2288,15 @@ msgstr "האבים"
 msgid "IP"
 msgstr "IP"
 
-#: win32/UsersFrame.cpp:90
+#: win32/UsersFrame.cpp:93
 msgid "IP (v4)"
 msgstr ""
 
-#: win32/UsersFrame.cpp:91
+#: win32/UsersFrame.cpp:94
 msgid "IP (v6)"
 msgstr ""
 
-#: win32/MainWindow.cpp:1629
+#: win32/MainWindow.cpp:1643
 msgid ""
 "IP -> country mappings are disabled. Turn them back on via Settings > "
 "Appearance."
@@ -2321,7 +2331,7 @@ msgstr ""
 msgid "Idle"
 msgstr ""
 
-#: win32/WinUtil.cpp:580
+#: win32/WinUtil.cpp:555
 msgid ""
 "If no parameter is specified, it launches the log for the hub or private "
 "chat with the associated application in Windows. If one of the parameters is "
@@ -2364,7 +2374,7 @@ msgstr "מצב 'לא נמצא' כבוי"
 msgid "Increase priority"
 msgstr "קבע עדיפות"
 
-#: win32/MainWindow.cpp:363
+#: win32/MainWindow.cpp:371
 msgid "Indexing progress"
 msgstr "תהליך האינדקס"
 
@@ -2390,7 +2400,7 @@ msgstr ""
 msgid "Invalid extension: %1%"
 msgstr ""
 
-#: win32/MainWindow.cpp:1387
+#: win32/MainWindow.cpp:1401
 msgid "Invalid file list name"
 msgstr ""
 
@@ -2398,11 +2408,11 @@ msgstr ""
 msgid "Invalid input value for TTH search"
 msgstr ""
 
-#: win32/WinUtil.cpp:643 win32/WinUtil.cpp:651
+#: win32/WinUtil.cpp:615 win32/WinUtil.cpp:623
 msgid "Invalid number of slots"
 msgstr "מספר לא תקין של מקומות העלאה"
 
-#: win32/WinUtil.cpp:711 win32/WinUtil.cpp:719
+#: win32/WinUtil.cpp:683 win32/WinUtil.cpp:691
 msgid "Invalid speed value"
 msgstr ""
 
@@ -2489,29 +2499,29 @@ msgstr "קובץ שפה"
 msgid "Last message occured %1%"
 msgstr ""
 
-#: win32/AboutDlg.cpp:167
+#: win32/AboutDlg.cpp:165
 msgid "Latest stable version"
 msgstr ""
 
-#: win32/WinUtil.cpp:576
+#: win32/WinUtil.cpp:551
 msgid ""
 "Launches your default web browser to the DuckDuckGo search engine with the "
 "specified search."
 msgstr ""
 
-#: win32/WinUtil.cpp:577
+#: win32/WinUtil.cpp:552
 msgid ""
 "Launches your default web browser to the Google search engine with the "
 "specified search."
 msgstr ""
 
-#: win32/WinUtil.cpp:578
+#: win32/WinUtil.cpp:553
 msgid ""
 "Launches your default web browser to the Internet Movie Database (imdb) with "
 "the specified query."
 msgstr ""
 
-#: win32/WinUtil.cpp:582
+#: win32/WinUtil.cpp:557
 msgid "Launches your default web browser with the given URL."
 msgstr ""
 
@@ -2533,7 +2543,7 @@ msgstr "הגבלות"
 msgid "Line speed (upload)"
 msgstr "העלאות שהסתיימו"
 
-#: win32/MainWindow.cpp:403 win32/StylesPage.cpp:167
+#: win32/MainWindow.cpp:411 win32/StylesPage.cpp:167
 #, fuzzy
 msgid "Links"
 msgstr "שם משתמש"
@@ -2554,6 +2564,10 @@ msgstr ""
 #: win32/DirectoryListingFrame.cpp:839
 #, boost-format
 msgid "Loading file list: %1%"
+msgstr ""
+
+#: win32/UsersFrame.cpp:105
+msgid "Locale"
 msgstr ""
 
 #: win32/PublicHubsFrame.cpp:496
@@ -2614,7 +2628,8 @@ msgstr ""
 msgid "Logs"
 msgstr "שם משתמש"
 
-#: win32/QueueFrame.cpp:405 win32/QueueFrame.cpp:994 win32/TransferView.cpp:550
+#: win32/QueueFrame.cpp:405 win32/QueueFrame.cpp:994
+#: win32/TransferView.cpp:550
 msgid "Low"
 msgstr "נמוכה"
 
@@ -2622,7 +2637,8 @@ msgstr "נמוכה"
 msgid "Low prio max size"
 msgstr "Low prio size"
 
-#: win32/QueueFrame.cpp:404 win32/QueueFrame.cpp:993 win32/TransferView.cpp:549
+#: win32/QueueFrame.cpp:404 win32/QueueFrame.cpp:993
+#: win32/TransferView.cpp:549
 msgid "Lowest"
 msgstr "הכי נמוכה"
 
@@ -2632,7 +2648,7 @@ msgstr "הכי נמוכה"
 msgid "M&odify"
 msgstr ""
 
-#: win32/MagnetDlg.cpp:121 win32/WinUtil.cpp:1580
+#: win32/MagnetDlg.cpp:121 win32/WinUtil.cpp:1552
 msgid "MAGNET Link detected"
 msgstr "קישור מגנט זוהה"
 
@@ -2641,7 +2657,7 @@ msgstr "קישור מגנט זוהה"
 msgid "MB"
 msgstr "MiB"
 
-#: win32/WinUtil.cpp:93
+#: win32/WinUtil.cpp:94
 #, fuzzy
 msgid "Main chat message received"
 msgstr "השמע צליל מעצבן בכל פעם שמתקבלת הודעה פרטית"
@@ -2656,7 +2672,7 @@ msgstr ""
 msgid "Manual configuration"
 msgstr "מידע אישי"
 
-#: win32/WinUtil.cpp:567
+#: win32/WinUtil.cpp:542
 msgid ""
 "Manually refreshes FearDC's share list by going through the shared "
 "directories and adding new folders and files. FearDC automatically refreshes "
@@ -2668,7 +2684,7 @@ msgstr ""
 msgid "Match bots"
 msgstr ""
 
-#: win32/MainWindow.cpp:310
+#: win32/MainWindow.cpp:318
 msgid "Match downloaded lists"
 msgstr ""
 
@@ -2752,7 +2768,7 @@ msgstr "מספר הורדות מירבי בו-זמנית, 0 = בלתי מוגב�
 msgid "Maximum Upload Rate (KiB/s) (0 = infinite)"
 msgstr "מספר הורדות מירבי בו-זמנית, 0 = בלתי מוגבל"
 
-#: win32/HistoryPage.cpp:85 win32/MainWindow.cpp:871
+#: win32/HistoryPage.cpp:85 win32/MainWindow.cpp:879
 msgid "Maximum number of recent items to save"
 msgstr ""
 
@@ -2760,7 +2776,7 @@ msgstr ""
 msgid "Maximum simultaneous downloads (0 = infinite)"
 msgstr "מספר הורדות מירבי בו-זמנית, 0 = בלתי מוגבל"
 
-#: win32/MainWindow.cpp:365
+#: win32/MainWindow.cpp:373
 #, fuzzy
 msgid "Menu bar\tCtrl+0"
 msgstr "&חפש\tCtrl+S"
@@ -2844,15 +2860,21 @@ msgid "Most of these options require that you restart FearDC."
 msgstr "הערה: רוב האפשרויות הנ\"ל דורשות שתאתחל את התוכנה"
 
 #: win32/ADLSearchFrame.cpp:103 win32/FavHubsFrame.cpp:132
-#: win32/FavHubsFrame.cpp:368 win32/PluginPage.cpp:114 win32/PluginPage.cpp:260
-#: win32/StringListDlg.cpp:149 win32/UCPage.cpp:71 win32/UserMatchPage.cpp:93
+#: win32/FavHubsFrame.cpp:368 win32/PluginPage.cpp:114
+#: win32/PluginPage.cpp:260 win32/StringListDlg.cpp:149 win32/UCPage.cpp:71
+#: win32/UserMatchPage.cpp:93
 msgid "Move &Down"
 msgstr ""
 
 #: win32/ADLSearchFrame.cpp:97 win32/FavHubsFrame.cpp:125
-#: win32/FavHubsFrame.cpp:367 win32/PluginPage.cpp:109 win32/PluginPage.cpp:259
-#: win32/StringListDlg.cpp:144 win32/UCPage.cpp:67 win32/UserMatchPage.cpp:89
+#: win32/FavHubsFrame.cpp:367 win32/PluginPage.cpp:109
+#: win32/PluginPage.cpp:259 win32/StringListDlg.cpp:144 win32/UCPage.cpp:67
+#: win32/UserMatchPage.cpp:89
 msgid "Move &Up"
+msgstr ""
+
+#: win32/UsersFrame.cpp:332
+msgid "NMDC"
 msgstr ""
 
 #: win32/DirectoryListingFrame.cpp:1563
@@ -2887,7 +2909,7 @@ msgstr "משתמשים"
 msgid "Name: %1%"
 msgstr "משתמשים"
 
-#: win32/MainWindow.cpp:356 win32/MainWindow.cpp:461 win32/StatsFrame.cpp:31
+#: win32/MainWindow.cpp:364 win32/MainWindow.cpp:469 win32/StatsFrame.cpp:31
 msgid "Network Statistics"
 msgstr "סטטיסטיקת רשת"
 
@@ -2895,7 +2917,7 @@ msgstr "סטטיסטיקת רשת"
 msgid "New certificates are successfully generated."
 msgstr ""
 
-#: win32/MainWindow.cpp:931
+#: win32/MainWindow.cpp:939
 #, fuzzy
 msgid "New limit (KiB/s) (0 = infinite)"
 msgstr "מספר הורדות מירבי בו-זמנית, 0 = בלתי מוגבל"
@@ -2916,7 +2938,7 @@ msgstr "New virtual name matches old name, skipping..."
 #: win32/FavHubGroupsDlg.cpp:135 win32/FavHubProperties.cpp:119
 #: win32/FavHubsFrame.cpp:51 win32/GeneralPage.cpp:53 win32/HubFrame.cpp:59
 #: win32/HubFrame.cpp:440 win32/UserMatchDlg.cpp:222
-#: win32/UserMatchPage.cpp:215 win32/UsersFrame.cpp:54 win32/UsersFrame.cpp:77
+#: win32/UserMatchPage.cpp:215 win32/UsersFrame.cpp:54 win32/UsersFrame.cpp:80
 #: win32/FinishedFrameBase.h:741
 msgid "Nick"
 msgstr "כינוי"
@@ -2927,12 +2949,12 @@ msgid "Nicks"
 msgstr "כינוי"
 
 #: win32/ADLSearchFrame.cpp:330 win32/NotificationsPage.cpp:280
-#: win32/NotificationsPage.cpp:286 win32/WinUtil.cpp:1204
+#: win32/NotificationsPage.cpp:286 win32/WinUtil.cpp:1176
 #: win32/FinishedFrameBase.h:262
 msgid "No"
 msgstr ""
 
-#: win32/WinUtil.cpp:671
+#: win32/WinUtil.cpp:643
 msgid "No away message"
 msgstr ""
 
@@ -2944,7 +2966,7 @@ msgstr ""
 msgid "No errors"
 msgstr "אין שגיאות"
 
-#: win32/MainWindow.cpp:1026
+#: win32/MainWindow.cpp:1038
 #, fuzzy
 msgid "No favorite hub group found"
 msgstr "האב מועדף התווסף"
@@ -2958,9 +2980,14 @@ msgstr ""
 msgid "No full tree available"
 msgstr "הקובץ לא נגיש"
 
-#: win32/WinUtil.cpp:1135
+#: win32/WinUtil.cpp:1107
 #, fuzzy
 msgid "No help information available"
+msgstr "הקובץ לא נגיש"
+
+#: win32/UsersFrame.cpp:417
+#, fuzzy
+msgid "No information available"
 msgstr "הקובץ לא נגיש"
 
 #: win32/DirectoryListingFrame.cpp:1535
@@ -2977,7 +3004,7 @@ msgstr ""
 msgid "No plugin has been selected"
 msgstr ""
 
-#: win32/AboutDlg.cpp:163
+#: win32/AboutDlg.cpp:161
 msgid "No transfers yet"
 msgstr ""
 
@@ -3024,7 +3051,7 @@ msgstr "!הערה: קבצים יכנסו לשיתוף רק בתום תהליך �
 msgid "Note; because of changing download speeds, this is not 100% accurate..."
 msgstr "...שם לב: בגלל שינוי המהירות הקיצוני, זה לא מדויק במאה אחוז"
 
-#: win32/MainWindow.cpp:473 win32/NotepadFrame.cpp:32
+#: win32/MainWindow.cpp:481 win32/NotepadFrame.cpp:32
 msgid "Notepad"
 msgstr "פנקס רשימות"
 
@@ -3032,15 +3059,15 @@ msgstr "פנקס רשימות"
 msgid "Notifications"
 msgstr ""
 
-#: win32/WinUtil.cpp:1150
+#: win32/WinUtil.cpp:1122
 msgid "OK"
 msgstr ""
 
-#: win32/UsersFrame.cpp:268 win32/UsersFrame.cpp:283 win32/WinUtil.cpp:772
+#: win32/UsersFrame.cpp:345 win32/UsersFrame.cpp:360 win32/WinUtil.cpp:744
 msgid "Offline"
 msgstr "לא מחובר"
 
-#: win32/UsersFrame.cpp:185 win32/UsersFrame.cpp:265 win32/UsersFrame.cpp:280
+#: win32/UsersFrame.cpp:203 win32/UsersFrame.cpp:345 win32/UsersFrame.cpp:357
 msgid "Online"
 msgstr "מחובר"
 
@@ -3071,20 +3098,20 @@ msgstr "רק משתמשים עם סלוטים פנויים"
 msgid "Open &folder"
 msgstr ""
 
-#: win32/MainWindow.cpp:315
+#: win32/MainWindow.cpp:323
 msgid "Open crash log"
 msgstr ""
 
-#: win32/MainWindow.cpp:314 win32/MainWindow.cpp:463 win32/MainWindow.cpp:1876
+#: win32/MainWindow.cpp:322 win32/MainWindow.cpp:471 win32/MainWindow.cpp:1890
 msgid "Open downloads directory"
 msgstr "פתח את תיקית ההורדות"
 
-#: win32/MainWindow.cpp:465
+#: win32/MainWindow.cpp:473
 #, fuzzy
 msgid "Open file list..."
 msgstr "פתח את רשימת הקבצים שלך"
 
-#: win32/MainWindow.cpp:308
+#: win32/MainWindow.cpp:316
 msgid "Open file list...\tCtrl+L"
 msgstr ""
 
@@ -3100,7 +3127,7 @@ msgstr "פתח חלונות הודעות פרטיות ברקע"
 msgid "Open new window when using /join"
 msgstr "פתח חלון חדש כשאר מתבצעת הפקודה /join"
 
-#: win32/MainWindow.cpp:309 win32/MainWindow.cpp:467
+#: win32/MainWindow.cpp:317 win32/MainWindow.cpp:475
 msgid "Open own list"
 msgstr "פתח את רשימת הקבצים שלך"
 
@@ -3118,7 +3145,11 @@ msgstr "פתח והקפץ הודעות פרטיות בחלון חדש"
 msgid "Open private messages in their own window"
 msgstr "פתח והקפץ הודעות פרטיות בחלון חדש"
 
-#: win32/WinUtil.cpp:571
+#: win32/AboutDlg.cpp:137
+msgid "OpenSSL version"
+msgstr ""
+
+#: win32/WinUtil.cpp:546
 msgid ""
 "Opens a new search window with the specified search string. It does not "
 "automatically send the search."
@@ -3130,11 +3161,11 @@ msgid ""
 "message, if one was specified."
 msgstr ""
 
-#: win32/WinUtil.cpp:587
+#: win32/WinUtil.cpp:562
 msgid "Opens the internal settings list debugging tool window."
 msgstr ""
 
-#: win32/WinUtil.cpp:458
+#: win32/WinUtil.cpp:459
 #, boost-format
 msgid "Operators (added by %1%)"
 msgstr ""
@@ -3169,7 +3200,7 @@ msgstr ""
 msgid "Partial file list loaded"
 msgstr ""
 
-#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1197
+#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1169
 msgid "Partial match"
 msgstr ""
 
@@ -3219,25 +3250,25 @@ msgstr ""
 msgid "Paused"
 msgstr "מושהה"
 
-#: win32/UsersFrame.cpp:187
+#: win32/UsersFrame.cpp:205
 #, fuzzy
 msgid "Pending download"
 msgstr "שמור לוג הורדות"
 
-#: win32/UsersFrame.cpp:397
+#: win32/UsersFrame.cpp:455
 #, fuzzy
-msgid "Pending downloads information"
-msgstr "מידע אישי"
+msgid "Pending downloads"
+msgstr "שמור לוג הורדות"
 
-#: win32/UsersFrame.cpp:188
+#: win32/UsersFrame.cpp:206
 #, fuzzy
 msgid "Pending upload"
 msgstr "שמור העלאות"
 
-#: win32/UsersFrame.cpp:412
+#: win32/UsersFrame.cpp:462
 #, fuzzy
-msgid "Pending uploads information"
-msgstr "מידע אישי"
+msgid "Pending uploads"
+msgstr "שמור העלאות"
 
 #: win32/GeneralPage.cpp:45 win32/SettingsDialog.cpp:156
 msgid "Personal information"
@@ -3251,7 +3282,7 @@ msgstr ""
 msgid "Play a sound"
 msgstr ""
 
-#: win32/WinUtil.cpp:502
+#: win32/WinUtil.cpp:503
 msgid "Please enter a nickname in the settings dialog!"
 msgstr "!אנא בחר כינוי בחלון ההגדות"
 
@@ -3270,11 +3301,11 @@ msgstr ""
 msgid "Plugin information"
 msgstr "מידע אישי"
 
-#: win32/MainWindow.cpp:415
+#: win32/MainWindow.cpp:423
 msgid "Plugin repository"
 msgstr ""
 
-#: win32/MainWindow.cpp:324 win32/MainWindow.cpp:477 win32/MainWindow.cpp:884
+#: win32/MainWindow.cpp:332 win32/MainWindow.cpp:485 win32/MainWindow.cpp:892
 #: win32/PluginPage.cpp:252 win32/PluginPage.cpp:337
 #: win32/SettingsDialog.cpp:199
 msgid "Plugins"
@@ -3334,12 +3365,12 @@ msgstr ""
 msgid "Private message from %1%: %2%"
 msgstr ""
 
-#: win32/WinUtil.cpp:94
+#: win32/WinUtil.cpp:95
 #, fuzzy
 msgid "Private message received"
 msgstr "שמור הודעות מצב"
 
-#: win32/WinUtil.cpp:95
+#: win32/WinUtil.cpp:96
 #, fuzzy
 msgid "Private message window opened"
 msgstr "השמע צליל מעצבן כאשר חלון הודעה פרטית נפתח"
@@ -3349,6 +3380,10 @@ msgstr "השמע צליל מעצבן כאשר חלון הודעה פרטית נ�
 msgid "Private messages"
 msgstr "שמור הודעות מצב"
 
+#: win32/UsersFrame.cpp:57
+msgid "Protocol"
+msgstr ""
+
 #: win32/SettingsDialog.cpp:162
 msgid "Proxy"
 msgstr ""
@@ -3357,7 +3392,7 @@ msgstr ""
 msgid "Proxy settings for outgoing connections"
 msgstr ""
 
-#: win32/MainWindow.cpp:442 win32/PublicHubsFrame.cpp:88
+#: win32/MainWindow.cpp:450 win32/PublicHubsFrame.cpp:88
 msgid "Public Hubs"
 msgstr "האבים ציבוריים"
 
@@ -3377,15 +3412,17 @@ msgstr "נקה"
 msgid "Queue"
 msgstr ""
 
-#: win32/UsersFrame.cpp:405
-msgid "Queued bytes"
+#: win32/UsersFrame.cpp:457
+#, fuzzy, boost-format
+msgid "Queued bytes: %1%"
+msgstr "האבים"
+
+#: win32/UsersFrame.cpp:456
+#, boost-format
+msgid "Queued files: %1%"
 msgstr ""
 
-#: win32/UsersFrame.cpp:401
-msgid "Queued files"
-msgstr ""
-
-#: win32/MainWindow.cpp:959
+#: win32/MainWindow.cpp:971
 msgid "Quick Connect"
 msgstr "התחברות מהירה"
 
@@ -3393,7 +3430,7 @@ msgstr "התחברות מהירה"
 msgid "Rating"
 msgstr "דירוג"
 
-#: win32/AboutDlg.cpp:162
+#: win32/AboutDlg.cpp:160
 #, c-format, boost-format
 msgid "Ratio (up/down): %1$0.2f"
 msgstr ""
@@ -3435,17 +3472,17 @@ msgstr "?להסיר באמת"
 msgid "Really close?"
 msgstr "?להסיר באמת"
 
-#: win32/MainWindow.cpp:1087
+#: win32/MainWindow.cpp:1099
 msgid "Really exit?"
 msgstr "?לצאת באמת"
 
 #: win32/ADLSearchFrame.cpp:249 win32/FavHubsFrame.cpp:302
 #: win32/PluginPage.cpp:337 win32/QueueFrame.cpp:666 win32/QueueFrame.cpp:671
-#: win32/UsersFrame.cpp:437
+#: win32/UsersFrame.cpp:485
 msgid "Really remove?"
 msgstr "?להסיר באמת"
 
-#: win32/WinUtil.cpp:579
+#: win32/WinUtil.cpp:554
 msgid ""
 "Rebuilds the HashIndex.xml and HashData.dat files, removing entries to files "
 "that are no longer shared, or old hashes for files that have since changed. "
@@ -3458,29 +3495,29 @@ msgstr ""
 msgid "Received a redirect request to %1%, click here to follow it"
 msgstr ""
 
-#: win32/HistoryPage.cpp:91 win32/MainWindow.cpp:863
+#: win32/HistoryPage.cpp:91 win32/MainWindow.cpp:871
 msgid "Recent PMs"
 msgstr ""
 
-#: win32/HistoryPage.cpp:94 win32/MainWindow.cpp:864
+#: win32/HistoryPage.cpp:94 win32/MainWindow.cpp:872
 #, fuzzy
 msgid "Recent file lists"
 msgstr "פתח את רשימת הקבצים שלך"
 
-#: win32/HistoryPage.cpp:88 win32/MainWindow.cpp:862
+#: win32/HistoryPage.cpp:88 win32/MainWindow.cpp:870
 msgid "Recent hubs"
 msgstr ""
 
-#: win32/MainWindow.cpp:469
+#: win32/MainWindow.cpp:477
 msgid "Recent windows"
 msgstr ""
 
-#: win32/MainWindow.cpp:444
+#: win32/MainWindow.cpp:452
 #, fuzzy
 msgid "Reconnect"
 msgstr "מחובר"
 
-#: win32/MainWindow.cpp:374
+#: win32/MainWindow.cpp:382
 #, fuzzy
 msgid "Reconnect disconnected hubs"
 msgstr "סגור האבים מנותקים"
@@ -3493,12 +3530,12 @@ msgstr "Redirect request received to a hub that's already connected"
 msgid "Redirect request to an empty hub address"
 msgstr ""
 
-#: win32/MainWindow.cpp:475
+#: win32/MainWindow.cpp:483
 #, fuzzy
 msgid "Refresh file list"
 msgstr "Filelist Menu"
 
-#: win32/MainWindow.cpp:311
+#: win32/MainWindow.cpp:319
 #, fuzzy
 msgid "Refresh file list\tF5"
 msgstr "Filelist Menu"
@@ -3523,7 +3560,7 @@ msgid "Register with Windows to handle magnet: URI links"
 msgstr "רשום טיפול בקישורי מגנט"
 
 #: win32/ADLSearchFrame.cpp:44 win32/ADLSProperties.cpp:67
-#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1197
+#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1169
 msgid "Regular Expression"
 msgstr ""
 
@@ -3560,7 +3597,7 @@ msgstr ""
 msgid "Remove source"
 msgstr "הסר מקור"
 
-#: win32/QueueFrame.cpp:1034 win32/WinUtil.cpp:1693 win32/UserInfoBase.h:180
+#: win32/QueueFrame.cpp:1034 win32/WinUtil.cpp:1665 win32/UserInfoBase.h:180
 msgid "Remove user from queue"
 msgstr "הסר משתמש מהתור"
 
@@ -3572,11 +3609,11 @@ msgstr ""
 msgid "Rename a search type"
 msgstr ""
 
-#: win32/MainWindow.cpp:410
+#: win32/MainWindow.cpp:418
 msgid "Report a bug"
 msgstr "דווח על באג"
 
-#: win32/MainWindow.cpp:409
+#: win32/MainWindow.cpp:417
 msgid "Request a feature"
 msgstr "בקש פיצ'ר"
 
@@ -3615,7 +3652,7 @@ msgstr "SOCKS5"
 msgid "Save settings now"
 msgstr "הגדרות"
 
-#: win32/ConnectivityManualPage.cpp:81 win32/MainWindow.cpp:457
+#: win32/ConnectivityManualPage.cpp:81 win32/MainWindow.cpp:465
 #: win32/NotepadFrame.cpp:108 win32/RichTextBox.cpp:111
 #: win32/SearchFrame.cpp:124 win32/SearchFrame.cpp:176 win32/TabsPage.cpp:39
 msgid "Search"
@@ -3649,7 +3686,7 @@ msgstr "Search Menu"
 msgid "Search for"
 msgstr "חפש"
 
-#: win32/WinUtil.cpp:835
+#: win32/WinUtil.cpp:807
 msgid "Search for alternates"
 msgstr "חפש עוד"
 
@@ -3661,12 +3698,12 @@ msgstr "הסטורית חיפוש"
 msgid "Search options"
 msgstr "אפשרויות חיפוש"
 
-#: win32/UsersFrame.cpp:92
+#: win32/UsersFrame.cpp:95
 #, fuzzy
 msgid "Search port (v4)"
 msgstr "חפש"
 
-#: win32/UsersFrame.cpp:93
+#: win32/UsersFrame.cpp:96
 #, fuzzy
 msgid "Search port (v6)"
 msgstr "חפש"
@@ -3730,7 +3767,7 @@ msgstr "נתיב התעודות המהימנות"
 msgid "Select &All\tCtrl+A"
 msgstr ""
 
-#: win32/MainWindow.cpp:1034
+#: win32/MainWindow.cpp:1046
 msgid "Select a favorite hub group"
 msgstr ""
 
@@ -3759,7 +3796,7 @@ msgid ""
 "Sends a private main chat message to the user if supported by hub, NMDC only."
 msgstr ""
 
-#: win32/WinUtil.cpp:573
+#: win32/WinUtil.cpp:548
 msgid ""
 "Sends a random FearDC advertising message to the chat, including a link to "
 "the FearDC homepage and the version number."
@@ -3785,31 +3822,31 @@ msgstr "Lowest prio enabled"
 msgid "Set priority"
 msgstr "קבע עדיפות"
 
-#: win32/WinUtil.cpp:584
+#: win32/WinUtil.cpp:559
 msgid ""
 "Set the download speed limit in KiBs. Zero or omitted value disables the "
 "limit."
 msgstr ""
 
-#: win32/WinUtil.cpp:585
+#: win32/WinUtil.cpp:560
 msgid ""
 "Set the upload speed limit in KiBs. Zero or omitted value disables the limit."
 msgstr ""
 
-#: win32/WinUtil.cpp:574
+#: win32/WinUtil.cpp:549
 msgid ""
 "Sets Away status. New private message windows will be responded to, once, "
 "with the message you specified, or the default away message configured in "
 "the Personal information settings page."
 msgstr ""
 
-#: win32/WinUtil.cpp:570
+#: win32/WinUtil.cpp:545
 msgid ""
 "Sets the current number of download slots to the number you specify. If this "
 "is less than the current number of slots, no downloads are cancelled."
 msgstr ""
 
-#: win32/WinUtil.cpp:569
+#: win32/WinUtil.cpp:544
 msgid ""
 "Sets the current number of upload slots to the number you specify. If this "
 "is less than the current number of slots, no uploads are cancelled."
@@ -3820,12 +3857,12 @@ msgstr ""
 msgid "Setting name"
 msgstr "הגדרות"
 
-#: win32/MainWindow.cpp:471 win32/MainWindow.cpp:1878
+#: win32/MainWindow.cpp:479 win32/MainWindow.cpp:1892
 #: win32/SettingsDialog.cpp:372
 msgid "Settings"
 msgstr "הגדרות"
 
-#: win32/MainWindow.cpp:318
+#: win32/MainWindow.cpp:326
 #, fuzzy
 msgid "Settings\tCtrl+F3"
 msgstr "הגדרות"
@@ -3852,7 +3889,7 @@ msgstr "שתף מוסתרים"
 msgid "Shared"
 msgstr "שיתוף"
 
-#: win32/UsersFrame.cpp:81
+#: win32/UsersFrame.cpp:84
 #, fuzzy
 msgid "Shared bytes"
 msgstr "תיקיות משותפות"
@@ -3861,7 +3898,7 @@ msgstr "תיקיות משותפות"
 msgid "Shared directories"
 msgstr "תיקיות משותפות"
 
-#: win32/UsersFrame.cpp:82
+#: win32/UsersFrame.cpp:85
 #, fuzzy
 msgid "Shared files"
 msgstr "שתף מוסתרים"
@@ -3878,7 +3915,7 @@ msgstr ""
 msgid "Shell menus"
 msgstr ""
 
-#: win32/MainWindow.cpp:1875
+#: win32/MainWindow.cpp:1889
 msgid "Show"
 msgstr "הראה"
 
@@ -3907,7 +3944,7 @@ msgstr ""
 msgid "Show user country in chat"
 msgstr ""
 
-#: win32/DirectoryListingFrame.cpp:65 win32/MainWindow.cpp:1739
+#: win32/DirectoryListingFrame.cpp:65 win32/MainWindow.cpp:1753
 #: win32/QueueFrame.cpp:53 win32/SearchFrame.cpp:53 win32/SearchFrame.cpp:181
 #: win32/TransferView.cpp:55 win32/UploadPage.cpp:47
 msgid "Size"
@@ -3944,7 +3981,7 @@ msgstr "Slot granted"
 msgid "Slots"
 msgstr "סלוטים"
 
-#: win32/WinUtil.cpp:641
+#: win32/WinUtil.cpp:613
 msgid "Slots set"
 msgstr "Slots set"
 
@@ -3984,7 +4021,7 @@ msgstr "סוג מקור"
 msgid "Source too slow"
 msgstr ""
 
-#: win32/WinUtil.cpp:568
+#: win32/WinUtil.cpp:543
 msgid "Speak as a third person."
 msgstr ""
 
@@ -3993,7 +4030,7 @@ msgstr ""
 msgid "Specified user is not online: %1%"
 msgstr ""
 
-#: win32/WinUtil.cpp:699
+#: win32/WinUtil.cpp:671
 msgid "Specify a URL"
 msgstr ""
 
@@ -4001,8 +4038,8 @@ msgstr ""
 msgid "Specify a name for this user matching definition"
 msgstr ""
 
-#: win32/WinUtil.cpp:657 win32/WinUtil.cpp:681 win32/WinUtil.cpp:687
-#: win32/WinUtil.cpp:693
+#: win32/WinUtil.cpp:629 win32/WinUtil.cpp:653 win32/WinUtil.cpp:659
+#: win32/WinUtil.cpp:665
 msgid "Specify a search string"
 msgstr "ציין ערך חיפוש"
 
@@ -4062,12 +4099,12 @@ msgstr ""
 msgid "Status"
 msgstr "מצב"
 
-#: win32/UsersFrame.cpp:56
+#: win32/UsersFrame.cpp:59
 #, fuzzy
 msgid "Status / Time last seen"
 msgstr "נראה לאחרונה"
 
-#: win32/MainWindow.cpp:368
+#: win32/MainWindow.cpp:376
 msgid "Status bar\tCtrl+3"
 msgstr ""
 
@@ -4076,11 +4113,11 @@ msgstr ""
 msgid "Status: %1%"
 msgstr "מצב"
 
-#: win32/MainWindow.cpp:1229
+#: win32/MainWindow.cpp:1241
 msgid "Status: Available - Double-click to switch to Away"
 msgstr ""
 
-#: win32/MainWindow.cpp:1228
+#: win32/MainWindow.cpp:1240
 msgid "Status: Away - Double-click to switch to Available"
 msgstr ""
 
@@ -4100,7 +4137,7 @@ msgstr ""
 msgid "Support direct encrypted private message channels"
 msgstr ""
 
-#: win32/MainWindow.cpp:354 win32/SystemFrame.cpp:36 win32/TabsPage.cpp:40
+#: win32/MainWindow.cpp:362 win32/SystemFrame.cpp:36 win32/TabsPage.cpp:40
 msgid "System Log"
 msgstr ""
 
@@ -4113,12 +4150,13 @@ msgstr "ט\"ב"
 msgid "TLS"
 msgstr ""
 
-#: win32/UsersFrame.cpp:98
+#: win32/UsersFrame.cpp:101
 msgid "TLS Keyprint"
 msgstr ""
 
-#: win32/AboutDlg.cpp:118 win32/DirectoryListingFrame.cpp:67
-#: win32/QueueFrame.cpp:61 win32/SearchFrame.cpp:60 win32/TransferView.cpp:1003
+#: win32/AboutDlg.cpp:116 win32/DirectoryListingFrame.cpp:67
+#: win32/QueueFrame.cpp:61 win32/SearchFrame.cpp:60
+#: win32/TransferView.cpp:1003
 msgid "TTH"
 msgstr ""
 
@@ -4138,19 +4176,19 @@ msgstr ""
 msgid "Tabs"
 msgstr ""
 
-#: win32/HubFrame.cpp:62 win32/UserInfoBase.cpp:152 win32/UsersFrame.cpp:101
+#: win32/HubFrame.cpp:62 win32/UserInfoBase.cpp:152 win32/UsersFrame.cpp:104
 msgid "Tag"
 msgstr "תגית"
 
-#: win32/MainWindow.cpp:1517
+#: win32/MainWindow.cpp:1531
 msgid "Testing nags can be fully disabled via Settings > Advanced."
 msgstr ""
 
-#: win32/MainWindow.cpp:1513
+#: win32/MainWindow.cpp:1527
 msgid "Testing version of FearDC"
 msgstr ""
 
-#: win32/MainWindow.cpp:1514 win32/MainWindow.cpp:1525
+#: win32/MainWindow.cpp:1528 win32/MainWindow.cpp:1539
 msgid "Thank you for using a testing version of FearDC!"
 msgstr ""
 
@@ -4169,7 +4207,7 @@ msgid ""
 "group."
 msgstr ""
 
-#: win32/MainWindow.cpp:1770
+#: win32/MainWindow.cpp:1784
 msgid ""
 "The menu bar is now hidden. Press Alt or F10 to temporarily bring it back "
 "into view."
@@ -4183,7 +4221,7 @@ msgstr ""
 msgid "The message cannot be delivered because the user is offline."
 msgstr ""
 
-#: win32/WinUtil.cpp:1604
+#: win32/WinUtil.cpp:1576
 msgid "The requested link is "
 msgstr ""
 
@@ -4211,7 +4249,7 @@ msgstr "שרת העברה זה אינו שרת מועדף"
 msgid "This is an example of a balloon popup notification!"
 msgstr ""
 
-#: win32/MainWindow.cpp:1516
+#: win32/MainWindow.cpp:1530
 msgid "This message will show up in the status bar in the future."
 msgstr ""
 
@@ -4268,11 +4306,11 @@ msgstr ""
 msgid "Toggles visibility of the list of users for the current hub."
 msgstr ""
 
-#: win32/MainWindow.cpp:1733
+#: win32/MainWindow.cpp:1747
 msgid "Toolbar"
 msgstr ""
 
-#: win32/MainWindow.cpp:366
+#: win32/MainWindow.cpp:374
 msgid "Toolbar\tCtrl+1"
 msgstr ""
 
@@ -4280,12 +4318,12 @@ msgstr ""
 msgid "Total size:"
 msgstr "הגודל הכללי:"
 
-#: win32/UsersFrame.cpp:85
+#: win32/UsersFrame.cpp:88
 #, fuzzy
 msgid "Total slots"
 msgstr "סיכומים"
 
-#: win32/AboutDlg.cpp:154
+#: win32/AboutDlg.cpp:152
 msgid "Totals"
 msgstr "סיכומים"
 
@@ -4299,7 +4337,7 @@ msgstr "הועברו"
 msgid "Transfer Rate Limiting"
 msgstr "הועברו (יחס)"
 
-#: win32/MainWindow.cpp:367
+#: win32/MainWindow.cpp:375
 msgid "Transfer view\tCtrl+2"
 msgstr ""
 
@@ -4325,12 +4363,12 @@ msgstr "נתיב התעודות המהימנות"
 msgid "Type"
 msgstr "סוג"
 
-#: win32/MainWindow.cpp:1207
+#: win32/MainWindow.cpp:1219
 #, boost-format
 msgid "U: %1%"
 msgstr "U: %1%"
 
-#: win32/MainWindow.cpp:1215
+#: win32/MainWindow.cpp:1227
 #, boost-format
 msgid "U: %1%/s (%2%)"
 msgstr "U: %1%/s (%2%)"
@@ -4339,11 +4377,11 @@ msgstr "U: %1%/s (%2%)"
 msgid "Un-ignore chat"
 msgstr ""
 
-#: win32/WinUtil.cpp:575
+#: win32/WinUtil.cpp:550
 msgid "Un-sets Away status."
 msgstr ""
 
-#: win32/MainWindow.cpp:1374
+#: win32/MainWindow.cpp:1388
 #, boost-format
 msgid ""
 "Unable to open %1% port. Searching or file transfers will not work correctly "
@@ -4367,7 +4405,7 @@ msgstr ""
 msgid "Unfinished file too small"
 msgstr ""
 
-#: win32/QueueFrame.cpp:392 win32/QueueFrame.cpp:393
+#: win32/QueueFrame.cpp:392 win32/QueueFrame.cpp:393 win32/UsersFrame.cpp:268
 msgid "Unknown"
 msgstr "לא ידוע"
 
@@ -4394,36 +4432,36 @@ msgstr ""
 msgid "Upload Slots"
 msgstr "מס' סלוטי העלאה"
 
-#: win32/MainWindow.cpp:896 win32/MainWindow.cpp:1880
+#: win32/MainWindow.cpp:904 win32/MainWindow.cpp:1894
 #, fuzzy
 msgid "Upload limit"
 msgstr "מס' סלוטי העלאה"
 
-#: win32/WinUtil.cpp:709
+#: win32/WinUtil.cpp:681
 #, fuzzy
 msgid "Upload limit disabled"
 msgstr "מס' סלוטי העלאה"
 
-#: win32/WinUtil.cpp:709
+#: win32/WinUtil.cpp:681
 #, fuzzy, boost-format
 msgid "Upload limit set to %1% KiB/s"
 msgstr "הורדות"
 
-#: win32/MainWindow.cpp:1223
+#: win32/MainWindow.cpp:1235
 #, boost-format
 msgid "Upload limit: %1%/s - Click to adjust"
 msgstr ""
 
-#: win32/MainWindow.cpp:1839 win32/UploadPage.cpp:104
+#: win32/MainWindow.cpp:1853 win32/UploadPage.cpp:104
 msgid "Upload slots"
 msgstr "מס' סלוטי העלאה"
 
-#: win32/UsersFrame.cpp:83
+#: win32/UsersFrame.cpp:86
 #, fuzzy
 msgid "Upload speed"
 msgstr "העלאות"
 
-#: win32/AboutDlg.cpp:158
+#: win32/AboutDlg.cpp:156
 #, boost-format
 msgid "Upload: %1%, Download: %2%"
 msgstr ""
@@ -4501,6 +4539,11 @@ msgstr ""
 msgid "User commands"
 msgstr "Command"
 
+#: win32/UsersFrame.cpp:163
+#, fuzzy
+msgid "User information"
+msgstr "מידע אישי"
+
 #: win32/SettingsDialog.cpp:196
 #, fuzzy
 msgid "User matching"
@@ -4533,8 +4576,8 @@ msgstr "המשתמש התנתק"
 msgid "User went online"
 msgstr "המשתמש התנתק"
 
-#: win32/MainWindow.cpp:449 win32/PublicHubsFrame.cpp:46
-#: win32/QueueFrame.cpp:56 win32/StylesPage.cpp:149 win32/UsersFrame.cpp:107
+#: win32/MainWindow.cpp:457 win32/PublicHubsFrame.cpp:46
+#: win32/QueueFrame.cpp:56 win32/StylesPage.cpp:149 win32/UsersFrame.cpp:111
 msgid "Users"
 msgstr "משתמשים"
 
@@ -4545,6 +4588,10 @@ msgstr "משתמשים"
 
 #: win32/ACFrame.cpp:40 win32/StringListDlg.cpp:84
 msgid "Value"
+msgstr ""
+
+#: win32/UsersFrame.cpp:56
+msgid "Version"
 msgstr ""
 
 #: win32/PluginInfoDlg.cpp:89 win32/PluginPage.cpp:234
@@ -4591,7 +4638,7 @@ msgid ""
 "Click here to proceed."
 msgstr ""
 
-#: win32/WinUtil.cpp:1601
+#: win32/WinUtil.cpp:1573
 msgid ""
 "Warning: Allowing content to open a program can be useful, but it can "
 "potentially harm your computer. Do not allow it unless you trust the source "
@@ -4618,7 +4665,7 @@ msgstr ""
 msgid "Website: "
 msgstr ""
 
-#: win32/MainWindow.cpp:480
+#: win32/MainWindow.cpp:488
 msgid "What's This?"
 msgstr ""
 
@@ -4640,7 +4687,7 @@ msgid "Write buffer size"
 msgstr "Write buffer size"
 
 #: win32/ADLSearchFrame.cpp:330 win32/NotificationsPage.cpp:287
-#: win32/WinUtil.cpp:1203 win32/FinishedFrameBase.h:262
+#: win32/WinUtil.cpp:1175 win32/FinishedFrameBase.h:262
 msgid "Yes"
 msgstr ""
 
@@ -4718,11 +4765,23 @@ msgstr ""
 msgid "transfer"
 msgstr "הועברו"
 
-#, fuzzy, boost-format
+#, fuzzy
+#~ msgid "General information"
+#~ msgstr "מידע אישי"
+
+#, fuzzy
+#~ msgid "Pending downloads information"
+#~ msgstr "מידע אישי"
+
+#, fuzzy
+#~ msgid "Pending uploads information"
+#~ msgstr "מידע אישי"
+
+#, fuzzy
 #~ msgid "%1%-level %2%"
 #~ msgstr "U: %1%/s (%2%)"
 
-#, fuzzy, boost-format
+#, fuzzy
 #~ msgid "The %1% GeoIP database could not be updated"
 #~ msgstr "עדכון מאגר זיהוי מדינה עפ\"י אייפי"
 

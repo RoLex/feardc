@@ -4,39 +4,43 @@ The output is saved into files in the build directory.
 We only care about the return code of the test programs.
 """
 
-Import('dev source_path')
+Import("dev source_path")
 
 env = dev.env.Clone()
 
-env.Append(CPPPATH=['#/zlib'])
+env.Append(CPPPATH=["#/zlib"])
 
 dev.force_console(env)
 
-env.VariantDir(dev.get_build_path(source_path), '.', duplicate=0)
+env.VariantDir(dev.get_build_path(source_path), ".", duplicate=0)
 
-if env['msvcproj']:
-    ret = dev.build_lib(env, None, None, dev.c_lib, 'zlib-test')
+if env["msvcproj"]:
+    ret = dev.build_lib(env, None, None, dev.c_lib, "zlib-test")
 
 else:
     ret = []
     for test_name, test_command in (
-        ('example', '${SOURCE.abspath}'),
-        ('minigzip',
-         'echo hello world | ${SOURCE.abspath} | ${SOURCE.abspath} -d'),
+        ("example", "${SOURCE.abspath}"),
+        ("minigzip", "echo hello world | ${SOURCE.abspath} | ${SOURCE.abspath} -d"),
     ):
         prog = env.Program(
             dev.get_target(source_path, test_name, in_bin=False),
-            [dev.get_sources(source_path, str(File('%s.c' % test_name))),
-             dev.zlib],
+            [dev.get_sources(source_path, str(File("%s.c" % test_name))), dev.zlib],
         )
-        ret.append(env.Command(
-            dev.get_target(source_path, '%s-output' % test_name, in_bin=False),
-            prog,
-            [Action('%s > ${TARGET.abspath}' % test_command,
-                   'Running ${SOURCE.path}'),
-             Delete(File('#/foo.gz'))]  # An artifact left by zlib tests...
-        ))
+        ret.append(
+            env.Command(
+                dev.get_target(source_path, "%s-output" % test_name, in_bin=False),
+                prog,
+                [
+                    Action(
+                        "%s > ${TARGET.abspath}" % test_command,
+                        "Running ${SOURCE.path}",
+                    ),
+                    Delete(File("#/foo.gz")),
+                ],  # An artifact left by zlib tests...
+            )
+        )
 
 env.Help("\nYou can run zlib tests by running 'scons zlib/test'\n")
 
-Return('ret')
+Return("ret")

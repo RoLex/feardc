@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -101,7 +101,7 @@ public:
 	 * @throw SocketException If any connection error occurs.
 	 */
 	virtual void connect(const string& aIp, const string& aPort, const string& localPort = Util::emptyString);
-	void connect(const string& aIp, uint16_t aPort, uint16_t localPort = 0) { connect(aIp, aPort == 0 ? Util::emptyString : Util::toString(aPort), localPort == 0 ? Util::emptyString : Util::toString(localPort)); }
+	void connect(const string& aIp, uint16_t aPort, uint16_t localPort = 0) { connect(aIp, aPort == 0 ? Util::emptyString : std::to_string(aPort), localPort == 0 ? Util::emptyString : std::to_string(localPort)); }
 
 	/**
 	 * Same as connect(), but through the SOCKS5 server

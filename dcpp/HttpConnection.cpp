@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -175,7 +175,7 @@ void HttpConnection::on(BufferedSocketListener::Connected) noexcept {
 	if(connType == TYPE_POST)
 	{
 		socket->write("Content-Type: application/x-www-form-urlencoded\r\n");
-		socket->write("Content-Length: " + Util::toString(requestBody.size()) + "\r\n");
+		socket->write("Content-Length: " + std::to_string(requestBody.size()) + "\r\n");
 	}
 	socket->write("Connection: close\r\n\r\n");	// we'll only be doing one request
 

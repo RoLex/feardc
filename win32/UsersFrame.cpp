@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,8 +30,8 @@
 #include <dwt/widgets/Label.h>
 #include <dwt/widgets/MessageBox.h>
 #include <dwt/widgets/Splitter.h>
-#include <dwt/widgets/ScrolledContainer.h>
 #include <dwt/widgets/SplitterContainer.h>
+#include <dwt/widgets/TextBox.h>
 
 #include "ParamDlg.h"
 #include "HoldRedraw.h"
@@ -52,6 +52,9 @@ static const ColumnInfo usersColumns[] = {
 	{ N_("Favorite"), 25, false },
 	{ N_("Auto grant slot"), 25, false },
 	{ N_("Nick"), 125, false },
+	{ N_("Client"), 60, false },
+	{ N_("Version"), 60, false },
+	{ N_("Protocol"), 60, false },
 	{ N_("Hub(s)"), 300, false },
 	{ N_("Status / Time last seen"), 150, false },
 	{ N_("Description"), 200, false },
@@ -99,6 +102,7 @@ static const FieldName fields[] =
 	{ "CO", T_("Connection"), &Text::toT },
 	{ "CT", T_("Client type"), &Text::toT },
 	{ "TA", T_("Tag"), &Text::toT },
+	{ "LC", T_("Locale"), &Text::toT },
 
 	{ "", _T(""), 0 }
 };
@@ -108,8 +112,8 @@ BaseType(parent, T_("Users"), IDH_USERS, IDI_USERS, false),
 grid(0),
 splitter(0),
 users(0),
-scroll(0),
 userInfo(0),
+infoBox(0),
 filter(usersColumns, COLUMN_LAST, [this] { updateList(); }),
 selected(-1)
 {
@@ -128,6 +132,11 @@ selected(-1)
 			userIcons->add(dwt::Icon(IDI_FAVORITE_USER_ON, size));
 			userIcons->add(dwt::Icon(IDI_RED_BALL, size));
 			userIcons->add(dwt::Icon(IDI_GREEN_BALL, size));
+			userIcons->add(dwt::Icon(IDI_DCPP, size));
+			userIcons->add(dwt::Icon(IDI_WHATS_THIS, size));
+			userIcons->add(dwt::Icon(IDI_USER_BOT, size));
+			userIcons->add(dwt::Icon(IDI_TRUSTED, size));
+			userIcons->add(dwt::Icon(IDI_DCPP_WARNING, size));
 		}
 
 		WidgetUsers::Seed cs(WinUtil::Seeds::table);
@@ -145,8 +154,17 @@ selected(-1)
 		users->setSmallImageList(userIcons);
 		users->onLeftMouseDown([this](const dwt::MouseEvent &me) { return handleClick(me); });
 
-		scroll = splitter->addChild(dwt::ScrolledContainer::Seed());
-		userInfo = scroll->addChild(Grid::Seed(0, 1));
+		userInfo = splitter->addChild(Grid::Seed(1,1));
+		userInfo->column(0).mode = GridInfo::FILL;
+		userInfo->column(0).align = GridInfo::STRETCH;
+		userInfo->row(0).mode = GridInfo::FILL;
+		userInfo->row(0).align = GridInfo::STRETCH;
+
+		auto group = userInfo->addChild(GroupBox::Seed(T_("User information")));
+		auto seed = WinUtil::Seeds::textBox;
+		seed.style &= ~ES_AUTOHSCROLL;
+		seed.style |= ES_MULTILINE | WS_VSCROLL | ES_READONLY;
+		infoBox = group->addChild(seed);
 	}
 
 	{
@@ -241,9 +259,39 @@ void UsersFrame::postClosing() {
 }
 
 UsersFrame::UserInfo::UserInfo(const UserPtr& u, bool visible) :
-UserInfoBase(HintedUser(u, Util::emptyString))
+UserInfoBase(HintedUser(u, Util::emptyString)),
+isUnknown(false),
+isBot(false),
+isNMDC(u->isNMDC()),
+isOnline(u->isOnline())
 {
+	ver = app = _("Unknown");
 	update(u, visible);
+}
+
+int UsersFrame::UserInfo::getStyle(HFONT& font, COLORREF& textColor, COLORREF& bgColor, int) const {
+	auto ident = ClientManager::getInstance()->getIdentities(user);
+	if(!ident.empty()) {
+	
+		auto style = ident[0].getStyle();
+
+		if(!style.font.empty()) {
+			auto cached = WinUtil::getUserMatchFont(style.font);
+			if(cached.get()) {
+				font = cached->handle();
+			}
+		}
+
+		if(style.textColor != -1) {
+			textColor = style.textColor;
+		}
+
+		if(style.bgColor != -1) {
+			bgColor = style.bgColor;
+		}
+	}
+
+	return CDRF_NEWFONT;
 }
 
 void UsersFrame::UserInfo::remove() {
@@ -251,6 +299,40 @@ void UsersFrame::UserInfo::remove() {
 }
 
 void UsersFrame::UserInfo::update(const UserPtr& u, bool visible) {
+	auto ident = ClientManager::getInstance()->getIdentities(u);
+
+	if(!ident.empty()) {
+		auto info = ident[0].getInfo();
+		for(size_t i = 1; i < ident.size(); ++i) {
+			for(auto& j: ident[i].getInfo()) {
+				info[j.first] = j.second;
+			}
+		}
+
+		if(ident[0].isBot() || ident[0].isHub() || ident[0].isHidden()) {
+			isBot = true;
+		}
+
+		auto application = ident[0].getApplication();
+		if(application.empty() && !isBot) {
+			isUnknown = true;
+		} else {
+			isUnknown = false;
+			const auto& idx = application.find(' ');
+			app = application.substr(0, idx);
+
+			if (app == DCTAGNAME)
+				app = DCAPPNAME; // lets make it look nicer in the table
+
+			ver = application.substr(idx + 1);
+		}
+
+		columns[COLUMN_CLIENT] = app.empty() ? T_("Bot") : Text::toT(app);
+		columns[COLUMN_VERSION] = ver.empty() ? T_("Bot") : Text::toT(ver);
+		columns[COLUMN_PROTOCOL] = isNMDC ? T_("NMDC") : T_("ADC");
+	}
+
+	isOnline = u->isOnline();
 	auto fu = FavoriteManager::getInstance()->getFavoriteUser(u);
 	if(fu) {
 		isFavorite = true;
@@ -260,14 +342,8 @@ void UsersFrame::UserInfo::update(const UserPtr& u, bool visible) {
 			return;
 		}
 		columns[COLUMN_DESCRIPTION] = Text::toT(fu->getDescription());
-
-		if(u->isOnline()) {
-			columns[COLUMN_SEEN] = T_("Online");
-			columns[COLUMN_HUB] = WinUtil::getHubNames(u->getCID()).first;
-		} else {
-			columns[COLUMN_SEEN] = fu->getLastSeen() > 0 ? Text::toT(Util::formatTime("%Y-%m-%d %H:%M", fu->getLastSeen())) : T_("Offline");
-			columns[COLUMN_HUB] = Text::toT(fu->getUrl());
-		}
+		columns[COLUMN_SEEN] = isOnline ? T_("Online") : fu->getLastSeen() > 0 ? Text::toT(Util::formatTime("%Y-%m-%d %H:%M", fu->getLastSeen())) : T_("Offline");
+		columns[COLUMN_HUB] = isOnline ?  WinUtil::getHubNames(u->getCID()).first : Text::toT(fu->getUrl());
 	} else {
 		isFavorite = false;
 		grantSlot = false;
@@ -276,7 +352,8 @@ void UsersFrame::UserInfo::update(const UserPtr& u, bool visible) {
 		if(!visible) {
 			return;
 		}
-		if(u->isOnline()) {
+
+		if(isOnline) {
 			columns[COLUMN_SEEN] = T_("Online");
 			columns[COLUMN_HUB] = WinUtil::getHubNames(u->getCID()).first;
 		} else {
@@ -336,17 +413,8 @@ void UsersFrame::updateUserInfo() {
 	if(selected == prevSelected)
 		return;
 
-	ScopedFunctor([&] { scroll->layout(); userInfo->layout(); userInfo->redraw(); });
-
-	HoldRedraw hold { userInfo };
-
-	// Clear old items
-	auto children = userInfo->getChildren<Control>();
-	auto v = std::vector<Control*>(children.first, children.second);
-
-	for_each(v.begin(), v.end(), [](Control *w) { w->close(); });
-
-	userInfo->clearRows();
+	infoText.clear();
+	infoBox->setText(T_("No information available"));
 
 	if(users->countSelected() != 1) {
 		return;
@@ -370,54 +438,34 @@ void UsersFrame::updateUserInfo() {
 		}
 	}
 
-	userInfo->addRow();
-	auto generalGroup = userInfo->addChild(GroupBox::Seed(T_("General information")));
-	auto generalGrid = generalGroup->addChild(Grid::Seed(0, 2));
-
 	for(auto f = fields; !f->field.empty(); ++f) {
 		auto i = info.find(f->field);
 		if(i != info.end()) {
-			generalGrid->addRow();
-			generalGrid->addChild(Label::Seed(f->name));
-			generalGrid->addChild(Label::Seed(f->convert(i->second)));
+			infoText += f->name + Text::toT(": ") + f->convert(i->second) + Text::toT(" \r\n");
 			info.erase(i);
 		}
 	}
 
 	for(auto& i: info) {
-		generalGrid->addRow();
-		generalGrid->addChild(Label::Seed(Text::toT(i.first)));
-		generalGrid->addChild(Label::Seed(Text::toT(i.second)));
+		infoText += Text::toT(i.first) + Text::toT(": ") + Text::toT(i.second) + Text::toT("\r\n");
 	}
 
 	auto queued = QueueManager::getInstance()->getQueued(user);
-
 	if(queued.first) {
-		userInfo->addRow();
-		auto queuedGroup = userInfo->addChild(GroupBox::Seed(T_("Pending downloads information")));
-		auto queuedGrid = queuedGroup->addChild(Grid::Seed(0, 2));
-
-		queuedGrid->addRow();
-		queuedGrid->addChild(Label::Seed(T_("Queued files")));
-		queuedGrid->addChild(Label::Seed(Text::toT(Util::toString(queued.first))));
-
-		queuedGrid->addRow();
-		queuedGrid->addChild(Label::Seed(T_("Queued bytes")));
-		queuedGrid->addChild(Label::Seed(Text::toT(Util::formatBytes(queued.second))));
+		infoText += Text::toT("--- ") + T_("Pending downloads") + Text::toT(" ---\r\n");
+		infoText += str(TF_("Queued files: %1%") % Text::toT(std::to_string(queued.first))) + Text::toT("\r\n");
+		infoText += str(TF_("Queued bytes: %1%") % Text::toT(Util::formatBytes(queued.second))) + Text::toT("\r\n");
 	}
 
 	auto files = UploadManager::getInstance()->getWaitingUserFiles(user);
 	if(!files.empty()) {
-		userInfo->addRow();
-		auto uploadsGroup = userInfo->addChild(GroupBox::Seed(T_("Pending uploads information")));
-		auto uploadsGrid = uploadsGroup->addChild(Grid::Seed(0, 2));
-
-		for(auto& i: files) {
-			uploadsGrid->addRow();
-			uploadsGrid->addChild(Label::Seed(T_("Filename")));
-			uploadsGrid->addChild(Label::Seed(Text::toT(i)));
+		infoText += Text::toT("--- ") + T_("Pending uploads") + Text::toT(" ---\r\n");
+		for(auto& i : files) {
+			infoText += T_("Filename:") + Text::toT(" ") + Text::toT(i) + Text::toT("\r\n");
 		}
 	}
+
+	infoBox->setText(infoText);
 }
 
 void UsersFrame::handleDescription() {

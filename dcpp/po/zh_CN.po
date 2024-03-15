@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2023-06-17 10:59+0200\n"
+"POT-Creation-Date: 2024-03-14 22:49+0100\n"
 "PO-Revision-Date: 2012-10-19 07:10+0000\n"
 "Last-Translator: comet <Unknown>\n"
 "Language-Team: Simplified Chinese <zh_CN@li.org>\n"
-"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
 "X-Launchpad-Export-Date: 2018-11-11 22:49+0000\n"
 "X-Generator: Launchpad (build 18816)\n"
 
@@ -204,16 +204,16 @@ msgstr ""
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1674
+#: dcpp/QueueManager.cpp:1668
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "CRC32 出错(SFV-Check)"
 
-#: dcpp/QueueManager.cpp:1665
+#: dcpp/QueueManager.cpp:1659
 #, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "CRC32 不一致 (SFV-Check): %1%"
 
-#: dcpp/CryptoManager.cpp:566
+#: dcpp/CryptoManager.cpp:372
 #, boost-format
 msgid "Certificate verification for %1% failed with error: %2%"
 msgstr ""
@@ -341,15 +341,15 @@ msgstr "下载队列"
 #: dcpp/ShareManager.cpp:794
 #, boost-format
 msgid ""
-"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
-"%3%"
+"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: %"
+"3%"
 msgstr "重复文件将不会被共享：%1% (大小： %2% B) 重复匹配： %3%"
 
 #: dcpp/DirectoryListing.cpp:195 dcpp/DirectoryListing.cpp:220
 msgid "Duplicate item in the file list"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:678 dcpp/QueueManager.cpp:682
+#: dcpp/QueueManager.cpp:672 dcpp/QueueManager.cpp:676
 #, boost-format
 msgid "Duplicate source: %1%"
 msgstr "重复的源：%1%"
@@ -369,18 +369,19 @@ msgid "Error creating hash data file: %1%"
 msgstr "生成哈希数据文件出错：%1%"
 
 #: dcpp/BZUtils.cpp:34 dcpp/BZUtils.cpp:55 dcpp/BZUtils.cpp:63
-#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:72 dcpp/ZUtils.cpp:99 dcpp/ZUtils.cpp:109
+#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:69 dcpp/ZUtils.cpp:93
+#: dcpp/ZUtils.cpp:103
 msgid "Error during compression"
 msgstr "压缩过程发生错误"
 
 #: dcpp/BZUtils.cpp:75 dcpp/BZUtils.cpp:97 dcpp/BZUtils.cpp:100
-#: dcpp/CryptoManager.cpp:717 dcpp/CryptoManager.cpp:736
-#: dcpp/CryptoManager.cpp:750 dcpp/ZUtils.cpp:123 dcpp/ZUtils.cpp:148
-#: dcpp/ZUtils.cpp:162
+#: dcpp/CryptoManager.cpp:523 dcpp/CryptoManager.cpp:542
+#: dcpp/CryptoManager.cpp:556 dcpp/ZUtils.cpp:117 dcpp/ZUtils.cpp:142
+#: dcpp/ZUtils.cpp:156
 msgid "Error during decompression"
 msgstr "解压缩出错"
 
-#: dcpp/CryptoManager.cpp:184
+#: dcpp/CryptoManager.cpp:164
 msgid "Error generating certificate"
 msgstr "生成证书发生错误"
 
@@ -421,15 +422,15 @@ msgstr "获取外部IP失败"
 msgid "Failed to initialize the %1% interface"
 msgstr "初始化%1%接口失败"
 
-#: dcpp/CryptoManager.cpp:433
+#: dcpp/CryptoManager.cpp:267
 msgid "Failed to load certificate file"
 msgstr "读取证书文件出错"
 
-#: dcpp/CryptoManager.cpp:441
+#: dcpp/CryptoManager.cpp:275
 msgid "Failed to load private key"
 msgstr "读取密钥失败"
 
-#: dcpp/CryptoManager.cpp:454
+#: dcpp/CryptoManager.cpp:288
 #, boost-format
 msgid "Failed to load trusted certificate from %1%"
 msgstr "从%1%加载证书失败"
@@ -455,7 +456,7 @@ msgid ""
 "port)"
 msgstr "socks服务器UDP回应失败(检查socks服务器的地址和端口)"
 
-#: dcpp/QueueManager.cpp:665
+#: dcpp/QueueManager.cpp:659
 msgid "File already exists at the target location"
 msgstr "目标位置文件已存在"
 
@@ -502,7 +503,7 @@ msgstr "完成hashing：%1% (%2%)"
 msgid "Full tree does not match TTH root"
 msgstr "已下载的“树”不匹配于 TTH root"
 
-#: dcpp/CryptoManager.cpp:422
+#: dcpp/CryptoManager.cpp:256
 msgid "Generated new TLS certificate"
 msgstr "生成新 TLS 证书"
 
@@ -575,7 +576,7 @@ msgstr "无效的搜索类型名称"
 msgid "Invalid size"
 msgstr "无效的尺寸"
 
-#: dcpp/QueueManager.cpp:652 dcpp/QueueManager.cpp:657
+#: dcpp/QueueManager.cpp:646 dcpp/QueueManager.cpp:651
 msgid ""
 "Invalid target file (missing directory, check default download directory "
 "setting)"
@@ -602,7 +603,7 @@ msgstr "丢失 %1% 信赖"
 msgid "More bytes written than requested"
 msgstr "写入的字节数超过请求的"
 
-#: dcpp/CryptoManager.cpp:173
+#: dcpp/CryptoManager.cpp:153
 msgid "No certificate file chosen"
 msgstr "未选择证书文件"
 
@@ -610,7 +611,7 @@ msgstr "未选择证书文件"
 msgid "No directory specified"
 msgstr "没有指定目录"
 
-#: dcpp/CryptoManager.cpp:170
+#: dcpp/CryptoManager.cpp:150
 msgid "No private key file chosen"
 msgstr "未选择密钥文件"
 
@@ -709,8 +710,8 @@ msgstr "Socks代理鉴权失败 (用户名/密码错误?)"
 #: dcpp/MappingManager.cpp:203
 #, boost-format
 msgid ""
-"Successfully created port mappings (Transfers: %1%, Encrypted transfers: "
-"%2%, Search: %3%) on the %4% device with the %5% interface"
+"Successfully created port mappings (Transfers: %1%, Encrypted transfers: %"
+"2%, Search: %3%) on the %4% device with the %5% interface"
 msgstr ""
 "在%4%设备的%5% 接口上创建端口映射成功（传输：%1%，加密传输：%2%，搜索：%3%）"
 
@@ -726,21 +727,21 @@ msgid ""
 "Successfully removed port mappings from the %1% device with the %2% interface"
 msgstr "在%1%设备的%2% 接口上删除端口映射成功"
 
-#: dcpp/CryptoManager.cpp:665
+#: dcpp/CryptoManager.cpp:471
 #, boost-format
 msgid "Supplied KeyPrint %1% did not match %2%."
 msgstr ""
 
-#: dcpp/CryptoManager.cpp:663
+#: dcpp/CryptoManager.cpp:469
 msgid "Supplied KeyPrint did not match any certificate."
 msgstr ""
 
-#: dcpp/CryptoManager.cpp:424
+#: dcpp/CryptoManager.cpp:258
 #, boost-format
 msgid "TLS disabled, failed to generate certificate: %1%"
 msgstr "TLS已禁用，获取证书失败：%1%"
 
-#: dcpp/CryptoManager.cpp:414
+#: dcpp/CryptoManager.cpp:248
 msgid "TLS disabled, no certificate file set"
 msgstr "禁用 TLS，未设置证书文件"
 
@@ -760,7 +761,7 @@ msgstr "TTH冲突"
 msgid "Target file is missing or wrong size"
 msgstr "目标文件丢失或尺寸错误"
 
-#: dcpp/QueueManager.cpp:645
+#: dcpp/QueueManager.cpp:639
 msgid "Target filename too long"
 msgstr "目标文件名太长"
 
@@ -770,7 +771,7 @@ msgid ""
 "encrypted transfers will be disabled"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1508
+#: dcpp/QueueManager.cpp:1502
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -839,12 +840,12 @@ msgstr "不忽略"
 msgid "Unable to create thread"
 msgstr "不能建立线程"
 
-#: dcpp/QueueManager.cpp:942
+#: dcpp/QueueManager.cpp:936
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%) nor to rename to %4% (%5%)"
 msgstr "无法移动 %1% 到 %2% (%3%) 或无法重命名为 %4% (%5%)"
 
-#: dcpp/QueueManager.cpp:939
+#: dcpp/QueueManager.cpp:933
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%); renamed to %4%"
 msgstr "无法移动 %1% 到 %2% (%3%) ；重命名为 %4%"
@@ -855,7 +856,7 @@ msgid ""
 "Unable to open %1% port(s); connectivity settings must be configured manually"
 msgstr "无法打开%1%端口；手动配置必须连接信息"
 
-#: dcpp/QueueManager.cpp:1118
+#: dcpp/QueueManager.cpp:1112
 #, boost-format
 msgid "Unable to open filelist: %1%"
 msgstr "无法打开文件列表：%1%"

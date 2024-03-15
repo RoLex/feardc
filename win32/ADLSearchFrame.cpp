@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -330,8 +330,8 @@ void ADLSearchFrame::addEntry(ADLSearch& search, int index, bool scroll) {
 		search.isRegEx() ? T_("Yes") : T_("No"),
 		Text::toT(search.SourceTypeToString(search.sourceType)),
 		Text::toT(search.destDir),
-		(search.minFileSize >= 0) ? Text::toT(Util::toString(search.minFileSize)) + _T(" ") + Text::toT(search.SizeTypeToString(search.typeFileSize)) : Util::emptyStringT,
-		(search.maxFileSize >= 0) ? Text::toT(Util::toString(search.maxFileSize)) + _T(" ") + Text::toT(search.SizeTypeToString(search.typeFileSize)) : Util::emptyStringT
+		(search.minFileSize >= 0) ? Text::toT(std::to_string(search.minFileSize)) + _T(" ") + Text::toT(search.SizeTypeToString(search.typeFileSize)) : Util::emptyStringT,
+		(search.maxFileSize >= 0) ? Text::toT(std::to_string(search.maxFileSize)) + _T(" ") + Text::toT(search.SizeTypeToString(search.typeFileSize)) : Util::emptyStringT
 	}, 0, index);
 	if(index == -1)
 		index = itemCount;

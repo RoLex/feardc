@@ -4,10 +4,10 @@ eval 'exec perl -S $0 ${1+"$@"}'
 
 # po4a-gettextize -- convert an original file to a PO file
 #
-# Copyright 2002-2020 by SPI, inc.
+# Copyright 2002-2023 by SPI, inc.
 #
 # This program is free software; you can redistribute it and/or modify it
-# under the terms of GPL (see COPYING).
+# under the terms of GPL v2.0 or later (see COPYING).
 
 =encoding UTF-8
 
@@ -95,7 +95,8 @@ List the documentation formats understood by po4a.
 =item B<-k> B<--keep-temps>
 
 Keep the temporary master and localized POT files built before merging.
-This can be useful to understand why these files get desynchronized, leading to gettextization problems
+This can be useful to understand why these files get desynchronized, leading
+to gettextization problems.
 
 =item B<-V>, B<--version>
 
@@ -170,7 +171,7 @@ the box, building a correct PO file is a matter of seconds. Otherwise, you will
 soon understand why this process has such an ugly name :) Even so,
 gettextization often remains faster than translating everything again. I
 gettextized the French translation of the whole Perl documentation in one day
-despite the I<many> synchronization issues. Given the amount of text (2Mb of
+despite the I<many> synchronization issues. Given the amount of text (2MB of
 original text), restarting the translation without first salvaging the old
 translations would have required several months of work. In addition, this grunt
 work is the price to pay to get the comfort of po4a. Once converted, the
@@ -197,7 +198,7 @@ salvage the most of the previous translation:
 =item
 
 Remove all extra content of the translations, such as the section giving credits
-to the translators. They should be added separately to B<po4a> as addendas (see
+to the translators. They should be added separately to B<po4a> as addenda (see
 L<po4a(7)>).
 
 =item
@@ -285,7 +286,7 @@ correctly.
 =head2 Running B<po4a> for the first time
 
 The easiest way to setup po4a is to write a B<po4a.conf> configuration file, and
-use the integrated po4a program (B<po4a-updatepo> and B<po4a-translate> are
+use the integrated B<po4a> program (B<po4a-updatepo> and B<po4a-translate> are
 deprecated). Please check the "CONFIGURATION FILE" Section in L<po4a(1)>
 documentation for more details.
 
@@ -328,14 +329,14 @@ L<po4a(7)>.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2002-2022 by SPI, inc.
+Copyright 2002-2023 by SPI, inc.
 
 This program is free software; you may redistribute it and/or modify it
-under the terms of GPL (see the COPYING file).
+under the terms of GPL v2.0 or later (see the COPYING file).
 
 =cut
 
-use 5.006;
+use 5.16.0;
 use strict;
 use warnings;
 
@@ -347,9 +348,7 @@ use Locale::Po4a::Common;
 
 use Pod::Usage qw(pod2usage);
 
-our %debug = (
-    'encoding' => 0,
-);
+our %debug = ( 'encoding' => 0, );
 
 Locale::Po4a::Common::textdomain('po4a');
 
@@ -407,23 +406,6 @@ sub gettextize {
         $please_fail = 1;
     }
 
-    if ( $poorig->get_charset =~ /^utf-8$/i ) {
-        $potrans->to_utf8;
-        $pores->set_charset("UTF-8");
-    } else {
-        my $charset = $potrans->get_charset();
-        $charset = "UTF-8" if $charset eq "CHARSET";
-        $pores->set_charset($charset);
-    }
-    print "Po character sets:\n"
-      . "  original="
-      . $poorig->get_charset . "\n"
-      . "  translated="
-      . $potrans->get_charset . "\n"
-      . "  result="
-      . $pores->get_charset . "\n"
-      if $debug{'encoding'};
-
     for (
         my ( $o, $t ) = ( 0, 0 ) ;
         $o < $poorig->count_entries_doc() && $t < $potrans->count_entries_doc() ;
@@ -437,8 +419,8 @@ sub gettextize {
 
         #       print STDERR "Matches [[$orig]]<<$trans>>\n";
 
-        my ( $reforig,  $reftrans )  = ( $poorig->{po}{$orig}{'reference'}, $potrans->{po}{$trans}{'reference'} );
-        my ( $typeorig, $typetrans ) = ( $poorig->type_doc($o),             $potrans->type_doc($t) );
+        my ( $reforig, $reftrans ) = ( $poorig->{po}{$orig}{'reference'}, $potrans->{po}{$trans}{'reference'} );
+        my ( $typeorig, $typetrans ) = ( $poorig->type_doc($o), $potrans->type_doc($t) );
 
         #
         # Make sure the type of both string exist
@@ -510,7 +492,6 @@ sub gettextize {
     return $pores;
 }
 
-
 sub show_version {
     Locale::Po4a::Common::show_version("po4a-gettextize");
     exit 0;
@@ -568,11 +549,15 @@ foreach (@options) {
     }
 }
 
-if (scalar @locfile == 0) {
-    die wrap_msg(gettext("You must provide the same amount of master files and localized files to synchronize them, ".
-                         "as po4a-gettextize is intended to synchronize master files and previously existing translations. ".
-                         "If just want to extract POT files of your master files, please use po4a-updatepo. ".
-                         "Please note that the most convenient way of using po4a is to write a po4a.conf file and use the integrated po4a(1) program."))
+if ( scalar @locfile == 0 ) {
+    die wrap_msg(
+        gettext(
+                "You must provide the same amount of master files and localized files to synchronize them, "
+              . "as po4a-gettextize is intended to synchronize master files and previously existing translations. "
+              . "If just want to extract POT files of your master files, please use po4a-updatepo. "
+              . "Please note that the most convenient way of using po4a is to write a po4a.conf file and use the integrated po4a(1) program."
+        )
+    );
 }
 
 # Check file existence
@@ -592,14 +577,7 @@ my ( $mastertt, $transtt ) = ( Locale::Po4a::Chooser::new( $type, %opts ), Local
 
 # Parse master file forcing conversion to utf if it's not in ascii
 foreach my $file (@masterfile) {
-    $mastertt->read( $file, $file );
-}
-$mastertt->{TT}{utf_mode} = 1;
-if ( $mastertt->{TT}{ascii_input} ) {
-    $mastertt->detected_charset('ascii');
-} elsif ( defined($mastchar) ) {
-    $mastertt->detected_charset($mastchar);
-    $mastertt->{TT}{po_in}->set_charset($mastchar);
+    $mastertt->read( $file, $file, $mastchar // '' );
 }
 $mastertt->parse;
 
@@ -611,13 +589,8 @@ $mastertt->parse;
 # Let's merge the two transtractor files
 
 foreach my $file (@locfile) {
-    $transtt->read( $file, $file );
+    $transtt->read( $file, $file, $locchar );
 }
-
-# We force the conversion to utf if the master document wasn't in ascii
-$transtt->{TT}{utf_mode} = !$mastertt->{TT}{ascii_input};
-$transtt->detected_charset($locchar);
-$transtt->{TT}{po_in}->set_charset($locchar);
 $transtt->parse;
 
 if ($keep_temps) {
@@ -625,8 +598,7 @@ if ($keep_temps) {
     $transtt->getpoout()->write("po4atemp.localized.po");
     print wrap_msg(
         dgettext(
-            "po4a",
-            "Temporary master and localized POT files dumped to po4atemp.master.po and po4atemp.localized.po"
+            "po4a", "Temporary master and localized POT files dumped to po4atemp.master.po and po4atemp.localized.po"
         )
     );
 }

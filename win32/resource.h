@@ -90,6 +90,7 @@
 #define IDI_INCREMENT 184
 #define IDI_DECREMENT 185
 #define IDI_REMOVEQUEUE 186
+#define IDI_DCPP_WARNING 187
 
 // Stuff that uses multiple id's
 

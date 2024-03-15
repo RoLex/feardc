@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -59,14 +59,14 @@ PublicHubsFrame::HubInfo::HubInfo(const HubEntry* entry_, const tstring& statusT
 	columns[COLUMN_STATUS] = statusText;
 	columns[COLUMN_NAME] = Text::toT(entry->getName());
 	columns[COLUMN_DESCRIPTION] = Text::toT(entry->getDescription());
-	columns[COLUMN_USERS] = Text::toT(Util::toString(entry->getUsers()));
+	columns[COLUMN_USERS] = Text::toT(std::to_string(entry->getUsers()));
 	columns[COLUMN_SERVER] = Text::toT(entry->getServer());
 	columns[COLUMN_COUNTRY] = Text::toT(entry->getCountry());
 	columns[COLUMN_SHARED] = Text::toT(Util::formatBytes(entry->getShared()));
 	columns[COLUMN_MINSHARE] = Text::toT(Util::formatBytes(entry->getMinShare()));
-	columns[COLUMN_MINSLOTS] = Text::toT(Util::toString(entry->getMinSlots()));
-	columns[COLUMN_MAXHUBS] = Text::toT(Util::toString(entry->getMaxHubs()));
-	columns[COLUMN_MAXUSERS] = Text::toT(Util::toString(entry->getMaxUsers()));
+	columns[COLUMN_MINSLOTS] = Text::toT(std::to_string(entry->getMinSlots()));
+	columns[COLUMN_MAXHUBS] = Text::toT(std::to_string(entry->getMaxHubs()));
+	columns[COLUMN_MAXUSERS] = Text::toT(std::to_string(entry->getMaxUsers()));
 	columns[COLUMN_RELIABILITY] = Text::toT(Util::toString(entry->getReliability()));
 	columns[COLUMN_RATING] = Text::toT(entry->getRating());
 }
@@ -376,14 +376,14 @@ string PublicHubsFrame::getText(const HubEntry& entry, size_t column) const {
 	switch(column) {
 	case COLUMN_NAME: return entry.getName();
 	case COLUMN_DESCRIPTION: return entry.getDescription();
-	case COLUMN_USERS: return Util::toString(entry.getUsers());
+	case COLUMN_USERS: return std::to_string(entry.getUsers());
 	case COLUMN_SERVER: return entry.getServer();
 	case COLUMN_COUNTRY: return entry.getCountry();
-	case COLUMN_SHARED: return Util::toString(entry.getShared());
-	case COLUMN_MINSHARE: return Util::toString(entry.getMinShare());
-	case COLUMN_MINSLOTS: return Util::toString(entry.getMinSlots());
-	case COLUMN_MAXHUBS: return Util::toString(entry.getMaxHubs());
-	case COLUMN_MAXUSERS: return Util::toString(entry.getMaxUsers());
+	case COLUMN_SHARED: return std::to_string(entry.getShared());
+	case COLUMN_MINSHARE: return std::to_string(entry.getMinShare());
+	case COLUMN_MINSLOTS: return std::to_string(entry.getMinSlots());
+	case COLUMN_MAXHUBS: return std::to_string(entry.getMaxHubs());
+	case COLUMN_MAXUSERS: return std::to_string(entry.getMaxUsers());
 	case COLUMN_RELIABILITY: return Util::toString(entry.getReliability());
 	case COLUMN_RATING: return entry.getRating();
 	default: return Util::emptyString;

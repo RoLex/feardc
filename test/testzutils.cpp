@@ -8,17 +8,18 @@
 
 #include <dcpp/File.h>
 #include <dcpp/FilteredFile.h>
-#include <dcpp/MD5Hash.h>
+#include <dcpp/HashValue.h>
+#include <dcpp/TigerHash.h>
 #include <dcpp/ZUtils.h>
 
 using namespace dcpp;
 
-auto md5(auto path) {
+auto tiger(auto path) {
 	File f(path, File::READ, File::OPEN);
-	MD5Hash h;
+	TigerHash h;
 	auto buf = f.read();
 	h.update(buf.c_str(), buf.size());
-	return MD5Value(h.finalize());
+	return TTHValue(h.finalize());
 }
 
 auto runTransfer(auto& inStream, auto& outStream, const size_t bufSize = 64 * 1024) {
@@ -49,7 +50,7 @@ TEST(testzutils, test_compression)
 		runTransfer(stream_in, f_out);
 	}
 
-	ASSERT_EQ(md5("test/data/gtest_h_compressed"), md5("test/data/out/gtest_h_compressed"));
+	ASSERT_EQ(tiger("test/data/gtest_h_compressed"), tiger("test/data/out/gtest_h_compressed"));
 }
 
 TEST(testzutils, test_decompression)
@@ -64,7 +65,7 @@ TEST(testzutils, test_decompression)
 		runTransfer(f_in, stream_out);
 	}
 
-	ASSERT_EQ(md5("test/gtest.h"), md5("test/data/out/gtest_h_decompressed"));
+	ASSERT_EQ(tiger("test/gtest.h"), tiger("test/data/out/gtest_h_decompressed"));
 }
 
 TEST(testzutils, test_compression_dynamically_disabled)
@@ -96,5 +97,5 @@ TEST(testzutils, test_compression_dynamically_disabled)
 		runTransfer(f_in, stream_out);
 	}
 
-	ASSERT_EQ(md5("test/data/test.dcext"), md5("test/data/out/compression_dynamically_disabled_decompressed"));
+	ASSERT_EQ(tiger("test/data/test.dcext"), tiger("test/data/out/compression_dynamically_disabled_decompressed"));
 }

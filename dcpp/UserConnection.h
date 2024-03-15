@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -113,7 +113,7 @@ public:
 	void myNick(const string& aNick) { send("$MyNick " + Text::fromUtf8(aNick, encoding) + '|'); }
 	void lock(const string& aLock, const string& aPk) { send ("$Lock " + aLock + " Pk=" + aPk + '|'); }
 	void key(const string& aKey) { send("$Key " + aKey + '|'); }
-	void direction(const string& aDirection, int aNumber) { send("$Direction " + aDirection + " " + Util::toString(aNumber) + '|'); }
+	void direction(const string& aDirection, int aNumber) { send("$Direction " + aDirection + " " + std::to_string(aNumber) + '|'); }
 	void fileLength(const string& aLength) { send("$FileLength " + aLength + '|'); }
 	void error(const string& aError) { send("$Error " + aError + '|'); }
 	void listLen(const string& aLength) { send("$ListLen " + aLength + '|'); }
@@ -122,12 +122,12 @@ public:
 		bool sendPos = queue_position > 0;
 
 		if (isSet(FLAG_NMDC)) {
-			send("$MaxedOut" + (sendPos ? (' ' + Util::toString(queue_position)) : Util::emptyString) + '|');
+			send("$MaxedOut" + (sendPos ? (' ' + std::to_string(queue_position)) : Util::emptyString) + '|');
 
 		} else {
 			AdcCommand cmd(AdcCommand::SEV_RECOVERABLE, AdcCommand::ERROR_SLOTS_FULL, "Slots full");
 			if(sendPos) {
-				cmd.addParam("QP", Util::toString(queue_position));
+				cmd.addParam("QP", std::to_string(queue_position));
 			}
 			send(cmd);
 		}

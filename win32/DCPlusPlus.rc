@@ -4,8 +4,6 @@
 1 24 "res/DCPlusPlus.manifest.x86"
 #elif defined x64
 1 24 "res/DCPlusPlus.manifest.x64"
-#elif defined ia64
-1 24 "res/DCPlusPlus.manifest.ia64"
 #else
 #error "manifest: unknown arch"
 #endif
@@ -102,14 +100,15 @@ IDI_PLAY                ICON                    "res/Play.ico"
 IDI_INCREMENT           ICON                    "res/Increment.ico"
 IDI_DECREMENT           ICON                    "res/Decrement.ico"
 IDI_REMOVEQUEUE         ICON                    "res/RemoveQueue.ico"
+IDI_DCPP_WARNING        ICON                    "res/Warning.ico"
 /////////////////////////////////////////////////////////////////////////////
 //
 // Version
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,3,1,0
- PRODUCTVERSION 1,3,1,0
+ FILEVERSION 1,3,2,0
+ PRODUCTVERSION 1,3,2,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -126,12 +125,12 @@ BEGIN
         BEGIN
             VALUE "Comments", "https://client.feardc.net"
             VALUE "FileDescription", "FearDC"
-            VALUE "FileVersion", "1, 3, 1, 0"
+            VALUE "FileVersion", "1, 3, 2, 0"
             VALUE "InternalName", "FearDC"
-            VALUE "LegalCopyright", "Copyright 2001-2022 Jacek Sieka"
+            VALUE "LegalCopyright", "Copyright 2001-2024 Jacek Sieka"
             VALUE "OriginalFilename", "FearDC.exe"
             VALUE "ProductName", "FearDC"
-            VALUE "ProductVersion", "1, 3, 1, 0"
+            VALUE "ProductVersion", "1, 3, 2, 0"
         END
     END
     BLOCK "VarFileInfo"

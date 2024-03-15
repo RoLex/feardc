@@ -1,7 +1,7 @@
 # Locale::Po4a::Po -- manipulation of PO files
 #
 # This program is free software; you may redistribute it and/or modify it
-# under the terms of GPL (see COPYING).
+# under the terms of GPL v2.0 or later (see COPYING).
 
 ############################################################################
 # Modules and declarations
@@ -71,7 +71,7 @@ content. If set to B<newlines>, po4a will only split the msgid and msgstr after
 newlines in the content. If set to B<no>, po4a will not wrap the po file at all.
 The reference comments are always wrapped by the gettext tools that we use internally.
 
-Note that this option has no impact on how the msgid and msgstr are wrapped, ie
+Note that this option has no impact on how the msgid and msgstr are wrapped, i.e.
 on how newlines are added to the content of these strings.
 
 =item B<--msgid-bugs-address> I<email@address>
@@ -116,7 +116,7 @@ use Locale::Po4a::TransTractor;
 # Try to use a C extension if present.
 eval("bootstrap Locale::Po4a::Po $Locale::Po4a::TransTractor::VERSION");
 
-use 5.006;
+use 5.16.0;
 use strict;
 use warnings;
 
@@ -225,7 +225,6 @@ sub initialize {
     $self->{options}{'package-name'}       = "PACKAGE";
     $self->{options}{'package-version'}    = "VERSION";
     $self->{options}{'wrap-po'}            = 76;
-    $self->{options}{'pot-charset'}        = "UTF-8";
     $self->{options}{'pot-language'}       = "";
 
     foreach my $opt ( keys %$options ) {
@@ -260,14 +259,14 @@ sub initialize {
         $self->{counter} = {};
     }
 
-    $self->{po}        = ();
-    $self->{count}     = 0;                          # number of msgids in the PO
+    $self->{po}               = ();
+    $self->{count}            = 0;                   # number of msgids in the PO
                                                      # count_doc: number of strings in the document
                                                      # (duplicate strings counted multiple times)
-    $self->{count_doc} = 0;
-    $self->{gettextize_types} = (); # Type of each msgid found in the doc, in order
-    # We cannot use {$msgid}{'type'} as a type because for duplicate entries, the type is overwritten.
-    # So we have to copy the same info to this separate array, which is accessed through type_doc()
+    $self->{count_doc}        = 0;
+    $self->{gettextize_types} = ();                  # Type of each msgid found in the doc, in order
+        # We cannot use {$msgid}{'type'} as a type because for duplicate entries, the type is overwritten.
+        # So we have to copy the same info to this separate array, which is accessed through type_doc()
     $self->{header_comment} =
         " SOME DESCRIPTIVE TITLE\n"
       . " Copyright (C) YEAR "
@@ -296,13 +295,11 @@ sub initialize {
           . "Language: "
           . $self->{options}{'pot-language'} . "\n"
           . "MIME-Version: 1.0\n"
-          . "Content-Type: text/plain; charset="
-          . $self->{options}{'pot-charset'} . "\n"
+          . "Content-Type: text/plain; charset=UTF-8\n"
           . "Content-Transfer-Encoding: 8bit\n"
     );
 
-    $self->{encoder} = find_encoding("UTF-8");
-    $self->{footer}  = [];
+    $self->{footer} = [];
 
     # To make stats about gettext hits
     $self->stats_clear();
@@ -321,39 +318,73 @@ sub read {
     my $filename = shift
       or croak wrap_mod( "po4a::po", dgettext( "po4a", "Please provide a non-null filename" ) );
 
+    my $charset = shift // 'UTF-8';
+    $charset = 'UTF-8' if $charset eq "CHARSET";
+    warn "Read $filename with encoding: $charset" if $debug{'encoding'};
+
+    my $checkvalidity = shift // 1;
+
     my $lang = basename($filename);
     $lang =~ s/\.po$//;
     $self->{lang} = $lang;
 
-    my $cmd = "msgfmt" . $Config{_exe} . " --check-format --check-domain -o /dev/null " . $filename;
+    if ($checkvalidity) {   # We sometimes need to read a file even if it may be invalid (eg to test whether it's empty)
+        my $cmd = "msgfmt" . $Config{_exe} . " --check-format --check-domain -o /dev/null \"" . $filename . '"';
 
-    my $locale = $ENV{'LC_ALL'};
-    $ENV{'LC_ALL'} = "C";
-    my $out = qx/$cmd 2>&1/;
-    $ENV{'LC_ALL'} = $locale;
+        my $locale = $ENV{'LC_ALL'};
+        $ENV{'LC_ALL'} = "C";
+        my $out = qx/$cmd 2>&1/;
+        $ENV{'LC_ALL'} = $locale;
 
-    die wrap_msg( dgettext( "po4a", "Invalid po file %s:\n%s" ), $filename, $out )
-      unless ( $? == 0 );
+        die wrap_msg( dgettext( "po4a", "Invalid po file %s:\n%s" ), $filename, $out )
+          unless ( $? == 0 );
+    }
 
     my $fh;
     if ( $filename eq '-' ) {
         $fh = *STDIN;
     } else {
-        open $fh, "<$filename"
+        open( $fh, "<:encoding($charset)", $filename )
           or croak wrap_mod( "po4a::po", dgettext( "po4a", "Cannot read from %s: %s" ), $filename, $! );
     }
 
     ## Read paragraphs line-by-line
     my $pofile = "";
-    my $textline;
-    while ( defined( $textline = <$fh> ) ) {
+    while ( defined( my $textline = <$fh> ) ) {
         $pofile .= $textline;
     }
+    $pofile =~ s/\r\n/\n/sg;    # Reading a DOS-encoded file from Linux (native files are handled in all cases)
 
-    #    close INPUT
-    #        or croak (sprintf(dgettext("po4a",
-    #                                   "Cannot close %s after reading: %s"),
-    #                          $filename,$!)."\n");
+    # If we did not get the charset right, reload the file with the right one
+    if ( $pofile =~ /charset=(.*?)[\s\\]/ ) {
+        my $detected_charset = $1;
+
+        if ( $detected_charset ne $charset && uc($detected_charset) ne $charset && uc($detected_charset) ne 'CHARSET' )
+        {
+            warn "Reloading the PO file, changing the charset from '$charset' to '$detected_charset'"
+              if $debug{'encoding'};
+            $self->read( $filename, $detected_charset, $checkvalidity );
+            return;
+        }
+    }
+
+    if ( $pofile =~ m/^\N{BOM}/ ) {    # UTF-8 BOM detected
+        croak "BOM detected";
+        croak wrap_msg(
+            dgettext(
+                "po4a",
+                "The file %s starts with a BOM char indicating that its encoding is UTF-8, but you specified %s instead."
+            ),
+            $filename,
+            $charset
+        ) if ( uc($charset) ne 'UTF-8' );
+        $pofile =~ s/^\N{BOM}//;
+    }
+
+    if ( $filename ne '-' ) {
+        close $fh
+          or croak wrap_mod( "po4a::po", dgettext( "po4a", "Cannot close %s after reading: %s" ), $filename, $! );
+    }
 
     my $linenum = 0;
 
@@ -506,15 +537,30 @@ sub write {
             File::Path::mkpath( $dir, 0, 0755 )    # Croaks on error
               if ( length($dir) && !-e $dir );
         }
-        open $fh, ">$filename"
+        open( $fh, '>:encoding(UTF-8)', $filename )
           or croak wrap_mod( "po4a::po", dgettext( "po4a", "Cannot write to %s: %s" ), $filename, $! );
     }
 
     print $fh "" . format_comment( $self->{header_comment}, "" )
       if length( $self->{header_comment} );
 
+    # Force the encoding of PO files in UTF-8 on disk, because msgmerge can get messed up when mixing encodings
+    # See https://savannah.gnu.org/bugs/index.php?65104
+    my $header = $self->{header};
+    $header =~ /charset=([^\s\\]*)/i;
+    my $oldcharset = $1 // '';
+    warn sprintf(
+        dgettext(
+            "po4a",
+            "msgmerge suffers some bugs when PO files are not encoded in UTF-8; Recoding %s to UTF-8 (was %s) to circumvent the issue.\n"
+        ),
+        $filename,
+        $oldcharset
+    ) if $oldcharset ne 'UTF-8';
+    $header =~ s/charset=[^\s\\]*/charset=UTF-8/i;
+
     print $fh "msgid \"\"\n";
-    print $fh "msgstr " . quote_text( $self->{header}, $self->{options}{'wrap-po'} ) . "\n\n";
+    print $fh "msgstr " . quote_text( $header, $self->{options}{'wrap-po'} ) . "\n\n";
 
     my $buf_msgstr_plural;    # Used to keep the first msgstr of plural forms
     my $first = 1;
@@ -549,62 +595,32 @@ sub write {
 
         if ( exists $self->{po}{$msgid}{'plural'} ) {
             if ( $self->{po}{$msgid}{'plural'} == 0 ) {
-                if ( $self->get_charset =~ /^utf-8$/i ) {
-                    my $msgstr = Encode::decode_utf8( $self->{po}{$msgid}{'msgstr'} );
-                    $msgid = Encode::decode_utf8($msgid);
-                    $output .=
-                      Encode::encode_utf8( "msgid " . quote_text( $msgid, $self->{options}{'wrap-po'} ) . "\n" );
-                    $buf_msgstr_plural =
-                      Encode::encode_utf8( "msgstr[0] " . quote_text( $msgstr, $self->{options}{'wrap-po'} ) . "\n" );
-                } else {
-                    $output = "msgid " . quote_text( $msgid, $self->{options}{'wrap-po'} ) . "\n";
-                    $buf_msgstr_plural =
-                      "msgstr[0] " . quote_text( $self->{po}{$msgid}{'msgstr'}, $self->{options}{'wrap-po'} ) . "\n";
-                }
+                $output .= "msgid " . quote_text( $msgid, $self->{options}{'wrap-po'} ) . "\n";
+                $buf_msgstr_plural =
+                  "msgstr[0] " . quote_text( $self->{po}{$msgid}{'msgstr'}, $self->{options}{'wrap-po'} ) . "\n";
             } elsif ( $self->{po}{$msgid}{'plural'} == 1 ) {
 
                 # TODO: there may be only one plural form
-                if ( $self->get_charset =~ /^utf-8$/i ) {
-                    my $msgstr = Encode::decode_utf8( $self->{po}{$msgid}{'msgstr'} );
-                    $msgid = Encode::decode_utf8($msgid);
-                    $output =
-                      Encode::encode_utf8( "msgid_plural " . quote_text( $msgid, $self->{options}{'wrap-po'} ) . "\n" );
-                    $output .= $buf_msgstr_plural;
-                    $output .=
-                      Encode::encode_utf8( "msgstr[1] " . quote_text( $msgstr, $self->{options}{'wrap-po'} ) . "\n" );
-                    $buf_msgstr_plural = "";
-                } else {
-                    $output = "msgid_plural " . quote_text( $msgid, $self->{options}{'wrap-po'} ) . "\n";
-                    $output .= $buf_msgstr_plural;
-                    $output .=
-                      "msgstr[1] " . quote_text( $self->{po}{$msgid}{'msgstr'}, $self->{options}{'wrap-po'} ) . "\n";
-                }
+                $output = "msgid_plural " . quote_text( $msgid, $self->{options}{'wrap-po'} ) . "\n";
+                $output .= $buf_msgstr_plural;
+                $output .=
+                  "msgstr[1] " . quote_text( $self->{po}{$msgid}{'msgstr'}, $self->{options}{'wrap-po'} ) . "\n";
             } else {
                 die wrap_msg( dgettext( "po4a", "Cannot write PO files with more than two plural forms." ) );
             }
         } else {
-            if ( $self->get_charset =~ /^utf-8$/i ) {
-                my $msgstr = Encode::decode_utf8( $self->{po}{$msgid}{'msgstr'} );
-                $msgid = Encode::decode_utf8($msgid);
-                $output .= Encode::encode_utf8( "msgid " . quote_text( $msgid, $self->{options}{'wrap-po'} ) . "\n" );
-                $output .= Encode::encode_utf8( "msgstr " . quote_text( $msgstr, $self->{options}{'wrap-po'} ) . "\n" );
-            } else {
-                $output .= "msgid " . quote_text( $msgid, $self->{options}{'wrap-po'} ) . "\n";
-                $output .= "msgstr " . quote_text( $self->{po}{$msgid}{'msgstr'}, $self->{options}{'wrap-po'} ) . "\n";
-            }
+            $output .= "msgid " . quote_text( $msgid, $self->{options}{'wrap-po'} ) . "\n";
+            $output .= "msgstr " . quote_text( $self->{po}{$msgid}{'msgstr'}, $self->{options}{'wrap-po'} ) . "\n";
         }
 
         print $fh $output;
     }
     print $fh join( "\n\n", @{ $self->{footer} } ) if scalar @{ $self->{footer} };
 
-    #    print STDERR "$fh";
-    #    if ($filename ne '-') {
-    #        close $fh
-    #            or croak (sprintf(dgettext("po4a",
-    #                                       "Cannot close %s after writing: %s\n"),
-    #                              $filename,$!));
-    #    }
+    if ( $filename ne '-' ) {
+        close $fh
+          or croak wrap_mod( dgettext( "po4a", "Cannot close %s after writing: %s\n" ), $filename, $! );
+    }
 }
 
 =item write_if_needed($$)
@@ -893,29 +909,6 @@ sub filter {
     return $res;
 }
 
-=item to_utf8()
-
-Recodes to UTF-8 the PO's msgstrs. Does nothing if the charset is not
-specified in the PO file ("CHARSET" value), or if it's already UTF-8 or
-ASCII.
-
-=cut
-
-sub to_utf8 {
-    my $this    = shift;
-    my $charset = $this->get_charset();
-
-    unless ( $charset eq "CHARSET"
-        or $charset =~ /^ascii$/i
-        or $charset =~ /^utf-8$/i )
-    {
-        foreach my $msgid ( keys %{ $this->{po} } ) {
-            Encode::from_to( $this->{po}{$msgid}{'msgstr'}, $charset, "utf-8" );
-        }
-        $this->set_charset("UTF-8");
-    }
-}
-
 =back
 
 =head1 Functions to use a message catalog for translations
@@ -1009,13 +1002,7 @@ sub gettext {
     }
 
     if ( $opt{'wrap'} ) {
-        if ( $self->get_charset =~ /^utf-8$/i ) {
-            $res = Encode::decode_utf8($res);
-            $res = wrap( $res, $opt{'wrapcol'} || 76 );
-            $res = Encode::encode_utf8($res);
-        } else {
-            $res = wrap( $res, $opt{'wrapcol'} || 76 );
-        }
+        $res = wrap( $res, $opt{'wrapcol'} || 76 );
     }
 
     #    print STDERR "Gettext >>>$text<<<(escaped=$esc_text)=[[[$res]]]\n\n";
@@ -1196,12 +1183,6 @@ sub push_raw {
         #       } FIXME: do that iff the header isn't the default one.
         $self->{header}         = $msgstr;
         $self->{header_comment} = $comment;
-        my $charset = $self->get_charset;
-        if ( $charset ne "CHARSET" ) {
-            $self->{encoder} = find_encoding($charset);
-        } else {
-            $self->{encoder} = find_encoding("UTF-8");
-        }
         return;
     }
 
@@ -1241,12 +1222,14 @@ sub push_raw {
 
             if ($keep_conflict) {
                 if ( $self->{po}{$msgid}{'msgstr'} =~ m/^#-#-#-#-#  .*  #-#-#-#-#\\n/s ) {
-                    $msgstr = $self->{po}{$msgid}{'msgstr'} . "\\n#-#-#-#-#  $transref (type: $type)  #-#-#-#-#\\n" . $msgstr;
+                    $msgstr =
+                      $self->{po}{$msgid}{'msgstr'} . "\\n#-#-#-#-#  $transref (type: $type)  #-#-#-#-#\\n" . $msgstr;
                 } else {
                     $msgstr =
                         "#-#-#-#-#  "
                       . $self->{po}{$msgid}{'transref'}
-                      . " (type " . $self->{po}{$msgid}{'type'}
+                      . " (type "
+                      . $self->{po}{$msgid}{'type'}
                       . ")  #-#-#-#-#\\n"
                       . $self->{po}{$msgid}{'msgstr'} . "\\n"
                       . "#-#-#-#-#  $transref (type: $type)  #-#-#-#-#\\n"
@@ -1293,9 +1276,9 @@ sub push_raw {
     $self->{po}{$msgid}{'automatic'} = $automatic;
     $self->{po}{$msgid}{'previous'}  = $previous;
 
-    $self->{po}{$msgid}{pos_doc} = () unless (defined( $self->{po}{$msgid}{pos_doc}));
-    CORE::push( @{ $self->{po}{$msgid}{pos_doc} }, $self->{count_doc}++);
-    CORE::push( @{ $self->{gettextize_types} }, $type);
+    $self->{po}{$msgid}{pos_doc} = () unless ( defined( $self->{po}{$msgid}{pos_doc} ) );
+    CORE::push( @{ $self->{po}{$msgid}{pos_doc} }, $self->{count_doc}++ );
+    CORE::push( @{ $self->{gettextize_types} },    $type );
 
     unless ( defined( $self->{po}{$msgid}{'pos'} ) ) {
         $self->{po}{$msgid}{'pos'} = $self->{count}++;
@@ -1422,29 +1405,6 @@ sub get_charset() {
         return $1;
     } else {
         return "UTF-8";
-    }
-}
-
-=item set_charset($)
-
-This sets the character set of the PO header to the value specified in its
-first argument. If you never call this function (and no file with a specified
-character set is read), the default value is left to "UTF-8". This value
-doesn't change the behavior of this module, it's just used to fill that field
-in the header, and to return it in get_charset().
-
-=cut
-
-sub set_charset() {
-    my $self = shift;
-
-    my ( $newchar, $oldchar );
-    $newchar = shift;
-    $oldchar = $self->get_charset();
-
-    if ( $newchar ne $oldchar ) {
-        $self->{header} =~ s/$oldchar/$newchar/;
-        $self->{encoder} = find_encoding($newchar);
     }
 }
 

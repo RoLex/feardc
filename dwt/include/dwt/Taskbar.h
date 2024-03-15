@@ -1,7 +1,7 @@
 /*
   DC++ Widget Toolkit
 
-  Copyright (c) 2007-2022, Jacek Sieka
+  Copyright (c) 2007-2024, Jacek Sieka
 
   All rights reserved.
 
@@ -44,6 +44,8 @@ namespace dwt {
 class Taskbar {
 public:
 	void initTaskbar(WindowPtr window_);
+
+	void setOverlayIcon(ContainerPtr tab, const IconPtr& icon, const tstring& description);
 
 protected:
 	Taskbar();

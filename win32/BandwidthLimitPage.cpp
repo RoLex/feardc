@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -103,10 +103,10 @@ throttleTime(0)
 	for (int i = 0; i < 2; ++i) {
 		timeBound[i]->addValue(T_("Midnight"));
 		for (int j = 1; j < 12; ++j)
-			timeBound[i]->addValue(Text::toT(Util::toString(j) +" AM").c_str()); ///@todo use the user locale
+			timeBound[i]->addValue(Text::toT(std::to_string(j) +" AM").c_str()); ///@todo use the user locale
 	 	timeBound[i]->addValue(T_("Noon"));
 		for (int j = 1; j < 12; ++j)
-			timeBound[i]->addValue(Text::toT(Util::toString(j) +" PM").c_str()); ///@todo use the user locale
+			timeBound[i]->addValue(Text::toT(std::to_string(j) +" PM").c_str()); ///@todo use the user locale
 		timeBound[i]->setSelected(i?SETTING(BANDWIDTH_LIMIT_END):SETTING(BANDWIDTH_LIMIT_START));
 		timeBound[i]->setHelpId(IDH_SETTINGS_BWLIMIT_SECONDARY_ENABLE);
 	}

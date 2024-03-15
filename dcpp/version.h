@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,13 +20,13 @@
 #define APPNAME "FearDC"
 #define TAGNAME "FearDC"
 // don't forget to update the .rc file as well!
-#define VERSIONSTRING "1.3.1.0"
-#define VERSIONFLOAT 0.1310
+#define VERSIONSTRING "1.3.2.0"
+#define VERSIONFLOAT 0.1320
 
 #define DCAPPNAME "DC++"
 #define DCTAGNAME "++"
-#define DCVERSIONSTRING "0.880"
-#define DCVERSIONFLOAT 0.880
+#define DCVERSIONSTRING "0.881"
+#define DCVERSIONFLOAT 0.881
 
 namespace dcpp {
 extern const std::string fullVersionString;

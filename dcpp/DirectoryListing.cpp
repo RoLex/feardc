@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -337,7 +337,7 @@ void DirectoryListing::File::save(OutputStream& stream, string& indent, string& 
 	stream.write(LIT("<File Name=\""));
 	stream.write(SimpleXML::escape(getName(), tmp, true));
 	stream.write(LIT("\" Size=\""));
-	stream.write(Util::toString(getSize()));
+	stream.write(std::to_string(getSize()));
 	stream.write(LIT("\" TTH=\""));
 	tmp.clear();
 	stream.write(getTTH().toBase32(tmp));

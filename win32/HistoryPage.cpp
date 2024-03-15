@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -86,13 +86,13 @@ fl_recents_init(WindowManager::getInstance()->getMaxRecentItems(DirectoryListing
 		GridPtr cur = addSubGrid(grid->addChild(gs), 3);
 
 		hub_recents = addBox(cur, T_("Recent hubs"), IDH_SETTINGS_HISTORY_RECENT_HUBS);
-		hub_recents->setText(Text::toT(Util::toString(hub_recents_init)));
+		hub_recents->setText(Text::toT(std::to_string(hub_recents_init)));
 
 		pm_recents = addBox(cur, T_("Recent PMs"), IDH_SETTINGS_HISTORY_RECENT_PMS);
-		pm_recents->setText(Text::toT(Util::toString(pm_recents_init)));
+		pm_recents->setText(Text::toT(std::to_string(pm_recents_init)));
 
 		fl_recents = addBox(cur, T_("Recent file lists"), IDH_SETTINGS_HISTORY_RECENT_FLS);
-		fl_recents->setText(Text::toT(Util::toString(fl_recents_init)));
+		fl_recents->setText(Text::toT(std::to_string(fl_recents_init)));
 	}
 
 	gs.caption = T_("Search history");

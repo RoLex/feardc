@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,11 +18,15 @@
 #include "stdafx.h"
 #include "CrashLogger.h"
 
+#include <iostream>
+#include <fstream>
+
 #include <dcpp/Util.h>
 #include <dcpp/version.h>
 #include "WinUtil.h"
 
 namespace {
+	
 
 FILE* f;
 
@@ -252,7 +256,7 @@ string getType(Dwarf_Debug dbg, Dwarf_Die die, Dwarf_Error& error, bool recursin
 	return ret;
 }
 
-void getDebugInfo(string path, DWORD addr, string& file, int& line, int& column, string& function) {
+void getDebugInfo(string path, DWORD_PTR addr, string& file, int& line, int& column, string& function) {
 	if(path.empty())
 		return;
 	// replace the extension by "pdb".
@@ -430,7 +434,7 @@ void getDebugInfo(string path, DWORD addr, string& file, int& line, int& column,
 }
 
 /* although the 64-bit functions should just map to the 32-bit ones on a 32-bit OS, this seems to
-fail on XP. */
+fail when compiling the x86 build. */
 #ifndef _WIN64
 #define DWORD64 DWORD
 #define IMAGEHLP_LINE64 IMAGEHLP_LINE
@@ -465,12 +469,8 @@ inline void writeAppInfo() {
 	fprintf(f, "TTH: %S\n", WinUtil::tth.c_str());
 
 	// see also AboutDlg.cpp for similar tests.
-#ifdef __MINGW32__
-#ifdef HAVE_OLD_MINGW
-	fputs("Compiled with MinGW's GCC " __VERSION__, f);
-#else
+#ifdef __MINGW64_VERSION_MAJOR
 	fputs("Compiled with MinGW-w64's GCC " __VERSION__, f);
-#endif
 #elif defined(_MSC_VER)
 	fprintf(f, "Compiled with MS Visual Studio %d", _MSC_VER);
 #else
@@ -513,11 +513,85 @@ inline void writePlatformInfo() {
 
 #ifndef NO_BACKTRACE
 
+inline DWORD_PTR getDefaultBaseAddress(void) {
+
+	// Open our own EXE image for reading
+	char filePath[MAX_PATH];
+	::GetModuleFileNameA(nullptr, filePath, MAX_PATH);
+
+	std::ifstream file(filePath, std::ios::binary);
+	if (!file) return 0;
+    
+	// Read the DOS header
+	IMAGE_DOS_HEADER dosHeader;
+	file.read((char*)&dosHeader, sizeof(dosHeader));
+
+	// Move to the offset of the COFF header
+	file.seekg(dosHeader.e_lfanew + sizeof(DWORD), std::ios::beg);
+
+	// Read the COFF header
+	IMAGE_FILE_HEADER fileHeader;
+	file.read((char*)&fileHeader, sizeof(fileHeader));
+
+	// Read the optional header
+	#ifdef _WIN64
+		IMAGE_OPTIONAL_HEADER64
+	#else   
+		IMAGE_OPTIONAL_HEADER32
+	#endif
+	optionalHeader;
+	file.read((char*)&optionalHeader, sizeof(optionalHeader));
+
+	file.close();
+
+	return optionalHeader.ImageBase;
+
+	/*
+    @todo try to replace the above solution to the following when we already target Win8+. 
+    If works then this one gets the address right from the process rather than from the image
+    using the API and without the need of loading huge .dlls and whatnot...
+
+    // Get the process image information
+    PROCESS_BASIC_INFORMATION pbi;
+    DWORD bytesReturned;
+    if (GetProcessInformation(process, ProcessBasicInformation, &pbi, sizeof(pbi), &bytesReturned)) {
+        // Read the DOS header from the process memory
+        IMAGE_DOS_HEADER dosHeader;
+        SIZE_T bytesRead = 0;
+        if (ReadProcessMemory(process, pbi.PebBaseAddress->Reserved3[1], &dosHeader, sizeof(dosHeader), &bytesRead) && bytesRead == sizeof(dosHeader)) {
+            // Read the COFF header from the process memory
+            IMAGE_FILE_HEADER fileHeader;
+            if (ReadProcessMemory(process, (LPBYTE)pbi.PebBaseAddress->Reserved3[1] + dosHeader.e_lfanew + sizeof(DWORD), &fileHeader, sizeof(fileHeader), &bytesRead) && bytesRead == sizeof(fileHeader)) {
+                // Read the optional header from the process memory
+                IMAGE_OPTIONAL_HEADER optionalHeader;
+                if (ReadProcessMemory(process, (LPBYTE)pbi.PebBaseAddress->Reserved3[1] + dosHeader.e_lfanew + sizeof(DWORD) + sizeof(IMAGE_FILE_HEADER), &optionalHeader, sizeof(optionalHeader), &bytesRead) && bytesRead == sizeof(optionalHeader)) {
+                    // Retrieve the default set image base address from the optional header
+                    return (DWORD_PTR)pbi.PebBaseAddress->Reserved3[1] + optionalHeader.ImageBase;
+                }
+            }
+        }
+    }
+
+    return 0;
+	*/
+    
+}
+
 inline void writeBacktrace(LPCONTEXT context) {
 	HANDLE const process = GetCurrentProcess();
 	HANDLE const thread = GetCurrentThread();
 
 #if defined(__MINGW32__)
+	/* Get the default image base address, the addresses in the debug symbols file are all relative to this.
+	   The linker has a default value set for both archs but it can vary between compiler versions and
+	   toolchain setups so let's just make sure we're using the real value for computing. */
+	DWORD_PTR defaultImageBase = getDefaultBaseAddress();
+
+	if(!defaultImageBase) {
+		fprintf(f, "Failed to get the default image base address\n");
+		return;
+	}
+
 	SymSetOptions(SYMOPT_DEFERRED_LOADS);
 #else
 	SymSetOptions(SYMOPT_DEFERRED_LOADS | SYMOPT_LOAD_LINES | SYMOPT_UNDNAME);
@@ -573,12 +647,21 @@ inline void writeBacktrace(LPCONTEXT context) {
 		fprintf(f, "%s: ", module.ModuleName);
 
 #if defined(__MINGW32__)
+		// @todo add check for pdb file format, skip DWARF read if we have a MS format symbols file (made by e.g. cv2pdb)
+		// to avoid printing errors to the crashlog
+
 		// read DWARF debugging info if available.
 		if(module.LoadedImageName[0] ||
-			// LoadedImageName is not always correctly filled in XP...
+			// LoadedImageName is not always correctly filled in XP... @todo test whether we can safely remove this
 			::GetModuleFileNameA(reinterpret_cast<HMODULE>(module.BaseOfImage), module.LoadedImageName, sizeof(module.LoadedImageName)))
 		{
-			getDebugInfo(module.LoadedImageName, frame.AddrPC.Offset, file, line, column, function);
+			DWORD_PTR dynamicOffset = 0;
+			if (defaultImageBase) {
+				//Correct the address with the offset to the possible dynamic base address if ASLR happened...
+				dynamicOffset = defaultImageBase - reinterpret_cast<DWORD_PTR>(module.BaseOfImage);
+			}
+			
+			getDebugInfo(module.LoadedImageName, frame.AddrPC.Offset + dynamicOffset, file, line, column, function);
 		}
 #endif
 
@@ -644,6 +727,7 @@ LONG WINAPI exceptionFilter(LPEXCEPTION_POINTERS info) {
 #endif
 
 		fputs("\nInformation about the crash has been written.\n", f);
+		fflush(f); //Make sure all the contents are written before the crash dialog appears
 		fclose(f);
 	}
 	return EXCEPTION_CONTINUE_SEARCH;

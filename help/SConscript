@@ -4,113 +4,129 @@
 # - Microsoft HTML Help Workshop
 #   <https://msdn.microsoft.com/en-us/library/ms670169.aspx>
 
-Import('dev')
+Import("dev")
 env = dev.env.Clone()
 
 import os
 from build_util import array_remove
 
 # static_HTMLs holds static (not dynamically generated) HTML sources
-static_HTMLs = Glob('*.html', strings=1)
+static_HTMLs = Glob("*.html", strings=1)
 static_HTMLs.sort()
-array_remove(static_HTMLs, 'changelog.html')
-array_remove(static_HTMLs, 'compile.html')
-array_remove(static_HTMLs, 'fdl.html')
+array_remove(static_HTMLs, "changelog.html")
+array_remove(static_HTMLs, "compile.html")
+array_remove(static_HTMLs, "fdl.html")
 
 # cshelp.h is included in resource.h, which in turn is included in the FearDC
 # source; hence, we generate it even when help files are not being compiled.
 from gen_cshelp import gen_cshelp
-env.Command('cshelp.h', static_HTMLs, Action(
-    lambda target, source, env: gen_cshelp(target, source),
-    'Generating $TARGET'
-))
-env.Depends('resource.h', 'cshelp.h')
 
-if not env['help']:
+env.Command(
+    "cshelp.h",
+    static_HTMLs,
+    Action(
+        lambda target, source, env: gen_cshelp(target, source), "Generating $TARGET"
+    ),
+)
+env.Depends("resource.h", "cshelp.h")
+
+if not env["help"]:
     Return()
 
-if not env['i18n']:
+if not env["i18n"]:
     Return()
 
-if env.WhereIs('perl') is None:
-    print('Perl is required to run po4a scripts, skipping help build')
+if env.WhereIs("perl") is None:
+    print("Perl is required to run po4a scripts, skipping help build")
     Return()
 
-env['asciidoc'] = dev.get_asciidoc()
-if env['asciidoc'] is None:
-    print('asciidoc is required to process Compile.txt, skipping help build')
+env["asciidoc"] = dev.get_asciidoc()
+if env["asciidoc"] is None:
+    print("asciidoc is required to process Compile.txt, skipping help build")
     Return()
 
 # fix hhc.exe reverse return value - UGLY - taken from the NSIS build system
-old_spawn = env['SPAWN']
+old_spawn = env["SPAWN"]
 
 
 def new_spawn(*args, **kw):
     result = old_spawn(*args, **kw)
-    if 'hhc' in args[3]:
+    if "hhc" in args[3]:
         return not result
     else:
         return result
-env['SPAWN'] = new_spawn
+
+
+env["SPAWN"] = new_spawn
 
 # generate changelog.html
 from gen_changelog import gen_changelog
-env.Command('changelog.html', ['#/changelog.txt', 'template.html'], Action(
-    gen_changelog,
-    'Generating $TARGET'
-))
+
+env.Command(
+    "changelog.html",
+    ["#/changelog.txt", "template.html"],
+    Action(gen_changelog, "Generating $TARGET"),
+)
 
 # generate compile.html
 from gen_compile import gen_compile
-env.Command('compile.html', ['#/Compile.txt', 'template.html'], Action(
-    gen_compile,
-    'Generating $TARGET'
-))
 
-if env['webhelp']:
+env.Command(
+    "compile.html",
+    ["#/Compile.txt", "template.html"],
+    Action(gen_compile, "Generating $TARGET"),
+)
+
+if env["webhelp"]:
     # copy static webhelp files
-    web_files = Glob('webhelp/*')
-    web_files.append('external.png')
-    web_files.append('office11.css')
-    web_files.append('style.css')
-    for f in Glob('#/res/*.ico'):
+    web_files = Glob("webhelp/*")
+    web_files.append("external.png")
+    web_files.append("office11.css")
+    web_files.append("style.css")
+    for f in Glob("#/res/*.ico"):
         web_files.append(f)
-    for f in Glob('#/res/*.png'):
+    for f in Glob("#/res/*.png"):
         web_files.append(f)
 
     for f in web_files:
         name = os.path.basename(str(f))
-        if name == 'htaccess':  # otherwise, SCons' Glob ignores it
-            name = '.htaccess'
-        env.Command('#/build/webhelp/' + name, f, Copy('$TARGET', '$SOURCE'))
+        if name == "htaccess":  # otherwise, SCons' Glob ignores it
+            name = ".htaccess"
+        env.Command("#/build/webhelp/" + name, f, Copy("$TARGET", "$SOURCE"))
 
 # define which source files need to be copied to the build directory
-CHM_sources = Glob('*.html')
-CHM_sources.append(File('DCPlusPlus.hhp'))
-CHM_sources.append(File('external.png'))
-CHM_sources.append(File('index.hhk'))
-CHM_sources.append(File('office11.css'))
-CHM_sources.append(File('resource.h'))
-CHM_sources.append(File('style.css'))
-CHM_sources += Glob('#/res/*.ico')
-CHM_sources += Glob('#/res/*.png')
+CHM_sources = Glob("*.html")
+CHM_sources.append(File("DCPlusPlus.hhp"))
+CHM_sources.append(File("external.png"))
+CHM_sources.append(File("index.hhk"))
+CHM_sources.append(File("office11.css"))
+CHM_sources.append(File("resource.h"))
+CHM_sources.append(File("style.css"))
+CHM_sources += Glob("#/res/*.ico")
+CHM_sources += Glob("#/res/*.png")
 CHM_sources.sort()
 
 # additional dependencies (that have to be built before the help file)
-CHM_dependencies = ['addendum.txt', 'cshelp.h']
+CHM_dependencies = ["addendum.txt", "cshelp.h"]
 
 from build_util import gen_po_name, get_lcid, nixify
 import filecmp
 from gen_toc import gen_toc
 from set_hhp_locale import set_hhp_locale
 
-po4a_path = Dir('#/po4a').abspath + '/'
-env['po4a_cmd'] = lambda prog, options: (
-    'perl -I"' + po4a_path + 'lib" "' + po4a_path + prog +
-    '" -f xhtml -o "translated=p<placeholder> p<placeholder><a>" '
+po4a_path = Dir("#/po4a").abspath + "/"
+env["po4a_cmd"] = lambda prog, options: (
+    'perl -I"'
+    + po4a_path
+    + 'lib" "'
+    + po4a_path
+    + prog
+    + '" -f xhtml -o "translated=p<placeholder> p<placeholder><a>" '
     '-o "untranslated=<untranslated> <untranslated><a> <untranslated><li>" '
-    '-o foldattributes -o "includessi=' + nixify(Dir('#/help').abspath) +
-    '/" -M utf-8 ' + options # -L utf-8
+    '-o foldattributes -o "includessi='
+    + nixify(Dir("#/help").abspath)
+    + '/" -M utf-8 ' # -L utf-8
+    + options
 )
 
 
@@ -120,161 +136,171 @@ def gen_CHM(target, source, env):
     # find the translation file
     po_node = None
     for node in source:
-        if node.path[-3:] == '.po' or node.path[-4:] == '.pot':
+        if node.path[-3:] == ".po" or node.path[-4:] == ".pot":
             po_node = node
             source.remove(node)
     if po_node is None:
-        print(
-            'No translation file found when trying to build ' +
-            str(target[0]) + '.'
-        )
+        print("No translation file found when trying to build " + str(target[0]) + ".")
         return 1
 
-    template = po_node.path[-4:] == '.pot'
+    template = po_node.path[-4:] == ".pot"
     if template:
-        lang = 'en-US'
+        lang = "en-US"
         lcid = 0x0409
     else:
-        lang = os.path.basename(po_node.path).replace('.po', '')
+        lang = os.path.basename(po_node.path).replace(".po", "")
         lcid = get_lcid(lang)
 
     # create the temporary build directory
-    build_dir = 'build/help/' + lang
-    build_path = build_dir + '/'
+    build_dir = "build/help/" + lang
+    build_path = build_dir + "/"
     env.Execute([Delete(build_dir), Mkdir(build_dir)])
 
-    if env['webhelp']:
+    if env["webhelp"]:
         # create the dir for localized web help files
-        web_dir = 'build/webhelp/' + lang.replace('_', '-')
+        web_dir = "build/webhelp/" + lang.replace("_", "-")
         env.Execute([Delete(web_dir), Mkdir(web_dir)])
 
     # translate translatable source files, copy the others
-    cmd = env['po4a_cmd']('po4a-translate', '--no-deprecation -p "' + nixify(str(po_node)) + '" -k 0')
+    cmd = env["po4a_cmd"]("po4a-translate", '--no-deprecation -p "' + nixify(str(po_node)) + '" -k 0')
     if not template:
-        cmd += ' -A utf-8 -a help/addendum.txt'
+        cmd += " -A utf-8 -a help/addendum.txt"
     for node in source:
         filename = os.path.basename(node.path)
-        if filename[-5:] == '.html' and filename not in [
-            'changelog.html',
-            'compile.html',
-            'fdl.html',
+        if filename[-5:] == ".html" and filename not in [
+            "changelog.html",
+            "compile.html",
+            "fdl.html",
         ]:
-            ret = env.Execute(Action(
-                cmd + ' -m "' + nixify(str(node)) + '" -l "' +
-                nixify(build_path) + filename + '"',
-                'Translating ' + str(node) + ' using ' + str(po_node)
-            ))
+            ret = env.Execute(
+                Action(
+                    cmd
+                    + ' -m "'
+                    + nixify(str(node))
+                    + '" -l "'
+                    + nixify(build_path)
+                    + filename
+                    + '"',
+                    "Translating " + str(node) + " using " + str(po_node),
+                )
+            )
         else:
             ret = env.Execute(Copy(build_dir, node))
         if ret:
             return ret
 
     # generate context-sensitive help files (cshelp.h and cshelp.rtf)
-    print('Generating ' + build_path + 'cshelp.h and ' + str(target[1]))
-    gen_cshelp(
-        [build_path + 'cshelp.h', str(target[1])],
-        Glob(build_path + '*.html')
-    )
+    print("Generating " + build_path + "cshelp.h and " + str(target[1]))
+    gen_cshelp([build_path + "cshelp.h", str(target[1])], Glob(build_path + "*.html"))
 
     # make sure the generated cshelp.h is the same as the vanilla one
-    if not filecmp.cmp(build_path + 'cshelp.h', 'help/cshelp.h'):
+    if not filecmp.cmp(build_path + "cshelp.h", "help/cshelp.h"):
         print(
-            'The generated cshelp.h file is not the same as the vanilla one; '
-            + str(target[0]) + ' won\'t be compiled.'
+            "The generated cshelp.h file is not the same as the vanilla one; "
+            + str(target[0])
+            + " won't be compiled."
         )
         env.Execute(Delete(target[1]))  # remove the wrong cshelp.rtf
         return 1
 
     if lcid != 0x0409:
         # edit the project file so it is set to the correct locale
-        set_hhp_locale(build_path + 'DCPlusPlus.hhp', lcid)
+        set_hhp_locale(build_path + "DCPlusPlus.hhp", lcid)
 
     # generate tables of contents
-    toc_targets = [build_path + 'toc.hhc']
-    print('Generating ' + toc_targets[0] + ' (HTML Help TOC)')
-    if env['webhelp']:
-        toc_targets.append(web_dir + '/toc.inc')
-        print('Generating ' + toc_targets[1] + ' (web help TOC)')
-    gen_toc(toc_targets, build_path + 'index.html', lcid)
+    toc_targets = [build_path + "toc.hhc"]
+    print("Generating " + toc_targets[0] + " (HTML Help TOC)")
+    if env["webhelp"]:
+        toc_targets.append(web_dir + "/toc.inc")
+        print("Generating " + toc_targets[1] + " (web help TOC)")
+    gen_toc(toc_targets, build_path + "index.html", lcid)
 
     # compile the CHM file in the build directory
-    CHM_path = build_path + 'DCPlusPlus.chm'
-    log_path = build_path + 'hhc.log'
-    HHP_path = build_path + 'DCPlusPlus.hhp'
-    ret = env.Execute(Action(
-        'hhc "' + HHP_path + '" > "' + log_path + '"',
-        'Compiling the ' + CHM_path + ' temporary help file; log output: ' +
-        log_path
-    ))
+    CHM_path = build_path + "DCPlusPlus.chm"
+    log_path = build_path + "hhc.log"
+    HHP_path = build_path + "DCPlusPlus.hhp"
+    ret = env.Execute(
+        Action(
+            'hhc "' + HHP_path + '" > "' + log_path + '"',
+            "Compiling the "
+            + CHM_path
+            + " temporary help file; log output: "
+            + log_path,
+        )
+    )
     if ret:
         return ret
 
     # copy the compiled file to its final target
     env.Execute(Copy(target[0], CHM_path))
 
-    if env['webhelp']:
+    if env["webhelp"]:
         # copy newly translated files to the webhelp dir
-        print('Copying web help files to ' + web_dir)
-        for file in Glob(build_path + '*.html'):
+        print("Copying web help files to " + web_dir)
+        for file in Glob(build_path + "*.html"):
             env.Execute(Copy(web_dir, file))
 
         # generate name.txt
-        name_file = File(web_dir + '/name.txt')
-        print('Generating ' + str(name_file))
+        name_file = File(web_dir + "/name.txt")
+        print("Generating " + str(name_file))
         if template:
-            open(str(name_file), 'w').write('English (United States)')
+            open(str(name_file), "w").write("English (United States)")
         else:
-            env['NAME_FILE'] = name_file
+            env["NAME_FILE"] = name_file
             gen_po_name(po_node, env)
 
     return ret
-env.Append(BUILDERS={'CHMBuild': Builder(action=Action(
-    gen_CHM,
-    'Compiling the $TARGET help file'
-))})
 
-hasHHC = env.WhereIs('hhc') is not None
+
+env.Append(
+    BUILDERS={
+        "CHMBuild": Builder(action=Action(gen_CHM, "Compiling the $TARGET help file"))
+    }
+)
+
+hasHHC = env.WhereIs("hhc") is not None
 
 
 def gen_pot(target, source, env):
     """Create the translation template."""
-    cmd = env['po4a_cmd'](
-        'po4a-updatepo',
-        '--no-deprecation '
+    cmd = env["po4a_cmd"](
+        "po4a-updatepo",
+        "--no-deprecation "
         '-o "package-name=dcpp-help" -o "copyright-holder=Jacek Sieka" '
         '-o "msgid-bugs-address=dcplusplus-devel@lists.sourceforge.net" '
-        '-p "' + nixify(str(target[0])) + '"'
+        '-p "' + nixify(str(target[0])) + '"',
     )
     for node in source:
         cmd += ' -m "' + nixify(str(node)) + '"'
     return env.Execute(cmd)
-potfile = File('po/dcpp-help.pot')
-env.Command(potfile, static_HTMLs, Action(
-    gen_pot,
-    'Extracting help texts to $TARGET'
-))
+
+
+potfile = File("po/dcpp-help.pot")
+env.Command(potfile, static_HTMLs, Action(gen_pot, "Extracting help texts to $TARGET"))
 
 # update .po's in help/po and compile translated help files
-po_list = Glob('po/*.po')
+po_list = Glob("po/*.po")
 for po_node in po_list:
     env.Precious(env.PoBuild(po_node, potfile))
     if hasHHC:
         target_path = (
-            dev.get_build_path('bin') + '/locale/' +
-            os.path.basename(po_node.path).replace('.po', '') + '/help/'
+            dev.get_build_path("bin")
+            + "/locale/"
+            + os.path.basename(po_node.path).replace(".po", "")
+            + "/help/"
         )
-        targets = [target_path + 'DCPlusPlus.chm', target_path + 'cshelp.rtf']
+        targets = [target_path + "DCPlusPlus.chm", target_path + "cshelp.rtf"]
         env.Depends(targets, CHM_dependencies)
         env.CHMBuild(targets, [CHM_sources, po_node])
 
 if not hasHHC:
-    print('hhc.exe not found, skipping chm build')
+    print("hhc.exe not found, skipping chm build")
     Return()
 
 # compile the main (untranslated) help file
-target_path = dev.get_build_path('bin') + '/'
-targets = [target_path + 'DCPlusPlus.chm', target_path + 'cshelp.rtf']
+target_path = dev.get_build_path("bin") + "/"
+targets = [target_path + "DCPlusPlus.chm", target_path + "cshelp.rtf"]
 env.Depends(targets, CHM_dependencies)
 ret = env.CHMBuild(targets, [CHM_sources, potfile])
 
-Return('ret')
+Return("ret")

@@ -1,7 +1,7 @@
 /*
   DC++ Widget Toolkit
 
-  Copyright (c) 2007-2022, Jacek Sieka
+  Copyright (c) 2007-2024, Jacek Sieka
 
   All rights reserved.
 
@@ -232,13 +232,11 @@ COLORREF Canvas::getPixel( const Point & coord )
 	return ::GetPixel( itsHdc, coord.x, coord.y );
 }
 
-#ifndef WINCE
 bool Canvas::extFloodFill( int x, int y, COLORREF color, bool fillTilColorFound )
 {
 	// Can't check for errors here since if no filling was done (which obviously is no error) it'll also  return 0
 	return ::ExtFloodFill( itsHdc, x, y, color, fillTilColorFound ? FLOODFILLBORDER : FLOODFILLSURFACE ) != FALSE;
 }
-#endif //!WINCE
 
 void Canvas::invert(const Region& region) {
 	::InvertRgn(handle(), region.handle());

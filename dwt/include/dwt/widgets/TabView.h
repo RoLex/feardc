@@ -1,7 +1,7 @@
 /*
   DC++ Widget Toolkit
 
-  Copyright (c) 2007-2022, Jacek Sieka
+  Copyright (c) 2007-2024, Jacek Sieka
 
   All rights reserved.
 
@@ -62,6 +62,7 @@ class TabView :
 	typedef std::function<void (const tstring&)> TitleChangedFunction;
 	typedef std::function<bool (const ScreenCoordinate&)> ContextMenuFunction;
 
+	using aspects::Caption<TabView>::setText;
 public:
 	/// Class type
 	typedef TabView ThisType;
@@ -165,7 +166,7 @@ private:
 	struct TCITEMEXTRA {
 		TCITEMHEADER tabItem;
 		TCITEMEXTRADATA data;
-	};
+	}; 
 
 	class Dropper;
 

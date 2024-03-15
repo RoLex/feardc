@@ -1,7 +1,7 @@
 /*
   DC++ Widget Toolkit
 
-  Copyright (c) 2007-2022, Jacek Sieka
+  Copyright (c) 2007-2024, Jacek Sieka
 
   All rights reserved.
 
@@ -63,8 +63,9 @@ void Button::setImage(IconPtr icon) {
 
 Point Button::getPreferredSize() {
 	SIZE size = { 0 };
-	if (!sendMessage(BCM_GETIDEALSIZE, 0, reinterpret_cast<LPARAM>(&size)))
+	if (!sendMessage(BCM_GETIDEALSIZE, 0, reinterpret_cast<LPARAM>(&size))) {
 		dwtassert(false, "Button: BCM_GETIDEALSIZE failed");
+	}
 	return Point(size.cx, size.cy);
 }
 

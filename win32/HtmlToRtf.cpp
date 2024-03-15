@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -198,7 +198,7 @@ tstring Parser::finalize() {
 Parser::Context::Context(dwt::RichTextBox* box, Parser& parser) {
 	// create a default context with the Rich Edit control's current formatting.
 	auto lf = box->getFont()->getLogFont();
-	font = parser.addFont("\\fnil\\fcharset" + Util::toString(lf.lfCharSet) + " " + Text::fromT(lf.lfFaceName));
+	font = parser.addFont("\\fnil\\fcharset" + std::to_string(lf.lfCharSet) + " " + Text::fromT(lf.lfFaceName));
 	fontSize = rtfFontSize(static_cast<float>(std::abs(lf.lfHeight)) / dwt::util::dpiFactor());
 	if(lf.lfWeight >= FW_BOLD) { setFlag(Bold); }
 	if(lf.lfItalic) { setFlag(Italic); }
@@ -220,8 +220,8 @@ tstring Parser::Context::getBegin() const {
 		}
 	}
 
-	ret += "\\f" + Util::toString(font) + "\\fs" + Util::toString(fontSize) +
-		"\\cf" + Util::toString(textColor) + "\\highlight" + Util::toString(bgColor);
+	ret += "\\f" + std::to_string(font) + "\\fs" + std::to_string(fontSize) +
+		"\\cf" + std::to_string(textColor) + "\\highlight" + std::to_string(bgColor);
 	if(isSet(Bold)) { ret += "\\b"; }
 	if(isSet(Italic)) { ret += "\\i"; }
 	if(isSet(Underlined)) { ret += "\\ul"; }
@@ -245,7 +245,7 @@ tstring Parser::Context::getEnd() const {
 
 size_t Parser::addFont(string&& font) {
 	auto ret = fonts.size();
-	fonts.push_back("{\\f" + Util::toString(ret) + move(font) + ";}");
+	fonts.push_back("{\\f" + std::to_string(ret) + move(font) + ";}");
 	return ret;
 }
 
@@ -258,9 +258,9 @@ int Parser::rtfFontSize(float px) {
 
 size_t Parser::addColor(COLORREF color) {
 	auto ret = colors.size();
-	colors.push_back("\\red" + Util::toString(GetRValue(color)) +
-		"\\green" + Util::toString(GetGValue(color)) +
-		"\\blue" + Util::toString(GetBValue(color)) + ";");
+	colors.push_back("\\red" + std::to_string(GetRValue(color)) +
+		"\\green" + std::to_string(GetGValue(color)) +
+		"\\blue" + std::to_string(GetBValue(color)) + ";");
 	return ret;
 }
 

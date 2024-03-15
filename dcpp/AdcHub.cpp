@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -395,7 +395,7 @@ void AdcHub::handle(AdcCommand::RCM, AdcCommand& c) noexcept {
 	// If they respond with their own, symmetric, RNT command, both
 	// clients call ConnectionManager::adcConnect.
 	send(AdcCommand(AdcCommand::CMD_NAT, u->getIdentity().getSID(), AdcCommand::TYPE_DIRECT).
-		addParam(protocol).addParam(Util::toString(sock->getLocalPort())).addParam(token));
+		addParam(protocol).addParam(std::to_string(sock->getLocalPort())).addParam(token));
 }
 
 void AdcHub::handle(AdcCommand::CMD, AdcCommand& c) noexcept {
@@ -610,7 +610,7 @@ void AdcHub::handle(AdcCommand::NAT, AdcCommand& c) noexcept {
 	}
 
 	// Trigger connection attempt sequence locally ...
-	auto localPort = Util::toString(sock->getLocalPort());
+	auto localPort = std::to_string(sock->getLocalPort());
 	dcdebug("triggering connecting attempt in NAT: remote port = %s, local port = %d\n", port.c_str(), sock->getLocalPort());
 	ConnectionManager::getInstance()->adcConnect(*u, port, localPort, BufferedSocket::NAT_CLIENT, token, secure);
 
@@ -646,7 +646,7 @@ void AdcHub::handle(AdcCommand::RNT, AdcCommand& c) noexcept {
 
 	// Trigger connection attempt sequence locally
 	dcdebug("triggering connecting attempt in RNT: remote port = %s, local port = %d\n", port.c_str(), sock->getLocalPort());
-	ConnectionManager::getInstance()->adcConnect(*u, port, Util::toString(sock->getLocalPort()), BufferedSocket::NAT_SERVER, token, secure);
+	ConnectionManager::getInstance()->adcConnect(*u, port, std::to_string(sock->getLocalPort()), BufferedSocket::NAT_SERVER, token, secure);
 }
 
 void AdcHub::handle(AdcCommand::ZON, AdcCommand& c) noexcept {
@@ -792,7 +792,7 @@ void AdcHub::search(int aSizeMode, int64_t aSize, int aFileType, const string& a
 	/* token format: [per-hub unique id] "/" [per-search actual token]
 	this allows easily knowing which hub a search was sent on when parsing a search result,
 	whithout having to bother maintaining a list of sent tokens. */
-	c.addParam("TO", Util::toString(getUniqueId()) + "/" + aToken);
+	c.addParam("TO", std::to_string(getUniqueId()) + "/" + aToken);
 
 	if(aFileType == SearchManager::TYPE_TTH) {
 		c.addParam("TR", aString);
@@ -995,11 +995,11 @@ void AdcHub::infoImpl() {
 	addParam(lastInfoMap, c, "SL", Util::toString(SETTING(SLOTS)));
 	addParam(lastInfoMap, c, "FS", Util::toString(UploadManager::getInstance()->getFreeSlots()));
 	addParam(lastInfoMap, c, "SS", ShareManager::getInstance()->getShareSizeString());
-	addParam(lastInfoMap, c, "SF", Util::toString(ShareManager::getInstance()->getSharedFiles()));
+	addParam(lastInfoMap, c, "SF", std::to_string(ShareManager::getInstance()->getSharedFiles()));
 	addParam(lastInfoMap, c, "EM", get(Email));
-	addParam(lastInfoMap, c, "HN", Util::toString(counts[COUNT_NORMAL]));
-	addParam(lastInfoMap, c, "HR", Util::toString(counts[COUNT_REGISTERED]));
-	addParam(lastInfoMap, c, "HO", Util::toString(counts[COUNT_OP]));
+	addParam(lastInfoMap, c, "HN", std::to_string(counts[COUNT_NORMAL]));
+	addParam(lastInfoMap, c, "HR", std::to_string(counts[COUNT_REGISTERED]));
+	addParam(lastInfoMap, c, "HO", std::to_string(counts[COUNT_OP]));
 	addParam(lastInfoMap, c, "AP", TAGNAME);
 	addParam(lastInfoMap, c, "VE", VERSIONSTRING);
 	addParam(lastInfoMap, c, "AW", Util::getAway() ? "1" : Util::emptyString);
@@ -1015,7 +1015,7 @@ void AdcHub::infoImpl() {
 	if (limit > 0) {
 		addParam(lastInfoMap, c, "US", Util::toString(limit * 1024));
 	} else {
-		addParam(lastInfoMap, c, "US", Util::toString((long)(Util::toDouble(SETTING(UPLOAD_SPEED))*1024*1024/8)));
+		addParam(lastInfoMap, c, "US", std::to_string((long)(Util::toDouble(SETTING(UPLOAD_SPEED))*1024*1024/8)));
 	}
 
 	addParam(lastInfoMap, c, "LC", Util::getIETFLang());

@@ -1,7 +1,7 @@
 /*
   DC++ Widget Toolkit
 
-  Copyright (c) 2007-2022, Jacek Sieka
+  Copyright (c) 2007-2024, Jacek Sieka
 
   SmartWin++
 
@@ -41,16 +41,7 @@
 
 namespace dwt {
 
-#if defined UNICODE || defined _UNICODE
-
 typedef std::wstring tstring;
-
-#else  // UNICODE
-
-typedef std::string tstring;
-
-#endif //UNICODE
-
 typedef std::vector<tstring> tstring_vector;
 
 }

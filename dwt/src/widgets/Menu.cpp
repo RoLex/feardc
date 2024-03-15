@@ -1,7 +1,7 @@
 /*
   DC++ Widget Toolkit
 
-  Copyright (c) 2007-2022, Jacek Sieka
+  Copyright (c) 2007-2024, Jacek Sieka
 
   SmartWin++
 
@@ -292,8 +292,9 @@ tstring Menu::getText(unsigned index) const {
 void Menu::setText(unsigned index, const tstring& text) {
 	MENUITEMINFO mi = { sizeof(MENUITEMINFO), MIIM_STRING };
 	mi.dwTypeData = (TCHAR*) text.c_str();
-	if ( ::SetMenuItemInfo( itsHandle, index, TRUE, & mi ) == FALSE )
+	if ( ::SetMenuItemInfo( itsHandle, index, TRUE, & mi ) == FALSE ) {
 		dwtWin32DebugFail("Couldn't set item info in Menu::setText");
+	}
 }
 
 void Menu::setTitle(const tstring& title, const IconPtr& icon, bool drawSidebar /* = false */) {
@@ -408,7 +409,7 @@ bool Menu::handlePainting(DRAWITEMSTRUCT& drawInfo, ItemDataWrapper& wrapper) {
 
 	bool highlight = (isSelected || isHighlighted) && !isDisabled;
 
-	int part, state;
+	int part = 0, state = 0;
 	if(theme) {
 		int part_bg, state_bg;
 		if(popup && !wrapper.isTitle) {

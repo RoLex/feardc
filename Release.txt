@@ -50,7 +50,7 @@ Update version numbers in:
 4) Changelog update
 -------------------
 
-Set the first line of the ``changelog.txt`` file to refer to the new version. Example::
+Set the first line of the ``changelog.txt`` file to refer to the new version. Example:
 
     -- 0.851 2015-04-06 --
 
@@ -58,7 +58,7 @@ Set the first line of the ``changelog.txt`` file to refer to the new version. Ex
 5) Tag the repository
 ---------------------
 
-Tag the repository according to the version number. Example::
+Tag the repository according to the version number. Example:
 
     hg tag 0.860
 
@@ -70,11 +70,11 @@ Ensure your repo is clean (no ``.sconsign.dblite`` file; no ``build`` directory)
 also that all the files required but cannot be added to the repo are all present 
 (e.g. HTMLHelp includes and libs) then:
 
-- Build the x64 version::
+- Build the x64 version:
 
     scons arch=x64 mode=release
 
-- Build the rest (the x64 version built above will be included in generated packages)::
+- Build the rest (the x64 version built above will be included in generated packages):
 
     scons distro=1
 

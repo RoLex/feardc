@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -173,13 +173,13 @@ ACFrame::ACFrame(TabViewPtr parent) :
 
 		cs.caption = T_("Export settings");
 		saveChanged = options->addChild(cs);
-		saveChanged->setHelpId(IDH_ABOUT_CONFIG_EXPORT);
+		saveChanged->setHelpId(IDH_ABOUT_CONFIG_EXPORT); 
 		saveChanged->onClicked([this] { exportSettings(); });
 		addWidget(saveChanged);
 
 		cs.caption = T_("Refresh settings");
 		refresh = options->addChild(cs);
-		refresh->setHelpId(IDH_ABOUT_CONFIG_REFRESH);
+		refresh->setHelpId(IDH_ABOUT_CONFIG_REFRESH); 
 		refresh->onClicked([this] { fillList(); });
 		addWidget(refresh);
 	}
@@ -187,7 +187,7 @@ ACFrame::ACFrame(TabViewPtr parent) :
 	initStatus();
 
 	addAccel(0, VK_RETURN, [this] { modify(); });
-	addAccel(FALT, 'I', [this] { filter.text->setFocus(); });
+	addAccel(FALT, 'I', [this] { filter.text->setFocus(); }); 
 	initAccels();
 
 	layout();
@@ -198,7 +198,7 @@ ACFrame::ACFrame(TabViewPtr parent) :
 	settings->setFocus();
 
 	orgSize = static_cast<int>(settings->size());
-	status->setText(STATUS_STATUS, Text::toT(Util::toString(orgSize)) + T_(" settings loaded"));
+	status->setText(STATUS_STATUS, Text::toT(std::to_string(orgSize)) + T_(" settings loaded"));
 }
 
 ACFrame::~ACFrame() {
@@ -223,7 +223,7 @@ void ACFrame::postClosing() {
 
 void ACFrame::updateStatus(tstring text) {
 	if(orgSize > visibleSettings) {
-		status->setText(STATUS_SETTINGS, Text::toT(Util::toString(visibleSettings)) + T_(" Matched setting(s) found"));
+		status->setText(STATUS_SETTINGS, Text::toT(std::to_string(visibleSettings)) + T_(" Matched setting(s) found"));
 	} else {
 		status->setText(STATUS_SETTINGS, T_("No filtering terms specified"));
 	}
@@ -242,7 +242,7 @@ void ACFrame::modify() {
 	//determine whether to call the ParamDlg or not in the event of a bool value
 	if(setting->type == SettingsManager::TYPE_BOOL) {
 		auto iValue = Util::toInt(Text::fromT(value));
-		setting->update(Text::toT(Util::toString(abs(iValue - 1))));
+		setting->update(Text::toT(std::to_string(abs(iValue - 1))));
 		settings->update(setting);
 		return;
 	}

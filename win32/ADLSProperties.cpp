@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -85,12 +85,12 @@ bool ADLSProperties::handleInitDialog() {
 		group = cur->addChild(GroupBox::Seed(T_("Min FileSize")));
 		group->setHelpId(IDH_ADLSP_MIN_FILE_SIZE);
 		minSize = group->addChild(WinUtil::Seeds::Dialog::intTextBox);
-		minSize->setText((search.minFileSize > 0) ? Text::toT(Util::toString(search.minFileSize)) : Util::emptyStringT);
+		minSize->setText((search.minFileSize > 0) ? Text::toT(std::to_string(search.minFileSize)) : Util::emptyStringT);
 
 		group = cur->addChild(GroupBox::Seed(T_("Max FileSize")));
 		group->setHelpId(IDH_ADLSP_MAX_FILE_SIZE);
 		maxSize = group->addChild(WinUtil::Seeds::Dialog::intTextBox);
-		maxSize->setText((search.maxFileSize > 0) ? Text::toT(Util::toString(search.maxFileSize)) : Util::emptyStringT);
+		maxSize->setText((search.maxFileSize > 0) ? Text::toT(std::to_string(search.maxFileSize)) : Util::emptyStringT);
 	}
 
 	group = grid->addChild(GroupBox::Seed(T_("Size Type")));

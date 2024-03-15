@@ -1,16 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="https://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link type="text/css" rel="stylesheet" href="office11.css" />
-<link type="text/css" rel="stylesheet" href="style.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link type="text/css" rel="stylesheet" href="office11.css"/>
+<link type="text/css" rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
-<h1>
-<img src="DCPlusPlus.ico" width="16" height="16" alt="About:config" />
-About:config
-</h1>
+	<h1>
+		<img src="DCPlusPlus.ico" width="16" height="16" alt="About:config"/>
+		About:config
+	</h1>
 
 <p>This is an internal settings list debugging and testing tool intended for mainly developers and application testers.</p>
 <p><b>Warning:</b> this tool provides bulk access to the low level application settings; incorrect use can be harmful to the stability, security and performance of the application. Please be cautious and use the tool only if you know what you're doing!</p>
@@ -18,51 +18,51 @@ About:config
 
 <h2>Settings list columns</h2>
 <dl style="margin-left: 40px;">
-<dt>Setting name</dt>
-<dd>Internal name of the setting.</dd>
-<dt>Status</dt>
-<dd>Shows whether the setting has its default value or has been changed (user set).</dd>
-<dt>Type</dt>
-<dd>Data type of the setting.</dd>
-<dt>Value</dt>
-<dd>The setting's current value in the in-memory settings database.</dd>
+  <dt>Setting name</dt>
+  <dd>Internal name of the setting.</dd>
+  <dt>Status</dt>
+  <dd>Shows whether the setting has its default value or has been changed (user set).</dd>
+  <dt>Type</dt>
+  <dd>Data type of the setting.</dd>
+  <dt>Value</dt>
+  <dd>The setting's current value in the in-memory settings database.</dd>
 </dl>
 
 <h2>Settings list context menu commands</h2>
 <dl style="margin-left: 40px;">
-<dt>Modify / Toggle</dt>
-<dd>This function toggles the value of the selected setting if its type is boolean; for any other type it opens an input dialog where the new setting value can be entered.</dd>
-<dt>Copy Name</dt>
-<dd>Copies the selected internal setting name to the clipboard.</dd>
-<dt>Copy Value</dt>
-<dd>Copies the selected setting's current value to the clipboard.</dd>
-<dt>Set Default Value</dt>
-<dd>Sets the selected setting's value to the default one.</dd>
+  <dt>Modify / Toggle</dt>
+  <dd>This function toggles the value of the selected setting if its type is boolean; for any other type it opens an input dialog where the new setting value can be entered.</dd>
+  <dt>Copy Name</dt>
+  <dd>Copies the selected internal setting name to the clipboard.</dd>
+  <dt>Copy Value</dt>
+  <dd>Copies the selected setting's current value to the clipboard.</dd>
+  <dt>Set Default Value</dt>
+  <dd>Sets the selected setting's value to the default one.</dd>
 </dl>
 
 <h2>Filters (bottom)</h2>
 <p>The settings list can be filtered by any data displayed in any column of the settings list. The following options are available:</p>
 <dl style="margin-left: 40px;">
-<dt>Filter</dt>
-<dd>
-<p cshelp="IDH_ABOUT_CONFIG_FILTER">
+  <dt>Filter</dt>
+  <dd>
+	<p cshelp="IDH_ABOUT_CONFIG_FILTER">
 	<!--#include virtual="window_list_filter.inc" -->
-</p>
-</dd>
+	</p>
+  </dd>
 </dl>
 
 <h2>Options button set (bottom right)</h2>
 <dl style="margin-left: 40px;">
-<dt>Modify value</dt>
-<dd cshelp="IDH_ABOUT_CONFIG_MODIFY">This function toggles the value of the selected setting if its type is boolean; for any other type it opens an input dialog where the new setting value can be entered.</dd>
-<dt>Set default value</dt>
-<dd cshelp="IDH_ABOUT_CONFIG_SET_DEFAULT">Sets the selected setting's value to the default one.</dd>
-<dt>Save settings now</dt>
-<dd cshelp="IDH_ABOUT_CONFIG_SAVE">Saves the current set of settings to the persistent settings file (DCPlusPlus.xml).</dd>
-<dt>Export settings</dt>
-<dd cshelp="IDH_ABOUT_CONFIG_EXPORT">Exports the current set of settings to a specifc persistent settings file anywhere in the file system.</dd>
-<dt>Refresh settings</dt>
-<dd cshelp="IDH_ABOUT_CONFIG_REFRESH">Reloads all the settings from the persistent settings file (DCPlusPlus.xml).</dd>
+  <dt>Modify value</dt>
+  <dd cshelp="IDH_ABOUT_CONFIG_MODIFY">This function toggles the value of the selected setting if its type is boolean; for any other type it opens an input dialog where the new setting value can be entered.</dd>
+  <dt>Set default value</dt>
+  <dd cshelp="IDH_ABOUT_CONFIG_SET_DEFAULT">Sets the selected setting's value to the default one.</dd>
+  <dt>Save settings now</dt>
+  <dd cshelp="IDH_ABOUT_CONFIG_SAVE">Saves the current set of settings to the persistent settings file (DCPlusPlus.xml).</dd>
+  <dt>Export settings</dt>
+  <dd cshelp="IDH_ABOUT_CONFIG_EXPORT">Exports the current set of settings to a specifc persistent settings file anywhere in the file system.</dd>
+  <dt>Refresh settings</dt>
+  <dd cshelp="IDH_ABOUT_CONFIG_REFRESH">Reloads all the settings from the persistent settings file (DCPlusPlus.xml).</dd>
 </dl>
 
 </body>

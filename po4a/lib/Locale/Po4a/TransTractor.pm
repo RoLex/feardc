@@ -5,17 +5,17 @@ require Exporter;
 package Locale::Po4a::TransTractor;
 use DynaLoader;
 
-use 5.006;
+use 5.16.0;
 use strict;
 use warnings;
 
 use subs qw(makespace);
 use vars qw($VERSION @ISA @EXPORT);
-$VERSION = "0.69";
+$VERSION = "0.71";
 @ISA     = qw(DynaLoader);
 @EXPORT  = qw(new process translate
   read write readpo writepo
-  getpoout setpoout get_out_charset handle_yaml);
+  getpoout setpoout get_in_charset get_out_charset handle_yaml);
 
 # Try to use a C extension if present.
 eval("bootstrap Locale::Po4a::TransTractor $VERSION");
@@ -25,10 +25,6 @@ use Locale::Po4a::Po;
 use Locale::Po4a::Common;
 
 use File::Path;    # mkdir before write
-
-use Encode;
-use Encode::Guess;
-
 use File::Spec;
 
 =encoding UTF-8
@@ -216,8 +212,7 @@ List of filenames where we should read the input document.
 
 =item file_in_charset ($)
 
-Charset used in the input document (if it isn't specified, it will try
-to detect it from the input document).
+Charset used in the input document (if it isn't specified, use UTF-8).
 
 =item file_out_name ($)
 
@@ -225,8 +220,7 @@ Filename where we should write the output document.
 
 =item file_out_charset ($)
 
-Charset used in the output document (if it isn't specified, it will use
-the PO file charset).
+Charset used in the output document (if it isn't specified, use UTF-8).
 
 =item po_in_name (@)
 
@@ -267,33 +261,28 @@ Sets the debugging.
 =cut
 
 sub process {
-    ## Determine if we were called via an object-ref or a classname
     my $self = shift;
-
-    ## Any remaining arguments are treated as initial values for the
-    ## hash that is used to represent this object.
+    ## Parameters are passed as an hash to avoid long and error-prone parameter lists
     my %params = @_;
 
-    # Build the args for new()
-    my %newparams = ();
+    # Parameter checking
     foreach ( keys %params ) {
-        next
-          if ( $_ eq 'po_in_name'
+        confess "Unexpected parameter to process(): $_. Please report that bug."
+          unless ( $_ eq 'po_in_name'
             || $_ eq 'po_out_name'
             || $_ eq 'file_in_name'
             || $_ eq 'file_in_charset'
             || $_ eq 'file_out_name'
             || $_ eq 'file_out_charset'
             || $_ eq 'addendum'
-            || $_ eq 'addendum_charset' );
-        $newparams{$_} = $params{$_};
+            || $_ eq 'addendum_charset'
+            || $_ eq 'srcdir'
+            || $_ eq 'destdir'
+            || $_ eq 'calldir' );
     }
 
-    $self->detected_charset( $params{'file_in_charset'} ) if defined $params{'file_in_charset'};
-    $self->{TT}{'file_out_charset'} = $params{'file_out_charset'};
-    if ( length( $self->{TT}{'file_out_charset'} ) ) {
-        $self->{TT}{'file_out_encoder'} = find_encoding( $self->{TT}{'file_out_charset'} );
-    }
+    $self->{TT}{'file_in_charset'}  = $params{'file_in_charset'}  // 'UTF-8';
+    $self->{TT}{'file_out_charset'} = $params{'file_out_charset'} // 'UTF-8';
     $self->{TT}{'addendum_charset'} = $params{'addendum_charset'};
 
     our ( $destdir, $srcdir, $calldir ) = ( $params{'destdir'}, $params{'srcdir'}, $params{'calldir'} );
@@ -329,7 +318,7 @@ sub process {
         my $infile = _input_file($file);
         print STDERR wrap_mod( "po4a::transtractor::process", "Read document $infile" )
           if $self->debug();
-        $self->read( $infile, $file );
+        $self->read( $infile, $file, $params{'file_in_charset'} );
     }
     print STDERR wrap_mod( "po4a::transtractor::process", "Call parse()" ) if $self->debug();
     $self->parse();
@@ -345,7 +334,7 @@ sub process {
         my $outfile = _output_file( $params{'file_out_name'} );
         print STDERR wrap_mod( "po4a::transtractor::process", "Write document $outfile" )
           if $self->debug();
-        $self->write($outfile);
+        $self->write( $outfile, $self->{TT}{'file_out_charset'} );
     }
     if ( defined $params{'po_out_name'} ) {
         my $outfile = _output_file( $params{'po_out_name'} );
@@ -403,13 +392,6 @@ sub new {
         $self->{TT}{debug} = $options{'debug'};
     }
 
-    # Input document is in ascii until we prove the opposite (in read())
-    $self->{TT}{ascii_input} = 1;
-
-    # We try not to use utf unless it's forced from the outside (in case the
-    # document isn't in ascii)
-    $self->{TT}{utf_mode} = 0;
-
     return $self;
 }
 
@@ -437,41 +419,59 @@ function when you're done with packing input files into the document.
 =cut
 
 sub read() {
-    my $self = shift;
-    my ( $filename, $refname ) = ( shift, shift );
-    confess "read() requires a filename. Please report that bug."
-      unless defined $filename;
-    $refname //= $filename;
-    my $linenum = 0;
+    my $self     = shift;
+    my $filename = shift or confess "Cannot write to a file without filename";
+    my $refname  = shift or confess "Cannot write to a file without refname";
+    my $charset  = shift || 'UTF-8';
+    my $linenum  = 0;
 
-    open INPUT, "<$filename"
+    use warnings FATAL => 'utf8';
+    use Encode qw(:fallbacks);
+    use PerlIO::encoding;
+    $PerlIO::encoding::fallback = FB_CROAK;
+
+    my $fh;
+    open( $fh, "<:encoding($charset)", $filename )
       or croak wrap_msg( dgettext( "po4a", "Cannot read from %s: %s" ), $filename, $! );
-    while ( defined( my $textline = <INPUT> ) ) {
-        $linenum++;
-        my $ref = "$refname:$linenum";
-        $textline =~ s/\r$//;
-        my @entry = ( $textline, $ref );
-        push @{ $self->{TT}{doc_in} }, @entry;
 
-        if ( !defined( $self->{TT}{'file_in_charset'} ) ) {
+    # If we see a BOM while not in UTF-8, we want to croak. But this code is in an eval to deal with
+    # encoding issues. So save the BOM error until after the eval block
+    my $BOM_detected = 0;
 
-            # Detect if this file has non-ascii characters
-            if ( $self->{TT}{ascii_input} ) {
-                my $decoder = guess_encoding($textline);
-                if ( !ref($decoder) or $decoder !~ /Encode::XS=/ ) {
-
-                    # We have detected a non-ascii line
-                    $self->{TT}{ascii_input} = 0;
-
-                    # Save the reference for future error message
-                    $self->{TT}{non_ascii_ref} ||= $ref;
-                }
+    eval {
+        while ( defined( my $textline = <$fh> ) ) {
+            $linenum++;
+            if ( $linenum == 1 && $textline =~ m/^\N{BOM}/ ) {    # UTF-8 BOM detected
+                $BOM_detected = 1 if ( uc($charset) ne 'UTF-8' );    # Save the error message for after the eval{} bloc
+                $textline =~ s/^\N{BOM}//;
             }
+            my $ref = "$refname:$linenum";
+            $textline =~ s/\r$//;
+            my @entry = ( $textline, $ref );
+            push @{ $self->{TT}{doc_in} }, @entry;
         }
+    };
+    my $error = $@;
+    if ( length($error) ) {
+        chomp $error;
+        die wrap_msg( dgettext( "po4a", "Malformed encoding while reading from file %s with charset %s: %s" ),
+            $filename, $charset, $error );
     }
-    close INPUT
-      or croak wrap_msg( dgettext( "po4a", "Cannot close %s after reading: %s" ), $filename, $! );
 
+    # Croak if we need to
+    if ($BOM_detected) {
+        croak wrap_msg(
+            dgettext(
+                "po4a",
+                "The file %s starts with a BOM char indicating that its encoding is UTF-8, but you specified %s instead."
+            ),
+            $filename,
+            $charset
+        );
+    }
+
+    close $fh
+      or croak wrap_msg( dgettext( "po4a", "Cannot close %s after reading: %s" ), $filename, $! );
 }
 
 =item write($)
@@ -486,8 +486,10 @@ This translated document data are provided by:
 
 sub write {
     my $self     = shift;
-    my $filename = shift
-      or croak wrap_msg( dgettext( "po4a", "Cannot write to a file without filename" ) );
+    my $filename = shift or confess "Cannot write to a file without filename";
+    my $charset  = shift || 'UTF-8';
+
+    use warnings FATAL => 'utf8';
 
     my $fh;
     if ( $filename eq '-' ) {
@@ -502,12 +504,29 @@ sub write {
             File::Path::mkpath( $dir, 0, 0755 )    # Croaks on error
               if ( length($dir) && !-e $dir );
         }
-        open $fh, ">$filename"
+        open( $fh, ">:encoding($charset)", $filename )
           or croak wrap_msg( dgettext( "po4a", "Cannot write to %s: %s" ), $filename, $! );
     }
 
     map { print $fh $_ } $self->docheader();
-    map { print $fh $_ } @{ $self->{TT}{doc_out} };
+    eval {
+        map { print $fh $_ } @{ $self->{TT}{doc_out} };
+    } or do {
+        my $error = $@ || 'Unknown failure';
+        chomp $error;
+        if ( $charset ne 'UTF-8' && $error =~ /^"\\x\{([^"}]*)\}"/ ) {
+
+            # Attempt to write the char that cannot be written. Very fragile code
+            binmode STDERR, ':encoding(UTF-8)';
+            my $char = chr( hex($1) );
+            die wrap_msg(
+                dgettext( "po4a", "Malformed encoding while writing char '%s' to file %s with charset %s: %s" ),
+                $char, $filename, $charset, $error );
+        } else {
+            die wrap_msg( dgettext( "po4a", "Malformed encoding while writing to file %s with charset %s: %s" ),
+                $filename, $charset, $error );
+        }
+    };
 
     if ( $filename ne '-' ) {
         close $fh or croak wrap_msg( dgettext( "po4a", "Cannot close %s after writing: %s" ), $filename, $! );
@@ -584,19 +603,29 @@ This function returns a non-null integer on error.
 
 # Internal function to read the header.
 sub addendum_parse {
-    my ( $filename, $header ) = shift;
+    my $filename = shift;
+    my $charset  = shift || 'UTF-8';
+    my $header;
 
     my ( $errcode, $mode, $position, $boundary, $bmode, $content ) = ( 1, "", "", "", "", "" );
 
-    unless ( open( INS, "<$filename" ) ) {
+    unless ( open( INS, "<:encoding($charset)", $filename ) ) {
         warn wrap_msg( dgettext( "po4a", "Cannot read from %s: %s" ), $filename, $! );
         goto END_PARSE_ADDFILE;
     }
 
-    unless ( defined( $header = <INS> ) && $header ) {
-        warn wrap_msg( dgettext( "po4a", "Cannot read po4a header from %s." ), $filename );
-        goto END_PARSE_ADDFILE;
-    }
+    $PerlIO::encoding::fallback = FB_CROAK;
+    eval {
+        unless ( defined( $header = <INS> ) && $header ) {
+            warn wrap_msg( dgettext( "po4a", "Cannot read po4a header from %s." ), $filename );
+            goto END_PARSE_ADDFILE;
+        }
+    } or do {
+        my $error = $@ || 'Unknown failure';
+        chomp $error;
+        die wrap_msg( dgettext( "po4a", "Malformed encoding while reading from file %s with charset %s: %s" ),
+            $filename, $charset, $error );
+    };
 
     unless ( $header =~ s/PO4A-HEADER://i ) {
         warn wrap_msg( dgettext( "po4a", "First line of %s does not look like a po4a header." ), $filename );
@@ -658,8 +687,16 @@ sub addendum_parse {
         goto END_PARSE_ADDFILE;
     }
 
-    while ( defined( my $line = <INS> ) ) {
-        $content .= $line;
+    eval {
+        while ( defined( my $line = <INS> ) ) {
+            $content .= $line;
+        }
+    };
+    my $error = $@;
+    if ( length($error) ) {
+        chomp $error;
+        die wrap_msg( dgettext( "po4a", "Malformed encoding while reading from file %s with charset %s: %s" ),
+            $filename, $charset, $error );
     }
     close INS;
 
@@ -686,14 +723,9 @@ sub addendum {
     die wrap_msg( dgettext( "po4a", "Addendum %s does not exist." ), $filename )
       unless -e $filename;
 
-    my ( $errcode, $mode, $position, $boundary, $bmode, $content ) = addendum_parse($filename);
+    my ( $errcode, $mode, $position, $boundary, $bmode, $content ) =
+      addendum_parse( $filename, $self->{TT}{'addendum_charset'} );
     return 0 if ($errcode);
-
-    # We only recode the addendum if an origin charset is specified, else we
-    # suppose it's already in the output document's charset
-    if ( length( $self->{TT}{'addendum_charset'} ) ) {
-        Encode::from_to( $content, $self->{TT}{'addendum_charset'}, $self->get_out_charset );
-    }
 
     # In order to make addendum more intuitive, each array item of
     # @{$self->{TT}{doc_out}} must not have internal "\n".  But previous parser
@@ -934,30 +966,6 @@ sub translate {
     #            unless $validoption{$_};
     # }
 
-    my $in_charset;
-    if ( $self->{TT}{ascii_input} ) {
-        $in_charset = "UTF-8";
-    } else {
-        if ( ( $self->{TT}{'file_in_charset'} // '' ) !~ m/ascii/i ) {    # // '' to have a default value
-            $in_charset = $self->{TT}{'file_in_charset'} // "UTF-8";
-        } else {
-
-            # The document charset have to be determined *before* we see the first string to recode.
-            die wrap_mod(
-                "po4a",
-                dgettext(
-                    "po4a",
-                    "Couldn't determine the input document's charset. Please specify it on the command line. (non-ASCII char at %s)"
-                ),
-                $self->{TT}{non_ascii_ref}
-            );
-        }
-    }
-
-    if ( $self->{TT}{po_in}->get_charset ne "CHARSET" ) {
-        $string = encode_from_to( $string, $self->{TT}{'file_in_encoder'}, $self->{TT}{po_in}{encoder} );
-    }
-
     if ( defined $options{'wrapcol'} && $options{'wrapcol'} < 0 ) {
 
         # FIXME: should be the parameter given with --width
@@ -969,36 +977,6 @@ sub translate {
         'wrapcol' => $options{'wrapcol'}
     );
 
-    if ( $self->{TT}{po_in}->get_charset ne "CHARSET" ) {
-        my $out_encoder = $self->{TT}{'file_out_encoder'};
-        unless ( defined $out_encoder ) {
-            $out_encoder = find_encoding( $self->get_out_charset );
-        }
-        $transstring = encode_from_to( $transstring, $self->{TT}{po_in}{encoder}, $out_encoder );
-    }
-
-    # If the input document isn't completely in ascii, we should see what to
-    # do with the current string
-    unless ( $self->{TT}{ascii_input} ) {
-        my $out_charset = $self->{TT}{po_out}->get_charset // "UTF-8";
-
-        # We set the output po charset
-        if ( $out_charset eq "CHARSET" ) {
-            if ( $self->{TT}{utf_mode} ) {
-                $out_charset = "UTF-8";
-            } else {
-                $out_charset = $in_charset;
-            }
-            $self->{TT}{po_out}->set_charset($out_charset);
-        }
-        if ( $in_charset !~ /^$out_charset$/i ) {
-            Encode::from_to( $string, $in_charset, $out_charset );
-            if ( length( $options{'comment'} ) ) {
-                Encode::from_to( $options{'comment'}, $in_charset, $out_charset );
-            }
-        }
-    }
-
     # the comments provided by the modules are automatic comments from the PO point of view
     $self->{TT}{po_out}->push(
         'msgid'     => $string,
@@ -1009,11 +987,6 @@ sub translate {
         'wrap'      => $options{'wrap'} || 0,
         'wrapcol'   => $options{'wrapcol'}
     );
-
-    #    if ($self->{TT}{po_in}->get_charset ne "CHARSET") {
-    #        Encode::from_to($transstring,$self->{TT}{po_in}->get_charset,
-    #            $self->get_out_charset);
-    #    }
 
     if ( $options{'wrap'} || 0 ) {
         $transstring =~ s/( *)$//s;
@@ -1055,29 +1028,14 @@ sub debug {
     return $_[0]->{TT}{debug};
 }
 
-=item detected_charset($)
+=item get_in_charset()
 
-This tells TransTractor that a new charset (the first argument) has been
-detected from the input document. It can usually be read from the document
-header. Only the first charset will remain, coming either from the
-process() arguments or detected from the document.
+This function return the charset that was provided as master charset
 
 =cut
 
-sub detected_charset {
-    my ( $self, $charset ) = ( shift, shift );
-    $charset //= "UTF-8";
-    unless ( length( $self->{TT}{'file_in_charset'} ) ) {
-        $self->{TT}{'file_in_charset'} = $charset;
-        croak "Please provide a valid charset to detected_charset()" unless defined $charset;
-        $self->{TT}{'file_in_encoder'} = find_encoding($charset);
-    }
-
-    if ( length $self->{TT}{'file_in_charset'}
-        and $self->{TT}{'file_in_charset'} !~ m/ascii/i )
-    {
-        $self->{TT}{ascii_input} = 0;
-    }
+sub get_in_charset() {
+    return $_[0]->{TT}{'file_in_charset'};
 }
 
 =item get_out_charset()
@@ -1095,86 +1053,16 @@ encoding is performed.
 
 sub get_out_charset {
     my $self = shift;
-    my $charset;
 
-    # Use the value specified at the command line
-    if ( length( $self->{TT}{'file_out_charset'} ) ) {
-        $charset = $self->{TT}{'file_out_charset'};
-    } else {
-        if ( $self->{TT}{utf_mode} && $self->{TT}{ascii_input} ) {
-            $charset = "UTF-8";
-        } else {
-            $charset = $self->{TT}{po_in}->get_charset;
-            $charset = $self->{TT}{'file_in_charset'}
-              if $charset eq "CHARSET"
-              and length( $self->{TT}{'file_in_charset'} );
-            $charset = "ascii"
-              if $charset eq "CHARSET";
-        }
-    }
-    return $charset;
-}
+    # Prefer the value specified on the command line
+    return $self->{TT}{'file_out_charset'}
+      if length( $self->{TT}{'file_out_charset'} );
 
-=item recode_skipped_text($)
+    return $self->{TT}{po_in}->get_charset if $self->{TT}{po_in}->get_charset ne 'CHARSET';
 
-This function returns the recoded text passed as argument, from the input
-document's charset to the output document's one. This isn't needed when
-translating a string (translate() recodes everything itself), but it is when
-you skip a string from the input document and you want the output document to
-be consistent with the global encoding.
+    return $self->{TT}{'file_in_charset'} if length( $self->{TT}{'file_in_charset'} );
 
-=cut
-
-sub recode_skipped_text {
-    my ( $self, $text ) = ( shift, shift );
-    unless ( $self->{TT}{'ascii_input'} ) {
-        if ( length( $self->{TT}{'file_in_charset'} ) ) {
-            $text = encode_from_to( $text, $self->{TT}{'file_in_encoder'}, find_encoding( $self->get_out_charset ) );
-        } else {
-            die wrap_mod(
-                "po4a",
-                dgettext(
-                    "po4a",
-                    "Couldn't determine the input document's charset. Please specify it on the command line. (non-ASCII char at %s)"
-                ),
-                $self->{TT}{non_ascii_ref}
-            );
-        }
-    }
-    return $text;
-}
-
-# encode_from_to($,$,$)
-#
-# Encode the given text from one encoding to another one.
-# It differs from Encode::from_to because it does not take the name of the
-# encoding in argument, but the encoders (as returned by the
-# Encode::find_encoding(<name>) method). Thus it permits to save a bunch
-# of call to find_encoding.
-#
-# If the "from" encoding is undefined, it is considered as UTF-8 (or
-# ascii).
-# If the "to" encoding is undefined, it is considered as UTF-8.
-#
-sub encode_from_to {
-    my ( $text, $from, $to ) = ( shift, shift, shift );
-
-    if ( not defined $from ) {
-
-        # for ascii and UTF-8, no conversion needed to get an utf-8
-        # string.
-    } else {
-        $text = $from->decode( $text, 0 );
-    }
-
-    if ( not defined $to ) {
-
-        # Already in UTF-8, no conversion needed
-    } else {
-        $text = $to->encode( $text, 0 );
-    }
-
-    return $text;
+    return 'UTF-8';
 }
 
 # Push the translation of a Yaml document or Yaml Front-Matter header, parsed by YAML::Tiny in any case
@@ -1182,7 +1070,7 @@ sub encode_from_to {
 sub handle_yaml {
     my ( $self, $is_yfm, $blockref, $yamlarray, $yfm_keys, $yfm_skip_array, $yfm_paths ) = @_;
 
-    die "Empty YAML " . ($is_yfm?"Front Matter":"document") unless ( length($yamlarray) > 0 );
+    die "Empty YAML " . ( $is_yfm ? "Front Matter" : "document" ) unless ( length($yamlarray) > 0 );
 
     my ( $indent, $ctx ) = ( 0, "" );
     foreach my $cursor (@$yamlarray) {
@@ -1197,7 +1085,14 @@ sub handle_yaml {
         } elsif ( !ref $cursor ) {
             $self->pushline("---\n");
             $self->pushline(
-                format_scalar( $self->translate( $cursor, $blockref, "YAML ".($is_yfm?"Front Matter ":"")."(scalar)", "wrap" => 0 ) ) );
+                format_scalar(
+                    $self->translate(
+                        $cursor, $blockref,
+                        "YAML " . ( $is_yfm ? "Front Matter " : "" ) . "(scalar)",
+                        "wrap" => 0
+                    )
+                )
+            );
 
             # A list at the root
         } elsif ( ref $cursor eq 'ARRAY' ) {
@@ -1261,15 +1156,23 @@ sub handle_yaml {
                 if ($yfm_skip_array) {
                     $self->pushline( $header . YAML::Tiny::_dump_scalar( "dummy", $el, 0 ) . "\n" );
                 } else {
-                    $self->pushline( $header
-                          . format_scalar( $self->translate( $el, $blockref, ($is_yfm?"Yaml Front Matter ":"")."Array Element:$ctx", "wrap" => 0 ) )
-                          . "\n" );
+                    $self->pushline(
+                        $header
+                          . format_scalar(
+                            $self->translate(
+                                $el,                                                            $blockref,
+                                ( $is_yfm ? "Yaml Front Matter " : "" ) . "Array Element:$ctx", "wrap" => 0
+                            )
+                          )
+                          . "\n"
+                    );
                 }
 
             } elsif ( $type eq 'ARRAY' ) {
                 if (@$el) {
                     $self->pushline( $header . "\n" );
-                    do_array( $self, $is_yfm, $blockref, $el, $indent + 1, $ctx, $yfm_keys, $yfm_skip_array, $yfm_paths );
+                    do_array( $self, $is_yfm, $blockref, $el, $indent + 1,
+                        $ctx, $yfm_keys, $yfm_skip_array, $yfm_paths );
                 } else {
                     $self->pushline( $header . " []\n" );
                 }
@@ -1277,7 +1180,8 @@ sub handle_yaml {
             } elsif ( $type eq 'HASH' ) {
                 if ( keys %$el ) {
                     $self->pushline( $header . "\n" );
-                    do_hash( $self, $is_yfm, $blockref, $el, $indent + 1, $ctx, $yfm_keys, $yfm_skip_array, $yfm_paths );
+                    do_hash( $self, $is_yfm, $blockref, $el, $indent + 1, $ctx, $yfm_keys, $yfm_skip_array,
+                        $yfm_paths );
                 } else {
                     $self->pushline( $header . " {}\n" );
                 }
@@ -1292,34 +1196,41 @@ sub handle_yaml {
         my ( $self, $is_yfm, $blockref, $hash, $indent, $ctx, $yfm_keys, $yfm_skip_array, $yfm_paths ) = @_;
 
         foreach my $name ( sort keys %$hash ) {
-            my $el     = $hash->{$name};
+            my $el     = $hash->{$name} // "";
             my $header = ( '  ' x $indent ) . YAML::Tiny::_dump_scalar( "dummy", $name, 1 ) . ":";
-            my $type   = ref $el;
+
+            unless ( length($el) > 0 ) {    # empty element, as in "tags: " with nothing after the column
+                $self->pushline( $header . "\n" );
+                next;
+            }
+
+            my $type = ref $el;
             if ( !$type ) {
-                my %keys =  %{$yfm_keys};
+                my %keys  = %{$yfm_keys};
                 my %paths = %{$yfm_paths};
-                my $path = "$ctx $name" =~ s/^\s+|\s+$//gr; # Need to trim the path, at least when there is no ctx yet
+                my $path  = "$ctx $name" =~ s/^\s+|\s+$//gr;  # Need to trim the path, at least when there is no ctx yet
 
-                if ( ($el eq 'false') or ($el eq 'true') ) {   # Do not translate not quote booleans
+                if ( ( $el eq 'false' ) or ( $el eq 'true' ) ) {    # Do not translate nor quote booleans
                     $self->pushline("$header $el\n");
-                } elsif ( ( scalar %keys  > 0 && exists $keys{$name}) or  # the key we need is provided
-                          ( scalar %paths > 0 && exists $paths{$path}) or # that path is provided
-                          ( scalar %keys == 0 && scalar %paths == 0) ) {  # no key and no path provided
-                    my $translation = $self->translate( $el, $blockref, ($is_yfm?"Yaml Front Matter ":"")."Hash Value:$ctx $name", "wrap" => 0 );
-                    if ( $el =~ /^\[.*\]$/ ) {          # Do not quote the lists
-                        $self->pushline( $header . " $translation\n" );
-                    } else {
+                } elsif (
+                    ( scalar %keys > 0  && exists $keys{$name} )  or    # the key we need is provided
+                    ( scalar %paths > 0 && exists $paths{$path} ) or    # that path is provided
+                    ( scalar %keys == 0 && scalar %paths == 0 )         # no key and no path provided
+                  )
+                {
+                    my $translation = $self->translate(
+                        $el, $blockref,
+                        ( $is_yfm ? "Yaml Front Matter " : "" ) . "Hash Value:$ctx $name",
+                        "wrap" => 0
+                    );
 
-                        # add extra quotes to the parameter, as a protection to the extra chars that the translator could add
-                        $self->pushline( $header . ' ' . format_scalar($translation) . "\n" );
-                    }
+                    # add extra quotes to the parameter, as a protection to the extra chars that the translator could add
+                    $self->pushline( $header . ' ' . format_scalar($translation) . "\n" );
                 } else {
 
                     # Work around a bug in YAML::Tiny that quotes numbers
                     # See https://github.com/Perl-Toolchain-Gang/YAML-Tiny#additional-perl-specific-notes
                     if ( Scalar::Util::looks_like_number($el) ) {
-                        $self->pushline("$header $el\n");
-                    } elsif ( $el =~ /^\[.*\]$/ ) {    # Do not quote the lists either
                         $self->pushline("$header $el\n");
                     } else {
                         $self->pushline( $header . ' ' . YAML::Tiny::_dump_scalar( "dummy", $el ) . "\n" );
@@ -1329,7 +1240,10 @@ sub handle_yaml {
             } elsif ( $type eq 'ARRAY' ) {
                 if (@$el) {
                     $self->pushline( $header . "\n" );
-                    do_array( $self, $is_yfm, $blockref, $el, $indent + 1, "$ctx $name", $yfm_keys, $yfm_skip_array, $yfm_paths );
+                    do_array(
+                        $self,     $is_yfm,         $blockref, $el, $indent + 1, "$ctx $name",
+                        $yfm_keys, $yfm_skip_array, $yfm_paths
+                    );
                 } else {
                     $self->pushline( $header . " []\n" );
                 }
@@ -1337,7 +1251,10 @@ sub handle_yaml {
             } elsif ( $type eq 'HASH' ) {
                 if ( keys %$el ) {
                     $self->pushline( $header . "\n" );
-                    do_hash( $self, $is_yfm, $blockref, $el, $indent + 1, "$ctx $name", $yfm_keys, $yfm_skip_array, $yfm_paths );
+                    do_hash(
+                        $self,     $is_yfm,         $blockref, $el, $indent + 1, "$ctx $name",
+                        $yfm_keys, $yfm_skip_array, $yfm_paths
+                    );
                 } else {
                     $self->pushline( $header . " {}\n" );
                 }

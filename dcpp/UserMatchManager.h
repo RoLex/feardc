@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -57,7 +57,6 @@ public:
 	/** Helper function that tells whether predefined definitions for favorites (pair.first) and
 	operators (pair.second) are existing. */
 	pair<bool, bool> checkPredef() const;
-
 	/** Get a list of the fonts required by current user matching definitions. */
 	unordered_set<string> getFonts() const;
 	/** Add a user matching definition at the top of the list to match the given user and force her

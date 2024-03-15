@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -517,7 +517,7 @@ void SearchFrame::SearchInfo::update() {
 	if(parent) {
 		columns[COLUMN_HITS].clear();
 	} else {
-		columns[COLUMN_HITS] = Text::toT(Util::toString(srs.size()));
+		columns[COLUMN_HITS] = Text::toT(std::to_string(srs.size()));
 	}
 
 	if(srs.size() > 1) {
@@ -535,7 +535,7 @@ void SearchFrame::SearchInfo::update() {
 		}
 		columns[COLUMN_NICK] = Text::toT(Util::toString(StringList(nicks.begin(), nicks.end())));
 		columns[COLUMN_HUB] = Text::toT(Util::toString(StringList(hubs.begin(), hubs.end())));
-		columns[COLUMN_SLOTS] = Text::toT(Util::toString(freeSlots) + '/' + Util::toString(slots));
+		columns[COLUMN_SLOTS] = Text::toT(std::to_string(freeSlots) + '/' + std::to_string(slots));
 
 	} else {
 		columns[COLUMN_NICK] = WinUtil::getNicks(sr->getUser());
@@ -1074,7 +1074,7 @@ void SearchFrame::runSearch() {
 	}
 
 	s = s.substr(0, max(s.size(), static_cast<tstring::size_type>(1)) - 1);
-	token = Util::toString(Util::rand());
+	token = std::to_string(Util::rand());
 
 	SearchManager::SizeModes searchMode((SearchManager::SizeModes)mode->getSelected());
 	if(llsize == 0)
@@ -1183,7 +1183,7 @@ void SearchFrame::runUserCommand(const UserCommand& uc) {
 			}
 
 			ucParams["fileFN"] = [sr] { return sr->getFile(); };
-			ucParams["fileSI"] = [sr] { return Util::toString(sr->getSize()); };
+			ucParams["fileSI"] = [sr] { return std::to_string(sr->getSize()); };
 			ucParams["fileSIshort"] = [sr] { return Util::formatBytes(sr->getSize()); };
 			if(sr->getType() == SearchResult::TYPE_FILE) {
 				ucParams["fileTR"] = [sr] { return sr->getTTH().toBase32(); };

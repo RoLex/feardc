@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -340,7 +340,7 @@ string Socket::listen(const string& port) {
 	if(ret == 0) {
 		throw SocketException(_("Could not open port for listening"));
 	}
-	return Util::toString(ntohs(ret));
+	return std::to_string(ntohs(ret));
 }
 
 void Socket::connect(const string& aAddr, const string& aPort, const string& localPort) {
@@ -399,7 +399,7 @@ void Socket::socksConnect(const string& aAddr, const string& aPort, uint32_t tim
 
 	uint64_t start = GET_TICK();
 
-	connect(SETTING(SOCKS_SERVER), Util::toString(SETTING(SOCKS_PORT)));
+	connect(SETTING(SOCKS_SERVER), std::to_string(SETTING(SOCKS_PORT)));
 
 	if(!waitConnected(timeLeft(start, timeout))) {
 		throw SocketException(_("The socks server failed establish a connection"));

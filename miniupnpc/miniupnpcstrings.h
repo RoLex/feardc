@@ -8,7 +8,11 @@
 #ifndef MINIUPNPCSTRINGS_H_INCLUDED
 #define MINIUPNPCSTRINGS_H_INCLUDED
 
+#ifdef _WIN32
 #define OS_STRING "MSWindows/6.1.7601"
+#else
+#define OS_STRING "Generic/1"
+#endif
 #define MINIUPNPC_VERSION_STRING "2.2.5"
 
 #if 0

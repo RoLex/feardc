@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -55,6 +55,7 @@ struct UserMatch : public Flags {
 		FAVS = 1 << FAVS_BIT,
 		OPS = 1 << OPS_BIT,
 		BOTS = 1 << BOTS_BIT,
+
 		FORCE_CHAT = 1 << FORCE_CHAT_BIT,
 		IGNORE_CHAT = 1 << IGNORE_CHAT_BIT
 	};

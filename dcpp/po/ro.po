@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2023-06-17 10:59+0200\n"
+"POT-Creation-Date: 2024-03-14 22:49+0100\n"
 "PO-Revision-Date: 2011-01-20 07:45+0000\n"
 "Last-Translator: Andy C. <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ro\n"
 "X-Launchpad-Export-Date: 2018-11-11 22:49+0000\n"
 "X-Generator: Launchpad (build 18816)\n"
 
@@ -206,16 +206,16 @@ msgstr ""
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1674
+#: dcpp/QueueManager.cpp:1668
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "Inconsistență CRC32 (Verificare SFV)"
 
-#: dcpp/QueueManager.cpp:1665
+#: dcpp/QueueManager.cpp:1659
 #, fuzzy, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "Inconsistență CRC32 (Verificare SFV)"
 
-#: dcpp/CryptoManager.cpp:566
+#: dcpp/CryptoManager.cpp:372
 #, boost-format
 msgid "Certificate verification for %1% failed with error: %2%"
 msgstr ""
@@ -331,8 +331,8 @@ msgstr "Coada de descărcare"
 #: dcpp/ShareManager.cpp:794
 #, boost-format
 msgid ""
-"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
-"%3%"
+"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: %"
+"3%"
 msgstr ""
 "Fișierul duplicat nu va fi partajat: %1% (Dimensiune: %2% B) Duplicat cu: %3%"
 
@@ -340,7 +340,7 @@ msgstr ""
 msgid "Duplicate item in the file list"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:678 dcpp/QueueManager.cpp:682
+#: dcpp/QueueManager.cpp:672 dcpp/QueueManager.cpp:676
 #, boost-format
 msgid "Duplicate source: %1%"
 msgstr "Sursa duplicată: %1%"
@@ -361,18 +361,19 @@ msgid "Error creating hash data file: %1%"
 msgstr "Eroare la generarea fișierului de coduri hash: %1%"
 
 #: dcpp/BZUtils.cpp:34 dcpp/BZUtils.cpp:55 dcpp/BZUtils.cpp:63
-#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:72 dcpp/ZUtils.cpp:99 dcpp/ZUtils.cpp:109
+#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:69 dcpp/ZUtils.cpp:93
+#: dcpp/ZUtils.cpp:103
 msgid "Error during compression"
 msgstr "Eroare în cursul comprimării"
 
 #: dcpp/BZUtils.cpp:75 dcpp/BZUtils.cpp:97 dcpp/BZUtils.cpp:100
-#: dcpp/CryptoManager.cpp:717 dcpp/CryptoManager.cpp:736
-#: dcpp/CryptoManager.cpp:750 dcpp/ZUtils.cpp:123 dcpp/ZUtils.cpp:148
-#: dcpp/ZUtils.cpp:162
+#: dcpp/CryptoManager.cpp:523 dcpp/CryptoManager.cpp:542
+#: dcpp/CryptoManager.cpp:556 dcpp/ZUtils.cpp:117 dcpp/ZUtils.cpp:142
+#: dcpp/ZUtils.cpp:156
 msgid "Error during decompression"
 msgstr "Eroare în cursul decomprimării"
 
-#: dcpp/CryptoManager.cpp:184
+#: dcpp/CryptoManager.cpp:164
 msgid "Error generating certificate"
 msgstr "Eroare la generarea certificatului"
 
@@ -413,15 +414,15 @@ msgstr "Nu s-a putut obține IP-ul extern"
 msgid "Failed to initialize the %1% interface"
 msgstr "Nu am putut inițializa interfața %1%"
 
-#: dcpp/CryptoManager.cpp:433
+#: dcpp/CryptoManager.cpp:267
 msgid "Failed to load certificate file"
 msgstr "Incărcarea fișierului certificat a eșuat"
 
-#: dcpp/CryptoManager.cpp:441
+#: dcpp/CryptoManager.cpp:275
 msgid "Failed to load private key"
 msgstr "Incărcarea cheii private a eșuat"
 
-#: dcpp/CryptoManager.cpp:454
+#: dcpp/CryptoManager.cpp:288
 #, boost-format
 msgid "Failed to load trusted certificate from %1%"
 msgstr ""
@@ -449,7 +450,7 @@ msgstr ""
 "Setarea server/ului SOCKS pentru redirecționare UDP a eșuat (verificați "
 "adresa și portul server/ului SOCKS)"
 
-#: dcpp/QueueManager.cpp:665
+#: dcpp/QueueManager.cpp:659
 msgid "File already exists at the target location"
 msgstr "Fișierul există deja în locația țintă"
 
@@ -498,7 +499,7 @@ msgstr "S-a generat valoarea de dispersie: %1% (%2%)"
 msgid "Full tree does not match TTH root"
 msgstr "Arborele complet nu se potrivește cu rădacina TTH"
 
-#: dcpp/CryptoManager.cpp:422
+#: dcpp/CryptoManager.cpp:256
 msgid "Generated new TLS certificate"
 msgstr "Certificat TLS nou generat"
 
@@ -573,7 +574,7 @@ msgstr "Numele tipului de căutare invalid"
 msgid "Invalid size"
 msgstr "Dimensiune invalidă"
 
-#: dcpp/QueueManager.cpp:652 dcpp/QueueManager.cpp:657
+#: dcpp/QueueManager.cpp:646 dcpp/QueueManager.cpp:651
 msgid ""
 "Invalid target file (missing directory, check default download directory "
 "setting)"
@@ -602,7 +603,7 @@ msgstr ""
 msgid "More bytes written than requested"
 msgstr "Numărul de biţi scrişi a depăşit cererea"
 
-#: dcpp/CryptoManager.cpp:173
+#: dcpp/CryptoManager.cpp:153
 msgid "No certificate file chosen"
 msgstr "Nici un fișier-certificat nu a fost ales"
 
@@ -610,7 +611,7 @@ msgstr "Nici un fișier-certificat nu a fost ales"
 msgid "No directory specified"
 msgstr "Nici un dosar specificat"
 
-#: dcpp/CryptoManager.cpp:170
+#: dcpp/CryptoManager.cpp:150
 msgid "No private key file chosen"
 msgstr "Nici un fișier-cheie privată nu a fost ales"
 
@@ -712,8 +713,8 @@ msgstr ""
 #: dcpp/MappingManager.cpp:203
 #, boost-format
 msgid ""
-"Successfully created port mappings (Transfers: %1%, Encrypted transfers: "
-"%2%, Search: %3%) on the %4% device with the %5% interface"
+"Successfully created port mappings (Transfers: %1%, Encrypted transfers: %"
+"2%, Search: %3%) on the %4% device with the %5% interface"
 msgstr ""
 
 #: dcpp/MappingManager.cpp:106
@@ -728,21 +729,21 @@ msgid ""
 "Successfully removed port mappings from the %1% device with the %2% interface"
 msgstr "Nu se poate crea firul de execuţie"
 
-#: dcpp/CryptoManager.cpp:665
+#: dcpp/CryptoManager.cpp:471
 #, boost-format
 msgid "Supplied KeyPrint %1% did not match %2%."
 msgstr ""
 
-#: dcpp/CryptoManager.cpp:663
+#: dcpp/CryptoManager.cpp:469
 msgid "Supplied KeyPrint did not match any certificate."
 msgstr ""
 
-#: dcpp/CryptoManager.cpp:424
+#: dcpp/CryptoManager.cpp:258
 #, boost-format
 msgid "TLS disabled, failed to generate certificate: %1%"
 msgstr "Sistemul TLS închis, generarea certificatului a eşuat: %1%"
 
-#: dcpp/CryptoManager.cpp:414
+#: dcpp/CryptoManager.cpp:248
 msgid "TLS disabled, no certificate file set"
 msgstr "TLS e dezactivat, nu e setat fișierul-certificat"
 
@@ -762,7 +763,7 @@ msgstr "Inconsistență TTH"
 msgid "Target file is missing or wrong size"
 msgstr "Fișierul destinație lipsește sau e de dimensiunea greșită"
 
-#: dcpp/QueueManager.cpp:645
+#: dcpp/QueueManager.cpp:639
 msgid "Target filename too long"
 msgstr "Numele fișierului-țintă e prea lung"
 
@@ -772,7 +773,7 @@ msgid ""
 "encrypted transfers will be disabled"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1508
+#: dcpp/QueueManager.cpp:1502
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -843,12 +844,12 @@ msgstr ""
 msgid "Unable to create thread"
 msgstr "Nu se poate crea firul de execuţie"
 
-#: dcpp/QueueManager.cpp:942
+#: dcpp/QueueManager.cpp:936
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%) nor to rename to %4% (%5%)"
 msgstr "Nu s-a putut muta %1% la %2% (%3%) sau redenumi la %4% (%5%)"
 
-#: dcpp/QueueManager.cpp:939
+#: dcpp/QueueManager.cpp:933
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%); renamed to %4%"
 msgstr "Nu s-a putut muta %1% la %2% (%3%); s-a redenumit la %4%"
@@ -859,7 +860,7 @@ msgid ""
 "Unable to open %1% port(s); connectivity settings must be configured manually"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1118
+#: dcpp/QueueManager.cpp:1112
 #, boost-format
 msgid "Unable to open filelist: %1%"
 msgstr "Nu se poate deschide lista de fişiere: %1%"

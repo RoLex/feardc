@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2023-06-17 10:59+0200\n"
+"POT-Creation-Date: 2024-03-14 22:49+0100\n"
 "PO-Revision-Date: 2022-09-20 19:08+0000\n"
 "Last-Translator: RoLex <hundrambit@gmail.com>\n"
 "Language-Team: Russian <ru_GB@li.org>\n"
-"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
 "X-Launchpad-Export-Date: 2022-10-18 11:20+0000\n"
 "X-Generator: Launchpad (build 25877e98ba44ca75f9c22db1fc37efee03e4606a)\n"
 
@@ -205,16 +205,16 @@ msgstr "Заблокировано соединение C-C с hub ('%1%:%2%'; �
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr "Блокировка '%1%', обнаружен потенциальный DDoS (исходящий hub '%2%')"
 
-#: dcpp/QueueManager.cpp:1674
+#: dcpp/QueueManager.cpp:1668
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "Несоответствие CRC32 (SFV-проверка)"
 
-#: dcpp/QueueManager.cpp:1665
+#: dcpp/QueueManager.cpp:1659
 #, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "CRC32 Несоответствие (SFV-проверка): %1%"
 
-#: dcpp/CryptoManager.cpp:566
+#: dcpp/CryptoManager.cpp:372
 #, boost-format
 msgid "Certificate verification for %1% failed with error: %2%"
 msgstr "Проверка сертификата для %1% завершилась ошибкой: %2%"
@@ -342,8 +342,8 @@ msgstr "Очередь загрузки"
 #: dcpp/ShareManager.cpp:794
 #, boost-format
 msgid ""
-"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
-"%3%"
+"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: %"
+"3%"
 msgstr ""
 "Файл-дубликат не будет выложен: %1% (Размер: %2% Б) Полное совпадение с: %3%"
 
@@ -351,7 +351,7 @@ msgstr ""
 msgid "Duplicate item in the file list"
 msgstr "Повторяющийся элемент в списке файлов"
 
-#: dcpp/QueueManager.cpp:678 dcpp/QueueManager.cpp:682
+#: dcpp/QueueManager.cpp:672 dcpp/QueueManager.cpp:676
 #, boost-format
 msgid "Duplicate source: %1%"
 msgstr "Источник дубликата: %1%"
@@ -371,18 +371,19 @@ msgid "Error creating hash data file: %1%"
 msgstr "Ошибка создания файла данных хэша: %1%"
 
 #: dcpp/BZUtils.cpp:34 dcpp/BZUtils.cpp:55 dcpp/BZUtils.cpp:63
-#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:72 dcpp/ZUtils.cpp:99 dcpp/ZUtils.cpp:109
+#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:69 dcpp/ZUtils.cpp:93
+#: dcpp/ZUtils.cpp:103
 msgid "Error during compression"
 msgstr "Ошибка при сжатии"
 
 #: dcpp/BZUtils.cpp:75 dcpp/BZUtils.cpp:97 dcpp/BZUtils.cpp:100
-#: dcpp/CryptoManager.cpp:717 dcpp/CryptoManager.cpp:736
-#: dcpp/CryptoManager.cpp:750 dcpp/ZUtils.cpp:123 dcpp/ZUtils.cpp:148
-#: dcpp/ZUtils.cpp:162
+#: dcpp/CryptoManager.cpp:523 dcpp/CryptoManager.cpp:542
+#: dcpp/CryptoManager.cpp:556 dcpp/ZUtils.cpp:117 dcpp/ZUtils.cpp:142
+#: dcpp/ZUtils.cpp:156
 msgid "Error during decompression"
 msgstr "Ошибка при декомпрессии"
 
-#: dcpp/CryptoManager.cpp:184
+#: dcpp/CryptoManager.cpp:164
 msgid "Error generating certificate"
 msgstr "Ошибка при генерации сертификата"
 
@@ -423,15 +424,15 @@ msgstr "Не удалось получить внешний IP-адрес"
 msgid "Failed to initialize the %1% interface"
 msgstr "Не удалось инициализировать %1% интерфейс"
 
-#: dcpp/CryptoManager.cpp:433
+#: dcpp/CryptoManager.cpp:267
 msgid "Failed to load certificate file"
 msgstr "Не удалось загрузить файл сертификата"
 
-#: dcpp/CryptoManager.cpp:441
+#: dcpp/CryptoManager.cpp:275
 msgid "Failed to load private key"
 msgstr "Не удалось загрузить личный ключ"
 
-#: dcpp/CryptoManager.cpp:454
+#: dcpp/CryptoManager.cpp:288
 #, boost-format
 msgid "Failed to load trusted certificate from %1%"
 msgstr "Не удалось загрузить доверенный сертификат из %1%"
@@ -459,7 +460,7 @@ msgid ""
 msgstr ""
 "Не удалось настроить SOCKS-сервер для UDP (проверьте socks-адрес и порт)"
 
-#: dcpp/QueueManager.cpp:665
+#: dcpp/QueueManager.cpp:659
 msgid "File already exists at the target location"
 msgstr "Файл уже существует в каталоге назначения"
 
@@ -508,7 +509,7 @@ msgstr "Хеширование завершено: %1% (%2%)"
 msgid "Full tree does not match TTH root"
 msgstr "Полное дерево не соответствует TTH корню"
 
-#: dcpp/CryptoManager.cpp:422
+#: dcpp/CryptoManager.cpp:256
 msgid "Generated new TLS certificate"
 msgstr "Новый TLS-сертификат сгенерирован"
 
@@ -582,7 +583,7 @@ msgstr "Неверное имя поиска"
 msgid "Invalid size"
 msgstr "Неверный размер"
 
-#: dcpp/QueueManager.cpp:652 dcpp/QueueManager.cpp:657
+#: dcpp/QueueManager.cpp:646 dcpp/QueueManager.cpp:651
 msgid ""
 "Invalid target file (missing directory, check default download directory "
 "setting)"
@@ -612,7 +613,7 @@ msgstr "Отсутствуют зависимости для %1%"
 msgid "More bytes written than requested"
 msgstr "Записано больше байт, чем было запрошено"
 
-#: dcpp/CryptoManager.cpp:173
+#: dcpp/CryptoManager.cpp:153
 msgid "No certificate file chosen"
 msgstr "Не выбран файл сертификата"
 
@@ -620,7 +621,7 @@ msgstr "Не выбран файл сертификата"
 msgid "No directory specified"
 msgstr "Не указан каталог"
 
-#: dcpp/CryptoManager.cpp:170
+#: dcpp/CryptoManager.cpp:150
 msgid "No private key file chosen"
 msgstr "Не выбран файл личного ключа"
 
@@ -722,8 +723,8 @@ msgstr ""
 #: dcpp/MappingManager.cpp:203
 #, boost-format
 msgid ""
-"Successfully created port mappings (Transfers: %1%, Encrypted transfers: "
-"%2%, Search: %3%) on the %4% device with the %5% interface"
+"Successfully created port mappings (Transfers: %1%, Encrypted transfers: %"
+"2%, Search: %3%) on the %4% device with the %5% interface"
 msgstr ""
 "Успешно создан маппинг портов (Передачи: %1%, Зашифрованные передачи: %2%, "
 "Поиск: %3%) на устройстве %4% с интерфейсом %5%."
@@ -740,21 +741,21 @@ msgid ""
 "Successfully removed port mappings from the %1% device with the %2% interface"
 msgstr "Успешно удален маппинг портов с устройства %1% с интерфейсом %2%"
 
-#: dcpp/CryptoManager.cpp:665
+#: dcpp/CryptoManager.cpp:471
 #, boost-format
 msgid "Supplied KeyPrint %1% did not match %2%."
 msgstr "Поставляемая ключевая печать %1% не соответствовала %2%."
 
-#: dcpp/CryptoManager.cpp:663
+#: dcpp/CryptoManager.cpp:469
 msgid "Supplied KeyPrint did not match any certificate."
 msgstr "Поставляемая ключевая печать %1% не соответствовала %2%."
 
-#: dcpp/CryptoManager.cpp:424
+#: dcpp/CryptoManager.cpp:258
 #, boost-format
 msgid "TLS disabled, failed to generate certificate: %1%"
 msgstr "TLS отключён, не удалось создать сертификат: %1%"
 
-#: dcpp/CryptoManager.cpp:414
+#: dcpp/CryptoManager.cpp:248
 msgid "TLS disabled, no certificate file set"
 msgstr "TLS отключён, не установлен файл сертификата"
 
@@ -774,7 +775,7 @@ msgstr "Несовпадение TTH"
 msgid "Target file is missing or wrong size"
 msgstr "Целевой файл отсутствует или имеет неправильный размер"
 
-#: dcpp/QueueManager.cpp:645
+#: dcpp/QueueManager.cpp:639
 msgid "Target filename too long"
 msgstr "Указанное имя слишком длинное"
 
@@ -786,7 +787,7 @@ msgstr ""
 "Зашифрованный порт передачи не может совпадать с портом передачи, "
 "зашифрованные передачи будут отключены"
 
-#: dcpp/QueueManager.cpp:1508
+#: dcpp/QueueManager.cpp:1502
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -858,13 +859,13 @@ msgstr "Un-игнорировать"
 msgid "Unable to create thread"
 msgstr "Невозможно создать поток"
 
-#: dcpp/QueueManager.cpp:942
+#: dcpp/QueueManager.cpp:936
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%) nor to rename to %4% (%5%)"
 msgstr ""
 "Не удалось ни переместить %1% в %2% (%3%), ни переименовать в %4% (%5%)"
 
-#: dcpp/QueueManager.cpp:939
+#: dcpp/QueueManager.cpp:933
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%); renamed to %4%"
 msgstr "Невозможно переместить %1% в %2% (%3%); переименовано в %4%"
@@ -877,7 +878,7 @@ msgstr ""
 "Невозможно открыть порт(ы) %1%; параметры подключения должны быть настроены "
 "вручную"
 
-#: dcpp/QueueManager.cpp:1118
+#: dcpp/QueueManager.cpp:1112
 #, boost-format
 msgid "Unable to open filelist: %1%"
 msgstr "Не удалось открыть список файлов: %1%"

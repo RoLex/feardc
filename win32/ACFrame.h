@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -117,15 +117,15 @@ private:
 
 				case SettingsManager::TYPE_INT:
 					isDefault = sm->isDefault(static_cast<SettingsManager::IntSetting>(index));
-					return Util::toString(sm->get(static_cast<SettingsManager::IntSetting>(index)));
+					return std::to_string(sm->get(static_cast<SettingsManager::IntSetting>(index)));
 
 				case SettingsManager::TYPE_BOOL:
 					isDefault = sm->isDefault(static_cast<SettingsManager::BoolSetting>(index));
-					return Util::toString(sm->get(static_cast<SettingsManager::BoolSetting>(index)));
+					return std::to_string(sm->get(static_cast<SettingsManager::BoolSetting>(index)));
 
 				case SettingsManager::TYPE_INT64:
 					isDefault = sm->isDefault(static_cast<SettingsManager::Int64Setting>(index));
-					return Util::toString(sm->get(static_cast<SettingsManager::Int64Setting>(index)));
+					return std::to_string(sm->get(static_cast<SettingsManager::Int64Setting>(index)));
 
 				case SettingsManager::TYPE_FLOAT:
 					isDefault = sm->isDefault(static_cast<SettingsManager::FloatSetting>(index));

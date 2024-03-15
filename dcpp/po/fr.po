@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2023-06-17 10:59+0200\n"
+"POT-Creation-Date: 2024-03-14 22:49+0100\n"
 "PO-Revision-Date: 2016-09-13 18:08+0000\n"
 "Last-Translator: poy <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
 "X-Launchpad-Export-Date: 2018-11-11 22:49+0000\n"
 "X-Generator: Launchpad (build 18816)\n"
 
@@ -215,16 +215,16 @@ msgstr "Connexion C-C vers un hub bloquée ('%1%:%2%'; requête de '%3%')"
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr "Blocage de '%1%', DDoS potentiel détecté (hub source : '%2%')"
 
-#: dcpp/QueueManager.cpp:1674
+#: dcpp/QueueManager.cpp:1668
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "Incompatibilité CRC32 (Contrôle SFV)"
 
-#: dcpp/QueueManager.cpp:1665
+#: dcpp/QueueManager.cpp:1659
 #, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "Incompatibilité CRC32 (Contrôle SFV) : %1%"
 
-#: dcpp/CryptoManager.cpp:566
+#: dcpp/CryptoManager.cpp:372
 #, boost-format
 msgid "Certificate verification for %1% failed with error: %2%"
 msgstr "La vérification du certificat pour %1% a échoué - erreur : %2%"
@@ -354,8 +354,8 @@ msgstr "Liste de Téléchargement"
 #: dcpp/ShareManager.cpp:794
 #, boost-format
 msgid ""
-"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
-"%3%"
+"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: %"
+"3%"
 msgstr ""
 "Ficher en double non partagé : %1% (Taille : %2% o) Est identique à : %3%"
 
@@ -363,7 +363,7 @@ msgstr ""
 msgid "Duplicate item in the file list"
 msgstr "Item en double dans la liste de fichiers"
 
-#: dcpp/QueueManager.cpp:678 dcpp/QueueManager.cpp:682
+#: dcpp/QueueManager.cpp:672 dcpp/QueueManager.cpp:676
 #, boost-format
 msgid "Duplicate source: %1%"
 msgstr "Source en double : %1%"
@@ -383,18 +383,19 @@ msgid "Error creating hash data file: %1%"
 msgstr "Erreur lors de la création de la base de données des clés : %1%"
 
 #: dcpp/BZUtils.cpp:34 dcpp/BZUtils.cpp:55 dcpp/BZUtils.cpp:63
-#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:72 dcpp/ZUtils.cpp:99 dcpp/ZUtils.cpp:109
+#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:69 dcpp/ZUtils.cpp:93
+#: dcpp/ZUtils.cpp:103
 msgid "Error during compression"
 msgstr "Erreur de compression"
 
 #: dcpp/BZUtils.cpp:75 dcpp/BZUtils.cpp:97 dcpp/BZUtils.cpp:100
-#: dcpp/CryptoManager.cpp:717 dcpp/CryptoManager.cpp:736
-#: dcpp/CryptoManager.cpp:750 dcpp/ZUtils.cpp:123 dcpp/ZUtils.cpp:148
-#: dcpp/ZUtils.cpp:162
+#: dcpp/CryptoManager.cpp:523 dcpp/CryptoManager.cpp:542
+#: dcpp/CryptoManager.cpp:556 dcpp/ZUtils.cpp:117 dcpp/ZUtils.cpp:142
+#: dcpp/ZUtils.cpp:156
 msgid "Error during decompression"
 msgstr "Erreur de décompression"
 
-#: dcpp/CryptoManager.cpp:184
+#: dcpp/CryptoManager.cpp:164
 msgid "Error generating certificate"
 msgstr "Erreur lors de la génération du certificat"
 
@@ -435,15 +436,15 @@ msgstr "Impossible d'obtenir l'IP externe"
 msgid "Failed to initialize the %1% interface"
 msgstr "Impossible d'initialiser l'interface %1%"
 
-#: dcpp/CryptoManager.cpp:433
+#: dcpp/CryptoManager.cpp:267
 msgid "Failed to load certificate file"
 msgstr "Impossible de charger le fichier de certificat"
 
-#: dcpp/CryptoManager.cpp:441
+#: dcpp/CryptoManager.cpp:275
 msgid "Failed to load private key"
 msgstr "Impossible de charger la clé privée"
 
-#: dcpp/CryptoManager.cpp:454
+#: dcpp/CryptoManager.cpp:288
 #, boost-format
 msgid "Failed to load trusted certificate from %1%"
 msgstr "Impossible de charger le certificat de confiance de %1%"
@@ -472,7 +473,7 @@ msgstr ""
 "Impossible de configurer le serveur socks en tant que relais UDP (vérifier "
 "l'adresse et le port du serveur socks)"
 
-#: dcpp/QueueManager.cpp:665
+#: dcpp/QueueManager.cpp:659
 msgid "File already exists at the target location"
 msgstr "Le fichier existe déjà à l'emplacement cible"
 
@@ -521,7 +522,7 @@ msgstr "Clé générée : %1% (%2%)"
 msgid "Full tree does not match TTH root"
 msgstr "La concaténation des clés ne correspond pas à la clé TTH racine"
 
-#: dcpp/CryptoManager.cpp:422
+#: dcpp/CryptoManager.cpp:256
 msgid "Generated new TLS certificate"
 msgstr "Nouveau certificat TLS généré"
 
@@ -597,7 +598,7 @@ msgstr "Nom de catégorie de recherche invalide"
 msgid "Invalid size"
 msgstr "Taille invalide"
 
-#: dcpp/QueueManager.cpp:652 dcpp/QueueManager.cpp:657
+#: dcpp/QueueManager.cpp:646 dcpp/QueueManager.cpp:651
 msgid ""
 "Invalid target file (missing directory, check default download directory "
 "setting)"
@@ -626,7 +627,7 @@ msgstr "Dépendances manquantes pour %1%"
 msgid "More bytes written than requested"
 msgstr "Trop d'octets ont été écrits"
 
-#: dcpp/CryptoManager.cpp:173
+#: dcpp/CryptoManager.cpp:153
 msgid "No certificate file chosen"
 msgstr "Aucun fichier de certificat choisi"
 
@@ -634,7 +635,7 @@ msgstr "Aucun fichier de certificat choisi"
 msgid "No directory specified"
 msgstr "Pas de dossier spécifié"
 
-#: dcpp/CryptoManager.cpp:170
+#: dcpp/CryptoManager.cpp:150
 msgid "No private key file chosen"
 msgstr "Aucun fichier de clé privée choisi"
 
@@ -736,8 +737,8 @@ msgstr ""
 #: dcpp/MappingManager.cpp:203
 #, boost-format
 msgid ""
-"Successfully created port mappings (Transfers: %1%, Encrypted transfers: "
-"%2%, Search: %3%) on the %4% device with the %5% interface"
+"Successfully created port mappings (Transfers: %1%, Encrypted transfers: %"
+"2%, Search: %3%) on the %4% device with the %5% interface"
 msgstr ""
 "Ports ouverts avec succès (Transferts : %1%, Transferts cryptés : %2%, "
 "Rercherches : %3%) sur le routeur %4% avec l'interface %5%"
@@ -754,21 +755,21 @@ msgid ""
 "Successfully removed port mappings from the %1% device with the %2% interface"
 msgstr "Ports du routeur %1% fermés avec succès avec l'interface %2%"
 
-#: dcpp/CryptoManager.cpp:665
+#: dcpp/CryptoManager.cpp:471
 #, boost-format
 msgid "Supplied KeyPrint %1% did not match %2%."
 msgstr "Le KeyPrint fourni %1% ne correspond pas à %2%."
 
-#: dcpp/CryptoManager.cpp:663
+#: dcpp/CryptoManager.cpp:469
 msgid "Supplied KeyPrint did not match any certificate."
 msgstr "Le KeyPrint fourni ne correspond à aucun certificat."
 
-#: dcpp/CryptoManager.cpp:424
+#: dcpp/CryptoManager.cpp:258
 #, boost-format
 msgid "TLS disabled, failed to generate certificate: %1%"
 msgstr "TLS désactivé, impossible de générer le certificat : %1%"
 
-#: dcpp/CryptoManager.cpp:414
+#: dcpp/CryptoManager.cpp:248
 msgid "TLS disabled, no certificate file set"
 msgstr "TLS désactivé, aucun fichier de certificat n'est défini"
 
@@ -788,7 +789,7 @@ msgstr "Incohérence de TTH"
 msgid "Target file is missing or wrong size"
 msgstr "Le fichier cible est introuvable ou n'a pas la bonne taille"
 
-#: dcpp/QueueManager.cpp:645
+#: dcpp/QueueManager.cpp:639
 msgid "Target filename too long"
 msgstr "Nom du fichier cible trop long"
 
@@ -800,7 +801,7 @@ msgstr ""
 "Le port des transferts cryptés ne doit pas être le même que le port des "
 "transferts, les transferts cryptés sont par conséquent désactivés"
 
-#: dcpp/QueueManager.cpp:1508
+#: dcpp/QueueManager.cpp:1502
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -874,13 +875,13 @@ msgstr "Désignorer"
 msgid "Unable to create thread"
 msgstr "Création de thread impossile"
 
-#: dcpp/QueueManager.cpp:942
+#: dcpp/QueueManager.cpp:936
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%) nor to rename to %4% (%5%)"
 msgstr ""
 "Impossible de déplacer %1% vers %2% (%3%) ni de le renommer en %4% (%5%)"
 
-#: dcpp/QueueManager.cpp:939
+#: dcpp/QueueManager.cpp:933
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%); renamed to %4%"
 msgstr "Impossible de déplacer %1% vers %2% (%3%) ; renommé en %4%"
@@ -893,7 +894,7 @@ msgstr ""
 "Impossible d'ouvrir les ports de %1% ; les options de connectivité vont "
 "devoir être configurées manuellement"
 
-#: dcpp/QueueManager.cpp:1118
+#: dcpp/QueueManager.cpp:1112
 #, boost-format
 msgid "Unable to open filelist: %1%"
 msgstr "Impossible d'ouvrir la liste de fichiers : %1%"

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -163,7 +163,7 @@ void UserConnection::accept(const Socket& aServer) {
 
 	// Technically only one side needs to verify KeyPrint, also since we most likely requested to be connected to (and we have insufficent info otherwise) deal with TLS options check post handshake
 	// -> SSLSocket::verifyKeyprint does full certificate verification after INF
-	setPort(Util::toString(socket->accept(aServer, secure, true)));
+	setPort(std::to_string(socket->accept(aServer, secure, true)));
 }
 
 void UserConnection::inf(bool withToken) {
@@ -295,12 +295,11 @@ void UserConnection::on(Failed, const string& aLine) noexcept {
 
 // # ms we should aim for per segment
 static const int64_t SEGMENT_TIME = 120*1000;
-static const int64_t MIN_CHUNK_SIZE = 64*1024;
+static const int64_t MIN_CHUNK_SIZE = 512*1024;
 
 void UserConnection::updateChunkSize(int64_t leafSize, int64_t lastChunk, uint64_t ticks) {
-
 	if(chunkSize == 0) {
-		chunkSize = std::max(MIN_CHUNK_SIZE, std::min(lastChunk, (int64_t)1024*1024));
+		chunkSize = std::max(MIN_CHUNK_SIZE, std::min(lastChunk, static_cast<int64_t>(1024*1024)));
 		return;
 	}
 
@@ -312,7 +311,7 @@ void UserConnection::updateChunkSize(int64_t leafSize, int64_t lastChunk, uint64
 
 	double lastSpeed = (1000. * lastChunk) / ticks;
 
-	int64_t targetSize = chunkSize;
+	auto targetSize = chunkSize;
 
 	// How long current chunk size would take with the last speed...
 	double msecs = 1000 * targetSize / lastSpeed;

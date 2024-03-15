@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -523,7 +523,7 @@ string QueueManager::getListPath(const HintedUser& user) {
 }
 
 void QueueManager::add(const string& aTarget, int64_t aSize, const TTHValue& root, const HintedUser& aUser,
-	int aFlags /* = 0 */, bool addBad /* = true */, const BundlePtr &bundle)
+	int aFlags /* = 0 */, bool addBad /* = true */)
 {
 	bool wantConnection = true;
 
@@ -612,12 +612,6 @@ void QueueManager::add(const string& aTarget, int64_t aSize, const TTHValue& roo
 connect:
 	if(wantConnection && aUser.user->isOnline())
 		ConnectionManager::getInstance()->getDownloadConnection(aUser);
-}
-
-void QueueManager::add(const string& aRoot, const BundlePtr& bundle, const HintedUser& aUser, int aFlags) {
-	for_each(bundle->entries, [&](const Bundle::Entry& e) { add(aRoot + e.name, e.size, e.tth, aUser, aFlags, true, bundle); });
-	Lock l(cs);
-	bundles.insert(make_pair(bundle->getHash(), BundleItem(aRoot, bundle)));
 }
 
 void QueueManager::readd(const string& target, const HintedUser& aUser) {

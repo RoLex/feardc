@@ -1,7 +1,7 @@
 /*
   DC++ Widget Toolkit
 
-  Copyright (c) 2007-2022, Jacek Sieka
+  Copyright (c) 2007-2024, Jacek Sieka
 
   All rights reserved.
 
@@ -858,7 +858,7 @@ void TabView::draw(Canvas& canvas, unsigned index, Rectangle&& rect, bool isSele
 
 	bool isHighlighted = static_cast<int>(index) == highlighted || ti->marked;
 
-	int part, state;
+	int part = 0, state = 0;
 	if(theme) {
 		part = TABP_TABITEM;
 		state = isSelected ? TIS_SELECTED : isHighlighted ? TIS_HOT : TIS_NORMAL;

@@ -1,7 +1,7 @@
 /*
   DC++ Widget Toolkit
 
-  Copyright (c) 2007-2022, Jacek Sieka
+  Copyright (c) 2007-2024, Jacek Sieka
 
   SmartWin++
 
@@ -300,7 +300,6 @@ public:
 	  */
 	COLORREF getPixel( const Point & coord );
 
-#ifndef WINCE
 	/// Fills an area starting at (x,y) with the current brush.
 	/// crColor specifies when to stop or what to fill depending on the filltype
 	/// parameter.
@@ -312,7 +311,6 @@ public:
 	  * it'll return false.
 	  */
 	bool extFloodFill( int x, int y, COLORREF color, bool fillTilColorFound );
-#endif //!WINCE
 
 	/// invert the colors in the specified region; see the InvertRgn doc for more information.
 	void invert(const Region& region);

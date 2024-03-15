@@ -1,7 +1,7 @@
 /*
   DC++ Widget Toolkit
 
-  Copyright (c) 2007-2022, Jacek Sieka
+  Copyright (c) 2007-2024, Jacek Sieka
 
   SmartWin++
 
@@ -39,8 +39,6 @@
 
 namespace dwt { namespace util {
 
-#if defined UNICODE || defined _UNICODE
-
 typedef std::wstringstream tstringstream;
 typedef std::wostringstream tostringstream;
 typedef std::wistringstream tistringstream;
@@ -53,21 +51,6 @@ typedef std::wfilebuf tfilebuf;
 typedef std::wfstream tfstream;
 typedef std::wifstream tifstream;
 typedef std::wofstream tofstream;
-
-#else
-
-typedef std::stringstream tstringstream;
-typedef std::ostringstream tostringstream;
-typedef std::istringstream tistringstream;
-
-typedef std::ostream tostream;
-typedef std::istream tistream;
-typedef std::iostream tiostream;
-
-typedef std::filebuf tfilebuf;
-typedef std::fstream tfstream;
-typedef std::ifstream tifstream;
-typedef std::ofstream tofstream;
 
 #   endif //_FSTREAM_
 

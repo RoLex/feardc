@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -83,9 +83,9 @@ void Transfer::getParams(const UserConnection& aSource, ParamMap& params) {
 	if(hubs.empty())
 		hubs.push_back(_("Offline"));
 	params["hubURL"] = Util::toString(hubs);
-	params["fileSI"] = Util::toString(getSize());
+	params["fileSI"] = std::to_string(getSize());
 	params["fileSIshort"] = Util::formatBytes(getSize());
-	params["fileSIactual"] = Util::toString(getActual());
+	params["fileSIactual"] = std::to_string(getActual());
 	params["fileSIactualshort"] = Util::formatBytes(getActual());
 	params["speed"] = str(F_("%1%/s") % Util::formatBytes(getAverageSpeed()));
 	params["time"] = Util::formatSeconds((GET_TICK() - getStart()) / 1000);

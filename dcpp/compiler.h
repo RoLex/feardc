@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,13 +22,13 @@
 
 #ifdef _WIN32
 
-#if __GNUC__ < 6 || (__GNUC__ == 6 && __GNUC_MINOR__ < 2)
-#error GCC 6.2 is required
+#if __GNUC__ < 8 || (__GNUC__ == 8 && __GNUC_MINOR__ < 1)
+#error GCC 8.1 is required
 #endif
 
 #ifdef HAVE_OLD_MINGW
-#error Regular MinGW has stability problems; use a MinGW package from mingw-w64
-// see <https://bugs.launchpad.net/dcplusplus/+bug/1029629> for details
+#error Regular MinGW may have stability problems; use a MinGW package from mingw-w64
+// see <https://bugs.launchpad.net/dcplusplus/+bug/2032940> for details
 #endif
 
 #else // _WIN32
@@ -40,8 +40,8 @@
 #endif // _WIN32
 
 #elif defined(_MSC_VER)
-#if _MSC_VER < 1800 || _MSC_FULL_VER < 180021114
-#error Visual Studio 2013 with the Nov 2013 CTP is required
+#if _MSC_VER < 1910 || _MSC_FULL_VER < 191025017
+#error Visual Studio 2017 required
 #endif
 
 //disable the deprecated warnings for the CRT functions.
@@ -80,8 +80,8 @@
 
 #ifdef _WIN32
 
-#if _WIN32_WINNT < 0x600 || WINVER < 0x600
-#error _WIN32_WINNT / WINVER must require Windows Vista (0x600)
+#if _WIN32_WINNT < 0x601 || WINVER < 0x601
+#error _WIN32_WINNT / WINVER must require Windows 7 (0x601)
 #endif
 
 #if _WIN32_IE < 0x600

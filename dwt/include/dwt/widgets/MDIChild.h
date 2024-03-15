@@ -1,7 +1,7 @@
 /*
   DC++ Widget Toolkit
 
-  Copyright (c) 2007-2022, Jacek Sieka
+  Copyright (c) 2007-2024, Jacek Sieka
 
   SmartWin++
 
@@ -35,8 +35,6 @@
 
 #ifndef DWT_MDIChild_h
 #define DWT_MDIChild_h
-
-#ifndef WINCE
 
 #include "../tstring.h"
 #include "../resources/Icon.h"
@@ -119,7 +117,5 @@ inline MDIChild::MDIChild( Widget * parent )
 {}
 
 }
-
-#endif //! WINCE
 
 #endif

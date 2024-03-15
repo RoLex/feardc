@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2023-06-17 10:59+0200\n"
+"POT-Creation-Date: 2024-03-14 22:49+0100\n"
 "PO-Revision-Date: 2012-08-03 20:41+0000\n"
 "Last-Translator: adrian_007 <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pl\n"
 "X-Launchpad-Export-Date: 2018-11-11 22:49+0000\n"
 "X-Generator: Launchpad (build 18816)\n"
 
@@ -209,16 +209,16 @@ msgstr ""
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1674
+#: dcpp/QueueManager.cpp:1668
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "Niezgodne CRC32 (sprawdź SFV)"
 
-#: dcpp/QueueManager.cpp:1665
+#: dcpp/QueueManager.cpp:1659
 #, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "CRC32 sprzeczny (SFV-Check): %1%"
 
-#: dcpp/CryptoManager.cpp:566
+#: dcpp/CryptoManager.cpp:372
 #, boost-format
 msgid "Certificate verification for %1% failed with error: %2%"
 msgstr ""
@@ -334,8 +334,8 @@ msgstr "Kolejka pobierania"
 #: dcpp/ShareManager.cpp:794
 #, boost-format
 msgid ""
-"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
-"%3%"
+"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: %"
+"3%"
 msgstr ""
 "Zduplikowane pliki nie będą współdzielone łącznie: %1% (Rozmiar: %2% B) jest "
 "duplikatem: %3%"
@@ -344,7 +344,7 @@ msgstr ""
 msgid "Duplicate item in the file list"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:678 dcpp/QueueManager.cpp:682
+#: dcpp/QueueManager.cpp:672 dcpp/QueueManager.cpp:676
 #, boost-format
 msgid "Duplicate source: %1%"
 msgstr "Zdublowane żródło: %1%"
@@ -364,18 +364,19 @@ msgid "Error creating hash data file: %1%"
 msgstr "Błąd tworzenia pliku danych hash: %1%"
 
 #: dcpp/BZUtils.cpp:34 dcpp/BZUtils.cpp:55 dcpp/BZUtils.cpp:63
-#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:72 dcpp/ZUtils.cpp:99 dcpp/ZUtils.cpp:109
+#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:69 dcpp/ZUtils.cpp:93
+#: dcpp/ZUtils.cpp:103
 msgid "Error during compression"
 msgstr "Błąd podczas kompresji"
 
 #: dcpp/BZUtils.cpp:75 dcpp/BZUtils.cpp:97 dcpp/BZUtils.cpp:100
-#: dcpp/CryptoManager.cpp:717 dcpp/CryptoManager.cpp:736
-#: dcpp/CryptoManager.cpp:750 dcpp/ZUtils.cpp:123 dcpp/ZUtils.cpp:148
-#: dcpp/ZUtils.cpp:162
+#: dcpp/CryptoManager.cpp:523 dcpp/CryptoManager.cpp:542
+#: dcpp/CryptoManager.cpp:556 dcpp/ZUtils.cpp:117 dcpp/ZUtils.cpp:142
+#: dcpp/ZUtils.cpp:156
 msgid "Error during decompression"
 msgstr "Błąd podczas dekompresowania"
 
-#: dcpp/CryptoManager.cpp:184
+#: dcpp/CryptoManager.cpp:164
 msgid "Error generating certificate"
 msgstr "Błąd podczas generowania certyfikatu"
 
@@ -416,15 +417,15 @@ msgstr "Nie można pobrać zewnętrznego IP"
 msgid "Failed to initialize the %1% interface"
 msgstr "Nie udało się zainicjować %1% interfejs"
 
-#: dcpp/CryptoManager.cpp:433
+#: dcpp/CryptoManager.cpp:267
 msgid "Failed to load certificate file"
 msgstr "Nie udało się wczytać pliku certyfikatu"
 
-#: dcpp/CryptoManager.cpp:441
+#: dcpp/CryptoManager.cpp:275
 msgid "Failed to load private key"
 msgstr "Nie udało się wczytać klucza prywatnego"
 
-#: dcpp/CryptoManager.cpp:454
+#: dcpp/CryptoManager.cpp:288
 #, boost-format
 msgid "Failed to load trusted certificate from %1%"
 msgstr "Nie udało się załadować zaufanego certyfikatu od %1%"
@@ -452,7 +453,7 @@ msgstr ""
 "Nie udało się ustawić serwera socks dla przekierowań UDP (sprawdź adres i "
 "port socks)"
 
-#: dcpp/QueueManager.cpp:665
+#: dcpp/QueueManager.cpp:659
 msgid "File already exists at the target location"
 msgstr "Plik już istnieje w miejscu docelowym"
 
@@ -501,7 +502,7 @@ msgstr "Zakończono indeksowanie: %1% (%2%)"
 msgid "Full tree does not match TTH root"
 msgstr "Pełne drzewo nie pasuje do głównego TTH"
 
-#: dcpp/CryptoManager.cpp:422
+#: dcpp/CryptoManager.cpp:256
 msgid "Generated new TLS certificate"
 msgstr "Wygenerowano nowy ceryfikat TLS"
 
@@ -576,7 +577,7 @@ msgstr "Nieprawidłowy nazwa typu wyszukiwań"
 msgid "Invalid size"
 msgstr "Nieprawidłowy rozmiar"
 
-#: dcpp/QueueManager.cpp:652 dcpp/QueueManager.cpp:657
+#: dcpp/QueueManager.cpp:646 dcpp/QueueManager.cpp:651
 msgid ""
 "Invalid target file (missing directory, check default download directory "
 "setting)"
@@ -605,7 +606,7 @@ msgstr ""
 msgid "More bytes written than requested"
 msgstr "Zapisano więcej bajtów, niż żądano"
 
-#: dcpp/CryptoManager.cpp:173
+#: dcpp/CryptoManager.cpp:153
 msgid "No certificate file chosen"
 msgstr "Nie wybrano pliku certyfikatu"
 
@@ -613,7 +614,7 @@ msgstr "Nie wybrano pliku certyfikatu"
 msgid "No directory specified"
 msgstr "Brak zdefiniowanego katalogu"
 
-#: dcpp/CryptoManager.cpp:170
+#: dcpp/CryptoManager.cpp:150
 msgid "No private key file chosen"
 msgstr "Nie wybrano pliku z kluczem prywatnym"
 
@@ -715,8 +716,8 @@ msgstr ""
 #: dcpp/MappingManager.cpp:203
 #, boost-format
 msgid ""
-"Successfully created port mappings (Transfers: %1%, Encrypted transfers: "
-"%2%, Search: %3%) on the %4% device with the %5% interface"
+"Successfully created port mappings (Transfers: %1%, Encrypted transfers: %"
+"2%, Search: %3%) on the %4% device with the %5% interface"
 msgstr ""
 "Mapowanie portów zakończono powodzeniem (Transfer: %1%, Szyfrowany transfer: "
 "%2%, Szukanie: %3%) na urządzeniu  %4% z interface  %5%"
@@ -734,21 +735,21 @@ msgid ""
 "Successfully removed port mappings from the %1% device with the %2% interface"
 msgstr "usunięto mapowanie portów z urządzenia  %1% z interface  %2%"
 
-#: dcpp/CryptoManager.cpp:665
+#: dcpp/CryptoManager.cpp:471
 #, boost-format
 msgid "Supplied KeyPrint %1% did not match %2%."
 msgstr ""
 
-#: dcpp/CryptoManager.cpp:663
+#: dcpp/CryptoManager.cpp:469
 msgid "Supplied KeyPrint did not match any certificate."
 msgstr ""
 
-#: dcpp/CryptoManager.cpp:424
+#: dcpp/CryptoManager.cpp:258
 #, boost-format
 msgid "TLS disabled, failed to generate certificate: %1%"
 msgstr "TLS wyłączony, generowanie certyfikatu zakończone niepowodzeniem: %1%"
 
-#: dcpp/CryptoManager.cpp:414
+#: dcpp/CryptoManager.cpp:248
 msgid "TLS disabled, no certificate file set"
 msgstr "TLS wyłączony, brak ustalonego pliku certyfikatu"
 
@@ -768,7 +769,7 @@ msgstr "Niezgodność TTH"
 msgid "Target file is missing or wrong size"
 msgstr "Brak pliku docelowego lub zły rozmiar"
 
-#: dcpp/QueueManager.cpp:645
+#: dcpp/QueueManager.cpp:639
 msgid "Target filename too long"
 msgstr "Nazwa pliku docelowego jest zbyt długa"
 
@@ -778,7 +779,7 @@ msgid ""
 "encrypted transfers will be disabled"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1508
+#: dcpp/QueueManager.cpp:1502
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -848,12 +849,12 @@ msgstr "Od-ignoruj"
 msgid "Unable to create thread"
 msgstr "Nie można utworzyć wątku"
 
-#: dcpp/QueueManager.cpp:942
+#: dcpp/QueueManager.cpp:936
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%) nor to rename to %4% (%5%)"
 msgstr "Nie można przenieść %1% do %2% (%3%) ani zmienić nazwę na %4% (%5%)"
 
-#: dcpp/QueueManager.cpp:939
+#: dcpp/QueueManager.cpp:933
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%); renamed to %4%"
 msgstr "Nie można przenieść %1% do %2% (%3%); zmieniono nazwę na %4%"
@@ -866,7 +867,7 @@ msgstr ""
 "Nie można otworzyć portu(ów) %1%; ustawienia połączenia muszą zostać "
 "ustawione ręcznie"
 
-#: dcpp/QueueManager.cpp:1118
+#: dcpp/QueueManager.cpp:1112
 #, boost-format
 msgid "Unable to open filelist: %1%"
 msgstr "Nie można otworzyć listy plików: %1%"

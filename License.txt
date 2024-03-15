@@ -1,5 +1,5 @@
 DC++ - A client for the Direct Connect / Advanced Direct Connect network.
-Copyright (C) 2001-2022 Jacek Sieka, arnetheduck at gmail dot com
+Copyright (C) 2001-2024 Jacek Sieka, arnetheduck at gmail dot com
 
 This program is licensed under GPLv3 with the notable exception
 that you may compile and link it with OpenSSL (www.openssl.org).

@@ -5,65 +5,72 @@
 # - Perl, in order to use po4a <https://www.po4a.org/>
 # - zip (MSYS / Cygwin provide one)
 
-Import('dev')
+Import("dev")
 env = dev.env.Clone()
 
-if not env['i18n'] and not env['distro']:
+if not env["i18n"] and not env["distro"]:
     Return()
 
-if env.WhereIs('perl') is None:
+if env.WhereIs("perl") is None:
     raise Exception(
-        'Perl is required to run po4a scripts, installer translation '
-        'impossible'
+        "Perl is required to run po4a scripts, installer translation impossible"
     )
 
 nsis = None
-if env['distro']:
-    nsis = env.WhereIs('makensis')
+if env["distro"]:
+    nsis = env.WhereIs("makensis")
     if nsis is None:
         raise Exception(
-            'makensis.exe not found in PATH - NSIS is required to build the '
-            'distro'
+            "makensis.exe not found in PATH - NSIS is required to build the distro"
         )
-    if env.WhereIs('hg') is None:
+    if env.WhereIs("hg") is None:
         raise Exception(
             '"hg" is required to build the distro; this tree must be under hg '
-            'version control'
+            "version control"
         )
-    if env.WhereIs('zip') is None and env.WhereIs('7z') is None:
+    if env.WhereIs("zip") is None and env.WhereIs("7z") is None:
         raise Exception(
             '"zip" or "7z" is required to build the distro; install 7z or get '
-            'zip from MSYS or use the one provided with Cygwin' 
+            "zip from MSYS or use the one provided with Cygwin"
         )
 
 from build_util import nixify
 import re
 
-po4a_path = Dir('#/po4a').abspath + '/'
-env['po4a_cmd'] = lambda prog, options: (
-    'perl -I"' + po4a_path + 'lib" "' + po4a_path + prog +
-    '" -f xml -M utf-8 ' + options # -L utf-8
+po4a_path = Dir("#/po4a").abspath + "/"
+env["po4a_cmd"] = lambda prog, options: (
+    'perl -I"'
+    + po4a_path
+    + 'lib" "'
+    + po4a_path
+    + prog
+    + '" -f xml -M utf-8 ' # -L utf-8
+    + options
 )
 
 
 def gen_pot(target, source, env):
     """Create the translation template."""
-    return env.Execute(env['po4a_cmd'](
-        'po4a-updatepo',
-        '--no-deprecation '
-        '-o "package-name=dcpp-installer" -o "copyright-holder=Jacek Sieka" '
-        '-o "msgid-bugs-address=dcplusplus-devel@lists.sourceforge.net" '
-        '-m "' + nixify(str(source[0])) + '" -p "' + nixify(str(target[0])) +
-        '"'
-    ))
-potfile = File('po/dcpp-installer.pot')
-env.Command(potfile, File('Strings.xml'), Action(
-    gen_pot,
-    'Extracting installer texts to $TARGET'
-))
+    return env.Execute(
+        env["po4a_cmd"](
+            "po4a-updatepo",
+       	    "--no-deprecation "
+            '-o "package-name=dcpp-installer" -o "copyright-holder=Jacek Sieka" '
+            '-o "msgid-bugs-address=dcplusplus-devel@lists.sourceforge.net" '
+            '-m "' + nixify(str(source[0])) + '" -p "' + nixify(str(target[0])) + '"',
+        )
+    )
+
+
+potfile = File("po/dcpp-installer.pot")
+env.Command(
+    potfile,
+    File("Strings.xml"),
+    Action(gen_pot, "Extracting installer texts to $TARGET"),
+)
 
 # update .po's in installer/po
-po_list = Glob('po/*.po')
+po_list = Glob("po/*.po")
 for po_node in po_list:
     env.Precious(env.PoBuild(po_node, potfile))
 
@@ -76,26 +83,26 @@ import os.path
 from xml.dom.minidom import parse
 
 # gather the files necessary to create the installer
-sources = Glob('*.*')
+sources = Glob("*.*")
 x64_rename = []
 reg = re.compile('^\W*File.+"([^"]+)"')
-f = codecs.open('DCPlusPlus.nsi', 'rb', 'utf_16_le')
+f = codecs.open("DCPlusPlus.nsi", "rb", "utf_16_le")
 for line in f:
     match = reg.search(line)
     if match:
         match = match.group(1)
-        if match[:14] == 'DCPlusPlus.exe':
-            match = 'DCPlusPlus-stripped.exe' + match[14:]
-        if env.FindFile(match, '#'):
+        if match[:14] == "DCPlusPlus.exe":
+            match = "DCPlusPlus-stripped.exe" + match[14:]
+        if env.FindFile(match, "#"):
             # copy from the root dir
-            match = '#/' + match
-        elif match[-4:] == '-x64':
+            match = "#/" + match
+        elif match[-4:] == "-x64":
             # copy from the x64 build dir
-            match = dev.get_build_root()[:-1] + '-x64/bin/' + match[:-4]
+            match = dev.get_build_root()[:-1] + "-x64/bin/" + match[:-4]
             x64_rename.append(env.File(match).abspath)
         else:
             # copy from the build dir
-            match = dev.get_build_path('bin') + '/' + match
+            match = dev.get_build_path("bin") + "/" + match
         if line.lstrip().startswith("File /r"):
             sources.append(Dir(match))
         else:
@@ -108,83 +115,91 @@ sources.sort()
 
 def gen_installer(target, source, env):
     # create the temporary build directory
-    build_dir = 'build/installer'
-    build_path = build_dir + '/'
+    build_dir = "build/installer"
+    build_path = build_dir + "/"
     env.Execute([Delete(build_dir), Mkdir(build_dir)])
 
     # the file, included by the installer, that lists all available
     # translations
-    f_i18n = codecs.open(build_path + 'i18n.nsh', 'w', 'utf_16_le')
-    f_i18n.write(codecs.BOM_UTF16_LE.decode('utf-16-le'))
+    f_i18n = codecs.open(build_path + "i18n.nsh", "w", "utf_16_le")
+    f_i18n.write(codecs.BOM_UTF16_LE.decode("utf-16-le"))
 
     # copy the source files to the build directory
     for node in source:
         name = os.path.basename(node.path)
 
-        if name[-3:] == '.po' or name[-4:] == '.pot':
+        if name[-3:] == ".po" or name[-4:] == ".pot":
             # find the corresponding name among the NSIS language files
             name = get_po_name(node)
             if name is None:
                 # this must be the template (.pot)
-                name = 'English'
-            elif name == 'Norwegian Bokmal':
-                name = 'Norwegian'
-            elif name == 'Norwegian Nynorsk':
-                name = 'NorwegianNynorsk'
-            elif name == 'Brazilian Portuguese':
-                name = 'PortugueseBR'
-            elif name in [
-                'Chinese',
-                'Simplified Chinese',
-                'Chinese (Simplified)'
-            ]:
-                name = 'SimpChinese'
+                name = "English"
+            elif name == "Norwegian Bokmal":
+                name = "Norwegian"
+            elif name == "Norwegian Nynorsk":
+                name = "NorwegianNynorsk"
+            elif name == "Brazilian Portuguese":
+                name = "PortugueseBR"
+            elif name in ["Chinese", "Simplified Chinese", "Chinese (Simplified)"]:
+                name = "SimpChinese"
 
             # ensure the base language is supported by NSIS.
             if not os.path.exists(
-                os.path.dirname(nsis) + '/Contrib/Language files/' +
-                name + '.nlf'
+                os.path.dirname(nsis) + "/Contrib/Language files/" + name + ".nlf"
             ):
-                print('NSIS base language file %s.nlf not found' % name)
+                print("NSIS base language file %s.nlf not found" % name)
                 continue
 
             f_i18n.write(
-                '!insertmacro MUI_LANGUAGE "' + name +
-                '"\n!insertmacro LANGFILE_INCLUDE "_' + name + '.nsh"\n'
+                '!insertmacro MUI_LANGUAGE "'
+                + name
+                + '"\n!insertmacro LANGFILE_INCLUDE "_'
+                + name
+                + '.nsh"\n'
             )
-            xml_file = build_path + 'Strings.xml'
+            xml_file = build_path + "Strings.xml"
             # translate our strings
-            env.Execute(env['po4a_cmd'](
-                'po4a-translate',
-                '--no-deprecation '
-                '-m "installer/Strings.xml" -l "' + xml_file + '" -p "' +
-                nixify(str(node)) + '" -k 0'
-            ))
+            env.Execute(
+                env["po4a_cmd"](
+                    "po4a-translate",
+                    "--no-deprecation "
+                    '-m "installer/Strings.xml" -l "'
+                    + xml_file
+                    + '" -p "'
+                    + nixify(str(node))
+                    + '" -k 0',
+                )
+            )
             # parse translated strings to generate a message catalog included
             # by i18n.nsh
             f_nsh = codecs.open(
-                build_path + '_' + name + '.nsh', 'w', 'utf_16_le',
+                build_path + "_" + name + ".nsh",
+                "w",
+                "utf_16_le",
             )
-            f_nsh.write(codecs.BOM_UTF16_LE.decode('utf-16-le'))
+            f_nsh.write(codecs.BOM_UTF16_LE.decode("utf-16-le"))
             f_nsh.write('!insertmacro LANGFILE_EXT "' + name + '"\n')
             dom = parse(xml_file)
             for elem in dom.firstChild.childNodes:
                 if elem.nodeType == elem.ELEMENT_NODE:
                     f_nsh.write(
-                        '${LangFileString} ' + elem.nodeName + ' "' +
-                        elem.firstChild.nodeValue + '"\n'
+                        "${LangFileString} "
+                        + elem.nodeName
+                        + ' "'
+                        + elem.firstChild.nodeValue
+                        + '"\n'
                     )
             f_nsh.close()
             dom.unlink()
             env.Execute(Delete(xml_file))
 
         else:
-            suffix = ''
+            suffix = ""
             if node.abspath in x64_rename:
-                suffix = '-x64'
+                suffix = "-x64"
 
-            if name == 'DCPlusPlus-stripped.exe':
-                name = 'DCPlusPlus.exe'
+            if name == "DCPlusPlus-stripped.exe":
+                name = "DCPlusPlus.exe"
 
             env.Execute(Copy(build_path + name + suffix, node))
 
@@ -192,42 +207,38 @@ def gen_installer(target, source, env):
 
     # create the installer
     ret = env.Execute(
-        'makensis ' + build_path + 'DCPlusPlus.nsi > ' +
-        build_path + 'makensis.log'
+        "makensis " + build_path + "DCPlusPlus.nsi > " + build_path + "makensis.log"
     )
     if ret:
         return ret
-    env.Execute(Move(
-        target[0],
-        build_path + os.path.basename(target[0].path)
-    ))
+    env.Execute(Move(target[0], build_path + os.path.basename(target[0].path)))
 
     # make the zip binary archives
-    zip_cmd = lambda : None
-    if env.WhereIs('7z') is None:
+    zip_cmd = lambda: None
+    if env.WhereIs("7z") is None:
         zip_cmd = lambda path: env.Execute(
-            'cd "' + build_dir + '" && zip -9 -r "' + nixify(path) +
-            '" . -x "*-x64" -x "dcppboot.nonlocal.xml" -x "*.ico" '
-            '-x "*.log" -x "*.nsh" -x "*.nsi" > zip.log && cd "' +
-            env.Dir('#').abspath + '"'
+            'cd "'
+            + build_dir
+            + '" && zip -9 -r "'
+            + nixify(path)
+            + '" . -x "*-x64" -x "dcppboot.nonlocal.xml" -x "*.ico" '
+            '-x "*.log" -x "*.nsh" -x "*.nsi" > zip.log && cd "'
+            + env.Dir("#").abspath
+            + '"'
         )
     else:
         zip_cmd = lambda path: env.Execute(
-            'cd "' + build_dir + '" && 7z a -mx9 -r "' + path +
-            '" . -x!*-x64 -x!dcppboot.nonlocal.xml -x!*.ico '
-            '-x!*.log -x!*.nsh -x!*.nsi > 7z.log && cd "' +
-            env.Dir('#').abspath + '"'
+            'cd "'
+            + build_dir
+            + '" && 7z a -mx9 -r "'
+            + path
+            + '" . -x!*-x64 -x!dcppboot.nonlocal.xml -x!*.ico '
+            '-x!*.log -x!*.nsh -x!*.nsi > 7z.log && cd "' + env.Dir("#").abspath + '"'
         )
 
     zip_cmd(target[1].abspath)
-    env.Execute(Move(
-        build_path + 'DCPlusPlus.exe',
-        build_path + 'DCPlusPlus.exe-x64'
-    ))
-    env.Execute(Move(
-        build_path + 'DCPlusPlus.pdb',
-        build_path + 'DCPlusPlus.pdb-x64'
-    ))
+    env.Execute(Move(build_path + "DCPlusPlus.exe", build_path + "DCPlusPlus.exe-x64"))
+    env.Execute(Move(build_path + "DCPlusPlus.pdb", build_path + "DCPlusPlus.pdb-x64"))
     zip_cmd(target[2].abspath)
 
     # use "hg archive" to zip the source
@@ -235,19 +246,17 @@ def gen_installer(target, source, env):
 
     return ret
 
-distro_path = '#/build/distro/'
+
+distro_path = "#/build/distro/"
 ret = env.Command(
     [
-        distro_path + 'DCPlusPlus-xxx.exe',
-        distro_path + 'DCPlusPlus-xxx.zip',
-        distro_path + 'DCPlusPlus-xxx-x64.zip',
-        distro_path + 'DCPlusPlus-xxx-src.zip'
+        distro_path + "DCPlusPlus-xxx.exe",
+        distro_path + "DCPlusPlus-xxx.zip",
+        distro_path + "DCPlusPlus-xxx-x64.zip",
+        distro_path + "DCPlusPlus-xxx-src.zip",
     ],
     sources,
-    Action(
-        gen_installer,
-        'Creating final distro packages ($TARGETS)'
-    )
+    Action(gen_installer, "Creating final distro packages ($TARGETS)"),
 )
 
-Return('ret')
+Return("ret")

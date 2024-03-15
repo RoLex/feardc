@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -94,7 +94,7 @@ void SimpleXMLReader::advancePos(size_t n) { bufPos += n; pos += n; }
 string::size_type SimpleXMLReader::bufSize() const { return buf.size() - bufPos; }
 
 bool SimpleXMLReader::error(const char* e) {
-	throw SimpleXMLException(Util::toString(pos) + ": " + e);
+	throw SimpleXMLException(std::to_string(pos) + ": " + e);
 }
 
 const string& SimpleXMLReader::CallBack::getAttrib(StringPairList& attribs, const string& name, size_t hint) {

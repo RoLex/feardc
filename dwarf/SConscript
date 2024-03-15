@@ -1,15 +1,15 @@
-Import('dev source_path')
+Import("dev source_path")
 
 env, target, sources = dev.prepare_build(
-    source_path,
-    'dwarf',
-    source_glob='*.c',
-    in_bin=False
+    source_path, "dwarf", source_glob="*.c", in_bin=False
 )
 
+if "gcc" in env["TOOLS"]:
+    env.Append(CCFLAGS=["-Wno-unused-but-set-variable"])
+
 if dev.is_win32():
-    env.Append(CPPDEFINES=['WIN32', 'SHT_RELA=4'])
-env.Append(CPPPATH=['#/dwarf'])
+    env.Append(CPPDEFINES=["WIN32", "SHT_RELA=4"])
+env.Append(CPPPATH=["#/dwarf"])
 
 ret = dev.build_lib(env, target, sources)
-Return('ret')
+Return("ret")

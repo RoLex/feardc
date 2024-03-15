@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -310,46 +310,30 @@ public:
 		return (float)toDouble(aString.c_str());
 	}
 
-	static string toString(short val) {
-		char buf[8];
-		snprintf(buf, sizeof(buf), "%d", static_cast<int>(val));
-		return buf;
-	}
-	static string toString(unsigned short val) {
-		char buf[8];
-		snprintf(buf, sizeof(buf), "%u", static_cast<unsigned int>(val));
-		return buf;
-	}
+	// Overloads used by SimpleXML::addChildAttrib
+	// https://sourceforge.net/p/dcplusplus/code/ci/b508c2f2047949e6f815f9f9e6db08239facd7cb/tree/dcpp/SimpleXML.h#l63
+	// Don't use unconstrained templates to avoid modifying overload
+	// resolution
 	static string toString(int val) {
-		char buf[16];
-		snprintf(buf, sizeof(buf), "%d", val);
-		return buf;
+		return std::to_string(val);
 	}
 	static string toString(unsigned int val) {
-		char buf[16];
-		snprintf(buf, sizeof(buf), "%u", val);
-		return buf;
+		return std::to_string(val);
 	}
 	static string toString(long val) {
-		char buf[32];
-		snprintf(buf, sizeof(buf), "%ld", val);
-		return buf;
-	}
-	static string toString(unsigned long val) {
-		char buf[32];
-		snprintf(buf, sizeof(buf), "%lu", val);
-		return buf;
+		return std::to_string(val);
 	}
 	static string toString(long long val) {
-		char buf[32];
-		snprintf(buf, sizeof(buf), I64_FMT, val);
-		return buf;
+		return std::to_string(val);
 	}
-	static string toString(unsigned long long val) {
-		char buf[32];
-		snprintf(buf, sizeof(buf), U64_FMT, val);
-		return buf;
-	}
+
+	// Ensure these aren't used and that unexpected overload resolution
+	// doesn't occur. If/when toString is removed, these can too
+	static string toString(short val) = delete;
+	static string toString(unsigned short val) = delete;
+	static string toString(unsigned long val) = delete;
+	static string toString(unsigned long long val) = delete;
+
 	static string toString(double val) {
 		char buf[16];
 		snprintf(buf, sizeof(buf), "%0.2f", val);

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -52,7 +52,7 @@ public:
 		SERVER		= 0x04,
 		FIREBALL	= 0x08,
 		TLS			= 0x10//,
-		//NAT			= 0x20
+		//NAT		= 0x20
 	};
 
 	Identity() : sid(0) { }

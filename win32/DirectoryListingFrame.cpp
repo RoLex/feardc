@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -162,7 +162,7 @@ WindowParams DirectoryListingFrame::getWindowParams() const {
 	if(ii && ii->type == ItemInfo::DIRECTORY)
 		ret["Directory"] = WindowParam(dl->getPath(ii->dir));
 	ret["Hub"] = WindowParam(dl->getUser().hint);
-	ret["Speed"] = WindowParam(Util::toString(speed));
+	ret["Speed"] = WindowParam(std::to_string(speed));
 	return ret;
 }
 
@@ -1564,14 +1564,14 @@ void DirectoryListingFrame::runUserCommand(const UserCommand& uc) {
 		if(ii->type == ItemInfo::FILE) {
 			ucParams["type"] = [] { return _("File"); };
 			ucParams["fileFN"] = [this, ii] { return dl->getPath(ii->file) + ii->file->getName(); };
-			ucParams["fileSI"] = [ii] { return Util::toString(ii->file->getSize()); };
+			ucParams["fileSI"] = [ii] { return std::to_string(ii->file->getSize()); };
 			ucParams["fileSIshort"] = [ii] { return Util::formatBytes(ii->file->getSize()); };
 			ucParams["fileTR"] = [ii] { return ii->file->getTTH().toBase32(); };
 			ucParams["fileMN"] = [ii] { return WinUtil::makeMagnet(ii->file->getTTH(), ii->file->getName(), ii->file->getSize()); };
 		} else {
 			ucParams["type"] = [] { return _("Directory"); };
 			ucParams["fileFN"] = [this, ii] { return dl->getPath(ii->dir) + ii->dir->getName(); };
-			ucParams["fileSI"] = [ii] { return Util::toString(ii->dir->getTotalSize()); };
+			ucParams["fileSI"] = [ii] { return std::to_string(ii->dir->getTotalSize()); };
 			ucParams["fileSIshort"] = [ii] { return Util::formatBytes(ii->dir->getTotalSize()); };
 		}
 

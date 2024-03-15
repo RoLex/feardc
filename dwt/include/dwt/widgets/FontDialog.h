@@ -1,7 +1,7 @@
 /*
   DC++ Widget Toolkit
 
-  Copyright (c) 2007-2022, Jacek Sieka
+  Copyright (c) 2007-2024, Jacek Sieka
 
   SmartWin++
 
@@ -33,7 +33,6 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef WINCE
 #ifndef DWT_FontDialog_h
 #define DWT_FontDialog_h
 
@@ -76,4 +75,3 @@ private:
 }
 
 #endif
-#endif //! WINCE

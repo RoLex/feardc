@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,12 +25,11 @@
 #include <dcpp/SimpleXML.h>
 #include <dcpp/Streams.h>
 #include <dcpp/version.h>
+#include <openssl/opensslv.h>
 
 #include <dwt/widgets/Grid.h>
 #include <dwt/widgets/Label.h>
 #include <dwt/widgets/Link.h>
-
-#include <openssl/opensslv.h>
 
 #include "resource.h"
 #include "WinUtil.h"
@@ -95,7 +94,7 @@ bool AboutDlg::handleInitDialog() {
 	ls.style |= SS_CENTER;
 
 	{
-		auto cur = grid->addChild(gs)->addChild(Grid::Seed(5, 1));
+		auto cur = grid->addChild(gs)->addChild(Grid::Seed(6, 1));
 		cur->column(0).mode = GridInfo::FILL;
 		cur->column(0).align = GridInfo::CENTER;
 
@@ -103,8 +102,7 @@ bool AboutDlg::handleInitDialog() {
 
 		ls.caption = Text::toT(dcpp::fullVersionString) +
 			_T("\nBased on: " DCAPPNAME " " DCVERSIONSTRING "\n") +
-			_T("OpenSSL version: " OPENSSL_VERSION_TEXT "\n") +
-			_T("\n(c) Copyright 2001-2022 Jacek Sieka\n");
+			_T("\n(c) Copyright 2001-2024 Jacek Sieka\n");
 
 		ls.caption += T_("Ex-main project contributors: Todd Pederzani, poy\nEx-codeveloper: Per Lind\303\251n\nOriginal DC++ logo design: Martin Skogevall\nGraphics: Radox and various GPL and CC authors\n\nFearDC is licenced under GPL.");
 		cur->addChild(ls);
@@ -121,12 +119,8 @@ bool AboutDlg::handleInitDialog() {
 
 		gs.caption = T_("Compiler");
 		// see also CrashLogger.cpp for similar tests.
-#ifdef __MINGW32__
-#ifdef HAVE_OLD_MINGW
-		ts.caption = Text::toT("MinGW's GCC " __VERSION__);
-#else
+#ifdef __MINGW64_VERSION_MAJOR
 		ts.caption = Text::toT("MinGW-w64's GCC " __VERSION__);
-#endif
 #elif defined(_MSC_VER)
 		ts.caption = Text::toT("MS Visual Studio " + Util::toString(_MSC_VER));
 #else
@@ -138,6 +132,10 @@ bool AboutDlg::handleInitDialog() {
 #ifdef _WIN64
 		ts.caption += _T(" (x64)");
 #endif
+		cur->addChild(gs)->addChild(ts);
+
+		gs.caption = T_("OpenSSL version");
+		ts.caption = Text::toT(OPENSSL_VERSION_TEXT);
 		cur->addChild(gs)->addChild(ts);
 	}
 

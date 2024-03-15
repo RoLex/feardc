@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -89,9 +89,11 @@ static string parseData(MMDB_lookup_result_s res, ...) {
 	if (entry_data.type == MMDB_DATA_TYPE_UTF8_STRING)
 		return ((entry_data.data_size > 0) ? string(entry_data.utf8_string, entry_data.data_size) : Util::emptyString);
 	else if (entry_data.type == MMDB_DATA_TYPE_DOUBLE)
-		return Util::toString(entry_data.double_value);
+		return std::to_string(entry_data.double_value);
 	else if (entry_data.type == MMDB_DATA_TYPE_UINT16)
-		return Util::toString(entry_data.uint16);
+		return std::to_string(entry_data.uint16);
+	else
+		return Util::emptyString;
 }
 
 } // unnamed namespace

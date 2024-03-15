@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -65,6 +65,9 @@ private:
 		COLUMN_FAVORITE = COLUMN_FIRST,
 		COLUMN_SLOT,
 		COLUMN_NICK,
+		COLUMN_CLIENT,
+		COLUMN_VERSION,
+		COLUMN_PROTOCOL,
 		COLUMN_HUB,
 		COLUMN_SEEN,
 		COLUMN_DESCRIPTION,
@@ -76,7 +79,12 @@ private:
 		FAVORITE_OFF_ICON,
 		FAVORITE_ON_ICON,
 		GRANT_OFF_ICON,
-		GRANT_ON_ICON
+		GRANT_ON_ICON,
+		NORMAL_USER_ICON,
+		UNKNOWN_USER_ICON,
+		BOT_USER_ICON,
+		ADC_USER_ICON,
+		NMDC_USER_ICON
 	};
 
 	class UserInfo : public UserInfoBase {
@@ -91,9 +99,13 @@ private:
 			switch(col) {
 			case COLUMN_FAVORITE: return isFavorite ? FAVORITE_ON_ICON : FAVORITE_OFF_ICON;
 			case COLUMN_SLOT: return grantSlot ? GRANT_ON_ICON : GRANT_OFF_ICON;
+			case COLUMN_CLIENT: return isOnline || (!isFavorite && !isOnline) ? (isUnknown ? UNKNOWN_USER_ICON : (isBot ? BOT_USER_ICON : NORMAL_USER_ICON)) : -1;
+			case COLUMN_PROTOCOL: return isOnline || (!isFavorite && !isOnline) ? (isNMDC ? NMDC_USER_ICON : ADC_USER_ICON) : -1;
 			default: return -1;
 			}
 		}
+
+		int getStyle(HFONT& font, COLORREF& textColor, COLORREF& bgColor, int) const;
 
 		static int compareItems(const UserInfo* a, const UserInfo* b, int col) {
 			switch(col) {
@@ -111,6 +123,14 @@ private:
 
 		bool isFavorite;
 		bool grantSlot;
+
+		bool isUnknown;
+		bool isBot;
+		bool isNMDC;
+		bool isOnline;
+
+		string app;
+		string ver;
 	};
 
 	GridPtr grid;
@@ -121,8 +141,10 @@ private:
 	typedef WidgetUsers* WidgetUsersPtr;
 	WidgetUsersPtr users;
 
-	dwt::ScrolledContainerPtr scroll;
 	GridPtr userInfo;
+	TextBoxPtr infoBox;
+
+	tstring infoText;
 
 	ListFilter filter;
 
@@ -139,7 +161,6 @@ private:
 	void handleDescription();
 	void handleRemove();
 	bool handleKeyDown(int c);
-	LRESULT handleItemChanged(LPARAM lParam);
 	bool handleContextMenu(dwt::ScreenCoordinate pt);
 	bool handleClick(const dwt::MouseEvent &me);
 

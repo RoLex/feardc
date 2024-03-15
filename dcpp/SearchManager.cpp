@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -94,7 +94,7 @@ void SearchManager::listen() {
 		socket.reset(new Socket(Socket::TYPE_UDP));
 		socket->setLocalIp4(CONNSETTING(BIND_ADDRESS));
 		socket->setLocalIp6(CONNSETTING(BIND_ADDRESS6));
-		port = socket->listen(Util::toString(CONNSETTING(UDP_PORT)));
+		port = socket->listen(std::to_string(CONNSETTING(UDP_PORT)));
 		start();
 	} catch(...) {
 		socket.reset();
@@ -146,7 +146,7 @@ int SearchManager::run() {
 		while(!stop) {
 			try {
 				socket->disconnect();
-				port = socket->listen(Util::toString(CONNSETTING(UDP_PORT)));
+				port = socket->listen(std::to_string(CONNSETTING(UDP_PORT)));
 				if(failed) {
 					LogManager::getInstance()->message(_("Search enabled again"));
 					failed = false;

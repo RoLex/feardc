@@ -4,10 +4,10 @@ eval 'exec perl -S $0 ${1+"$@"}'
 
 # pod-updatepo -- update the PO translation of POD data.
 #
-# Copyright 2002-2020 by SPI, inc.
+# Copyright 2002-2023 by SPI, inc.
 #
 # This program is free software; you can redistribute it and/or modify it
-# under the terms of GPL (see COPYING).
+# under the terms of GPL v2.0 or later (see COPYING).
 
 =encoding UTF-8
 
@@ -130,7 +130,7 @@ content. If set to B<newlines>, po4a will only split the msgid and msgstr after
 newlines in the content. If set to B<no>, po4a will not wrap the po file at all.
 The wrapping of the reference comments is controlled by the B<--porefs> option.
 
-Note that this option has no impact on how the msgid and msgstr are wrapped, ie
+Note that this option has no impact on how the msgid and msgstr are wrapped, i.e.
 on how newlines are added to the content of these strings.
 
 =item B<--msgid-bugs-address> I<email@address>
@@ -168,14 +168,14 @@ L<po4a(7)>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2002-2020 by SPI, inc.
+Copyright 2002-2023 by SPI, inc.
 
 This program is free software; you may redistribute it and/or modify it
-under the terms of GPL (see the COPYING file).
+under the terms of GPL v2.0 or later (see the COPYING file).
 
 =cut
 
-use 5.006;
+use 5.16.0;
 use strict;
 use warnings;
 use utf8;
@@ -272,7 +272,11 @@ foreach (@options) {
 
 unless ($no_deprecation) {
     print wrap_msg(
-        gettext("po4a-updatepo is deprecated. The unified po4a(1) program is more convenient and less error prone.") );
+        gettext(
+                "po4a-updatepo is deprecated. The unified po4a(1) program is more convenient and less error prone. "
+              . "Once configured, `po4a --no-translations` can be used as a drop-in replacement to `po4a-updatepo`."
+        )
+    );
 }
 
 # parser
@@ -292,30 +296,34 @@ my ($pot_filename);
 
 print STDERR wrap_msg( gettext("Parse input files... ") ) if $verbose;
 
-$doc->{TT}{utf_mode} = 1;
-
 $doc->process(
     'file_in_name'    => \@masterfiles,
     'file_in_charset' => $mastchar,
-    'po_out_name'     => $pot_filename,
-    'debug'           => $debug,
-    'verbose'         => $verbose
+    'po_out_name'     => $pot_filename
 );
 
 print STDERR wrap_msg( gettext("done.") ) if $verbose;
 
 while ( my $po_filename = shift @pofiles ) {
+    my $usable_pofile = 0;
     if ( -e $po_filename ) {
+
+        # Check that the po file is not empty, as msgmerge has issues in this case (see Debian's #1022216 and GitHub's #442)
+        my $pofile = Locale::Po4a::Po->new();
+        $pofile->read($po_filename);
+        $usable_pofile = 1 if ( $pofile->count_entries() > 0 );
+    }
+    if ($usable_pofile) {
         print STDERR wrap_msg( gettext("Updating %s:"), $po_filename )
           if $verbose;
         my @cmd = ( "msgmerge" . $Config{_exe} );
         push( @cmd, split( /\s+/, $msgmerge_opt ) ) if length($msgmerge_opt);
         push @cmd, ( "-U", $po_filename, $pot_filename );
-        print STDERR join( ' ', @cmd ) . "\n" if $debug;
+        print STDERR "Running " . join( ' ', @cmd ) . "\n" if $debug;
         system(@cmd) == 0
-          or die wrap_msg( gettext("Could not run msgmerge: %s"), $! );
+          or die wrap_msg( gettext("Could not run msgmerge: %s\nThe command was: %s"), $!, join( ' ', @cmd ) );
         @cmd = ( "msgfmt" . $Config{_exe}, "--statistics", "-v", "-o", File::Spec->devnull(), $po_filename );
-        print STDERR join( ' ', @cmd ) . "\n" if $debug;
+        print STDERR "Running " . join( ' ', @cmd ) . "\n" if $debug;
         system(@cmd)
           if $verbose;
     } else {

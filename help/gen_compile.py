@@ -1,7 +1,12 @@
 def gen_compile(target, source, env):
     env.Execute(
-        '"' + env['asciidoc'] + '" -s -o"' + str(target[0]) +
-        '" "' + str(source[0]) + '"'
+        '"'
+        + env["asciidoc"]
+        + '" -s -o"'
+        + str(target[0])
+        + '" "'
+        + str(source[0])
+        + '"'
     )
 
     f = open(str(source[1]), "r")
@@ -14,10 +19,11 @@ def gen_compile(target, source, env):
     f.close()
 
     import re
+
     contents = re.sub(
-        re.compile(r'<a ([^>]+)>([^<]+)</a>', re.I),
+        re.compile(r"<a ([^>]+)>([^<]+)</a>", re.I),
         r'<a \1 target="_blank" class="external">\2</a>',
-        contents
+        contents,
     )
 
     f = open(str(target[0]), "w")

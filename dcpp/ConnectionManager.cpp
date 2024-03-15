@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -57,7 +57,7 @@ string ConnectionManager::makeToken() const {
 	string token;
 
 	Lock l(cs);
-	do { token = Util::toString(Util::rand()); }
+	do { token = std::to_string(Util::rand()); }
 	while(tokens.find(token) != tokens.end());
 
 	return token;

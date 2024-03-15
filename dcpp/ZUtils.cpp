@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -64,11 +64,8 @@ bool ZFilter::operator()(const void* in, size_t& insize, void* out, size_t& outs
 
 		// Starting with zlib 1.2.9, the deflateParams API has changed.
 		auto err = ::deflateParams(&zs, 0, Z_DEFAULT_STRATEGY);
-#if ZLIB_VERNUM >= 0x1290
+
 		if(err == Z_STREAM_ERROR) {
-#else
-		if(err != Z_OK) {
-#endif
 			throw Exception(_("Error during compression"));
 		}
 
@@ -77,11 +74,8 @@ bool ZFilter::operator()(const void* in, size_t& insize, void* out, size_t& outs
 		dcdebug("ZFilter: Dynamically disabled compression\n");
 
 		// Check if we ate all space already...
-#if ZLIB_VERNUM >= 0x1290
-		if(err == Z_BUF_ERROR) {
-#else
+		// Starting with zlib 1.2.12, generation of Z_BUF_ERROR in deflateParams has changed.
 		if(zs.avail_out == 0) {
-#endif
 			outsize = outsize - zs.avail_out;
 			insize = insize - zs.avail_in;
 			totalOut += outsize;

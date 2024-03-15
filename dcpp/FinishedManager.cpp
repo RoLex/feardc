@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -151,9 +151,9 @@ void FinishedManager::getParams(const string & target, ParamMap& params) {
 		params["hubURL"] = Util::toString(hubUrls);
 	}
 
-	params["fileSIsession"] = Util::toString(entry->getTransferred());
+	params["fileSIsession"] = std::to_string(entry->getTransferred());
 	params["fileSIsessionshort"] = Util::formatBytes(entry->getTransferred());
-	params["fileSIactual"] = Util::toString(entry->getActual());
+	params["fileSIactual"] = std::to_string(entry->getActual());
 	params["fileSIactualshort"] = Util::formatBytes(entry->getActual());
 
 	params["speed"] = str(F_("%1%/s") % Util::formatBytes(entry->getAverageSpeed()));

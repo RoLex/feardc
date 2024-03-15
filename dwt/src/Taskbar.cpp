@@ -1,7 +1,7 @@
 /*
   DC++ Widget Toolkit
 
-  Copyright (c) 2007-2022, Jacek Sieka
+  Copyright (c) 2007-2024, Jacek Sieka
 
   All rights reserved.
 
@@ -180,6 +180,10 @@ void Taskbar::setActiveOnTaskbar(ContainerPtr tab) {
 
 void Taskbar::setTaskbarIcon(ContainerPtr tab, const IconPtr& icon) {
 	tabs[tab]->setSmallIcon(icon);
+}
+
+void Taskbar::setOverlayIcon(ContainerPtr tab, const IconPtr& icon, const tstring& description) {
+	taskbar->SetOverlayIcon(window->handle(), icon->handle(), description.c_str());
 }
 
 BitmapPtr Taskbar::getBitmap(ContainerPtr tab, LPARAM thumbnailSize) {

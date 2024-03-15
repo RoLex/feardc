@@ -3,7 +3,7 @@
 # Copyright © 2005 Jordi Vilalta <jvprat@gmail.com>
 #
 # This program is free software; you may redistribute it and/or modify it
-# under the terms of GPL (see COPYING).
+# under the terms of GPL v2.0 or later (see COPYING).
 #
 # This module has common utilities for the various scripts of po4a
 
@@ -39,7 +39,7 @@ use vars qw(@ISA @EXPORT);
 @ISA    = qw(Exporter);
 @EXPORT = qw(wrap_msg wrap_mod wrap_ref_mod textdomain gettext dgettext);
 
-use 5.006;
+use 5.16.0;
 use strict;
 use warnings;
 
@@ -247,6 +247,6 @@ __END__
 Copyright © 2005 SPI, Inc.
 
 This program is free software; you may redistribute it and/or modify it
-under the terms of GPL (see the COPYING file).
+under the terms of GPL v2.0 or later (see the COPYING file).
 
 =cut

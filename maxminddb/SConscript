@@ -1,18 +1,31 @@
-Import('dev source_path')
+Import("dev source_path")
 
 env, target, sources = dev.prepare_build(
-    source_path,
-    'maxminddb',
-    source_glob='*.c',
-    in_bin=False
+    source_path, "maxminddb", source_glob="*.c", in_bin=False
 )
 
-env.Append(CPPDEFINES=[
-    'HAVE_STDINT_H=1'
-])
+env.Append(
+    CPPDEFINES=[
+        "HAVE_STDINT_H=1",
+        ('PACKAGE_VERSION', '\\"1.9.1\\"')
+        # todo: update PACKAGE_VERSION manually
+        # its defined by cmake since version 1.8.0
+        # we dont use or support cmake
+    ]
+)
 
-if 'msvc' in env['TOOLS']:
-    env.Append(CPPDEFINES=['ssize_t=SSIZE_T'])
+if "msvc" in env["TOOLS"]:
+    env.Append(CPPDEFINES=["ssize_t=SSIZE_T"])
+
+#if "gcc" in env["TOOLS"]:
+#    env.Append(
+#        CCFLAGS=[
+#            "-Wno-incompatible-pointer-types",
+#            "-Wno-sign-compare",
+#            "-Wno-unused-value",
+#            "-Wno-unused-variable",
+#        ]
+#    )
 
 ret = dev.build_lib(env, target, sources, dev.c_lib)
-Return('ret')
+Return("ret")

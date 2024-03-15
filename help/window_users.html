@@ -21,6 +21,12 @@
   <dd>The icon indicates that DC++ should auto grant a favorite user a slot or not. If the indicator is green, DC++ will automatically grant the user a slot; you can click the icon to toggle. The function works only for users already set to favorite.</dd>
   <dt>Nick</dt>
   <dd>The nick of the user.</dd>
+  <dt>Client</dt>
+  <dd>The name of the DC client the user is logged in with. This column is empty for offline users.</dd>
+  <dt>Version</dt>
+  <dd>The version of the DC client the user logged in with. This column is empty for offline users.</dd>
+  <dt>Protocol</dt>
+  <dd>The DC protocol of the connection to the hub (ADC or NMDC) where the user is logged in. This column is empty for offline users.</dd>
   <dt>Hub (last seen in, if offline)</dt>
   <dd>Which hub you saw this user the last time.</dd>
   <dt>Status / Time last seen</dt>
@@ -46,7 +52,8 @@
 <h2>Details pane (right)</h2>
 <p cshelp="IDH_USERS_DETAILS">
 	This pane shows you all the available details sent by the DC client of the selected user. The number of records shown can heavily depend on what kind of user selected, what protocol it uses, etc... For example you can get the most information from an ADC client user while the amount of available information from a hub bot is usually very small.
-</p>	
+	The content displayed in the pane is selectable and there's a right click menu function which allows you to select all the data and / or to copy the selection to the clipboard.
+</p>
 
 <h2>Filters (bottom)</h2>
 <p>The user list can be filtered by text, online status and file transfer activity. The following options are available:</p>

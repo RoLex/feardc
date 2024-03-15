@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2022 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -71,28 +71,28 @@ void PropPage::read(const ItemList& items) {
 			{
 				auto setting = static_cast<SettingsManager::IntSetting>(i.setting);
 				if(!settings->isDefault(setting)) {
-					static_cast<TextBoxPtr>(i.widget)->setText(Text::toT(Util::toString(settings->get(setting))));
+					static_cast<TextBoxPtr>(i.widget)->setText(Text::toT(std::to_string(settings->get(setting))));
 				}
 				break;
 			}
 		case T_INT_WITH_SPIN:
 			{
 				auto setting = static_cast<SettingsManager::IntSetting>(i.setting);
-				static_cast<TextBoxPtr>(i.widget)->setText(Text::toT(Util::toString(settings->get(setting))));
+				static_cast<TextBoxPtr>(i.widget)->setText(Text::toT(std::to_string(settings->get(setting))));
 				break;
 			}
 		case T_INT64:
 			{
 				auto setting = static_cast<SettingsManager::Int64Setting>(i.setting);
 				if(!settings->isDefault(setting)) {
-					static_cast<TextBoxPtr>(i.widget)->setText(Text::toT(Util::toString(settings->get(setting))));
+					static_cast<TextBoxPtr>(i.widget)->setText(Text::toT(std::to_string(settings->get(setting))));
 				}
 				break;
 			}
 		case T_INT64_WITH_SPIN:
 			{
 				auto setting = static_cast<SettingsManager::Int64Setting>(i.setting);
-				static_cast<TextBoxPtr>(i.widget)->setText(Text::toT(Util::toString(settings->get(setting))));
+				static_cast<TextBoxPtr>(i.widget)->setText(Text::toT(std::to_string(settings->get(setting))));
 				break;
 			}
 		case T_BOOL:

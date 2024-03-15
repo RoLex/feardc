@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2023-06-17 10:59+0200\n"
+"POT-Creation-Date: 2024-03-14 22:49+0100\n"
 "PO-Revision-Date: 2022-09-19 20:15+0000\n"
 "Last-Translator: Sopor <Unknown>\n"
 "Language-Team: Swedish <sv@li.org>\n"
-"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
 "X-Launchpad-Export-Date: 2022-10-18 11:20+0000\n"
 "X-Generator: Launchpad (build 25877e98ba44ca75f9c22db1fc37efee03e4606a)\n"
 
@@ -207,16 +207,16 @@ msgstr "Blockerat C-C anslutning till hubb ('%1%:%2%'; förfrågan från '%3%')"
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr "Blockerar '%1%', möjlig DDoS detekterad (från hubb '%2%')"
 
-#: dcpp/QueueManager.cpp:1674
+#: dcpp/QueueManager.cpp:1668
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "CRC32-inkonsekvens (SFV-kontroll)"
 
-#: dcpp/QueueManager.cpp:1665
+#: dcpp/QueueManager.cpp:1659
 #, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "CRC32-inkonsekvens (SFV-kontroll):  %1%"
 
-#: dcpp/CryptoManager.cpp:566
+#: dcpp/CryptoManager.cpp:372
 #, boost-format
 msgid "Certificate verification for %1% failed with error: %2%"
 msgstr "Certificatverifiering för %1% misslyckades med fel: %2%"
@@ -344,15 +344,15 @@ msgstr "Nedladdningskö"
 #: dcpp/ShareManager.cpp:794
 #, boost-format
 msgid ""
-"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
-"%3%"
+"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: %"
+"3%"
 msgstr "Dubbletter delas inte ut: %1% (Storlek: %2% B) Är dubblett av: %3%"
 
 #: dcpp/DirectoryListing.cpp:195 dcpp/DirectoryListing.cpp:220
 msgid "Duplicate item in the file list"
 msgstr "Dubblerat objekt i fillistan"
 
-#: dcpp/QueueManager.cpp:678 dcpp/QueueManager.cpp:682
+#: dcpp/QueueManager.cpp:672 dcpp/QueueManager.cpp:676
 #, boost-format
 msgid "Duplicate source: %1%"
 msgstr "Dubblerad källa: %1%"
@@ -372,18 +372,19 @@ msgid "Error creating hash data file: %1%"
 msgstr "Fel vid skapande av hashdatafil: %1%"
 
 #: dcpp/BZUtils.cpp:34 dcpp/BZUtils.cpp:55 dcpp/BZUtils.cpp:63
-#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:72 dcpp/ZUtils.cpp:99 dcpp/ZUtils.cpp:109
+#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:69 dcpp/ZUtils.cpp:93
+#: dcpp/ZUtils.cpp:103
 msgid "Error during compression"
 msgstr "Fel under komprimering"
 
 #: dcpp/BZUtils.cpp:75 dcpp/BZUtils.cpp:97 dcpp/BZUtils.cpp:100
-#: dcpp/CryptoManager.cpp:717 dcpp/CryptoManager.cpp:736
-#: dcpp/CryptoManager.cpp:750 dcpp/ZUtils.cpp:123 dcpp/ZUtils.cpp:148
-#: dcpp/ZUtils.cpp:162
+#: dcpp/CryptoManager.cpp:523 dcpp/CryptoManager.cpp:542
+#: dcpp/CryptoManager.cpp:556 dcpp/ZUtils.cpp:117 dcpp/ZUtils.cpp:142
+#: dcpp/ZUtils.cpp:156
 msgid "Error during decompression"
 msgstr "Fel under avkomprimering"
 
-#: dcpp/CryptoManager.cpp:184
+#: dcpp/CryptoManager.cpp:164
 msgid "Error generating certificate"
 msgstr "Fel vid skapande av ceritikat"
 
@@ -424,15 +425,15 @@ msgstr "Kunde inte hämta externt IP"
 msgid "Failed to initialize the %1% interface"
 msgstr "Kunde inte initialisera gränssnittet %1%"
 
-#: dcpp/CryptoManager.cpp:433
+#: dcpp/CryptoManager.cpp:267
 msgid "Failed to load certificate file"
 msgstr "Kunde inte ladda certifikatfil"
 
-#: dcpp/CryptoManager.cpp:441
+#: dcpp/CryptoManager.cpp:275
 msgid "Failed to load private key"
 msgstr "Kunde inte ladda privat nyckel"
 
-#: dcpp/CryptoManager.cpp:454
+#: dcpp/CryptoManager.cpp:288
 #, boost-format
 msgid "Failed to load trusted certificate from %1%"
 msgstr "Kunde inte ladda betrott certifikat från %1%"
@@ -461,7 +462,7 @@ msgstr ""
 "Kunde inte sätta upp  socks-servern för UDP-relä (kontrollera socks-adress "
 "och port)"
 
-#: dcpp/QueueManager.cpp:665
+#: dcpp/QueueManager.cpp:659
 msgid "File already exists at the target location"
 msgstr "Filen finns redan på målplatsen"
 
@@ -510,7 +511,7 @@ msgstr "Hashning färdig: %1% (%2%)"
 msgid "Full tree does not match TTH root"
 msgstr "Fullt träd matchar inte TTH-roten"
 
-#: dcpp/CryptoManager.cpp:422
+#: dcpp/CryptoManager.cpp:256
 msgid "Generated new TLS certificate"
 msgstr "Genererade nytt TLS-certifikat"
 
@@ -584,7 +585,7 @@ msgstr "Ogiltigt namn för söktyp"
 msgid "Invalid size"
 msgstr "Ogiltig storlek"
 
-#: dcpp/QueueManager.cpp:652 dcpp/QueueManager.cpp:657
+#: dcpp/QueueManager.cpp:646 dcpp/QueueManager.cpp:651
 msgid ""
 "Invalid target file (missing directory, check default download directory "
 "setting)"
@@ -613,7 +614,7 @@ msgstr "Saknar samband för %1%"
 msgid "More bytes written than requested"
 msgstr "Skrev fler byte än efterfrågat"
 
-#: dcpp/CryptoManager.cpp:173
+#: dcpp/CryptoManager.cpp:153
 msgid "No certificate file chosen"
 msgstr "Ingen certifikatfil vald"
 
@@ -621,7 +622,7 @@ msgstr "Ingen certifikatfil vald"
 msgid "No directory specified"
 msgstr "Ingen mapp specificerad"
 
-#: dcpp/CryptoManager.cpp:170
+#: dcpp/CryptoManager.cpp:150
 msgid "No private key file chosen"
 msgstr "Ingen privat nyckelfil vald"
 
@@ -720,8 +721,8 @@ msgstr "Socks-serverautentisering misslyckades (fel användarnamn / lösenord?)"
 #: dcpp/MappingManager.cpp:203
 #, boost-format
 msgid ""
-"Successfully created port mappings (Transfers: %1%, Encrypted transfers: "
-"%2%, Search: %3%) on the %4% device with the %5% interface"
+"Successfully created port mappings (Transfers: %1%, Encrypted transfers: %"
+"2%, Search: %3%) on the %4% device with the %5% interface"
 msgstr ""
 "Portmappningar skapades (Överföringar: %1%, Krypterade överföringar: %2%, "
 "Sök: %3%) på enhet %4% med användargränssnittet  %5%"
@@ -740,21 +741,21 @@ msgid ""
 msgstr ""
 "Lyckades ta bort portmappningar från enhet %1% med användargränssnittet %2%"
 
-#: dcpp/CryptoManager.cpp:665
+#: dcpp/CryptoManager.cpp:471
 #, boost-format
 msgid "Supplied KeyPrint %1% did not match %2%."
 msgstr "Skickad KeyPrint %1% matchade inte %2%"
 
-#: dcpp/CryptoManager.cpp:663
+#: dcpp/CryptoManager.cpp:469
 msgid "Supplied KeyPrint did not match any certificate."
 msgstr "Skickad KeyPrint matchade inte något certificat"
 
-#: dcpp/CryptoManager.cpp:424
+#: dcpp/CryptoManager.cpp:258
 #, boost-format
 msgid "TLS disabled, failed to generate certificate: %1%"
 msgstr "TLS avaktiverat. Misslyckades att generera certifikat: %1%"
 
-#: dcpp/CryptoManager.cpp:414
+#: dcpp/CryptoManager.cpp:248
 msgid "TLS disabled, no certificate file set"
 msgstr "TLS avaktiverat. Ingen certifikatsfil angiven"
 
@@ -774,7 +775,7 @@ msgstr "TTH-inkonsekvens"
 msgid "Target file is missing or wrong size"
 msgstr "Målfilen saknas eller har fel storlek"
 
-#: dcpp/QueueManager.cpp:645
+#: dcpp/QueueManager.cpp:639
 msgid "Target filename too long"
 msgstr "Målets filnamn är för långt"
 
@@ -786,7 +787,7 @@ msgstr ""
 "Den krypterade överföringsporten kan inte vara samma som överföringsporten, "
 "krypterade överföringar är avstängda"
 
-#: dcpp/QueueManager.cpp:1508
+#: dcpp/QueueManager.cpp:1502
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -858,12 +859,12 @@ msgstr "Ångra ignorering"
 msgid "Unable to create thread"
 msgstr "Kan inte skapa tråd"
 
-#: dcpp/QueueManager.cpp:942
+#: dcpp/QueueManager.cpp:936
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%) nor to rename to %4% (%5%)"
 msgstr "Kan inte flytta %1% till %2% (%3%) eller att döpa om till %4% (%5%)"
 
-#: dcpp/QueueManager.cpp:939
+#: dcpp/QueueManager.cpp:933
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%); renamed to %4%"
 msgstr "Kan inte flytta %1% till %2% (%3%). Omdöpt till %4%"
@@ -875,7 +876,7 @@ msgid ""
 msgstr ""
 "Kan inte öppna %1% portar. Nätverksinställningar måste konfigureras manuellt"
 
-#: dcpp/QueueManager.cpp:1118
+#: dcpp/QueueManager.cpp:1112
 #, boost-format
 msgid "Unable to open filelist: %1%"
 msgstr "Kan inte öppna fillista: %1%"

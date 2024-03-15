@@ -1,7 +1,7 @@
 /*
   DC++ Widget Toolkit
 
-  Copyright (c) 2007-2022, Jacek Sieka
+  Copyright (c) 2007-2024, Jacek Sieka
 
   SmartWin++
 
@@ -74,12 +74,10 @@ public:
 		Seed();
 	};
 
-#ifdef COMCTRL_V6
 	/// Sets the Vertical property of the control
 	/** Progress is shown from left to right or from bottom to top
 	  */
 	void setHorizontal( bool value = true );
-#endif
 
 	/// Sets the range of a progress bar control to a 32 - bit value.
 	/** The range is the unique values of the control, use this function to set the
@@ -152,13 +150,10 @@ private:
 // Implementation of class
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifdef COMCTRL_V6
-
 inline void ProgressBar::setHorizontal( bool value )
 {
 	this->Widget::addRemoveStyle( PBS_VERTICAL, !value );
 }
-#endif
 
 inline void ProgressBar::addToPosition( int positiondelta )
 {

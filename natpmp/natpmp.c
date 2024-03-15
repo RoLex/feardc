@@ -61,7 +61,7 @@ POSSIBILITY OF SUCH DAMAGE.
 #include "getgateway.h"
 #include <stdio.h>
 
-LIBSPEC int initnatpmp(natpmp_t * p, int forcegw, in_addr_t forcedgw)
+NATPMP_LIBSPEC int initnatpmp(natpmp_t * p, int forcegw, in_addr_t forcedgw)
 {
 #ifdef _WIN32
 	u_long ioctlArg = 1;
@@ -101,7 +101,7 @@ LIBSPEC int initnatpmp(natpmp_t * p, int forcegw, in_addr_t forcedgw)
 	return 0;
 }
 
-LIBSPEC int closenatpmp(natpmp_t * p)
+NATPMP_LIBSPEC int closenatpmp(natpmp_t * p)
 {
 	if(!p)
 		return NATPMP_ERR_INVALIDARGS;
@@ -122,7 +122,7 @@ int sendpendingrequest(natpmp_t * p)
 	addr.sin_addr.s_addr = p->gateway;
 	r = (int)sendto(p->s, p->pending_request, p->pending_request_len, 0,
 	                   (struct sockaddr *)&addr, sizeof(addr));*/
-	r = (int)send(p->s, p->pending_request, p->pending_request_len, 0);
+	r = (int)send(p->s, (const char *)p->pending_request, p->pending_request_len, 0);
 	return (r<0) ? NATPMP_ERR_SENDERR : r;
 }
 
@@ -144,7 +144,7 @@ int sendnatpmprequest(natpmp_t * p)
 	return n;
 }
 
-LIBSPEC int getnatpmprequesttimeout(natpmp_t * p, struct timeval * timeout)
+NATPMP_LIBSPEC int getnatpmprequesttimeout(natpmp_t * p, struct timeval * timeout)
 {
 	struct timeval now;
 	if(!p || !timeout)
@@ -162,7 +162,7 @@ LIBSPEC int getnatpmprequesttimeout(natpmp_t * p, struct timeval * timeout)
 	return 0;
 }
 
-LIBSPEC int sendpublicaddressrequest(natpmp_t * p)
+NATPMP_LIBSPEC int sendpublicaddressrequest(natpmp_t * p)
 {
 	if(!p)
 		return NATPMP_ERR_INVALIDARGS;
@@ -174,7 +174,7 @@ LIBSPEC int sendpublicaddressrequest(natpmp_t * p)
 	return sendnatpmprequest(p);
 }
 
-LIBSPEC int sendnewportmappingrequest(natpmp_t * p, int protocol,
+NATPMP_LIBSPEC int sendnewportmappingrequest(natpmp_t * p, int protocol,
                               uint16_t privateport, uint16_t publicport,
 							  uint32_t lifetime)
 {
@@ -202,7 +202,7 @@ LIBSPEC int sendnewportmappingrequest(natpmp_t * p, int protocol,
 	return sendnatpmprequest(p);
 }
 
-LIBSPEC int readnatpmpresponse(natpmp_t * p, natpmpresp_t * response)
+NATPMP_LIBSPEC int readnatpmpresponse(natpmp_t * p, natpmpresp_t * response)
 {
 	unsigned char buf[16];
 	struct sockaddr_in addr;
@@ -214,7 +214,7 @@ LIBSPEC int readnatpmpresponse(natpmp_t * p, natpmpresp_t * response)
 #endif
 	if(!p)
 		return NATPMP_ERR_INVALIDARGS;
-	n = recvfrom(p->s, buf, sizeof(buf), 0,
+	n = recvfrom(p->s, (char *)buf, sizeof(buf), 0,
 	             (struct sockaddr *)&addr, &addrlen);
 	if(n<0)
 #ifdef _WIN32
@@ -285,7 +285,7 @@ LIBSPEC int readnatpmpresponse(natpmp_t * p, natpmpresp_t * response)
 	return n;
 }
 
-LIBSPEC int readnatpmpresponseorretry(natpmp_t * p, natpmpresp_t * response)
+NATPMP_LIBSPEC int readnatpmpresponseorretry(natpmp_t * p, natpmpresp_t * response)
 {
 	int n;
 	if(!p || !response)
@@ -325,7 +325,7 @@ LIBSPEC int readnatpmpresponseorretry(natpmp_t * p, natpmpresp_t * response)
 }
 
 #ifdef ENABLE_STRNATPMPERR
-LIBSPEC const char * strnatpmperr(int r)
+NATPMP_LIBSPEC const char * strnatpmperr(int r)
 {
 	const char * s;
 	switch(r) {
