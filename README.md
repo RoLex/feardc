@@ -7,7 +7,7 @@
 
 ```
 * Merge with DC++ 0.881 (RoLex)
-* Update OpenSSL to version 3.2.1 (RoLex)
+* Update OpenSSL to version 3.2.1, requires linking FearDC with crypt32 (RoLex)
 * Update PO4A to version 0.71 (RoLex)
 * Update ZLib to version 1.3.1 (RoLex)
 * Update Boost to version 1.83 (RoLex)
@@ -20,6 +20,7 @@
 * Add dchublist.biz hublist by default (RoLex)
 * Remove dchublist.org hublist due to user count falsification for own interests (RoLex)
 * $MaxedOut sends queue position parameter on NMDC hubs, thanks to iceman50 (RoLex)
+* $LogedIn is known NMDC command (RoLex)
 * Missing in all clients - force login timeout after 2 minutes (RoLex)
 * Add support for TTHS NMDC extension to save traffic on both sides with short TTH searches, widely supported by Verlihub (RoLex)
 * Add support for BotList, HubTopic and MCTo NMDC extensions, widely supported by Verlihub (RoLex)
@@ -34,7 +35,7 @@
 * Properly show away, fireball and server status on NMDC hubs (RoLex)
 * Save last away status on restart (RoLex)
 * About dialog now shows used OpenSSL version (RoLex)
-* Fix locale detection when building help files on Cygwin and Msys (RoLex)
+* Fix locale detection when building help files on CygWin (RoLex)
 * Fix negative upload and download statistics due to int64_t declaration (RoLex)
 * Fix C++20 deprecation warnings (RoLex)
 * Fix crash on missing help files (RoLex)
