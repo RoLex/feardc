@@ -772,6 +772,10 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 
 			updated(u);
 		}
+
+	} else if (cmd == "$LogedIn") {
+		// we are operator - https://nmdc.sourceforge.io/NMDC.html#_logedin
+
 	} else if(cmd == "$ForceMove") {
 		disconnect(false);
 		fire(ClientListener::Redirect(), this, param);

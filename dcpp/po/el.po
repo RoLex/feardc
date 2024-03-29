@@ -2,19 +2,19 @@
 # Copyright (C) 2008 The translators
 # This file is distributed under the same license as the DC++ package.
 #  <johnkok@users.sourceforge.net>, 2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-14 22:49+0100\n"
+"POT-Creation-Date: 2024-03-16 18:38+0100\n"
 "PO-Revision-Date: 2010-07-22 20:04+0000\n"
 "Last-Translator: Μανώλης Σκόνδρας <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: el\n"
 "X-Launchpad-Export-Date: 2022-10-18 11:20+0000\n"
 "X-Generator: Launchpad (build 25877e98ba44ca75f9c22db1fc37efee03e4606a)\n"
 
@@ -331,8 +331,8 @@ msgstr "Αρχεία προς Λήψη"
 #: dcpp/ShareManager.cpp:794
 #, boost-format
 msgid ""
-"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: %"
-"3%"
+"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
+"%3%"
 msgstr ""
 "Διπλό αρχείο που δεν θα διαμοιραστεί: %1% (Μέγεθος: %2% B) Είναι ίδιο με: %3%"
 
@@ -361,8 +361,7 @@ msgid "Error creating hash data file: %1%"
 msgstr "Σφάλμα κατά τη δημιουργία αρχείου με τα δεδομένα δεικτοποίησης: %1%"
 
 #: dcpp/BZUtils.cpp:34 dcpp/BZUtils.cpp:55 dcpp/BZUtils.cpp:63
-#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:69 dcpp/ZUtils.cpp:93
-#: dcpp/ZUtils.cpp:103
+#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:69 dcpp/ZUtils.cpp:93 dcpp/ZUtils.cpp:103
 msgid "Error during compression"
 msgstr "Σφάλμα κατά την συμπίεση"
 
@@ -713,8 +712,8 @@ msgstr ""
 #: dcpp/MappingManager.cpp:203
 #, boost-format
 msgid ""
-"Successfully created port mappings (Transfers: %1%, Encrypted transfers: %"
-"2%, Search: %3%) on the %4% device with the %5% interface"
+"Successfully created port mappings (Transfers: %1%, Encrypted transfers: "
+"%2%, Search: %3%) on the %4% device with the %5% interface"
 msgstr ""
 
 #: dcpp/MappingManager.cpp:106
@@ -804,7 +803,7 @@ msgstr "Έχει ήδη ολοκληρωθεί η λήψη αυτού του α�
 msgid "This file is already queued"
 msgstr "Το αρχείο υπάρχει ήδη στην σειρά αναμονής"
 
-#: dcpp/NmdcHub.cpp:1256
+#: dcpp/NmdcHub.cpp:1260
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "
@@ -846,8 +845,8 @@ msgstr "Αδύνατο να δημιουργηθεί νήμα (thread)"
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%) nor to rename to %4% (%5%)"
 msgstr ""
-"Δεν είναι δυνατή η μεταφορά του %1% στο %2% (%3%) ούτε η μετονομασία του σε %"
-"4% (%5%)"
+"Δεν είναι δυνατή η μεταφορά του %1% στο %2% (%3%) ούτε η μετονομασία του σε "
+"%4% (%5%)"
 
 #: dcpp/QueueManager.cpp:933
 #, boost-format

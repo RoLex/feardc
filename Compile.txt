@@ -154,7 +154,11 @@
 
 		If you have problems, use Google. It works for me.
 
-		Example: scons tools=mingw mode=release arch=x64 i18n=yes help=yes prefix=x86_64-w64-mingw32-
+		Example Cygwin64 build:
+		  scons tools=mingw mode=release arch=x64 i18n=yes help=yes webhelp=yes prefix=x86_64-w64-mingw32-
+
+		Example Msys2 build:
+		  scons tools=mingw mode=release arch=x64 i18n=yes help=yes webhelp=yes
 
 
 4. Alternative compilers
@@ -184,18 +188,23 @@
 
 		Make sure that MinGW\bin is in your PATH environment variable.
 
-		Alternatively, if you like Cygwin, a MinGW-w64 compiler can be installed as part of Cygwin64.
+		Alternatively, if you like Cygwin or Msys, a MinGW-w64 compiler can be installed as part of Cygwin64 or Msys2.
+
 		When running the Cygwin64 installer, make sure to select following packages:
 		  mingw64-i686-gcc-core (for x86 build)
 		  mingw64-i686-gcc-g++ (for x86 build)
 		  mingw64-x86_64-gcc-core (for x64 build)
-		  mingw64-x86_64-gcc-g++" (for x64 build)
+		  mingw64-x86_64-gcc-g++ (for x64 build)
 		  make
 		  patch
 		  perl
 		  python3
 
-		Once done, open Cygwin64 terminal and setup additional packages:
+		As of Msys2, install these packages using pacman instead of those GCC ones for Cygwin64:
+		  mingw64-i686-gcc (for x86 build)
+		  mingw64-x86_64-gc (for x64 build)
+
+		Once done, open Cygwin64 or Msys2 terminal and setup additional packages:
 		  python -m pip install scons
 		  python -m pip install asciidoc3
 		  asciidoc3_postinstall

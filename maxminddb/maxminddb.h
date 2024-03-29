@@ -74,7 +74,7 @@ extern "C" {
 #if MMDB_UINT128_USING_MODE
 typedef unsigned int mmdb_uint128_t __attribute__((__mode__(TI)));
 #else
-typedef unsigned __int128 mmdb_uint128_t;
+typedef unsigned long long mmdb_uint128_t; // todo: patch for __int128
 #endif
 #endif
 

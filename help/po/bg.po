@@ -2,19 +2,19 @@
 # Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
 # This file is distributed under the same license as the dcplusplus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-14 23:14+0100\n"
+"POT-Creation-Date: 2024-03-16 18:38+0100\n"
 "PO-Revision-Date: 2014-05-24 19:26+0000\n"
 "Last-Translator: Hafo <hafo@abv.bg>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: bg\n"
 "X-Launchpad-Export-Date: 2022-10-18 11:21+0000\n"
 "X-Generator: Launchpad (build 25877e98ba44ca75f9c22db1fc37efee03e4606a)\n"
 
@@ -138,7 +138,7 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
 #: help/chat_commands.html:51
-#: /home/hundr/dcpp/help/commands_user_general.inc:11 help/index.html:30
+#: /home/hundr/feardc/help/commands_user_general.inc:11 help/index.html:30
 #: help/keyboard_commands.html:41 help/keyboard_commands.html:68
 #: help/keyboard_commands.html:70 help/keyboard_commands.html:72
 #: help/keyboard_commands.html:76 help/keyboard_commands.html:79
@@ -406,12 +406,12 @@ msgstr ""
 "помощната страница на съответния прозорец."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_general.inc:2
+#: /home/hundr/feardc/help/commands_file_general.inc:2
 msgid "Search for alternates"
 msgstr "Търси подобни"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_general.inc:3
+#: /home/hundr/feardc/help/commands_file_general.inc:3
 msgid ""
 "Will open a new <a po4a-id=0>Search window</a> to search for alternate "
 "sources for the selected file."
@@ -420,12 +420,12 @@ msgstr ""
 "източници за избрания файл."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_general.inc:5
+#: /home/hundr/feardc/help/commands_file_general.inc:5
 msgid "Lookup TTH at Bitzi.com"
 msgstr "Намери TTH в Bitzi.com"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_general.inc:6
+#: /home/hundr/feardc/help/commands_file_general.inc:6
 msgid ""
 "Will trigger the default browser to lookup the TTH of the selected file at "
 "Bitzi.com."
@@ -434,22 +434,22 @@ msgstr ""
 "файл в Bitzi.com."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_general.inc:8
+#: /home/hundr/feardc/help/commands_file_general.inc:8
 msgid "Copy magnet link to clipboard"
 msgstr "Копирай Magnet-хипервръзката в клипборда"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_general.inc:9
+#: /home/hundr/feardc/help/commands_file_general.inc:9
 msgid "Will copy the file's <a po4a-id=0>magnet link</a> to the clipboard."
 msgstr "Ще копира <a po4a-id=0>magnet link</a> на файла в клипборда."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_download.inc:2
+#: /home/hundr/feardc/help/commands_file_download.inc:2
 msgid "Download"
 msgstr "Сваляне"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_download.inc:3
+#: /home/hundr/feardc/help/commands_file_download.inc:3
 msgid ""
 "Adds the selected file(s) or director(ies) to the Download Queue. They will "
 "be downloaded to the <a po4a-id=0>Default download directory</a>."
@@ -459,12 +459,12 @@ msgstr ""
 "свалени файлове</a>."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_download.inc:6
+#: /home/hundr/feardc/help/commands_file_download.inc:6
 msgid "Download to..."
 msgstr "Свали в..."
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_download.inc:7
+#: /home/hundr/feardc/help/commands_file_download.inc:7
 msgid ""
 "Adds the selected file(s) or director(ies) to the Download Queue. The "
 "download target can be selected using the submenu elements : either a "
@@ -478,12 +478,12 @@ msgstr ""
 "чрез подменюто <i>Преглед...</i>."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_management.inc:2
+#: /home/hundr/feardc/help/commands_file_management.inc:2
 msgid "Open"
 msgstr "Отвори"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_management.inc:3
+#: /home/hundr/feardc/help/commands_file_management.inc:3
 msgid ""
 "Opens the file with its respective external viewer software. You should have "
 "the appropriate viewer / player software installed and correctly registered "
@@ -493,12 +493,12 @@ msgstr ""
 "правилно регистриран софтуер, за да можете да отворите файла."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_management.inc:6
+#: /home/hundr/feardc/help/commands_file_management.inc:6
 msgid "Open folder"
 msgstr "Отвори папката"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_management.inc:7
+#: /home/hundr/feardc/help/commands_file_management.inc:7
 msgid ""
 "Opens the selected folder (or the folder containing the selected file) in "
 "Windows Explorer."
@@ -507,12 +507,12 @@ msgstr ""
 "Explorer."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_management.inc:9
+#: /home/hundr/feardc/help/commands_file_management.inc:9
 msgid "Shell menu"
 msgstr "Shell menu"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_management.inc:10
+#: /home/hundr/feardc/help/commands_file_management.inc:10
 msgid ""
 "Opens the Windows shell menu as submenu items. This menu contains the same "
 "items as in the context menu of Windows Explorer. Note that the submenu "
@@ -545,7 +545,7 @@ msgstr ""
 "прозорци, се отнасяйте до помощната страница на съответния прозорец."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_listview.inc:2
+#: /home/hundr/feardc/help/commands_listview.inc:2
 #: help/dialog_fav_hub_groups.html:16 help/dialog_public_hub_lists.html:28
 #: help/dialog_string_list.html:29 help/settings_favoritedirs.html:22
 #: help/settings_plugins.html:51 help/settings_search_types.html:28
@@ -556,7 +556,7 @@ msgid "Remove"
 msgstr "Премахни"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_listview.inc:3
+#: /home/hundr/feardc/help/commands_listview.inc:3
 msgid ""
 "Deletes the actual item from the list. If the corresponding setting in <a "
 "po4a-id=0>Confirm dialog options</a> is enabled, you will be prompted before "
@@ -567,12 +567,12 @@ msgstr ""
 "да потвърдите преди изтриването."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_listview.inc:6
+#: /home/hundr/feardc/help/commands_listview.inc:6
 msgid "Remove all"
 msgstr "Премахни всички"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_listview.inc:7
+#: /home/hundr/feardc/help/commands_listview.inc:7
 msgid ""
 "Deletes all the selected items from the list. If the corresponding setting "
 "in <a po4a-id=0>Confirm dialog options</a> is enabled, you will be prompted "
@@ -599,22 +599,22 @@ msgstr ""
 "отнасяйте до помощната страница на съответния прозорец."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:2
+#: /home/hundr/feardc/help/commands_user_general.inc:2
 msgid "Get file list"
 msgstr "Извлечи списъка с файлове"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:3
+#: /home/hundr/feardc/help/commands_user_general.inc:3
 msgid "Download the file list of the selected users."
 msgstr "Сваляне на списъците с файлове, на избраните потребители."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:4
+#: /home/hundr/feardc/help/commands_user_general.inc:4
 msgid "Browse file list"
 msgstr "Прегледай списъка с файлове"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:5
+#: /home/hundr/feardc/help/commands_user_general.inc:5
 msgid ""
 "Download only the required pieces of the file lists of the selected users in "
 "form of a partial file list. Note that you may not able to fully exploit "
@@ -627,13 +627,13 @@ msgstr ""
 "списък с бутона \"Изтеглете пълния списък\"."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:6
+#: /home/hundr/feardc/help/commands_user_general.inc:6
 #: help/window_file_list.html:24
 msgid "Match queue"
 msgstr "Сравни с опашката"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:7
+#: /home/hundr/feardc/help/commands_user_general.inc:7
 msgid ""
 "Matches the files in your download queue to the file lists of the selected "
 "users. 2 files are considered to be the same if their TTH is the same. If "
@@ -646,12 +646,12 @@ msgstr ""
 "той ще бъде добавен като източник за съответните материали за изтегляне."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:10
+#: /home/hundr/feardc/help/commands_user_general.inc:10
 msgid "Send private message"
 msgstr "Изпрати лично съобщение"
 
 #. type: Content of: <html><body><dl><dd><placeholder>
-#: /home/hundr/dcpp/help/commands_user_general.inc:11
+#: /home/hundr/feardc/help/commands_user_general.inc:11
 #: help/dialog_fav_hub_groups.html:10 help/dialog_fav_hub_groups.html:15
 #: help/dialog_favorite_hub.html:38 help/dialog_favorite_hub.html:42
 #: help/dialog_favorite_hub.html:43 help/dialog_user_matching.html:13
@@ -704,7 +704,7 @@ msgstr "Изпрати лично съобщение"
 #: help/window_favorite_hubs.html:30 help/window_favorite_hubs.html:50
 #: help/window_favorite_hubs.html:51 help/window_hub.html:91
 #: help/window_main.html:28 help/window_main.html:29 help/window_main.html:47
-#: help/window_main.html:58 /home/hundr/dcpp/help/menu_plugins.inc:6
+#: help/window_main.html:58 /home/hundr/feardc/help/menu_plugins.inc:6
 #: help/window_main.html:71 help/window_main.html:75 help/window_main.html:79
 #: help/window_main.html:83 help/window_main.html:87 help/window_main.html:91
 #: help/window_main.html:95 help/window_main.html:99 help/window_main.html:103
@@ -728,7 +728,7 @@ msgid "<placeholder id=0/>"
 msgstr "<placeholder id=0/>"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:11
+#: /home/hundr/feardc/help/commands_user_general.inc:11
 msgid ""
 "Open <placeholder id=0/> windows to chat privately with the selected users."
 msgstr ""
@@ -736,12 +736,12 @@ msgstr ""
 "потребители."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:13
+#: /home/hundr/feardc/help/commands_user_general.inc:13
 msgid "Grant extra slot"
 msgstr "Дай допълнителен слот"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:14
+#: /home/hundr/feardc/help/commands_user_general.inc:14
 msgid ""
 "In addition to your regular upload slots, an extra upload slot will be given "
 "to the selected users until the end of the current DC++ session."
@@ -750,13 +750,13 @@ msgstr ""
 "на избраните потребители, до края на текущата сесия на DC++."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:16
+#: /home/hundr/feardc/help/commands_user_general.inc:16
 #: help/window_download_queue.html:139
 msgid "Remove user from queue"
 msgstr "Премахни потребител от опашката"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:17
+#: /home/hundr/feardc/help/commands_user_general.inc:17
 msgid ""
 "Remove the selected users from the source list of all queued files. Pending "
 "file list requests will be removed as well."
@@ -766,12 +766,12 @@ msgstr ""
 "ще бъдат премахнати."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:19
+#: /home/hundr/feardc/help/commands_user_general.inc:19
 msgid "Ignore chat"
 msgstr "Игнорирай чата"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:20
+#: /home/hundr/feardc/help/commands_user_general.inc:20
 msgid ""
 "Add user matching definitions (or modify existing ones, if possible) to "
 "ignore chat messages from the selected users."
@@ -780,12 +780,12 @@ msgstr ""
 "ако е възможно), за да се игнорират чат съобщенията на избраните потребители."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:22
+#: /home/hundr/feardc/help/commands_user_general.inc:22
 msgid "Un-ignore chat"
 msgstr "Не игнорирай чата"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:23
+#: /home/hundr/feardc/help/commands_user_general.inc:23
 msgid ""
 "Add user matching definitions (or modify existing ones, if possible) to stop "
 "ignoring chat messages from the selected users."
@@ -795,12 +795,12 @@ msgstr ""
 "избраните потребители."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:25
+#: /home/hundr/feardc/help/commands_user_general.inc:25
 msgid "Copy user information"
 msgstr "Копирай информацията за потребителя"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:26
+#: /home/hundr/feardc/help/commands_user_general.inc:26
 msgid ""
 "Copy a few lines containing user information to the clipboard. The data may "
 "include: the user's nick(s), her hub address(es), her IP, country, email, "
@@ -813,13 +813,13 @@ msgstr ""
 "потребителя, информацията за всеки потребител ​​се отделя с един празен ред."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_favorites.inc:2
+#: /home/hundr/feardc/help/commands_user_favorites.inc:2
 #: help/window_public_hubs.html:42
 msgid "Add to favorites"
 msgstr "Прибави към любими"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_favorites.inc:3
+#: /home/hundr/feardc/help/commands_user_favorites.inc:3
 msgid "Adds the selected users to your <a po4a-id=0>Favorite Users</a> list."
 msgstr ""
 "Добавя избраните потребители към списъка с <a po4a-id=0>любими потребители</"
@@ -1247,9 +1247,9 @@ msgstr ""
 #. type: Content of: <html><body><ol><li>
 #: help/dialog_customize_tb.html:16
 msgid ""
-"To reposition a button on the toolbar, select it from the \"Toolbar buttons"
-"\" list box and click either \"Move Up\" or \"Move Down\" to move the button "
-"accordingly."
+"To reposition a button on the toolbar, select it from the \"Toolbar "
+"buttons\" list box and click either \"Move Up\" or \"Move Down\" to move the "
+"button accordingly."
 msgstr ""
 "За да промените позицията на бутон в лентата с инструменти, изберете го от "
 "списъка с \"текущи бутони\" и щракнете или върху \"Премести нагоре\", или "
@@ -1262,8 +1262,8 @@ msgid ""
 "(undo changes), click the Reset button."
 msgstr ""
 "За да върнете лентата с инструменти в състоянието, в което е била при "
-"отварянето на диалоговия прозорец, щракнете върху бутона \"Начално състояние"
-"\"."
+"отварянето на диалоговия прозорец, щракнете върху бутона \"Начално "
+"състояние\"."
 
 #. type: Content of: <html><body><ol><li>
 #: help/dialog_customize_tb.html:18
@@ -1278,17 +1278,16 @@ msgstr ""
 #: help/dialog_favorite_hub.html:42 help/dialog_favorite_hub.html:43
 #: help/index.html:62 help/window_favorite_hubs.html:30
 #: help/window_favorite_hubs.html:50 help/window_favorite_hubs.html:51
-#: help/window_main.html:29 help/window_main.html:147
-#: help/window_main.html:152 help/window_main.html:249
+#: help/window_main.html:29 help/window_main.html:147 help/window_main.html:152
+#: help/window_main.html:249
 msgid "Favorite hub groups"
 msgstr "Групи с любими хъбове"
 
 #. type: Content of: <html><body><dl><dd><div><placeholder><a>
 #: help/dialog_fav_hub_groups.html:10 help/index.html:33
 #: help/keyboard_commands.html:46 help/window_main.html:74
-#: help/window_main.html:75 help/window_main.html:212
-#: help/window_main.html:245 help/window_main.html:247
-#: help/window_main.html:248
+#: help/window_main.html:75 help/window_main.html:212 help/window_main.html:245
+#: help/window_main.html:247 help/window_main.html:248
 msgid "Favorite Hubs"
 msgstr "Любими хъбове"
 
@@ -1379,7 +1378,7 @@ msgstr ""
 #. type: Content of: <html><body><dl><dt>
 #: help/dialog_fav_hub_groups.html:21 help/dialog_favorite_hub.html:12
 #: help/dialog_user_command.html:37 help/dialog_user_matching.html:17
-#: /home/hundr/dcpp/help/window_hublists.inc:9
+#: /home/hundr/feardc/help/window_hublists.inc:9
 msgid "Name"
 msgstr "Име"
 
@@ -1422,8 +1421,8 @@ msgstr "Свойства на любим хъб"
 #: help/keyboard_commands.html:84 help/settings_appearance.html:84
 #: help/settings_expert.html:55 help/settings_history.html:17
 #: help/settings_history.html:36 help/settings_notifications.html:26
-#: help/settings_tabs.html:41 /home/hundr/dcpp/help/window_hublists.inc:4
-#: /home/hundr/dcpp/help/window_hublists.inc:5
+#: help/settings_tabs.html:41 /home/hundr/feardc/help/window_hublists.inc:4
+#: /home/hundr/feardc/help/window_hublists.inc:5
 #: help/window_finished_downloads.html:36 help/window_finished_uploads.html:36
 #: help/window_hub.html:10 help/window_hub.html:11 help/window_main.html:28
 #: help/window_main.html:143 help/window_main.html:146
@@ -1449,7 +1448,7 @@ msgstr "Адрес на хъба."
 
 #. type: Content of: <html><body><dl><dt>
 #: help/dialog_favorite_hub.html:16 help/dialog_favorite_hub.html:27
-#: help/settings_general.html:25 /home/hundr/dcpp/help/window_hublists.inc:11
+#: help/settings_general.html:25 /home/hundr/feardc/help/window_hublists.inc:11
 #: help/window_hub.html:49 help/window_users.html:34 help/window_users.html:44
 msgid "Description"
 msgstr "Описание"
@@ -1610,8 +1609,8 @@ msgid ""
 "This window will display what file is currently being indexed (hashed) by DC+"
 "+, at what rate and approximately how long time there is left."
 msgstr ""
-"Този прозорец ще покаже какви файлове в момента се индексират (хешират) от DC"
-"++, с каква скорост и приблизително колко време остава."
+"Този прозорец ще покаже какви файлове в момента се индексират (хешират) от "
+"DC++, с каква скорост и приблизително колко време остава."
 
 #. type: Content of: <html><body><p>
 #: help/dialog_indexing_progress.html:14
@@ -2644,9 +2643,9 @@ msgid ""
 "NOT have an internal IP address for this to work."
 msgstr ""
 "Изберете радио бутона <b>Активен режим (Аз нямам рутер / Аз сам конфигурирах "
-"моя рутер)</b>. Оставете празно полето \"Външно / WAN IP\". Това ще накара DC"
-"++ да използва текущия IP от Вашата мрежова карта. За да сработи, НЕ трябва "
-"да имате вътрешен IP адрес."
+"моя рутер)</b>. Оставете празно полето \"Външно / WAN IP\". Това ще накара "
+"DC++ да използва текущия IP от Вашата мрежова карта. За да сработи, НЕ "
+"трябва да имате вътрешен IP адрес."
 
 #. type: Content of: <html><body><p><ul><li>
 #: help/faq_connection.html:105 help/faq_connection.html:154
@@ -2691,8 +2690,8 @@ msgid ""
 "+ to connect to local hubs</b> and you plan to connect to users in your "
 "local network only."
 msgstr ""
-"Имайте предвид, че това е правилният режим за свързване, ако <b>използвате DC"
-"++ само за връзка с местните хъбове</b> и имате намерение да се свържете с "
+"Имайте предвид, че това е правилният режим за свързване, ако <b>използвате "
+"DC++ само за връзка с местните хъбове</b> и имате намерение да се свържете с "
 "потребителите в локалната ви мрежа."
 
 #. type: Content of: <html><body><h2>
@@ -2789,9 +2788,9 @@ msgstr ""
 #. type: Content of: <html><body><p><ul><li>
 #: help/faq_connection.html:151
 msgid ""
-"Select the <b>Active mode (let DC++ configure my router with NAT-PMP / UPnP)"
-"</b> radio button. Leave the fields in the &quot;External / WAN IP&quot; box "
-"blank."
+"Select the <b>Active mode (let DC++ configure my router with NAT-PMP / "
+"UPnP)</b> radio button. Leave the fields in the &quot;External / WAN "
+"IP&quot; box blank."
 msgstr ""
 "Изберете радио бутона <b>Активен режим (Нека DC++ конфигурира моя рутер с  "
 "NAT-PMP / UPnP)</b>. Оставете празно полето &quot;Външно / WAN IP&quot;."
@@ -3019,8 +3018,8 @@ msgstr ""
 "Просто стартирайте инсталатора и инсталирайте DC++, след което задайте "
 "настройките според Вашите предпочитания (най-важни са <a po4a-"
 "id=0>псевдонимът</a>, <a po4a-id=1>местоположението за свалените файлове</a> "
-"и <a po4a-id=2>споделените директории</a>). При използване на инсталатора, DC"
-"++ ще съхранява настройките си и ще създаде директория за свалянията, в "
+"и <a po4a-id=2>споделените директории</a>). При използване на инсталатора, "
+"DC++ ще съхранява настройките си и ще създаде директория за свалянията, в "
 "директорията с профила на текущия потребител."
 
 #. type: Content of: <html><body><p>
@@ -3676,10 +3675,10 @@ msgstr ""
 #: help/faq_portforward.html:51
 msgid ""
 "The IP that you are forwarding to should be the <b>internal</b> IP address "
-"of your computer running DC++.  It usually begins with <a po4a-id=0>\"192.168"
-"\", \"172.16.\" or \"10.x.\"</a>. To see your internal IP address go to the "
-"command prompt and type: <i>ipconfig</i> (Start Menu -&gt; Run -&gt; <i>cmd /"
-"k ipconfig</i>)"
+"of your computer running DC++.  It usually begins with <a po4a-"
+"id=0>\"192.168\", \"172.16.\" or \"10.x.\"</a>. To see your internal IP "
+"address go to the command prompt and type: <i>ipconfig</i> (Start Menu -&gt; "
+"Run -&gt; <i>cmd /k ipconfig</i>)"
 msgstr ""
 "IP адресът, трябва да бъде <b>вътрешния</b> IP адрес на компютъра, на който "
 "работи DC++. Той обикновено започва с <a po4a-id=0>\"192.168\", \"172.16.\" "
@@ -3728,11 +3727,11 @@ msgstr ""
 "проверка, дали правилно сте пренасочили порта(овете) към DC++, използвайте "
 "<a po4a-id=0>www.canyouseeme.org</a>. Уверете се, че DC++ е отворен. След "
 "това, на сайта, въведете порт, който сте пренасочили и щракнете върху "
-"Проверка. Ако всичко е правилно настроено, сайтът трябва да изпрати \"Success"
-"\". Ако получите съобщение за грешка в червено, тогава ще трябва да се "
-"направи проверка на пренасочването на портовете на рутера, DC++ настройките, "
-"вградената защитна стена и настройките на възможния наличен <a po4a-"
-"id=1>защитен софтуер от трета страна</a>"
+"Проверка. Ако всичко е правилно настроено, сайтът трябва да изпрати "
+"\"Success\". Ако получите съобщение за грешка в червено, тогава ще трябва да "
+"се направи проверка на пренасочването на портовете на рутера, DC++ "
+"настройките, вградената защитна стена и настройките на възможния наличен <a "
+"po4a-id=1>защитен софтуер от трета страна</a>"
 
 #. type: Content of: <html><body><p>
 #: help/faq_portforward.html:70
@@ -3747,13 +3746,13 @@ msgid ""
 msgstr ""
 "<u>Съвет:</u> преди да попълните необходимите настройки може да си струва да "
 "проверите, дали DC++ е в състояние автоматично да открие някои от "
-"необходимите параметри. За да направите това, отидете в прозореца \"Свързване"
-"\". В настройките, <a po4a-id=0>позволяващи автоматично откриване на връзки</"
-"a>, кликнете върху \"Открий Сега\" и когато откриването завърши, кликнете "
-"върху \"Редактирай откритите настройки\". В зависимост от резултатите, по "
-"този начин може да се ускори създаването на ръчно пренасочване на портовете, "
-"ако DC++ е в състояние да открие някое подмножество на необходимите "
-"настройки."
+"необходимите параметри. За да направите това, отидете в прозореца "
+"\"Свързване\". В настройките, <a po4a-id=0>позволяващи автоматично откриване "
+"на връзки</a>, кликнете върху \"Открий Сега\" и когато откриването завърши, "
+"кликнете върху \"Редактирай откритите настройки\". В зависимост от "
+"резултатите, по този начин може да се ускори създаването на ръчно "
+"пренасочване на портовете, ако DC++ е в състояние да открие някое "
+"подмножество на необходимите настройки."
 
 #. type: Content of: <html><body><h2>
 #: help/faq_portforward.html:76
@@ -5039,8 +5038,8 @@ msgid ""
 "suitable to use by itself for protection. If it's enabled and you have "
 "problems accessing the Internet with DC++ the best practice is to check for "
 "and delete existing exception(s) for DC++ then let the operating system "
-"properly readd it at next start of the DC++ application. To do this, close DC"
-"++ and"
+"properly readd it at next start of the DC++ application. To do this, close "
+"DC++ and"
 msgstr ""
 "Защитната стена е компонент, включен в последните операционни системи на "
 "Windows и е активирана по подразбиране. Въпреки, че не предлага изобилие от "
@@ -5983,22 +5982,22 @@ msgstr "Списък с файлове"
 #. type: Content of: <html><body><dl><dd><placeholder><a>
 #: help/index.html:32 help/keyboard_commands.html:52
 #: help/keyboard_commands.html:89 help/window_main.html:70
-#: help/window_main.html:71 help/window_main.html:210
-#: help/window_main.html:239 help/window_main.html:240
+#: help/window_main.html:71 help/window_main.html:210 help/window_main.html:239
+#: help/window_main.html:240
 msgid "Public Hubs"
 msgstr "Публични Хъбове"
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
 #: help/index.html:36 help/settings_tabs.html:59 help/window_main.html:86
-#: help/window_main.html:87 help/window_main.html:215
-#: help/window_main.html:258 help/window_main.html:259
+#: help/window_main.html:87 help/window_main.html:215 help/window_main.html:258
+#: help/window_main.html:259
 msgid "Finished Downloads"
 msgstr "Завършени сваляния"
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
 #: help/index.html:37 help/settings_tabs.html:62 help/window_main.html:90
-#: help/window_main.html:91 help/window_main.html:216
-#: help/window_main.html:261 help/window_main.html:262
+#: help/window_main.html:91 help/window_main.html:216 help/window_main.html:261
+#: help/window_main.html:262
 msgid "Finished Uploads"
 msgstr "Завършени качвания"
 
@@ -6080,8 +6079,7 @@ msgstr "Свързване"
 
 #. type: Content of: <html><body><h1>
 #: help/index.html:75 help/settings_connectivity.html:17
-#: help/settings_connectivity.html:64
-#: help/settings_connectivity_manual.html:10
+#: help/settings_connectivity.html:64 help/settings_connectivity_manual.html:10
 msgid "Manual configuration"
 msgstr "Ръчно конфигуриране"
 
@@ -6170,7 +6168,7 @@ msgstr "Типове търсене"
 
 #. type: Content of: <html><body><dl><dd><ul><li><placeholder><a>
 #: help/index.html:117 help/window_main.html:57 help/window_main.html:58
-#: /home/hundr/dcpp/help/menu_plugins.inc:6 help/window_main.html:227
+#: /home/hundr/feardc/help/menu_plugins.inc:6 help/window_main.html:227
 #: help/window_main.html:303 help/window_main.html:306
 msgid "Plugins"
 msgstr "Приставки"
@@ -6846,10 +6844,10 @@ msgid ""
 "appropriate option in Advanced settings that closes downloads of peers that "
 "leave the Hub.)"
 msgstr ""
-"Не излизайте от хъбове, в които сте, когато друг потребител тегли от Вас. (DC"
-"++ потребителите имат възможност да наказват това поведение, чрез задаването "
-"на съответната опция в \"Разширени настройки\", която затваря слотовете за "
-"сваляне за пиърите, които напускат хъба.)"
+"Не излизайте от хъбове, в които сте, когато друг потребител тегли от Вас. "
+"(DC++ потребителите имат възможност да наказват това поведение, чрез "
+"задаването на съответната опция в \"Разширени настройки\", която затваря "
+"слотовете за сваляне за пиърите, които напускат хъба.)"
 
 #. type: Content of: <html><body><ul><li>
 #: help/netiquette.html:49
@@ -8270,11 +8268,11 @@ msgid ""
 "hubs. Note that <b>this port value should be different than the one used for "
 "transfers (TCP).</b>"
 msgstr ""
-"Това е портът, чрез който DC++ слуша за входящи <a po4a-id=0>TLS (криптирани)"
-"</a> връзки от други пиъри. Ако този порт е неправилно зададен, Вие няма да "
-"можете да търсите, нито да теглите от криптирани хъбове ADC. Имайте предвид, "
-"че <b> тази стойност на порта трябва да е различна от тези, използвани за "
-"трансфер (TCP) и търсене (UDP).</b>"
+"Това е портът, чрез който DC++ слуша за входящи <a po4a-id=0>TLS "
+"(криптирани)</a> връзки от други пиъри. Ако този порт е неправилно зададен, "
+"Вие няма да можете да търсите, нито да теглите от криптирани хъбове ADC. "
+"Имайте предвид, че <b> тази стойност на порта трябва да е различна от тези, "
+"използвани за трансфер (TCP) и търсене (UDP).</b>"
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
 #: help/settings_connectivity_manual.html:45
@@ -8570,8 +8568,8 @@ msgid ""
 "user profile. In a typical case the default path of the finished downloads is"
 msgstr ""
 "След като изтеглянето приключи, DC++ ще се опита да предвижи току-що "
-"сваления файл към посочената тук директория. Ако полето е оставено празно, DC"
-"++ ще постави файловете в директорията по подразбиране, чието "
+"сваления файл към посочената тук директория. Ако полето е оставено празно, "
+"DC++ ще постави файловете в директорията по подразбиране, чието "
 "местоположение, зависи от това какъв метод за инсталиране на DC++ сте "
 "използвали. Ако сте използвали инсталатора (.exe), то Вашите готови сваляния "
 "ще бъдат поставени в папка в потребителския Ви профил в Windows. Типичен "
@@ -9285,9 +9283,9 @@ msgid ""
 msgstr ""
 "Включване на режим \"Отсъстващ\", винаги когато не сте извършвали никакви "
 "действия с мишката или клавиатурата за последните Х минути. Когато "
-"раздвижите мишката или натиснете бутон от клавиатурата, режимът \"Отсъстващ"
-"\" се изключва. Настройте на <b>0</b>, ако искате да изключите тази функция. "
-"Зададената стойност по подразбиране е <b>10</b> минути."
+"раздвижите мишката или натиснете бутон от клавиатурата, режимът "
+"\"Отсъстващ\" се изключва. Настройте на <b>0</b>, ако искате да изключите "
+"тази функция. Зададената стойност по подразбиране е <b>10</b> минути."
 
 #. type: Content of: <html><body><h2>
 #: help/settings_history.html:11
@@ -9695,34 +9693,34 @@ msgstr "Дали файлът е успешно проверен спрямо SF
 #: help/settings_logs.html:153
 msgid ""
 "<b>Default downloaded segments log format:</b> %Y-%m-%d %H:%M: %[target] "
-"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), %"
-"[speed], %[time], %[fileTR]"
+"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), "
+"%[speed], %[time], %[fileTR]"
 msgstr ""
-"<b>Формат, по подразбиране, за запис на свалените сегменти:</b> %Y-%m-%d %H:%"
-"M: %[target] свален от %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), %"
-"[speed], %[time], %[fileTR]"
+"<b>Формат, по подразбиране, за запис на свалените сегменти:</b> %Y-%m-%d %H:"
+"%M: %[target] свален от %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), "
+"%[speed], %[time], %[fileTR]"
 
 #. type: Content of: <html><body><dl><dd><div>
 #: help/settings_logs.html:154
 msgid ""
 "<b>Default finished downloads log format:</b> %Y-%m-%d %H:%M: %[target] "
-"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIsession]), %"
-"[speed], %[time], %[fileTR]"
+"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIsession]), "
+"%[speed], %[time], %[fileTR]"
 msgstr ""
-"<b>Формат, по подразбиране, за запис на завършените сваляния:</b> %Y-%m-%d %"
-"H:%M: %[target] свален от %[userNI] (%[userCID]), %[fileSI] (%"
-"[fileSIsession]), %[speed], %[time], %[fileTR]"
+"<b>Формат, по подразбиране, за запис на завършените сваляния:</b> %Y-%m-%d "
+"%H:%M: %[target] свален от %[userNI] (%[userCID]), %[fileSI] "
+"(%[fileSIsession]), %[speed], %[time], %[fileTR]"
 
 #. type: Content of: <html><body><dl><dd><div>
 #: help/settings_logs.html:155
 msgid ""
 "<b>Default uploaded segments log format:</b> %Y-%m-%d %H:%M: %[source] "
-"uploaded to %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), %[speed], %"
-"[time], %[fileTR]"
+"uploaded to %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), %[speed], "
+"%[time], %[fileTR]"
 msgstr ""
-"<b>Формат, по подразбиране, за запис на качените сегменти:</b> %Y-%m-%d %H:%"
-"M: %[source] качен на %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), %"
-"[speed], %[time], %[fileTR]"
+"<b>Формат, по подразбиране, за запис на качените сегменти:</b> %Y-%m-%d %H:"
+"%M: %[source] качен на %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), "
+"%[speed], %[time], %[fileTR]"
 
 #. type: Content of: <html><body><dl><dt>
 #: help/settings_logs.html:157
@@ -10175,8 +10173,8 @@ msgstr ""
 #. type: Content of: <html><body><p>
 #: help/settings_notifications.html:57
 msgid ""
-"This box can be switched by double-clicking the balloon icon in the \"Balloon"
-"\" column of the desired event."
+"This box can be switched by double-clicking the balloon icon in the "
+"\"Balloon\" column of the desired event."
 msgstr ""
 "Тази опция може да се включи и чрез двукратно щракване върху иконата на "
 "балона в колоната \"балон\" на желаното събитие."
@@ -11219,8 +11217,8 @@ msgstr "Качвания"
 #. type: Content of: <html><body><p>
 #: help/settings_styles.html:27
 msgid ""
-"The style used to paint upload transfer bars. Default background color: RGB"
-"(205, 60, 55)."
+"The style used to paint upload transfer bars. Default background color: "
+"RGB(205, 60, 55)."
 msgstr ""
 "Стилът се използва, за оцветяване лентата на статуса, в която се обозначава "
 "трансферът при качване. Подразбиращ се цвят на фона: RGB (205, 60, 55)."
@@ -11228,8 +11226,8 @@ msgstr ""
 #. type: Content of: <html><body><p>
 #: help/settings_styles.html:31
 msgid ""
-"The style used to paint download transfer bars. Default background color: RGB"
-"(55, 170, 85)."
+"The style used to paint download transfer bars. Default background color: "
+"RGB(55, 170, 85)."
 msgstr ""
 "Стилът се използва, за оцветяване лентата на статуса, в която се обозначава "
 "трансферът при сваляне. Подразбиращ се цвят на фона: RGB(55, 170, 85)."
@@ -12009,7 +12007,7 @@ msgstr "Име на хъба."
 
 #. type: Content of: <html><body><dl><dt>
 #: help/window_about_config.html:23 help/window_download_queue.html:47
-#: /home/hundr/dcpp/help/window_hublists.inc:1 help/window_transfers.html:26
+#: /home/hundr/feardc/help/window_hublists.inc:1 help/window_transfers.html:26
 msgid "Status"
 msgstr "Статус"
 
@@ -12112,7 +12110,7 @@ msgid "Filter"
 msgstr "Филтър"
 
 #. type: Content of: <html><body><dl><dd><p><div>
-#: /home/hundr/dcpp/help/window_list_filter.inc:1
+#: /home/hundr/feardc/help/window_list_filter.inc:1
 #, fuzzy
 msgid ""
 "The filter, consisting of an input box, a column selection box and a method "
@@ -12133,7 +12131,7 @@ msgstr ""
 "филтъра."
 
 #. type: Content of: <html><body><dl><dd><p><div>
-#: /home/hundr/dcpp/help/window_list_filter.inc:2
+#: /home/hundr/feardc/help/window_list_filter.inc:2
 #: help/window_public_hubs.html:56
 msgid "The filter input box can be focused with Alt+I."
 msgstr ""
@@ -12899,12 +12897,12 @@ msgid "Removes the user from all files in the queue."
 msgstr "Премахва потребителя от всички файлове в опашката."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_copy.inc:2
+#: /home/hundr/feardc/help/commands_copy.inc:2
 msgid "Copy"
 msgstr "Копиране"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_copy.inc:3
+#: /home/hundr/feardc/help/commands_copy.inc:3
 msgid ""
 "Allows copying the content of any column to the clipboard. An &quot;All "
 "columns&quot;\r command is available as well to gather all the columns in "
@@ -12979,32 +12977,32 @@ msgid "Favorite hubs"
 msgstr "Любими Хъбове"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/window_hublists.inc:2
+#: /home/hundr/feardc/help/window_hublists.inc:2
 msgid "Connection status of the hub. Possible indicators:"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/window_hublists.inc:4
+#: /home/hundr/feardc/help/window_hublists.inc:4
 msgid "Connected - Hub is connected, hub window is open."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/window_hublists.inc:5
+#: /home/hundr/feardc/help/window_hublists.inc:5
 msgid "Disconnected - Hub is disconnected, but the hub window is still open."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/window_hublists.inc:6
+#: /home/hundr/feardc/help/window_hublists.inc:6
 msgid "Empty - No window opened for the hub."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/window_hublists.inc:10
+#: /home/hundr/feardc/help/window_hublists.inc:10
 msgid "The name of the hub."
 msgstr "Име на хъба."
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/window_hublists.inc:12
+#: /home/hundr/feardc/help/window_hublists.inc:12
 msgid "The hub's description."
 msgstr "Описание на хъба."
 
@@ -13049,8 +13047,7 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
 #: help/window_favorite_hubs.html:30 help/window_favorite_hubs.html:51
-#: help/window_main.html:29 help/window_main.html:147
-#: help/window_main.html:152
+#: help/window_main.html:29 help/window_main.html:147 help/window_main.html:152
 msgid ""
 "More information about the use of favorite hub groups in the help topics "
 "associated to the <placeholder id=0/> dialog."
@@ -13349,7 +13346,7 @@ msgid "View as text"
 msgstr "Виж като текст"
 
 #. type: Content of: <html><body><dl><dd><p>
-#: /home/hundr/dcpp/help/commands_viewastext.inc:1
+#: /home/hundr/feardc/help/commands_viewastext.inc:1
 msgid ""
 "This function is useful for previewing small text based info files as they "
 "may contain more information about other files in the same folder.  Note "
@@ -13915,8 +13912,7 @@ msgid "Their E-Mail address. Normally blank or false."
 msgstr "Адрес за електронна поща. Често полето е празно или адресът е фалшив."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_hub.html:62 help/window_search.html:89
-#: help/window_users.html:36
+#: help/window_hub.html:62 help/window_search.html:89 help/window_users.html:36
 msgid "CID"
 msgstr "CID"
 
@@ -14185,8 +14181,7 @@ msgstr ""
 "група с хъбове."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:31 help/window_main.html:211
-#: help/window_main.html:242
+#: help/window_main.html:31 help/window_main.html:211 help/window_main.html:242
 msgid "Reconnect"
 msgstr "Свързване отново"
 
@@ -14200,8 +14195,8 @@ msgstr ""
 "е на преден план. Ако активният прозорец не е на хъб, няма да се случи нищо."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:33 help/window_main.html:159
-#: help/window_main.html:221 help/window_main.html:278
+#: help/window_main.html:33 help/window_main.html:159 help/window_main.html:221
+#: help/window_main.html:278
 msgid "Open file list..."
 msgstr "Отвори файлов списък..."
 
@@ -14217,8 +14212,7 @@ msgstr ""
 "съхранение на DC++ файловете с настройки</a>."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:35 help/window_main.html:222
-#: help/window_main.html:283
+#: help/window_main.html:35 help/window_main.html:222 help/window_main.html:283
 msgid "Open own list"
 msgstr "Отвори собствения си списък"
 
@@ -14251,8 +14245,7 @@ msgstr ""
 "a>)."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:39 help/window_main.html:223
-#: help/window_main.html:289
+#: help/window_main.html:39 help/window_main.html:223 help/window_main.html:289
 msgid "Refresh file list"
 msgstr "Обнови списъка с файлове"
 
@@ -14266,8 +14259,7 @@ msgstr ""
 "актуализиране на списъка с файлове."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:41 help/window_main.html:220
-#: help/window_main.html:273
+#: help/window_main.html:41 help/window_main.html:220 help/window_main.html:273
 msgid "Open downloads directory"
 msgstr "Отвори папката за свалените файлове"
 
@@ -14342,21 +14334,21 @@ msgstr ""
 "команди:"
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/menu_plugins.inc:3
+#: /home/hundr/feardc/help/menu_plugins.inc:3
 msgid "\"Add\" displays a file selection dialog to install a new plugin."
 msgstr ""
 "\"Добави\" показва диалогов прозорец, в който можете да изберете приставка "
 "за инсталиране."
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/menu_plugins.inc:6
+#: /home/hundr/feardc/help/menu_plugins.inc:6
 msgid "\"Configure\" opens the <placeholder id=0/> configuration page."
 msgstr ""
 "\"Конфигуриране\" отваря страницата за конфигурация на избраната от "
 "инсталираните <placeholder id=0/>."
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/menu_plugins.inc:9
+#: /home/hundr/feardc/help/menu_plugins.inc:9
 msgid ""
 "Installed plugins are listed below. They can be selectively enabled or "
 "disabled. A \"Configure\" command is also available for each of them (the "
@@ -14624,8 +14616,8 @@ msgid ""
 "community."
 msgstr ""
 "Тук можете да получите достъп до вградената помощ, често задаваните въпроси, "
-"ръководствата и някои документи. Има и горещи връзки, до различни части на DC"
-"++ онлайн общността."
+"ръководствата и някои документи. Има и горещи връзки, до различни части на "
+"DC++ онлайн общността."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
 #: help/window_main.html:168
@@ -15427,9 +15419,9 @@ msgstr ""
 #: help/window_pm.html:52
 msgid ""
 "The hub used to establish the initial peer-to-peer connection must be an ADC "
-"hub and the connection between the user and the hub must be encrypted (\"adcs"
-"\" scheme instead of \"adc\"). Additionally, both users must support the "
-"\"CCPM\" ADC extension."
+"hub and the connection between the user and the hub must be encrypted "
+"(\"adcs\" scheme instead of \"adc\"). Additionally, both users must support "
+"the \"CCPM\" ADC extension."
 msgstr ""
 "Хъбът използван, за да се осъществи първоначалното peer-to-peer свързване, "
 "трябва да бъде ADC хъб, както и връзката между потребителя и хъба трябва да "
@@ -15755,9 +15747,9 @@ msgstr ""
 "Прозореца за търсене позволява да търсите файлове в споделеното от он-лайн "
 "потребителите. Можете да търсите за една или повече ключови думи и по "
 "желание да използвате филтри, както е описано по-долу. Когато заявката Ви за "
-"търсене е готова, натиснете бутона \"Търси\", за да я изпратите към хъба"
-"(овете), с които сте свързани. Тези хъбове ще изпратят искане за търсене на "
-"всички свързани с тях потребители."
+"търсене е готова, натиснете бутона \"Търси\", за да я изпратите към "
+"хъба(овете), с които сте свързани. Тези хъбове ще изпратят искане за търсене "
+"на всички свързани с тях потребители."
 
 #. type: Content of: <html><body><p>
 #: help/window_search.html:15
@@ -16686,8 +16678,8 @@ msgid ""
 "for more information."
 msgstr ""
 "В момента използваният интерфейс за пренасочване на портове, не е успял да "
-"пренасочи показания порт.Това съобщение за грешка може да се появи, когато DC"
-"++ се опитва да пренасочи портове за входящи връзки чрез NAT-PMP / UPnP. "
+"пренасочи показания порт.Това съобщение за грешка може да се появи, когато "
+"DC++ се опитва да пренасочи портове за входящи връзки чрез NAT-PMP / UPnP. "
 "Това означава, че е намерено несъвместимо устройство или, че въпросното "
 "изделие не реагира. DC++ ще се опита да използва следващия по ред интерфейс. "
 "Същото съобщение може да се появи и по време на <a po4a-id=0>Настройка на "
@@ -16744,8 +16736,8 @@ msgid ""
 "id=1>DC++ is blocked by a software firewall</a>."
 msgstr ""
 "Можете да получите това съобщение само когато <a po4a-id=0>Автоматичното "
-"настройване на свързването</a> е активирано и DC++ не е успял да отвори порт"
-"(ове), преди да се опита да определи наличните видове връзки. Възможните "
+"настройване на свързването</a> е активирано и DC++ не е успял да отвори "
+"порт(ове), преди да се опита да определи наличните видове връзки. Възможните "
 "причини са, че избрания порт(ове) вече са заети от друго приложение или <a "
 "po4a-id=1>DC++ е блокиран от софтуерна защитна стена</a>."
 
@@ -17137,10 +17129,10 @@ msgid ""
 "such as <b>Courier New</b> or <b>Lucida Console</b> is commonly required to "
 "properly view the <a po4a-id=0>ASCII_art</a> contained in some text files."
 msgstr ""
-"Натиснете този бутон, за да смените шрифта, използван във \"Виж като текст"
-"\". В едноразряден шрифт, като <b>Courier New</b> или <b>Lucida Console</b>, "
-"обикновено е необходимо правилно да видите <a po4a-id=0>ASCII_art</a>, който "
-"се съдържа в някои текстови файлове."
+"Натиснете този бутон, за да смените шрифта, използван във \"Виж като "
+"текст\". В едноразряден шрифт, като <b>Courier New</b> или <b>Lucida "
+"Console</b>, обикновено е необходимо правилно да видите <a po4a-"
+"id=0>ASCII_art</a>, който се съдържа в някои текстови файлове."
 
 #. type: Content of: <html><body>
 #: help/window_transfers.html:10
@@ -17311,8 +17303,8 @@ msgstr ""
 "всеки изброен потребител. Това е възможност за бързо намиране на всеки "
 "онлайн потребител от всеки свързан хъб, а също и лесно наблюдение на "
 "любимите потребители. Със своите мощни възможности за филтриране, този "
-"прозорец осигурява функционалността на бившите прозорци \"любими потребители"
-"\" и \"чакащи потребители\"."
+"прозорец осигурява функционалността на бившите прозорци \"любими "
+"потребители\" и \"чакащи потребители\"."
 
 #. type: Content of: <html><body><h2>
 #: help/window_users.html:16

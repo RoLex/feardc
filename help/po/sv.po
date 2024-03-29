@@ -2,19 +2,19 @@
 # Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
 # This file is distributed under the same license as the dcplusplus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-14 23:14+0100\n"
+"POT-Creation-Date: 2024-03-16 18:38+0100\n"
 "PO-Revision-Date: 2022-09-19 23:22+0000\n"
 "Last-Translator: Sopor <Unknown>\n"
 "Language-Team: Swedish <sv@li.org>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sv\n"
 "X-Launchpad-Export-Date: 2022-10-18 11:21+0000\n"
 "X-Generator: Launchpad (build 25877e98ba44ca75f9c22db1fc37efee03e4606a)\n"
 
@@ -135,7 +135,7 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
 #: help/chat_commands.html:51
-#: /home/hundr/dcpp/help/commands_user_general.inc:11 help/index.html:30
+#: /home/hundr/feardc/help/commands_user_general.inc:11 help/index.html:30
 #: help/keyboard_commands.html:41 help/keyboard_commands.html:68
 #: help/keyboard_commands.html:70 help/keyboard_commands.html:72
 #: help/keyboard_commands.html:76 help/keyboard_commands.html:79
@@ -408,12 +408,12 @@ msgstr ""
 "för motsvarande fönster."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_general.inc:2
+#: /home/hundr/feardc/help/commands_file_general.inc:2
 msgid "Search for alternates"
 msgstr "Sök alternativa nerladdningskällor"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_general.inc:3
+#: /home/hundr/feardc/help/commands_file_general.inc:3
 msgid ""
 "Will open a new <a po4a-id=0>Search window</a> to search for alternate "
 "sources for the selected file."
@@ -422,12 +422,12 @@ msgstr ""
 "källor till den valda filen."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_general.inc:5
+#: /home/hundr/feardc/help/commands_file_general.inc:5
 msgid "Lookup TTH at Bitzi.com"
 msgstr "Slår upp TTH hos bitzi.com"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_general.inc:6
+#: /home/hundr/feardc/help/commands_file_general.inc:6
 msgid ""
 "Will trigger the default browser to lookup the TTH of the selected file at "
 "Bitzi.com."
@@ -436,22 +436,22 @@ msgstr ""
 "hos bitzi.com"
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_general.inc:8
+#: /home/hundr/feardc/help/commands_file_general.inc:8
 msgid "Copy magnet link to clipboard"
 msgstr "Kopiera magnetlänk till urklippshanteraren"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_general.inc:9
+#: /home/hundr/feardc/help/commands_file_general.inc:9
 msgid "Will copy the file's <a po4a-id=0>magnet link</a> to the clipboard."
 msgstr "Kopierar filens <a po4a-id=0>magnetl´änk</a> till urklipp."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_download.inc:2
+#: /home/hundr/feardc/help/commands_file_download.inc:2
 msgid "Download"
 msgstr "Ladda ner"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_download.inc:3
+#: /home/hundr/feardc/help/commands_file_download.inc:3
 msgid ""
 "Adds the selected file(s) or director(ies) to the Download Queue. They will "
 "be downloaded to the <a po4a-id=0>Default download directory</a>."
@@ -460,12 +460,12 @@ msgstr ""
 "nedladdade till <a po4a-id=0>Default download directory</a>."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_download.inc:6
+#: /home/hundr/feardc/help/commands_file_download.inc:6
 msgid "Download to..."
 msgstr "Ladda ned till..."
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_download.inc:7
+#: /home/hundr/feardc/help/commands_file_download.inc:7
 msgid ""
 "Adds the selected file(s) or director(ies) to the Download Queue. The "
 "download target can be selected using the submenu elements : either a "
@@ -478,12 +478,12 @@ msgstr ""
 "mapp som har anges, eller tidigare angetts, med  <i>Browse...</i> i submenyn."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_management.inc:2
+#: /home/hundr/feardc/help/commands_file_management.inc:2
 msgid "Open"
 msgstr "Öppna"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_management.inc:3
+#: /home/hundr/feardc/help/commands_file_management.inc:3
 msgid ""
 "Opens the file with its respective external viewer software. You should have "
 "the appropriate viewer / player software installed and correctly registered "
@@ -493,12 +493,12 @@ msgstr ""
 "spelare installerad och korrekt registrerad för att kunna öppna filen."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_management.inc:6
+#: /home/hundr/feardc/help/commands_file_management.inc:6
 msgid "Open folder"
 msgstr "Öppna mapp"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_management.inc:7
+#: /home/hundr/feardc/help/commands_file_management.inc:7
 msgid ""
 "Opens the selected folder (or the folder containing the selected file) in "
 "Windows Explorer."
@@ -507,12 +507,12 @@ msgstr ""
 "Utforskare."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_management.inc:9
+#: /home/hundr/feardc/help/commands_file_management.inc:9
 msgid "Shell menu"
 msgstr "Skalmeny"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_management.inc:10
+#: /home/hundr/feardc/help/commands_file_management.inc:10
 msgid ""
 "Opens the Windows shell menu as submenu items. This menu contains the same "
 "items as in the context menu of Windows Explorer. Note that the submenu "
@@ -543,7 +543,7 @@ msgstr ""
 "kommandon som är unika för ett fönster se hjälpen for respektive fönster."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_listview.inc:2
+#: /home/hundr/feardc/help/commands_listview.inc:2
 #: help/dialog_fav_hub_groups.html:16 help/dialog_public_hub_lists.html:28
 #: help/dialog_string_list.html:29 help/settings_favoritedirs.html:22
 #: help/settings_plugins.html:51 help/settings_search_types.html:28
@@ -554,7 +554,7 @@ msgid "Remove"
 msgstr "Ta bort"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_listview.inc:3
+#: /home/hundr/feardc/help/commands_listview.inc:3
 msgid ""
 "Deletes the actual item from the list. If the corresponding setting in <a "
 "po4a-id=0>Confirm dialog options</a> is enabled, you will be prompted before "
@@ -565,12 +565,12 @@ msgstr ""
 "borttagningen."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_listview.inc:6
+#: /home/hundr/feardc/help/commands_listview.inc:6
 msgid "Remove all"
 msgstr "Ta bort alla"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_listview.inc:7
+#: /home/hundr/feardc/help/commands_listview.inc:7
 msgid ""
 "Deletes all the selected items from the list. If the corresponding setting "
 "in <a po4a-id=0>Confirm dialog options</a> is enabled, you will be prompted "
@@ -597,22 +597,22 @@ msgstr ""
 "fönster, se hjälpen för respektive fönster."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:2
+#: /home/hundr/feardc/help/commands_user_general.inc:2
 msgid "Get file list"
 msgstr "Ladda ner fillista"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:3
+#: /home/hundr/feardc/help/commands_user_general.inc:3
 msgid "Download the file list of the selected users."
 msgstr "Ladda ner fillistan med de valda användarna."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:4
+#: /home/hundr/feardc/help/commands_user_general.inc:4
 msgid "Browse file list"
 msgstr "Bläddra i fillistan"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:5
+#: /home/hundr/feardc/help/commands_user_general.inc:5
 msgid ""
 "Download only the required pieces of the file lists of the selected users in "
 "form of a partial file list. Note that you may not able to fully exploit "
@@ -625,13 +625,13 @@ msgstr ""
 "listan med \"Ladda ner hela listan\"-knappen."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:6
+#: /home/hundr/feardc/help/commands_user_general.inc:6
 #: help/window_file_list.html:24
 msgid "Match queue"
 msgstr "Matcha med nerladdningslistan"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:7
+#: /home/hundr/feardc/help/commands_user_general.inc:7
 msgid ""
 "Matches the files in your download queue to the file lists of the selected "
 "users. 2 files are considered to be the same if their TTH is the same. If "
@@ -644,12 +644,12 @@ msgstr ""
 "nedladdningskälla för dessa filer."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:10
+#: /home/hundr/feardc/help/commands_user_general.inc:10
 msgid "Send private message"
 msgstr "Skicka privat meddelande"
 
 #. type: Content of: <html><body><dl><dd><placeholder>
-#: /home/hundr/dcpp/help/commands_user_general.inc:11
+#: /home/hundr/feardc/help/commands_user_general.inc:11
 #: help/dialog_fav_hub_groups.html:10 help/dialog_fav_hub_groups.html:15
 #: help/dialog_favorite_hub.html:38 help/dialog_favorite_hub.html:42
 #: help/dialog_favorite_hub.html:43 help/dialog_user_matching.html:13
@@ -702,7 +702,7 @@ msgstr "Skicka privat meddelande"
 #: help/window_favorite_hubs.html:30 help/window_favorite_hubs.html:50
 #: help/window_favorite_hubs.html:51 help/window_hub.html:91
 #: help/window_main.html:28 help/window_main.html:29 help/window_main.html:47
-#: help/window_main.html:58 /home/hundr/dcpp/help/menu_plugins.inc:6
+#: help/window_main.html:58 /home/hundr/feardc/help/menu_plugins.inc:6
 #: help/window_main.html:71 help/window_main.html:75 help/window_main.html:79
 #: help/window_main.html:83 help/window_main.html:87 help/window_main.html:91
 #: help/window_main.html:95 help/window_main.html:99 help/window_main.html:103
@@ -726,19 +726,19 @@ msgid "<placeholder id=0/>"
 msgstr "<placeholder id=0/>"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:11
+#: /home/hundr/feardc/help/commands_user_general.inc:11
 msgid ""
 "Open <placeholder id=0/> windows to chat privately with the selected users."
 msgstr ""
 "Öppna <placeholder id=0/> fönster för att chatta privat med valda användare."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:13
+#: /home/hundr/feardc/help/commands_user_general.inc:13
 msgid "Grant extra slot"
 msgstr "Bevilja extra slott"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:14
+#: /home/hundr/feardc/help/commands_user_general.inc:14
 msgid ""
 "In addition to your regular upload slots, an extra upload slot will be given "
 "to the selected users until the end of the current DC++ session."
@@ -747,13 +747,13 @@ msgstr ""
 "ges ut till valda användare vid slutet av den nuvarande DC++-sessionen."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:16
+#: /home/hundr/feardc/help/commands_user_general.inc:16
 #: help/window_download_queue.html:139
 msgid "Remove user from queue"
 msgstr "Ta bort användare från kön"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:17
+#: /home/hundr/feardc/help/commands_user_general.inc:17
 msgid ""
 "Remove the selected users from the source list of all queued files. Pending "
 "file list requests will be removed as well."
@@ -762,12 +762,12 @@ msgstr ""
 "fillistförfrågans kommer även att tas bort."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:19
+#: /home/hundr/feardc/help/commands_user_general.inc:19
 msgid "Ignore chat"
 msgstr "Ignorera chatt"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:20
+#: /home/hundr/feardc/help/commands_user_general.inc:20
 msgid ""
 "Add user matching definitions (or modify existing ones, if possible) to "
 "ignore chat messages from the selected users."
@@ -776,12 +776,12 @@ msgstr ""
 "tillgängligt) för att ignorera chattmeddelanden från de valda användarna."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:22
+#: /home/hundr/feardc/help/commands_user_general.inc:22
 msgid "Un-ignore chat"
 msgstr "Ej ignorera chatten"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:23
+#: /home/hundr/feardc/help/commands_user_general.inc:23
 msgid ""
 "Add user matching definitions (or modify existing ones, if possible) to stop "
 "ignoring chat messages from the selected users."
@@ -791,12 +791,12 @@ msgstr ""
 "användarna."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:25
+#: /home/hundr/feardc/help/commands_user_general.inc:25
 msgid "Copy user information"
 msgstr "Kopiera användarinformation"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:26
+#: /home/hundr/feardc/help/commands_user_general.inc:26
 msgid ""
 "Copy a few lines containing user information to the clipboard. The data may "
 "include: the user's nick(s), her hub address(es), her IP, country, email, "
@@ -809,13 +809,13 @@ msgstr ""
 "att separeras med en tom rad."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_favorites.inc:2
+#: /home/hundr/feardc/help/commands_user_favorites.inc:2
 #: help/window_public_hubs.html:42
 msgid "Add to favorites"
 msgstr "Lägg till i favoriter"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_favorites.inc:3
+#: /home/hundr/feardc/help/commands_user_favorites.inc:3
 msgid "Adds the selected users to your <a po4a-id=0>Favorite Users</a> list."
 msgstr ""
 "Lägger till vald användare till din <a po4a-id=0>Favorit användare</a> list."
@@ -1278,9 +1278,9 @@ msgstr ""
 #. type: Content of: <html><body><ol><li>
 #: help/dialog_customize_tb.html:16
 msgid ""
-"To reposition a button on the toolbar, select it from the \"Toolbar buttons"
-"\" list box and click either \"Move Up\" or \"Move Down\" to move the button "
-"accordingly."
+"To reposition a button on the toolbar, select it from the \"Toolbar "
+"buttons\" list box and click either \"Move Up\" or \"Move Down\" to move the "
+"button accordingly."
 msgstr ""
 "För att ändra ordningen på knappar och mellanrum markerar du knappen eller "
 "mellanrummet i rutan \"Nuvarande knappar\" och trycker på knapparna \"Flytta "
@@ -1308,17 +1308,16 @@ msgstr ""
 #: help/dialog_favorite_hub.html:42 help/dialog_favorite_hub.html:43
 #: help/index.html:62 help/window_favorite_hubs.html:30
 #: help/window_favorite_hubs.html:50 help/window_favorite_hubs.html:51
-#: help/window_main.html:29 help/window_main.html:147
-#: help/window_main.html:152 help/window_main.html:249
+#: help/window_main.html:29 help/window_main.html:147 help/window_main.html:152
+#: help/window_main.html:249
 msgid "Favorite hub groups"
 msgstr "Favorithubgrupper"
 
 #. type: Content of: <html><body><dl><dd><div><placeholder><a>
 #: help/dialog_fav_hub_groups.html:10 help/index.html:33
 #: help/keyboard_commands.html:46 help/window_main.html:74
-#: help/window_main.html:75 help/window_main.html:212
-#: help/window_main.html:245 help/window_main.html:247
-#: help/window_main.html:248
+#: help/window_main.html:75 help/window_main.html:212 help/window_main.html:245
+#: help/window_main.html:247 help/window_main.html:248
 msgid "Favorite Hubs"
 msgstr "Favorithubbar"
 
@@ -1407,7 +1406,7 @@ msgstr ""
 #. type: Content of: <html><body><dl><dt>
 #: help/dialog_fav_hub_groups.html:21 help/dialog_favorite_hub.html:12
 #: help/dialog_user_command.html:37 help/dialog_user_matching.html:17
-#: /home/hundr/dcpp/help/window_hublists.inc:9
+#: /home/hundr/feardc/help/window_hublists.inc:9
 msgid "Name"
 msgstr "Namn"
 
@@ -1449,8 +1448,8 @@ msgstr "Egenskaper för favorithub"
 #: help/keyboard_commands.html:84 help/settings_appearance.html:84
 #: help/settings_expert.html:55 help/settings_history.html:17
 #: help/settings_history.html:36 help/settings_notifications.html:26
-#: help/settings_tabs.html:41 /home/hundr/dcpp/help/window_hublists.inc:4
-#: /home/hundr/dcpp/help/window_hublists.inc:5
+#: help/settings_tabs.html:41 /home/hundr/feardc/help/window_hublists.inc:4
+#: /home/hundr/feardc/help/window_hublists.inc:5
 #: help/window_finished_downloads.html:36 help/window_finished_uploads.html:36
 #: help/window_hub.html:10 help/window_hub.html:11 help/window_main.html:28
 #: help/window_main.html:143 help/window_main.html:146
@@ -1476,7 +1475,7 @@ msgstr "Addressen till hubben."
 
 #. type: Content of: <html><body><dl><dt>
 #: help/dialog_favorite_hub.html:16 help/dialog_favorite_hub.html:27
-#: help/settings_general.html:25 /home/hundr/dcpp/help/window_hublists.inc:11
+#: help/settings_general.html:25 /home/hundr/feardc/help/window_hublists.inc:11
 #: help/window_hub.html:49 help/window_users.html:34 help/window_users.html:44
 msgid "Description"
 msgstr "Beskrivning"
@@ -1798,8 +1797,8 @@ msgstr "Använd detta textfält för att lägga till nytt objekt."
 msgid ""
 "Shows the current list. It will only be altered once you have pressed \"OK\"."
 msgstr ""
-"Visar den aktuella listan. Ändringar blir aktuella först när du tryckt \"OK"
-"\"."
+"Visar den aktuella listan. Ändringar blir aktuella först när du tryckt "
+"\"OK\"."
 
 #. type: Content of: <html><body><dl><dd>
 #: help/dialog_string_list.html:22
@@ -2623,10 +2622,10 @@ msgid ""
 "will make DC++ use the current IP assigned to your network card.  You must "
 "NOT have an internal IP address for this to work."
 msgstr ""
-"Markera rutan för <b>Min dator är direkt kopplat mot Internet (ingen router)"
-"</b>. Lämna IP-fältet tomt. Då kommer DC++ att använda samma IP-adress som "
-"ditt nätverkskort. Då kan INTE ha en intern IP-adress för att detta ska "
-"fungera."
+"Markera rutan för <b>Min dator är direkt kopplat mot Internet (ingen "
+"router)</b>. Lämna IP-fältet tomt. Då kommer DC++ att använda samma IP-"
+"adress som ditt nätverkskort. Då kan INTE ha en intern IP-adress för att "
+"detta ska fungera."
 
 #. type: Content of: <html><body><p><ul><li>
 #: help/faq_connection.html:105 help/faq_connection.html:154
@@ -2741,9 +2740,9 @@ msgstr ""
 #. type: Content of: <html><body><p><ul><li>
 #: help/faq_connection.html:151
 msgid ""
-"Select the <b>Active mode (let DC++ configure my router with NAT-PMP / UPnP)"
-"</b> radio button. Leave the fields in the &quot;External / WAN IP&quot; box "
-"blank."
+"Select the <b>Active mode (let DC++ configure my router with NAT-PMP / "
+"UPnP)</b> radio button. Leave the fields in the &quot;External / WAN "
+"IP&quot; box blank."
 msgstr ""
 
 #. type: Content of: <html><body><p><ul><li>
@@ -3572,16 +3571,16 @@ msgstr ""
 #: help/faq_portforward.html:51
 msgid ""
 "The IP that you are forwarding to should be the <b>internal</b> IP address "
-"of your computer running DC++.  It usually begins with <a po4a-id=0>\"192.168"
-"\", \"172.16.\" or \"10.x.\"</a>. To see your internal IP address go to the "
-"command prompt and type: <i>ipconfig</i> (Start Menu -&gt; Run -&gt; <i>cmd /"
-"k ipconfig</i>)"
+"of your computer running DC++.  It usually begins with <a po4a-"
+"id=0>\"192.168\", \"172.16.\" or \"10.x.\"</a>. To see your internal IP "
+"address go to the command prompt and type: <i>ipconfig</i> (Start Menu -&gt; "
+"Run -&gt; <i>cmd /k ipconfig</i>)"
 msgstr ""
 "IP-adressen som Du vill omdirigera  ska vara den <b>interna</b> IP-adressen "
-"för den dator som kör DC++. Vanligtvis börjar adressen med <a po4a-id=0>"
-"\"192.168\", \"172.16.\" or \"10.x.\"</a>. För att ta reda på din interna IP-"
-"adress gå till kommandoprompten och skriv: <i>ipconfig</i> (Startmenyn -&gt; "
-"Kör -&gt; <i>cmd /k ipconfig</i>)"
+"för den dator som kör DC++. Vanligtvis börjar adressen med <a po4a-"
+"id=0>\"192.168\", \"172.16.\" or \"10.x.\"</a>. För att ta reda på din "
+"interna IP-adress gå till kommandoprompten och skriv: <i>ipconfig</i> "
+"(Startmenyn -&gt; Kör -&gt; <i>cmd /k ipconfig</i>)"
 
 #. type: Content of: <html><body><ol><li>
 #: help/faq_portforward.html:56
@@ -4900,8 +4899,8 @@ msgid ""
 "suitable to use by itself for protection. If it's enabled and you have "
 "problems accessing the Internet with DC++ the best practice is to check for "
 "and delete existing exception(s) for DC++ then let the operating system "
-"properly readd it at next start of the DC++ application. To do this, close DC"
-"++ and"
+"properly readd it at next start of the DC++ application. To do this, close "
+"DC++ and"
 msgstr ""
 
 #. type: Content of: <html><body><p><ul><li>
@@ -5177,8 +5176,8 @@ msgstr ""
 msgid ""
 "My ISP, University, company, etc blocks or throttles DC++. What can I do?"
 msgstr ""
-"Min Internetleverantör, universitet, företag osv blockerar eller begränsar DC"
-"++. Vad kan jag göra?"
+"Min Internetleverantör, universitet, företag osv blockerar eller begränsar "
+"DC++. Vad kan jag göra?"
 
 #. type: Content of: <html><body><h2>
 #: help/faq_university.html:10
@@ -5782,22 +5781,22 @@ msgstr "Fillista"
 #. type: Content of: <html><body><dl><dd><placeholder><a>
 #: help/index.html:32 help/keyboard_commands.html:52
 #: help/keyboard_commands.html:89 help/window_main.html:70
-#: help/window_main.html:71 help/window_main.html:210
-#: help/window_main.html:239 help/window_main.html:240
+#: help/window_main.html:71 help/window_main.html:210 help/window_main.html:239
+#: help/window_main.html:240
 msgid "Public Hubs"
 msgstr "Publika hubbar"
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
 #: help/index.html:36 help/settings_tabs.html:59 help/window_main.html:86
-#: help/window_main.html:87 help/window_main.html:215
-#: help/window_main.html:258 help/window_main.html:259
+#: help/window_main.html:87 help/window_main.html:215 help/window_main.html:258
+#: help/window_main.html:259
 msgid "Finished Downloads"
 msgstr "Färdiga nerladdningar"
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
 #: help/index.html:37 help/settings_tabs.html:62 help/window_main.html:90
-#: help/window_main.html:91 help/window_main.html:216
-#: help/window_main.html:261 help/window_main.html:262
+#: help/window_main.html:91 help/window_main.html:216 help/window_main.html:261
+#: help/window_main.html:262
 msgid "Finished Uploads"
 msgstr "Färdiga uppladdningar"
 
@@ -5879,8 +5878,7 @@ msgstr "Anslutbarhet"
 
 #. type: Content of: <html><body><h1>
 #: help/index.html:75 help/settings_connectivity.html:17
-#: help/settings_connectivity.html:64
-#: help/settings_connectivity_manual.html:10
+#: help/settings_connectivity.html:64 help/settings_connectivity_manual.html:10
 msgid "Manual configuration"
 msgstr "Manuell konfiguration"
 
@@ -5968,7 +5966,7 @@ msgstr "Söktyper"
 
 #. type: Content of: <html><body><dl><dd><ul><li><placeholder><a>
 #: help/index.html:117 help/window_main.html:57 help/window_main.html:58
-#: /home/hundr/dcpp/help/menu_plugins.inc:6 help/window_main.html:227
+#: /home/hundr/feardc/help/menu_plugins.inc:6 help/window_main.html:227
 #: help/window_main.html:303 help/window_main.html:306
 msgid "Plugins"
 msgstr "Insticksmoduler"
@@ -7286,9 +7284,9 @@ msgid ""
 "open hubs. <i>On large hubs, you don't want this enabled.</i>"
 msgstr ""
 "Visar med ett meddelande i huvudchatten när en användare ansluter eller "
-"lämnar hubben. Använd <a po4a-id=0>/showjoins chattkommandot</a> för att (de)"
-"aktivera i redan anslutna hubbar. <i>I hubbar med många användare vill du "
-"INTE ha detta aktiverat.</i>"
+"lämnar hubben. Använd <a po4a-id=0>/showjoins chattkommandot</a> för att "
+"(de)aktivera i redan anslutna hubbar. <i>I hubbar med många användare vill "
+"du INTE ha detta aktiverat.</i>"
 
 #. type: Content of: <html><body><dl><dt>
 #: help/settings_appearance.html:36
@@ -9338,36 +9336,36 @@ msgstr "%[sfv] - Om filen kontrollerats gentemot en SFV-fil (0 = ney, 1 = ja)."
 #, fuzzy
 msgid ""
 "<b>Default downloaded segments log format:</b> %Y-%m-%d %H:%M: %[target] "
-"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), %"
-"[speed], %[time], %[fileTR]"
+"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), "
+"%[speed], %[time], %[fileTR]"
 msgstr ""
 "<b>Standardformat för nedladdningsloggen:</b> %Y-%m-%d %H:%M: %[target] "
-"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIchunk]), %"
-"[speed], %[time]"
+"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIchunk]), "
+"%[speed], %[time]"
 
 #. type: Content of: <html><body><dl><dd><div>
 #: help/settings_logs.html:154
 #, fuzzy
 msgid ""
 "<b>Default finished downloads log format:</b> %Y-%m-%d %H:%M: %[target] "
-"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIsession]), %"
-"[speed], %[time], %[fileTR]"
+"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIsession]), "
+"%[speed], %[time], %[fileTR]"
 msgstr ""
 "<b>Standardformat för nedladdningsloggen:</b> %Y-%m-%d %H:%M: %[target] "
-"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIchunk]), %"
-"[speed], %[time]"
+"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIchunk]), "
+"%[speed], %[time]"
 
 #. type: Content of: <html><body><dl><dd><div>
 #: help/settings_logs.html:155
 #, fuzzy
 msgid ""
 "<b>Default uploaded segments log format:</b> %Y-%m-%d %H:%M: %[source] "
-"uploaded to %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), %[speed], %"
-"[time], %[fileTR]"
+"uploaded to %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), %[speed], "
+"%[time], %[fileTR]"
 msgstr ""
 "<b>Standardformat för uppladdningsloggen:</b> %Y-%m-%d %H:%M: %[source] "
-"uploaded to %[userNI] (%[userCID]), %[fileSI] (%[fileSIchunk]), %[speed], %"
-"[time]"
+"uploaded to %[userNI] (%[userCID]), %[fileSI] (%[fileSIchunk]), %[speed], "
+"%[time]"
 
 #. type: Content of: <html><body><dl><dt>
 #: help/settings_logs.html:157
@@ -9796,8 +9794,8 @@ msgstr ""
 #. type: Content of: <html><body><p>
 #: help/settings_notifications.html:57
 msgid ""
-"This box can be switched by double-clicking the balloon icon in the \"Balloon"
-"\" column of the desired event."
+"This box can be switched by double-clicking the balloon icon in the "
+"\"Balloon\" column of the desired event."
 msgstr ""
 
 #. type: Content of: <html><body><h2>
@@ -10757,8 +10755,8 @@ msgstr "Uppladdningar"
 #: help/settings_styles.html:27
 #, fuzzy
 msgid ""
-"The style used to paint upload transfer bars. Default background color: RGB"
-"(205, 60, 55)."
+"The style used to paint upload transfer bars. Default background color: "
+"RGB(205, 60, 55)."
 msgstr ""
 "Detta bestämmer färgen på förloppsindikatorn för uppladdning (standard: RGB "
 "205,60,55)."
@@ -10767,8 +10765,8 @@ msgstr ""
 #: help/settings_styles.html:31
 #, fuzzy
 msgid ""
-"The style used to paint download transfer bars. Default background color: RGB"
-"(55, 170, 85)."
+"The style used to paint download transfer bars. Default background color: "
+"RGB(55, 170, 85)."
 msgstr ""
 "Detta bestämmer färgen på förloppsindikatorn för nedladdning (standard: RGB "
 "55,170,85)."
@@ -11497,7 +11495,7 @@ msgstr "Namnet på hubben."
 
 #. type: Content of: <html><body><dl><dt>
 #: help/window_about_config.html:23 help/window_download_queue.html:47
-#: /home/hundr/dcpp/help/window_hublists.inc:1 help/window_transfers.html:26
+#: /home/hundr/feardc/help/window_hublists.inc:1 help/window_transfers.html:26
 msgid "Status"
 msgstr "Status"
 
@@ -11598,7 +11596,7 @@ msgid "Filter"
 msgstr "Filtrera"
 
 #. type: Content of: <html><body><dl><dd><p><div>
-#: /home/hundr/dcpp/help/window_list_filter.inc:1
+#: /home/hundr/feardc/help/window_list_filter.inc:1
 msgid ""
 "The filter, consisting of an input box, a column selection box and a method "
 "selection box, can help filter the list on the fly based on textual "
@@ -11610,7 +11608,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd><p><div>
-#: /home/hundr/dcpp/help/window_list_filter.inc:2
+#: /home/hundr/feardc/help/window_list_filter.inc:2
 #: help/window_public_hubs.html:56
 #, fuzzy
 msgid "The filter input box can be focused with Alt+I."
@@ -12366,12 +12364,12 @@ msgid "Removes the user from all files in the queue."
 msgstr "Tar bort källan från alla filer i nedladdningskön"
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_copy.inc:2
+#: /home/hundr/feardc/help/commands_copy.inc:2
 msgid "Copy"
 msgstr "Kopiera"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_copy.inc:3
+#: /home/hundr/feardc/help/commands_copy.inc:3
 msgid ""
 "Allows copying the content of any column to the clipboard. An &quot;All "
 "columns&quot;\r command is available as well to gather all the columns in "
@@ -12444,32 +12442,32 @@ msgid "Favorite hubs"
 msgstr "Favorithubbar"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/window_hublists.inc:2
+#: /home/hundr/feardc/help/window_hublists.inc:2
 msgid "Connection status of the hub. Possible indicators:"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/window_hublists.inc:4
+#: /home/hundr/feardc/help/window_hublists.inc:4
 msgid "Connected - Hub is connected, hub window is open."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/window_hublists.inc:5
+#: /home/hundr/feardc/help/window_hublists.inc:5
 msgid "Disconnected - Hub is disconnected, but the hub window is still open."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/window_hublists.inc:6
+#: /home/hundr/feardc/help/window_hublists.inc:6
 msgid "Empty - No window opened for the hub."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/window_hublists.inc:10
+#: /home/hundr/feardc/help/window_hublists.inc:10
 msgid "The name of the hub."
 msgstr "Namnet på hubben."
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/window_hublists.inc:12
+#: /home/hundr/feardc/help/window_hublists.inc:12
 msgid "The hub's description."
 msgstr "Hubbens beskrivning."
 
@@ -12513,8 +12511,7 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
 #: help/window_favorite_hubs.html:30 help/window_favorite_hubs.html:51
-#: help/window_main.html:29 help/window_main.html:147
-#: help/window_main.html:152
+#: help/window_main.html:29 help/window_main.html:147 help/window_main.html:152
 msgid ""
 "More information about the use of favorite hub groups in the help topics "
 "associated to the <placeholder id=0/> dialog."
@@ -12778,7 +12775,7 @@ msgid "View as text"
 msgstr "Visa som text"
 
 #. type: Content of: <html><body><dl><dd><p>
-#: /home/hundr/dcpp/help/commands_viewastext.inc:1
+#: /home/hundr/feardc/help/commands_viewastext.inc:1
 msgid ""
 "This function is useful for previewing small text based info files as they "
 "may contain more information about other files in the same folder.  Note "
@@ -13335,8 +13332,7 @@ msgid "Their E-Mail address. Normally blank or false."
 msgstr "Användarens e-postadress. Normalt tom eller falsk."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_hub.html:62 help/window_search.html:89
-#: help/window_users.html:36
+#: help/window_hub.html:62 help/window_search.html:89 help/window_users.html:36
 msgid "CID"
 msgstr "CID"
 
@@ -13374,8 +13370,8 @@ msgid ""
 "will only display users that have \"foo\" in their nick."
 msgstr ""
 "Här kan du filtrera användarlistan så att du ser specifika användare. Välj "
-"Nick i rullgardinslistan och skriv \"mr\" och du ser bara användare med \"mr"
-"\" i användarnamnet."
+"Nick i rullgardinslistan och skriv \"mr\" och du ser bara användare med "
+"\"mr\" i användarnamnet."
 
 #. type: Content of: <html><body><p><div>
 #: help/window_hub.html:81
@@ -13592,8 +13588,7 @@ msgstr ""
 "ett <placeholder id=0/>fönster för varje hubb som finns i favorithubbgruppen."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:31 help/window_main.html:211
-#: help/window_main.html:242
+#: help/window_main.html:31 help/window_main.html:211 help/window_main.html:242
 msgid "Reconnect"
 msgstr "Återanslut"
 
@@ -13607,8 +13602,8 @@ msgstr ""
 "aktiva fönstret inte är en hubb händer ingenting."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:33 help/window_main.html:159
-#: help/window_main.html:221 help/window_main.html:278
+#: help/window_main.html:33 help/window_main.html:159 help/window_main.html:221
+#: help/window_main.html:278
 msgid "Open file list..."
 msgstr "Öppna fillista..."
 
@@ -13624,8 +13619,7 @@ msgstr ""
 "öppnas fillistkatalogen där DC++ är installerat."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:35 help/window_main.html:222
-#: help/window_main.html:283
+#: help/window_main.html:35 help/window_main.html:222 help/window_main.html:283
 msgid "Open own list"
 msgstr "Öppna egen fillista"
 
@@ -13655,8 +13649,7 @@ msgstr ""
 "fillistor (som finns sparade i fillistkatalogen där DC++ är installerat)."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:39 help/window_main.html:223
-#: help/window_main.html:289
+#: help/window_main.html:39 help/window_main.html:223 help/window_main.html:289
 msgid "Refresh file list"
 msgstr "Uppdatera fillista"
 
@@ -13670,8 +13663,7 @@ msgstr ""
 "uppdaterar din fillista därefter."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:41 help/window_main.html:220
-#: help/window_main.html:273
+#: help/window_main.html:41 help/window_main.html:220 help/window_main.html:273
 msgid "Open downloads directory"
 msgstr "Öppna nerladdningskatalogen"
 
@@ -13732,18 +13724,18 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/menu_plugins.inc:3
+#: /home/hundr/feardc/help/menu_plugins.inc:3
 msgid "\"Add\" displays a file selection dialog to install a new plugin."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/menu_plugins.inc:6
+#: /home/hundr/feardc/help/menu_plugins.inc:6
 #, fuzzy
 msgid "\"Configure\" opens the <placeholder id=0/> configuration page."
 msgstr "Öppnar dialogen <placeholder id=0/>."
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/menu_plugins.inc:9
+#: /home/hundr/feardc/help/menu_plugins.inc:9
 msgid ""
 "Installed plugins are listed below. They can be selectively enabled or "
 "disabled. A \"Configure\" command is also available for each of them (the "
@@ -14039,8 +14031,8 @@ msgid ""
 msgstr ""
 "Här ser du upphovsrättsinnehavare, lista på alla som någonsin bidragit till "
 "DC++ och lite användbar statistik om ditt eget användade av DC++. Det finns "
-"också en ruta som visar versionsnummer av den senaste stabila versionen av DC"
-"++."
+"också en ruta som visar versionsnummer av den senaste stabila versionen av "
+"DC++."
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
 #: help/window_main.html:177
@@ -14760,9 +14752,9 @@ msgstr ""
 #: help/window_pm.html:52
 msgid ""
 "The hub used to establish the initial peer-to-peer connection must be an ADC "
-"hub and the connection between the user and the hub must be encrypted (\"adcs"
-"\" scheme instead of \"adc\"). Additionally, both users must support the "
-"\"CCPM\" ADC extension."
+"hub and the connection between the user and the hub must be encrypted "
+"(\"adcs\" scheme instead of \"adc\"). Additionally, both users must support "
+"the \"CCPM\" ADC extension."
 msgstr ""
 
 #. type: Content of: <html><body><p>
@@ -16659,8 +16651,8 @@ msgid ""
 "match\" will only display users that have \"foo\" in their nick."
 msgstr ""
 "Här kan du filtrera användarlistan så att du ser specifika användare. Välj "
-"Nick i rullgardinslistan och skriv \"mr\" och du ser bara användare med \"mr"
-"\" i användarnamnet."
+"Nick i rullgardinslistan och skriv \"mr\" och du ser bara användare med "
+"\"mr\" i användarnamnet."
 
 #. type: Content of: <html><body><dl><dt>
 #: help/window_users.html:71

@@ -2,19 +2,19 @@
 # Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
 # This file is distributed under the same license as the dcplusplus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-14 22:49+0100\n"
+"POT-Creation-Date: 2024-03-16 18:38+0100\n"
 "PO-Revision-Date: 2013-09-15 14:06+0000\n"
 "Last-Translator: Gabriel O <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sk\n"
 "X-Launchpad-Export-Date: 2018-11-11 22:49+0000\n"
 "X-Generator: Launchpad (build 18816)\n"
 
@@ -346,8 +346,8 @@ msgstr "Front sťahovaní"
 #: dcpp/ShareManager.cpp:794
 #, boost-format
 msgid ""
-"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: %"
-"3%"
+"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
+"%3%"
 msgstr ""
 "Duplicitný súbor sa nebude zdieľať: %1% (Veľkosť: %2% B) Zhoduje sa s: %3%"
 
@@ -375,8 +375,7 @@ msgid "Error creating hash data file: %1%"
 msgstr "Chyba pri vytváraní dátového súboru hašov: %1%"
 
 #: dcpp/BZUtils.cpp:34 dcpp/BZUtils.cpp:55 dcpp/BZUtils.cpp:63
-#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:69 dcpp/ZUtils.cpp:93
-#: dcpp/ZUtils.cpp:103
+#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:69 dcpp/ZUtils.cpp:93 dcpp/ZUtils.cpp:103
 msgid "Error during compression"
 msgstr "Chyba počas kompresie"
 
@@ -726,11 +725,11 @@ msgstr ""
 #: dcpp/MappingManager.cpp:203
 #, boost-format
 msgid ""
-"Successfully created port mappings (Transfers: %1%, Encrypted transfers: %"
-"2%, Search: %3%) on the %4% device with the %5% interface"
+"Successfully created port mappings (Transfers: %1%, Encrypted transfers: "
+"%2%, Search: %3%) on the %4% device with the %5% interface"
 msgstr ""
-"Úspešne vytvorené namapovanie portov (Prenesené:  %1%, Šifrované prenosy: %"
-"2%, Hľadanie: %3%) na zariadení %4% s rozhraním  %5%"
+"Úspešne vytvorené namapovanie portov (Prenesené:  %1%, Šifrované prenosy: "
+"%2%, Hľadanie: %3%) na zariadení %4% s rozhraním  %5%"
 
 #: dcpp/MappingManager.cpp:106
 #, boost-format
@@ -820,7 +819,7 @@ msgstr "Sťahovanie tohto súboru už bolo dokončené"
 msgid "This file is already queued"
 msgstr "Tento súbor sa už nachádza vo fronte"
 
-#: dcpp/NmdcHub.cpp:1256
+#: dcpp/NmdcHub.cpp:1260
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "

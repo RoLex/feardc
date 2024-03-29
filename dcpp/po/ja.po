@@ -2,19 +2,19 @@
 # Copyright (C) 2008 The translators
 # This file is distributed under the same license as the DC++ package.
 #  <keblo@users.sourceforge.net>, 2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-14 22:49+0100\n"
+"POT-Creation-Date: 2024-03-16 18:38+0100\n"
 "PO-Revision-Date: 2008-03-13 23:09+0000\n"
 "Last-Translator: Jacek Sieka <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
 "X-Launchpad-Export-Date: 2022-10-18 11:20+0000\n"
 "X-Generator: Launchpad (build 25877e98ba44ca75f9c22db1fc37efee03e4606a)\n"
 
@@ -334,8 +334,8 @@ msgstr "ダウンロードキュー"
 #: dcpp/ShareManager.cpp:794
 #, boost-format
 msgid ""
-"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: %"
-"3%"
+"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
+"%3%"
 msgstr ""
 
 #: dcpp/DirectoryListing.cpp:195 dcpp/DirectoryListing.cpp:220
@@ -362,8 +362,7 @@ msgid "Error creating hash data file: %1%"
 msgstr ""
 
 #: dcpp/BZUtils.cpp:34 dcpp/BZUtils.cpp:55 dcpp/BZUtils.cpp:63
-#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:69 dcpp/ZUtils.cpp:93
-#: dcpp/ZUtils.cpp:103
+#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:69 dcpp/ZUtils.cpp:93 dcpp/ZUtils.cpp:103
 msgid "Error during compression"
 msgstr "圧縮中のエラー"
 
@@ -709,8 +708,8 @@ msgstr "SOCKS サーバーの認証に失敗( ユーザー/パスワードに誤
 #: dcpp/MappingManager.cpp:203
 #, boost-format
 msgid ""
-"Successfully created port mappings (Transfers: %1%, Encrypted transfers: %"
-"2%, Search: %3%) on the %4% device with the %5% interface"
+"Successfully created port mappings (Transfers: %1%, Encrypted transfers: "
+"%2%, Search: %3%) on the %4% device with the %5% interface"
 msgstr ""
 
 #: dcpp/MappingManager.cpp:106
@@ -801,7 +800,7 @@ msgstr ""
 msgid "This file is already queued"
 msgstr ""
 
-#: dcpp/NmdcHub.cpp:1256
+#: dcpp/NmdcHub.cpp:1260
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "

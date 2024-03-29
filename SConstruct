@@ -20,6 +20,7 @@ from build_util import Dev, gen_po_name, set_lang_name
 #   -Wno-unused-but-set-variable: dwarf/dwarf_arange.c:113:13
 gcc_flags = {
     "common": [
+        #"-g",
         "-gdwarf-4",
         "-Wall",
         "-Wextra",
@@ -32,7 +33,9 @@ gcc_flags = {
         "-fexceptions",
     ],
     "debug": [],
-    "release": ["-O3"],
+    "release": [
+        "-O3",
+    ],
 }
 
 gcc_xxflags = {"common": ["-std=gnu++20"], "debug": [], "release": []}
@@ -99,9 +102,17 @@ gcc_link_flags = {
     # the Dynamic Base bit in the EXE header which satisfies modern Windows'
     # security so the EXE won't be outright blocked. See L#2039677.
     # @todo remove when we drop support for older mingw-w64 builds / versions
-    "common": ["-gdwarf-4", "-Wl,--no-undefined,--nxcompat,--dynamicbase", "-time"],
+    "common": [
+        #"-g",
+        "-gdwarf-4",
+        "-Wl,--no-undefined,--nxcompat,--dynamicbase",
+        "-time",
+        "-static",
+    ],
     "debug": [],
-    "release": ["-O3", "-static"],
+    "release": [
+        "-O3",
+    ],
 }
 
 msvc_link_flags = {
@@ -276,9 +287,9 @@ if "gcc" in env["TOOLS"]:
     # https://www.cryptopp.com/benchmarks.html
     # Require SSE3 for fisttp
     if env["arch"] == "x86":
-        env.Append(CCFLAGS=["-march=nocona", "-mtune=generic", "-msse3"])  # Through SSE3
+        env.Append(CCFLAGS=["-march=nocona", "-mtune=generic"])  # Through SSE3
     elif env["arch"] == "x64":
-        env.Append(CCFLAGS=["-march=nehalem", "-mtune=generic", "-msse4"])  # Through SSE4
+        env.Append(CCFLAGS=["-march=nehalem", "-mtune=generic"])  # Through SSE4
 
 if "msvc" in env["TOOLS"]:
     env["pch"] = True

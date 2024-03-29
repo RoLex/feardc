@@ -2,19 +2,19 @@
 # Copyright (C) 2008 The translators
 # This file is distributed under the same license as the DC++ package.
 #  <Isildur@users.sourceforge.net>, 2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-14 22:49+0100\n"
+"POT-Creation-Date: 2024-03-16 18:38+0100\n"
 "PO-Revision-Date: 2012-01-16 14:30+0000\n"
 "Last-Translator: Sérgio Marques <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt\n"
 "X-Launchpad-Export-Date: 2018-11-11 22:49+0000\n"
 "X-Generator: Launchpad (build 18816)\n"
 
@@ -334,8 +334,8 @@ msgstr "Fila de transferências"
 #: dcpp/ShareManager.cpp:794
 #, boost-format
 msgid ""
-"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: %"
-"3%"
+"Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
+"%3%"
 msgstr ""
 "O ficheiro duplicado não será partilhado: %1% (Tamanho: %2% B) Comparação "
 "com: %3%"
@@ -364,8 +364,7 @@ msgid "Error creating hash data file: %1%"
 msgstr "Erro ao criar o ficheiro de dados hash: %1%"
 
 #: dcpp/BZUtils.cpp:34 dcpp/BZUtils.cpp:55 dcpp/BZUtils.cpp:63
-#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:69 dcpp/ZUtils.cpp:93
-#: dcpp/ZUtils.cpp:103
+#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:69 dcpp/ZUtils.cpp:93 dcpp/ZUtils.cpp:103
 msgid "Error during compression"
 msgstr "Erro durante a compressão"
 
@@ -713,8 +712,8 @@ msgstr "Falha ao autenticar o servidor socks (utilizador/senha inválido(a) ?)"
 #: dcpp/MappingManager.cpp:203
 #, boost-format
 msgid ""
-"Successfully created port mappings (Transfers: %1%, Encrypted transfers: %"
-"2%, Search: %3%) on the %4% device with the %5% interface"
+"Successfully created port mappings (Transfers: %1%, Encrypted transfers: "
+"%2%, Search: %3%) on the %4% device with the %5% interface"
 msgstr ""
 "Mapeamentos de porta criados (Transferências %1%, Transferências "
 "codificadas: %2%, Procura: %3%) no dispositivo %4% com a interface %5%"
@@ -807,7 +806,7 @@ msgstr "O ficheiro já foi transferido com sucesso"
 msgid "This file is already queued"
 msgstr "O ficheiro já está na fila de espera"
 
-#: dcpp/NmdcHub.cpp:1256
+#: dcpp/NmdcHub.cpp:1260
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "

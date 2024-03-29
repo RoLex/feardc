@@ -176,11 +176,14 @@ fullSlots(false)
 	onRaw([this](WPARAM, LPARAM) { return handleEndSession(); }, dwt::Message(WM_ENDSESSION));
 	onRaw([this](WPARAM, LPARAM l) { return handleCopyData(l); }, dwt::Message(WM_COPYDATA));
 	onRaw([this](WPARAM, LPARAM) { return handleWhereAreYou(); }, dwt::Message(SingleInstance::WMU_WHERE_ARE_YOU));
-	//In the event that explorer.exe crashes lets make sure the overlay icon is reset
-	UINT tbcMsg = ::RegisterWindowMessage(L"TaskbarButtonCreated");
-	if(tbcMsg != WM_NULL) {
-		::ChangeWindowMessageFilterEx(this->handle(), tbcMsg, 1, 0);
-		onRaw([this, tbcMsg](WPARAM, LPARAM) { handleTaskbarOverlay(); return 0; }, dwt::Message(tbcMsg));
+
+	if (!SETTING(DISABLE_TASKBAR_MENU)) {
+		//In the event that explorer.exe crashes lets make sure the overlay icon is reset
+		UINT tbcMsg = ::RegisterWindowMessage(L"TaskbarButtonCreated");
+		if(tbcMsg != WM_NULL) {
+			::ChangeWindowMessageFilterEx(this->handle(), tbcMsg, 1, 0);
+			onRaw([this, tbcMsg](WPARAM, LPARAM) { handleTaskbarOverlay(); return 0; }, dwt::Message(tbcMsg));
+		}
 	}
 
 	filterIter = dwt::Application::instance().addFilter([this](MSG &msg) { return filter(msg); });
@@ -271,7 +274,8 @@ fullSlots(false)
 	if(SETTING(SETTINGS_SAVE_INTERVAL) > 0)
 		setSaveTimer();
 
-	handleTaskbarOverlay();
+	if (!SETTING(DISABLE_TASKBAR_MENU))
+		handleTaskbarOverlay();
 }
 
 void MainWindow::initWindow() {
@@ -1240,7 +1244,8 @@ void MainWindow::updateAwayStatus() {
 	status->setToolTip(STATUS_AWAY, away ? (T_("Status: Away - Double-click to switch to Available")) :
 		(T_("Status: Available - Double-click to switch to Away")));
 
-	handleTaskbarOverlay();
+	if (!SETTING(DISABLE_TASKBAR_MENU))
+		handleTaskbarOverlay();
 }
 
 MainWindow::~MainWindow() {

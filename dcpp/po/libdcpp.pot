@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Jacek Sieka
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the libdcpp package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libdcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-14 23:57+0100\n"
+"POT-Creation-Date: 2024-03-29 10:47+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -348,8 +349,7 @@ msgid "Error creating hash data file: %1%"
 msgstr ""
 
 #: dcpp/BZUtils.cpp:34 dcpp/BZUtils.cpp:55 dcpp/BZUtils.cpp:63
-#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:69 dcpp/ZUtils.cpp:93
-#: dcpp/ZUtils.cpp:103
+#: dcpp/ZUtils.cpp:36 dcpp/ZUtils.cpp:69 dcpp/ZUtils.cpp:93 dcpp/ZUtils.cpp:103
 msgid "Error during compression"
 msgstr ""
 
@@ -762,7 +762,7 @@ msgstr ""
 msgid "This file is already queued"
 msgstr ""
 
-#: dcpp/NmdcHub.cpp:1256
+#: dcpp/NmdcHub.cpp:1260
 #, boost-format
 msgid "This hub is trying to use your client to spam %1%, please urge hub owner to fix this"
 msgstr ""

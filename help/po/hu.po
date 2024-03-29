@@ -2,19 +2,19 @@
 # Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
 # This file is distributed under the same license as the dcplusplus package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-14 23:14+0100\n"
+"POT-Creation-Date: 2024-03-16 18:38+0100\n"
 "PO-Revision-Date: 2022-10-15 09:18+0000\n"
 "Last-Translator: eMTee <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hu\n"
 "X-Launchpad-Export-Date: 2022-10-18 11:21+0000\n"
 "X-Generator: Launchpad (build 25877e98ba44ca75f9c22db1fc37efee03e4606a)\n"
 
@@ -138,7 +138,7 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
 #: help/chat_commands.html:51
-#: /home/hundr/dcpp/help/commands_user_general.inc:11 help/index.html:30
+#: /home/hundr/feardc/help/commands_user_general.inc:11 help/index.html:30
 #: help/keyboard_commands.html:41 help/keyboard_commands.html:68
 #: help/keyboard_commands.html:70 help/keyboard_commands.html:72
 #: help/keyboard_commands.html:76 help/keyboard_commands.html:79
@@ -423,12 +423,12 @@ msgstr ""
 "parancsok leírása az adott ablak Segítség lapján olvasható."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_general.inc:2
+#: /home/hundr/feardc/help/commands_file_general.inc:2
 msgid "Search for alternates"
 msgstr "Alternatívák keresése"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_general.inc:3
+#: /home/hundr/feardc/help/commands_file_general.inc:3
 msgid ""
 "Will open a new <a po4a-id=0>Search window</a> to search for alternate "
 "sources for the selected file."
@@ -437,12 +437,12 @@ msgstr ""
 "egy újonnan megnyíló <a po4a-id=0>Keresés</a> ablakban."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_general.inc:5
+#: /home/hundr/feardc/help/commands_file_general.inc:5
 msgid "Lookup TTH at Bitzi.com"
 msgstr "TTH keresése a Bitzi.com-on"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_general.inc:6
+#: /home/hundr/feardc/help/commands_file_general.inc:6
 msgid ""
 "Will trigger the default browser to lookup the TTH of the selected file at "
 "Bitzi.com."
@@ -451,22 +451,22 @@ msgstr ""
 "Az oldal az alapértelmezett web böngészőben jelenik meg."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_general.inc:8
+#: /home/hundr/feardc/help/commands_file_general.inc:8
 msgid "Copy magnet link to clipboard"
 msgstr "Magnet link másolása a vágólapra"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_general.inc:9
+#: /home/hundr/feardc/help/commands_file_general.inc:9
 msgid "Will copy the file's <a po4a-id=0>magnet link</a> to the clipboard."
 msgstr "A kiejölt fájl <a po4a-id=0>magnet link-jét</a> a vágólapra helyezi."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_download.inc:2
+#: /home/hundr/feardc/help/commands_file_download.inc:2
 msgid "Download"
 msgstr "Letöltés"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_download.inc:3
+#: /home/hundr/feardc/help/commands_file_download.inc:3
 msgid ""
 "Adds the selected file(s) or director(ies) to the Download Queue. They will "
 "be downloaded to the <a po4a-id=0>Default download directory</a>."
@@ -475,12 +475,12 @@ msgstr ""
 "<a po4a-id=0>Alapértelmezett letöltési könyvtárba</a> lesznek letöltve."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_download.inc:6
+#: /home/hundr/feardc/help/commands_file_download.inc:6
 msgid "Download to..."
 msgstr "Letöltés ide..."
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_download.inc:7
+#: /home/hundr/feardc/help/commands_file_download.inc:7
 msgid ""
 "Adds the selected file(s) or director(ies) to the Download Queue. The "
 "download target can be selected using the submenu elements : either a "
@@ -493,12 +493,12 @@ msgstr ""
 "almenüt választva."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_management.inc:2
+#: /home/hundr/feardc/help/commands_file_management.inc:2
 msgid "Open"
 msgstr "Megnyitás"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_management.inc:3
+#: /home/hundr/feardc/help/commands_file_management.inc:3
 msgid ""
 "Opens the file with its respective external viewer software. You should have "
 "the appropriate viewer / player software installed and correctly registered "
@@ -509,12 +509,12 @@ msgstr ""
 "fájltípushoz regisztrálva kell lennie."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_management.inc:6
+#: /home/hundr/feardc/help/commands_file_management.inc:6
 msgid "Open folder"
 msgstr "Mappa megnyitása"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_management.inc:7
+#: /home/hundr/feardc/help/commands_file_management.inc:7
 msgid ""
 "Opens the selected folder (or the folder containing the selected file) in "
 "Windows Explorer."
@@ -523,12 +523,12 @@ msgstr ""
 "a Windows Intézőben."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_file_management.inc:9
+#: /home/hundr/feardc/help/commands_file_management.inc:9
 msgid "Shell menu"
 msgstr "Rendszermenü"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_file_management.inc:10
+#: /home/hundr/feardc/help/commands_file_management.inc:10
 msgid ""
 "Opens the Windows shell menu as submenu items. This menu contains the same "
 "items as in the context menu of Windows Explorer. Note that the submenu "
@@ -561,7 +561,7 @@ msgstr ""
 "olvasható."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_listview.inc:2
+#: /home/hundr/feardc/help/commands_listview.inc:2
 #: help/dialog_fav_hub_groups.html:16 help/dialog_public_hub_lists.html:28
 #: help/dialog_string_list.html:29 help/settings_favoritedirs.html:22
 #: help/settings_plugins.html:51 help/settings_search_types.html:28
@@ -572,7 +572,7 @@ msgid "Remove"
 msgstr "Eltávolítás"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_listview.inc:3
+#: /home/hundr/feardc/help/commands_listview.inc:3
 msgid ""
 "Deletes the actual item from the list. If the corresponding setting in <a "
 "po4a-id=0>Confirm dialog options</a> is enabled, you will be prompted before "
@@ -583,12 +583,12 @@ msgstr ""
 "megerősítési párbeszédablak jelenik meg."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_listview.inc:6
+#: /home/hundr/feardc/help/commands_listview.inc:6
 msgid "Remove all"
 msgstr "Összes eltávolítása"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_listview.inc:7
+#: /home/hundr/feardc/help/commands_listview.inc:7
 msgid ""
 "Deletes all the selected items from the list. If the corresponding setting "
 "in <a po4a-id=0>Confirm dialog options</a> is enabled, you will be prompted "
@@ -615,22 +615,22 @@ msgstr ""
 "parancsok leírása az adott ablak Segítség lapján olvasható."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:2
+#: /home/hundr/feardc/help/commands_user_general.inc:2
 msgid "Get file list"
 msgstr "Fájl-lista letöltése"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:3
+#: /home/hundr/feardc/help/commands_user_general.inc:3
 msgid "Download the file list of the selected users."
 msgstr "A kijelölt felhasználó(k) fájl-listáinak letöltése."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:4
+#: /home/hundr/feardc/help/commands_user_general.inc:4
 msgid "Browse file list"
 msgstr "Fájl-lista böngészése"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:5
+#: /home/hundr/feardc/help/commands_user_general.inc:5
 msgid ""
 "Download only the required pieces of the file lists of the selected users in "
 "form of a partial file list. Note that you may not able to fully exploit "
@@ -644,13 +644,13 @@ msgstr ""
 "lista letöltése\" gombbal lehetséges."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:6
+#: /home/hundr/feardc/help/commands_user_general.inc:6
 #: help/window_file_list.html:24
 msgid "Match queue"
 msgstr "Egyeztetés a Letöltési Sorral"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:7
+#: /home/hundr/feardc/help/commands_user_general.inc:7
 msgid ""
 "Matches the files in your download queue to the file lists of the selected "
 "users. 2 files are considered to be the same if their TTH is the same. If "
@@ -662,12 +662,12 @@ msgstr ""
 "adva, mint forrás."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:10
+#: /home/hundr/feardc/help/commands_user_general.inc:10
 msgid "Send private message"
 msgstr "Privát üzenet küldése"
 
 #. type: Content of: <html><body><dl><dd><placeholder>
-#: /home/hundr/dcpp/help/commands_user_general.inc:11
+#: /home/hundr/feardc/help/commands_user_general.inc:11
 #: help/dialog_fav_hub_groups.html:10 help/dialog_fav_hub_groups.html:15
 #: help/dialog_favorite_hub.html:38 help/dialog_favorite_hub.html:42
 #: help/dialog_favorite_hub.html:43 help/dialog_user_matching.html:13
@@ -720,7 +720,7 @@ msgstr "Privát üzenet küldése"
 #: help/window_favorite_hubs.html:30 help/window_favorite_hubs.html:50
 #: help/window_favorite_hubs.html:51 help/window_hub.html:91
 #: help/window_main.html:28 help/window_main.html:29 help/window_main.html:47
-#: help/window_main.html:58 /home/hundr/dcpp/help/menu_plugins.inc:6
+#: help/window_main.html:58 /home/hundr/feardc/help/menu_plugins.inc:6
 #: help/window_main.html:71 help/window_main.html:75 help/window_main.html:79
 #: help/window_main.html:83 help/window_main.html:87 help/window_main.html:91
 #: help/window_main.html:95 help/window_main.html:99 help/window_main.html:103
@@ -744,7 +744,7 @@ msgid "<placeholder id=0/>"
 msgstr "<placeholder id=0/>"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:11
+#: /home/hundr/feardc/help/commands_user_general.inc:11
 msgid ""
 "Open <placeholder id=0/> windows to chat privately with the selected users."
 msgstr ""
@@ -752,12 +752,12 @@ msgstr ""
 "chat céljából."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:13
+#: /home/hundr/feardc/help/commands_user_general.inc:13
 msgid "Grant extra slot"
 msgstr "Extra slot biztosítása"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:14
+#: /home/hundr/feardc/help/commands_user_general.inc:14
 msgid ""
 "In addition to your regular upload slots, an extra upload slot will be given "
 "to the selected users until the end of the current DC++ session."
@@ -766,13 +766,13 @@ msgstr ""
 "kijelölt felhasználónak, amely a program bezárásáig érvényes."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:16
+#: /home/hundr/feardc/help/commands_user_general.inc:16
 #: help/window_download_queue.html:139
 msgid "Remove user from queue"
 msgstr "Felhasználó eltávolítása a sorból"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:17
+#: /home/hundr/feardc/help/commands_user_general.inc:17
 msgid ""
 "Remove the selected users from the source list of all queued files. Pending "
 "file list requests will be removed as well."
@@ -782,12 +782,12 @@ msgstr ""
 "lista is el lesz távolítva."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:19
+#: /home/hundr/feardc/help/commands_user_general.inc:19
 msgid "Ignore chat"
 msgstr "Chat üzenetek mellőzése"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:20
+#: /home/hundr/feardc/help/commands_user_general.inc:20
 msgid ""
 "Add user matching definitions (or modify existing ones, if possible) to "
 "ignore chat messages from the selected users."
@@ -796,12 +796,12 @@ msgstr ""
 "létezik) a kijelölt felhasználók chat üzeneteinek mellőzésére."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:22
+#: /home/hundr/feardc/help/commands_user_general.inc:22
 msgid "Un-ignore chat"
 msgstr "Üzenetek újra engedélyezése"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:23
+#: /home/hundr/feardc/help/commands_user_general.inc:23
 msgid ""
 "Add user matching definitions (or modify existing ones, if possible) to stop "
 "ignoring chat messages from the selected users."
@@ -810,12 +810,12 @@ msgstr ""
 "létezik) a kijelölt felhasználók chat üzeneteinek újbóli engedélyezésére."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_general.inc:25
+#: /home/hundr/feardc/help/commands_user_general.inc:25
 msgid "Copy user information"
 msgstr "Felhasználói információk másolása"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_general.inc:26
+#: /home/hundr/feardc/help/commands_user_general.inc:26
 msgid ""
 "Copy a few lines containing user information to the clipboard. The data may "
 "include: the user's nick(s), her hub address(es), her IP, country, email, "
@@ -829,13 +829,13 @@ msgstr ""
 "elválasztva."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_user_favorites.inc:2
+#: /home/hundr/feardc/help/commands_user_favorites.inc:2
 #: help/window_public_hubs.html:42
 msgid "Add to favorites"
 msgstr "Kedvencekhez ad"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_user_favorites.inc:3
+#: /home/hundr/feardc/help/commands_user_favorites.inc:3
 msgid "Adds the selected users to your <a po4a-id=0>Favorite Users</a> list."
 msgstr ""
 "A <a po4a-id=0>Kedvenc felhasználók</a> listájához adja a felhasználót."
@@ -1267,8 +1267,8 @@ msgid ""
 "(add, remove, and rearrange) the toolbar items in the main DC++ window."
 msgstr ""
 "Egy a Windows-ba beépített  eszköztár testreszabás párbeszédablak "
-"segítségével lehet testreszabni (elemeket hozzáadni, evenni, átrendezni) a DC"
-"++ főablakában található eszköztárat."
+"segítségével lehet testreszabni (elemeket hozzáadni, evenni, átrendezni) a "
+"DC++ főablakában található eszköztárat."
 
 #. type: Content of: <html><body><h2>
 #: help/dialog_customize_tb.html:12
@@ -1299,9 +1299,9 @@ msgstr ""
 #. type: Content of: <html><body><ol><li>
 #: help/dialog_customize_tb.html:16
 msgid ""
-"To reposition a button on the toolbar, select it from the \"Toolbar buttons"
-"\" list box and click either \"Move Up\" or \"Move Down\" to move the button "
-"accordingly."
+"To reposition a button on the toolbar, select it from the \"Toolbar "
+"buttons\" list box and click either \"Move Up\" or \"Move Down\" to move the "
+"button accordingly."
 msgstr ""
 "Az eszköztárgombok sorrendjének megváltoztatásához válassz ki egyet az "
 "\"Eszköztárgombok\" listából, majd a \"Fel\" vagy \"Le\" gombokra "
@@ -1330,17 +1330,16 @@ msgstr ""
 #: help/dialog_favorite_hub.html:42 help/dialog_favorite_hub.html:43
 #: help/index.html:62 help/window_favorite_hubs.html:30
 #: help/window_favorite_hubs.html:50 help/window_favorite_hubs.html:51
-#: help/window_main.html:29 help/window_main.html:147
-#: help/window_main.html:152 help/window_main.html:249
+#: help/window_main.html:29 help/window_main.html:147 help/window_main.html:152
+#: help/window_main.html:249
 msgid "Favorite hub groups"
 msgstr "Kedvenc hub csoportok"
 
 #. type: Content of: <html><body><dl><dd><div><placeholder><a>
 #: help/dialog_fav_hub_groups.html:10 help/index.html:33
 #: help/keyboard_commands.html:46 help/window_main.html:74
-#: help/window_main.html:75 help/window_main.html:212
-#: help/window_main.html:245 help/window_main.html:247
-#: help/window_main.html:248
+#: help/window_main.html:75 help/window_main.html:212 help/window_main.html:245
+#: help/window_main.html:247 help/window_main.html:248
 msgid "Favorite Hubs"
 msgstr "Kedvenc Hubok"
 
@@ -1434,7 +1433,7 @@ msgstr ""
 #. type: Content of: <html><body><dl><dt>
 #: help/dialog_fav_hub_groups.html:21 help/dialog_favorite_hub.html:12
 #: help/dialog_user_command.html:37 help/dialog_user_matching.html:17
-#: /home/hundr/dcpp/help/window_hublists.inc:9
+#: /home/hundr/feardc/help/window_hublists.inc:9
 msgid "Name"
 msgstr "Név"
 
@@ -1476,8 +1475,8 @@ msgstr "Kedvenc Hub Tulajdonságai"
 #: help/keyboard_commands.html:84 help/settings_appearance.html:84
 #: help/settings_expert.html:55 help/settings_history.html:17
 #: help/settings_history.html:36 help/settings_notifications.html:26
-#: help/settings_tabs.html:41 /home/hundr/dcpp/help/window_hublists.inc:4
-#: /home/hundr/dcpp/help/window_hublists.inc:5
+#: help/settings_tabs.html:41 /home/hundr/feardc/help/window_hublists.inc:4
+#: /home/hundr/feardc/help/window_hublists.inc:5
 #: help/window_finished_downloads.html:36 help/window_finished_uploads.html:36
 #: help/window_hub.html:10 help/window_hub.html:11 help/window_main.html:28
 #: help/window_main.html:143 help/window_main.html:146
@@ -1503,7 +1502,7 @@ msgstr "A hub címe."
 
 #. type: Content of: <html><body><dl><dt>
 #: help/dialog_favorite_hub.html:16 help/dialog_favorite_hub.html:27
-#: help/settings_general.html:25 /home/hundr/dcpp/help/window_hublists.inc:11
+#: help/settings_general.html:25 /home/hundr/feardc/help/window_hublists.inc:11
 #: help/window_hub.html:49 help/window_users.html:34 help/window_users.html:44
 msgid "Description"
 msgstr "Leírás"
@@ -2679,8 +2678,8 @@ msgid ""
 msgstr ""
 "Ha van routered akkor viszont CSAK az 1. vagy a 2. opció jöhet szóba : "
 "<i>Aktív mód (Nincs routerem / magam állítom be a routerem)</i> vagy az "
-"<i>Aktív mód (a router automatikus beállítása NAT-PMP v. UPnP használatával)"
-"</i>."
+"<i>Aktív mód (a router automatikus beállítása NAT-PMP v. UPnP "
+"használatával)</i>."
 
 #. type: Content of: <html><body><h2>
 #: help/faq_connection.html:93
@@ -2853,9 +2852,9 @@ msgstr ""
 #. type: Content of: <html><body><p><ul><li>
 #: help/faq_connection.html:151
 msgid ""
-"Select the <b>Active mode (let DC++ configure my router with NAT-PMP / UPnP)"
-"</b> radio button. Leave the fields in the &quot;External / WAN IP&quot; box "
-"blank."
+"Select the <b>Active mode (let DC++ configure my router with NAT-PMP / "
+"UPnP)</b> radio button. Leave the fields in the &quot;External / WAN "
+"IP&quot; box blank."
 msgstr ""
 "Válaszd ki az <b>Aktív mód (a router automatikus beállítása NAT-PMP v. UPnP "
 "használatával)</b> opciót és hagyj mindent a &quot;Külső / WAN IP&quot; "
@@ -3744,10 +3743,10 @@ msgstr ""
 #: help/faq_portforward.html:51
 msgid ""
 "The IP that you are forwarding to should be the <b>internal</b> IP address "
-"of your computer running DC++.  It usually begins with <a po4a-id=0>\"192.168"
-"\", \"172.16.\" or \"10.x.\"</a>. To see your internal IP address go to the "
-"command prompt and type: <i>ipconfig</i> (Start Menu -&gt; Run -&gt; <i>cmd /"
-"k ipconfig</i>)"
+"of your computer running DC++.  It usually begins with <a po4a-"
+"id=0>\"192.168\", \"172.16.\" or \"10.x.\"</a>. To see your internal IP "
+"address go to the command prompt and type: <i>ipconfig</i> (Start Menu -&gt; "
+"Run -&gt; <i>cmd /k ipconfig</i>)"
 msgstr ""
 "A portokat annak a számítógépnek a <b>belső</b> IP címére kell továbbítanod, "
 "amelyen a DC++-t futtatod. Ez az IP cím általában <a po4a-id=0>\"192.168\", "
@@ -3763,8 +3762,8 @@ msgid ""
 "no router / I have configured my router)</b>. In the port fields, enter the "
 "port number(s) that you forwarded on the router."
 msgstr ""
-"Ha elkészültél a port továbbítási beállításokkal a routerben, indítsd el a DC"
-"++-t és a <a po4a-id=0>Kapcsolat kézi beállításaiban</a> válaszd ki az "
+"Ha elkészültél a port továbbítási beállításokkal a routerben, indítsd el a "
+"DC++-t és a <a po4a-id=0>Kapcsolat kézi beállításaiban</a> válaszd ki az "
 "<b>Aktív mód (Nincs routerem / magam állítom be a routerem)</b> opciót. A "
 "Port mezőkbe írd be azon portok számát, amelyeket a routerrel továbbítasz."
 
@@ -5153,8 +5152,8 @@ msgid ""
 "suitable to use by itself for protection. If it's enabled and you have "
 "problems accessing the Internet with DC++ the best practice is to check for "
 "and delete existing exception(s) for DC++ then let the operating system "
-"properly readd it at next start of the DC++ application. To do this, close DC"
-"++ and"
+"properly readd it at next start of the DC++ application. To do this, close "
+"DC++ and"
 msgstr ""
 "A legutóbbi Windows verziókban található tűzfal összetevő alapértelmezetten "
 "be van kapcsolva. Bár nem rendelkezik túl sok beállítási lehetőséggel, mégis "
@@ -5865,11 +5864,11 @@ msgstr ""
 "amelyek mindenképpen szükségesek a sikeres használathoz. (A leírás - lévén "
 "BCDC++-hoz készült - kis mértékben eltér a DC++-ban található "
 "beállításoktól, de az eltérés az alapvetően szükséges beállításokat nem "
-"érinti). Hasonlóan kitűnő, kezdőknek szóló leírás található a <a href="
-"\"https://web.archive.org/web/20120430080612/http://dcpp.hu:80/\" target="
-"\"_blank\" class=\"external\">dcpp.hu</a> portálon is. Az eredeti angol "
-"nyelvű DC++ gyorstalpaló <a po4a-id=0>itt</a> található. Semmiképpen ne "
-"hagyd ki az alapvetően szükséges DC++ beállítások áttekintését (pl. nick "
+"érinti). Hasonlóan kitűnő, kezdőknek szóló leírás található a <a "
+"href=\"https://web.archive.org/web/20120430080612/http://dcpp.hu:80/\" "
+"target=\"_blank\" class=\"external\">dcpp.hu</a> portálon is. Az eredeti "
+"angol nyelvű DC++ gyorstalpaló <a po4a-id=0>itt</a> található. Semmiképpen "
+"ne hagyd ki az alapvetően szükséges DC++ beállítások áttekintését (pl. nick "
 "megadása a <a po4a-id=1>Személyes beállításokban</a>, stb...), mivel ezek "
 "hiánya azt eredményezheti, hogy egyetlen hubhoz sem fogsz tudni kapcsolódni."
 
@@ -6005,9 +6004,9 @@ msgstr ""
 "További GYIK-ek, tippek és segítség található a <a href=\"https://web."
 "archive.org/web/20131115231608/http://bcdc.dccafe.org/hu\" target=\"_blank\" "
 "class=\"external\">BCDC++ magyar honlapon</a>, a <a href=\"https://web."
-"archive.org/web/20120531014530/http://dcpp.hu:80/\" target=\"_blank\" class="
-"\"external\">Magyar Direct Connect portálon</a> és az angol nyelvű <a po4a-"
-"id=0>Direct Connect FAQ</a> oldalon."
+"archive.org/web/20120531014530/http://dcpp.hu:80/\" target=\"_blank\" "
+"class=\"external\">Magyar Direct Connect portálon</a> és az angol nyelvű <a "
+"po4a-id=0>Direct Connect FAQ</a> oldalon."
 
 #. type: Content of: <html><body><ul><li>
 #: help/get_started.html:130
@@ -6119,22 +6118,22 @@ msgstr "Fájl-lista"
 #. type: Content of: <html><body><dl><dd><placeholder><a>
 #: help/index.html:32 help/keyboard_commands.html:52
 #: help/keyboard_commands.html:89 help/window_main.html:70
-#: help/window_main.html:71 help/window_main.html:210
-#: help/window_main.html:239 help/window_main.html:240
+#: help/window_main.html:71 help/window_main.html:210 help/window_main.html:239
+#: help/window_main.html:240
 msgid "Public Hubs"
 msgstr "Publikus Hubok"
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
 #: help/index.html:36 help/settings_tabs.html:59 help/window_main.html:86
-#: help/window_main.html:87 help/window_main.html:215
-#: help/window_main.html:258 help/window_main.html:259
+#: help/window_main.html:87 help/window_main.html:215 help/window_main.html:258
+#: help/window_main.html:259
 msgid "Finished Downloads"
 msgstr "Befejezett letöltések"
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
 #: help/index.html:37 help/settings_tabs.html:62 help/window_main.html:90
-#: help/window_main.html:91 help/window_main.html:216
-#: help/window_main.html:261 help/window_main.html:262
+#: help/window_main.html:91 help/window_main.html:216 help/window_main.html:261
+#: help/window_main.html:262
 msgid "Finished Uploads"
 msgstr "Befejezett feltöltések"
 
@@ -6216,8 +6215,7 @@ msgstr "Kapcsolódás"
 
 #. type: Content of: <html><body><h1>
 #: help/index.html:75 help/settings_connectivity.html:17
-#: help/settings_connectivity.html:64
-#: help/settings_connectivity_manual.html:10
+#: help/settings_connectivity.html:64 help/settings_connectivity_manual.html:10
 msgid "Manual configuration"
 msgstr "Kézi beállítás"
 
@@ -6304,7 +6302,7 @@ msgstr "Keresés típusok"
 
 #. type: Content of: <html><body><dl><dd><ul><li><placeholder><a>
 #: help/index.html:117 help/window_main.html:57 help/window_main.html:58
-#: /home/hundr/dcpp/help/menu_plugins.inc:6 help/window_main.html:227
+#: /home/hundr/feardc/help/menu_plugins.inc:6 help/window_main.html:227
 #: help/window_main.html:303 help/window_main.html:306
 msgid "Plugins"
 msgstr "Bővítmények"
@@ -7016,9 +7014,10 @@ msgid ""
 "just like everbody else."
 msgstr ""
 "Mielőtt slotot kérnél, olvasd el az illető felhasználó leírását a "
-"felhasználói listában. Ha ott \"nem adok slotot\" (angolul \"NO SLOTBEGGING"
-"\") vagy valami hasonló szöveget találsz, a slot kérés nagy eséllyel nem fog "
-"sikerülni. Inkább légy türelmes és várd ki a sorod, mint mindenki más."
+"felhasználói listában. Ha ott \"nem adok slotot\" (angolul \"NO "
+"SLOTBEGGING\") vagy valami hasonló szöveget találsz, a slot kérés nagy "
+"eséllyel nem fog sikerülni. Inkább légy türelmes és várd ki a sorod, mint "
+"mindenki más."
 
 #. type: Content of: <html><body><ul><li>
 #: help/netiquette.html:62
@@ -7783,8 +7782,8 @@ msgid ""
 "displayed throughout the interface. <b>Default: %[2code] - %[name]</b>"
 msgstr ""
 "Ez a doboz a felhasználói felületen több helyen megjelenő országinformációk "
-"formátumának testreszabására szolgál.  <b>Alapértelmezett érték: %[2code] - %"
-"[name]</b>"
+"formátumának testreszabására szolgál.  <b>Alapértelmezett érték: %[2code] - "
+"%[name]</b>"
 
 #. type: Content of: <html><body><dl><dd>
 #: help/settings_appearance.html:63
@@ -9893,34 +9892,34 @@ msgstr ""
 #: help/settings_logs.html:153
 msgid ""
 "<b>Default downloaded segments log format:</b> %Y-%m-%d %H:%M: %[target] "
-"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), %"
-"[speed], %[time], %[fileTR]"
+"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), "
+"%[speed], %[time], %[fileTR]"
 msgstr ""
-"<b>Alapértelmezett letöltött szálak napló formátum:</b> %Y-%m-%d %H:%M: %"
-"[target] downloaded from %[userNI] (%[userCID]), %[fileSI] (%"
-"[fileSIactual]), %[speed], %[time], %[fileTR]"
+"<b>Alapértelmezett letöltött szálak napló formátum:</b> %Y-%m-%d %H:%M: "
+"%[target] downloaded from %[userNI] (%[userCID]), %[fileSI] "
+"(%[fileSIactual]), %[speed], %[time], %[fileTR]"
 
 #. type: Content of: <html><body><dl><dd><div>
 #: help/settings_logs.html:154
 msgid ""
 "<b>Default finished downloads log format:</b> %Y-%m-%d %H:%M: %[target] "
-"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIsession]), %"
-"[speed], %[time], %[fileTR]"
+"downloaded from %[userNI] (%[userCID]), %[fileSI] (%[fileSIsession]), "
+"%[speed], %[time], %[fileTR]"
 msgstr ""
 "<b>Alapértelmezett befejezett letöltések napló formátum:</b> %Y-%m-%d %H:%M: "
-"%[target] downloaded from %[userNI] (%[userCID]), %[fileSI] (%"
-"[fileSIsession]), %[speed], %[time], %[fileTR]"
+"%[target] downloaded from %[userNI] (%[userCID]), %[fileSI] "
+"(%[fileSIsession]), %[speed], %[time], %[fileTR]"
 
 #. type: Content of: <html><body><dl><dd><div>
 #: help/settings_logs.html:155
 msgid ""
 "<b>Default uploaded segments log format:</b> %Y-%m-%d %H:%M: %[source] "
-"uploaded to %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), %[speed], %"
-"[time], %[fileTR]"
+"uploaded to %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), %[speed], "
+"%[time], %[fileTR]"
 msgstr ""
-"<b>Alapértelmezett feltöltött szálak napló formátum :</b> %Y-%m-%d %H:%M: %"
-"[source] uploaded to %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), %"
-"[speed], %[time], %[fileTR]"
+"<b>Alapértelmezett feltöltött szálak napló formátum :</b> %Y-%m-%d %H:%M: "
+"%[source] uploaded to %[userNI] (%[userCID]), %[fileSI] (%[fileSIactual]), "
+"%[speed], %[time], %[fileTR]"
 
 #. type: Content of: <html><body><dl><dt>
 #: help/settings_logs.html:157
@@ -10198,9 +10197,9 @@ msgid ""
 "org\\2004-12.log (if you are in the hub example.no-ip.org and it is december "
 "2004)"
 msgstr ""
-"Példa : Közös chat : %[hubaddr]\\%Y-%m.log - eredménye : peldahub.no-ip.org"
-"\\2004-12.log (ha a peldahub.no-ip.org című hubra vagy kapcsolódva és 2004 "
-"december havát írják)"
+"Példa : Közös chat : %[hubaddr]\\%Y-%m.log - eredménye : peldahub.no-ip."
+"org\\2004-12.log (ha a peldahub.no-ip.org című hubra vagy kapcsolódva és "
+"2004 december havát írják)"
 
 #. type: Content of: <html><body><dl><dd><p>
 #: help/settings_logs.html:228
@@ -10375,8 +10374,8 @@ msgstr ""
 #. type: Content of: <html><body><p>
 #: help/settings_notifications.html:57
 msgid ""
-"This box can be switched by double-clicking the balloon icon in the \"Balloon"
-"\" column of the desired event."
+"This box can be switched by double-clicking the balloon icon in the "
+"\"Balloon\" column of the desired event."
 msgstr ""
 "Ez a jelölőnégyzet ki-be kapcsolható a kiválasztott esemény \"Buborék\" "
 "oszlopában lévő buborék ikonra való dupla kattintással is."
@@ -11428,8 +11427,8 @@ msgstr "Feltöltések"
 #. type: Content of: <html><body><p>
 #: help/settings_styles.html:27
 msgid ""
-"The style used to paint upload transfer bars. Default background color: RGB"
-"(205, 60, 55)."
+"The style used to paint upload transfer bars. Default background color: "
+"RGB(205, 60, 55)."
 msgstr ""
 "Ez a stílus határozza meg a feltöltést jelző csíkok megjelenését "
 "(alapértelmezett: RGB(205, 60, 55))."
@@ -11437,8 +11436,8 @@ msgstr ""
 #. type: Content of: <html><body><p>
 #: help/settings_styles.html:31
 msgid ""
-"The style used to paint download transfer bars. Default background color: RGB"
-"(55, 170, 85)."
+"The style used to paint download transfer bars. Default background color: "
+"RGB(55, 170, 85)."
 msgstr ""
 "Ez a stílus határozza meg a letöltést jelző csíkok megjelenését "
 "(alapértelmezett : RGB(55, 170, 85))."
@@ -12233,7 +12232,7 @@ msgstr "A beállítás belső elnevezése."
 
 #. type: Content of: <html><body><dl><dt>
 #: help/window_about_config.html:23 help/window_download_queue.html:47
-#: /home/hundr/dcpp/help/window_hublists.inc:1 help/window_transfers.html:26
+#: /home/hundr/feardc/help/window_hublists.inc:1 help/window_transfers.html:26
 msgid "Status"
 msgstr "Állapot"
 
@@ -12337,7 +12336,7 @@ msgid "Filter"
 msgstr "Szűrő"
 
 #. type: Content of: <html><body><dl><dd><p><div>
-#: /home/hundr/dcpp/help/window_list_filter.inc:1
+#: /home/hundr/feardc/help/window_list_filter.inc:1
 msgid ""
 "The filter, consisting of an input box, a column selection box and a method "
 "selection box, can help filter the list on the fly based on textual "
@@ -12356,7 +12355,7 @@ msgstr ""
 "listából, a szűrő törlésével az eredeti lista bármikor visszakapható."
 
 #. type: Content of: <html><body><dl><dd><p><div>
-#: /home/hundr/dcpp/help/window_list_filter.inc:2
+#: /home/hundr/feardc/help/window_list_filter.inc:2
 #: help/window_public_hubs.html:56
 msgid "The filter input box can be focused with Alt+I."
 msgstr "A szűrési beviteli mezőre az Alt+I kombinációval lehet fókuszálni."
@@ -12864,8 +12863,8 @@ msgid ""
 "parentheses. Possible errors are :"
 msgstr ""
 "Ha egy fájlal kapcsolatban bármilyen hiba keletkezik akkor a hibaüzenet "
-"ebben az oszlopban jelenik meg úgy, hogy kiírásra kerül(nek) a problémás nick"
-"(ek), majd a hozzátartozó hibaüzenet(ek) zárójelben."
+"ebben az oszlopban jelenik meg úgy, hogy kiírásra kerül(nek) a problémás "
+"nick(ek), majd a hozzátartozó hibaüzenet(ek) zárójelben."
 
 #. type: Content of: <html><body><dl><dd><ul><li><p>
 #: help/window_download_queue.html:83
@@ -13119,12 +13118,12 @@ msgid "Removes the user from all files in the queue."
 msgstr "Eltávolítja a felhasználót az összes a sorban lévő fájlból."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/dcpp/help/commands_copy.inc:2
+#: /home/hundr/feardc/help/commands_copy.inc:2
 msgid "Copy"
 msgstr "Másolás"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/commands_copy.inc:3
+#: /home/hundr/feardc/help/commands_copy.inc:3
 msgid ""
 "Allows copying the content of any column to the clipboard. An &quot;All "
 "columns&quot;\r command is available as well to gather all the columns in "
@@ -13201,34 +13200,34 @@ msgid "Favorite hubs"
 msgstr "Kedvenc hubok"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/window_hublists.inc:2
+#: /home/hundr/feardc/help/window_hublists.inc:2
 msgid "Connection status of the hub. Possible indicators:"
 msgstr "A hub kapcsolat állapotát jelzi. Lehetséges állapotok:"
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/window_hublists.inc:4
+#: /home/hundr/feardc/help/window_hublists.inc:4
 msgid "Connected - Hub is connected, hub window is open."
 msgstr "Kapcsolódva - A hub kapcsolódott és nyitva van egy hub ablakban."
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/window_hublists.inc:5
+#: /home/hundr/feardc/help/window_hublists.inc:5
 msgid "Disconnected - Hub is disconnected, but the hub window is still open."
 msgstr ""
 "Szétkapcsolódott -  A hub szétkapcsolva, de a hub ablak még mindíg nyitva "
 "van."
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/window_hublists.inc:6
+#: /home/hundr/feardc/help/window_hublists.inc:6
 msgid "Empty - No window opened for the hub."
 msgstr "Üres - A hub nincs megnyitva egy ablakban sem."
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/window_hublists.inc:10
+#: /home/hundr/feardc/help/window_hublists.inc:10
 msgid "The name of the hub."
 msgstr "A hub neve"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/dcpp/help/window_hublists.inc:12
+#: /home/hundr/feardc/help/window_hublists.inc:12
 msgid "The hub's description."
 msgstr "A hub leírása"
 
@@ -13272,8 +13271,7 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
 #: help/window_favorite_hubs.html:30 help/window_favorite_hubs.html:51
-#: help/window_main.html:29 help/window_main.html:147
-#: help/window_main.html:152
+#: help/window_main.html:29 help/window_main.html:147 help/window_main.html:152
 msgid ""
 "More information about the use of favorite hub groups in the help topics "
 "associated to the <placeholder id=0/> dialog."
@@ -13570,7 +13568,7 @@ msgid "View as text"
 msgstr "Megtekintés szövegként"
 
 #. type: Content of: <html><body><dl><dd><p>
-#: /home/hundr/dcpp/help/commands_viewastext.inc:1
+#: /home/hundr/feardc/help/commands_viewastext.inc:1
 msgid ""
 "This function is useful for previewing small text based info files as they "
 "may contain more information about other files in the same folder.  Note "
@@ -14129,8 +14127,7 @@ msgid "Their E-Mail address. Normally blank or false."
 msgstr "A felhasználó e-mail címe. Általában üres, vagy nem valós."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_hub.html:62 help/window_search.html:89
-#: help/window_users.html:36
+#: help/window_hub.html:62 help/window_search.html:89 help/window_users.html:36
 msgid "CID"
 msgstr "CID"
 
@@ -14168,9 +14165,9 @@ msgid ""
 "Eg, selecting 'Nick' in the drop down, and writing \"foo\" in the filter, "
 "will only display users that have \"foo\" in their nick."
 msgstr ""
-"Pl. a Nick-et kiválasztva a legördülő menüből, majd a beviteli mezőbe \"foo"
-"\"-t írva csak azok a felhasználók maradnak a listában, amelyek nevében van "
-"\"foo\"."
+"Pl. a Nick-et kiválasztva a legördülő menüből, majd a beviteli mezőbe "
+"\"foo\"-t írva csak azok a felhasználók maradnak a listában, amelyek nevében "
+"van \"foo\"."
 
 #. type: Content of: <html><body><p><div>
 #: help/window_hub.html:81
@@ -14282,8 +14279,8 @@ msgstr ""
 "problémák adódnak a hubhoz való kapcsolódáskor vagy a hub váratlanul "
 "megszakítja a kapcsolatot. Fontos tudni, hogy ezek az üzenetek közvetlenül "
 "az operációs rendszertől érkeznek, így mindíg a Windows terülelti "
-"beállítások által megadott nyelven jelennek meg, függetlenül attól, hogy a DC"
-"++ milyen nyelvi megjelenítésre van beállítva."
+"beállítások által megadott nyelven jelennek meg, függetlenül attól, hogy a "
+"DC++ milyen nyelvi megjelenítésre van beállítva."
 
 #. type: Content of: <html><body><dl><dd><ul><li>
 #: help/window_hub.html:108
@@ -14398,8 +14395,7 @@ msgstr ""
 "egy-egy új <placeholder id=0/> ablakban."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:31 help/window_main.html:211
-#: help/window_main.html:242
+#: help/window_main.html:31 help/window_main.html:211 help/window_main.html:242
 msgid "Reconnect"
 msgstr "Újracsatlakozás"
 
@@ -14413,8 +14409,8 @@ msgstr ""
 "hubhoz. Ha az aktív ablak nem hub ablak, akkor semmi nem történik."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:33 help/window_main.html:159
-#: help/window_main.html:221 help/window_main.html:278
+#: help/window_main.html:33 help/window_main.html:159 help/window_main.html:221
+#: help/window_main.html:278
 msgid "Open file list..."
 msgstr "Fájl-lista megnyitása..."
 
@@ -14430,8 +14426,7 @@ msgstr ""
 "letöltött fájl-listákat tartalmazó FileLists nevű alkönyvtár nyílik meg."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:35 help/window_main.html:222
-#: help/window_main.html:283
+#: help/window_main.html:35 help/window_main.html:222 help/window_main.html:283
 msgid "Open own list"
 msgstr "Saját fájl-lista megnyitása"
 
@@ -14462,8 +14457,7 @@ msgstr ""
 "mappa</a> alatt található FileLists nevű könyvtárban vannak eltárolva)."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:39 help/window_main.html:223
-#: help/window_main.html:289
+#: help/window_main.html:39 help/window_main.html:223 help/window_main.html:289
 msgid "Refresh file list"
 msgstr "Fájl-lista frissítése"
 
@@ -14477,8 +14471,7 @@ msgstr ""
 "megváltozott tartalmat keresve majd frissíti a fájl-listádat."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:41 help/window_main.html:220
-#: help/window_main.html:273
+#: help/window_main.html:41 help/window_main.html:220 help/window_main.html:273
 msgid "Open downloads directory"
 msgstr "Letöltési könyvtár megnyitása"
 
@@ -14552,21 +14545,21 @@ msgstr ""
 "parancsokat tartalmazza:"
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/menu_plugins.inc:3
+#: /home/hundr/feardc/help/menu_plugins.inc:3
 msgid "\"Add\" displays a file selection dialog to install a new plugin."
 msgstr ""
 "A \"Hozzáadás\" menüvel új bővítmény telepítése lehetséges egy fájl-választó "
 "ablakon keresztül."
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/menu_plugins.inc:6
+#: /home/hundr/feardc/help/menu_plugins.inc:6
 msgid "\"Configure\" opens the <placeholder id=0/> configuration page."
 msgstr ""
 "A \"Beállítások\" menü megnyítja a <placeholder id=0/> konifigurációs "
 "ablakot."
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: /home/hundr/dcpp/help/menu_plugins.inc:9
+#: /home/hundr/feardc/help/menu_plugins.inc:9
 msgid ""
 "Installed plugins are listed below. They can be selectively enabled or "
 "disabled. A \"Configure\" command is also available for each of them (the "
@@ -15044,9 +15037,9 @@ msgid ""
 "Right-click to the toolbar will bring up the toolbar context menu with a "
 "\"Customize\" item to open the <a po4a-id=0>Customize Toolbar dialog</a>."
 msgstr ""
-"Az eszköztárra jobb egérgombbal kattintva és az előugró menü \"Testreszabás"
-"\" elemét kiválasztva megnyílik az <a po4a-id=0>Eszköztár testreszabása "
-"párbeszédablak</a>."
+"Az eszköztárra jobb egérgombbal kattintva és az előugró menü "
+"\"Testreszabás\" elemét kiválasztva megnyílik az <a po4a-id=0>Eszköztár "
+"testreszabása párbeszédablak</a>."
 
 #. type: Content of: <html><body><ul><li>
 #: help/window_main.html:235
@@ -15627,9 +15620,9 @@ msgstr ""
 #: help/window_pm.html:52
 msgid ""
 "The hub used to establish the initial peer-to-peer connection must be an ADC "
-"hub and the connection between the user and the hub must be encrypted (\"adcs"
-"\" scheme instead of \"adc\"). Additionally, both users must support the "
-"\"CCPM\" ADC extension."
+"hub and the connection between the user and the hub must be encrypted "
+"(\"adcs\" scheme instead of \"adc\"). Additionally, both users must support "
+"the \"CCPM\" ADC extension."
 msgstr ""
 "A közvetlen kapcsolat kezdeti felépítéséhez ADC hubra van szükség, valamint "
 "a hub és a felhasználó közötti kapcsolat titkosított (\"adcs\") kell hogy "
@@ -16654,8 +16647,8 @@ msgid ""
 "Port mapping: Successfully removed port mappings from the [router name] "
 "device with the [interface identification] interface"
 msgstr ""
-"Port-hozzárendelés: A port-hozzárendelések sikeresen el lettek távolítva a"
-"(z) [router név] eszközről a(z) [felület név] felülettel"
+"Port-hozzárendelés: A port-hozzárendelések sikeresen el lettek távolítva "
+"a(z) [router név] eszközről a(z) [felület név] felülettel"
 
 #. type: Content of: <html><body><dl><dd>
 #: help/window_system_log.html:48
@@ -17817,9 +17810,9 @@ msgstr ""
 #~ "<b>%[long]</b>, <b>%[metrocode]</b>, <b>%[postcode]</b>, <b>%[region]</b>."
 #~ msgstr ""
 #~ "A helység szintű adatbázis használatának engedélyezésével a következő "
-#~ "további paraméterek használhatók: <b>%[areacode]</b>, <b>%[city]</b>, <b>%"
-#~ "[lat]</b>, <b>%[long]</b>, <b>%[metrocode]</b>, <b>%[postcode]</b>, <b>%"
-#~ "[region]</b>."
+#~ "további paraméterek használhatók: <b>%[areacode]</b>, <b>%[city]</b>, "
+#~ "<b>%[lat]</b>, <b>%[long]</b>, <b>%[metrocode]</b>, <b>%[postcode]</b>, "
+#~ "<b>%[region]</b>."
 
 #~ msgid "Region name geolocation database (allows %[region])"
 #~ msgstr "Régiós geolokációs adatbázis (%[region] használatához)"

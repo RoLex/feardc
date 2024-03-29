@@ -352,7 +352,9 @@ class Dev:
     def add_crashlog(self, env):
         if "mingw" in env["TOOLS"]:
             env.Append(CPPPATH=["#/dwarf"])
-            env.Append(LIBS=["imagehlp"])
+            #env.Append(CPPDEFINES=["LIBDWARF_STATIC"]) # todo: msvc
+            #env.Append(LIBPATH=["#/dwarf"])
+            env.Append(LIBS=["imagehlp"]) # dwarf
         elif "msvc" in env["TOOLS"]:
             env.Append(LIBS=["dbghelp"])
         elif not self.is_win32():

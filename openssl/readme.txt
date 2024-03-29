@@ -5,7 +5,7 @@ Info on the MinGW and MSVC compilers is in the "Compile.txt" file at the root of
 repository.
 The openssl/build/build_mingw.bat script has been used to compile MinGW static libraries.
 
-Alternatively openssl/build/build_cygwin.sh for CygWin users.
+Alternatively openssl/build/build_cygwin.sh for Cygwin and Msys users.
 
 Patches in the openssl/build/patches directory have been applied.
 

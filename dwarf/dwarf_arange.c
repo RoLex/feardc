@@ -125,7 +125,7 @@ dwarf_get_aranges_list(Dwarf_Debug dbg,
             arange_ptr, sizeof(Dwarf_Half));
         arange_ptr += sizeof(Dwarf_Half);
         length = length - sizeof(Dwarf_Half);
-        if (version != CURRENT_VERSION_STAMP) {
+        if (version != CURRENT_VERSION_STAMP) { // todo: DW_ARANGES_VERSION2
             _dwarf_error(dbg, error, DW_DLE_VERSION_STAMP_ERROR);
             return (DW_DLV_ERROR);
         }
