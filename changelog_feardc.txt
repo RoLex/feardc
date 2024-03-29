@@ -29,7 +29,7 @@
 * Properly show away, fireball and server status on NMDC hubs (RoLex)
 * Save last away status on restart (RoLex)
 * About dialog now shows used OpenSSL version (RoLex)
-* Fix locale detection when building help files on CygWin (RoLex)
+* Fix locale detection when building help files on Cygwin and Msys (RoLex)
 * Fix negative upload and download statistics due to int64_t declaration (RoLex)
 * Fix C++20 deprecation warnings (RoLex)
 * Fix crash on missing help files (RoLex)
