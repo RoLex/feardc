@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2017-08-20 16:50+0000\n"
 "Last-Translator: Hafo <hafo@abv.bg>\n"
 "Language-Team: Bulgarian <bg@li.org>\n"
@@ -519,7 +519,7 @@ msgstr ""
 msgid "Above (minimum size)"
 msgstr "По-големи от: (минимален размер)"
 
-#: win32/AdvancedPage.cpp:43
+#: win32/AdvancedPage.cpp:44
 msgid "Accept custom user commands from hub"
 msgstr "Приеми потребителските команди от хъба"
 
@@ -545,7 +545,7 @@ msgstr "Прибави Към &Любими"
 msgid "Add a rule"
 msgstr "Добави правило"
 
-#: win32/AdvancedPage.cpp:45
+#: win32/AdvancedPage.cpp:46
 msgid "Add finished files to share instantly (if shared)"
 msgstr "Сподели завършените файловете веднага (ако са в споделена папка)"
 
@@ -643,6 +643,10 @@ msgstr "Всички колони"
 #: win32/WinUtil.cpp:858 win32/WinUtil.cpp:865
 msgid "All files"
 msgstr "Всички файлове"
+
+#: win32/AdvancedPage.cpp:38
+msgid "Allow NAT traversal for connections with passive NMDC users"
+msgstr ""
 
 #: win32/CertificatesPage.cpp:39
 msgid "Allow TLS connections to clients without trusted certificate"
@@ -765,7 +769,7 @@ msgstr ""
 "\n"
 "Да продължа ли?"
 
-#: win32/AdvancedPage.cpp:38
+#: win32/AdvancedPage.cpp:39
 msgid "Automatically disconnect users who leave the hub"
 msgstr "Автоматично изключвай потребители, които напускат хъба"
 
@@ -862,7 +866,7 @@ msgstr "Блог"
 msgid "Bot"
 msgstr "Бот"
 
-#: win32/AdvancedPage.cpp:41
+#: win32/AdvancedPage.cpp:42
 msgid "Break on first ADLSearch match"
 msgstr "Прекъсни при първо съвпадение при ADL търсенето"
 
@@ -957,7 +961,7 @@ msgstr ""
 msgid "Click and drag to resize"
 msgstr "Щракнете и плъзнете, за да преоразмерите"
 
-#: win32/AdvancedPage.cpp:50
+#: win32/AdvancedPage.cpp:51
 msgid "Clickable chat links (disable on Wine)"
 msgstr ""
 
@@ -1386,7 +1390,7 @@ msgstr ""
 msgid "Don't allow hubs/NAT-PMP/UPnP to override"
 msgstr "Не позволявай на хъбове/NAT-PMP/UPnP да правят промени"
 
-#: win32/AdvancedPage.cpp:47
+#: win32/AdvancedPage.cpp:48
 msgid "Don't automatically disconnect favorite users who leave the hub"
 msgstr "Не откачай автоматично любимите потребители, когато напуснат хъба"
 
@@ -1410,7 +1414,7 @@ msgstr "Не махайте \"/password\" преди самата парола!"
 msgid "Don't remove the source when autodropping, only disconnect"
 msgstr "Не премахвай източника при автоматично прекъсване, само прекъсни"
 
-#: win32/AdvancedPage.cpp:40
+#: win32/AdvancedPage.cpp:41
 msgid "Don't send the away message to bots"
 msgstr "Не изпращай съобщение \"отсъстващ\" на ботове"
 
@@ -1580,7 +1584,7 @@ msgstr ""
 msgid "Enable"
 msgstr "Включи"
 
-#: win32/AdvancedPage.cpp:39
+#: win32/AdvancedPage.cpp:40
 msgid "Enable automatic SFV checking"
 msgstr "Разреши автоматичната SFV проверка"
 
@@ -1597,11 +1601,11 @@ msgstr "Активиране на режим \"отсъстващ\" при ми�
 msgid "Enable away mode when the Windows session is locked"
 msgstr "Активирай режим \"отсъстващ\", когато сесията на Windows е заключена"
 
-#: win32/AdvancedPage.cpp:42
+#: win32/AdvancedPage.cpp:43
 msgid "Enable safe and compressed transfers"
 msgstr "Активирай безопасни и компресирани трансфери"
 
-#: win32/AdvancedPage.cpp:51
+#: win32/AdvancedPage.cpp:52
 msgid "Enable segmented downloads"
 msgstr "Включи свалянето на сегменти"
 
@@ -2800,6 +2804,10 @@ msgstr "Премести на&долу"
 msgid "Move &Up"
 msgstr "Премести на&горе"
 
+#: win32/UserInfoBase.cpp:145
+msgid "NAT"
+msgstr ""
+
 #: win32/UsersFrame.cpp:332
 msgid "NMDC"
 msgstr ""
@@ -3700,7 +3708,7 @@ msgstr "Посочена секция"
 msgid "Send once per nick"
 msgstr "Изпращай по веднъж на име"
 
-#: win32/AdvancedPage.cpp:44
+#: win32/AdvancedPage.cpp:45
 msgid "Send unknown /commands to the hub"
 msgstr "Изпращай непознати /commands на хъба"
 
@@ -3843,7 +3851,7 @@ msgstr "Покажи"
 msgid "Show joins / parts in chat by default"
 msgstr "Пок. влизанията/излизанията в чата"
 
-#: win32/AdvancedPage.cpp:53
+#: win32/AdvancedPage.cpp:54
 msgid "Show testing release announcements and information"
 msgstr ""
 
@@ -3983,7 +3991,7 @@ msgstr "Скорост: %1%/s"
 msgid "Start"
 msgstr "Стартирано"
 
-#: win32/AdvancedPage.cpp:52
+#: win32/AdvancedPage.cpp:53
 msgid "Start FearDC when Windows starts"
 msgstr ""
 
@@ -4405,7 +4413,7 @@ msgstr "Сваляне от %1% потребител"
 msgid "Uploads"
 msgstr "Качвания"
 
-#: win32/AdvancedPage.cpp:46
+#: win32/AdvancedPage.cpp:47
 msgid "Use CTRL for line history"
 msgstr "Използвай Ctrl за достъп до историята на изпратените съобщения"
 
@@ -4413,7 +4421,7 @@ msgstr "Използвай Ctrl за достъп до историята на �
 msgid "Use SOCKS5 server to resolve host names"
 msgstr "Използвай SOCKS5 сървър за разпознаване на имената на хостовете"
 
-#: win32/AdvancedPage.cpp:48
+#: win32/AdvancedPage.cpp:49
 msgid "Use extended menus with icons and titles"
 msgstr "Използвайте разширен менюта с икони и заглавия"
 
@@ -4437,7 +4445,7 @@ msgstr "Използвайте точка и запетая, за да разд�
 msgid "Use standard Windows tabs"
 msgstr "Използвай стандартни Windows секции"
 
-#: win32/AdvancedPage.cpp:49
+#: win32/AdvancedPage.cpp:50
 msgid "Use system icons when browsing files (slows browsing down a bit)"
 msgstr "Използвай системни иконки при разглеждане (забавя малко)"
 

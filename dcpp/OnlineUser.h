@@ -51,8 +51,8 @@ public:
 		AWAY		= 0x02,
 		SERVER		= 0x04,
 		FIREBALL	= 0x08,
-		TLS			= 0x10//,
-		//NAT		= 0x20
+		TLS			= 0x10,
+		NAT			= 0x20
 	};
 
 	Identity() : sid(0) { }

@@ -102,7 +102,7 @@ const string SettingsManager::settingTags[] =
 	"FilterMessages",
 	"FinishedDLOnlyFull", "FollowLinks", "GetUserCountry", "ShowUserIp", "ShowUserCountry", "GetUserInfo",
 	"HubUserCommands", "IgnoreBotPms", "IgnoreHubPms", "SkipTrayBotPms", "DisableTaskbarMenu", "OpenNewWindow", "KeepFinishedFiles",
-	"KeepLists", "ListDuplicates", "LogDownloads", "LogFilelistTransfers", "LogFinishedDownloads",
+	"KeepLists", "AllowNATTraversal", "ListDuplicates", "LogDownloads", "LogFilelistTransfers", "LogFinishedDownloads",
 	"LogMainChat", "LogPrivateChat", "LogStatusMessages", "LogSystem", "LogUploads", "MagnetAsk",
 	"MagnetRegister", "MinimizeToTray", "NoAwayMsgToBots", "NoIpOverride", "NoIpOverride6", "OpenUserCmdHelp",
 	"OwnerDrawnMenus", "PopupBotPms", "PopupHubPms", "PopupPMs", "PopunderFilelist", "PopunderPm",
@@ -233,6 +233,7 @@ SettingsManager::SettingsManager() {
 	setDefault(SOCKS_RESOLVE, 1);
 	setDefault(CONFIG_VERSION, "0.181");		// 0.181 is the last version missing configversion
 	setDefault(KEEP_LISTS, false);
+	setDefault(ALLOW_NAT_TRAVERSAL, true);
 	setDefault(AUTO_KICK, false);
 	setDefault(QUEUEFRAME_SHOW_TREE, true);
 	setDefault(COMPRESS_TRANSFERS, true);

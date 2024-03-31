@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -541,7 +541,7 @@ msgstr ""
 msgid "Above (minimum size)"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:43
+#: win32/AdvancedPage.cpp:44
 msgid "Accept custom user commands from hub"
 msgstr "Terima perintah custom pengguna dari hub"
 
@@ -568,7 +568,7 @@ msgstr "Hub Kesukaan"
 msgid "Add a rule"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:45
+#: win32/AdvancedPage.cpp:46
 msgid "Add finished files to share instantly (if shared)"
 msgstr "Tambah arsip yang selesai langsung ke share (bila di-share)"
 
@@ -650,6 +650,10 @@ msgstr ""
 
 #: win32/WinUtil.cpp:858 win32/WinUtil.cpp:865
 msgid "All files"
+msgstr ""
+
+#: win32/AdvancedPage.cpp:38
+msgid "Allow NAT traversal for connections with passive NMDC users"
 msgstr ""
 
 #: win32/CertificatesPage.cpp:39
@@ -770,7 +774,7 @@ msgid ""
 "Proceed?"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:38
+#: win32/AdvancedPage.cpp:39
 msgid "Automatically disconnect users who leave the hub"
 msgstr "Otomatis memutus pengguna yang meninggalkan hub"
 
@@ -870,7 +874,7 @@ msgstr ""
 msgid "Bot"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:41
+#: win32/AdvancedPage.cpp:42
 msgid "Break on first ADLSearch match"
 msgstr "Putuskan pada kecocokan pertama pencarian ADL"
 
@@ -964,7 +968,7 @@ msgstr ""
 msgid "Click and drag to resize"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:50
+#: win32/AdvancedPage.cpp:51
 msgid "Clickable chat links (disable on Wine)"
 msgstr ""
 
@@ -1403,7 +1407,7 @@ msgstr ""
 msgid "Don't allow hubs/NAT-PMP/UPnP to override"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:47
+#: win32/AdvancedPage.cpp:48
 #, fuzzy
 msgid "Don't automatically disconnect favorite users who leave the hub"
 msgstr "Otomatis memutus pengguna yang meninggalkan hub"
@@ -1429,7 +1433,7 @@ msgstr "Jangan hapus \"/password\" sebelum password Anda"
 msgid "Don't remove the source when autodropping, only disconnect"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:40
+#: win32/AdvancedPage.cpp:41
 msgid "Don't send the away message to bots"
 msgstr "Jangan kirim pesan \"pergi\" ke bot"
 
@@ -1611,7 +1615,7 @@ msgstr ""
 msgid "Enable"
 msgstr "Aktif"
 
-#: win32/AdvancedPage.cpp:39
+#: win32/AdvancedPage.cpp:40
 msgid "Enable automatic SFV checking"
 msgstr "Aktifkan pemeriksaan otomatis SFV"
 
@@ -1627,11 +1631,11 @@ msgstr ""
 msgid "Enable away mode when the Windows session is locked"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:42
+#: win32/AdvancedPage.cpp:43
 msgid "Enable safe and compressed transfers"
 msgstr "Aktifkan transfer termampat dan aman"
 
-#: win32/AdvancedPage.cpp:51
+#: win32/AdvancedPage.cpp:52
 msgid "Enable segmented downloads"
 msgstr ""
 
@@ -2878,6 +2882,10 @@ msgstr ""
 msgid "Move &Up"
 msgstr ""
 
+#: win32/UserInfoBase.cpp:145
+msgid "NAT"
+msgstr ""
+
 #: win32/UsersFrame.cpp:332
 msgid "NMDC"
 msgstr ""
@@ -3790,7 +3798,7 @@ msgstr ""
 msgid "Send once per nick"
 msgstr "Kirim satu per nick"
 
-#: win32/AdvancedPage.cpp:44
+#: win32/AdvancedPage.cpp:45
 msgid "Send unknown /commands to the hub"
 msgstr "Kirim perintah /misteri ke hub"
 
@@ -3927,7 +3935,7 @@ msgstr "Tampil"
 msgid "Show joins / parts in chat by default"
 msgstr "Tampilkan gabung / pisah di obrolan secara default"
 
-#: win32/AdvancedPage.cpp:53
+#: win32/AdvancedPage.cpp:54
 msgid "Show testing release announcements and information"
 msgstr ""
 
@@ -4070,7 +4078,7 @@ msgstr ""
 msgid "Start"
 msgstr "Shared"
 
-#: win32/AdvancedPage.cpp:52
+#: win32/AdvancedPage.cpp:53
 msgid "Start FearDC when Windows starts"
 msgstr ""
 
@@ -4484,7 +4492,7 @@ msgstr "Unggahan"
 msgid "Uploads"
 msgstr "Unggahan"
 
-#: win32/AdvancedPage.cpp:46
+#: win32/AdvancedPage.cpp:47
 msgid "Use CTRL for line history"
 msgstr "Gunakan CTRL untuk sejarah baris"
 
@@ -4492,7 +4500,7 @@ msgstr "Gunakan CTRL untuk sejarah baris"
 msgid "Use SOCKS5 server to resolve host names"
 msgstr "Pakai SOCKS5 server untuk menjawab hostname"
 
-#: win32/AdvancedPage.cpp:48
+#: win32/AdvancedPage.cpp:49
 msgid "Use extended menus with icons and titles"
 msgstr ""
 
@@ -4516,7 +4524,7 @@ msgstr ""
 msgid "Use standard Windows tabs"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:49
+#: win32/AdvancedPage.cpp:50
 msgid "Use system icons when browsing files (slows browsing down a bit)"
 msgstr "Pakai icon sistem saat menelusuri arsip (sedikit memperlambat)"
 

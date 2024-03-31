@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2012-09-09 21:22+0000\n"
 "Last-Translator: M@nk <Unknown>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -74,7 +74,7 @@ msgstr "%1% (%2%)"
 msgid "%1% (%2%) has same CID {%3%} as %4% (%5%), ignoring"
 msgstr "%1% (%2%) má stejné CID {%3%} jako %4% (%5%), ignoruji"
 
-#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:383
+#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:388
 #, boost-format
 msgid "%1% (Nick unknown)"
 msgstr "%1% (Nick neznámý)"
@@ -196,12 +196,12 @@ msgstr "Jakýkoliv"
 msgid "Audio"
 msgstr "Zvuk"
 
-#: dcpp/ConnectionManager.cpp:858
+#: dcpp/ConnectionManager.cpp:863
 #, boost-format
 msgid "Blocked a C-C connection to a hub ('%1%:%2%'; request from '%3%')"
 msgstr ""
 
-#: dcpp/ConnectionManager.cpp:877
+#: dcpp/ConnectionManager.cpp:882
 #, boost-format
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
@@ -564,7 +564,7 @@ msgstr "Nesprávný soubor najit během hashovaní adresáře %1%"
 msgid "Invalid regular expression: %1%"
 msgstr ""
 
-#: dcpp/SettingsManager.cpp:713
+#: dcpp/SettingsManager.cpp:714
 msgid "Invalid search type name"
 msgstr "Nespravné jméno typu hledaní"
 
@@ -617,7 +617,7 @@ msgstr "Soukromý klíč není vybrán"
 msgid "No slots available"
 msgstr "Nejsou volné žádné sloty"
 
-#: dcpp/SettingsManager.cpp:771
+#: dcpp/SettingsManager.cpp:772
 msgid "No such search type"
 msgstr "Hledaný typ nenalezen"
 
@@ -799,7 +799,7 @@ msgstr "Soubor je již stažen"
 msgid "This file is already queued"
 msgstr "Tento soubor je již ve frontě"
 
-#: dcpp/NmdcHub.cpp:1260
+#: dcpp/NmdcHub.cpp:1318
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "
@@ -808,7 +808,7 @@ msgstr ""
 "Tento hub se snaží použít vašeho klienta k rozesílání SPAMu %1%, prosím "
 "upozorněte vlastníka hubu k nápravě."
 
-#: dcpp/SettingsManager.cpp:717 dcpp/SettingsManager.cpp:739
+#: dcpp/SettingsManager.cpp:718 dcpp/SettingsManager.cpp:740
 msgid "This search type already exists"
 msgstr "Hledaný typ již existuje"
 

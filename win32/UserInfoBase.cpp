@@ -141,8 +141,8 @@ tstring UserInfoBase::getInfo(int flags) const {
 	if (id.getStatus() & Identity::TLS)
 		sts += (sts.size() ? Text::toT(", ") : Text::toT("")) + T_("TLS");
 
-	//if (id.getStatus() & Identity::NAT)
-		//sts += (sts.size() ? Text::toT(", ") : Text::toT("")) + T_("NAT");
+	if (id.getStatus() & Identity::NAT)
+		sts += (sts.size() ? Text::toT(", ") : Text::toT("")) + T_("NAT");
 
 	if (sts.size())
 		addLine(str(TF_("Status: %1%") % sts));

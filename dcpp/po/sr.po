@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2016-10-03 18:02+0000\n"
 "Last-Translator: Igor Jerosimić <Unknown>\n"
 "Language-Team: Serbian <sr@li.org>\n"
@@ -74,7 +74,7 @@ msgstr "%1% (%2%)"
 msgid "%1% (%2%) has same CID {%3%} as %4% (%5%), ignoring"
 msgstr "%1% (%2%) ima isti CID {%3%} as %4% (%5%), ignorišem"
 
-#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:383
+#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:388
 #, boost-format
 msgid "%1% (Nick unknown)"
 msgstr "%1% (Nepoznat nadimak)"
@@ -198,12 +198,12 @@ msgstr "Bilo koji"
 msgid "Audio"
 msgstr "Zvuk"
 
-#: dcpp/ConnectionManager.cpp:858
+#: dcpp/ConnectionManager.cpp:863
 #, boost-format
 msgid "Blocked a C-C connection to a hub ('%1%:%2%'; request from '%3%')"
 msgstr "Blokirao C-C vezu ka habu ('%1%:%2%'; zahtev od '%3%')"
 
-#: dcpp/ConnectionManager.cpp:877
+#: dcpp/ConnectionManager.cpp:882
 #, boost-format
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr "Blokiram '%1%', otkriven potencijalni DDoS napad (izvorni hab '%2%')"
@@ -578,7 +578,7 @@ msgstr "Pronašao neispravno ime datoteke tokom hashovanja direktorijuma %1%"
 msgid "Invalid regular expression: %1%"
 msgstr "Regular expression nije validan: %1%"
 
-#: dcpp/SettingsManager.cpp:713
+#: dcpp/SettingsManager.cpp:714
 msgid "Invalid search type name"
 msgstr "Neispravan tip pretrage"
 
@@ -633,7 +633,7 @@ msgstr "Nije izabarana datoteka za privatni ključ"
 msgid "No slots available"
 msgstr "Nema slobodnih slotova"
 
-#: dcpp/SettingsManager.cpp:771
+#: dcpp/SettingsManager.cpp:772
 msgid "No such search type"
 msgstr "Ne postojeći tip pretrage"
 
@@ -820,7 +820,7 @@ msgstr "Ova datoteka je već preuzeta"
 msgid "This file is already queued"
 msgstr "Ova datoteka se već deli"
 
-#: dcpp/NmdcHub.cpp:1260
+#: dcpp/NmdcHub.cpp:1318
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "
@@ -829,7 +829,7 @@ msgstr ""
 "Ovaj hab pokušava da iskoristi vaš klijent za spam %1%, molimo naglasite "
 "vlasniku haba da popravi ovo."
 
-#: dcpp/SettingsManager.cpp:717 dcpp/SettingsManager.cpp:739
+#: dcpp/SettingsManager.cpp:718 dcpp/SettingsManager.cpp:740
 msgid "This search type already exists"
 msgstr "Ovaj tip pretrage već postoji"
 

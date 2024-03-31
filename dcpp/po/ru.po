@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2022-09-20 19:08+0000\n"
 "Last-Translator: RoLex <hundrambit@gmail.com>\n"
 "Language-Team: Russian <ru_GB@li.org>\n"
@@ -69,7 +69,7 @@ msgstr "%1% (%2%)"
 msgid "%1% (%2%) has same CID {%3%} as %4% (%5%), ignoring"
 msgstr "%1% (%2%) имеет такой же CID {%3%}, как %4% (%5%), проигнорирован"
 
-#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:383
+#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:388
 #, boost-format
 msgid "%1% (Nick unknown)"
 msgstr "%1% (Ник неизвестен)"
@@ -195,12 +195,12 @@ msgstr "Любой"
 msgid "Audio"
 msgstr "Аудио"
 
-#: dcpp/ConnectionManager.cpp:858
+#: dcpp/ConnectionManager.cpp:863
 #, boost-format
 msgid "Blocked a C-C connection to a hub ('%1%:%2%'; request from '%3%')"
 msgstr "Заблокировано соединение C-C с hub ('%1%:%2%'; запрос от '%3%')"
 
-#: dcpp/ConnectionManager.cpp:877
+#: dcpp/ConnectionManager.cpp:882
 #, boost-format
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr "Блокировка '%1%', обнаружен потенциальный DDoS (исходящий hub '%2%')"
@@ -574,7 +574,7 @@ msgstr "Недопустимое имя файла во время хеширо�
 msgid "Invalid regular expression: %1%"
 msgstr "Недопустимое регулярное выражение: %1%"
 
-#: dcpp/SettingsManager.cpp:713
+#: dcpp/SettingsManager.cpp:714
 msgid "Invalid search type name"
 msgstr "Неверное имя поиска"
 
@@ -628,7 +628,7 @@ msgstr "Не выбран файл личного ключа"
 msgid "No slots available"
 msgstr "Нет доступных слотов"
 
-#: dcpp/SettingsManager.cpp:771
+#: dcpp/SettingsManager.cpp:772
 msgid "No such search type"
 msgstr "Нет такого вида поиска"
 
@@ -819,7 +819,7 @@ msgstr "Данный файл уже был скачан"
 msgid "This file is already queued"
 msgstr "Этот файл уже есть в очереди"
 
-#: dcpp/NmdcHub.cpp:1260
+#: dcpp/NmdcHub.cpp:1318
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "
@@ -828,7 +828,7 @@ msgstr ""
 "Данный узел пытался использовать ваш клиент для спама %1%, пожалуйста, "
 "убедите владельца узла исправить это"
 
-#: dcpp/SettingsManager.cpp:717 dcpp/SettingsManager.cpp:739
+#: dcpp/SettingsManager.cpp:718 dcpp/SettingsManager.cpp:740
 msgid "This search type already exists"
 msgstr "Этот вид поиска уже существует"
 

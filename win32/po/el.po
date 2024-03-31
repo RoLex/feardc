@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2014-05-18 08:00+0000\n"
 "Last-Translator: DIMITRIOS VLASTARAS <dimitriosvlastaras@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -524,7 +524,7 @@ msgstr ""
 msgid "Above (minimum size)"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:43
+#: win32/AdvancedPage.cpp:44
 msgid "Accept custom user commands from hub"
 msgstr "Αποδοχή προσαρμοσμένων εντολών χρήστη από την κυψέλη"
 
@@ -552,7 +552,7 @@ msgstr "Προσθήκη στα &Αγαπημένα"
 msgid "Add a rule"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:45
+#: win32/AdvancedPage.cpp:46
 msgid "Add finished files to share instantly (if shared)"
 msgstr ""
 "Προσθήκη ολοκληρωμένων αρχείων σε άμεσο διαμοιρασμό (αν διαμοιράζεται ο "
@@ -644,6 +644,10 @@ msgstr "Όλα τα αρχεία"
 #: win32/WinUtil.cpp:858 win32/WinUtil.cpp:865
 msgid "All files"
 msgstr "Όλα τα αρχεία"
+
+#: win32/AdvancedPage.cpp:38
+msgid "Allow NAT traversal for connections with passive NMDC users"
+msgstr ""
 
 #: win32/CertificatesPage.cpp:39
 msgid "Allow TLS connections to clients without trusted certificate"
@@ -763,7 +767,7 @@ msgid ""
 "Proceed?"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:38
+#: win32/AdvancedPage.cpp:39
 msgid "Automatically disconnect users who leave the hub"
 msgstr "Αυτόματη αποσύνδεση χρηστών που αποχωρούν από την κυψέλη"
 
@@ -863,7 +867,7 @@ msgstr ""
 msgid "Bot"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:41
+#: win32/AdvancedPage.cpp:42
 msgid "Break on first ADLSearch match"
 msgstr "Σταμάτημα της αναζήτησης ADL στην πρώτη εύρεση"
 
@@ -960,7 +964,7 @@ msgstr ""
 msgid "Click and drag to resize"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:50
+#: win32/AdvancedPage.cpp:51
 msgid "Clickable chat links (disable on Wine)"
 msgstr ""
 
@@ -1398,7 +1402,7 @@ msgstr ""
 msgid "Don't allow hubs/NAT-PMP/UPnP to override"
 msgstr "Μην επιτρέπεις στο hub/UPnP να παρακάμπτεται"
 
-#: win32/AdvancedPage.cpp:47
+#: win32/AdvancedPage.cpp:48
 msgid "Don't automatically disconnect favorite users who leave the hub"
 msgstr ""
 "Να μην αποσυνδέονται αυτόματα οι αγαπημένοι χρήστες που αποχωρούν από την "
@@ -1424,7 +1428,7 @@ msgstr "Μην αφαιρείς το /password πριν τον κωδικό πρ
 msgid "Don't remove the source when autodropping, only disconnect"
 msgstr "Μην αφαιρείται η πηγή που απορρίπτεται, μόνο να αποσυνδεθεί"
 
-#: win32/AdvancedPage.cpp:40
+#: win32/AdvancedPage.cpp:41
 msgid "Don't send the away message to bots"
 msgstr "Να μην αποστέλλεται το μήνυμα απουσίας σε bots"
 
@@ -1602,7 +1606,7 @@ msgstr ""
 msgid "Enable"
 msgstr "Ενεργό"
 
-#: win32/AdvancedPage.cpp:39
+#: win32/AdvancedPage.cpp:40
 msgid "Enable automatic SFV checking"
 msgstr "Ενεργοποίηση αυτόματου ελέγχου SFV"
 
@@ -1618,11 +1622,11 @@ msgstr ""
 msgid "Enable away mode when the Windows session is locked"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:42
+#: win32/AdvancedPage.cpp:43
 msgid "Enable safe and compressed transfers"
 msgstr "Ενεργοποίηση ασφαλών και συμπιεσμένων μεταφορών"
 
-#: win32/AdvancedPage.cpp:51
+#: win32/AdvancedPage.cpp:52
 msgid "Enable segmented downloads"
 msgstr "Ενεργοποίηση τμηματικών λήψεων"
 
@@ -2839,6 +2843,10 @@ msgstr "Μετακίνηση &κάτω"
 msgid "Move &Up"
 msgstr "Μετακίνηση &πάνω"
 
+#: win32/UserInfoBase.cpp:145
+msgid "NAT"
+msgstr ""
+
 #: win32/UsersFrame.cpp:332
 msgid "NMDC"
 msgstr ""
@@ -3751,7 +3759,7 @@ msgstr "Επιλογή τύπου &κειμένου"
 msgid "Send once per nick"
 msgstr "Αποστολή μόνο μία φορά ανά ψευδώνυμο"
 
-#: win32/AdvancedPage.cpp:44
+#: win32/AdvancedPage.cpp:45
 msgid "Send unknown /commands to the hub"
 msgstr "Αποστολή αγνώστων εντολών \"/\" στην κυψέλη"
 
@@ -3889,7 +3897,7 @@ msgstr "Εμφάνιση"
 msgid "Show joins / parts in chat by default"
 msgstr "Εξ'ορισμού εμφάνιση εισόδου/εξόδου χρηστών στη συνομιλία"
 
-#: win32/AdvancedPage.cpp:53
+#: win32/AdvancedPage.cpp:54
 msgid "Show testing release announcements and information"
 msgstr ""
 
@@ -4030,7 +4038,7 @@ msgstr "Ταχύτητα: %1%/δευτ"
 msgid "Start"
 msgstr "Ξεκίνησε..."
 
-#: win32/AdvancedPage.cpp:52
+#: win32/AdvancedPage.cpp:53
 msgid "Start FearDC when Windows starts"
 msgstr ""
 
@@ -4447,7 +4455,7 @@ msgstr "Γίνεται λήψη από %1% χρήστη"
 msgid "Uploads"
 msgstr "Ανεβασμένα"
 
-#: win32/AdvancedPage.cpp:46
+#: win32/AdvancedPage.cpp:47
 msgid "Use CTRL for line history"
 msgstr "Χρήση CTRL για το ιστορικό σύνδεσης"
 
@@ -4455,7 +4463,7 @@ msgstr "Χρήση CTRL για το ιστορικό σύνδεσης"
 msgid "Use SOCKS5 server to resolve host names"
 msgstr "Χρήση εξυπηρετητή SOCKS5 για επίλυση host names"
 
-#: win32/AdvancedPage.cpp:48
+#: win32/AdvancedPage.cpp:49
 msgid "Use extended menus with icons and titles"
 msgstr "Χρήση εκτεταμένων μενού με εικονίδια και τίτλους"
 
@@ -4479,7 +4487,7 @@ msgstr ""
 msgid "Use standard Windows tabs"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:49
+#: win32/AdvancedPage.cpp:50
 msgid "Use system icons when browsing files (slows browsing down a bit)"
 msgstr ""
 "Χρήση εικονιδίων συστήματος κατά την εμφάνιση των αρχείων (καθυστερεί λίγο "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2012-09-09 21:26+0000\n"
 "Last-Translator: M@nk <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -517,7 +517,7 @@ msgstr ""
 msgid "Above (minimum size)"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:43
+#: win32/AdvancedPage.cpp:44
 msgid "Accept custom user commands from hub"
 msgstr "Akceptovat uzivatelske prikazy z hubu"
 
@@ -543,7 +543,7 @@ msgstr "Přidat do &Oblíbených"
 msgid "Add a rule"
 msgstr "Přidat pravidlo"
 
-#: win32/AdvancedPage.cpp:45
+#: win32/AdvancedPage.cpp:46
 msgid "Add finished files to share instantly (if shared)"
 msgstr "Pridat stahnute soubory automaticky do sdileni"
 
@@ -629,6 +629,10 @@ msgstr "Všechny soubory"
 #: win32/WinUtil.cpp:858 win32/WinUtil.cpp:865
 msgid "All files"
 msgstr "Všechny soubory"
+
+#: win32/AdvancedPage.cpp:38
+msgid "Allow NAT traversal for connections with passive NMDC users"
+msgstr ""
 
 #: win32/CertificatesPage.cpp:39
 msgid "Allow TLS connections to clients without trusted certificate"
@@ -744,7 +748,7 @@ msgid ""
 "Proceed?"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:38
+#: win32/AdvancedPage.cpp:39
 msgid "Automatically disconnect users who leave the hub"
 msgstr ""
 "Automaticky odpojit uzivatele, kteri sa odpoji (neodpojuje kdyz spadne hub "
@@ -843,7 +847,7 @@ msgstr "Blog"
 msgid "Bot"
 msgstr "Bot"
 
-#: win32/AdvancedPage.cpp:41
+#: win32/AdvancedPage.cpp:42
 msgid "Break on first ADLSearch match"
 msgstr "Zastavit se na prvni polozce odpovidajici zadanemu v ADLSearch"
 
@@ -936,7 +940,7 @@ msgstr ""
 msgid "Click and drag to resize"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:50
+#: win32/AdvancedPage.cpp:51
 msgid "Clickable chat links (disable on Wine)"
 msgstr ""
 
@@ -1366,7 +1370,7 @@ msgstr ""
 msgid "Don't allow hubs/NAT-PMP/UPnP to override"
 msgstr "Nedovolit hubu/UPnP prepsat nastaveni"
 
-#: win32/AdvancedPage.cpp:47
+#: win32/AdvancedPage.cpp:48
 msgid "Don't automatically disconnect favorite users who leave the hub"
 msgstr "Neodpojovat oblibene uzivatele ktery opusti hub"
 
@@ -1390,7 +1394,7 @@ msgstr "Neodebirat /heslo pred vasim heslom"
 msgid "Don't remove the source when autodropping, only disconnect"
 msgstr "Neodstranit uzivatele, jen odpojit"
 
-#: win32/AdvancedPage.cpp:40
+#: win32/AdvancedPage.cpp:41
 msgid "Don't send the away message to bots"
 msgstr "Neposilat zpravu o nepritomnosti botum,skriptum apod."
 
@@ -1566,7 +1570,7 @@ msgstr ""
 msgid "Enable"
 msgstr "Aktivovane"
 
-#: win32/AdvancedPage.cpp:39
+#: win32/AdvancedPage.cpp:40
 msgid "Enable automatic SFV checking"
 msgstr ""
 "Zapnout automatickou SFV kontrolu souboru(Simple File Verificator-kontrola "
@@ -1584,14 +1588,14 @@ msgstr ""
 msgid "Enable away mode when the Windows session is locked"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:42
+#: win32/AdvancedPage.cpp:43
 msgid "Enable safe and compressed transfers"
 msgstr ""
 "Aktivovat GetZBlock - bezpecnejsi (kontrola CRC' pocas stahovani) a podla "
 "moznosti komprimovane prenosy(experiment,narocny na Cpu,bezp. prenosy sou "
 "oznacene * od verz.0.681 T )"
 
-#: win32/AdvancedPage.cpp:51
+#: win32/AdvancedPage.cpp:52
 msgid "Enable segmented downloads"
 msgstr "Povolit segmentové stahování"
 
@@ -2814,6 +2818,10 @@ msgstr "Přesunout &dolů"
 msgid "Move &Up"
 msgstr "Posunout nahor&u"
 
+#: win32/UserInfoBase.cpp:145
+msgid "NAT"
+msgstr ""
+
 #: win32/UsersFrame.cpp:332
 msgid "NMDC"
 msgstr ""
@@ -3728,7 +3736,7 @@ msgstr "Vyberte druh &textu"
 msgid "Send once per nick"
 msgstr "Poslat kazdemu jmeno po jednom"
 
-#: win32/AdvancedPage.cpp:44
+#: win32/AdvancedPage.cpp:45
 msgid "Send unknown /commands to the hub"
 msgstr "Posilat nezname prikazy na hub"
 
@@ -3865,7 +3873,7 @@ msgstr "Zobrazit"
 msgid "Show joins / parts in chat by default"
 msgstr "Zobrazovat prichody/odchody novych uzivatelu v chatu"
 
-#: win32/AdvancedPage.cpp:53
+#: win32/AdvancedPage.cpp:54
 msgid "Show testing release announcements and information"
 msgstr ""
 
@@ -4006,7 +4014,7 @@ msgstr "Rychlost: %1%/s"
 msgid "Start"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:52
+#: win32/AdvancedPage.cpp:53
 msgid "Start FearDC when Windows starts"
 msgstr ""
 
@@ -4420,7 +4428,7 @@ msgstr "Stahuji od %1% uživatele"
 msgid "Uploads"
 msgstr "Odesilani"
 
-#: win32/AdvancedPage.cpp:46
+#: win32/AdvancedPage.cpp:47
 msgid "Use CTRL for line history"
 msgstr ""
 "Pouzivat klavesu CTRL pro radkovu historii (pomoci klavesy CTRL a pouzitim "
@@ -4430,7 +4438,7 @@ msgstr ""
 msgid "Use SOCKS5 server to resolve host names"
 msgstr "Pouzit server SOCKS5 pro vyreseni problemu hostitelskeho jmena"
 
-#: win32/AdvancedPage.cpp:48
+#: win32/AdvancedPage.cpp:49
 msgid "Use extended menus with icons and titles"
 msgstr "Použít rozšířená menu s ikonami a popisy"
 
@@ -4454,7 +4462,7 @@ msgstr ""
 msgid "Use standard Windows tabs"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:49
+#: win32/AdvancedPage.cpp:50
 msgid "Use system icons when browsing files (slows browsing down a bit)"
 msgstr ""
 "Pouzivat systemove ikony pri souborech (sez.souboru,fronta)-trochu to "

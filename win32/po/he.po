@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -521,7 +521,7 @@ msgstr ""
 msgid "Above (minimum size)"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:43
+#: win32/AdvancedPage.cpp:44
 msgid "Accept custom user commands from hub"
 msgstr "אשר פקודות מותאמות אישית מההאב"
 
@@ -547,7 +547,7 @@ msgstr "הוסף ל&מועדפים"
 msgid "Add a rule"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:45
+#: win32/AdvancedPage.cpp:46
 msgid "Add finished files to share instantly (if shared)"
 msgstr "הוסף מידלשיתוף  קבצים שירדו אם תקית ההורדות בשיתוף"
 
@@ -631,6 +631,10 @@ msgstr "כל הקבצים"
 #: win32/WinUtil.cpp:858 win32/WinUtil.cpp:865
 msgid "All files"
 msgstr "כל הקבצים"
+
+#: win32/AdvancedPage.cpp:38
+msgid "Allow NAT traversal for connections with passive NMDC users"
+msgstr ""
 
 #: win32/CertificatesPage.cpp:39
 msgid "Allow TLS connections to clients without trusted certificate"
@@ -750,7 +754,7 @@ msgid ""
 "Proceed?"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:38
+#: win32/AdvancedPage.cpp:39
 msgid "Automatically disconnect users who leave the hub"
 msgstr "נתק אוטומטית משתמשים שעוזבים את ההאב"
 
@@ -850,7 +854,7 @@ msgstr ""
 msgid "Bot"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:41
+#: win32/AdvancedPage.cpp:42
 msgid "Break on first ADLSearch match"
 msgstr "Break on first ADLSearch match"
 
@@ -944,7 +948,7 @@ msgstr ""
 msgid "Click and drag to resize"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:50
+#: win32/AdvancedPage.cpp:51
 msgid "Clickable chat links (disable on Wine)"
 msgstr ""
 
@@ -1389,7 +1393,7 @@ msgstr ""
 msgid "Don't allow hubs/NAT-PMP/UPnP to override"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:47
+#: win32/AdvancedPage.cpp:48
 #, fuzzy
 msgid "Don't automatically disconnect favorite users who leave the hub"
 msgstr "נתק אוטומטית משתמשים שעוזבים את ההאב"
@@ -1415,7 +1419,7 @@ msgstr "Don't remove /password before your password"
 msgid "Don't remove the source when autodropping, only disconnect"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:40
+#: win32/AdvancedPage.cpp:41
 msgid "Don't send the away message to bots"
 msgstr "אל תשלח הודעות 'לא נמצא' לבוטים"
 
@@ -1597,7 +1601,7 @@ msgstr ""
 msgid "Enable"
 msgstr "מאופשר"
 
-#: win32/AdvancedPage.cpp:39
+#: win32/AdvancedPage.cpp:40
 msgid "Enable automatic SFV checking"
 msgstr "Enable automatic SFV checking"
 
@@ -1613,11 +1617,11 @@ msgstr ""
 msgid "Enable away mode when the Windows session is locked"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:42
+#: win32/AdvancedPage.cpp:43
 msgid "Enable safe and compressed transfers"
 msgstr "Enable safe and compressed transfers"
 
-#: win32/AdvancedPage.cpp:51
+#: win32/AdvancedPage.cpp:52
 msgid "Enable segmented downloads"
 msgstr ""
 
@@ -2863,6 +2867,10 @@ msgstr ""
 msgid "Move &Up"
 msgstr ""
 
+#: win32/UserInfoBase.cpp:145
+msgid "NAT"
+msgstr ""
+
 #: win32/UsersFrame.cpp:332
 msgid "NMDC"
 msgstr ""
@@ -3777,7 +3785,7 @@ msgstr ""
 msgid "Send once per nick"
 msgstr "Send once per nick"
 
-#: win32/AdvancedPage.cpp:44
+#: win32/AdvancedPage.cpp:45
 msgid "Send unknown /commands to the hub"
 msgstr "Send unknown /commands to the hub"
 
@@ -3914,7 +3922,7 @@ msgstr "הראה"
 msgid "Show joins / parts in chat by default"
 msgstr "הראה כניסות ויציאות של משתמשים בצ'אט ראשי כברירת-מחדל"
 
-#: win32/AdvancedPage.cpp:53
+#: win32/AdvancedPage.cpp:54
 msgid "Show testing release announcements and information"
 msgstr ""
 
@@ -4057,7 +4065,7 @@ msgstr ""
 msgid "Start"
 msgstr "שיתוף"
 
-#: win32/AdvancedPage.cpp:52
+#: win32/AdvancedPage.cpp:53
 msgid "Start FearDC when Windows starts"
 msgstr ""
 
@@ -4469,7 +4477,7 @@ msgstr "העלאות"
 msgid "Uploads"
 msgstr "העלאות"
 
-#: win32/AdvancedPage.cpp:46
+#: win32/AdvancedPage.cpp:47
 msgid "Use CTRL for line history"
 msgstr "Use CTRL for line history"
 
@@ -4477,7 +4485,7 @@ msgstr "Use CTRL for line history"
 msgid "Use SOCKS5 server to resolve host names"
 msgstr "Use SOCKS5 server to resolve hostnames"
 
-#: win32/AdvancedPage.cpp:48
+#: win32/AdvancedPage.cpp:49
 msgid "Use extended menus with icons and titles"
 msgstr ""
 
@@ -4501,7 +4509,7 @@ msgstr ""
 msgid "Use standard Windows tabs"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:49
+#: win32/AdvancedPage.cpp:50
 msgid "Use system icons when browsing files (slows browsing down a bit)"
 msgstr ""
 "השתמש בצלמיות מערכת כאשר אתה מעיין בקבצים. אפשרות זו מאיטה את העיון במקצת"

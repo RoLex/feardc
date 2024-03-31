@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:42+0200\n"
 "PO-Revision-Date: 2016-10-03 21:11+0000\n"
 "Last-Translator: Igor Jerosimić <Unknown>\n"
 "Language-Team: Serbian <sr@li.org>\n"
@@ -5806,12 +5806,24 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:59
+#: help/settings_advanced.html:60
+msgid "Allow NAT traversal for connections with passive NMDC users"
+msgstr ""
+
+#. type: Content of: <html><body><dl><dd>
+#: help/settings_advanced.html:61
+msgid ""
+"Allow NAT traversal for connections with passive NMDC users.  <em>Disabling "
+"this feature can resolve connectivity issues with cerain hub softwares.</em>"
+msgstr ""
+
+#. type: Content of: <html><body><dl><dt>
+#: help/settings_advanced.html:64
 msgid "Automatically disconnect users who leave the hub"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:60
+#: help/settings_advanced.html:65
 msgid ""
 "The Direct Connect spirit is all about sharing. You are only sharing when "
 "you are connected to one or more hubs. In the past, users of questionable "
@@ -5827,12 +5839,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:72
+#: help/settings_advanced.html:77
 msgid "Enable automatic SFV checking"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:73
+#: help/settings_advanced.html:78
 msgid ""
 "Simple File Verification (SFV) is a scheme in which a set of files are "
 "accompanied by a so-called sfv-file which contains CRC32 checksums of each "
@@ -5841,12 +5853,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:78
+#: help/settings_advanced.html:83
 msgid "Don't send the away message to bots"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:79
+#: help/settings_advanced.html:84
 msgid ""
 "When in away mode, don't send the away message to users that appear to be "
 "bots. Having this option disabled is very annoying if you get messages from "
@@ -5856,12 +5868,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:85
+#: help/settings_advanced.html:90
 msgid "Break on first ADLSearch match"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:86
+#: help/settings_advanced.html:91
 msgid ""
 "If you're using the <a po4a-id=0>ADLSearch</a> features, keeping this option "
 "enabled will make a file show up in only the first search it matches. If "
@@ -5870,12 +5882,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:91
+#: help/settings_advanced.html:96
 msgid "Enable safe and compressed transfers"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:92
+#: help/settings_advanced.html:97
 msgid ""
 "When transfering data with a compatible client, DC++ will try to use ZLIB "
 "compression with integrity checks. This uses some CPU cycles, but can "
@@ -5885,12 +5897,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:96
+#: help/settings_advanced.html:101
 msgid "Accept custom user commands from hub"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:97
+#: help/settings_advanced.html:102
 msgid ""
 "This option lets you enable or disable DC++'s ability to retrieve custom "
 "commands from a remote hub. Custom User Commands may show when you click on "
@@ -5900,24 +5912,24 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:102
+#: help/settings_advanced.html:107
 msgid "Send unknown /commands to the hub"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:103
+#: help/settings_advanced.html:108
 msgid ""
 "Enable this to send <a po4a-id=0>/commands</a> that DC++ does not recognize "
 "to the hub as normal chat."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:105
+#: help/settings_advanced.html:110
 msgid "Add finished files to share instantly (if shared)"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:106
+#: help/settings_advanced.html:111
 msgid ""
 "If you download files directly to a shared directory, enabling this option "
 "will add the files to your share as soon as they're finished. Searches will "
@@ -5926,24 +5938,24 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:110
+#: help/settings_advanced.html:115
 msgid "Use CTRL for line history"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:111
+#: help/settings_advanced.html:116
 msgid ""
 "Press up arrow while holding down CTRL to scroll through line history. If "
 "not enabled, you can still use ALT."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:113
+#: help/settings_advanced.html:118
 msgid "Don't automatically disconnect favorite users who leave the hub"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:114
+#: help/settings_advanced.html:119
 msgid ""
 "With this option enabled, and <a po4a-id=0>Automatically disconnect users "
 "who leave the hub</a>, users who are in your <a po4a-id=1>Favorite users</a> "
@@ -5951,24 +5963,24 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:115
+#: help/settings_advanced.html:120
 msgid "Use extended menus with icons and titles"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:116
+#: help/settings_advanced.html:121
 msgid ""
 "Have DC++ draw its own menus, which allows icons and titles to be added. "
 "Disable to revert to classic Windows menus."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:117
+#: help/settings_advanced.html:122
 msgid "Use system icons when browsing files (slows browsing down a bit)"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:119
+#: help/settings_advanced.html:124
 msgid ""
 "Ask Windows Explorer for per-extension file icons rather than using default "
 "ones distributed with DC++. <i>Turning this option on might reduce file "
@@ -5976,48 +5988,48 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:122
+#: help/settings_advanced.html:127
 msgid "Clickable chat links (disable on Wine)"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:124
+#: help/settings_advanced.html:129
 msgid ""
 "Pretty link formatting in the chat control. Disable on messed up systems "
 "(such as old versions of Wine) should chat links fail to show up."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:127
+#: help/settings_advanced.html:132
 msgid "Enable segmented downloads"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:128
+#: help/settings_advanced.html:133
 msgid ""
 "With this option enabled, DC++ uses segmented downloading. i.e. it downloads "
 "each file in many parts simultaneously from all available sources."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:129
+#: help/settings_advanced.html:134
 msgid "Start DC++ when Windows starts"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:130
+#: help/settings_advanced.html:135
 msgid ""
 "With this option enabled, DC++ will start up automatically when Windows "
 "starts."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:131
+#: help/settings_advanced.html:136
 msgid "Show testing release announcements and information"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:133
+#: help/settings_advanced.html:138
 msgid ""
 "Display occasional announcements of available new testing versions (that has "
 "not yet been marked as stable by the DC++ team) at startup as well as show "

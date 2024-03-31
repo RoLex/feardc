@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2010-08-06 12:56+0000\n"
 "Last-Translator: gutfeast <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,7 @@ msgstr ""
 msgid "%1% (%2%) has same CID {%3%} as %4% (%5%), ignoring"
 msgstr "%1% (%2%)가 %4% (%5%)와 동일한 CID {%3%}를 가지고 있음, 무시함"
 
-#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:383
+#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:388
 #, boost-format
 msgid "%1% (Nick unknown)"
 msgstr "%1% (알 수 없는 닉네임)"
@@ -198,12 +198,12 @@ msgstr "모든 종류"
 msgid "Audio"
 msgstr "오디오 파일"
 
-#: dcpp/ConnectionManager.cpp:858
+#: dcpp/ConnectionManager.cpp:863
 #, boost-format
 msgid "Blocked a C-C connection to a hub ('%1%:%2%'; request from '%3%')"
 msgstr ""
 
-#: dcpp/ConnectionManager.cpp:877
+#: dcpp/ConnectionManager.cpp:882
 #, boost-format
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
@@ -563,7 +563,7 @@ msgstr ""
 msgid "Invalid regular expression: %1%"
 msgstr ""
 
-#: dcpp/SettingsManager.cpp:713
+#: dcpp/SettingsManager.cpp:714
 msgid "Invalid search type name"
 msgstr "유효하지 않은 검색 유형의 이름"
 
@@ -616,7 +616,7 @@ msgstr "아무런 개인 키 파일도 선택되지 않았음"
 msgid "No slots available"
 msgstr "남은 슬롯이 없음"
 
-#: dcpp/SettingsManager.cpp:771
+#: dcpp/SettingsManager.cpp:772
 msgid "No such search type"
 msgstr "그러한 검색 유형은 없음"
 
@@ -800,7 +800,7 @@ msgstr "이 파일은 이미 다운로드가 완료됨"
 msgid "This file is already queued"
 msgstr "이 파일은 이미 다운로드-큐에 추가되었음"
 
-#: dcpp/NmdcHub.cpp:1260
+#: dcpp/NmdcHub.cpp:1318
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "
@@ -809,7 +809,7 @@ msgstr ""
 "이 허브가 %1%을 스팸하도록 당신의 클라이언트 이용하려고 시도합니다, 허브 주인"
 "에게 이를 시정하도록 요구하세요"
 
-#: dcpp/SettingsManager.cpp:717 dcpp/SettingsManager.cpp:739
+#: dcpp/SettingsManager.cpp:718 dcpp/SettingsManager.cpp:740
 msgid "This search type already exists"
 msgstr "같은 이름의 검색 유형이 이미 존재합니다"
 

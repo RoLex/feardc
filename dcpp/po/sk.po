@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2013-09-15 14:06+0000\n"
 "Last-Translator: Gabriel O <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
@@ -74,7 +74,7 @@ msgstr "%1% (%2%)"
 msgid "%1% (%2%) has same CID {%3%} as %4% (%5%), ignoring"
 msgstr "%1% (%2%) má rovnaký CID {%3%} ako %4% (%5%), ignoruje sa"
 
-#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:383
+#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:388
 #, boost-format
 msgid "%1% (Nick unknown)"
 msgstr "%1% (neznáma prezývka)"
@@ -199,12 +199,12 @@ msgstr "Akékoľvek"
 msgid "Audio"
 msgstr "Audio"
 
-#: dcpp/ConnectionManager.cpp:858
+#: dcpp/ConnectionManager.cpp:863
 #, boost-format
 msgid "Blocked a C-C connection to a hub ('%1%:%2%'; request from '%3%')"
 msgstr ""
 
-#: dcpp/ConnectionManager.cpp:877
+#: dcpp/ConnectionManager.cpp:882
 #, boost-format
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
@@ -579,7 +579,7 @@ msgstr "Invalid file name found while hashing folder %1%"
 msgid "Invalid regular expression: %1%"
 msgstr "Neplatný regulérny výraz: %1%"
 
-#: dcpp/SettingsManager.cpp:713
+#: dcpp/SettingsManager.cpp:714
 msgid "Invalid search type name"
 msgstr "Neplatný názov typu hľadania"
 
@@ -632,7 +632,7 @@ msgstr "Nebol vybraný súbor s privátnym kľúčom"
 msgid "No slots available"
 msgstr "Nie sú dostupné sloty"
 
-#: dcpp/SettingsManager.cpp:771
+#: dcpp/SettingsManager.cpp:772
 msgid "No such search type"
 msgstr "Žiadny takýto typ hľadania"
 
@@ -819,7 +819,7 @@ msgstr "Sťahovanie tohto súboru už bolo dokončené"
 msgid "This file is already queued"
 msgstr "Tento súbor sa už nachádza vo fronte"
 
-#: dcpp/NmdcHub.cpp:1260
+#: dcpp/NmdcHub.cpp:1318
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "
@@ -828,7 +828,7 @@ msgstr ""
 "Tento hub sa pokúša použiť vás klient na spamovanie %1%, prosím naliehajte "
 "na majiteľa hub-u aby s tým niečo spravil"
 
-#: dcpp/SettingsManager.cpp:717 dcpp/SettingsManager.cpp:739
+#: dcpp/SettingsManager.cpp:718 dcpp/SettingsManager.cpp:740
 msgid "This search type already exists"
 msgstr "Tento typ hľadania už existuje"
 

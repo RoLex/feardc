@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -518,7 +518,7 @@ msgstr ""
 msgid "Above (minimum size)"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:43
+#: win32/AdvancedPage.cpp:44
 msgid "Accept custom user commands from hub"
 msgstr "Hyväksy hubin lähettämät käyttäjäkomennot"
 
@@ -545,7 +545,7 @@ msgstr "Lisää &suosikkeihin"
 msgid "Add a rule"
 msgstr "Lisää sääntö"
 
-#: win32/AdvancedPage.cpp:45
+#: win32/AdvancedPage.cpp:46
 msgid "Add finished files to share instantly (if shared)"
 msgstr "Jaa ladatatut tiedostot välittömästi (jos jaettavassa kansiossa)"
 
@@ -630,6 +630,10 @@ msgstr "Kaikki tiedostot"
 #: win32/WinUtil.cpp:858 win32/WinUtil.cpp:865
 msgid "All files"
 msgstr "Kaikki tiedostot"
+
+#: win32/AdvancedPage.cpp:38
+msgid "Allow NAT traversal for connections with passive NMDC users"
+msgstr ""
 
 #: win32/CertificatesPage.cpp:39
 msgid "Allow TLS connections to clients without trusted certificate"
@@ -751,7 +755,7 @@ msgid ""
 "Proceed?"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:38
+#: win32/AdvancedPage.cpp:39
 msgid "Automatically disconnect users who leave the hub"
 msgstr "Katkaise hubilta poistuvien käyttäjien tiedostolähetykset"
 
@@ -849,7 +853,7 @@ msgstr "Blogi"
 msgid "Bot"
 msgstr "Botti"
 
-#: win32/AdvancedPage.cpp:41
+#: win32/AdvancedPage.cpp:42
 msgid "Break on first ADLSearch match"
 msgstr "Lopeta etsintä ensimmäisen listahakutuloksen jälkeen"
 
@@ -942,7 +946,7 @@ msgstr ""
 msgid "Click and drag to resize"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:50
+#: win32/AdvancedPage.cpp:51
 msgid "Clickable chat links (disable on Wine)"
 msgstr ""
 
@@ -1373,7 +1377,7 @@ msgstr ""
 msgid "Don't allow hubs/NAT-PMP/UPnP to override"
 msgstr "Älä salli hubin/UPnPn korvata IP:tä"
 
-#: win32/AdvancedPage.cpp:47
+#: win32/AdvancedPage.cpp:48
 msgid "Don't automatically disconnect favorite users who leave the hub"
 msgstr "Älä katkaise hubilta poistuvien suosikkikäyttäjien tiedostolähetyksiä"
 
@@ -1398,7 +1402,7 @@ msgid "Don't remove the source when autodropping, only disconnect"
 msgstr ""
 "Älä poista lähdettä automaattitoiminnon yhteydessä, katkaise vain yhteys"
 
-#: win32/AdvancedPage.cpp:40
+#: win32/AdvancedPage.cpp:41
 msgid "Don't send the away message to bots"
 msgstr "Älä lähetä poissa-viestejä boteille"
 
@@ -1571,7 +1575,7 @@ msgstr ""
 msgid "Enable"
 msgstr "Käytössä"
 
-#: win32/AdvancedPage.cpp:39
+#: win32/AdvancedPage.cpp:40
 msgid "Enable automatic SFV checking"
 msgstr "Automaattinen SFV-tarkistus (jos SFV-tiedosto käytettävissä)"
 
@@ -1587,11 +1591,11 @@ msgstr ""
 msgid "Enable away mode when the Windows session is locked"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:42
+#: win32/AdvancedPage.cpp:43
 msgid "Enable safe and compressed transfers"
 msgstr "Käytä suojattua ja pakattua tiedostojen siirtoa"
 
-#: win32/AdvancedPage.cpp:51
+#: win32/AdvancedPage.cpp:52
 msgid "Enable segmented downloads"
 msgstr "Käytä palottain lataamista"
 
@@ -2801,6 +2805,10 @@ msgstr "Siirrä alas"
 msgid "Move &Up"
 msgstr "Siirrä ylös"
 
+#: win32/UserInfoBase.cpp:145
+msgid "NAT"
+msgstr ""
+
 #: win32/UsersFrame.cpp:332
 msgid "NMDC"
 msgstr ""
@@ -3703,7 +3711,7 @@ msgstr "Valittu välilehti"
 msgid "Send once per nick"
 msgstr "Kerran per käyttäjä"
 
-#: win32/AdvancedPage.cpp:44
+#: win32/AdvancedPage.cpp:45
 msgid "Send unknown /commands to the hub"
 msgstr "Lähetä tuntemattomat '/'-komennot hubille"
 
@@ -3841,7 +3849,7 @@ msgstr "Näytä"
 msgid "Show joins / parts in chat by default"
 msgstr "Näytä saapui/poistui -viestit mainchatissa oletuksena"
 
-#: win32/AdvancedPage.cpp:53
+#: win32/AdvancedPage.cpp:54
 msgid "Show testing release announcements and information"
 msgstr ""
 
@@ -3980,7 +3988,7 @@ msgstr "Nopeus: %1%/s"
 msgid "Start"
 msgstr "Aloitettu..."
 
-#: win32/AdvancedPage.cpp:52
+#: win32/AdvancedPage.cpp:53
 msgid "Start FearDC when Windows starts"
 msgstr ""
 
@@ -4389,7 +4397,7 @@ msgstr "Ladataan %1% käyttäjältä"
 msgid "Uploads"
 msgstr "Lähetykset"
 
-#: win32/AdvancedPage.cpp:46
+#: win32/AdvancedPage.cpp:47
 msgid "Use CTRL for line history"
 msgstr "Käytä CTRL-näppäintä rivihistoriaan"
 
@@ -4397,7 +4405,7 @@ msgstr "Käytä CTRL-näppäintä rivihistoriaan"
 msgid "Use SOCKS5 server to resolve host names"
 msgstr "Käytä SOCKS5-palvelinta osoitteiden selvitt."
 
-#: win32/AdvancedPage.cpp:48
+#: win32/AdvancedPage.cpp:49
 msgid "Use extended menus with icons and titles"
 msgstr "Käytä laajennettuja valikkoja, joissa on kuvakkeet ja otsikot"
 
@@ -4421,7 +4429,7 @@ msgstr ""
 msgid "Use standard Windows tabs"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:49
+#: win32/AdvancedPage.cpp:50
 msgid "Use system icons when browsing files (slows browsing down a bit)"
 msgstr ""
 "Käytä järj.kuvakkeita tiedostoja selattaessa (hidastaa hieman selaamista)"

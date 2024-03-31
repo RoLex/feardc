@@ -361,7 +361,11 @@ void ConnectionManager::accept(const Socket& sock, bool secure) noexcept {
 }
 
 void ConnectionManager::nmdcConnect(const string& aServer, const string& aPort, const string& aNick, const string& hubUrl, const string& encoding, bool secure) {
-	if(shuttingDown)
+	nmdcConnect(aServer, aPort, Util::emptyString, BufferedSocket::NAT_NONE, aNick, hubUrl, encoding, secure);
+}
+
+void ConnectionManager::nmdcConnect(const string& aServer, const string& aPort, const string& localPort, BufferedSocket::NatRoles natRole, const string& aNick, const string& hubUrl, const string& encoding, bool secure) {
+	if (shuttingDown)
 		return;
 
 	if (checkHubCCBlock(aServer, aPort, hubUrl))
@@ -373,8 +377,9 @@ void ConnectionManager::nmdcConnect(const string& aServer, const string& aPort, 
 	uc->setEncoding(encoding);
 	uc->setState(UserConnection::STATE_CONNECT);
 	uc->setFlag(UserConnection::FLAG_NMDC);
+
 	try {
-		uc->connect(aServer, aPort, Util::emptyString, BufferedSocket::NAT_NONE);
+		uc->connect(aServer, aPort, localPort, natRole);
 	} catch(const Exception&) {
 		putConnection(uc);
 		delete uc;

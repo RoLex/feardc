@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2015-01-05 05:18+0000\n"
 "Last-Translator: Francisco Blas Izquierdo Riera (klondike) "
 "<franxisco1988@gmail.com>\n"
@@ -519,7 +519,7 @@ msgstr ""
 msgid "Above (minimum size)"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:43
+#: win32/AdvancedPage.cpp:44
 msgid "Accept custom user commands from hub"
 msgstr "Aceptar comandos definibles de usuario desde el hub"
 
@@ -545,7 +545,7 @@ msgstr "Agregar a &Favoritos"
 msgid "Add a rule"
 msgstr "Añadir una regla"
 
-#: win32/AdvancedPage.cpp:45
+#: win32/AdvancedPage.cpp:46
 msgid "Add finished files to share instantly (if shared)"
 msgstr ""
 "Compartir archivos recien descargados automáticamente (si es compartido)"
@@ -638,6 +638,10 @@ msgstr "Todos los archivos"
 #: win32/WinUtil.cpp:858 win32/WinUtil.cpp:865
 msgid "All files"
 msgstr "Todos los archivos"
+
+#: win32/AdvancedPage.cpp:38
+msgid "Allow NAT traversal for connections with passive NMDC users"
+msgstr ""
 
 #: win32/CertificatesPage.cpp:39
 msgid "Allow TLS connections to clients without trusted certificate"
@@ -759,7 +763,7 @@ msgid ""
 "Proceed?"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:38
+#: win32/AdvancedPage.cpp:39
 msgid "Automatically disconnect users who leave the hub"
 msgstr ""
 "Cortar envios a los que abandonen el hub (recomendado, no desconecta cuando "
@@ -861,7 +865,7 @@ msgstr "Blog"
 msgid "Bot"
 msgstr "Bot"
 
-#: win32/AdvancedPage.cpp:41
+#: win32/AdvancedPage.cpp:42
 msgid "Break on first ADLSearch match"
 msgstr "Parar en la primera coincidencia de la búsqueda automática"
 
@@ -957,7 +961,7 @@ msgstr ""
 msgid "Click and drag to resize"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:50
+#: win32/AdvancedPage.cpp:51
 msgid "Clickable chat links (disable on Wine)"
 msgstr ""
 
@@ -1384,7 +1388,7 @@ msgstr ""
 msgid "Don't allow hubs/NAT-PMP/UPnP to override"
 msgstr "No permitir modificación desde hub o UPnP"
 
-#: win32/AdvancedPage.cpp:47
+#: win32/AdvancedPage.cpp:48
 msgid "Don't automatically disconnect favorite users who leave the hub"
 msgstr ""
 "No desconectar automáticamente a los usuarios en la lista de favoritos "
@@ -1410,7 +1414,7 @@ msgstr "No borre /password antes de su contraseña"
 msgid "Don't remove the source when autodropping, only disconnect"
 msgstr "No eliminar la fuente de la cola, solamente desconectar"
 
-#: win32/AdvancedPage.cpp:40
+#: win32/AdvancedPage.cpp:41
 msgid "Don't send the away message to bots"
 msgstr "No enviar mensaje de ausente a los bots"
 
@@ -1581,7 +1585,7 @@ msgstr ""
 msgid "Enable"
 msgstr "Activar"
 
-#: win32/AdvancedPage.cpp:39
+#: win32/AdvancedPage.cpp:40
 msgid "Enable automatic SFV checking"
 msgstr "Comprobar la integridad de los archivos (SFV)"
 
@@ -1597,11 +1601,11 @@ msgstr ""
 msgid "Enable away mode when the Windows session is locked"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:42
+#: win32/AdvancedPage.cpp:43
 msgid "Enable safe and compressed transfers"
 msgstr "Activar transferencias seguras y comprimidas"
 
-#: win32/AdvancedPage.cpp:51
+#: win32/AdvancedPage.cpp:52
 msgid "Enable segmented downloads"
 msgstr "Activar descargas segmentadas"
 
@@ -2815,6 +2819,10 @@ msgstr "Mover &Abajo"
 msgid "Move &Up"
 msgstr "Mover A&rriba"
 
+#: win32/UserInfoBase.cpp:145
+msgid "NAT"
+msgstr ""
+
 #: win32/UsersFrame.cpp:332
 msgid "NMDC"
 msgstr ""
@@ -3725,7 +3733,7 @@ msgstr "Pestaña seleccionada"
 msgid "Send once per nick"
 msgstr "Enviar uno por Nick"
 
-#: win32/AdvancedPage.cpp:44
+#: win32/AdvancedPage.cpp:45
 msgid "Send unknown /commands to the hub"
 msgstr "Enviar /comando desconocido al hub"
 
@@ -3863,7 +3871,7 @@ msgstr "Mostrar"
 msgid "Show joins / parts in chat by default"
 msgstr "Mostrar Entra / Sale en el chat principal"
 
-#: win32/AdvancedPage.cpp:53
+#: win32/AdvancedPage.cpp:54
 msgid "Show testing release announcements and information"
 msgstr ""
 
@@ -4004,7 +4012,7 @@ msgstr "Velocidad: %1%/s"
 msgid "Start"
 msgstr "Iniciado..."
 
-#: win32/AdvancedPage.cpp:52
+#: win32/AdvancedPage.cpp:53
 msgid "Start FearDC when Windows starts"
 msgstr ""
 
@@ -4428,7 +4436,7 @@ msgstr "Descargando desde %1% usuario"
 msgid "Uploads"
 msgstr "Subidas"
 
-#: win32/AdvancedPage.cpp:46
+#: win32/AdvancedPage.cpp:47
 msgid "Use CTRL for line history"
 msgstr "Usar CTRL para lineas de historial"
 
@@ -4436,7 +4444,7 @@ msgstr "Usar CTRL para lineas de historial"
 msgid "Use SOCKS5 server to resolve host names"
 msgstr "Usar Proxy SOCKS5 para resolver los dominios"
 
-#: win32/AdvancedPage.cpp:48
+#: win32/AdvancedPage.cpp:49
 msgid "Use extended menus with icons and titles"
 msgstr "Uso extendidos menús con iconos y  títulos"
 
@@ -4460,7 +4468,7 @@ msgstr ""
 msgid "Use standard Windows tabs"
 msgstr "Usar pestañas estandar de Windows"
 
-#: win32/AdvancedPage.cpp:49
+#: win32/AdvancedPage.cpp:50
 msgid "Use system icons when browsing files (slows browsing down a bit)"
 msgstr "Usar iconos del sistema con los archivos (un poco más lento)"
 

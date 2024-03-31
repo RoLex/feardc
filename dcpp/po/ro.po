@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2011-01-20 07:45+0000\n"
 "Last-Translator: Andy C. <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,7 @@ msgstr ""
 msgid "%1% (%2%) has same CID {%3%} as %4% (%5%), ignoring"
 msgstr "%1% (%2%) are același CID {%3%} ca și %4% (%5%), se ignoră"
 
-#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:383
+#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:388
 #, boost-format
 msgid "%1% (Nick unknown)"
 msgstr "%1% (Poreclă necunoscută)"
@@ -196,12 +196,12 @@ msgstr "Orice"
 msgid "Audio"
 msgstr "Audio"
 
-#: dcpp/ConnectionManager.cpp:858
+#: dcpp/ConnectionManager.cpp:863
 #, boost-format
 msgid "Blocked a C-C connection to a hub ('%1%:%2%'; request from '%3%')"
 msgstr ""
 
-#: dcpp/ConnectionManager.cpp:877
+#: dcpp/ConnectionManager.cpp:882
 #, boost-format
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
@@ -565,7 +565,7 @@ msgstr "Nume de fișier invalid găsit în timp ce se dispersa dosarul %1%"
 msgid "Invalid regular expression: %1%"
 msgstr ""
 
-#: dcpp/SettingsManager.cpp:713
+#: dcpp/SettingsManager.cpp:714
 msgid "Invalid search type name"
 msgstr "Numele tipului de căutare invalid"
 
@@ -618,7 +618,7 @@ msgstr "Nici un fișier-cheie privată nu a fost ales"
 msgid "No slots available"
 msgstr "Nici un slot disponibil"
 
-#: dcpp/SettingsManager.cpp:771
+#: dcpp/SettingsManager.cpp:772
 msgid "No such search type"
 msgstr "Nu există acest tip de căutare"
 
@@ -803,7 +803,7 @@ msgstr "Acest fițier s-a descărcat deja complet"
 msgid "This file is already queued"
 msgstr "Acest fișier există deja în coadă"
 
-#: dcpp/NmdcHub.cpp:1260
+#: dcpp/NmdcHub.cpp:1318
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "
@@ -812,7 +812,7 @@ msgstr ""
 "Acest hub încearcă să vă folosească clientul pentru a spam-a %1%, vă rog "
 "spuneți-i deținătorului hub-ului să repare problema"
 
-#: dcpp/SettingsManager.cpp:717 dcpp/SettingsManager.cpp:739
+#: dcpp/SettingsManager.cpp:718 dcpp/SettingsManager.cpp:740
 msgid "This search type already exists"
 msgstr "Acest tip de căutare există deja"
 

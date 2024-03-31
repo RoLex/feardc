@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -530,7 +530,7 @@ msgstr ""
 msgid "Above (minimum size)"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:43
+#: win32/AdvancedPage.cpp:44
 msgid "Accept custom user commands from hub"
 msgstr "Dovoli neobičajne ukaze uporabnikov iz vozlišča (huba)"
 
@@ -556,7 +556,7 @@ msgstr "Dodaj k priljubljenim"
 msgid "Add a rule"
 msgstr "Dodaj vlogo"
 
-#: win32/AdvancedPage.cpp:45
+#: win32/AdvancedPage.cpp:46
 msgid "Add finished files to share instantly (if shared)"
 msgstr "Dodaj končane prenešene datoteke takoj v skupno rabo (če so deljene)"
 
@@ -640,6 +640,10 @@ msgstr "Vse datoteke"
 #: win32/WinUtil.cpp:858 win32/WinUtil.cpp:865
 msgid "All files"
 msgstr "Vse datoteke"
+
+#: win32/AdvancedPage.cpp:38
+msgid "Allow NAT traversal for connections with passive NMDC users"
+msgstr ""
 
 #: win32/CertificatesPage.cpp:39
 msgid "Allow TLS connections to clients without trusted certificate"
@@ -760,7 +764,7 @@ msgid ""
 "Proceed?"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:38
+#: win32/AdvancedPage.cpp:39
 msgid "Automatically disconnect users who leave the hub"
 msgstr "Samodejno prekini uporabnike, ki zapustijo hub"
 
@@ -859,7 +863,7 @@ msgstr "Spletni dnevnik"
 msgid "Bot"
 msgstr "Bot"
 
-#: win32/AdvancedPage.cpp:41
+#: win32/AdvancedPage.cpp:42
 msgid "Break on first ADLSearch match"
 msgstr "Prekini pri prvem ujemanju avtomatskega iskanja z listanjem po mapah"
 
@@ -952,7 +956,7 @@ msgstr ""
 msgid "Click and drag to resize"
 msgstr "Klikni in raztegni za razširitev"
 
-#: win32/AdvancedPage.cpp:50
+#: win32/AdvancedPage.cpp:51
 msgid "Clickable chat links (disable on Wine)"
 msgstr ""
 
@@ -1385,7 +1389,7 @@ msgstr ""
 msgid "Don't allow hubs/NAT-PMP/UPnP to override"
 msgstr "Ne dovoli hubu/UPnP da prepiše nastavitve"
 
-#: win32/AdvancedPage.cpp:47
+#: win32/AdvancedPage.cpp:48
 msgid "Don't automatically disconnect favorite users who leave the hub"
 msgstr "Ne prekini priljubljene uporabnike ki zapustijo hub"
 
@@ -1409,7 +1413,7 @@ msgstr "Ne odstrani /geslo pred tvojim geslom"
 msgid "Don't remove the source when autodropping, only disconnect"
 msgstr "Ne odstrani vira pri samodejnem zavračanju, samo prekini povezavo"
 
-#: win32/AdvancedPage.cpp:40
+#: win32/AdvancedPage.cpp:41
 msgid "Don't send the away message to bots"
 msgstr "Ne pošiljaj sporočil o odsotnosti botom"
 
@@ -1585,7 +1589,7 @@ msgstr ""
 msgid "Enable"
 msgstr "Omogočeno"
 
-#: win32/AdvancedPage.cpp:39
+#: win32/AdvancedPage.cpp:40
 msgid "Enable automatic SFV checking"
 msgstr "Omogoči avtomatsko SFV preverjanje"
 
@@ -1601,11 +1605,11 @@ msgstr ""
 msgid "Enable away mode when the Windows session is locked"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:42
+#: win32/AdvancedPage.cpp:43
 msgid "Enable safe and compressed transfers"
 msgstr "Omogoči varna in stisnjena odjemanja"
 
-#: win32/AdvancedPage.cpp:51
+#: win32/AdvancedPage.cpp:52
 msgid "Enable segmented downloads"
 msgstr "Omogoči segmentirana odjemanja"
 
@@ -2826,6 +2830,10 @@ msgstr "Premakni &dol"
 msgid "Move &Up"
 msgstr "Premakni &gor"
 
+#: win32/UserInfoBase.cpp:145
+msgid "NAT"
+msgstr ""
+
 #: win32/UsersFrame.cpp:332
 msgid "NMDC"
 msgstr ""
@@ -3745,7 +3753,7 @@ msgstr "Izberi &tekstovni stil"
 msgid "Send once per nick"
 msgstr "Pošlji po enkrat na vzdevek"
 
-#: win32/AdvancedPage.cpp:44
+#: win32/AdvancedPage.cpp:45
 msgid "Send unknown /commands to the hub"
 msgstr "Pošlji neznane /ukaze v hub"
 
@@ -3884,7 +3892,7 @@ msgstr "Pokaži"
 msgid "Show joins / parts in chat by default"
 msgstr "Prikazuj prihode/odhode v oknu za pogovore kot privzeto"
 
-#: win32/AdvancedPage.cpp:53
+#: win32/AdvancedPage.cpp:54
 msgid "Show testing release announcements and information"
 msgstr ""
 
@@ -4026,7 +4034,7 @@ msgstr "Hitrost: %1%/s"
 msgid "Start"
 msgstr "V souporabi"
 
-#: win32/AdvancedPage.cpp:52
+#: win32/AdvancedPage.cpp:53
 msgid "Start FearDC when Windows starts"
 msgstr ""
 
@@ -4442,7 +4450,7 @@ msgstr "Odjemam od %1% uporabnika"
 msgid "Uploads"
 msgstr "Oddajanja"
 
-#: win32/AdvancedPage.cpp:46
+#: win32/AdvancedPage.cpp:47
 msgid "Use CTRL for line history"
 msgstr "Uporabi CTRL za vrstično zgodovino"
 
@@ -4450,7 +4458,7 @@ msgstr "Uporabi CTRL za vrstično zgodovino"
 msgid "Use SOCKS5 server to resolve host names"
 msgstr "Za razreševanje imen gostiteljev uporabi SOCKS5 strežnik"
 
-#: win32/AdvancedPage.cpp:48
+#: win32/AdvancedPage.cpp:49
 msgid "Use extended menus with icons and titles"
 msgstr "Uporabi razširjene menije z ikonami in naslovi"
 
@@ -4474,7 +4482,7 @@ msgstr ""
 msgid "Use standard Windows tabs"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:49
+#: win32/AdvancedPage.cpp:50
 msgid "Use system icons when browsing files (slows browsing down a bit)"
 msgstr ""
 "Pri brskanju po datotekah uporabljaj sistemske ikone (malce upočasni "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2013-02-14 19:25+0000\n"
 "Last-Translator: Andre Herman <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,7 @@ msgstr ""
 msgid "%1% (%2%) has same CID {%3%} as %4% (%5%), ignoring"
 msgstr "%1% (%2%) tem o mesmo CID {%3%} as %4% (%5%), ignorando"
 
-#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:383
+#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:388
 #, boost-format
 msgid "%1% (Nick unknown)"
 msgstr "%1% (Apelido desconhecido)"
@@ -198,12 +198,12 @@ msgstr "Qualquer"
 msgid "Audio"
 msgstr "Áudio"
 
-#: dcpp/ConnectionManager.cpp:858
+#: dcpp/ConnectionManager.cpp:863
 #, boost-format
 msgid "Blocked a C-C connection to a hub ('%1%:%2%'; request from '%3%')"
 msgstr ""
 
-#: dcpp/ConnectionManager.cpp:877
+#: dcpp/ConnectionManager.cpp:882
 #, boost-format
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
@@ -566,7 +566,7 @@ msgstr ""
 msgid "Invalid regular expression: %1%"
 msgstr "Expressão regular inválida: %1%"
 
-#: dcpp/SettingsManager.cpp:713
+#: dcpp/SettingsManager.cpp:714
 msgid "Invalid search type name"
 msgstr ""
 
@@ -619,7 +619,7 @@ msgstr "Nenhum arquivo de chave privada escolhido"
 msgid "No slots available"
 msgstr "Sem slots disponíveis"
 
-#: dcpp/SettingsManager.cpp:771
+#: dcpp/SettingsManager.cpp:772
 msgid "No such search type"
 msgstr ""
 
@@ -801,7 +801,7 @@ msgstr "Este arquivo já foi baixado"
 msgid "This file is already queued"
 msgstr "Este arquivo já está enfileirado"
 
-#: dcpp/NmdcHub.cpp:1260
+#: dcpp/NmdcHub.cpp:1318
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "
@@ -810,7 +810,7 @@ msgstr ""
 "Este Hub está tentanto usar o seu Cliente DC para fazer SPAM a %1%, por "
 "favor avise o dono do Hub para arrumar o problema"
 
-#: dcpp/SettingsManager.cpp:717 dcpp/SettingsManager.cpp:739
+#: dcpp/SettingsManager.cpp:718 dcpp/SettingsManager.cpp:740
 msgid "This search type already exists"
 msgstr "Este tipo de pesquisa já existe"
 

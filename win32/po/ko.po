@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -519,7 +519,7 @@ msgstr ""
 msgid "Above (minimum size)"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:43
+#: win32/AdvancedPage.cpp:44
 msgid "Accept custom user commands from hub"
 msgstr ""
 "원격 허브에서 정의된 명령어를 받아들임 (이러한 허브 정의 명령어는 허브 창의 "
@@ -551,7 +551,7 @@ msgstr "즐겨찾기에 추가하기"
 msgid "Add a rule"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:45
+#: win32/AdvancedPage.cpp:46
 msgid "Add finished files to share instantly (if shared)"
 msgstr ""
 "다운로드 완료된 파일을 즉시 공유시킴 (이 옵션을 켜면, 파일을 다운로드할 때 공"
@@ -639,6 +639,10 @@ msgstr "모든 파일"
 #: win32/WinUtil.cpp:858 win32/WinUtil.cpp:865
 msgid "All files"
 msgstr "모든 파일"
+
+#: win32/AdvancedPage.cpp:38
+msgid "Allow NAT traversal for connections with passive NMDC users"
+msgstr ""
 
 #: win32/CertificatesPage.cpp:39
 msgid "Allow TLS connections to clients without trusted certificate"
@@ -760,7 +764,7 @@ msgid ""
 "Proceed?"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:38
+#: win32/AdvancedPage.cpp:39
 msgid "Automatically disconnect users who leave the hub"
 msgstr ""
 "허브를 떠난 사용자는 자동으로 파일 전송을 끊음 (얌체 공유자를 차단하고 싶은 "
@@ -873,7 +877,7 @@ msgstr ""
 msgid "Bot"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:41
+#: win32/AdvancedPage.cpp:42
 msgid "Break on first ADLSearch match"
 msgstr "첫 번째 ADL 검색에서 일치하면 검색을 멈춤"
 
@@ -968,7 +972,7 @@ msgstr ""
 msgid "Click and drag to resize"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:50
+#: win32/AdvancedPage.cpp:51
 msgid "Clickable chat links (disable on Wine)"
 msgstr ""
 
@@ -1406,7 +1410,7 @@ msgstr ""
 msgid "Don't allow hubs/NAT-PMP/UPnP to override"
 msgstr "UPnP나 허브가 이 IP 주소를 바꾸지 않도록 함"
 
-#: win32/AdvancedPage.cpp:47
+#: win32/AdvancedPage.cpp:48
 msgid "Don't automatically disconnect favorite users who leave the hub"
 msgstr "허브를 떠난 즐겨찾기-사용자를 자동으로 끊지 않음"
 
@@ -1432,7 +1436,7 @@ msgstr ""
 "다운로드 자동-버림할 때 전송만 끊고 해당 파일의 소유자 목록에서 제거하지는 않"
 "음"
 
-#: win32/AdvancedPage.cpp:40
+#: win32/AdvancedPage.cpp:41
 msgid "Don't send the away message to bots"
 msgstr "허브 Bot에게는 자리비움 메시지를 보내지 않음"
 
@@ -1609,7 +1613,7 @@ msgstr ""
 msgid "Enable"
 msgstr "활성화"
 
-#: win32/AdvancedPage.cpp:39
+#: win32/AdvancedPage.cpp:40
 msgid "Enable automatic SFV checking"
 msgstr ""
 "SFV(Simple File Verification)-검사를 자동으로 실시함 (이 옵션을 켜면, 파일의 "
@@ -1630,7 +1634,7 @@ msgstr ""
 msgid "Enable away mode when the Windows session is locked"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:42
+#: win32/AdvancedPage.cpp:43
 msgid "Enable safe and compressed transfers"
 msgstr ""
 "안전한 압축 방식을 사용하여 데이터를 전송함 (이 옵션을 켜면, 이 기능을 지원하"
@@ -1639,7 +1643,7 @@ msgstr ""
 "하지만 압축되지 않은 구조를 갖는 포맷의 파일을 전송하는데 있어 엄청난 속도의 "
 "향상을 가져올 수 있을 뿐더러 파일의 무결성까지 보장할 수 있음)"
 
-#: win32/AdvancedPage.cpp:51
+#: win32/AdvancedPage.cpp:52
 msgid "Enable segmented downloads"
 msgstr "분할-다운로드 방식을 사용함"
 
@@ -2862,6 +2866,10 @@ msgstr "↓ 내리기"
 msgid "Move &Up"
 msgstr "↑ 올리기"
 
+#: win32/UserInfoBase.cpp:145
+msgid "NAT"
+msgstr ""
+
 #: win32/UsersFrame.cpp:332
 msgid "NMDC"
 msgstr ""
@@ -3788,7 +3796,7 @@ msgstr "글꼴"
 msgid "Send once per nick"
 msgstr "닉네임당 한번씩만 보냄"
 
-#: win32/AdvancedPage.cpp:44
+#: win32/AdvancedPage.cpp:45
 msgid "Send unknown /commands to the hub"
 msgstr ""
 "알 수 없는 명령어는 허브 창으로 보냄 (이 옵션을 켜면, DC++가 이해하지 못하는 "
@@ -3928,7 +3936,7 @@ msgstr "보기"
 msgid "Show joins / parts in chat by default"
 msgstr "허브 창에 입장/퇴장 상황을 기본적으로 표시함"
 
-#: win32/AdvancedPage.cpp:53
+#: win32/AdvancedPage.cpp:54
 msgid "Show testing release announcements and information"
 msgstr ""
 
@@ -4072,7 +4080,7 @@ msgstr "전송 속도: %1%/s"
 msgid "Start"
 msgstr "시작됨..."
 
-#: win32/AdvancedPage.cpp:52
+#: win32/AdvancedPage.cpp:53
 msgid "Start FearDC when Windows starts"
 msgstr ""
 
@@ -4492,7 +4500,7 @@ msgstr "%1%명의 사용자로부터 다운로드..."
 msgid "Uploads"
 msgstr "업로드"
 
-#: win32/AdvancedPage.cpp:46
+#: win32/AdvancedPage.cpp:47
 msgid "Use CTRL for line history"
 msgstr ""
 "메시지 입력 히스토리 기능에 CTRL 키를 사용함 (이 옵션을 켜면, 허브 창이나 "
@@ -4503,7 +4511,7 @@ msgstr ""
 msgid "Use SOCKS5 server to resolve host names"
 msgstr "Host 이름 분석에 SOCKS5 서버 사용함"
 
-#: win32/AdvancedPage.cpp:48
+#: win32/AdvancedPage.cpp:49
 msgid "Use extended menus with icons and titles"
 msgstr ""
 "DC++ 스타일의 아이콘과 타이틀이 첨가된 컨텍스트-메뉴를 사용함 (이 옵션을 끄"
@@ -4529,7 +4537,7 @@ msgstr ""
 msgid "Use standard Windows tabs"
 msgstr ""
 
-#: win32/AdvancedPage.cpp:49
+#: win32/AdvancedPage.cpp:50
 msgid "Use system icons when browsing files (slows browsing down a bit)"
 msgstr ""
 "검색 창이나 파일-목록 창에 표시되는 파일의 아이콘으로 Windows의 시스템 아이콘"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2016-09-06 21:33+0000\n"
 "Last-Translator: Fredrik Ullner <ullner@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -513,7 +513,7 @@ msgstr ""
 msgid "Above (minimum size)"
 msgstr "Över (minimum storlek)"
 
-#: win32/AdvancedPage.cpp:43
+#: win32/AdvancedPage.cpp:44
 msgid "Accept custom user commands from hub"
 msgstr "Acceptera anpassade användarkommandon från hubben"
 
@@ -539,7 +539,7 @@ msgstr "Lägg till i &Favoriter"
 msgid "Add a rule"
 msgstr "Lägg till en regel"
 
-#: win32/AdvancedPage.cpp:45
+#: win32/AdvancedPage.cpp:46
 msgid "Add finished files to share instantly (if shared)"
 msgstr "Lägg till nedladdade filer för utdelning direkt (om de är utdelade)"
 
@@ -633,6 +633,10 @@ msgstr "Alla kolumner"
 #: win32/WinUtil.cpp:858 win32/WinUtil.cpp:865
 msgid "All files"
 msgstr "Alla filer"
+
+#: win32/AdvancedPage.cpp:38
+msgid "Allow NAT traversal for connections with passive NMDC users"
+msgstr ""
 
 #: win32/CertificatesPage.cpp:39
 msgid "Allow TLS connections to clients without trusted certificate"
@@ -758,7 +762,7 @@ msgstr ""
 "\n"
 "Fortsätt?"
 
-#: win32/AdvancedPage.cpp:38
+#: win32/AdvancedPage.cpp:39
 msgid "Automatically disconnect users who leave the hub"
 msgstr "Koppla bort användare som lämnar hubben"
 
@@ -854,7 +858,7 @@ msgstr "Blogg"
 msgid "Bot"
 msgstr "Bot"
 
-#: win32/AdvancedPage.cpp:41
+#: win32/AdvancedPage.cpp:42
 msgid "Break on first ADLSearch match"
 msgstr "Avbryt vid första träff med funktionen 'AMLSökning'"
 
@@ -949,7 +953,7 @@ msgstr ""
 msgid "Click and drag to resize"
 msgstr "Klicka och dra för att ändra storlek"
 
-#: win32/AdvancedPage.cpp:50
+#: win32/AdvancedPage.cpp:51
 msgid "Clickable chat links (disable on Wine)"
 msgstr "Klickbara chattlänkar (avstängd med Wine)"
 
@@ -1376,7 +1380,7 @@ msgstr "Vill du fortfarande tillåta att öppna ett program på din dator?"
 msgid "Don't allow hubs/NAT-PMP/UPnP to override"
 msgstr "Tillåt inte att hubbar/NAT-PMP/UPnP to ändrar"
 
-#: win32/AdvancedPage.cpp:47
+#: win32/AdvancedPage.cpp:48
 msgid "Don't automatically disconnect favorite users who leave the hub"
 msgstr "Koppla inte automatiskt ner favoritanvändare som lämnar hubben"
 
@@ -1400,7 +1404,7 @@ msgstr "Ta inte bort /password före ditt lösenord"
 msgid "Don't remove the source when autodropping, only disconnect"
 msgstr "Ta inte bort långsamma källor ur nerladdningskön, koppla bara ner"
 
-#: win32/AdvancedPage.cpp:40
+#: win32/AdvancedPage.cpp:41
 msgid "Don't send the away message to bots"
 msgstr "Sänd inte 'BORTA'-medelande till botar"
 
@@ -1571,7 +1575,7 @@ msgstr "Tom hubbaddress angiven"
 msgid "Enable"
 msgstr "Aktivera"
 
-#: win32/AdvancedPage.cpp:39
+#: win32/AdvancedPage.cpp:40
 msgid "Enable automatic SFV checking"
 msgstr "Tillåt automatisk SFV-kontrollering"
 
@@ -1588,11 +1592,11 @@ msgstr "Aktivera bortaläge när DC++ minimeras"
 msgid "Enable away mode when the Windows session is locked"
 msgstr "Aktivera bortaläge när Windowssessionen låses"
 
-#: win32/AdvancedPage.cpp:42
+#: win32/AdvancedPage.cpp:43
 msgid "Enable safe and compressed transfers"
 msgstr "Tillåt säkra och komprimerade överföringar"
 
-#: win32/AdvancedPage.cpp:51
+#: win32/AdvancedPage.cpp:52
 msgid "Enable segmented downloads"
 msgstr "Aktivera segmenterade nerladdningar"
 
@@ -2804,6 +2808,10 @@ msgstr "Flytta &ner"
 msgid "Move &Up"
 msgstr "Flytta &upp"
 
+#: win32/UserInfoBase.cpp:145
+msgid "NAT"
+msgstr ""
+
 #: win32/UsersFrame.cpp:332
 msgid "NMDC"
 msgstr ""
@@ -3695,7 +3703,7 @@ msgstr "Vald flik"
 msgid "Send once per nick"
 msgstr "Skicka en gång per användarnamn"
 
-#: win32/AdvancedPage.cpp:44
+#: win32/AdvancedPage.cpp:45
 msgid "Send unknown /commands to the hub"
 msgstr "Skicka okända /kommandon till hubben"
 
@@ -3841,7 +3849,7 @@ msgstr "Visa"
 msgid "Show joins / parts in chat by default"
 msgstr "Visa när användare ansluter/lämnar hubben"
 
-#: win32/AdvancedPage.cpp:53
+#: win32/AdvancedPage.cpp:54
 msgid "Show testing release announcements and information"
 msgstr ""
 
@@ -3980,7 +3988,7 @@ msgstr "Hastighet: %1%/s"
 msgid "Start"
 msgstr "Start"
 
-#: win32/AdvancedPage.cpp:52
+#: win32/AdvancedPage.cpp:53
 #, fuzzy
 msgid "Start FearDC when Windows starts"
 msgstr "Starta DC++ när Windows startar"
@@ -4402,7 +4410,7 @@ msgstr "Laddar upp till %1% användare"
 msgid "Uploads"
 msgstr "Uppladdningar"
 
-#: win32/AdvancedPage.cpp:46
+#: win32/AdvancedPage.cpp:47
 msgid "Use CTRL for line history"
 msgstr "Använd CTRL för linjehistorik"
 
@@ -4410,7 +4418,7 @@ msgstr "Använd CTRL för linjehistorik"
 msgid "Use SOCKS5 server to resolve host names"
 msgstr "Använd SOCKS5 för att avgöra värdnamn"
 
-#: win32/AdvancedPage.cpp:48
+#: win32/AdvancedPage.cpp:49
 msgid "Use extended menus with icons and titles"
 msgstr "Använd utsträckta menyer med ikoner och titlar"
 
@@ -4434,7 +4442,7 @@ msgstr "Använd semikolon för att separera flera reguljära uttryck"
 msgid "Use standard Windows tabs"
 msgstr "Använd Windows standardflikar"
 
-#: win32/AdvancedPage.cpp:49
+#: win32/AdvancedPage.cpp:50
 msgid "Use system icons when browsing files (slows browsing down a bit)"
 msgstr ""
 "Använd systemikoner när du bläddrar igenom filer (saktar ner bläddrandet en "

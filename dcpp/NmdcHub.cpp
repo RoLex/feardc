@@ -334,6 +334,11 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 					u->getUser()->setFlag(User::PASSIVE);
 					updated(*u);
 				}
+
+				// ignore if we or remote client dont support nat traversal in passive mode
+				// although many nmdc hubs wont send us passive if we are in passive too, so just in case
+				if (!ClientManager::getInstance()->isActive() && (!u->getUser()->isSet(User::NAT_TRAVERSAL) || !SETTING(ALLOW_NAT_TRAVERSAL)))
+					return;
 			}
 
 			fire(ClientListener::NmdcSearch(), this, seeker, a, Util::toInt64(size), type, terms);
@@ -394,9 +399,6 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 		if (!haveSupports(SUPPORTS_TTHS))
 			return;
 
-		if (!ClientManager::getInstance()->isActive()) // we are also passive
-			return;
-
 		string::size_type pos = param.find(' ');
 
 		if (pos == string::npos)
@@ -448,6 +450,9 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 			u->getUser()->setFlag(User::PASSIVE);
 			updated(*u);
 		}
+
+		if (!ClientManager::getInstance()->isActive() && (!u->getUser()->isSet(User::NAT_TRAVERSAL) || !SETTING(ALLOW_NAT_TRAVERSAL))) // we are also passive, but might use nat traversal
+			return;
 
 		fire(ClientListener::NmdcSearch(), this, seekpas, SearchManager::SIZE_DONTCARE, 0, SearchManager::TYPE_TTH, terms);
 
@@ -511,6 +516,11 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 		else
 			u.getUser()->unsetFlag(User::TLS);
 
+		if (u.getIdentity().getStatus() & Identity::NAT)
+			u.getUser()->setFlag(User::NAT_TRAVERSAL);
+		else
+			u.getUser()->unsetFlag(User::NAT_TRAVERSAL);
+
 		i = j + 1;
 		j = param.find('$', i);
 
@@ -565,7 +575,17 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 		if (j + 1 >= param.size())
 			return;
 
-		string port = param.substr(j + 1);
+		string senderNick;
+		string port;
+		i = param.find(' ', j + 1);
+
+		if (i == string::npos) {
+			port = param.substr(j + 1);
+
+		} else {
+			senderNick = param.substr(i + 1);
+			port = param.substr(j + 1, i - j - 1);
+		}
 
 		if (port.empty())
 			return;
@@ -584,6 +604,34 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 				secure = true;
 		}
 
+		if (port.empty())
+			return;
+
+		if (SETTING(ALLOW_NAT_TRAVERSAL)) {
+			auto localPort = std::to_string(sock->getLocalPort());
+
+			if (port[port.size() - 1] == 'N') {
+				if (senderNick.empty())
+					return;
+
+				port.erase(port.size() - 1);
+				// trigger connection attempt sequence locally
+				ConnectionManager::getInstance()->nmdcConnect(server, port, localPort, BufferedSocket::NAT_CLIENT, getMyNick(), getHubUrl(), getEncoding(), secure);
+				// signal other client to do likewise
+				send("$ConnectToMe " + fromUtf8(senderNick) + " " + localIp + ":" + localPort + (secure ? "RS" : "R") + "|");
+				return;
+
+			} else if (port[port.size() - 1] == 'R') {
+				port.erase(port.size() - 1);
+				// trigger connection attempt sequence locally
+				ConnectionManager::getInstance()->nmdcConnect(server, port, localPort, BufferedSocket::NAT_SERVER, getMyNick(), getHubUrl(), getEncoding(), secure);
+				return;
+			}
+		}
+
+		if (port.empty())
+			return;
+
 		// for simplicity, we make the assumption that users on a hub have the same character encoding
 		ConnectionManager::getInstance()->nmdcConnect(server, port, getMyNick(), getHubUrl(), getEncoding(), secure);
 
@@ -601,18 +649,25 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 		if(u == NULL)
 			return;
 
-		if(ClientManager::getInstance()->isActive()) {
+		if (ClientManager::getInstance()->isActive()) {
 			connectToMe(*u);
+
+		} else if (SETTING(ALLOW_NAT_TRAVERSAL) && (u->getIdentity().getStatus() & Identity::NAT)) {
+			bool secure = CryptoManager::getInstance()->TLSOk() && u->getUser()->isSet(User::TLS);
+			// nmdc 2.205 supports "$ConnectToMe sender_nick remote_nick ip:port", but many nmdc hubsofts block it
+			// sender_nick at the end should work at least in most used hubsofts
+			send("$ConnectToMe " + fromUtf8(u->getIdentity().getNick()) + " " + localIp + ":" + std::to_string(sock->getLocalPort()) + (secure ? "NS " : "N ") + fromUtf8(getMyNick()) + "|");
+
 		} else {
-			if(!u->getUser()->isSet(User::PASSIVE)) {
+			if (!u->getUser()->isSet(User::PASSIVE)) {
 				u->getUser()->setFlag(User::PASSIVE);
-				// Notify the user that we're passive too...
+				// notify the user that we are passive too
 				revConnectToMe(*u);
 				updated(*u);
-
 				return;
 			}
 		}
+
 	} else if(cmd == "$SR") {
 		SearchManager::getInstance()->onData(aLine);
 
@@ -1100,6 +1155,9 @@ void NmdcHub::myInfo(bool alwaysSend) {
 
 	if (!get(HubSettings::DisableCtmTLS) && CryptoManager::getInstance()->TLSOk()) // if not disabled by user
 		statusChar |= Identity::TLS;
+
+	if (SETTING(ALLOW_NAT_TRAVERSAL) && !ClientManager::getInstance()->isActive()) // if not disabled by user
+		statusChar |= Identity::NAT;
 
 	string uMin = (SETTING(MIN_UPLOAD_SPEED) == 0) ? Util::emptyString : ",O:" + Util::toString(SETTING(MIN_UPLOAD_SPEED));
 

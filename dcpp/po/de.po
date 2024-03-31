@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2012-05-18 12:19+0000\n"
 "Last-Translator: Dennis Baudys <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
@@ -74,7 +74,7 @@ msgstr "%1% (%2%)"
 msgid "%1% (%2%) has same CID {%3%} as %4% (%5%), ignoring"
 msgstr "%1% (%2%) hat die gleiche CID {%3%} wie %4% (%5%), wird ignoriert"
 
-#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:383
+#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:388
 #, boost-format
 msgid "%1% (Nick unknown)"
 msgstr "%1% (Nick unbekannt)"
@@ -199,12 +199,12 @@ msgstr "Beliebig"
 msgid "Audio"
 msgstr "Audio"
 
-#: dcpp/ConnectionManager.cpp:858
+#: dcpp/ConnectionManager.cpp:863
 #, boost-format
 msgid "Blocked a C-C connection to a hub ('%1%:%2%'; request from '%3%')"
 msgstr ""
 
-#: dcpp/ConnectionManager.cpp:877
+#: dcpp/ConnectionManager.cpp:882
 #, boost-format
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
@@ -567,7 +567,7 @@ msgstr "Ungültiger Dateiname beim Hashen des Ordners %1% gefunden"
 msgid "Invalid regular expression: %1%"
 msgstr "Ungültiger regulärer Ausdruck: %1%"
 
-#: dcpp/SettingsManager.cpp:713
+#: dcpp/SettingsManager.cpp:714
 msgid "Invalid search type name"
 msgstr "Ungültiger Name des Suchtyps"
 
@@ -620,7 +620,7 @@ msgstr "Keine Privater Schlüssel-Datei gewählt"
 msgid "No slots available"
 msgstr "Keine Slots verfügbar"
 
-#: dcpp/SettingsManager.cpp:771
+#: dcpp/SettingsManager.cpp:772
 msgid "No such search type"
 msgstr "Kein solcher Suchtyp gefunden."
 
@@ -804,7 +804,7 @@ msgstr "Diese Datei wurde bereits fertig Heruntergeladen"
 msgid "This file is already queued"
 msgstr "Diese Datei befindet sich bereits in der Warteschlange"
 
-#: dcpp/NmdcHub.cpp:1260
+#: dcpp/NmdcHub.cpp:1318
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "
@@ -813,7 +813,7 @@ msgstr ""
 "Dieser Hub versucht Ihren Clienten zu benutzen um %1% zu spammen. Fordern "
 "Sie vom Hub-Besitzer dies zu unterlassen"
 
-#: dcpp/SettingsManager.cpp:717 dcpp/SettingsManager.cpp:739
+#: dcpp/SettingsManager.cpp:718 dcpp/SettingsManager.cpp:740
 msgid "This search type already exists"
 msgstr "Dieser Suchtyp existiert bereits"
 

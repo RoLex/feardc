@@ -35,6 +35,7 @@ AdvancedPage::ListItem AdvancedPage::listItems[] = {
 	{ SettingsManager::MAGNET_REGISTER, N_("Register with Windows to handle magnet: URI links"), IDH_SETTINGS_ADVANCED_MAGNET_REGISTER },
 	{ SettingsManager::DCEXT_REGISTER, N_("Register with Windows to handle .dcext files"), IDH_SETTINGS_ADVANCED_DCEXT_REGISTER },
 	{ SettingsManager::KEEP_LISTS, N_("Don't delete file lists when exiting"), IDH_SETTINGS_ADVANCED_KEEP_LISTS },
+	{ SettingsManager::ALLOW_NAT_TRAVERSAL, N_("Allow NAT traversal for connections with passive NMDC users"), IDH_SETTINGS_ADVANCED_ALLOW_NAT_TRAVERSAL },
 	{ SettingsManager::AUTO_KICK, N_("Automatically disconnect users who leave the hub"), IDH_SETTINGS_ADVANCED_AUTO_KICK },
 	{ SettingsManager::SFV_CHECK, N_("Enable automatic SFV checking"), IDH_SETTINGS_ADVANCED_SFV_CHECK },
 	{ SettingsManager::NO_AWAYMSG_TO_BOTS, N_("Don't send the away message to bots"), IDH_SETTINGS_ADVANCED_NO_AWAYMSG_TO_BOTS },

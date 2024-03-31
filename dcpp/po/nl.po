@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-16 18:38+0100\n"
+"POT-Creation-Date: 2024-03-31 18:44+0200\n"
 "PO-Revision-Date: 2012-03-04 17:40+0000\n"
 "Last-Translator: FlipFlop™ <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,7 @@ msgstr ""
 msgid "%1% (%2%) has same CID {%3%} as %4% (%5%), ignoring"
 msgstr "%1% (%2%) heeft dezelfde CID {%3%} als %4% (%5%), negeren"
 
-#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:383
+#: dcpp/NmdcHub.cpp:294 dcpp/NmdcHub.cpp:388
 #, boost-format
 msgid "%1% (Nick unknown)"
 msgstr "%1% (Nick onbekend)"
@@ -196,12 +196,12 @@ msgstr "Alle"
 msgid "Audio"
 msgstr "Geluid"
 
-#: dcpp/ConnectionManager.cpp:858
+#: dcpp/ConnectionManager.cpp:863
 #, boost-format
 msgid "Blocked a C-C connection to a hub ('%1%:%2%'; request from '%3%')"
 msgstr ""
 
-#: dcpp/ConnectionManager.cpp:877
+#: dcpp/ConnectionManager.cpp:882
 #, boost-format
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
@@ -566,7 +566,7 @@ msgstr "Ongeldige bestandsnaam gevonden tijdens het hashen van directory %1%"
 msgid "Invalid regular expression: %1%"
 msgstr ""
 
-#: dcpp/SettingsManager.cpp:713
+#: dcpp/SettingsManager.cpp:714
 msgid "Invalid search type name"
 msgstr "Ongeldige naam voor zoektype"
 
@@ -619,7 +619,7 @@ msgstr "Geen vertrouwde sleutelfile gekozen"
 msgid "No slots available"
 msgstr "Geen Slots beschikbaar"
 
-#: dcpp/SettingsManager.cpp:771
+#: dcpp/SettingsManager.cpp:772
 msgid "No such search type"
 msgstr "Zoektype bestaat niet"
 
@@ -805,7 +805,7 @@ msgstr "Dit bestand is al gedownload"
 msgid "This file is already queued"
 msgstr "Bestand staat reeds in wachtlijst"
 
-#: dcpp/NmdcHub.cpp:1260
+#: dcpp/NmdcHub.cpp:1318
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "
@@ -814,7 +814,7 @@ msgstr ""
 "Deze hub probeert je client %1% te spammen, dring er bij de hubeigenaar op "
 "aan dit op te lossen"
 
-#: dcpp/SettingsManager.cpp:717 dcpp/SettingsManager.cpp:739
+#: dcpp/SettingsManager.cpp:718 dcpp/SettingsManager.cpp:740
 msgid "This search type already exists"
 msgstr "Dit zoektype bestaat al"
 
