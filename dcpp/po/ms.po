@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-31 18:44+0200\n"
+"POT-Creation-Date: 2024-08-23 10:56+0200\n"
 "PO-Revision-Date: 2008-03-13 23:10+0000\n"
 "Last-Translator: Tian Seng Leong <tleong@andrew.cmu.edu>\n"
 "Language-Team: Malay <ms@li.org>\n"
@@ -23,32 +23,32 @@ msgstr ""
 msgid " - Queued: %1%"
 msgstr ""
 
-#: dcpp/Util.cpp:566
+#: dcpp/Util.cpp:565
 #, c-format, boost-format
 msgid "%'lld B"
 msgstr "%'lld B"
 
-#: dcpp/Util.cpp:528
+#: dcpp/Util.cpp:527
 #, c-format, boost-format
 msgid "%.02f GiB"
 msgstr "%.02f GiB"
 
-#: dcpp/Util.cpp:524
+#: dcpp/Util.cpp:523
 #, c-format, boost-format
 msgid "%.02f KiB"
 msgstr "%.02f KiB"
 
-#: dcpp/Util.cpp:526
+#: dcpp/Util.cpp:525
 #, c-format, boost-format
 msgid "%.02f MiB"
 msgstr "%.02f MiB"
 
-#: dcpp/Util.cpp:532
+#: dcpp/Util.cpp:531
 #, c-format, boost-format
 msgid "%.02f PiB"
 msgstr "%.02f PiB"
 
-#: dcpp/Util.cpp:530
+#: dcpp/Util.cpp:529
 #, c-format, boost-format
 msgid "%.02f TiB"
 msgstr "%.02f TiB"
@@ -69,7 +69,7 @@ msgstr ""
 msgid "%1% (%2%)"
 msgstr ""
 
-#: dcpp/AdcHub.cpp:163
+#: dcpp/AdcHub.cpp:164
 #, boost-format
 msgid "%1% (%2%) has same CID {%3%} as %4% (%5%), ignoring"
 msgstr ""
@@ -109,12 +109,12 @@ msgstr ""
 msgid "%1% not shared; hashing did not complete."
 msgstr ""
 
-#: dcpp/AdcHub.cpp:302
+#: dcpp/AdcHub.cpp:303
 #, boost-format
 msgid "%1% was kicked by %2%: %3%"
 msgstr ""
 
-#: dcpp/AdcHub.cpp:305
+#: dcpp/AdcHub.cpp:306
 #, boost-format
 msgid "%1% was kicked: %2%"
 msgstr ""
@@ -134,12 +134,12 @@ msgstr ""
 msgid "%1%: File not available"
 msgstr "%1%: Tidak ada fail"
 
-#: dcpp/Util.cpp:522
+#: dcpp/Util.cpp:521
 #, c-format, boost-format
 msgid "%d B"
 msgstr "%d B"
 
-#: dcpp/Util.cpp:562
+#: dcpp/Util.cpp:561
 #, c-format, boost-format
 msgid "%s B"
 msgstr "%s B"
@@ -189,11 +189,11 @@ msgstr "Semua slot muat turun sudah diambil"
 msgid "Another port mapping attempt is in progress..."
 msgstr ""
 
-#: dcpp/SearchManager.cpp:35
+#: dcpp/SearchManager.cpp:39
 msgid "Any"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:36
+#: dcpp/SearchManager.cpp:40
 msgid "Audio"
 msgstr ""
 
@@ -221,7 +221,7 @@ msgstr "Inkonsistensi CRC32 (SFV-Check)"
 msgid "Certificate verification for %1% failed with error: %2%"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:37
+#: dcpp/SearchManager.cpp:41
 msgid "Compressed"
 msgstr ""
 
@@ -290,16 +290,16 @@ msgstr ""
 msgid "Determining the best connectivity settings..."
 msgstr ""
 
-#: dcpp/SearchManager.cpp:42
+#: dcpp/SearchManager.cpp:46
 #, fuzzy
 msgid "Directory"
 msgstr "Direktori sudah dikongsi"
 
-#: dcpp/ShareManager.cpp:399
+#: dcpp/ShareManager.cpp:408
 msgid "Directory already shared"
 msgstr "Direktori sudah dikongsi"
 
-#: dcpp/ShareManager.cpp:386
+#: dcpp/ShareManager.cpp:395
 #, fuzzy
 msgid "Directory is hidden"
 msgstr "Direktori sudah dikongsi"
@@ -325,7 +325,7 @@ msgstr "Terputus"
 msgid "Disconnected user leaving the hub: %1%"
 msgstr "Pengguna terputus meninggalkan hub: %1%"
 
-#: dcpp/SearchManager.cpp:38
+#: dcpp/SearchManager.cpp:42
 msgid "Document"
 msgstr ""
 
@@ -333,7 +333,7 @@ msgstr ""
 msgid "Download Queue"
 msgstr "Barisan Muat turun"
 
-#: dcpp/ShareManager.cpp:794
+#: dcpp/ShareManager.cpp:832
 #, fuzzy, boost-format
 msgid ""
 "Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
@@ -402,7 +402,7 @@ msgstr "Ralat hashing %1%: %2%"
 msgid "Error saving hash data: %1%"
 msgstr "Ralat menyimpan data hash: %1%"
 
-#: dcpp/SearchManager.cpp:39
+#: dcpp/SearchManager.cpp:43
 msgid "Executable"
 msgstr ""
 
@@ -438,7 +438,7 @@ msgstr ""
 msgid "Failed to map the %1% port (%2% %3%) with the %4% interface"
 msgstr "Tidak boleh mencipta thread"
 
-#: dcpp/AdcHub.cpp:225
+#: dcpp/AdcHub.cpp:226
 msgid "Failed to negotiate base protocol"
 msgstr ""
 
@@ -462,21 +462,21 @@ msgid "File already exists at the target location"
 msgstr ""
 "Fail ini mempunyai fail yang lebih besar atau sama size di lokasi target"
 
-#: dcpp/ShareManager.cpp:961
+#: dcpp/ShareManager.cpp:999
 #, fuzzy, boost-format
 msgid "File list %1% generated"
 msgstr "Perbaharui Senarai fail sedang dimulakan"
 
-#: dcpp/ShareManager.cpp:826
+#: dcpp/ShareManager.cpp:864
 #, boost-format
 msgid "File list refresh failed: %1%"
 msgstr "Senarai fail yang hendak diperbaharui telah gagal: %1%"
 
-#: dcpp/ShareManager.cpp:890
+#: dcpp/ShareManager.cpp:928
 msgid "File list refresh finished"
 msgstr "Senarai fail telah diperbaharui"
 
-#: dcpp/ShareManager.cpp:809
+#: dcpp/ShareManager.cpp:847
 msgid ""
 "File list refresh in progress, please wait for it to finish before trying to "
 "refresh again"
@@ -484,7 +484,7 @@ msgstr ""
 "Senarai fail sedang diperbaharui, sila tunggu sehingga habis sebelum cuba "
 "untuk memperbaharui semula."
 
-#: dcpp/ShareManager.cpp:854
+#: dcpp/ShareManager.cpp:892
 msgid "File list refresh initiated"
 msgstr "Perbaharui Senarai fail sedang dimulakan"
 
@@ -520,6 +520,11 @@ msgstr ""
 msgid "HTTP file download failed to create file %1%, error: %2%"
 msgstr ""
 
+#: dcpp/HashManager.cpp:257
+#, fuzzy, boost-format
+msgid "Hash data rebuilding failed: %1%"
+msgstr "Hashing telah gagal: %1%"
+
 #: dcpp/DCPlusPlus.cpp:120
 msgid "Hash database"
 msgstr "Pangakalan Data hash"
@@ -528,12 +533,12 @@ msgstr "Pangakalan Data hash"
 msgid "Hash database rebuilt"
 msgstr "Pangakalan Data hash dibina semula"
 
-#: dcpp/HashManager.cpp:69 dcpp/HashManager.cpp:257
+#: dcpp/HashManager.cpp:69
 #, boost-format
 msgid "Hashing failed: %1%"
 msgstr "Hashing telah gagal: %1%"
 
-#: dcpp/AdcHub.cpp:231
+#: dcpp/AdcHub.cpp:232
 msgid ""
 "Hub probably uses an old version of ADC, please encourage the owner to "
 "upgrade"
@@ -563,7 +568,7 @@ msgstr "Saiz tidak sah"
 msgid "Invalid file list extension (must be .xml or .bz2)"
 msgstr ""
 
-#: dcpp/ShareManager.cpp:577
+#: dcpp/ShareManager.cpp:615
 #, boost-format
 msgid "Invalid file name found while hashing folder %1%"
 msgstr ""
@@ -573,7 +578,7 @@ msgstr ""
 msgid "Invalid regular expression: %1%"
 msgstr ""
 
-#: dcpp/SettingsManager.cpp:714
+#: dcpp/SettingsManager.cpp:717
 msgid "Invalid search type name"
 msgstr ""
 
@@ -615,7 +620,7 @@ msgstr "Lebih data dihantar dari yang sepatutnya"
 msgid "No certificate file chosen"
 msgstr "TLS telah ditutup, tiada fail certifikasi"
 
-#: dcpp/ShareManager.cpp:382
+#: dcpp/ShareManager.cpp:391
 msgid "No directory specified"
 msgstr "Tiada direktori dispecifikasikan"
 
@@ -627,7 +632,7 @@ msgstr ""
 msgid "No slots available"
 msgstr "Tidak ada slot"
 
-#: dcpp/SettingsManager.cpp:772
+#: dcpp/SettingsManager.cpp:775
 msgid "No such search type"
 msgstr ""
 
@@ -635,15 +640,15 @@ msgstr ""
 msgid "Non-UTF-8 data in an ADC connection"
 msgstr ""
 
-#: dcpp/AdcHub.cpp:701
+#: dcpp/AdcHub.cpp:702
 #, fuzzy, boost-format
 msgid "Not listening for connections - please restart %1%"
 msgstr "Tidak mendenggar untuk sambungan - sila memulakan semula DC++"
 
 #: dcpp/ClientManager.cpp:152 dcpp/ClientManager.cpp:183
 #: dcpp/FinishedManager.cpp:130 dcpp/FinishedManager.cpp:136
-#: dcpp/FinishedManager.cpp:142 dcpp/SearchManager.cpp:322
-#: dcpp/SearchManager.cpp:383 dcpp/Transfer.cpp:80 dcpp/Transfer.cpp:84
+#: dcpp/FinishedManager.cpp:142 dcpp/SearchManager.cpp:337
+#: dcpp/SearchManager.cpp:398 dcpp/Transfer.cpp:80 dcpp/Transfer.cpp:84
 msgid "Offline"
 msgstr "Offline"
 
@@ -655,7 +660,7 @@ msgstr ""
 msgid "Passive mode"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:40
+#: dcpp/SearchManager.cpp:44
 msgid "Picture"
 msgstr ""
 
@@ -673,7 +678,7 @@ msgstr ""
 msgid "Redirect user(s)"
 msgstr "Sila hantar pengguna ke tempat lain"
 
-#: dcpp/ShareManager.cpp:402
+#: dcpp/ShareManager.cpp:411
 msgid "Remove all subdirectories before adding this one"
 msgstr "Menyingkirkan semua subdirektori semula tambah direktori ini"
 
@@ -686,16 +691,16 @@ msgstr "Pokok penuh tidak sama dengan TTH root"
 msgid "Search"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:364
+#: dcpp/ConnectivityManager.cpp:360
 msgid "Search (UDP)"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:159
+#: dcpp/SearchManager.cpp:174
 #, fuzzy, boost-format
 msgid "Search disabled: %1%"
 msgstr "Hashing telah gagal: %1%"
 
-#: dcpp/SearchManager.cpp:151
+#: dcpp/SearchManager.cpp:166
 msgid "Search enabled again"
 msgstr ""
 
@@ -759,7 +764,7 @@ msgstr "TLS telah ditutup, tiada fail certifikasi"
 msgid "TLS error"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:43
+#: dcpp/SearchManager.cpp:47
 msgid "TTH"
 msgstr ""
 
@@ -802,7 +807,7 @@ msgstr "Server socks gagal memulakan hubungan"
 msgid "The socks server requires authentication"
 msgstr "Server socks perlukan pengesahan"
 
-#: dcpp/ShareManager.cpp:390
+#: dcpp/ShareManager.cpp:399
 msgid "The temporary download directory cannot be shared"
 msgstr "Direktori muat turun sementara tidak boleh dikongsi"
 
@@ -822,7 +827,7 @@ msgid ""
 "fix this"
 msgstr ""
 
-#: dcpp/SettingsManager.cpp:718 dcpp/SettingsManager.cpp:740
+#: dcpp/SettingsManager.cpp:721 dcpp/SettingsManager.cpp:743
 msgid "This search type already exists"
 msgstr ""
 
@@ -835,7 +840,7 @@ msgstr ""
 msgid "Transfer"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:358
+#: dcpp/ConnectivityManager.cpp:354
 msgid "Transfer (TCP)"
 msgstr ""
 
@@ -901,7 +906,7 @@ msgstr ""
 msgid "Users"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:41
+#: dcpp/SearchManager.cpp:45
 msgid "Video"
 msgstr ""
 

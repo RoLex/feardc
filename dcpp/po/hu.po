@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-31 18:44+0200\n"
+"POT-Creation-Date: 2024-08-23 10:56+0200\n"
 "PO-Revision-Date: 2022-09-19 12:47+0000\n"
 "Last-Translator: eMTee <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -23,32 +23,32 @@ msgstr ""
 msgid " - Queued: %1%"
 msgstr " - a sorban: %1%."
 
-#: dcpp/Util.cpp:566
+#: dcpp/Util.cpp:565
 #, c-format, boost-format
 msgid "%'lld B"
 msgstr "%'lld B"
 
-#: dcpp/Util.cpp:528
+#: dcpp/Util.cpp:527
 #, c-format, boost-format
 msgid "%.02f GiB"
 msgstr "%.02f GiB"
 
-#: dcpp/Util.cpp:524
+#: dcpp/Util.cpp:523
 #, c-format, boost-format
 msgid "%.02f KiB"
 msgstr "%.02f KiB"
 
-#: dcpp/Util.cpp:526
+#: dcpp/Util.cpp:525
 #, c-format, boost-format
 msgid "%.02f MiB"
 msgstr "%.02f MiB"
 
-#: dcpp/Util.cpp:532
+#: dcpp/Util.cpp:531
 #, c-format, boost-format
 msgid "%.02f PiB"
 msgstr "%.02f PiB"
 
-#: dcpp/Util.cpp:530
+#: dcpp/Util.cpp:529
 #, c-format, boost-format
 msgid "%.02f TiB"
 msgstr "%.02f TiB"
@@ -69,7 +69,7 @@ msgstr "%1% %2% port (%3% %4%)"
 msgid "%1% (%2%)"
 msgstr "%1% (%2%)"
 
-#: dcpp/AdcHub.cpp:163
+#: dcpp/AdcHub.cpp:164
 #, boost-format
 msgid "%1% (%2%) has same CID {%3%} as %4% (%5%), ignoring"
 msgstr "%1% (%2%) CID-je {%3%} ugyanaz, mint %4% (%5%)-é, kihagyva"
@@ -108,12 +108,12 @@ msgstr ""
 msgid "%1% not shared; hashing did not complete."
 msgstr "%1% nem lett megosztva mivel a hash-elés nem fejeződött be."
 
-#: dcpp/AdcHub.cpp:302
+#: dcpp/AdcHub.cpp:303
 #, boost-format
 msgid "%1% was kicked by %2%: %3%"
 msgstr "%1%-t kirúgta %2%: %3%"
 
-#: dcpp/AdcHub.cpp:305
+#: dcpp/AdcHub.cpp:306
 #, boost-format
 msgid "%1% was kicked: %2%"
 msgstr "%1% kirúgva: %2%"
@@ -133,12 +133,12 @@ msgstr "%1%: %2%"
 msgid "%1%: File not available"
 msgstr "%1%: A fájl nem elérhető"
 
-#: dcpp/Util.cpp:522
+#: dcpp/Util.cpp:521
 #, c-format, boost-format
 msgid "%d B"
 msgstr "%d B"
 
-#: dcpp/Util.cpp:562
+#: dcpp/Util.cpp:561
 #, c-format, boost-format
 msgid "%s B"
 msgstr "%s B"
@@ -191,11 +191,11 @@ msgstr "Összes letöltési szál foglalt"
 msgid "Another port mapping attempt is in progress..."
 msgstr "Egy másik port-hozzárendelési kísérlet már folyamatban van..."
 
-#: dcpp/SearchManager.cpp:35
+#: dcpp/SearchManager.cpp:39
 msgid "Any"
 msgstr "Bármely"
 
-#: dcpp/SearchManager.cpp:36
+#: dcpp/SearchManager.cpp:40
 msgid "Audio"
 msgstr "Hang"
 
@@ -225,7 +225,7 @@ msgstr "CRC32 inkonzisztencia (SFV-Ellenőrzéskor): %1%"
 msgid "Certificate verification for %1% failed with error: %2%"
 msgstr "A(z) %1% tanúsítvány ellenőrzése sikertelen. Hiba: %2%"
 
-#: dcpp/SearchManager.cpp:37
+#: dcpp/SearchManager.cpp:41
 msgid "Compressed"
 msgstr "Tömörített"
 
@@ -304,15 +304,15 @@ msgstr "Ország információk"
 msgid "Determining the best connectivity settings..."
 msgstr "A legjobb kapcsolódási beállítások meghatározása..."
 
-#: dcpp/SearchManager.cpp:42
+#: dcpp/SearchManager.cpp:46
 msgid "Directory"
 msgstr "Könyvtár"
 
-#: dcpp/ShareManager.cpp:399
+#: dcpp/ShareManager.cpp:408
 msgid "Directory already shared"
 msgstr "A könyvtár már meg van osztva"
 
-#: dcpp/ShareManager.cpp:386
+#: dcpp/ShareManager.cpp:395
 msgid "Directory is hidden"
 msgstr "A mappa rejtett"
 
@@ -337,7 +337,7 @@ msgstr "Szétkapcsolva"
 msgid "Disconnected user leaving the hub: %1%"
 msgstr "A hubról kilépő felhasználó szétkapcsolva: %1%"
 
-#: dcpp/SearchManager.cpp:38
+#: dcpp/SearchManager.cpp:42
 msgid "Document"
 msgstr "Dokumentum"
 
@@ -345,7 +345,7 @@ msgstr "Dokumentum"
 msgid "Download Queue"
 msgstr "Letöltési Sor"
 
-#: dcpp/ShareManager.cpp:794
+#: dcpp/ShareManager.cpp:832
 #, boost-format
 msgid ""
 "Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
@@ -413,7 +413,7 @@ msgstr "Probléma a (z) %1% betöltésekor: %2%"
 msgid "Error saving hash data: %1%"
 msgstr "Hiba a hash adatok mentésekor: %1%"
 
-#: dcpp/SearchManager.cpp:39
+#: dcpp/SearchManager.cpp:43
 msgid "Executable"
 msgstr "Futtatható"
 
@@ -450,7 +450,7 @@ msgstr ""
 "Nem sikerült létrehozni a(z) %1% port-hozzárendelést (%2% %3%) a %4% "
 "felülettel"
 
-#: dcpp/AdcHub.cpp:225
+#: dcpp/AdcHub.cpp:226
 msgid "Failed to negotiate base protocol"
 msgstr "Az alap protokoll egyeztetése sikertelen"
 
@@ -474,21 +474,21 @@ msgstr ""
 msgid "File already exists at the target location"
 msgstr "A fájl már létezik a cél helyen"
 
-#: dcpp/ShareManager.cpp:961
+#: dcpp/ShareManager.cpp:999
 #, boost-format
 msgid "File list %1% generated"
 msgstr "Fájl-lista generálva : %1%"
 
-#: dcpp/ShareManager.cpp:826
+#: dcpp/ShareManager.cpp:864
 #, boost-format
 msgid "File list refresh failed: %1%"
 msgstr "Hiba a fájl-lista frissítésekor: %1%"
 
-#: dcpp/ShareManager.cpp:890
+#: dcpp/ShareManager.cpp:928
 msgid "File list refresh finished"
 msgstr "A fájl-lista frissítése befejeződött"
 
-#: dcpp/ShareManager.cpp:809
+#: dcpp/ShareManager.cpp:847
 msgid ""
 "File list refresh in progress, please wait for it to finish before trying to "
 "refresh again"
@@ -496,7 +496,7 @@ msgstr ""
 "A fájl-lista frissítése már folyamatban van. Várd meg, amíg befejeződik, "
 "mielőtt újra frissíteni próbálnál!"
 
-#: dcpp/ShareManager.cpp:854
+#: dcpp/ShareManager.cpp:892
 msgid "File list refresh initiated"
 msgstr "A fájl-lista frissítése elkezdődött"
 
@@ -532,6 +532,11 @@ msgstr "Általános"
 msgid "HTTP file download failed to create file %1%, error: %2%"
 msgstr "Nem sikerült a %1% fájlt létrehozni HTTP letötés során, hiba: %2%"
 
+#: dcpp/HashManager.cpp:257
+#, fuzzy, boost-format
+msgid "Hash data rebuilding failed: %1%"
+msgstr "Sikertelen indexelés: %1%"
+
 #: dcpp/DCPlusPlus.cpp:120
 msgid "Hash database"
 msgstr "Hash adatbázis"
@@ -540,12 +545,12 @@ msgstr "Hash adatbázis"
 msgid "Hash database rebuilt"
 msgstr "A hash adatbázis újraépítve"
 
-#: dcpp/HashManager.cpp:69 dcpp/HashManager.cpp:257
+#: dcpp/HashManager.cpp:69
 #, boost-format
 msgid "Hashing failed: %1%"
 msgstr "Sikertelen indexelés: %1%"
 
-#: dcpp/AdcHub.cpp:231
+#: dcpp/AdcHub.cpp:232
 msgid ""
 "Hub probably uses an old version of ADC, please encourage the owner to "
 "upgrade"
@@ -575,7 +580,7 @@ msgstr "Érvénytelen adat"
 msgid "Invalid file list extension (must be .xml or .bz2)"
 msgstr "Érvénytelen fájl-lista kiterjesztés (csak .xml vagy .bz2 lehet)"
 
-#: dcpp/ShareManager.cpp:577
+#: dcpp/ShareManager.cpp:615
 #, boost-format
 msgid "Invalid file name found while hashing folder %1%"
 msgstr "Érvénytelen fájlnév a %1% könyvtár hash-elése közben"
@@ -585,7 +590,7 @@ msgstr "Érvénytelen fájlnév a %1% könyvtár hash-elése közben"
 msgid "Invalid regular expression: %1%"
 msgstr "Érvénytelen reguláris kifejezés : %1%"
 
-#: dcpp/SettingsManager.cpp:714
+#: dcpp/SettingsManager.cpp:717
 msgid "Invalid search type name"
 msgstr "Érvénytelen keresés típus név"
 
@@ -628,7 +633,7 @@ msgstr "A kértnél több byte írása történt"
 msgid "No certificate file chosen"
 msgstr "Nincs kiválasztva tanúsítvány fájl"
 
-#: dcpp/ShareManager.cpp:382
+#: dcpp/ShareManager.cpp:391
 msgid "No directory specified"
 msgstr "Nincs könyvtár megadva"
 
@@ -640,7 +645,7 @@ msgstr "Nincs kiválasztva privát kulcs fájl"
 msgid "No slots available"
 msgstr "Nincs szabad slot"
 
-#: dcpp/SettingsManager.cpp:772
+#: dcpp/SettingsManager.cpp:775
 msgid "No such search type"
 msgstr "Nincs ilyen keresés típus"
 
@@ -648,15 +653,15 @@ msgstr "Nincs ilyen keresés típus"
 msgid "Non-UTF-8 data in an ADC connection"
 msgstr "Nem UTF-8 kódolású adat egy ADC kapcsolatban"
 
-#: dcpp/AdcHub.cpp:701
+#: dcpp/AdcHub.cpp:702
 #, boost-format
 msgid "Not listening for connections - please restart %1%"
 msgstr "Nem figyel kapcsolatokra - kérlek, indítsd újra a %1%-t"
 
 #: dcpp/ClientManager.cpp:152 dcpp/ClientManager.cpp:183
 #: dcpp/FinishedManager.cpp:130 dcpp/FinishedManager.cpp:136
-#: dcpp/FinishedManager.cpp:142 dcpp/SearchManager.cpp:322
-#: dcpp/SearchManager.cpp:383 dcpp/Transfer.cpp:80 dcpp/Transfer.cpp:84
+#: dcpp/FinishedManager.cpp:142 dcpp/SearchManager.cpp:337
+#: dcpp/SearchManager.cpp:398 dcpp/Transfer.cpp:80 dcpp/Transfer.cpp:84
 msgid "Offline"
 msgstr "Kilépett"
 
@@ -668,7 +673,7 @@ msgstr "Részleges fájl lista"
 msgid "Passive mode"
 msgstr "Passzív mód"
 
-#: dcpp/SearchManager.cpp:40
+#: dcpp/SearchManager.cpp:44
 msgid "Picture"
 msgstr "Kép"
 
@@ -687,7 +692,7 @@ msgstr ""
 msgid "Redirect user(s)"
 msgstr "Felhasználó(k) átirányítása"
 
-#: dcpp/ShareManager.cpp:402
+#: dcpp/ShareManager.cpp:411
 msgid "Remove all subdirectories before adding this one"
 msgstr "Távolíts el minden alkönyvtárat, mielőtt ezt felveszed"
 
@@ -699,16 +704,16 @@ msgstr "A válasz nem felel meg a kérésnek"
 msgid "Search"
 msgstr "Keresés"
 
-#: dcpp/ConnectivityManager.cpp:364
+#: dcpp/ConnectivityManager.cpp:360
 msgid "Search (UDP)"
 msgstr "Keresés (UDP)"
 
-#: dcpp/SearchManager.cpp:159
+#: dcpp/SearchManager.cpp:174
 #, boost-format
 msgid "Search disabled: %1%"
 msgstr "Keresés tiltva:%1%"
 
-#: dcpp/SearchManager.cpp:151
+#: dcpp/SearchManager.cpp:166
 msgid "Search enabled again"
 msgstr "Keresés ismét engedélyezve"
 
@@ -776,7 +781,7 @@ msgstr "TLS letiltva, nincs tanúsítvány fájl beállítva"
 msgid "TLS error"
 msgstr "TLS hiba"
 
-#: dcpp/SearchManager.cpp:43
+#: dcpp/SearchManager.cpp:47
 msgid "TTH"
 msgstr "TTH"
 
@@ -822,7 +827,7 @@ msgstr "Nem sikerült a socks kiszolgálóhoz kapcsolódni"
 msgid "The socks server requires authentication"
 msgstr "A socks kiszolgáló hitelesítést igényel"
 
-#: dcpp/ShareManager.cpp:390
+#: dcpp/ShareManager.cpp:399
 msgid "The temporary download directory cannot be shared"
 msgstr "Az ideiglenes letöltési könyvtár nem megosztható"
 
@@ -843,7 +848,7 @@ msgstr ""
 "Ez a hub megpróbálja a kliensedet arra használni, hogy spamelje a következő "
 "címet : %1%, figyelmeztesd a hub tulajdonosát hogy javítsa ezt"
 
-#: dcpp/SettingsManager.cpp:718 dcpp/SettingsManager.cpp:740
+#: dcpp/SettingsManager.cpp:721 dcpp/SettingsManager.cpp:743
 msgid "This search type already exists"
 msgstr "Ez a keresés típus már létezik"
 
@@ -856,7 +861,7 @@ msgstr "Túl sok adat a választörzsben (%1%)"
 msgid "Transfer"
 msgstr "Átvitel"
 
-#: dcpp/ConnectivityManager.cpp:358
+#: dcpp/ConnectivityManager.cpp:354
 msgid "Transfer (TCP)"
 msgstr "Átvitel (TCP)"
 
@@ -928,7 +933,7 @@ msgstr "A(z) %1% bővítmény frissítése %2% verzióról %3% verzióra"
 msgid "Users"
 msgstr "Felhasználók"
 
-#: dcpp/SearchManager.cpp:41
+#: dcpp/SearchManager.cpp:45
 msgid "Video"
 msgstr "Videó"
 

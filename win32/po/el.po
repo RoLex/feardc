@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-31 18:44+0200\n"
+"POT-Creation-Date: 2024-08-22 18:19+0200\n"
 "PO-Revision-Date: 2014-05-18 08:00+0000\n"
 "Last-Translator: DIMITRIOS VLASTARAS <dimitriosvlastaras@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2018-11-11 22:48+0000\n"
 "X-Generator: Launchpad (build 18816)\n"
 
-#: win32/MainWindow.cpp:1917
+#: win32/MainWindow.cpp:1949
 msgid " "
 msgstr ""
 
@@ -36,7 +36,7 @@ msgstr "Ρυθμίσεις"
 msgid "% transferred"
 msgstr "% μεταφέρθηκαν"
 
-#: win32/MainWindow.cpp:1519
+#: win32/MainWindow.cpp:1538
 #, boost-format
 msgid ""
 "%1%\n"
@@ -55,24 +55,24 @@ msgstr "D: %1%/δευτ. (%2%)"
 msgid "%1% (%2$0.2f)"
 msgstr "%1% (%2$0.2f)"
 
-#: win32/SearchFrame.cpp:546
+#: win32/SearchFrame.cpp:545
 #, fuzzy, boost-format
 msgid "%1% (%2%)"
 msgstr "D: %1%/δευτ. (%2%)"
 
-#: win32/MainWindow.cpp:766
+#: win32/MainWindow.cpp:774
 #, fuzzy, boost-format
 msgid "%1% - %2%"
 msgstr "D: %1%/δευτ. (%2%)"
 
-#: win32/SearchFrame.cpp:1127
+#: win32/SearchFrame.cpp:1124
 #, boost-format
 msgid "%1% / %2% item"
 msgid_plural "%1% / %2% items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: win32/SearchFrame.cpp:1158
+#: win32/SearchFrame.cpp:1155
 #, boost-format
 msgid "%1% / %2% sources ignored: %3%"
 msgstr "%1% / %2% πηγές αγνοήθηκαν: %3%"
@@ -82,13 +82,13 @@ msgstr "%1% / %2% πηγές αγνοήθηκαν: %3%"
 msgid "%1% doesn't need any additional configuration"
 msgstr ""
 
-#: win32/SearchFrame.cpp:1133
+#: win32/SearchFrame.cpp:1130
 #, fuzzy, boost-format
 msgid "%1% dropped"
 msgstr "%1% φιλτραρίστηκαν"
 
 #: win32/PluginApiWin.cpp:70 win32/PluginApiWin.cpp:71 win32/QueueFrame.cpp:948
-#: win32/WinUtil.cpp:855 win32/FinishedFrameBase.h:460
+#: win32/WinUtil.cpp:856 win32/FinishedFrameBase.h:460
 #, boost-format
 msgid "%1% files"
 msgstr "%1% αρχεία"
@@ -98,7 +98,7 @@ msgstr "%1% αρχεία"
 msgid "%1% files/h, %2% files left"
 msgstr "%1% αρχεία/ώρα, %2% αρχεία απέμειναν"
 
-#: win32/MainWindow.cpp:1211
+#: win32/MainWindow.cpp:1220
 #, boost-format
 msgid "%1% free slots of %2% total upload slots - Click to adjust"
 msgstr "%1% ελευθερες θεσεις απο  %2% συνολικες θεσεις - Κλικ να επιλεξεις"
@@ -108,7 +108,7 @@ msgstr "%1% ελευθερες θεσεις απο  %2% συνολικες θε�
 msgid "%1% hubs"
 msgstr "%1% χρήστης"
 
-#: win32/SearchFrame.cpp:1125 win32/FinishedFrameBase.h:571
+#: win32/SearchFrame.cpp:1122 win32/FinishedFrameBase.h:571
 #, boost-format
 msgid "%1% item"
 msgid_plural "%1% items"
@@ -136,17 +136,17 @@ msgstr "%1% απέμειναν"
 msgid "%1% port cannot be the same as the %2% port"
 msgstr "η θύρα %1% δε μπορεί να είναι ίδια με τη θύρα %2%"
 
-#: win32/MainWindow.cpp:887
+#: win32/MainWindow.cpp:895
 #, boost-format
 msgid "%1% recent items will be saved from now on."
 msgstr "%1% πρόσφατα αντικείμενα θα αποθηκεύονται στο εξής."
 
-#: win32/SearchFrame.cpp:868
+#: win32/SearchFrame.cpp:867
 #, fuzzy, boost-format
 msgid "%1% results"
 msgstr "%1% απέμειναν"
 
-#: win32/SearchFrame.cpp:1159
+#: win32/SearchFrame.cpp:1156
 #, boost-format
 msgid "%1% sources added"
 msgstr "%1% πηγές προστέθηκαν"
@@ -158,19 +158,19 @@ msgid_plural "%1% users"
 msgstr[0] "%1% χρήστης"
 msgstr[1] "%1% χρήστες"
 
-#: win32/HubFrame.cpp:1368 win32/TransferView.cpp:354 win32/UsersFrame.cpp:509
+#: win32/HubFrame.cpp:1377 win32/TransferView.cpp:354 win32/UsersFrame.cpp:509
 #: win32/FinishedFrameBase.h:489
 #, boost-format
 msgid "%1% users"
 msgstr "%1% χρήστες"
 
-#: win32/MainWindow.cpp:1210 win32/UserInfoBase.cpp:162
+#: win32/MainWindow.cpp:1219 win32/UserInfoBase.cpp:163
 #, fuzzy, boost-format
 msgid "%1%/%2%"
 msgstr "%1%/δευτ"
 
-#: win32/MainWindow.cpp:932 win32/MainWindow.cpp:1226 win32/MainWindow.cpp:1230
-#: win32/MainWindow.cpp:1234 win32/MainWindow.cpp:1238
+#: win32/MainWindow.cpp:940 win32/MainWindow.cpp:1246 win32/MainWindow.cpp:1250
+#: win32/MainWindow.cpp:1254 win32/MainWindow.cpp:1258
 #: win32/TransferView.cpp:226 win32/TransferView.cpp:366
 #: win32/TransferView.cpp:451 win32/UsersFrame.cpp:75
 #: win32/FinishedFrameBase.h:573
@@ -183,8 +183,8 @@ msgstr "%1%/δευτ"
 msgid "%1%/s, %2% left"
 msgstr "%1%/δευτ, %2% απέμειναν"
 
-#: win32/DirectoryListingFrame.cpp:832 win32/UserInfoBase.cpp:115
-#: win32/UserInfoBase.cpp:163 win32/WinUtil.cpp:1718
+#: win32/DirectoryListingFrame.cpp:832 win32/UserInfoBase.cpp:116
+#: win32/UserInfoBase.cpp:164 win32/WinUtil.cpp:1719
 #, fuzzy, boost-format
 msgid "%1%: %2%"
 msgstr "D: %1%/δευτ. (%2%)"
@@ -199,13 +199,13 @@ msgstr "&Προσθήκη"
 msgid "&Add folder"
 msgstr "&Προσθήκη φακέλου"
 
-#: win32/WinUtil.cpp:1650 win32/UserInfoBase.h:166
+#: win32/WinUtil.cpp:1651 win32/UserInfoBase.h:166
 msgid "&Browse file list"
 msgstr "&Περιήγηση λίστας αρχείων"
 
 #: win32/DirectoryListingFrame.cpp:931 win32/LogPage.cpp:79
-#: win32/NotificationsPage.cpp:111 win32/SearchFrame.cpp:907
-#: win32/SearchFrame.cpp:935
+#: win32/NotificationsPage.cpp:111 win32/SearchFrame.cpp:906
+#: win32/SearchFrame.cpp:934
 msgid "&Browse..."
 msgstr "&Περιήγηση..."
 
@@ -222,7 +222,7 @@ msgstr "&Κλείσιμο"
 msgid "&Configure"
 msgstr "&Διαμόρφωση"
 
-#: win32/MainWindow.cpp:841
+#: win32/MainWindow.cpp:849
 msgid "&Configure..."
 msgstr "&Παραμετροποίηση..."
 
@@ -239,7 +239,7 @@ msgstr "&Αντιγραφή"
 msgid "&Copy\tCtrl+C"
 msgstr "&Αντιγραφή\tCtrl+C"
 
-#: win32/MainWindow.cpp:1754
+#: win32/MainWindow.cpp:1786
 msgid "&Customize\tDouble-click"
 msgstr "&Παραμετροποίηση\tDouble-click"
 
@@ -255,16 +255,16 @@ msgstr ""
 msgid "&Description"
 msgstr "&Περιγραφή"
 
-#: win32/HubFrame.cpp:1394 win32/TransferView.cpp:563
+#: win32/HubFrame.cpp:1403 win32/TransferView.cpp:563
 msgid "&Disconnect"
 msgstr "&Αποσύνδεση"
 
 #: win32/DirectoryListingFrame.cpp:851 win32/DirectoryListingFrame.cpp:878
-#: win32/DirectoryListingFrame.cpp:891 win32/SearchFrame.cpp:871
+#: win32/DirectoryListingFrame.cpp:891 win32/SearchFrame.cpp:870
 msgid "&Download"
 msgstr "&Λήψη"
 
-#: win32/MainWindow.cpp:353
+#: win32/MainWindow.cpp:354
 msgid "&Download Queue\tCtrl+D"
 msgstr "Αρχεία προς λήψη\tCtrl+D"
 
@@ -272,12 +272,12 @@ msgstr "Αρχεία προς λήψη\tCtrl+D"
 msgid "&Edit"
 msgstr "&Επεξεργασία"
 
-#: win32/MainWindow.cpp:348
+#: win32/MainWindow.cpp:349
 #, fuzzy
 msgid "&Favorite Hubs\tCtrl+H"
 msgstr "&Αγαπημένες Κυψέλες\tCtrl+A"
 
-#: win32/MainWindow.cpp:311
+#: win32/MainWindow.cpp:312
 msgid "&File"
 msgstr "&Αρχείο"
 
@@ -290,7 +290,7 @@ msgstr "&Αναζήτηση...\tF3"
 msgid "&Force attempt"
 msgstr "&Προσπάθεια εξαναγκασμού"
 
-#: win32/QueueFrame.cpp:1002 win32/WinUtil.cpp:1647 win32/UserInfoBase.h:165
+#: win32/QueueFrame.cpp:1002 win32/WinUtil.cpp:1648 win32/UserInfoBase.h:165
 msgid "&Get file list"
 msgstr "&Λήψη λίστας αρχείων"
 
@@ -298,15 +298,15 @@ msgstr "&Λήψη λίστας αρχείων"
 msgid "&Go to directory"
 msgstr "&Μετάβαση στον κατάλογο"
 
-#: win32/MainWindow.cpp:406
+#: win32/MainWindow.cpp:407
 msgid "&Help"
 msgstr "&Βοήθεια"
 
-#: win32/MainWindow.cpp:1770
+#: win32/MainWindow.cpp:1802
 msgid "&Hide\tCtrl+1"
 msgstr "Απ&όκρυψη\tCtrl+1"
 
-#: win32/WinUtil.cpp:1653 win32/UserInfoBase.h:167
+#: win32/WinUtil.cpp:1654 win32/UserInfoBase.h:167
 msgid "&Match queue"
 msgstr "&Συνταίριασμα με την σειρά αναμονής"
 
@@ -328,11 +328,11 @@ msgstr "&Μετακίνηση/Μετονομασία"
 msgid "&New..."
 msgstr "&Νέο..."
 
-#: win32/MainWindow.cpp:364
+#: win32/MainWindow.cpp:365
 msgid "&Notepad\tCtrl+N"
 msgstr "&Σημειωματάριο\tCtrl+N"
 
-#: win32/RichTextBox.cpp:103 win32/SystemFrame.cpp:125
+#: win32/RichTextBox.cpp:103 win32/SystemFrame.cpp:131
 #: win32/FinishedFrameBase.h:463
 msgid "&Open"
 msgstr "&Άνοιγμα"
@@ -347,15 +347,15 @@ msgstr "&Σημειωματάριο\tCtrl+N"
 msgid "&Properties"
 msgstr "&Ιδιότητες"
 
-#: win32/MainWindow.cpp:346
+#: win32/MainWindow.cpp:347
 msgid "&Public Hubs\tCtrl+P"
 msgstr "&Δημόσιες Κυψέλες\tCtrl+P"
 
-#: win32/MainWindow.cpp:313
+#: win32/MainWindow.cpp:314
 msgid "&Quick connect...\tCtrl+Q"
 msgstr "&Γρήγορη σύνδεση...\tCtrl+Q"
 
-#: win32/HubFrame.cpp:1389 win32/MainWindow.cpp:317
+#: win32/HubFrame.cpp:1398 win32/MainWindow.cpp:318
 msgid "&Reconnect\tCtrl+R"
 msgstr "&Επανασύνδεση\tCtrl+R"
 
@@ -367,7 +367,7 @@ msgstr "&Ανανέωση"
 #: win32/FavHubGroupsDlg.cpp:107 win32/FavHubsFrame.cpp:139
 #: win32/FavHubsFrame.cpp:370 win32/FavoriteDirsPage.cpp:77
 #: win32/PluginPage.cpp:119 win32/PluginPage.cpp:262 win32/QueueFrame.cpp:940
-#: win32/QueueFrame.cpp:954 win32/QueueFrame.cpp:968 win32/SearchFrame.cpp:887
+#: win32/QueueFrame.cpp:954 win32/QueueFrame.cpp:968 win32/SearchFrame.cpp:886
 #: win32/SearchTypesPage.cpp:93 win32/StringListDlg.cpp:159 win32/UCPage.cpp:75
 #: win32/UploadPage.cpp:89 win32/UserMatchPage.cpp:97 win32/UsersFrame.cpp:513
 #: win32/FinishedFrameBase.h:466 win32/FinishedFrameBase.h:491
@@ -378,16 +378,16 @@ msgstr "&Αφαίρεση"
 msgid "&Remove file from queue"
 msgstr "σβηστε το αρχειο απο την ουρα αναμονης"
 
-#: win32/MainWindow.cpp:360
+#: win32/MainWindow.cpp:361
 msgid "&Search\tCtrl+S"
 msgstr "&Αναζήτηση\tCtrl+S"
 
-#: win32/HubFrame.cpp:1393
+#: win32/HubFrame.cpp:1402
 #, fuzzy
 msgid "&Search hub"
 msgstr "Μενού Αναζήτησης"
 
-#: win32/QueueFrame.cpp:1009 win32/WinUtil.cpp:1656 win32/UserInfoBase.h:170
+#: win32/QueueFrame.cpp:1009 win32/WinUtil.cpp:1657 win32/UserInfoBase.h:170
 msgid "&Send private message"
 msgstr "&Αποστολή προσωπικού μηνύματος"
 
@@ -408,21 +408,21 @@ msgstr "&Αντιγραφή\tCtrl+C"
 msgid "&Update"
 msgstr "Ενη&μέρωση"
 
-#: win32/MainWindow.cpp:350
+#: win32/MainWindow.cpp:351
 #, fuzzy
 msgid "&Users\tCtrl+U"
 msgstr "Αγαπημένοι &Χρήστες\tCtrl+U"
 
-#: win32/MainWindow.cpp:344
+#: win32/MainWindow.cpp:345
 msgid "&View"
 msgstr "&Προβολή"
 
-#: win32/DirectoryListingFrame.cpp:855 win32/SearchFrame.cpp:875
+#: win32/DirectoryListingFrame.cpp:855 win32/SearchFrame.cpp:874
 #: win32/FinishedFrameBase.h:462
 msgid "&View as text"
 msgstr "&Προβολή ως κείμενο"
 
-#: win32/MainWindow.cpp:384
+#: win32/MainWindow.cpp:385
 msgid "&Window"
 msgstr "&Παράθυρο"
 
@@ -431,17 +431,17 @@ msgstr "&Παράθυρο"
 msgid "(%1%)"
 msgstr ""
 
-#: win32/MainWindow.cpp:848
+#: win32/MainWindow.cpp:856
 msgid "(No recent item found)"
 msgstr "(Δεν βρέθηκε πρόσφατο αντικείμενο)"
 
-#: win32/PrivateFrame.cpp:521
+#: win32/PrivateFrame.cpp:528
 #, fuzzy
 msgid "(User offline)"
 msgstr "Χρήστης Εκτός Σύνδεσης"
 
-#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:423
-#: win32/PrivateFrame.cpp:430
+#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:425
+#: win32/PrivateFrame.cpp:432
 #, fuzzy
 msgid "*** Keyboard commands:"
 msgstr "Εντολές Χρήστη"
@@ -466,7 +466,7 @@ msgstr "-:--:-- απέμειναν"
 msgid "<Information unavailable>"
 msgstr "Το αρχείο δεν είναι διαθέσιμο"
 
-#: win32/WinUtil.cpp:1551
+#: win32/WinUtil.cpp:1552
 #, fuzzy
 msgid ""
 "A MAGNET link was given to FearDC, but it didn't contain a valid file hash "
@@ -475,22 +475,22 @@ msgstr ""
 "Ένας σύνδεσμος MAGNET δώθηκε στο DC++, αλλά δεν περιείχε έγκυρη δεικτοποίηση "
 "αρχείου για χρήση στο δίκτυο Άμεσης Σύνδεσης. Δεν θα γίνει καμιά ενέργεια."
 
-#: win32/PrivateFrame.cpp:585
+#: win32/PrivateFrame.cpp:592
 msgid "A direct encrypted channel has been established"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:333
+#: win32/PrivateFrame.cpp:335
 msgid "A direct encrypted channel is already available"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:345
+#: win32/PrivateFrame.cpp:347
 msgid ""
 "A secure ADC hub is required; this feature is not supported on NMDC hubs"
 msgstr ""
 "Απαιτείται ένα ασφαλές ADC hub αυτη η δυνατότητα δεν υποστηρίζεται απο NMDC "
 "hubs"
 
-#: win32/UploadPage.cpp:301
+#: win32/UploadPage.cpp:283
 #, boost-format
 msgid ""
 "A virtual directory named %1% already exists, do you wish to merge the "
@@ -503,7 +503,7 @@ msgstr ""
 msgid "ADC"
 msgstr ""
 
-#: win32/MainWindow.cpp:361 win32/MainWindow.cpp:471
+#: win32/MainWindow.cpp:362 win32/MainWindow.cpp:472
 msgid "ADL Search"
 msgstr "ADL Αναζήτηση"
 
@@ -511,16 +511,16 @@ msgstr "ADL Αναζήτηση"
 msgid "ADLSearch Properties"
 msgstr "Ιδιότητες ADL Αναζήτησης"
 
-#: win32/AboutDlg.cpp:175 win32/MainWindow.cpp:412
+#: win32/AboutDlg.cpp:175 win32/MainWindow.cpp:413
 #, fuzzy
 msgid "About FearDC"
 msgstr "Σχετικά με το DC++"
 
-#: win32/ACFrame.cpp:58 win32/MainWindow.cpp:371
+#: win32/ACFrame.cpp:58 win32/MainWindow.cpp:372
 msgid "About:config"
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:75
+#: win32/UploadFilteringPage.cpp:77
 msgid "Above (minimum size)"
 msgstr ""
 
@@ -538,12 +538,12 @@ msgid "Active mode (let FearDC configure my router with NAT-PMP / UPnP)"
 msgstr ""
 "Ενεργός κατάσταση (αφήστε το DC++ να ρυθμίσει το ρούτερ με NAT-PMP / UPnP)"
 
-#: win32/MainWindow.cpp:728
+#: win32/MainWindow.cpp:736
 #, fuzzy
 msgid "Add"
 msgstr "&Προσθήκη"
 
-#: win32/HubFrame.cpp:1386 win32/PublicHubsFrame.cpp:402 win32/WinUtil.cpp:1659
+#: win32/HubFrame.cpp:1395 win32/PublicHubsFrame.cpp:402 win32/WinUtil.cpp:1660
 #: win32/UserInfoBase.h:175
 msgid "Add To &Favorites"
 msgstr "Προσθήκη στα &Αγαπημένα"
@@ -575,7 +575,7 @@ msgstr ""
 msgid "Address"
 msgstr "Διεύθυνση"
 
-#: win32/PrivateFrame.cpp:443
+#: win32/PrivateFrame.cpp:445
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to ignore chat messages from the current user."
@@ -587,7 +587,7 @@ msgid ""
 "to ignore chat messages from the specified user."
 msgstr ""
 
-#: win32/PrivateFrame.cpp:445
+#: win32/PrivateFrame.cpp:447
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to stop ignoring chat messages from the current user."
@@ -611,11 +611,11 @@ msgid ""
 "list of Favorite Hubs."
 msgstr ""
 
-#: win32/PrivateFrame.cpp:441
+#: win32/PrivateFrame.cpp:443
 msgid "Adds the current user to the list of Favorite Users."
 msgstr ""
 
-#: win32/PrivateFrame.cpp:436
+#: win32/PrivateFrame.cpp:438
 msgid "Adds the current user's list to the Download Queue."
 msgstr ""
 
@@ -627,7 +627,7 @@ msgstr ""
 msgid "Advanced"
 msgstr "Για προχωρημένους"
 
-#: win32/QueueFrame.cpp:1017 win32/QueueFrame.cpp:1026 win32/WinUtil.cpp:1614
+#: win32/QueueFrame.cpp:1017 win32/QueueFrame.cpp:1026 win32/WinUtil.cpp:1615
 msgid "All"
 msgstr "Όλα"
 
@@ -636,12 +636,12 @@ msgstr "Όλα"
 msgid "All %1% users offline"
 msgstr "Και οι %1% χρήστες εκτός σύνδεσης"
 
-#: win32/WinUtil.cpp:1712
+#: win32/WinUtil.cpp:1713
 #, fuzzy
 msgid "All columns"
 msgstr "Όλα τα αρχεία"
 
-#: win32/WinUtil.cpp:858 win32/WinUtil.cpp:865
+#: win32/WinUtil.cpp:859 win32/WinUtil.cpp:866
 msgid "All files"
 msgstr "Όλα τα αρχεία"
 
@@ -682,7 +682,7 @@ msgstr "Υπάρχει ήδη μια ομάδα με το όνομα \"%1%\""
 msgid "Any"
 msgstr "Οτιδήποτε"
 
-#: win32/WinUtil.cpp:1575
+#: win32/WinUtil.cpp:1576
 msgid ""
 "Any program that is launched will have the same access rights as FearDC."
 msgstr ""
@@ -700,11 +700,11 @@ msgstr ""
 msgid "Application version"
 msgstr "Επιβεβαίωση τερματισμού του προγράμματος"
 
-#: win32/SearchFrame.cpp:192
+#: win32/SearchFrame.cpp:191
 msgid "At least"
 msgstr "Τουλάχιστον"
 
-#: win32/SearchFrame.cpp:193
+#: win32/SearchFrame.cpp:192
 msgid "At most"
 msgstr "Το πολύ"
 
@@ -789,12 +789,12 @@ msgstr ""
 msgid "Automatically search for alternative download locations"
 msgstr "Αυτόματη αναζήτηση εναλλακτικών τοποθεσιών προς λήψη"
 
-#: win32/HubFrame.cpp:1217
+#: win32/HubFrame.cpp:1218
 #, boost-format
 msgid "Average: %1%"
 msgstr "Μέσος όρος: %1%"
 
-#: win32/UserInfoBase.cpp:133 win32/UsersFrame.cpp:81
+#: win32/UserInfoBase.cpp:134 win32/UsersFrame.cpp:81
 msgid "Away"
 msgstr ""
 
@@ -806,18 +806,18 @@ msgstr ""
 msgid "Away mode"
 msgstr ""
 
-#: win32/WinUtil.cpp:637 win32/WinUtil.cpp:650
+#: win32/WinUtil.cpp:638 win32/WinUtil.cpp:651
 msgid "Away mode off"
 msgstr "Κατάσταση απουσίας ανενεργή"
 
-#: win32/WinUtil.cpp:643
+#: win32/WinUtil.cpp:644
 #, boost-format
 msgid "Away mode on: %1%"
 msgstr "Κατάσταση απουσίας ενεργή: %1%"
 
 #: win32/ADLSProperties.cpp:99 win32/ExpertsPage.cpp:53
-#: win32/ExpertsPage.cpp:54 win32/ExpertsPage.cpp:56 win32/SearchFrame.cpp:203
-#: win32/UploadFilteringPage.cpp:75 win32/UploadFilteringPage.cpp:80
+#: win32/ExpertsPage.cpp:54 win32/ExpertsPage.cpp:56 win32/SearchFrame.cpp:202
+#: win32/UploadFilteringPage.cpp:77 win32/UploadFilteringPage.cpp:82
 msgid "B"
 msgstr "B"
 
@@ -850,7 +850,7 @@ msgstr "οριο"
 msgid "Beep"
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:80
+#: win32/UploadFilteringPage.cpp:82
 msgid "Below (maximum size)"
 msgstr ""
 
@@ -859,11 +859,11 @@ msgstr ""
 msgid "Bind Address"
 msgstr "Δέσμευση διεύθυνσης"
 
-#: win32/MainWindow.cpp:425
+#: win32/MainWindow.cpp:426
 msgid "Blog"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:121 win32/UsersFrame.cpp:330 win32/UsersFrame.cpp:331
+#: win32/UserInfoBase.cpp:122 win32/UsersFrame.cpp:330 win32/UsersFrame.cpp:331
 msgid "Bot"
 msgstr ""
 
@@ -883,7 +883,7 @@ msgstr ""
 msgid "Button style"
 msgstr ""
 
-#: win32/HubFrame.cpp:67 win32/SearchFrame.cpp:61 win32/UserInfoBase.cpp:166
+#: win32/HubFrame.cpp:67 win32/SearchFrame.cpp:60 win32/UserInfoBase.cpp:167
 #: win32/UserMatchDlg.cpp:222 win32/UserMatchPage.cpp:215
 #: win32/UsersFrame.cpp:61 win32/UsersFrame.cpp:100
 msgid "CID"
@@ -903,7 +903,7 @@ msgstr ""
 "Η προσωρινά αποθηκευμένη λίστα των hubs που έχετε είναι αλιωμένη ή δεν "
 "υποστηρίζεται"
 
-#: win32/WinUtil.cpp:1130
+#: win32/WinUtil.cpp:1131
 msgid "Cancel"
 msgstr "Ακύρωση"
 
@@ -915,22 +915,28 @@ msgstr "Δεν είναι δυνατή η ενεργοποίηση του plugin
 msgid "Cannot install the plugin:"
 msgstr "Δεν μπορείτε να εγκαταστήσετε το plugin:"
 
-#: win32/PrivateFrame.cpp:349
+#: win32/PrivateFrame.cpp:351
 #, boost-format
 msgid "Cannot start the direct encrypted channel: %1%"
 msgstr ""
 
-#: win32/CertificatesPage.cpp:124
+#: win32/CertificatesPage.cpp:125
 msgid "Certificate generation"
 msgstr ""
 
-#: win32/MainWindow.cpp:411
+#: win32/MainWindow.cpp:412
 msgid "Change Log"
 msgstr "Αλλαγές ανά έκδοση"
 
-#: win32/TextFrame.cpp:90
+#: win32/TextFrame.cpp:92
 msgid "Change the text viewer font"
 msgstr "Αλλαγή της γραμματοσειράς"
+
+#: win32/UploadFilteringPage.cpp:140
+msgid ""
+"Changes to your shared files will be applied when you close the Settings "
+"dialog."
+msgstr ""
 
 #: win32/CommandDlg.cpp:90 win32/StylesPage.cpp:148
 msgid "Chat"
@@ -954,7 +960,7 @@ msgstr "Κρυπτογράφηση"
 msgid "Clear search box after each search"
 msgstr "Καθαρισμός του πεδίου εύρεσης μετά από κάθε αναζήτηση"
 
-#: win32/WinUtil.cpp:547
+#: win32/WinUtil.cpp:548
 msgid ""
 "Clears the current window of all text. Optionally, you can specify how many "
 "of the latest (most recent) lines should be kept."
@@ -983,40 +989,40 @@ msgstr "Τύπος αρχείου"
 msgid "Close"
 msgstr "&Κλείσιμο"
 
-#: win32/MainWindow.cpp:395
+#: win32/MainWindow.cpp:396
 msgid "Close all PM windows"
 msgstr "Κλείσιμο παραθύρων προσωπικών συνομιλιών"
 
-#: win32/MainWindow.cpp:399
+#: win32/MainWindow.cpp:400
 msgid "Close all file list windows"
 msgstr "Κλείσιμο λιστών αρχείων"
 
-#: win32/MainWindow.cpp:389
+#: win32/MainWindow.cpp:390
 #, fuzzy
 msgid "Close all hubs"
 msgstr "Κλείσιμο παραθύρων προσωπικών συνομιλιών"
 
-#: win32/MainWindow.cpp:391 win32/MainWindow.cpp:1720
+#: win32/MainWindow.cpp:392 win32/MainWindow.cpp:1739
 msgid "Close all hubs of a favorite group"
 msgstr "Κλείσιμο όλων των hubs απο μια ομάδα αγαπημένων"
 
-#: win32/MainWindow.cpp:396
+#: win32/MainWindow.cpp:397
 msgid "Close all offline PM windows"
 msgstr "Κλείσιμο των εκτός σύνδεσης παραθύρων προσωπικών συζητήσεων"
 
-#: win32/MainWindow.cpp:402
+#: win32/MainWindow.cpp:403
 msgid "Close all search windows"
 msgstr "Κλείσιμο αναζητήσεων"
 
-#: win32/MainWindow.cpp:390
+#: win32/MainWindow.cpp:391
 msgid "Close disconnected hubs"
 msgstr "Κλείσιμο αποσυνδεδεμένων hubs"
 
-#: win32/MainWindow.cpp:392 win32/MainWindow.cpp:1720
+#: win32/MainWindow.cpp:393 win32/MainWindow.cpp:1739
 msgid "Close hubs not in a favorite group"
 msgstr "Κλείσιμο των hubs που δεν είναι σε ομάδα αγαπημένων"
 
-#: win32/WinUtil.cpp:561
+#: win32/WinUtil.cpp:562
 #, fuzzy
 msgid "Closes the current window."
 msgstr "Κλείσιμο παραθύρων προσωπικών συνομιλιών"
@@ -1029,7 +1035,7 @@ msgstr "Εντολή"
 msgid "Command Type"
 msgstr "Τύπος εντολής"
 
-#: win32/PrivateFrame.cpp:516
+#: win32/PrivateFrame.cpp:523
 msgid "Communication channel"
 msgstr ""
 
@@ -1037,7 +1043,7 @@ msgstr ""
 msgid "Compiler"
 msgstr ""
 
-#: win32/MainWindow.cpp:729 win32/MainWindow.cpp:747
+#: win32/MainWindow.cpp:737 win32/MainWindow.cpp:755
 #, fuzzy
 msgid "Configure"
 msgstr "&Διαμόρφωση"
@@ -1058,43 +1064,43 @@ msgstr ""
 msgid "Configured Public Hub Lists"
 msgstr "Διαμορφωμένες λίστες Δημοσίων Κυψελών"
 
-#: win32/WindowsPage.cpp:53
+#: win32/WindowsPage.cpp:52
 msgid "Confirm ADL Search removal"
 msgstr "Επιβεβαίωση αφαίρεσης ADL Αναζήτησης"
 
-#: win32/WindowsPage.cpp:48
+#: win32/WindowsPage.cpp:47
 msgid "Confirm application exit"
 msgstr "Επιβεβαίωση τερματισμού του προγράμματος"
 
-#: win32/WindowsPage.cpp:71
+#: win32/WindowsPage.cpp:70
 msgid "Confirm dialog options"
 msgstr "Επιβεβαίωση επιλογών διαλόγου"
 
-#: win32/WindowsPage.cpp:50
+#: win32/WindowsPage.cpp:49
 msgid "Confirm favorite hub removal"
 msgstr "Επιβεβαίωση αφαίρεσης αγαπημένης κυψέλης"
 
-#: win32/WindowsPage.cpp:51
+#: win32/WindowsPage.cpp:50
 msgid "Confirm favorite user removal"
 msgstr "Επιβεβαίωση αφαίρεσης αγαπημένου χρήστη"
 
-#: win32/WindowsPage.cpp:49
+#: win32/WindowsPage.cpp:48
 msgid "Confirm hub closing"
 msgstr "Επιβεβαίωση κλεισίματος κυψέλης"
 
-#: win32/WindowsPage.cpp:52
+#: win32/WindowsPage.cpp:51
 msgid "Confirm item removal in download queue"
 msgstr "Επιβεβαίωση αφαίρεσης αρχείου από την σειρά ανομονής λήψεων"
 
-#: win32/MainWindow.cpp:314
+#: win32/MainWindow.cpp:315
 msgid "Connect to a favorite hub &group...\tCtrl+G"
 msgstr "Σύνδεση σε μια ομάδα α&γαπημένων hub...\tCtrl+G"
 
-#: win32/MainWindow.cpp:986
+#: win32/MainWindow.cpp:995
 msgid "Connect to a favorite hub group"
 msgstr "Σύνδεση σε ομάδα αγαπημένων hub"
 
-#: win32/MainWindow.cpp:820
+#: win32/MainWindow.cpp:828
 msgid "Connect to all hubs in this group"
 msgstr "Σύνδεση σε όλα τα hubs σε αυτήν την ομάδα"
 
@@ -1102,7 +1108,7 @@ msgstr "Σύνδεση σε όλα τα hubs σε αυτήν την ομάδα"
 msgid "Connect to hub"
 msgstr "Σύνδεση στην κυψέλη"
 
-#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1780
+#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1807
 msgid "Connected"
 msgstr "Συνδέθηκε"
 
@@ -1110,12 +1116,12 @@ msgstr "Συνδέθηκε"
 msgid "Connecting"
 msgstr "Γίνεται σύνδεση"
 
-#: win32/HubFrame.cpp:1018
+#: win32/HubFrame.cpp:1019
 #, boost-format
 msgid "Connecting to %1%..."
 msgstr "Γίνεται σύνδεση με %1%..."
 
-#: win32/HubFrame.cpp:63 win32/SearchFrame.cpp:56 win32/UserInfoBase.cpp:153
+#: win32/HubFrame.cpp:63 win32/SearchFrame.cpp:55 win32/UserInfoBase.cpp:154
 #: win32/UsersFrame.cpp:102
 msgid "Connection"
 msgstr "Σύνδεση"
@@ -1128,11 +1134,11 @@ msgstr "Συνδεσιμότητα"
 msgid "Context"
 msgstr "Περιεχόμενο"
 
-#: win32/MainWindow.cpp:424
+#: win32/MainWindow.cpp:425
 msgid "Contribute"
 msgstr ""
 
-#: win32/WinUtil.cpp:1694
+#: win32/WinUtil.cpp:1695
 #, fuzzy
 msgid "Copy"
 msgstr "&Αντιγραφή"
@@ -1145,16 +1151,16 @@ msgstr ""
 msgid "Copy &Value"
 msgstr ""
 
-#: win32/HubFrame.cpp:1390
+#: win32/HubFrame.cpp:1399
 msgid "Copy &address to clipboard"
 msgstr "Αντιγραφή &διεύθυνσης στο πρόχειρο"
 
-#: win32/HubFrame.cpp:1392
+#: win32/HubFrame.cpp:1401
 #, fuzzy
 msgid "Copy address with &keyprint to clipboard"
 msgstr "Αντιγραφή &διεύθυνσης στο πρόχειρο"
 
-#: win32/WinUtil.cpp:808
+#: win32/WinUtil.cpp:809
 msgid "Copy magnet link to clipboard"
 msgstr "Αντιγραφή magnet συνδέσμου στο πρόχειρο"
 
@@ -1163,11 +1169,11 @@ msgid "Copy user information"
 msgstr "Αντιγραφή πληροφοριών του χρήστη"
 
 #: win32/HubFrame.cpp:65 win32/PublicHubsFrame.cpp:48 win32/TransferView.cpp:58
-#: win32/UserInfoBase.cpp:155
+#: win32/UserInfoBase.cpp:156
 msgid "Country"
 msgstr "Χώρα"
 
-#: win32/AppearancePage.cpp:74
+#: win32/AppearancePage.cpp:75
 #, fuzzy
 msgid "Country format"
 msgstr "Χώρα"
@@ -1211,21 +1217,21 @@ msgstr ""
 msgid "Custom text color"
 msgstr ""
 
-#: win32/MainWindow.cpp:941
+#: win32/MainWindow.cpp:949
 msgid "Custom..."
 msgstr "Προσαρμοσμένο…"
 
-#: win32/MainWindow.cpp:1219
+#: win32/MainWindow.cpp:1239
 #, boost-format
 msgid "D: %1%"
 msgstr "D: %1%"
 
-#: win32/MainWindow.cpp:1227
+#: win32/MainWindow.cpp:1247
 #, boost-format
 msgid "D: %1%/s (%2%)"
 msgstr "D: %1%/δευτ. (%2%)"
 
-#: win32/MainWindow.cpp:426
+#: win32/MainWindow.cpp:427
 msgid "DC Network Foundation community"
 msgstr ""
 
@@ -1234,9 +1240,9 @@ msgstr ""
 msgid "Decrease priority"
 msgstr "Ορισμός Προτεραιότητας"
 
-#: win32/AppearancePage.cpp:141 win32/AppearancePage.cpp:174
+#: win32/AppearancePage.cpp:142 win32/AppearancePage.cpp:175
 #: win32/ConnectivityManualPage.cpp:260 win32/FavHubProperties.cpp:282
-#: win32/WinUtil.cpp:1174 win32/ACFrame.h:140
+#: win32/WinUtil.cpp:1175 win32/ACFrame.h:140
 msgid "Default"
 msgstr "Προεπιλογή"
 
@@ -1256,7 +1262,7 @@ msgstr "Προκαθορισμένο θέμα"
 #: win32/FavHubGroupsDlg.cpp:140 win32/FavHubProperties.cpp:96
 #: win32/FavHubProperties.cpp:132 win32/FavHubsFrame.cpp:50
 #: win32/GeneralPage.cpp:59 win32/HubFrame.cpp:61 win32/HubFrame.cpp:441
-#: win32/PublicHubsFrame.cpp:45 win32/UserInfoBase.cpp:151
+#: win32/PublicHubsFrame.cpp:45 win32/UserInfoBase.cpp:152
 #: win32/UsersFrame.cpp:60 win32/UsersFrame.cpp:82 win32/UsersFrame.cpp:475
 msgid "Description"
 msgstr "Περιγραφή"
@@ -1283,7 +1289,7 @@ msgstr "Άμεση σύνδεση"
 msgid "Direct connection"
 msgstr "Άμεση σύνδεση"
 
-#: win32/PrivateFrame.cpp:326
+#: win32/PrivateFrame.cpp:328
 msgid "Direct encrypted channel"
 msgstr ""
 
@@ -1297,7 +1303,7 @@ msgid "Directories"
 msgstr "Κατάλογοι"
 
 #: win32/ADLSProperties.cpp:76 win32/DirectoryListingFrame.cpp:1572
-#: win32/FavoriteDirsPage.cpp:40 win32/LogPage.cpp:74 win32/SearchFrame.cpp:510
+#: win32/FavoriteDirsPage.cpp:40 win32/LogPage.cpp:74 win32/SearchFrame.cpp:509
 #: win32/UploadPage.cpp:46
 msgid "Directory"
 msgstr "Κατάλογος"
@@ -1306,7 +1312,7 @@ msgstr "Κατάλογος"
 msgid "Directory or directory name already exists"
 msgstr "Ο κατάλογος ή το όνομα του καταλόγου υπάρχει ήδη"
 
-#: win32/MainWindow.cpp:744 win32/PluginPage.cpp:105 win32/PluginPage.cpp:257
+#: win32/MainWindow.cpp:752 win32/PluginPage.cpp:105 win32/PluginPage.cpp:257
 #, fuzzy
 msgid "Disable"
 msgstr "Ενεργό"
@@ -1324,29 +1330,25 @@ msgstr ""
 msgid "Disable connectivity"
 msgstr "Συνδεσιμότητα"
 
-#: win32/WindowsPage.cpp:41
-msgid "Disable taskbar menu creation"
-msgstr ""
-
-#: win32/MainWindow.cpp:932
+#: win32/MainWindow.cpp:940
 #, fuzzy
 msgid "Disabled"
 msgstr "Ενεργό"
 
-#: win32/PrivateFrame.cpp:540
+#: win32/PrivateFrame.cpp:547
 msgid "Disconnect the direct encrypted channel"
 msgstr ""
 
-#: win32/WinUtil.cpp:1785
+#: win32/WinUtil.cpp:1812
 #, fuzzy
 msgid "Disconnected"
 msgstr "&Αποσύνδεση"
 
-#: win32/PrivateFrame.cpp:360
+#: win32/PrivateFrame.cpp:362
 msgid "Disconnecting the direct encrypted channel..."
 msgstr ""
 
-#: win32/MainWindow.cpp:420
+#: win32/MainWindow.cpp:421
 #, fuzzy
 msgid "Discussion forum"
 msgstr "Φόρουμ συζητήσεων του DC++"
@@ -1359,7 +1361,7 @@ msgstr ""
 msgid "Display the balloon only when FearDC is in the background"
 msgstr ""
 
-#: win32/WinUtil.cpp:556
+#: win32/WinUtil.cpp:557
 #, fuzzy
 msgid ""
 "Displays available commands. (The ones listed on this page.) Optionally, you "
@@ -1393,7 +1395,7 @@ msgstr ""
 msgid "Do you really want to delete this search type?"
 msgstr ""
 
-#: win32/WinUtil.cpp:1577
+#: win32/WinUtil.cpp:1578
 msgid "Do you still want to allow to open a program on your computer?"
 msgstr ""
 
@@ -1432,7 +1434,7 @@ msgstr "Μην αφαιρείται η πηγή που απορρίπτεται,
 msgid "Don't send the away message to bots"
 msgstr "Να μην αποστέλλεται το μήνυμα απουσίας σε bots"
 
-#: win32/MainWindow.cpp:423
+#: win32/MainWindow.cpp:424
 msgid "Donate (paypal)"
 msgstr "Κάντε δωρεά (Paypal)"
 
@@ -1452,7 +1454,7 @@ msgstr "Κατέβασμα &στο..."
 msgid "Download Matches"
 msgstr "Ταύτιση αρχείων"
 
-#: win32/MainWindow.cpp:463 win32/QueueFrame.cpp:66 win32/TabsPage.cpp:41
+#: win32/MainWindow.cpp:464 win32/QueueFrame.cpp:66 win32/TabsPage.cpp:41
 msgid "Download Queue"
 msgstr "Αρχεία προς Λήψη"
 
@@ -1466,7 +1468,7 @@ msgstr "Η λήψη απέτυχε: %1%"
 msgid "Download failed: %1%"
 msgstr "Η λήψη απέτυχε: %1%"
 
-#: win32/TransferView.cpp:1134 win32/WinUtil.cpp:92
+#: win32/TransferView.cpp:1134 win32/WinUtil.cpp:93
 #, fuzzy
 msgid "Download finished"
 msgstr "Κατέβηκε"
@@ -1475,26 +1477,26 @@ msgstr "Κατέβηκε"
 msgid "Download full list"
 msgstr ""
 
-#: win32/MainWindow.cpp:908 win32/MainWindow.cpp:1898
+#: win32/MainWindow.cpp:916 win32/MainWindow.cpp:1930
 #, fuzzy
 msgid "Download limit"
 msgstr "Το όριο ταχύτητας κατεβάσματος έχει απενεργοποιηθεί"
 
-#: win32/WinUtil.cpp:689
+#: win32/WinUtil.cpp:690
 msgid "Download limit disabled"
 msgstr "Το όριο ταχύτητας κατεβάσματος έχει απενεργοποιηθεί"
 
-#: win32/WinUtil.cpp:689
+#: win32/WinUtil.cpp:690
 #, fuzzy, boost-format
 msgid "Download limit set to %1% KiB/s"
 msgstr "Όριο ταχύτητας κατεβάσματος είναι %d KiB/s"
 
-#: win32/MainWindow.cpp:1235
+#: win32/MainWindow.cpp:1255
 #, fuzzy, boost-format
 msgid "Download limit: %1%/s - Click to adjust"
 msgstr "Όριο ταχύτητας κατεβάσματος είναι %d KiB/s"
 
-#: win32/WinUtil.cpp:621
+#: win32/WinUtil.cpp:622
 msgid "Download slots set"
 msgstr "Προσαρμογή θέσεων λήψεων"
 
@@ -1503,15 +1505,15 @@ msgstr "Προσαρμογή θέσεων λήψεων"
 msgid "Download speed"
 msgstr "Κατέβηκε"
 
-#: win32/SearchFrame.cpp:897
+#: win32/SearchFrame.cpp:896
 msgid "Download to..."
 msgstr "Κατέβασμα στο..."
 
-#: win32/SearchFrame.cpp:873
+#: win32/SearchFrame.cpp:872
 msgid "Download whole directory"
 msgstr "Κατέβασμα όλου του καταλόγου"
 
-#: win32/SearchFrame.cpp:925
+#: win32/SearchFrame.cpp:924
 msgid "Download whole directory to..."
 msgstr "Κατέβασμα όλου του καταλόγου στο..."
 
@@ -1556,7 +1558,7 @@ msgstr "Λήψη της λίστας δημοσίων κυψελών... (%1%)"
 msgid "Downloading..."
 msgstr "Γίνεται λήψη..."
 
-#: win32/MainWindow.cpp:417 win32/SettingsDialog.cpp:166
+#: win32/MainWindow.cpp:418 win32/SettingsDialog.cpp:166
 #: win32/StylesPage.cpp:164
 msgid "Downloads"
 msgstr "Λήψεις"
@@ -1569,7 +1571,7 @@ msgstr "Ενεργές λήψεις,παρακαλώ αποσυνδέστε τε
 msgid "Drop sources below"
 msgstr "Απόρριψη πηγών κάτω από"
 
-#: win32/MainWindow.cpp:340
+#: win32/MainWindow.cpp:341
 msgid "E&xit\tAlt+F4"
 msgstr "Έ&ξοδος\tAlt+F4"
 
@@ -1577,7 +1579,7 @@ msgstr "Έ&ξοδος\tAlt+F4"
 msgid "E-Mail"
 msgstr "Ηλ.διεύθυνση(E-mail)"
 
-#: win32/UserInfoBase.cpp:156
+#: win32/UserInfoBase.cpp:157
 #, fuzzy
 msgid "E-mail"
 msgstr "Ηλ.διεύθυνση(E-mail)"
@@ -1601,7 +1603,7 @@ msgstr "Ηλ.διεύθυνση(E-mail)"
 msgid "Empty hub address specified"
 msgstr ""
 
-#: win32/MainWindow.cpp:743 win32/PluginPage.cpp:101 win32/PluginPage.cpp:256
+#: win32/MainWindow.cpp:751 win32/PluginPage.cpp:101 win32/PluginPage.cpp:256
 #, fuzzy
 msgid "Enable"
 msgstr "Ενεργό"
@@ -1622,6 +1624,10 @@ msgstr ""
 msgid "Enable away mode when the Windows session is locked"
 msgstr ""
 
+#: win32/CertificatesPage.cpp:42
+msgid "Enable encrypted active search results in ADCS hubs"
+msgstr ""
+
 #: win32/AdvancedPage.cpp:43
 msgid "Enable safe and compressed transfers"
 msgstr "Ενεργοποίηση ασφαλών και συμπιεσμένων μεταφορών"
@@ -1629,6 +1635,10 @@ msgstr "Ενεργοποίηση ασφαλών και συμπιεσμένων 
 #: win32/AdvancedPage.cpp:52
 msgid "Enable segmented downloads"
 msgstr "Ενεργοποίηση τμηματικών λήψεων"
+
+#: win32/AppearancePage.cpp:49
+msgid "Enable window previews in the taskbar (requires restart)"
+msgstr ""
 
 #: win32/ADLSProperties.cpp:113
 msgid "Enabled"
@@ -1652,7 +1662,7 @@ msgstr " Κρυπτογραφημένη θύρα μεταφορών (%1% TCP)"
 msgid "Enter a new value"
 msgstr ""
 
-#: win32/SearchFrame.cpp:161
+#: win32/SearchFrame.cpp:160
 #, fuzzy
 msgid "Enter search here"
 msgstr "Εισάγετε όρο προς αναζήτηση"
@@ -1661,11 +1671,11 @@ msgstr "Εισάγετε όρο προς αναζήτηση"
 msgid "Enter your external address here"
 msgstr ""
 
-#: win32/CertificatesPage.cpp:126
+#: win32/CertificatesPage.cpp:127
 msgid "Error generating certificate"
 msgstr "Σφάλμα κατά τη δημιουργία πιστοποιητικού"
 
-#: win32/NotepadFrame.cpp:51
+#: win32/NotepadFrame.cpp:52
 #, boost-format
 msgid "Error loading the notepad file: %1%"
 msgstr "Σφάλμα κατά το άνοιγμα του αρχείου σημειωματαρίου: %1%"
@@ -1674,22 +1684,22 @@ msgstr "Σφάλμα κατά το άνοιγμα του αρχείου σημε
 msgid "Error processing version information"
 msgstr "Σφάλμα επεξεργασίας των πληροφοριών έκδοσης"
 
-#: win32/WinUtil.cpp:1456
+#: win32/WinUtil.cpp:1457
 msgid ""
 "Error registering FearDC for automatic startup (could not find or create key)"
 msgstr ""
 
-#: win32/WinUtil.cpp:1466
+#: win32/WinUtil.cpp:1467
 msgid ""
 "Error registering FearDC for automatic startup (could not set key value)"
 msgstr ""
 
-#: win32/WinUtil.cpp:1395
+#: win32/WinUtil.cpp:1396
 #, fuzzy, boost-format
 msgid "Error registering the %1% handler"
 msgstr "Σφάλμα κατά την εγγραφή του %1%:// link handler"
 
-#: win32/WinUtil.cpp:1501
+#: win32/WinUtil.cpp:1502
 msgid ""
 "Error unregistering FearDC for automatic startup (could not delete key value)"
 msgstr ""
@@ -1698,7 +1708,7 @@ msgstr ""
 msgid "Errors"
 msgstr "Σφάλματα"
 
-#: win32/PrivateFrame.cpp:354
+#: win32/PrivateFrame.cpp:356
 msgid "Establishing a direct encrypted channel..."
 msgstr ""
 
@@ -1716,12 +1726,12 @@ msgid ""
 "FearDC is licenced under GPL."
 msgstr ""
 
-#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1169
+#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1170
 msgid "Exact match"
 msgstr ""
 
 #: win32/DirectoryListingFrame.cpp:66 win32/QueueFrame.cpp:58
-#: win32/SearchFrame.cpp:58
+#: win32/SearchFrame.cpp:57
 msgid "Exact size"
 msgstr "Ακριβές μέγεθος"
 
@@ -1729,7 +1739,7 @@ msgstr "Ακριβές μέγεθος"
 msgid "Example hub tab"
 msgstr ""
 
-#: win32/MainWindow.cpp:1901
+#: win32/MainWindow.cpp:1933
 msgid "Exit"
 msgstr "Έξοδος"
 
@@ -1768,7 +1778,7 @@ msgstr "Εξωτερική / WAN IP"
 msgid "External / WAN IP address"
 msgstr "Εξωτερική / WAN IP"
 
-#: win32/WinUtil.cpp:1578
+#: win32/WinUtil.cpp:1579
 msgid "External protocol request"
 msgstr ""
 
@@ -1791,7 +1801,7 @@ msgstr "Αγαπημένα"
 msgid "Favorite Hub Properties"
 msgstr "Ιδιότητες αγαπημένων κυψελών (Hubs)"
 
-#: win32/FavHubsFrame.cpp:59 win32/MainWindow.cpp:458
+#: win32/FavHubsFrame.cpp:59 win32/MainWindow.cpp:459
 msgid "Favorite Hubs"
 msgstr "Αγαπημένες Κυψέλες"
 
@@ -1799,7 +1809,7 @@ msgstr "Αγαπημένες Κυψέλες"
 msgid "Favorite download directories"
 msgstr "Αγαπημένοι κατάλογοι λήψεων"
 
-#: win32/HubFrame.cpp:1245
+#: win32/HubFrame.cpp:1246
 msgid "Favorite hub added"
 msgstr "Αγαπημένη κυψέλη προστέθηκε"
 
@@ -1807,7 +1817,7 @@ msgstr "Αγαπημένη κυψέλη προστέθηκε"
 msgid "Favorite hub groups"
 msgstr "Ομάδες αγαπημένων hub"
 
-#: win32/HubFrame.cpp:1255
+#: win32/HubFrame.cpp:1256
 msgid "Favorite hub removed"
 msgstr "Αγαπημένη κυψέλη αφαιρέθηκε"
 
@@ -1816,11 +1826,11 @@ msgstr "Αγαπημένη κυψέλη αφαιρέθηκε"
 msgid "Favorite name"
 msgstr "Αγαπημένο όνομα"
 
-#: win32/PrivateFrame.cpp:407
+#: win32/PrivateFrame.cpp:409
 msgid "Favorite user added"
 msgstr "Αγαπημένος χρήστης προστέθηκε"
 
-#: win32/WinUtil.cpp:449
+#: win32/WinUtil.cpp:450
 #, boost-format
 msgid "Favorite users (added by %1%)"
 msgstr ""
@@ -1842,12 +1852,12 @@ msgstr ""
 msgid "Features"
 msgstr ""
 
-#: win32/MainWindow.cpp:1534 win32/MainWindow.cpp:1545
+#: win32/MainWindow.cpp:1553 win32/MainWindow.cpp:1564
 msgid "Feel free to report any bug via Help > Links > Report a bug."
 msgstr ""
 
 #: win32/DirectoryListingFrame.cpp:63 win32/DirectoryListingFrame.cpp:1565
-#: win32/SearchFrame.cpp:49 win32/TransferView.cpp:47
+#: win32/SearchFrame.cpp:48 win32/TransferView.cpp:47
 msgid "File"
 msgstr "Αρχείο"
 
@@ -1860,15 +1870,15 @@ msgstr "Δεικτοποίηση αρχείου:"
 msgid "File List"
 msgstr "Λίστες Αρχείων"
 
-#: win32/QueueFrame.cpp:506 win32/WinUtil.cpp:865
+#: win32/QueueFrame.cpp:506 win32/WinUtil.cpp:866
 msgid "File Lists"
 msgstr "Λίστες Αρχείων"
 
-#: win32/UploadFilteringPage.cpp:102
+#: win32/UploadFilteringPage.cpp:104
 msgid "File extension filtering"
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:112
+#: win32/UploadFilteringPage.cpp:114
 msgid "File extensions"
 msgstr ""
 
@@ -1876,12 +1886,12 @@ msgstr ""
 msgid "File is already finished"
 msgstr "Το αρχείο είναι ήδη ολοκληρωμένο"
 
-#: win32/WinUtil.cpp:93
+#: win32/WinUtil.cpp:94
 #, fuzzy
 msgid "File list downloaded"
 msgstr "Η λίστα των hub κατέβηκε%1% (%2%)"
 
-#: win32/UploadFilteringPage.cpp:86
+#: win32/UploadFilteringPage.cpp:88
 msgid "File name filtering with regular expressions"
 msgstr ""
 
@@ -1898,7 +1908,7 @@ msgstr "Το αρχείο δεν είναι διαθέσιμο"
 msgid "File size"
 msgstr "Μέγεθος αρχείου"
 
-#: win32/SearchFrame.cpp:209
+#: win32/SearchFrame.cpp:208
 msgid "File type"
 msgstr "Τύπος αρχείου"
 
@@ -1924,6 +1934,11 @@ msgstr "Αρχεία"
 msgid "Files (total): %1%"
 msgstr "Αρχεία: %1%"
 
+#: win32/MainWindow.cpp:1235
+#, fuzzy, boost-format
+msgid "Files shared: %1%"
+msgstr "Αρχεία: %1%"
+
 #: win32/DirectoryListingFrame.cpp:1233 win32/QueueFrame.cpp:270
 #, boost-format
 msgid "Files: %1%"
@@ -1934,12 +1949,12 @@ msgstr "Αρχεία: %1%"
 msgid "Filter hubs"
 msgstr "Φ&ίλτρο"
 
-#: win32/SearchFrame.cpp:285
+#: win32/SearchFrame.cpp:284
 #, fuzzy
 msgid "Filter search results"
 msgstr "Εισάγετε όρο προς αναζήτηση"
 
-#: win32/SearchFrame.cpp:281
+#: win32/SearchFrame.cpp:280
 #, fuzzy
 msgid "Filter search results:"
 msgstr "Εισάγετε όρο προς αναζήτηση"
@@ -1994,13 +2009,13 @@ msgstr ""
 msgid "Finished"
 msgstr "Ολοκληρώθηκε"
 
-#: win32/FinishedDLFrame.cpp:27 win32/MainWindow.cpp:355
-#: win32/MainWindow.cpp:465 win32/TabsPage.cpp:42
+#: win32/FinishedDLFrame.cpp:27 win32/MainWindow.cpp:356
+#: win32/MainWindow.cpp:466 win32/TabsPage.cpp:42
 msgid "Finished Downloads"
 msgstr "Ληφθέντα"
 
-#: win32/FinishedULFrame.cpp:27 win32/MainWindow.cpp:357
-#: win32/MainWindow.cpp:467 win32/TabsPage.cpp:43
+#: win32/FinishedULFrame.cpp:27 win32/MainWindow.cpp:358
+#: win32/MainWindow.cpp:468 win32/TabsPage.cpp:43
 msgid "Finished Uploads"
 msgstr "Ανεβασμένα"
 
@@ -2008,7 +2023,7 @@ msgstr "Ανεβασμένα"
 msgid "Fire a balloon popup example"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:139
+#: win32/UserInfoBase.cpp:140
 msgid "Fireball"
 msgstr ""
 
@@ -2026,7 +2041,7 @@ msgstr "Μορφοποίηση"
 msgid "Free slots"
 msgstr "Ελάχιστος αριθμός θέσεων"
 
-#: win32/MainWindow.cpp:418
+#: win32/MainWindow.cpp:419
 msgid "Frequently asked questions"
 msgstr "Συχνές ερωτήσεις"
 
@@ -2047,7 +2062,7 @@ msgstr "Gb"
 msgid "General"
 msgstr ""
 
-#: win32/CertificatesPage.cpp:98
+#: win32/CertificatesPage.cpp:99
 msgid "Generate certificates"
 msgstr "Δημιουργία πιστοποιητικών"
 
@@ -2056,16 +2071,16 @@ msgstr "Δημιουργία πιστοποιητικών"
 msgid "Generated by %1%"
 msgstr ""
 
-#: win32/MainWindow.cpp:333
+#: win32/MainWindow.cpp:334
 msgid "GeoIP database update"
 msgstr "Ενημέρωση Βάσης Δεδομένων GeoIP"
 
-#: win32/MainWindow.cpp:409
+#: win32/MainWindow.cpp:410
 msgid "Get started"
 msgstr "Ξεκινώντας"
 
 #: win32/ADLSProperties.cpp:102 win32/ListFilter.cpp:154
-#: win32/SearchFrame.cpp:206
+#: win32/SearchFrame.cpp:205
 msgid "GiB"
 msgstr "Gb"
 
@@ -2074,11 +2089,11 @@ msgstr "Gb"
 msgid "Global application style"
 msgstr "Επιβεβαίωση τερματισμού του προγράμματος"
 
-#: win32/WinUtil.cpp:1662 win32/UserInfoBase.h:176
+#: win32/WinUtil.cpp:1663 win32/UserInfoBase.h:176
 msgid "Grant &extra slot"
 msgstr "Παραχώρηση επιπλέον θέσης"
 
-#: win32/PrivateFrame.cpp:438
+#: win32/PrivateFrame.cpp:440
 msgid ""
 "Grants the remote user a slot. Once they connect, or if they don't connect "
 "in 10 minutes, the granted slot is removed."
@@ -2116,28 +2131,28 @@ msgstr "Ανάκτηση χώρας του χρήστη βάσει της IP"
 msgid "HTTP Proxy (for hublist only)"
 msgstr "HTTP Proxy (Μόνο για τη λίστα δημοσίων κυψελών)"
 
-#: win32/AppearancePage.cpp:81
+#: win32/AppearancePage.cpp:82
 msgid "Height of the message editing box"
 msgstr "Ύψος πεδίου επεξεργασίας μηνυμάτων"
 
-#: win32/WinUtil.cpp:1142
+#: win32/WinUtil.cpp:1143
 msgid "Help"
 msgstr "Βοήθεια"
 
-#: win32/MainWindow.cpp:408
+#: win32/MainWindow.cpp:409
 msgid "Help &Contents\tF1"
 msgstr "Περιεχόμενα στη Βοήθεια\tF1"
 
-#: win32/MainWindow.cpp:419
+#: win32/MainWindow.cpp:420
 msgid "Help center"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:119
+#: win32/UserInfoBase.cpp:120
 #, fuzzy
 msgid "Hidden user"
 msgstr "Παθητικός Χρήστης"
 
-#: win32/SearchFrame.cpp:232
+#: win32/SearchFrame.cpp:231
 msgid "Hide files already in share"
 msgstr "Απόκρυψη ήδη κοινόχρηστων αρχείων"
 
@@ -2161,7 +2176,7 @@ msgstr "Μέγιστο μέγεθος υψηλότατης προτεραιότ�
 msgid "Highlighted tab"
 msgstr ""
 
-#: win32/WinUtil.cpp:558
+#: win32/WinUtil.cpp:559
 msgid ""
 "Highlights the last occourrence of the specified search string in the chat "
 "window."
@@ -2171,16 +2186,16 @@ msgstr ""
 msgid "History"
 msgstr "Ιστορικό"
 
-#: win32/SearchFrame.cpp:50
+#: win32/SearchFrame.cpp:49
 msgid "Hits"
 msgstr ""
 
-#: win32/MainWindow.cpp:416
+#: win32/MainWindow.cpp:417
 #, fuzzy
 msgid "Homepage"
 msgstr "Δικτυακός τόπος DC++"
 
-#: win32/FavHubProperties.cpp:74 win32/SearchFrame.cpp:57 win32/TabsPage.cpp:36
+#: win32/FavHubProperties.cpp:74 win32/SearchFrame.cpp:56 win32/TabsPage.cpp:36
 #: win32/TransferView.cpp:51 win32/UCPage.cpp:38 win32/FinishedFrameBase.h:742
 msgid "Hub"
 msgstr "Κυψέλη"
@@ -2207,12 +2222,12 @@ msgstr "Διεύθυνση hub (δείτε στην βοήθεια για το �
 msgid "Hub address cannot be empty"
 msgstr "Η διεύθυνση της κυψέλης δεν μπορεί να είναι κενή"
 
-#: win32/MainWindow.cpp:975
+#: win32/MainWindow.cpp:984
 #, fuzzy
 msgid "Hub address or Magnet link"
 msgstr "Διεύθυνση hub (δείτε στην βοήθεια για το πως χρησιμοποιήτε)"
 
-#: win32/FavHubsFrame.cpp:232 win32/HubFrame.cpp:1247
+#: win32/FavHubsFrame.cpp:232 win32/HubFrame.cpp:1248
 msgid "Hub already exists as a favorite"
 msgstr "Η κυψέλη υπάρχει ήδη στις αγαπημένες"
 
@@ -2226,7 +2241,7 @@ msgstr "Η λίστα των hub κατέβηκε%1% (%2%)"
 msgid "Hub offline"
 msgstr "Χρήστης Εκτός Σύνδεσης"
 
-#: win32/UserInfoBase.cpp:123
+#: win32/UserInfoBase.cpp:124
 msgid "Hub operator"
 msgstr ""
 
@@ -2238,7 +2253,7 @@ msgstr ""
 msgid "Hublist"
 msgstr "Λίστα κυψελών"
 
-#: win32/HistoryPage.cpp:80 win32/SearchFrame.cpp:238
+#: win32/HistoryPage.cpp:80 win32/SearchFrame.cpp:237
 msgid "Hubs"
 msgstr "Κυψέλες"
 
@@ -2255,17 +2270,17 @@ msgstr "Κυψέλες"
 msgid "Hubs (registered)"
 msgstr ""
 
-#: win32/SearchFrame.cpp:252
+#: win32/SearchFrame.cpp:251
 #, fuzzy
 msgid "Hubs where I'm op"
 msgstr "Μόνο όπου είμαι OP"
 
-#: win32/SearchFrame.cpp:254
+#: win32/SearchFrame.cpp:253
 msgid "Hubs with secure transfers"
 msgstr ""
 
-#: win32/MainWindow.cpp:1206 win32/PublicHubsFrame.cpp:260
-#: win32/UserInfoBase.cpp:105
+#: win32/MainWindow.cpp:1215 win32/PublicHubsFrame.cpp:260
+#: win32/UserInfoBase.cpp:106
 #, boost-format
 msgid "Hubs: %1%"
 msgstr "Κυψέλες: %1%"
@@ -2275,8 +2290,8 @@ msgstr "Κυψέλες: %1%"
 msgid "Hubs: %1% / %2%"
 msgstr "Κυψέλες: %1% / %2%"
 
-#: win32/HubFrame.cpp:64 win32/ProxyPage.cpp:79 win32/SearchFrame.cpp:59
-#: win32/TransferView.cpp:57 win32/UserInfoBase.cpp:154
+#: win32/HubFrame.cpp:64 win32/ProxyPage.cpp:79 win32/SearchFrame.cpp:58
+#: win32/TransferView.cpp:57 win32/UserInfoBase.cpp:155
 #: win32/UserMatchDlg.cpp:222 win32/UserMatchPage.cpp:215
 msgid "IP"
 msgstr "Διεύθυνση IP"
@@ -2289,7 +2304,7 @@ msgstr ""
 msgid "IP (v6)"
 msgstr ""
 
-#: win32/MainWindow.cpp:1648
+#: win32/MainWindow.cpp:1667
 msgid ""
 "IP -> country mappings are disabled. Turn them back on via Settings > "
 "Appearance."
@@ -2324,7 +2339,7 @@ msgstr "Αναγνώριση (κενό για τις προεπιλογές)"
 msgid "Idle"
 msgstr "Αδρανής"
 
-#: win32/WinUtil.cpp:555
+#: win32/WinUtil.cpp:556
 msgid ""
 "If no parameter is specified, it launches the log for the hub or private "
 "chat with the associated application in Windows. If one of the parameters is "
@@ -2355,7 +2370,7 @@ msgstr "Να αγνοούνται προσωπικά μηνύματα από τ�
 msgid "Ignored message: %1%"
 msgstr "Μήνυμα που αγνοήθηκε: %1%"
 
-#: win32/UserInfoBase.cpp:125
+#: win32/UserInfoBase.cpp:126
 #, fuzzy
 msgid "In away mode"
 msgstr "Κατάσταση απουσίας ανενεργή"
@@ -2365,7 +2380,7 @@ msgstr "Κατάσταση απουσίας ανενεργή"
 msgid "Increase priority"
 msgstr "Ορισμός Προτεραιότητας"
 
-#: win32/MainWindow.cpp:375
+#: win32/MainWindow.cpp:376
 msgid "Indexing progress"
 msgstr "Προόδος δεικτοποίησης"
 
@@ -2391,19 +2406,19 @@ msgstr "Έλεγχος ακεραιότητας: %1% (%2%)"
 msgid "Invalid extension: %1%"
 msgstr ""
 
-#: win32/MainWindow.cpp:1406
+#: win32/MainWindow.cpp:1425
 msgid "Invalid file list name"
 msgstr "Άκυρο όνομα λίστας αρχείων"
 
-#: win32/SearchFrame.cpp:1020
+#: win32/SearchFrame.cpp:1018
 msgid "Invalid input value for TTH search"
 msgstr ""
 
-#: win32/WinUtil.cpp:615 win32/WinUtil.cpp:623
+#: win32/WinUtil.cpp:616 win32/WinUtil.cpp:624
 msgid "Invalid number of slots"
 msgstr "Άκυρος αριθμός θέσεων"
 
-#: win32/WinUtil.cpp:683 win32/WinUtil.cpp:691
+#: win32/WinUtil.cpp:684 win32/WinUtil.cpp:692
 msgid "Invalid speed value"
 msgstr ""
 
@@ -2441,7 +2456,7 @@ msgstr "Εμφάνιση εισόδου/εξόδου ενεργή"
 msgid "Joins <hub-ip>. See also Open new window when using /join."
 msgstr "Άνοιγμα νέου παραθύρου με την χρήση /join"
 
-#: win32/HubFrame.cpp:1044
+#: win32/HubFrame.cpp:1045
 #, boost-format
 msgid "Joins: %1%"
 msgstr ""
@@ -2459,7 +2474,7 @@ msgstr "Παραμονή διπλών αρχείων στη λίστα σας"
 msgid "Keep finished files in the queue"
 msgstr "Να διατηρούνται τα τελειωμένα αρχεία στην σειρά"
 
-#: win32/AppearancePage.cpp:90
+#: win32/AppearancePage.cpp:91
 msgid "Keep it between"
 msgstr "Να είναι μεταξύ"
 
@@ -2471,7 +2486,7 @@ msgstr "Αναζήτηση"
 #: win32/ADLSProperties.cpp:100 win32/ExpertsPage.cpp:45
 #: win32/ExpertsPage.cpp:48 win32/ListFilter.cpp:158 win32/QueuePage.cpp:72
 #: win32/QueuePage.cpp:78 win32/QueuePage.cpp:84 win32/QueuePage.cpp:90
-#: win32/QueuePage.cpp:138 win32/SearchFrame.cpp:204
+#: win32/QueuePage.cpp:138 win32/SearchFrame.cpp:203
 msgid "KiB"
 msgstr "Kb"
 
@@ -2479,11 +2494,11 @@ msgstr "Kb"
 msgid "KiB/s"
 msgstr "Kb/δευτ."
 
-#: win32/AppearancePage.cpp:108
+#: win32/AppearancePage.cpp:109
 msgid "Language"
 msgstr "Γλώσσα"
 
-#: win32/PrivateFrame.cpp:417
+#: win32/PrivateFrame.cpp:419
 #, fuzzy, boost-format
 msgid "Last message occured %1%"
 msgstr "Προσωπικό μήνυμα από %1%: %2%"
@@ -2492,25 +2507,25 @@ msgstr "Προσωπικό μήνυμα από %1%: %2%"
 msgid "Latest stable version"
 msgstr "Τελευταία σταθερή έκδοση"
 
-#: win32/WinUtil.cpp:551
+#: win32/WinUtil.cpp:552
 msgid ""
 "Launches your default web browser to the DuckDuckGo search engine with the "
 "specified search."
 msgstr ""
 
-#: win32/WinUtil.cpp:552
+#: win32/WinUtil.cpp:553
 msgid ""
 "Launches your default web browser to the Google search engine with the "
 "specified search."
 msgstr ""
 
-#: win32/WinUtil.cpp:553
+#: win32/WinUtil.cpp:554
 msgid ""
 "Launches your default web browser to the Internet Movie Database (imdb) with "
 "the specified query."
 msgstr ""
 
-#: win32/WinUtil.cpp:557
+#: win32/WinUtil.cpp:558
 msgid "Launches your default web browser with the given URL."
 msgstr ""
 
@@ -2531,7 +2546,7 @@ msgstr "Όρια"
 msgid "Line speed (upload)"
 msgstr "Ταχύτητα γραμμής (ανέβασμα)"
 
-#: win32/MainWindow.cpp:415 win32/StylesPage.cpp:167
+#: win32/MainWindow.cpp:416 win32/StylesPage.cpp:167
 #, fuzzy
 msgid "Links"
 msgstr "Είσοδος"
@@ -2540,7 +2555,7 @@ msgstr "Είσοδος"
 msgid "List configuration"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:447
+#: win32/PrivateFrame.cpp:449
 msgid "Lists the date and time when the last message was sent or received."
 msgstr ""
 
@@ -2607,7 +2622,7 @@ msgstr "Καταγραφή"
 msgid "Login"
 msgstr "Είσοδος"
 
-#: win32/HubFrame.cpp:1150
+#: win32/HubFrame.cpp:1151
 msgid "Login timeout, disconnecting and waiting for next attempt..."
 msgstr ""
 
@@ -2628,12 +2643,12 @@ msgid "Lowest"
 msgstr "Χαμηλότατη"
 
 #: win32/ExpertsPage.cpp:110 win32/SearchTypesPage.cpp:85
-#: win32/UploadFilteringPage.cpp:95 win32/UploadFilteringPage.cpp:111
-#: win32/UploadFilteringPage.cpp:127
+#: win32/UploadFilteringPage.cpp:97 win32/UploadFilteringPage.cpp:113
+#: win32/UploadFilteringPage.cpp:129
 msgid "M&odify"
 msgstr ""
 
-#: win32/MagnetDlg.cpp:121 win32/WinUtil.cpp:1552
+#: win32/MagnetDlg.cpp:121 win32/WinUtil.cpp:1553
 msgid "MAGNET Link detected"
 msgstr "Ανιχνεύτηκε σύνδεσμος MAGNET"
 
@@ -2642,7 +2657,7 @@ msgstr "Ανιχνεύτηκε σύνδεσμος MAGNET"
 msgid "MB"
 msgstr "Mb"
 
-#: win32/WinUtil.cpp:94
+#: win32/WinUtil.cpp:95
 #, fuzzy
 msgid "Main chat message received"
 msgstr "Κάθε φορά που λαμβάνεται μήνυμα στην κεντρική συνομιλία"
@@ -2657,7 +2672,7 @@ msgstr "Διαχείρηση &Ομάδων"
 msgid "Manual configuration"
 msgstr "Προσωπικές Πληροφορίες"
 
-#: win32/WinUtil.cpp:542
+#: win32/WinUtil.cpp:543
 msgid ""
 "Manually refreshes FearDC's share list by going through the shared "
 "directories and adding new folders and files. FearDC automatically refreshes "
@@ -2669,7 +2684,7 @@ msgstr ""
 msgid "Match bots"
 msgstr ""
 
-#: win32/MainWindow.cpp:322
+#: win32/MainWindow.cpp:323
 msgid "Match downloaded lists"
 msgstr "Ταύτιση κατεβασμένων λιστών"
 
@@ -2747,7 +2762,7 @@ msgstr "Μέγιστη ταχύτητα κατεβάσματος (KiB/s) (0 = α
 msgid "Maximum Upload Rate (KiB/s) (0 = infinite)"
 msgstr "Μέγιστη ταχύτητα ανεβάσματος (KiB/s) (0 = απεριόριστο)"
 
-#: win32/HistoryPage.cpp:85 win32/MainWindow.cpp:883
+#: win32/HistoryPage.cpp:85 win32/MainWindow.cpp:891
 msgid "Maximum number of recent items to save"
 msgstr "Μέγιστος αριθμός προσφατων αντικειμένων που θα αποθηκεύονται"
 
@@ -2755,7 +2770,7 @@ msgstr "Μέγιστος αριθμός προσφατων αντικειμέν�
 msgid "Maximum simultaneous downloads (0 = infinite)"
 msgstr "Μέγιστος αριθμός ταυτόχρονων λήψεων (0 = άπειρος)"
 
-#: win32/MainWindow.cpp:377
+#: win32/MainWindow.cpp:378
 #, fuzzy
 msgid "Menu bar\tCtrl+0"
 msgstr "Γραμμή κατάστασης\tCtrl+3"
@@ -2766,7 +2781,7 @@ msgid "Message through hub: %1%"
 msgstr ""
 
 #: win32/ADLSProperties.cpp:101 win32/ExpertsPage.cpp:49
-#: win32/ListFilter.cpp:156 win32/SearchFrame.cpp:205
+#: win32/ListFilter.cpp:156 win32/SearchFrame.cpp:204
 msgid "MiB"
 msgstr "Mb"
 
@@ -2826,7 +2841,7 @@ msgstr ""
 msgid "Modify value"
 msgstr ""
 
-#: win32/CertificatesPage.cpp:106
+#: win32/CertificatesPage.cpp:107
 #, fuzzy
 msgid "Most of these options require that you restart FearDC."
 msgstr "Σημείωση: Οι περισσότερες αλλαγές εδώ απαιτούν επανεκκίνηση του DC++"
@@ -2843,7 +2858,7 @@ msgstr "Μετακίνηση &κάτω"
 msgid "Move &Up"
 msgstr "Μετακίνηση &πάνω"
 
-#: win32/UserInfoBase.cpp:145
+#: win32/UserInfoBase.cpp:146
 msgid "NAT"
 msgstr ""
 
@@ -2869,7 +2884,7 @@ msgstr "Το όνομα και η εντολή δεν μπορούν να είν
 msgid "Name of the new search type"
 msgstr ""
 
-#: win32/UploadPage.cpp:239 win32/UploadPage.cpp:296
+#: win32/UploadPage.cpp:221 win32/UploadPage.cpp:278
 msgid "Name under which the others see the directory"
 msgstr "Όνομα φακέλου που βλέπουν οι άλλοι"
 
@@ -2883,15 +2898,15 @@ msgstr "Μέσος όρος: %1%"
 msgid "Name: %1%"
 msgstr "Μέσος όρος: %1%"
 
-#: win32/MainWindow.cpp:368 win32/MainWindow.cpp:473 win32/StatsFrame.cpp:31
+#: win32/MainWindow.cpp:369 win32/MainWindow.cpp:474 win32/StatsFrame.cpp:31
 msgid "Network Statistics"
 msgstr "Στατιστικά Δικτύου"
 
-#: win32/CertificatesPage.cpp:124
+#: win32/CertificatesPage.cpp:125
 msgid "New certificates are successfully generated."
 msgstr ""
 
-#: win32/MainWindow.cpp:943
+#: win32/MainWindow.cpp:951
 #, fuzzy
 msgid "New limit (KiB/s) (0 = infinite)"
 msgstr "Μέγιστη ταχύτητα ανεβάσματος (KiB/s) (0 = απεριόριστο)"
@@ -2905,7 +2920,7 @@ msgstr "Όνομα"
 msgid "New search type"
 msgstr ""
 
-#: win32/UploadPage.cpp:248
+#: win32/UploadPage.cpp:230
 msgid "New virtual name matches old name, skipping..."
 msgstr "Το νέο όνομα ταυτίζεται με το παλιό, παραλείπεται..."
 
@@ -2922,16 +2937,16 @@ msgid "Nicks"
 msgstr "Ψευδώνυμα"
 
 #: win32/ADLSearchFrame.cpp:330 win32/NotificationsPage.cpp:280
-#: win32/NotificationsPage.cpp:286 win32/WinUtil.cpp:1176
+#: win32/NotificationsPage.cpp:286 win32/WinUtil.cpp:1177
 #: win32/FinishedFrameBase.h:262
 msgid "No"
 msgstr "Όχι"
 
-#: win32/WinUtil.cpp:643
+#: win32/WinUtil.cpp:644
 msgid "No away message"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:363
+#: win32/PrivateFrame.cpp:365
 msgid "No direct encrypted channel available"
 msgstr ""
 
@@ -2939,7 +2954,7 @@ msgstr ""
 msgid "No errors"
 msgstr "Χωρίς σφάλματα"
 
-#: win32/MainWindow.cpp:1042
+#: win32/MainWindow.cpp:1051
 msgid "No favorite hub group found"
 msgstr "Δεν έχει βρεθεί ομάδα αγαπημένων hub"
 
@@ -2951,7 +2966,7 @@ msgstr ""
 msgid "No full tree available"
 msgstr "Ολόκληρη διαδρομή μη διαθέσιμη"
 
-#: win32/WinUtil.cpp:1107
+#: win32/WinUtil.cpp:1108
 #, fuzzy
 msgid "No help information available"
 msgstr "Το αρχείο δεν είναι διαθέσιμο"
@@ -2990,8 +3005,8 @@ msgstr "Δεν υπάρχουν χρήστες να κατέβει"
 msgid "Noon"
 msgstr "Μεσημέρι"
 
-#: win32/QueueFrame.cpp:406 win32/QueueFrame.cpp:995 win32/SearchFrame.cpp:191
-#: win32/TransferView.cpp:551 win32/UserInfoBase.cpp:130
+#: win32/QueueFrame.cpp:406 win32/QueueFrame.cpp:995 win32/SearchFrame.cpp:190
+#: win32/TransferView.cpp:551 win32/UserInfoBase.cpp:131
 msgid "Normal"
 msgstr "Κανονική"
 
@@ -2999,11 +3014,11 @@ msgstr "Κανονική"
 msgid "Normal prio max size"
 msgstr "Μέγιστο μέγεθος κανονικής προτεραιότητας"
 
-#: win32/CertificatesPage.cpp:107
+#: win32/CertificatesPage.cpp:108
 msgid "Note: TLS might not protect search results and non-keyprinted hubs."
 msgstr ""
 
-#: win32/AppearancePage.cpp:115
+#: win32/AppearancePage.cpp:116
 #, fuzzy
 msgid "Note: some of these options require that you restart FearDC"
 msgstr "Σημείωση: Οι περισσότερες αλλαγές εδώ απαιτούν επανεκκίνηση του DC++"
@@ -3023,7 +3038,7 @@ msgstr ""
 "Σημείωση: Επειδή οι ταχύτητες λήψεων \"παίζουν\", αυτό δεν θα είναι 100% "
 "ακριβές..."
 
-#: win32/MainWindow.cpp:485 win32/NotepadFrame.cpp:32
+#: win32/MainWindow.cpp:486 win32/NotepadFrame.cpp:33
 msgid "Notepad"
 msgstr "Σημειωματάριο"
 
@@ -3032,11 +3047,11 @@ msgstr "Σημειωματάριο"
 msgid "Notifications"
 msgstr "Ήχος ειδοποίησης"
 
-#: win32/WinUtil.cpp:1122
+#: win32/WinUtil.cpp:1123
 msgid "OK"
 msgstr "ΟΚ"
 
-#: win32/UsersFrame.cpp:345 win32/UsersFrame.cpp:360 win32/WinUtil.cpp:744
+#: win32/UsersFrame.cpp:345 win32/UsersFrame.cpp:360 win32/WinUtil.cpp:745
 msgid "Offline"
 msgstr "Αποσυνδεδεμένος"
 
@@ -3049,7 +3064,7 @@ msgstr "Συνδεδεμένος"
 msgid "Online users"
 msgstr "Αγαπημένοι χρήστες"
 
-#: win32/UploadFilteringPage.cpp:67
+#: win32/UploadFilteringPage.cpp:69
 msgid "Only share files whose file size is above/below"
 msgstr ""
 
@@ -3062,27 +3077,27 @@ msgstr "Εμφάνισε μόνο τα ολοκληρωμένα ληφθέντα
 msgid "Only show joins / parts for favorite users"
 msgstr "Εμφάνιση εισόδου/εξόδου μόνο των αγαπημένων χρηστών"
 
-#: win32/SearchFrame.cpp:226
+#: win32/SearchFrame.cpp:225
 msgid "Only users with free slots"
 msgstr "Μόνο χρήστες με ελεύθερες θέσεις"
 
-#: win32/SystemFrame.cpp:126 win32/FinishedFrameBase.h:464
+#: win32/SystemFrame.cpp:132 win32/FinishedFrameBase.h:464
 msgid "Open &folder"
 msgstr "Άνοιγμα &φακέλου"
 
-#: win32/MainWindow.cpp:327
+#: win32/MainWindow.cpp:328
 msgid "Open crash log"
 msgstr ""
 
-#: win32/MainWindow.cpp:326 win32/MainWindow.cpp:475 win32/MainWindow.cpp:1895
+#: win32/MainWindow.cpp:327 win32/MainWindow.cpp:476 win32/MainWindow.cpp:1927
 msgid "Open downloads directory"
 msgstr "Άνοιγμα φακέλου ληφθέντων αρχείων"
 
-#: win32/MainWindow.cpp:477
+#: win32/MainWindow.cpp:478
 msgid "Open file list..."
 msgstr "Άνοιγμα λίστας αρχείων..."
 
-#: win32/MainWindow.cpp:320
+#: win32/MainWindow.cpp:321
 msgid "Open file list...\tCtrl+L"
 msgstr "Άνοιγμα λίστας αρχείων...\tCtrl+L"
 
@@ -3098,7 +3113,7 @@ msgstr "Άνοιγμα παραθύρων νέων προσωπικών μηνυ
 msgid "Open new window when using /join"
 msgstr "Άνοιγμα νέου παραθύρου με την χρήση /join"
 
-#: win32/MainWindow.cpp:321 win32/MainWindow.cpp:479
+#: win32/MainWindow.cpp:322 win32/MainWindow.cpp:480
 msgid "Open own list"
 msgstr "Άνοιγμα της λίστας αρχείων που διαθέτετε"
 
@@ -3118,7 +3133,7 @@ msgstr "Εμφάνιση προσωπικών μηνυμάτων σε νέο π�
 msgid "OpenSSL version"
 msgstr ""
 
-#: win32/WinUtil.cpp:546
+#: win32/WinUtil.cpp:547
 msgid ""
 "Opens a new search window with the specified search string. It does not "
 "automatically send the search."
@@ -3130,17 +3145,17 @@ msgid ""
 "message, if one was specified."
 msgstr ""
 
-#: win32/WinUtil.cpp:562
+#: win32/WinUtil.cpp:563
 msgid "Opens the internal settings list debugging tool window."
 msgstr ""
 
-#: win32/WinUtil.cpp:459
+#: win32/WinUtil.cpp:460
 #, boost-format
 msgid "Operators (added by %1%)"
 msgstr ""
 
-#: win32/ACFrame.cpp:142 win32/AppearancePage.cpp:63
-#: win32/UploadFilteringPage.cpp:58
+#: win32/ACFrame.cpp:142 win32/AppearancePage.cpp:64
+#: win32/UploadFilteringPage.cpp:60
 msgid "Options"
 msgstr "Επιλογές"
 
@@ -3148,7 +3163,7 @@ msgstr "Επιλογές"
 msgid "Other queue options"
 msgstr "Άλλες επιλογές για τα αρχεία σε αναμονή"
 
-#: win32/CertificatesPage.cpp:78
+#: win32/CertificatesPage.cpp:79
 msgid "Own certificate file"
 msgstr "Αρχείο πιστοποιητικού που διαθέτετε"
 
@@ -3168,11 +3183,11 @@ msgstr "Παράμετροι"
 msgid "Partial file list loaded"
 msgstr ""
 
-#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1169
+#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1170
 msgid "Partial match"
 msgstr ""
 
-#: win32/HubFrame.cpp:1073
+#: win32/HubFrame.cpp:1074
 #, boost-format
 msgid "Parts: %1%"
 msgstr ""
@@ -3190,16 +3205,16 @@ msgstr "Παθητικός Χρήστης"
 msgid "Password"
 msgstr "Κωδικός πρόσβασης"
 
-#: win32/QueueFrame.cpp:57 win32/SearchFrame.cpp:54 win32/TransferView.cpp:48
+#: win32/QueueFrame.cpp:57 win32/SearchFrame.cpp:53 win32/TransferView.cpp:48
 #: win32/FinishedFrameBase.h:728
 msgid "Path"
 msgstr "Διαδρομή"
 
-#: win32/UploadFilteringPage.cpp:118
+#: win32/UploadFilteringPage.cpp:120
 msgid "Path filtering"
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:128
+#: win32/UploadFilteringPage.cpp:130
 #, fuzzy
 msgid "Paths"
 msgstr "Διαδρομή"
@@ -3251,7 +3266,7 @@ msgstr ""
 msgid "Play a sound"
 msgstr "Χρώματα και ήχοι"
 
-#: win32/WinUtil.cpp:503
+#: win32/WinUtil.cpp:504
 msgid "Please enter a nickname in the settings dialog!"
 msgstr "Παρακαλώ εισάγετε ένα ψευδώνυμο στο παράθυρο των ρυθμίσεων!"
 
@@ -3273,17 +3288,17 @@ msgstr ""
 msgid "Plugin information"
 msgstr "Προσωπικές πληροφορίες"
 
-#: win32/MainWindow.cpp:427
+#: win32/MainWindow.cpp:428
 msgid "Plugin repository"
 msgstr ""
 
-#: win32/MainWindow.cpp:336 win32/MainWindow.cpp:489 win32/MainWindow.cpp:896
+#: win32/MainWindow.cpp:337 win32/MainWindow.cpp:490 win32/MainWindow.cpp:904
 #: win32/PluginPage.cpp:252 win32/PluginPage.cpp:337
 #: win32/SettingsDialog.cpp:199
 msgid "Plugins"
 msgstr ""
 
-#: win32/WindowsPage.cpp:43
+#: win32/WindowsPage.cpp:42
 msgid "Popup box to input password for hubs"
 msgstr "Ανάδυση παραθύρου προς εισαγωγή κωδικού πρόσβασης της κυψέλης"
 
@@ -3314,11 +3329,11 @@ msgstr ""
 msgid "Priority"
 msgstr "Προτεραιότητα"
 
-#: win32/CertificatesPage.cpp:70
+#: win32/CertificatesPage.cpp:71
 msgid "Private key file"
 msgstr "Αρχείο ιδιωτικού κλειδιού"
 
-#: win32/HubFrame.cpp:1172
+#: win32/HubFrame.cpp:1173
 #, fuzzy, boost-format
 msgid "Private main chat message from %1%: %2%"
 msgstr "Προσωπικό μήνυμα από %1%: %2%"
@@ -3337,12 +3352,12 @@ msgstr "Προσωπικό μήνυμα"
 msgid "Private message from %1%: %2%"
 msgstr "Προσωπικό μήνυμα από %1%: %2%"
 
-#: win32/WinUtil.cpp:95
+#: win32/WinUtil.cpp:96
 #, fuzzy
 msgid "Private message received"
 msgstr "Προσωπικό μήνυμα"
 
-#: win32/WinUtil.cpp:96
+#: win32/WinUtil.cpp:97
 #, fuzzy
 msgid "Private message window opened"
 msgstr "Όταν ένα παράθυρο προσωπικής συνομιλίας είναι ανοιχτό"
@@ -3363,7 +3378,7 @@ msgstr ""
 msgid "Proxy settings for outgoing connections"
 msgstr ""
 
-#: win32/MainWindow.cpp:454 win32/PublicHubsFrame.cpp:88
+#: win32/MainWindow.cpp:455 win32/PublicHubsFrame.cpp:88
 msgid "Public Hubs"
 msgstr "Δημόσιες Κυψέλες"
 
@@ -3375,7 +3390,7 @@ msgstr "Λίστα Δημόσιων Κυψελών (Hublist)"
 msgid "Public Hubs list URL"
 msgstr "URL για τη Λίστα Δημόσιων Κυψελών"
 
-#: win32/SearchFrame.cpp:170
+#: win32/SearchFrame.cpp:169
 msgid "Purge"
 msgstr "Απαλοιφή"
 
@@ -3393,7 +3408,7 @@ msgstr "Στην σειρά αναμονής"
 msgid "Queued files: %1%"
 msgstr "Στην σειρά αναμονής"
 
-#: win32/MainWindow.cpp:975
+#: win32/MainWindow.cpp:984
 msgid "Quick Connect"
 msgstr "Άμεση σύνδεση"
 
@@ -3428,7 +3443,7 @@ msgstr "Εισαγωγή πηγής"
 msgid "Reached the %1% of the file list, continuing from the %2%"
 msgstr ""
 
-#: win32/SearchFrame.cpp:1149
+#: win32/SearchFrame.cpp:1146
 msgid "Ready to search..."
 msgstr "Έτοιμο προς αναζήτηση..."
 
@@ -3441,7 +3456,7 @@ msgstr "Είστε σίγουρος;"
 msgid "Really close?"
 msgstr "Είστε σίγουρος;"
 
-#: win32/MainWindow.cpp:1103
+#: win32/MainWindow.cpp:1112
 msgid "Really exit?"
 msgstr "Θέλετε να κλείσετε;"
 
@@ -3451,7 +3466,7 @@ msgstr "Θέλετε να κλείσετε;"
 msgid "Really remove?"
 msgstr "Θέλετε να αφαιρεθεί;"
 
-#: win32/WinUtil.cpp:554
+#: win32/WinUtil.cpp:555
 msgid ""
 "Rebuilds the HashIndex.xml and HashData.dat files, removing entries to files "
 "that are no longer shared, or old hashes for files that have since changed. "
@@ -3459,50 +3474,50 @@ msgid ""
 "rebuild is finished."
 msgstr ""
 
-#: win32/HubFrame.cpp:1090
+#: win32/HubFrame.cpp:1091
 #, boost-format
 msgid "Received a redirect request to %1%, click here to follow it"
 msgstr ""
 
-#: win32/HistoryPage.cpp:91 win32/MainWindow.cpp:875
+#: win32/HistoryPage.cpp:91 win32/MainWindow.cpp:883
 msgid "Recent PMs"
 msgstr "Πρόσφατα προσωπικά μηνύματα"
 
-#: win32/HistoryPage.cpp:94 win32/MainWindow.cpp:876
+#: win32/HistoryPage.cpp:94 win32/MainWindow.cpp:884
 msgid "Recent file lists"
 msgstr "Πρόσφατες λίστες αρχείων"
 
-#: win32/HistoryPage.cpp:88 win32/MainWindow.cpp:874
+#: win32/HistoryPage.cpp:88 win32/MainWindow.cpp:882
 msgid "Recent hubs"
 msgstr "Πρόσφατες κυψέλες"
 
-#: win32/MainWindow.cpp:481
+#: win32/MainWindow.cpp:482
 msgid "Recent windows"
 msgstr "Πρόσφατα παράθυρα"
 
-#: win32/MainWindow.cpp:456
+#: win32/MainWindow.cpp:457
 msgid "Reconnect"
 msgstr "Επανασύνδεση"
 
-#: win32/MainWindow.cpp:386
+#: win32/MainWindow.cpp:387
 #, fuzzy
 msgid "Reconnect disconnected hubs"
 msgstr "Κλείσιμο αποσυνδεδεμένων hubs"
 
-#: win32/HubFrame.cpp:1082 win32/HubFrame.cpp:1595
+#: win32/HubFrame.cpp:1083 win32/HubFrame.cpp:1604
 msgid "Redirect request received to a hub that's already connected"
 msgstr "Έγινε αίτημα εκτροπής προς μία ήδη συνδεδεμένη κυψέλη"
 
-#: win32/HubFrame.cpp:1590
+#: win32/HubFrame.cpp:1599
 msgid "Redirect request to an empty hub address"
 msgstr ""
 
-#: win32/MainWindow.cpp:487
+#: win32/MainWindow.cpp:488
 #, fuzzy
 msgid "Refresh file list"
 msgstr "Ανανέωση λίστας αρχείων\tF5"
 
-#: win32/MainWindow.cpp:323
+#: win32/MainWindow.cpp:324
 msgid "Refresh file list\tF5"
 msgstr "Ανανέωση λίστας αρχείων\tF5"
 
@@ -3527,11 +3542,11 @@ msgid "Register with Windows to handle magnet: URI links"
 msgstr "Εγγραφή στο μητρώο των Windows για χειρισμό των magnet: URI συνδέσμων"
 
 #: win32/ADLSearchFrame.cpp:44 win32/ADLSProperties.cpp:67
-#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1169
+#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1170
 msgid "Regular Expression"
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:96
+#: win32/UploadFilteringPage.cpp:98
 msgid "Regular expressions"
 msgstr ""
 
@@ -3565,7 +3580,7 @@ msgstr "Αφαίρεση αργών λιστών αρχείων"
 msgid "Remove source"
 msgstr "Αφαίρεση πηγής"
 
-#: win32/QueueFrame.cpp:1034 win32/WinUtil.cpp:1665 win32/UserInfoBase.h:180
+#: win32/QueueFrame.cpp:1034 win32/WinUtil.cpp:1666 win32/UserInfoBase.h:180
 msgid "Remove user from queue"
 msgstr "Αφαίρεση χρήστη από την σειρά αναμονής"
 
@@ -3577,11 +3592,11 @@ msgstr ""
 msgid "Rename a search type"
 msgstr ""
 
-#: win32/MainWindow.cpp:422
+#: win32/MainWindow.cpp:423
 msgid "Report a bug"
 msgstr "Αναφορά σφάλματος"
 
-#: win32/MainWindow.cpp:421
+#: win32/MainWindow.cpp:422
 msgid "Request a feature"
 msgstr "Αίτηση για προσθήκη δυνατότητας"
 
@@ -3620,19 +3635,19 @@ msgstr "SOCKS5"
 msgid "Save settings now"
 msgstr "Ρυθμίσεις"
 
-#: win32/ConnectivityManualPage.cpp:81 win32/MainWindow.cpp:469
-#: win32/NotepadFrame.cpp:108 win32/RichTextBox.cpp:111
-#: win32/SearchFrame.cpp:124 win32/SearchFrame.cpp:176 win32/TabsPage.cpp:39
+#: win32/ConnectivityManualPage.cpp:81 win32/MainWindow.cpp:470
+#: win32/RichTextBox.cpp:111 win32/SearchFrame.cpp:123
+#: win32/SearchFrame.cpp:175 win32/TabsPage.cpp:39
 msgid "Search"
 msgstr "Αναζήτηση"
 
-#: win32/SearchFrame.cpp:1022 win32/SearchFrame.cpp:1103
-#: win32/SearchFrame.cpp:1115 win32/SearchFrame.cpp:1145
+#: win32/SearchFrame.cpp:1020 win32/SearchFrame.cpp:1100
+#: win32/SearchFrame.cpp:1112 win32/SearchFrame.cpp:1142
 #, boost-format
 msgid "Search - %1%"
 msgstr "Αναζήτηση - %1%"
 
-#: win32/SearchFrame.cpp:1150
+#: win32/SearchFrame.cpp:1147
 msgid "Search - Ready to search..."
 msgstr "Αναζήτηση - Έτοιμο προς αναζήτηση..."
 
@@ -3644,16 +3659,21 @@ msgstr "Μενού Αναζήτησης"
 msgid "Search String"
 msgstr "Καταχώρηση προς αναζήτηση"
 
-#: win32/NotepadFrame.cpp:109
+#: win32/WinUtil.cpp:1742
 #, fuzzy
 msgid "Search by TTH"
 msgstr "Μενού Αναζήτησης"
 
-#: win32/SearchFrame.cpp:151
+#: win32/SearchFrame.cpp:150
 msgid "Search for"
 msgstr "Αναζήτηση για"
 
-#: win32/WinUtil.cpp:807
+#: win32/WinUtil.cpp:1736
+#, fuzzy, boost-format
+msgid "Search for \"%1%\""
+msgstr "Αναζήτηση για %1%..."
+
+#: win32/WinUtil.cpp:808
 msgid "Search for alternates"
 msgstr "Αναζήτηση εναλλακτικών πηγών"
 
@@ -3661,7 +3681,7 @@ msgstr "Αναζήτηση εναλλακτικών πηγών"
 msgid "Search history"
 msgstr "Ιστορικό αναζήτησης"
 
-#: win32/SearchFrame.cpp:221
+#: win32/SearchFrame.cpp:220
 msgid "Search options"
 msgstr "Επιλογές Αναζήτησης"
 
@@ -3675,7 +3695,7 @@ msgstr "Αναζήτηση για"
 msgid "Search port (v6)"
 msgstr "Αναζήτηση για"
 
-#: win32/HubFrame.cpp:1156
+#: win32/HubFrame.cpp:1157
 #, boost-format
 msgid "Search spam detected from %1%"
 msgstr "Μαζική αναζήτηση ανιχνεύθηκε από %1%"
@@ -3690,7 +3710,7 @@ msgstr "Κατάσκοπος αναζητήσεων"
 msgid "Search types"
 msgstr "Κατάσκοπος αναζητήσεων"
 
-#: win32/SearchFrame.cpp:1097
+#: win32/SearchFrame.cpp:1094
 #, boost-format
 msgid "Searching for %1%..."
 msgstr "Αναζήτηση για %1%..."
@@ -3700,7 +3720,7 @@ msgstr "Αναζήτηση για %1%..."
 msgid "Searching for: %1%"
 msgstr "Αναζήτηση για %1%..."
 
-#: win32/SearchFrame.cpp:1113 win32/SearchFrame.cpp:1143
+#: win32/SearchFrame.cpp:1110 win32/SearchFrame.cpp:1140
 #, boost-format
 msgid "Searching too soon, next search in %1% second"
 msgid_plural "Searching too soon, next search in %1% seconds"
@@ -3717,7 +3737,7 @@ msgstr ""
 msgid "Secondary Transfer Rate Limiting Settings"
 msgstr ""
 
-#: win32/CertificatesPage.cpp:104
+#: win32/CertificatesPage.cpp:105
 #, fuzzy
 msgid "Secure connection settings"
 msgstr "Άμεση σύνδεση"
@@ -3727,7 +3747,7 @@ msgstr "Άμεση σύνδεση"
 msgid "Security & certificates"
 msgstr "Πιστοποιητικά Ασφαλείας"
 
-#: win32/CertificatesPage.cpp:56
+#: win32/CertificatesPage.cpp:57
 #, fuzzy
 msgid "Security certificates"
 msgstr "Πιστοποιητικά Ασφαλείας"
@@ -3736,7 +3756,7 @@ msgstr "Πιστοποιητικά Ασφαλείας"
 msgid "Select &All\tCtrl+A"
 msgstr ""
 
-#: win32/MainWindow.cpp:1050
+#: win32/MainWindow.cpp:1059
 msgid "Select a favorite hub group"
 msgstr "Επιλέξτε μια ομάδα αγαπημένων hub"
 
@@ -3768,7 +3788,7 @@ msgid ""
 "Sends a private main chat message to the user if supported by hub, NMDC only."
 msgstr ""
 
-#: win32/WinUtil.cpp:548
+#: win32/WinUtil.cpp:549
 msgid ""
 "Sends a random FearDC advertising message to the chat, including a link to "
 "the FearDC homepage and the version number."
@@ -3778,7 +3798,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Διαχωριστικό"
 
-#: win32/FavHubsFrame.cpp:53 win32/UserInfoBase.cpp:136
+#: win32/FavHubsFrame.cpp:53 win32/UserInfoBase.cpp:137
 msgid "Server"
 msgstr "Διακομιστής"
 
@@ -3796,31 +3816,31 @@ msgstr ""
 msgid "Set priority"
 msgstr "Ορισμός Προτεραιότητας"
 
-#: win32/WinUtil.cpp:559
+#: win32/WinUtil.cpp:560
 msgid ""
 "Set the download speed limit in KiBs. Zero or omitted value disables the "
 "limit."
 msgstr ""
 
-#: win32/WinUtil.cpp:560
+#: win32/WinUtil.cpp:561
 msgid ""
 "Set the upload speed limit in KiBs. Zero or omitted value disables the limit."
 msgstr ""
 
-#: win32/WinUtil.cpp:549
+#: win32/WinUtil.cpp:550
 msgid ""
 "Sets Away status. New private message windows will be responded to, once, "
 "with the message you specified, or the default away message configured in "
 "the Personal information settings page."
 msgstr ""
 
-#: win32/WinUtil.cpp:545
+#: win32/WinUtil.cpp:546
 msgid ""
 "Sets the current number of download slots to the number you specify. If this "
 "is less than the current number of slots, no downloads are cancelled."
 msgstr ""
 
-#: win32/WinUtil.cpp:544
+#: win32/WinUtil.cpp:545
 msgid ""
 "Sets the current number of upload slots to the number you specify. If this "
 "is less than the current number of slots, no uploads are cancelled."
@@ -3831,12 +3851,12 @@ msgstr ""
 msgid "Setting name"
 msgstr "Ρυθμίσεις"
 
-#: win32/MainWindow.cpp:483 win32/MainWindow.cpp:1897
+#: win32/MainWindow.cpp:484 win32/MainWindow.cpp:1929
 #: win32/SettingsDialog.cpp:372
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: win32/MainWindow.cpp:330
+#: win32/MainWindow.cpp:331
 msgid "Settings\tCtrl+F3"
 msgstr "Ρυθμίσεις\tCtrl+F3"
 
@@ -3853,12 +3873,17 @@ msgstr "Ρυθμίσεις"
 msgid "Settings were exported to: "
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:61
+#: win32/UploadFilteringPage.cpp:63
 msgid "Share hidden files"
 msgstr "Διαμοιρασμός κρυφών αρχείων"
 
+#: win32/MainWindow.cpp:1230
+#, fuzzy, boost-format
+msgid "Share size: %1%"
+msgstr "Μέγεθος: %1%"
+
 #: win32/HubFrame.cpp:60 win32/HubFrame.cpp:439 win32/PublicHubsFrame.cpp:49
-#: win32/UserInfoBase.cpp:150
+#: win32/UserInfoBase.cpp:151
 msgid "Shared"
 msgstr "Συνεισφορά"
 
@@ -3888,7 +3913,7 @@ msgstr "Μενού εμφάνισης"
 msgid "Shell menus"
 msgstr "Μενού εμφανίσεων"
 
-#: win32/MainWindow.cpp:1894
+#: win32/MainWindow.cpp:1926
 msgid "Show"
 msgstr "Εμφάνιση"
 
@@ -3917,8 +3942,8 @@ msgstr ""
 msgid "Show user country in chat"
 msgstr ""
 
-#: win32/DirectoryListingFrame.cpp:65 win32/MainWindow.cpp:1758
-#: win32/QueueFrame.cpp:53 win32/SearchFrame.cpp:53 win32/SearchFrame.cpp:181
+#: win32/DirectoryListingFrame.cpp:65 win32/MainWindow.cpp:1790
+#: win32/QueueFrame.cpp:53 win32/SearchFrame.cpp:52 win32/SearchFrame.cpp:180
 #: win32/TransferView.cpp:55 win32/UploadPage.cpp:47
 msgid "Size"
 msgstr "Μέγεθος"
@@ -3946,15 +3971,15 @@ msgstr ""
 msgid "Skip zero-byte files"
 msgstr "Παράλειψη αρχείων μηδενικού μεγέθους (0b)"
 
-#: win32/PrivateFrame.cpp:400
+#: win32/PrivateFrame.cpp:402
 msgid "Slot granted"
 msgstr "Παραχωρήθηκε θέση"
 
-#: win32/SearchFrame.cpp:55 win32/UserInfoBase.cpp:163
+#: win32/SearchFrame.cpp:54 win32/UserInfoBase.cpp:164
 msgid "Slots"
 msgstr "Θέσεις"
 
-#: win32/WinUtil.cpp:613
+#: win32/WinUtil.cpp:614
 msgid "Slots set"
 msgstr "Ανάθεση θέσεων"
 
@@ -3993,7 +4018,7 @@ msgstr "Τύπος Πηγής"
 msgid "Source too slow"
 msgstr "Η πηγή είναι πολύ αργή"
 
-#: win32/WinUtil.cpp:543
+#: win32/WinUtil.cpp:544
 msgid "Speak as a third person."
 msgstr ""
 
@@ -4002,7 +4027,7 @@ msgstr ""
 msgid "Specified user is not online: %1%"
 msgstr ""
 
-#: win32/WinUtil.cpp:671
+#: win32/WinUtil.cpp:672
 msgid "Specify a URL"
 msgstr "Καθορισμός URL"
 
@@ -4010,8 +4035,8 @@ msgstr "Καθορισμός URL"
 msgid "Specify a name for this user matching definition"
 msgstr ""
 
-#: win32/WinUtil.cpp:629 win32/WinUtil.cpp:653 win32/WinUtil.cpp:659
-#: win32/WinUtil.cpp:665
+#: win32/WinUtil.cpp:630 win32/WinUtil.cpp:654 win32/WinUtil.cpp:660
+#: win32/WinUtil.cpp:666
 msgid "Specify a search string"
 msgstr "Καθορισμός μιας καταχώρισης προς αναζήτηση"
 
@@ -4042,7 +4067,7 @@ msgstr "Ξεκίνησε..."
 msgid "Start FearDC when Windows starts"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:542
+#: win32/PrivateFrame.cpp:549
 msgid "Start a direct encrypted channel"
 msgstr ""
 
@@ -4054,7 +4079,7 @@ msgstr "Εκκίνηση αναζήτησης για αυτό το αρχείο"
 msgid "Started..."
 msgstr "Ξεκίνησε..."
 
-#: win32/PrivateFrame.cpp:434
+#: win32/PrivateFrame.cpp:436
 msgid ""
 "Starts a direct encrypted communication channel to avoid spying on your "
 "private messages."
@@ -4074,20 +4099,20 @@ msgstr "Κατάσταση"
 msgid "Status / Time last seen"
 msgstr "Τελευταία φορά που φάνηκε"
 
-#: win32/MainWindow.cpp:380
+#: win32/MainWindow.cpp:381
 msgid "Status bar\tCtrl+3"
 msgstr "Γραμμή κατάστασης\tCtrl+3"
 
-#: win32/UserInfoBase.cpp:148
+#: win32/UserInfoBase.cpp:149
 #, fuzzy, boost-format
 msgid "Status: %1%"
 msgstr "Κατάσταση"
 
-#: win32/MainWindow.cpp:1245
+#: win32/MainWindow.cpp:1265
 msgid "Status: Available - Double-click to switch to Away"
 msgstr ""
 
-#: win32/MainWindow.cpp:1244
+#: win32/MainWindow.cpp:1264
 msgid "Status: Away - Double-click to switch to Available"
 msgstr ""
 
@@ -4107,8 +4132,13 @@ msgstr "Αφαίρεση λίστας"
 msgid "Support direct encrypted private message channels"
 msgstr ""
 
-#: win32/MainWindow.cpp:366 win32/SystemFrame.cpp:36 win32/TabsPage.cpp:40
+#: win32/SystemFrame.cpp:36 win32/TabsPage.cpp:40
 msgid "System Log"
+msgstr "Καταγραφή συστήματος"
+
+#: win32/MainWindow.cpp:367
+#, fuzzy
+msgid "System Log\tCtrl+O"
 msgstr "Καταγραφή συστήματος"
 
 #: win32/ListFilter.cpp:160
@@ -4116,7 +4146,7 @@ msgstr "Καταγραφή συστήματος"
 msgid "TB"
 msgstr "Tb"
 
-#: win32/UserInfoBase.cpp:142
+#: win32/UserInfoBase.cpp:143
 msgid "TLS"
 msgstr ""
 
@@ -4125,7 +4155,7 @@ msgid "TLS Keyprint"
 msgstr ""
 
 #: win32/AboutDlg.cpp:116 win32/DirectoryListingFrame.cpp:67
-#: win32/QueueFrame.cpp:61 win32/SearchFrame.cpp:60 win32/TransferView.cpp:1003
+#: win32/QueueFrame.cpp:61 win32/SearchFrame.cpp:59 win32/TransferView.cpp:1003
 msgid "TTH"
 msgstr "ΤΤΗ"
 
@@ -4146,23 +4176,23 @@ msgstr ""
 msgid "Tabs"
 msgstr "Καρτέλες"
 
-#: win32/HubFrame.cpp:62 win32/UserInfoBase.cpp:152 win32/UsersFrame.cpp:104
+#: win32/HubFrame.cpp:62 win32/UserInfoBase.cpp:153 win32/UsersFrame.cpp:104
 msgid "Tag"
 msgstr "Ετικέτα"
 
-#: win32/MainWindow.cpp:1536
+#: win32/MainWindow.cpp:1555
 msgid "Testing nags can be fully disabled via Settings > Advanced."
 msgstr ""
 
-#: win32/MainWindow.cpp:1532
+#: win32/MainWindow.cpp:1551
 msgid "Testing version of FearDC"
 msgstr ""
 
-#: win32/MainWindow.cpp:1533 win32/MainWindow.cpp:1544
+#: win32/MainWindow.cpp:1552 win32/MainWindow.cpp:1563
 msgid "Thank you for using a testing version of FearDC!"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:598
+#: win32/PrivateFrame.cpp:605
 msgid "The direct encrypted channel has been disconnected"
 msgstr ""
 
@@ -4182,7 +4212,7 @@ msgstr ""
 "\n"
 "Αν επιλέξετε 'Όχι', αυτά τα hubs θα μεταφερθούν στη γενική ομάδα."
 
-#: win32/MainWindow.cpp:1789
+#: win32/MainWindow.cpp:1821
 msgid ""
 "The menu bar is now hidden. Press Alt or F10 to temporarily bring it back "
 "into view."
@@ -4192,19 +4222,19 @@ msgstr ""
 msgid "The message cannot be delivered because the hub is offline."
 msgstr ""
 
-#: win32/PrivateFrame.cpp:465
+#: win32/PrivateFrame.cpp:467
 msgid "The message cannot be delivered because the user is offline."
 msgstr ""
 
-#: win32/WinUtil.cpp:1576
+#: win32/WinUtil.cpp:1577
 msgid "The requested link is "
 msgstr ""
 
-#: win32/PrivateFrame.cpp:346
+#: win32/PrivateFrame.cpp:348
 msgid "The user does not support secure encrypted connections"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:347
+#: win32/PrivateFrame.cpp:349
 msgid "The user does not support the CCPM ADC extension"
 msgstr ""
 
@@ -4216,7 +4246,7 @@ msgstr ""
 msgid "This hub does not support MCTo extension."
 msgstr ""
 
-#: win32/HubFrame.cpp:1257
+#: win32/HubFrame.cpp:1258
 msgid "This hub is not a favorite hub"
 msgstr "Αυτή η κυψέλη δεν υπάρχει στις αγαπημένες"
 
@@ -4224,7 +4254,7 @@ msgstr "Αυτή η κυψέλη δεν υπάρχει στις αγαπημέν
 msgid "This is an example of a balloon popup notification!"
 msgstr ""
 
-#: win32/MainWindow.cpp:1535
+#: win32/MainWindow.cpp:1554
 msgid "This message will show up in the status bar in the future."
 msgstr ""
 
@@ -4252,7 +4282,7 @@ msgstr "Ώρα"
 msgid "Time left"
 msgstr "Χρόνος που απομένει"
 
-#: win32/AppearancePage.cpp:69
+#: win32/AppearancePage.cpp:70
 #, fuzzy
 msgid "Timestamp format"
 msgstr "Ετικέτες ώρας ενεργοποιήθηκαν"
@@ -4261,7 +4291,7 @@ msgstr "Ετικέτες ώρας ενεργοποιήθηκαν"
 msgid "To"
 msgstr "Προς"
 
-#: win32/WindowsPage.cpp:42
+#: win32/WindowsPage.cpp:41
 msgid "Toggle window when selecting an active tab"
 msgstr "Εναλλαγή παραθύρων κατά την επιλογή ενεργής καρτέλας"
 
@@ -4281,11 +4311,11 @@ msgstr ""
 msgid "Toggles visibility of the list of users for the current hub."
 msgstr ""
 
-#: win32/MainWindow.cpp:1752
+#: win32/MainWindow.cpp:1784
 msgid "Toolbar"
 msgstr "Γραμμή εργαλείων"
 
-#: win32/MainWindow.cpp:378
+#: win32/MainWindow.cpp:379
 msgid "Toolbar\tCtrl+1"
 msgstr "Γραμμή εργαλείων\tCtrl+1"
 
@@ -4311,7 +4341,7 @@ msgstr "Μεταφέρθηκαν"
 msgid "Transfer Rate Limiting"
 msgstr "Περιορισμός Ταχύτητων Μεταφοράς"
 
-#: win32/MainWindow.cpp:379
+#: win32/MainWindow.cpp:380
 msgid "Transfer view\tCtrl+2"
 msgstr "Προβολή μεταφορών\tCtrl+2"
 
@@ -4328,21 +4358,21 @@ msgstr "Μεταφέρθηκαν (Αναλογία)"
 msgid "Transfers"
 msgstr "Μεταφέρθηκαν"
 
-#: win32/CertificatesPage.cpp:86
+#: win32/CertificatesPage.cpp:87
 msgid "Trusted certificates path"
 msgstr "Διαδρομή έμπιστων πιστοποιητικών"
 
 #: win32/ACFrame.cpp:39 win32/DirectoryListingFrame.cpp:64
-#: win32/QueueFrame.cpp:62 win32/SearchFrame.cpp:52
+#: win32/QueueFrame.cpp:62 win32/SearchFrame.cpp:51
 msgid "Type"
 msgstr "Τύπος"
 
-#: win32/MainWindow.cpp:1223
+#: win32/MainWindow.cpp:1243
 #, boost-format
 msgid "U: %1%"
 msgstr "Ανέβασμα: %1%"
 
-#: win32/MainWindow.cpp:1231
+#: win32/MainWindow.cpp:1251
 #, boost-format
 msgid "U: %1%/s (%2%)"
 msgstr "Ανέβασμα: %1%/s (%2%)"
@@ -4351,11 +4381,11 @@ msgstr "Ανέβασμα: %1%/s (%2%)"
 msgid "Un-ignore chat"
 msgstr ""
 
-#: win32/WinUtil.cpp:550
+#: win32/WinUtil.cpp:551
 msgid "Un-sets Away status."
 msgstr ""
 
-#: win32/MainWindow.cpp:1393
+#: win32/MainWindow.cpp:1412
 #, fuzzy, boost-format
 msgid ""
 "Unable to open %1% port. Searching or file transfers will not work correctly "
@@ -4386,7 +4416,7 @@ msgstr "Ημιτελές αρχείο υπερβολικά μικρό"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:454
+#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:456
 #, boost-format
 msgid "Unknown command: %1%"
 msgstr "Άγνωστη εντολή: %1%"
@@ -4408,26 +4438,26 @@ msgstr ""
 msgid "Upload Slots"
 msgstr "Θέσεις ανεβάσματος"
 
-#: win32/MainWindow.cpp:908 win32/MainWindow.cpp:1899
+#: win32/MainWindow.cpp:916 win32/MainWindow.cpp:1931
 #, fuzzy
 msgid "Upload limit"
 msgstr "Θέσεις ανεβάσματος"
 
-#: win32/WinUtil.cpp:681
+#: win32/WinUtil.cpp:682
 msgid "Upload limit disabled"
 msgstr "Το όριο ανεβάσματος είναι απενεργοποιημένο"
 
-#: win32/WinUtil.cpp:681
+#: win32/WinUtil.cpp:682
 #, fuzzy, boost-format
 msgid "Upload limit set to %1% KiB/s"
 msgstr "Το όριο ανεβάσματος είναι %d KiB/s"
 
-#: win32/MainWindow.cpp:1239
+#: win32/MainWindow.cpp:1259
 #, fuzzy, boost-format
 msgid "Upload limit: %1%/s - Click to adjust"
 msgstr "Το όριο ανεβάσματος είναι %d KiB/s"
 
-#: win32/MainWindow.cpp:1858 win32/UploadPage.cpp:104
+#: win32/MainWindow.cpp:1890 win32/UploadPage.cpp:104
 msgid "Upload slots"
 msgstr "Θέσεις ανεβάσματος"
 
@@ -4471,16 +4501,16 @@ msgstr "Χρήση εκτεταμένων μενού με εικονίδια κ�
 msgid "Use second set of bandwidth limits from"
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:114
-msgid "Use semicolon to separate multiple extensions."
+#: win32/UploadFilteringPage.cpp:116
+msgid "Use semicolons to separate multiple extensions."
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:130
-msgid "Use semicolon to separate multiple paths."
+#: win32/UploadFilteringPage.cpp:132
+msgid "Use semicolons to separate multiple paths."
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:98
-msgid "Use semicolon to separate multiple regular expressions."
+#: win32/UploadFilteringPage.cpp:100
+msgid "Use semicolons to separate multiple regular expressions."
 msgstr ""
 
 #: win32/TabsPage.cpp:73
@@ -4493,7 +4523,7 @@ msgstr ""
 "Χρήση εικονιδίων συστήματος κατά την εμφάνιση των αρχείων (καθυστερεί λίγο "
 "την περιήγηση)"
 
-#: win32/DirectoryListingFrame.cpp:916 win32/SearchFrame.cpp:51
+#: win32/DirectoryListingFrame.cpp:916 win32/SearchFrame.cpp:50
 #: win32/TransferView.cpp:50
 msgid "User"
 msgstr "Χρήστης"
@@ -4533,8 +4563,8 @@ msgstr ""
 msgid "User matching definitions"
 msgstr ""
 
-#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:341
-#: win32/PrivateFrame.cpp:465 win32/QueueFrame.cpp:380
+#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:343
+#: win32/PrivateFrame.cpp:467 win32/QueueFrame.cpp:380
 msgid "User offline"
 msgstr "Χρήστης Εκτός Σύνδεσης"
 
@@ -4552,7 +4582,7 @@ msgstr "Ο χρήστης τέθηκε εκτός σύνδεσης"
 msgid "User went online"
 msgstr "Ο χρήστης τέθηκε εκτός σύνδεσης"
 
-#: win32/MainWindow.cpp:461 win32/PublicHubsFrame.cpp:46
+#: win32/MainWindow.cpp:462 win32/PublicHubsFrame.cpp:46
 #: win32/QueueFrame.cpp:56 win32/StylesPage.cpp:149 win32/UsersFrame.cpp:111
 msgid "Users"
 msgstr "Χρήστες"
@@ -4580,12 +4610,12 @@ msgid "View status messages in chat"
 msgstr ""
 "Εμφάνιση μηνυμάτων κατάστασης στο κεντρικό παράθυρο συνομιλίας της κυψέλης"
 
-#: win32/TextFrame.cpp:98
+#: win32/TextFrame.cpp:100
 #, boost-format
 msgid "Viewing text file: %1%"
 msgstr ""
 
-#: win32/UploadPage.cpp:45 win32/UploadPage.cpp:239 win32/UploadPage.cpp:296
+#: win32/UploadPage.cpp:45 win32/UploadPage.cpp:221 win32/UploadPage.cpp:278
 msgid "Virtual name"
 msgstr "Εικονικό όνομα"
 
@@ -4615,7 +4645,7 @@ msgid ""
 "Click here to proceed."
 msgstr ""
 
-#: win32/WinUtil.cpp:1573
+#: win32/WinUtil.cpp:1574
 msgid ""
 "Warning: Allowing content to open a program can be useful, but it can "
 "potentially harm your computer. Do not allow it unless you trust the source "
@@ -4642,7 +4672,7 @@ msgstr ""
 msgid "Website: "
 msgstr ""
 
-#: win32/MainWindow.cpp:492
+#: win32/MainWindow.cpp:493
 msgid "What's This?"
 msgstr "Τι είναι αυτό;"
 
@@ -4650,7 +4680,7 @@ msgstr "Τι είναι αυτό;"
 msgid "Whitelisted URIs to open"
 msgstr ""
 
-#: win32/WindowsPage.cpp:70
+#: win32/WindowsPage.cpp:69
 msgid "Window options"
 msgstr "Επιλογές παραθύρου"
 
@@ -4663,7 +4693,7 @@ msgid "Write buffer size"
 msgstr "Εγγραφή μεγέθους μνήμης προσωρινής αποθήκευσης"
 
 #: win32/ADLSearchFrame.cpp:330 win32/NotificationsPage.cpp:287
-#: win32/WinUtil.cpp:1175 win32/FinishedFrameBase.h:262
+#: win32/WinUtil.cpp:1176 win32/FinishedFrameBase.h:262
 msgid "Yes"
 msgstr "Ναι"
 
@@ -4679,7 +4709,7 @@ msgstr ""
 msgid "You must enter a name"
 msgstr "Πρέπει να εισάγεται ένα όνομα"
 
-#: win32/HubFrame.cpp:1144
+#: win32/HubFrame.cpp:1145
 msgid "Your nick was already taken, please change to something else!"
 msgstr "Το ψευδώνυμο σας είναι κατειλημμένο, αλλάξτε το παρακαλώ!"
 
@@ -4687,7 +4717,7 @@ msgstr "Το ψευδώνυμο σας είναι κατειλημμένο, αλ
 msgid "[Ignored some incomplete directories]"
 msgstr ""
 
-#: win32/AppearancePage.cpp:97
+#: win32/AppearancePage.cpp:98
 msgid "and"
 msgstr "και"
 
@@ -4709,7 +4739,7 @@ msgstr "και"
 msgid "file list"
 msgstr "λίστα αρχείων"
 
-#: win32/AppearancePage.cpp:104
+#: win32/AppearancePage.cpp:105
 msgid "lines"
 msgstr "γραμμές"
 

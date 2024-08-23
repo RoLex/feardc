@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-31 18:44+0200\n"
+"POT-Creation-Date: 2024-08-23 10:56+0200\n"
 "PO-Revision-Date: 2012-05-18 12:19+0000\n"
 "Last-Translator: Dennis Baudys <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
@@ -23,32 +23,32 @@ msgstr ""
 msgid " - Queued: %1%"
 msgstr ""
 
-#: dcpp/Util.cpp:566
+#: dcpp/Util.cpp:565
 #, c-format, boost-format
 msgid "%'lld B"
 msgstr "%'lld B"
 
-#: dcpp/Util.cpp:528
+#: dcpp/Util.cpp:527
 #, c-format, boost-format
 msgid "%.02f GiB"
 msgstr "%.02f GiB"
 
-#: dcpp/Util.cpp:524
+#: dcpp/Util.cpp:523
 #, c-format, boost-format
 msgid "%.02f KiB"
 msgstr "%.02f KiB"
 
-#: dcpp/Util.cpp:526
+#: dcpp/Util.cpp:525
 #, c-format, boost-format
 msgid "%.02f MiB"
 msgstr "%.02f MiB"
 
-#: dcpp/Util.cpp:532
+#: dcpp/Util.cpp:531
 #, c-format, boost-format
 msgid "%.02f PiB"
 msgstr "%.02f PiB"
 
-#: dcpp/Util.cpp:530
+#: dcpp/Util.cpp:529
 #, c-format, boost-format
 msgid "%.02f TiB"
 msgstr "%.02f TiB"
@@ -69,7 +69,7 @@ msgstr ""
 msgid "%1% (%2%)"
 msgstr "%1% (%2%)"
 
-#: dcpp/AdcHub.cpp:163
+#: dcpp/AdcHub.cpp:164
 #, boost-format
 msgid "%1% (%2%) has same CID {%3%} as %4% (%5%), ignoring"
 msgstr "%1% (%2%) hat die gleiche CID {%3%} wie %4% (%5%), wird ignoriert"
@@ -109,12 +109,12 @@ msgstr ""
 msgid "%1% not shared; hashing did not complete."
 msgstr ""
 
-#: dcpp/AdcHub.cpp:302
+#: dcpp/AdcHub.cpp:303
 #, boost-format
 msgid "%1% was kicked by %2%: %3%"
 msgstr "%1% wurde von %2% gekickt: %3%"
 
-#: dcpp/AdcHub.cpp:305
+#: dcpp/AdcHub.cpp:306
 #, boost-format
 msgid "%1% was kicked: %2%"
 msgstr "%1% wurde gekickt: %2%"
@@ -134,12 +134,12 @@ msgstr ""
 msgid "%1%: File not available"
 msgstr "%1%: Datei nicht verfügbar"
 
-#: dcpp/Util.cpp:522
+#: dcpp/Util.cpp:521
 #, c-format, boost-format
 msgid "%d B"
 msgstr "%d B"
 
-#: dcpp/Util.cpp:562
+#: dcpp/Util.cpp:561
 #, c-format, boost-format
 msgid "%s B"
 msgstr "%s B"
@@ -191,11 +191,11 @@ msgstr "Alle Downloadslots besetzt"
 msgid "Another port mapping attempt is in progress..."
 msgstr ""
 
-#: dcpp/SearchManager.cpp:35
+#: dcpp/SearchManager.cpp:39
 msgid "Any"
 msgstr "Beliebig"
 
-#: dcpp/SearchManager.cpp:36
+#: dcpp/SearchManager.cpp:40
 msgid "Audio"
 msgstr "Audio"
 
@@ -223,7 +223,7 @@ msgstr "CRC32-Prüfsummeninkonsistenz (SFV-Prüfung): %1%"
 msgid "Certificate verification for %1% failed with error: %2%"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:37
+#: dcpp/SearchManager.cpp:41
 msgid "Compressed"
 msgstr "Komprimiert"
 
@@ -289,15 +289,15 @@ msgstr "Informationen zum Land"
 msgid "Determining the best connectivity settings..."
 msgstr ""
 
-#: dcpp/SearchManager.cpp:42
+#: dcpp/SearchManager.cpp:46
 msgid "Directory"
 msgstr "Verzeichnis"
 
-#: dcpp/ShareManager.cpp:399
+#: dcpp/ShareManager.cpp:408
 msgid "Directory already shared"
 msgstr "Ordner ist bereits freigegeben"
 
-#: dcpp/ShareManager.cpp:386
+#: dcpp/ShareManager.cpp:395
 msgid "Directory is hidden"
 msgstr "Ordner ist versteckt"
 
@@ -323,7 +323,7 @@ msgstr "Getrennt"
 msgid "Disconnected user leaving the hub: %1%"
 msgstr "Getrennter Benutzer verlässt Hub: %1%"
 
-#: dcpp/SearchManager.cpp:38
+#: dcpp/SearchManager.cpp:42
 msgid "Document"
 msgstr "Dokument"
 
@@ -331,7 +331,7 @@ msgstr "Dokument"
 msgid "Download Queue"
 msgstr "Download Warteschlange"
 
-#: dcpp/ShareManager.cpp:794
+#: dcpp/ShareManager.cpp:832
 #, boost-format
 msgid ""
 "Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
@@ -398,7 +398,7 @@ msgstr "Fehler beim Hashen von %1%: %2%"
 msgid "Error saving hash data: %1%"
 msgstr "Fehler beim Speichern der Hash-Daten: %1%"
 
-#: dcpp/SearchManager.cpp:39
+#: dcpp/SearchManager.cpp:43
 msgid "Executable"
 msgstr "Anwendung"
 
@@ -433,7 +433,7 @@ msgstr "Laden des vertrauenswürdigen Zertifikats von %1% gescheitert"
 msgid "Failed to map the %1% port (%2% %3%) with the %4% interface"
 msgstr "Thread kann nicht erschaffen werden"
 
-#: dcpp/AdcHub.cpp:225
+#: dcpp/AdcHub.cpp:226
 msgid "Failed to negotiate base protocol"
 msgstr "Basisprotokoll konnte nicht bestimmt werden"
 
@@ -455,21 +455,21 @@ msgstr ""
 msgid "File already exists at the target location"
 msgstr "Datei ist bereits am Zielort vorhanden"
 
-#: dcpp/ShareManager.cpp:961
+#: dcpp/ShareManager.cpp:999
 #, boost-format
 msgid "File list %1% generated"
 msgstr "Dateiliste %1% generiert"
 
-#: dcpp/ShareManager.cpp:826
+#: dcpp/ShareManager.cpp:864
 #, boost-format
 msgid "File list refresh failed: %1%"
 msgstr "Aktualisieren der Dateiliste fehlgeschlagen: %1%"
 
-#: dcpp/ShareManager.cpp:890
+#: dcpp/ShareManager.cpp:928
 msgid "File list refresh finished"
 msgstr "Aktualisieren der Dateiliste beendet"
 
-#: dcpp/ShareManager.cpp:809
+#: dcpp/ShareManager.cpp:847
 msgid ""
 "File list refresh in progress, please wait for it to finish before trying to "
 "refresh again"
@@ -477,7 +477,7 @@ msgstr ""
 "Aktualisieren der Dateiliste im Gange, bitte vor erneuter Aktualisierung auf "
 "Ende warten"
 
-#: dcpp/ShareManager.cpp:854
+#: dcpp/ShareManager.cpp:892
 msgid "File list refresh initiated"
 msgstr "Aktualisieren der Dateiliste gestartet"
 
@@ -513,6 +513,11 @@ msgstr ""
 msgid "HTTP file download failed to create file %1%, error: %2%"
 msgstr ""
 
+#: dcpp/HashManager.cpp:257
+#, fuzzy, boost-format
+msgid "Hash data rebuilding failed: %1%"
+msgstr "Hash berechnen fehlgeschlagen: %1%"
+
 #: dcpp/DCPlusPlus.cpp:120
 msgid "Hash database"
 msgstr "Hash-Datenbank"
@@ -521,12 +526,12 @@ msgstr "Hash-Datenbank"
 msgid "Hash database rebuilt"
 msgstr "Hash-Datenbank rekonstruiert"
 
-#: dcpp/HashManager.cpp:69 dcpp/HashManager.cpp:257
+#: dcpp/HashManager.cpp:69
 #, boost-format
 msgid "Hashing failed: %1%"
 msgstr "Hash berechnen fehlgeschlagen: %1%"
 
-#: dcpp/AdcHub.cpp:231
+#: dcpp/AdcHub.cpp:232
 msgid ""
 "Hub probably uses an old version of ADC, please encourage the owner to "
 "upgrade"
@@ -557,7 +562,7 @@ msgstr "Ungültige Daten"
 msgid "Invalid file list extension (must be .xml or .bz2)"
 msgstr "Ungültige Endung der Dateiliste (muss .xml oder .bz2 sein)"
 
-#: dcpp/ShareManager.cpp:577
+#: dcpp/ShareManager.cpp:615
 #, boost-format
 msgid "Invalid file name found while hashing folder %1%"
 msgstr "Ungültiger Dateiname beim Hashen des Ordners %1% gefunden"
@@ -567,7 +572,7 @@ msgstr "Ungültiger Dateiname beim Hashen des Ordners %1% gefunden"
 msgid "Invalid regular expression: %1%"
 msgstr "Ungültiger regulärer Ausdruck: %1%"
 
-#: dcpp/SettingsManager.cpp:714
+#: dcpp/SettingsManager.cpp:717
 msgid "Invalid search type name"
 msgstr "Ungültiger Name des Suchtyps"
 
@@ -608,7 +613,7 @@ msgstr "Mehr Bytes geschrieben als angefordert"
 msgid "No certificate file chosen"
 msgstr "Keine Zertifikat-Datei gewählt"
 
-#: dcpp/ShareManager.cpp:382
+#: dcpp/ShareManager.cpp:391
 msgid "No directory specified"
 msgstr "Kein Ordner ausgewählt"
 
@@ -620,7 +625,7 @@ msgstr "Keine Privater Schlüssel-Datei gewählt"
 msgid "No slots available"
 msgstr "Keine Slots verfügbar"
 
-#: dcpp/SettingsManager.cpp:772
+#: dcpp/SettingsManager.cpp:775
 msgid "No such search type"
 msgstr "Kein solcher Suchtyp gefunden."
 
@@ -628,15 +633,15 @@ msgstr "Kein solcher Suchtyp gefunden."
 msgid "Non-UTF-8 data in an ADC connection"
 msgstr "ADC connection liefert nicht UTF-8 kodierte Daten"
 
-#: dcpp/AdcHub.cpp:701
+#: dcpp/AdcHub.cpp:702
 #, boost-format
 msgid "Not listening for connections - please restart %1%"
 msgstr "Es wird nicht auf Verbindungen gewartet - bitte %1% neustarten"
 
 #: dcpp/ClientManager.cpp:152 dcpp/ClientManager.cpp:183
 #: dcpp/FinishedManager.cpp:130 dcpp/FinishedManager.cpp:136
-#: dcpp/FinishedManager.cpp:142 dcpp/SearchManager.cpp:322
-#: dcpp/SearchManager.cpp:383 dcpp/Transfer.cpp:80 dcpp/Transfer.cpp:84
+#: dcpp/FinishedManager.cpp:142 dcpp/SearchManager.cpp:337
+#: dcpp/SearchManager.cpp:398 dcpp/Transfer.cpp:80 dcpp/Transfer.cpp:84
 msgid "Offline"
 msgstr "Offline"
 
@@ -648,7 +653,7 @@ msgstr ""
 msgid "Passive mode"
 msgstr "Passiver Modus"
 
-#: dcpp/SearchManager.cpp:40
+#: dcpp/SearchManager.cpp:44
 msgid "Picture"
 msgstr "Bild"
 
@@ -667,7 +672,7 @@ msgstr ""
 msgid "Redirect user(s)"
 msgstr "Benutzer umleiten"
 
-#: dcpp/ShareManager.cpp:402
+#: dcpp/ShareManager.cpp:411
 msgid "Remove all subdirectories before adding this one"
 msgstr "Alle Unterordner entfernen bevor dieser Hinzugefügt wird"
 
@@ -679,16 +684,16 @@ msgstr "Antwort stimmt nicht mit Anfrage überein"
 msgid "Search"
 msgstr "Suche"
 
-#: dcpp/ConnectivityManager.cpp:364
+#: dcpp/ConnectivityManager.cpp:360
 msgid "Search (UDP)"
 msgstr "Suche (UDP)"
 
-#: dcpp/SearchManager.cpp:159
+#: dcpp/SearchManager.cpp:174
 #, boost-format
 msgid "Search disabled: %1%"
 msgstr "Suche deaktiviert: %1%"
 
-#: dcpp/SearchManager.cpp:151
+#: dcpp/SearchManager.cpp:166
 msgid "Search enabled again"
 msgstr "Suche wieder aktiviert"
 
@@ -751,7 +756,7 @@ msgstr "TLS deaktiviert, keine Zertifikats-Datei gewählt"
 msgid "TLS error"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:43
+#: dcpp/SearchManager.cpp:47
 msgid "TTH"
 msgstr "TTH"
 
@@ -792,7 +797,7 @@ msgstr "Socks Server konnte keine Verbindung aufbauen"
 msgid "The socks server requires authentication"
 msgstr "Socks Server benötigt Authentifizierung"
 
-#: dcpp/ShareManager.cpp:390
+#: dcpp/ShareManager.cpp:399
 msgid "The temporary download directory cannot be shared"
 msgstr "Das temporäre Downloadverzeichnis kann nicht freigegeben werden"
 
@@ -813,7 +818,7 @@ msgstr ""
 "Dieser Hub versucht Ihren Clienten zu benutzen um %1% zu spammen. Fordern "
 "Sie vom Hub-Besitzer dies zu unterlassen"
 
-#: dcpp/SettingsManager.cpp:718 dcpp/SettingsManager.cpp:740
+#: dcpp/SettingsManager.cpp:721 dcpp/SettingsManager.cpp:743
 msgid "This search type already exists"
 msgstr "Dieser Suchtyp existiert bereits"
 
@@ -826,7 +831,7 @@ msgstr ""
 msgid "Transfer"
 msgstr "Übertragung"
 
-#: dcpp/ConnectivityManager.cpp:358
+#: dcpp/ConnectivityManager.cpp:354
 msgid "Transfer (TCP)"
 msgstr "Übertragung (TCP)"
 
@@ -893,7 +898,7 @@ msgstr ""
 msgid "Users"
 msgstr "Benutzer"
 
-#: dcpp/SearchManager.cpp:41
+#: dcpp/SearchManager.cpp:45
 msgid "Video"
 msgstr "Video"
 

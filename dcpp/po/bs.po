@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-31 18:44+0200\n"
+"POT-Creation-Date: 2024-08-23 10:56+0200\n"
 "PO-Revision-Date: 2010-04-15 15:22+0000\n"
 "Last-Translator: main(void) <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,32 +23,32 @@ msgstr ""
 msgid " - Queued: %1%"
 msgstr ""
 
-#: dcpp/Util.cpp:566
+#: dcpp/Util.cpp:565
 #, c-format, boost-format
 msgid "%'lld B"
 msgstr "%'lld B"
 
-#: dcpp/Util.cpp:528
+#: dcpp/Util.cpp:527
 #, c-format, boost-format
 msgid "%.02f GiB"
 msgstr "%.02f GiB"
 
-#: dcpp/Util.cpp:524
+#: dcpp/Util.cpp:523
 #, c-format, boost-format
 msgid "%.02f KiB"
 msgstr "%.02f KiB"
 
-#: dcpp/Util.cpp:526
+#: dcpp/Util.cpp:525
 #, c-format, boost-format
 msgid "%.02f MiB"
 msgstr "%.02f MiB"
 
-#: dcpp/Util.cpp:532
+#: dcpp/Util.cpp:531
 #, c-format, boost-format
 msgid "%.02f PiB"
 msgstr "%.02f PiB"
 
-#: dcpp/Util.cpp:530
+#: dcpp/Util.cpp:529
 #, c-format, boost-format
 msgid "%.02f TiB"
 msgstr "%.02f TiB"
@@ -69,7 +69,7 @@ msgstr ""
 msgid "%1% (%2%)"
 msgstr ""
 
-#: dcpp/AdcHub.cpp:163
+#: dcpp/AdcHub.cpp:164
 #, boost-format
 msgid "%1% (%2%) has same CID {%3%} as %4% (%5%), ignoring"
 msgstr "%1% (%2%) ima isti CID {%3%} kao %4% (%5%), ignoriram"
@@ -109,12 +109,12 @@ msgstr ""
 msgid "%1% not shared; hashing did not complete."
 msgstr ""
 
-#: dcpp/AdcHub.cpp:302
+#: dcpp/AdcHub.cpp:303
 #, boost-format
 msgid "%1% was kicked by %2%: %3%"
 msgstr "%1% je odstranjen od %2%: %3%"
 
-#: dcpp/AdcHub.cpp:305
+#: dcpp/AdcHub.cpp:306
 #, boost-format
 msgid "%1% was kicked: %2%"
 msgstr "%1% je odstranjen: %2%"
@@ -134,12 +134,12 @@ msgstr ""
 msgid "%1%: File not available"
 msgstr "%1%: Datoteka nije dostupna"
 
-#: dcpp/Util.cpp:522
+#: dcpp/Util.cpp:521
 #, c-format, boost-format
 msgid "%d B"
 msgstr "%d B"
 
-#: dcpp/Util.cpp:562
+#: dcpp/Util.cpp:561
 #, c-format, boost-format
 msgid "%s B"
 msgstr "%s B"
@@ -188,11 +188,11 @@ msgstr "Svi Slotovi za Download su zauzeti"
 msgid "Another port mapping attempt is in progress..."
 msgstr ""
 
-#: dcpp/SearchManager.cpp:35
+#: dcpp/SearchManager.cpp:39
 msgid "Any"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:36
+#: dcpp/SearchManager.cpp:40
 msgid "Audio"
 msgstr ""
 
@@ -220,7 +220,7 @@ msgstr "CRC32 Neskladnost (SFV-Provjera)"
 msgid "Certificate verification for %1% failed with error: %2%"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:37
+#: dcpp/SearchManager.cpp:41
 msgid "Compressed"
 msgstr ""
 
@@ -287,16 +287,16 @@ msgstr ""
 msgid "Determining the best connectivity settings..."
 msgstr ""
 
-#: dcpp/SearchManager.cpp:42
+#: dcpp/SearchManager.cpp:46
 #, fuzzy
 msgid "Directory"
 msgstr "Direktorij je sakriven"
 
-#: dcpp/ShareManager.cpp:399
+#: dcpp/ShareManager.cpp:408
 msgid "Directory already shared"
 msgstr "Sadržaj se već dijeli"
 
-#: dcpp/ShareManager.cpp:386
+#: dcpp/ShareManager.cpp:395
 msgid "Directory is hidden"
 msgstr "Direktorij je sakriven"
 
@@ -321,7 +321,7 @@ msgstr "Isključeno"
 msgid "Disconnected user leaving the hub: %1%"
 msgstr "Diskonektovani korisnik napušta hub: %1%"
 
-#: dcpp/SearchManager.cpp:38
+#: dcpp/SearchManager.cpp:42
 msgid "Document"
 msgstr ""
 
@@ -329,7 +329,7 @@ msgstr ""
 msgid "Download Queue"
 msgstr "Lista za Download"
 
-#: dcpp/ShareManager.cpp:794
+#: dcpp/ShareManager.cpp:832
 #, boost-format
 msgid ""
 "Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
@@ -397,7 +397,7 @@ msgstr "Greška u hash procesu %1%: %2%"
 msgid "Error saving hash data: %1%"
 msgstr "Greška u spašavanju hash datoteke: %1%"
 
-#: dcpp/SearchManager.cpp:39
+#: dcpp/SearchManager.cpp:43
 msgid "Executable"
 msgstr ""
 
@@ -433,7 +433,7 @@ msgstr ""
 msgid "Failed to map the %1% port (%2% %3%) with the %4% interface"
 msgstr "Nije moguće napraviti thread"
 
-#: dcpp/AdcHub.cpp:225
+#: dcpp/AdcHub.cpp:226
 msgid "Failed to negotiate base protocol"
 msgstr "Uspostava baznog protokola nije uspjela"
 
@@ -454,21 +454,21 @@ msgstr ""
 msgid "File already exists at the target location"
 msgstr "Datoteka već postoji na toj lokaciji"
 
-#: dcpp/ShareManager.cpp:961
+#: dcpp/ShareManager.cpp:999
 #, boost-format
 msgid "File list %1% generated"
 msgstr "Fajl lista %1% generirana"
 
-#: dcpp/ShareManager.cpp:826
+#: dcpp/ShareManager.cpp:864
 #, boost-format
 msgid "File list refresh failed: %1%"
 msgstr "Osvježavanje liste nije uspjelo: %1%"
 
-#: dcpp/ShareManager.cpp:890
+#: dcpp/ShareManager.cpp:928
 msgid "File list refresh finished"
 msgstr "Završeno obnavljanje liste datoteka"
 
-#: dcpp/ShareManager.cpp:809
+#: dcpp/ShareManager.cpp:847
 msgid ""
 "File list refresh in progress, please wait for it to finish before trying to "
 "refresh again"
@@ -476,7 +476,7 @@ msgstr ""
 "Osvježavanje liste datoteka u toku, molimo da sačekate završetak operacije "
 "prije ponovnog pokušaja osježavanja"
 
-#: dcpp/ShareManager.cpp:854
+#: dcpp/ShareManager.cpp:892
 msgid "File list refresh initiated"
 msgstr "Započeto osvježavanje liste datoteka"
 
@@ -512,6 +512,11 @@ msgstr ""
 msgid "HTTP file download failed to create file %1%, error: %2%"
 msgstr ""
 
+#: dcpp/HashManager.cpp:257
+#, fuzzy, boost-format
+msgid "Hash data rebuilding failed: %1%"
+msgstr "Hashing nije uspio: %1%"
+
 #: dcpp/DCPlusPlus.cpp:120
 msgid "Hash database"
 msgstr "Indeks fajova"
@@ -520,12 +525,12 @@ msgstr "Indeks fajova"
 msgid "Hash database rebuilt"
 msgstr "Obnovi indeks fajlova"
 
-#: dcpp/HashManager.cpp:69 dcpp/HashManager.cpp:257
+#: dcpp/HashManager.cpp:69
 #, boost-format
 msgid "Hashing failed: %1%"
 msgstr "Hashing nije uspio: %1%"
 
-#: dcpp/AdcHub.cpp:231
+#: dcpp/AdcHub.cpp:232
 msgid ""
 "Hub probably uses an old version of ADC, please encourage the owner to "
 "upgrade"
@@ -557,7 +562,7 @@ msgstr "Neispravna veličina"
 msgid "Invalid file list extension (must be .xml or .bz2)"
 msgstr ""
 
-#: dcpp/ShareManager.cpp:577
+#: dcpp/ShareManager.cpp:615
 #, boost-format
 msgid "Invalid file name found while hashing folder %1%"
 msgstr ""
@@ -567,7 +572,7 @@ msgstr ""
 msgid "Invalid regular expression: %1%"
 msgstr ""
 
-#: dcpp/SettingsManager.cpp:714
+#: dcpp/SettingsManager.cpp:717
 msgid "Invalid search type name"
 msgstr ""
 
@@ -608,7 +613,7 @@ msgstr "Zapisano je više bajtova nego što je zahtjevano"
 msgid "No certificate file chosen"
 msgstr "Nije odabran certifikat"
 
-#: dcpp/ShareManager.cpp:382
+#: dcpp/ShareManager.cpp:391
 msgid "No directory specified"
 msgstr "Nije naveden direktorijum"
 
@@ -620,7 +625,7 @@ msgstr "Nije odabran privatni ključ"
 msgid "No slots available"
 msgstr "Nema slobodnih slotova"
 
-#: dcpp/SettingsManager.cpp:772
+#: dcpp/SettingsManager.cpp:775
 msgid "No such search type"
 msgstr ""
 
@@ -628,15 +633,15 @@ msgstr ""
 msgid "Non-UTF-8 data in an ADC connection"
 msgstr ""
 
-#: dcpp/AdcHub.cpp:701
+#: dcpp/AdcHub.cpp:702
 #, boost-format
 msgid "Not listening for connections - please restart %1%"
 msgstr "Ne tražim konekcije - molim pokrenite ponovo  %1%"
 
 #: dcpp/ClientManager.cpp:152 dcpp/ClientManager.cpp:183
 #: dcpp/FinishedManager.cpp:130 dcpp/FinishedManager.cpp:136
-#: dcpp/FinishedManager.cpp:142 dcpp/SearchManager.cpp:322
-#: dcpp/SearchManager.cpp:383 dcpp/Transfer.cpp:80 dcpp/Transfer.cpp:84
+#: dcpp/FinishedManager.cpp:142 dcpp/SearchManager.cpp:337
+#: dcpp/SearchManager.cpp:398 dcpp/Transfer.cpp:80 dcpp/Transfer.cpp:84
 msgid "Offline"
 msgstr "Isključen"
 
@@ -648,7 +653,7 @@ msgstr ""
 msgid "Passive mode"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:40
+#: dcpp/SearchManager.cpp:44
 msgid "Picture"
 msgstr ""
 
@@ -666,7 +671,7 @@ msgstr ""
 msgid "Redirect user(s)"
 msgstr "Preusmeravanje korisnika"
 
-#: dcpp/ShareManager.cpp:402
+#: dcpp/ShareManager.cpp:411
 msgid "Remove all subdirectories before adding this one"
 msgstr "Skloniti sve poddirektorijume prije dodavanja ovog"
 
@@ -678,16 +683,16 @@ msgstr "Povratna informacija ne odgovara onome što ste zahtjevali"
 msgid "Search"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:364
+#: dcpp/ConnectivityManager.cpp:360
 msgid "Search (UDP)"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:159
+#: dcpp/SearchManager.cpp:174
 #, boost-format
 msgid "Search disabled: %1%"
 msgstr "Pretraga onemogućena: %1%"
 
-#: dcpp/SearchManager.cpp:151
+#: dcpp/SearchManager.cpp:166
 msgid "Search enabled again"
 msgstr "Pretraga ponovo omogućena"
 
@@ -751,7 +756,7 @@ msgstr "TLS onemogućen, nije postavljen certifikat"
 msgid "TLS error"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:43
+#: dcpp/SearchManager.cpp:47
 msgid "TTH"
 msgstr ""
 
@@ -792,7 +797,7 @@ msgstr "Socks Server ne može uspostaviti vezu"
 msgid "The socks server requires authentication"
 msgstr "Socks Server traži autorizaciju"
 
-#: dcpp/ShareManager.cpp:390
+#: dcpp/ShareManager.cpp:399
 msgid "The temporary download directory cannot be shared"
 msgstr "Privremeni direktorij za skidanje ne može se otvoriti"
 
@@ -813,7 +818,7 @@ msgstr ""
 "Ovaj hub pokušava da koristiti vaš klijent za spam %1%, zamolite vlasnika da "
 "to popravi"
 
-#: dcpp/SettingsManager.cpp:718 dcpp/SettingsManager.cpp:740
+#: dcpp/SettingsManager.cpp:721 dcpp/SettingsManager.cpp:743
 msgid "This search type already exists"
 msgstr ""
 
@@ -826,7 +831,7 @@ msgstr ""
 msgid "Transfer"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:358
+#: dcpp/ConnectivityManager.cpp:354
 msgid "Transfer (TCP)"
 msgstr ""
 
@@ -892,7 +897,7 @@ msgstr ""
 msgid "Users"
 msgstr "Korisnici"
 
-#: dcpp/SearchManager.cpp:41
+#: dcpp/SearchManager.cpp:45
 msgid "Video"
 msgstr ""
 

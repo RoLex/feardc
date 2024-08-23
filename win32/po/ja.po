@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-31 18:44+0200\n"
+"POT-Creation-Date: 2024-08-22 18:19+0200\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2018-11-11 22:48+0000\n"
 "X-Generator: Launchpad (build 18816)\n"
 
-#: win32/MainWindow.cpp:1917
+#: win32/MainWindow.cpp:1949
 msgid " "
 msgstr ""
 
@@ -36,7 +36,7 @@ msgstr "設定"
 msgid "% transferred"
 msgstr ""
 
-#: win32/MainWindow.cpp:1519
+#: win32/MainWindow.cpp:1538
 #, fuzzy, boost-format
 msgid ""
 "%1%\n"
@@ -53,24 +53,24 @@ msgstr "ハブ"
 msgid "%1% (%2$0.2f)"
 msgstr ""
 
-#: win32/SearchFrame.cpp:546
+#: win32/SearchFrame.cpp:545
 #, boost-format
 msgid "%1% (%2%)"
 msgstr ""
 
-#: win32/MainWindow.cpp:766
+#: win32/MainWindow.cpp:774
 #, fuzzy, boost-format
 msgid "%1% - %2%"
 msgstr "ハブ"
 
-#: win32/SearchFrame.cpp:1127
+#: win32/SearchFrame.cpp:1124
 #, boost-format
 msgid "%1% / %2% item"
 msgid_plural "%1% / %2% items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: win32/SearchFrame.cpp:1158
+#: win32/SearchFrame.cpp:1155
 #, boost-format
 msgid "%1% / %2% sources ignored: %3%"
 msgstr ""
@@ -80,13 +80,13 @@ msgstr ""
 msgid "%1% doesn't need any additional configuration"
 msgstr ""
 
-#: win32/SearchFrame.cpp:1133
+#: win32/SearchFrame.cpp:1130
 #, boost-format
 msgid "%1% dropped"
 msgstr ""
 
 #: win32/PluginApiWin.cpp:70 win32/PluginApiWin.cpp:71 win32/QueueFrame.cpp:948
-#: win32/WinUtil.cpp:855 win32/FinishedFrameBase.h:460
+#: win32/WinUtil.cpp:856 win32/FinishedFrameBase.h:460
 #, boost-format
 msgid "%1% files"
 msgstr ""
@@ -96,7 +96,7 @@ msgstr ""
 msgid "%1% files/h, %2% files left"
 msgstr ""
 
-#: win32/MainWindow.cpp:1211
+#: win32/MainWindow.cpp:1220
 #, boost-format
 msgid "%1% free slots of %2% total upload slots - Click to adjust"
 msgstr ""
@@ -106,7 +106,7 @@ msgstr ""
 msgid "%1% hubs"
 msgstr "最大許容ハブ接続数"
 
-#: win32/SearchFrame.cpp:1125 win32/FinishedFrameBase.h:571
+#: win32/SearchFrame.cpp:1122 win32/FinishedFrameBase.h:571
 #, boost-format
 msgid "%1% item"
 msgid_plural "%1% items"
@@ -134,17 +134,17 @@ msgstr ""
 msgid "%1% port cannot be the same as the %2% port"
 msgstr ""
 
-#: win32/MainWindow.cpp:887
+#: win32/MainWindow.cpp:895
 #, boost-format
 msgid "%1% recent items will be saved from now on."
 msgstr ""
 
-#: win32/SearchFrame.cpp:868
+#: win32/SearchFrame.cpp:867
 #, boost-format
 msgid "%1% results"
 msgstr ""
 
-#: win32/SearchFrame.cpp:1159
+#: win32/SearchFrame.cpp:1156
 #, boost-format
 msgid "%1% sources added"
 msgstr ""
@@ -156,19 +156,19 @@ msgid_plural "%1% users"
 msgstr[0] ""
 msgstr[1] ""
 
-#: win32/HubFrame.cpp:1368 win32/TransferView.cpp:354 win32/UsersFrame.cpp:509
+#: win32/HubFrame.cpp:1377 win32/TransferView.cpp:354 win32/UsersFrame.cpp:509
 #: win32/FinishedFrameBase.h:489
 #, fuzzy, boost-format
 msgid "%1% users"
 msgstr "ユーザーなし"
 
-#: win32/MainWindow.cpp:1210 win32/UserInfoBase.cpp:162
+#: win32/MainWindow.cpp:1219 win32/UserInfoBase.cpp:163
 #, fuzzy, boost-format
 msgid "%1%/%2%"
 msgstr "ハブ"
 
-#: win32/MainWindow.cpp:932 win32/MainWindow.cpp:1226 win32/MainWindow.cpp:1230
-#: win32/MainWindow.cpp:1234 win32/MainWindow.cpp:1238
+#: win32/MainWindow.cpp:940 win32/MainWindow.cpp:1246 win32/MainWindow.cpp:1250
+#: win32/MainWindow.cpp:1254 win32/MainWindow.cpp:1258
 #: win32/TransferView.cpp:226 win32/TransferView.cpp:366
 #: win32/TransferView.cpp:451 win32/UsersFrame.cpp:75
 #: win32/FinishedFrameBase.h:573
@@ -181,8 +181,8 @@ msgstr ""
 msgid "%1%/s, %2% left"
 msgstr ""
 
-#: win32/DirectoryListingFrame.cpp:832 win32/UserInfoBase.cpp:115
-#: win32/UserInfoBase.cpp:163 win32/WinUtil.cpp:1718
+#: win32/DirectoryListingFrame.cpp:832 win32/UserInfoBase.cpp:116
+#: win32/UserInfoBase.cpp:164 win32/WinUtil.cpp:1719
 #, fuzzy, boost-format
 msgid "%1%: %2%"
 msgstr "ハブ"
@@ -198,13 +198,13 @@ msgstr "追加日時"
 msgid "&Add folder"
 msgstr ""
 
-#: win32/WinUtil.cpp:1650 win32/UserInfoBase.h:166
+#: win32/WinUtil.cpp:1651 win32/UserInfoBase.h:166
 msgid "&Browse file list"
 msgstr ""
 
 #: win32/DirectoryListingFrame.cpp:931 win32/LogPage.cpp:79
-#: win32/NotificationsPage.cpp:111 win32/SearchFrame.cpp:907
-#: win32/SearchFrame.cpp:935
+#: win32/NotificationsPage.cpp:111 win32/SearchFrame.cpp:906
+#: win32/SearchFrame.cpp:934
 #, fuzzy
 msgid "&Browse..."
 msgstr "参照..."
@@ -224,7 +224,7 @@ msgstr "色"
 msgid "&Configure"
 msgstr ""
 
-#: win32/MainWindow.cpp:841
+#: win32/MainWindow.cpp:849
 msgid "&Configure..."
 msgstr ""
 
@@ -243,7 +243,7 @@ msgstr ""
 msgid "&Copy\tCtrl+C"
 msgstr "メモ帳"
 
-#: win32/MainWindow.cpp:1754
+#: win32/MainWindow.cpp:1786
 msgid "&Customize\tDouble-click"
 msgstr ""
 
@@ -260,18 +260,18 @@ msgstr ""
 msgid "&Description"
 msgstr "記述"
 
-#: win32/HubFrame.cpp:1394 win32/TransferView.cpp:563
+#: win32/HubFrame.cpp:1403 win32/TransferView.cpp:563
 #, fuzzy
 msgid "&Disconnect"
 msgstr "クイック接続"
 
 #: win32/DirectoryListingFrame.cpp:851 win32/DirectoryListingFrame.cpp:878
-#: win32/DirectoryListingFrame.cpp:891 win32/SearchFrame.cpp:871
+#: win32/DirectoryListingFrame.cpp:891 win32/SearchFrame.cpp:870
 #, fuzzy
 msgid "&Download"
 msgstr "ダウンロード"
 
-#: win32/MainWindow.cpp:353
+#: win32/MainWindow.cpp:354
 #, fuzzy
 msgid "&Download Queue\tCtrl+D"
 msgstr "ダウンロードキュー"
@@ -280,12 +280,12 @@ msgstr "ダウンロードキュー"
 msgid "&Edit"
 msgstr ""
 
-#: win32/MainWindow.cpp:348
+#: win32/MainWindow.cpp:349
 #, fuzzy
 msgid "&Favorite Hubs\tCtrl+H"
 msgstr "お気に入りのハブ"
 
-#: win32/MainWindow.cpp:311
+#: win32/MainWindow.cpp:312
 #, fuzzy
 msgid "&File"
 msgstr "ファイル"
@@ -299,7 +299,7 @@ msgstr "検索"
 msgid "&Force attempt"
 msgstr ""
 
-#: win32/QueueFrame.cpp:1002 win32/WinUtil.cpp:1647 win32/UserInfoBase.h:165
+#: win32/QueueFrame.cpp:1002 win32/WinUtil.cpp:1648 win32/UserInfoBase.h:165
 msgid "&Get file list"
 msgstr ""
 
@@ -308,16 +308,16 @@ msgstr ""
 msgid "&Go to directory"
 msgstr "ディレクトリごとダウンロード"
 
-#: win32/MainWindow.cpp:406
+#: win32/MainWindow.cpp:407
 msgid "&Help"
 msgstr ""
 
-#: win32/MainWindow.cpp:1770
+#: win32/MainWindow.cpp:1802
 #, fuzzy
 msgid "&Hide\tCtrl+1"
 msgstr "検索"
 
-#: win32/WinUtil.cpp:1653 win32/UserInfoBase.h:167
+#: win32/WinUtil.cpp:1654 win32/UserInfoBase.h:167
 #, fuzzy
 msgid "&Match queue"
 msgstr "キューとの照合"
@@ -341,12 +341,12 @@ msgstr "名前の変更"
 msgid "&New..."
 msgstr ""
 
-#: win32/MainWindow.cpp:364
+#: win32/MainWindow.cpp:365
 #, fuzzy
 msgid "&Notepad\tCtrl+N"
 msgstr "メモ帳"
 
-#: win32/RichTextBox.cpp:103 win32/SystemFrame.cpp:125
+#: win32/RichTextBox.cpp:103 win32/SystemFrame.cpp:131
 #: win32/FinishedFrameBase.h:463
 msgid "&Open"
 msgstr ""
@@ -362,17 +362,17 @@ msgstr "メモ帳"
 msgid "&Properties"
 msgstr "自動検索のプロパティ"
 
-#: win32/MainWindow.cpp:346
+#: win32/MainWindow.cpp:347
 #, fuzzy
 msgid "&Public Hubs\tCtrl+P"
 msgstr "公開ハブのリスト"
 
-#: win32/MainWindow.cpp:313
+#: win32/MainWindow.cpp:314
 #, fuzzy
 msgid "&Quick connect...\tCtrl+Q"
 msgstr "クイック接続"
 
-#: win32/HubFrame.cpp:1389 win32/MainWindow.cpp:317
+#: win32/HubFrame.cpp:1398 win32/MainWindow.cpp:318
 msgid "&Reconnect\tCtrl+R"
 msgstr ""
 
@@ -384,7 +384,7 @@ msgstr ""
 #: win32/FavHubGroupsDlg.cpp:107 win32/FavHubsFrame.cpp:139
 #: win32/FavHubsFrame.cpp:370 win32/FavoriteDirsPage.cpp:77
 #: win32/PluginPage.cpp:119 win32/PluginPage.cpp:262 win32/QueueFrame.cpp:940
-#: win32/QueueFrame.cpp:954 win32/QueueFrame.cpp:968 win32/SearchFrame.cpp:887
+#: win32/QueueFrame.cpp:954 win32/QueueFrame.cpp:968 win32/SearchFrame.cpp:886
 #: win32/SearchTypesPage.cpp:93 win32/StringListDlg.cpp:159 win32/UCPage.cpp:75
 #: win32/UploadPage.cpp:89 win32/UserMatchPage.cpp:97 win32/UsersFrame.cpp:513
 #: win32/FinishedFrameBase.h:466 win32/FinishedFrameBase.h:491
@@ -397,17 +397,17 @@ msgstr "名前の変更"
 msgid "&Remove file from queue"
 msgstr "キューからユーザーを外す"
 
-#: win32/MainWindow.cpp:360
+#: win32/MainWindow.cpp:361
 #, fuzzy
 msgid "&Search\tCtrl+S"
 msgstr "検索"
 
-#: win32/HubFrame.cpp:1393
+#: win32/HubFrame.cpp:1402
 #, fuzzy
 msgid "&Search hub"
 msgstr "検索画面メニュー"
 
-#: win32/QueueFrame.cpp:1009 win32/WinUtil.cpp:1656 win32/UserInfoBase.h:170
+#: win32/QueueFrame.cpp:1009 win32/WinUtil.cpp:1657 win32/UserInfoBase.h:170
 msgid "&Send private message"
 msgstr ""
 
@@ -428,22 +428,22 @@ msgstr "メモ帳"
 msgid "&Update"
 msgstr ""
 
-#: win32/MainWindow.cpp:350
+#: win32/MainWindow.cpp:351
 #, fuzzy
 msgid "&Users\tCtrl+U"
 msgstr "お気に入りのﾕｰｻﾞｰ"
 
-#: win32/MainWindow.cpp:344
+#: win32/MainWindow.cpp:345
 #, fuzzy
 msgid "&View"
 msgstr "動画"
 
-#: win32/DirectoryListingFrame.cpp:855 win32/SearchFrame.cpp:875
+#: win32/DirectoryListingFrame.cpp:855 win32/SearchFrame.cpp:874
 #: win32/FinishedFrameBase.h:462
 msgid "&View as text"
 msgstr ""
 
-#: win32/MainWindow.cpp:384
+#: win32/MainWindow.cpp:385
 msgid "&Window"
 msgstr ""
 
@@ -452,17 +452,17 @@ msgstr ""
 msgid "(%1%)"
 msgstr ""
 
-#: win32/MainWindow.cpp:848
+#: win32/MainWindow.cpp:856
 msgid "(No recent item found)"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:521
+#: win32/PrivateFrame.cpp:528
 #, fuzzy
 msgid "(User offline)"
 msgstr "ユーザーはオフライン"
 
-#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:423
-#: win32/PrivateFrame.cpp:430
+#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:425
+#: win32/PrivateFrame.cpp:432
 #, fuzzy
 msgid "*** Keyboard commands:"
 msgstr "コマンド"
@@ -486,7 +486,7 @@ msgstr ""
 msgid "<Information unavailable>"
 msgstr "ファイル取得不可"
 
-#: win32/WinUtil.cpp:1551
+#: win32/WinUtil.cpp:1552
 #, fuzzy
 msgid ""
 "A MAGNET link was given to FearDC, but it didn't contain a valid file hash "
@@ -495,20 +495,20 @@ msgstr ""
 "MAGNET リンクが DC++ に与えられましたが、Direct Connect ネットワークでの使用"
 "に有効なハッシュが含まれていませんでした。いかなる処理も行いません。"
 
-#: win32/PrivateFrame.cpp:585
+#: win32/PrivateFrame.cpp:592
 msgid "A direct encrypted channel has been established"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:333
+#: win32/PrivateFrame.cpp:335
 msgid "A direct encrypted channel is already available"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:345
+#: win32/PrivateFrame.cpp:347
 msgid ""
 "A secure ADC hub is required; this feature is not supported on NMDC hubs"
 msgstr ""
 
-#: win32/UploadPage.cpp:301
+#: win32/UploadPage.cpp:283
 #, boost-format
 msgid ""
 "A virtual directory named %1% already exists, do you wish to merge the "
@@ -519,7 +519,7 @@ msgstr ""
 msgid "ADC"
 msgstr ""
 
-#: win32/MainWindow.cpp:361 win32/MainWindow.cpp:471
+#: win32/MainWindow.cpp:362 win32/MainWindow.cpp:472
 msgid "ADL Search"
 msgstr "ファイルリスト内自動検索"
 
@@ -527,15 +527,15 @@ msgstr "ファイルリスト内自動検索"
 msgid "ADLSearch Properties"
 msgstr "自動検索のプロパティ"
 
-#: win32/AboutDlg.cpp:175 win32/MainWindow.cpp:412
+#: win32/AboutDlg.cpp:175 win32/MainWindow.cpp:413
 msgid "About FearDC"
 msgstr ""
 
-#: win32/ACFrame.cpp:58 win32/MainWindow.cpp:371
+#: win32/ACFrame.cpp:58 win32/MainWindow.cpp:372
 msgid "About:config"
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:75
+#: win32/UploadFilteringPage.cpp:77
 msgid "Above (minimum size)"
 msgstr ""
 
@@ -551,12 +551,12 @@ msgstr ""
 msgid "Active mode (let FearDC configure my router with NAT-PMP / UPnP)"
 msgstr ""
 
-#: win32/MainWindow.cpp:728
+#: win32/MainWindow.cpp:736
 #, fuzzy
 msgid "Add"
 msgstr "追加日時"
 
-#: win32/HubFrame.cpp:1386 win32/PublicHubsFrame.cpp:402 win32/WinUtil.cpp:1659
+#: win32/HubFrame.cpp:1395 win32/PublicHubsFrame.cpp:402 win32/WinUtil.cpp:1660
 #: win32/UserInfoBase.h:175
 #, fuzzy
 msgid "Add To &Favorites"
@@ -587,7 +587,7 @@ msgstr ""
 msgid "Address"
 msgstr "アドレス"
 
-#: win32/PrivateFrame.cpp:443
+#: win32/PrivateFrame.cpp:445
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to ignore chat messages from the current user."
@@ -599,7 +599,7 @@ msgid ""
 "to ignore chat messages from the specified user."
 msgstr ""
 
-#: win32/PrivateFrame.cpp:445
+#: win32/PrivateFrame.cpp:447
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to stop ignoring chat messages from the current user."
@@ -617,11 +617,11 @@ msgid ""
 "list of Favorite Hubs."
 msgstr ""
 
-#: win32/PrivateFrame.cpp:441
+#: win32/PrivateFrame.cpp:443
 msgid "Adds the current user to the list of Favorite Users."
 msgstr ""
 
-#: win32/PrivateFrame.cpp:436
+#: win32/PrivateFrame.cpp:438
 msgid "Adds the current user's list to the Download Queue."
 msgstr ""
 
@@ -633,7 +633,7 @@ msgstr ""
 msgid "Advanced"
 msgstr "詳細設定"
 
-#: win32/QueueFrame.cpp:1017 win32/QueueFrame.cpp:1026 win32/WinUtil.cpp:1614
+#: win32/QueueFrame.cpp:1017 win32/QueueFrame.cpp:1026 win32/WinUtil.cpp:1615
 msgid "All"
 msgstr "すべて"
 
@@ -642,11 +642,11 @@ msgstr "すべて"
 msgid "All %1% users offline"
 msgstr "ユーザーはオフライン"
 
-#: win32/WinUtil.cpp:1712
+#: win32/WinUtil.cpp:1713
 msgid "All columns"
 msgstr ""
 
-#: win32/WinUtil.cpp:858 win32/WinUtil.cpp:865
+#: win32/WinUtil.cpp:859 win32/WinUtil.cpp:866
 msgid "All files"
 msgstr ""
 
@@ -687,7 +687,7 @@ msgstr "ディレクトリまたはディレクトリ名がすでに存在しま
 msgid "Any"
 msgstr "すべて"
 
-#: win32/WinUtil.cpp:1575
+#: win32/WinUtil.cpp:1576
 msgid ""
 "Any program that is launched will have the same access rights as FearDC."
 msgstr ""
@@ -705,11 +705,11 @@ msgstr ""
 msgid "Application version"
 msgstr "DC++ の終了には確認を求める"
 
-#: win32/SearchFrame.cpp:192
+#: win32/SearchFrame.cpp:191
 msgid "At least"
 msgstr "下限"
 
-#: win32/SearchFrame.cpp:193
+#: win32/SearchFrame.cpp:192
 msgid "At most"
 msgstr "上限"
 
@@ -796,12 +796,12 @@ msgstr "右指定速度未満の場合、自動的に 1 スロットを追加開
 msgid "Automatically search for alternative download locations"
 msgstr "自動的に代替ダウンロード先の検索をする"
 
-#: win32/HubFrame.cpp:1217
+#: win32/HubFrame.cpp:1218
 #, fuzzy, boost-format
 msgid "Average: %1%"
 msgstr "ユーザー"
 
-#: win32/UserInfoBase.cpp:133 win32/UsersFrame.cpp:81
+#: win32/UserInfoBase.cpp:134 win32/UsersFrame.cpp:81
 msgid "Away"
 msgstr ""
 
@@ -813,18 +813,18 @@ msgstr ""
 msgid "Away mode"
 msgstr ""
 
-#: win32/WinUtil.cpp:637 win32/WinUtil.cpp:650
+#: win32/WinUtil.cpp:638 win32/WinUtil.cpp:651
 msgid "Away mode off"
 msgstr "離席モード オフ"
 
-#: win32/WinUtil.cpp:643
+#: win32/WinUtil.cpp:644
 #, fuzzy, boost-format
 msgid "Away mode on: %1%"
 msgstr "離席モード オフ"
 
 #: win32/ADLSProperties.cpp:99 win32/ExpertsPage.cpp:53
-#: win32/ExpertsPage.cpp:54 win32/ExpertsPage.cpp:56 win32/SearchFrame.cpp:203
-#: win32/UploadFilteringPage.cpp:75 win32/UploadFilteringPage.cpp:80
+#: win32/ExpertsPage.cpp:54 win32/ExpertsPage.cpp:56 win32/SearchFrame.cpp:202
+#: win32/UploadFilteringPage.cpp:77 win32/UploadFilteringPage.cpp:82
 msgid "B"
 msgstr "B"
 
@@ -858,7 +858,7 @@ msgstr ""
 msgid "Beep"
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:80
+#: win32/UploadFilteringPage.cpp:82
 msgid "Below (maximum size)"
 msgstr ""
 
@@ -867,11 +867,11 @@ msgstr ""
 msgid "Bind Address"
 msgstr "バインド アドレス"
 
-#: win32/MainWindow.cpp:425
+#: win32/MainWindow.cpp:426
 msgid "Blog"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:121 win32/UsersFrame.cpp:330 win32/UsersFrame.cpp:331
+#: win32/UserInfoBase.cpp:122 win32/UsersFrame.cpp:330 win32/UsersFrame.cpp:331
 msgid "Bot"
 msgstr ""
 
@@ -891,7 +891,7 @@ msgstr ""
 msgid "Button style"
 msgstr ""
 
-#: win32/HubFrame.cpp:67 win32/SearchFrame.cpp:61 win32/UserInfoBase.cpp:166
+#: win32/HubFrame.cpp:67 win32/SearchFrame.cpp:60 win32/UserInfoBase.cpp:167
 #: win32/UserMatchDlg.cpp:222 win32/UserMatchPage.cpp:215
 #: win32/UsersFrame.cpp:61 win32/UsersFrame.cpp:100
 msgid "CID"
@@ -909,7 +909,7 @@ msgstr "CRC32 不一致 (SFV-チェック)"
 msgid "Cached hub list is corrupted or unsupported"
 msgstr ""
 
-#: win32/WinUtil.cpp:1130
+#: win32/WinUtil.cpp:1131
 #, fuzzy
 msgid "Cancel"
 msgstr "変更履歴"
@@ -922,21 +922,27 @@ msgstr ""
 msgid "Cannot install the plugin:"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:349
+#: win32/PrivateFrame.cpp:351
 #, boost-format
 msgid "Cannot start the direct encrypted channel: %1%"
 msgstr ""
 
-#: win32/CertificatesPage.cpp:124
+#: win32/CertificatesPage.cpp:125
 msgid "Certificate generation"
 msgstr ""
 
-#: win32/MainWindow.cpp:411
+#: win32/MainWindow.cpp:412
 msgid "Change Log"
 msgstr "変更履歴"
 
-#: win32/TextFrame.cpp:90
+#: win32/TextFrame.cpp:92
 msgid "Change the text viewer font"
+msgstr ""
+
+#: win32/UploadFilteringPage.cpp:140
+msgid ""
+"Changes to your shared files will be applied when you close the Settings "
+"dialog."
 msgstr ""
 
 #: win32/CommandDlg.cpp:90 win32/StylesPage.cpp:148
@@ -959,7 +965,7 @@ msgstr ""
 msgid "Clear search box after each search"
 msgstr "検索毎に入力文字を検索ボックスから消去する"
 
-#: win32/WinUtil.cpp:547
+#: win32/WinUtil.cpp:548
 msgid ""
 "Clears the current window of all text. Optionally, you can specify how many "
 "of the latest (most recent) lines should be kept."
@@ -988,40 +994,40 @@ msgstr "種類"
 msgid "Close"
 msgstr "色"
 
-#: win32/MainWindow.cpp:395
+#: win32/MainWindow.cpp:396
 msgid "Close all PM windows"
 msgstr ""
 
-#: win32/MainWindow.cpp:399
+#: win32/MainWindow.cpp:400
 msgid "Close all file list windows"
 msgstr ""
 
-#: win32/MainWindow.cpp:389
+#: win32/MainWindow.cpp:390
 msgid "Close all hubs"
 msgstr ""
 
-#: win32/MainWindow.cpp:391 win32/MainWindow.cpp:1720
+#: win32/MainWindow.cpp:392 win32/MainWindow.cpp:1739
 msgid "Close all hubs of a favorite group"
 msgstr ""
 
-#: win32/MainWindow.cpp:396
+#: win32/MainWindow.cpp:397
 msgid "Close all offline PM windows"
 msgstr ""
 
-#: win32/MainWindow.cpp:402
+#: win32/MainWindow.cpp:403
 msgid "Close all search windows"
 msgstr ""
 
-#: win32/MainWindow.cpp:390
+#: win32/MainWindow.cpp:391
 #, fuzzy
 msgid "Close disconnected hubs"
 msgstr "切断状態のウインドウを閉じる"
 
-#: win32/MainWindow.cpp:392 win32/MainWindow.cpp:1720
+#: win32/MainWindow.cpp:393 win32/MainWindow.cpp:1739
 msgid "Close hubs not in a favorite group"
 msgstr ""
 
-#: win32/WinUtil.cpp:561
+#: win32/WinUtil.cpp:562
 msgid "Closes the current window."
 msgstr ""
 
@@ -1033,7 +1039,7 @@ msgstr "コマンド"
 msgid "Command Type"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:516
+#: win32/PrivateFrame.cpp:523
 msgid "Communication channel"
 msgstr ""
 
@@ -1041,7 +1047,7 @@ msgstr ""
 msgid "Compiler"
 msgstr ""
 
-#: win32/MainWindow.cpp:729 win32/MainWindow.cpp:747
+#: win32/MainWindow.cpp:737 win32/MainWindow.cpp:755
 #, fuzzy
 msgid "Configure"
 msgstr "公開ハブリスト取得先の変更"
@@ -1062,47 +1068,47 @@ msgstr ""
 msgid "Configured Public Hub Lists"
 msgstr "公開ハブリスト取得先"
 
-#: win32/WindowsPage.cpp:53
+#: win32/WindowsPage.cpp:52
 #, fuzzy
 msgid "Confirm ADL Search removal"
 msgstr "お気に入りハブの削除には確認を求める"
 
-#: win32/WindowsPage.cpp:48
+#: win32/WindowsPage.cpp:47
 msgid "Confirm application exit"
 msgstr "DC++ の終了には確認を求める"
 
-#: win32/WindowsPage.cpp:71
+#: win32/WindowsPage.cpp:70
 #, fuzzy
 msgid "Confirm dialog options"
 msgstr "ウインドウ オプション"
 
-#: win32/WindowsPage.cpp:50
+#: win32/WindowsPage.cpp:49
 msgid "Confirm favorite hub removal"
 msgstr "お気に入りハブの削除には確認を求める"
 
-#: win32/WindowsPage.cpp:51
+#: win32/WindowsPage.cpp:50
 #, fuzzy
 msgid "Confirm favorite user removal"
 msgstr "お気に入りハブの削除には確認を求める"
 
-#: win32/WindowsPage.cpp:49
+#: win32/WindowsPage.cpp:48
 msgid "Confirm hub closing"
 msgstr ""
 
-#: win32/WindowsPage.cpp:52
+#: win32/WindowsPage.cpp:51
 msgid "Confirm item removal in download queue"
 msgstr "ダウンロードキューのアイテムの削除には確認を求める"
 
-#: win32/MainWindow.cpp:314
+#: win32/MainWindow.cpp:315
 msgid "Connect to a favorite hub &group...\tCtrl+G"
 msgstr ""
 
-#: win32/MainWindow.cpp:986
+#: win32/MainWindow.cpp:995
 #, fuzzy
 msgid "Connect to a favorite hub group"
 msgstr "お気に入りハブの削除には確認を求める"
 
-#: win32/MainWindow.cpp:820
+#: win32/MainWindow.cpp:828
 msgid "Connect to all hubs in this group"
 msgstr ""
 
@@ -1110,7 +1116,7 @@ msgstr ""
 msgid "Connect to hub"
 msgstr ""
 
-#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1780
+#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1807
 msgid "Connected"
 msgstr "接続中"
 
@@ -1119,12 +1125,12 @@ msgstr "接続中"
 msgid "Connecting"
 msgstr "回線の種類"
 
-#: win32/HubFrame.cpp:1018
+#: win32/HubFrame.cpp:1019
 #, fuzzy, boost-format
 msgid "Connecting to %1%..."
 msgstr "回線の種類"
 
-#: win32/HubFrame.cpp:63 win32/SearchFrame.cpp:56 win32/UserInfoBase.cpp:153
+#: win32/HubFrame.cpp:63 win32/SearchFrame.cpp:55 win32/UserInfoBase.cpp:154
 #: win32/UsersFrame.cpp:102
 msgid "Connection"
 msgstr "回線の種類"
@@ -1138,11 +1144,11 @@ msgstr "接続中"
 msgid "Context"
 msgstr ""
 
-#: win32/MainWindow.cpp:424
+#: win32/MainWindow.cpp:425
 msgid "Contribute"
 msgstr ""
 
-#: win32/WinUtil.cpp:1694
+#: win32/WinUtil.cpp:1695
 msgid "Copy"
 msgstr ""
 
@@ -1154,17 +1160,17 @@ msgstr ""
 msgid "Copy &Value"
 msgstr ""
 
-#: win32/HubFrame.cpp:1390
+#: win32/HubFrame.cpp:1399
 #, fuzzy
 msgid "Copy &address to clipboard"
 msgstr "Magnet リンクをクリップボードにコピー"
 
-#: win32/HubFrame.cpp:1392
+#: win32/HubFrame.cpp:1401
 #, fuzzy
 msgid "Copy address with &keyprint to clipboard"
 msgstr "Magnet リンクをクリップボードにコピー"
 
-#: win32/WinUtil.cpp:808
+#: win32/WinUtil.cpp:809
 msgid "Copy magnet link to clipboard"
 msgstr "Magnet リンクをクリップボードにコピー"
 
@@ -1174,11 +1180,11 @@ msgid "Copy user information"
 msgstr "個人情報"
 
 #: win32/HubFrame.cpp:65 win32/PublicHubsFrame.cpp:48 win32/TransferView.cpp:58
-#: win32/UserInfoBase.cpp:155
+#: win32/UserInfoBase.cpp:156
 msgid "Country"
 msgstr "国"
 
-#: win32/AppearancePage.cpp:74
+#: win32/AppearancePage.cpp:75
 #, fuzzy
 msgid "Country format"
 msgstr "国"
@@ -1223,21 +1229,21 @@ msgstr ""
 msgid "Custom text color"
 msgstr ""
 
-#: win32/MainWindow.cpp:941
+#: win32/MainWindow.cpp:949
 msgid "Custom..."
 msgstr ""
 
-#: win32/MainWindow.cpp:1219
+#: win32/MainWindow.cpp:1239
 #, boost-format
 msgid "D: %1%"
 msgstr ""
 
-#: win32/MainWindow.cpp:1227
+#: win32/MainWindow.cpp:1247
 #, boost-format
 msgid "D: %1%/s (%2%)"
 msgstr ""
 
-#: win32/MainWindow.cpp:426
+#: win32/MainWindow.cpp:427
 msgid "DC Network Foundation community"
 msgstr ""
 
@@ -1246,9 +1252,9 @@ msgstr ""
 msgid "Decrease priority"
 msgstr "優先度の設定"
 
-#: win32/AppearancePage.cpp:141 win32/AppearancePage.cpp:174
+#: win32/AppearancePage.cpp:142 win32/AppearancePage.cpp:175
 #: win32/ConnectivityManualPage.cpp:260 win32/FavHubProperties.cpp:282
-#: win32/WinUtil.cpp:1174 win32/ACFrame.h:140
+#: win32/WinUtil.cpp:1175 win32/ACFrame.h:140
 msgid "Default"
 msgstr ""
 
@@ -1268,7 +1274,7 @@ msgstr "離席(away）を知らせる既定のメッセージ"
 #: win32/FavHubGroupsDlg.cpp:140 win32/FavHubProperties.cpp:96
 #: win32/FavHubProperties.cpp:132 win32/FavHubsFrame.cpp:50
 #: win32/GeneralPage.cpp:59 win32/HubFrame.cpp:61 win32/HubFrame.cpp:441
-#: win32/PublicHubsFrame.cpp:45 win32/UserInfoBase.cpp:151
+#: win32/PublicHubsFrame.cpp:45 win32/UserInfoBase.cpp:152
 #: win32/UsersFrame.cpp:60 win32/UsersFrame.cpp:82 win32/UsersFrame.cpp:475
 msgid "Description"
 msgstr "記述"
@@ -1296,7 +1302,7 @@ msgstr "回線の種類"
 msgid "Direct connection"
 msgstr "回線の種類"
 
-#: win32/PrivateFrame.cpp:326
+#: win32/PrivateFrame.cpp:328
 msgid "Direct encrypted channel"
 msgstr ""
 
@@ -1309,7 +1315,7 @@ msgid "Directories"
 msgstr "ファイル保存先ディレクトリ"
 
 #: win32/ADLSProperties.cpp:76 win32/DirectoryListingFrame.cpp:1572
-#: win32/FavoriteDirsPage.cpp:40 win32/LogPage.cpp:74 win32/SearchFrame.cpp:510
+#: win32/FavoriteDirsPage.cpp:40 win32/LogPage.cpp:74 win32/SearchFrame.cpp:509
 #: win32/UploadPage.cpp:46
 msgid "Directory"
 msgstr "ディレクトリ"
@@ -1318,7 +1324,7 @@ msgstr "ディレクトリ"
 msgid "Directory or directory name already exists"
 msgstr "ディレクトリまたはディレクトリ名がすでに存在します。"
 
-#: win32/MainWindow.cpp:744 win32/PluginPage.cpp:105 win32/PluginPage.cpp:257
+#: win32/MainWindow.cpp:752 win32/PluginPage.cpp:105 win32/PluginPage.cpp:257
 #, fuzzy
 msgid "Disable"
 msgstr "有効"
@@ -1336,29 +1342,25 @@ msgstr ""
 msgid "Disable connectivity"
 msgstr "接続中"
 
-#: win32/WindowsPage.cpp:41
-msgid "Disable taskbar menu creation"
-msgstr ""
-
-#: win32/MainWindow.cpp:932
+#: win32/MainWindow.cpp:940
 #, fuzzy
 msgid "Disabled"
 msgstr "有効"
 
-#: win32/PrivateFrame.cpp:540
+#: win32/PrivateFrame.cpp:547
 msgid "Disconnect the direct encrypted channel"
 msgstr ""
 
-#: win32/WinUtil.cpp:1785
+#: win32/WinUtil.cpp:1812
 #, fuzzy
 msgid "Disconnected"
 msgstr "クイック接続"
 
-#: win32/PrivateFrame.cpp:360
+#: win32/PrivateFrame.cpp:362
 msgid "Disconnecting the direct encrypted channel..."
 msgstr ""
 
-#: win32/MainWindow.cpp:420
+#: win32/MainWindow.cpp:421
 #, fuzzy
 msgid "Discussion forum"
 msgstr "DC++ フォーラム"
@@ -1371,7 +1373,7 @@ msgstr ""
 msgid "Display the balloon only when FearDC is in the background"
 msgstr ""
 
-#: win32/WinUtil.cpp:556
+#: win32/WinUtil.cpp:557
 msgid ""
 "Displays available commands. (The ones listed on this page.) Optionally, you "
 "can specify \"brief\" to have a brief listing."
@@ -1400,7 +1402,7 @@ msgstr ""
 msgid "Do you really want to delete this search type?"
 msgstr ""
 
-#: win32/WinUtil.cpp:1577
+#: win32/WinUtil.cpp:1578
 msgid "Do you still want to allow to open a program on your computer?"
 msgstr ""
 
@@ -1440,7 +1442,7 @@ msgstr ""
 msgid "Don't send the away message to bots"
 msgstr "BOT には離席を知らせる自動返信メッセージを送信しない"
 
-#: win32/MainWindow.cpp:423
+#: win32/MainWindow.cpp:424
 msgid "Donate (paypal)"
 msgstr "寄付 €€€/$$$ (paypal)"
 
@@ -1462,7 +1464,7 @@ msgstr "ダウンロード（保存先指定）"
 msgid "Download Matches"
 msgstr "合致ファイルをダウンロード"
 
-#: win32/MainWindow.cpp:463 win32/QueueFrame.cpp:66 win32/TabsPage.cpp:41
+#: win32/MainWindow.cpp:464 win32/QueueFrame.cpp:66 win32/TabsPage.cpp:41
 msgid "Download Queue"
 msgstr "ダウンロードキュー"
 
@@ -1476,7 +1478,7 @@ msgstr "受信量"
 msgid "Download failed: %1%"
 msgstr "受信量"
 
-#: win32/TransferView.cpp:1134 win32/WinUtil.cpp:92
+#: win32/TransferView.cpp:1134 win32/WinUtil.cpp:93
 #, fuzzy
 msgid "Download finished"
 msgstr "受信量"
@@ -1485,27 +1487,27 @@ msgstr "受信量"
 msgid "Download full list"
 msgstr ""
 
-#: win32/MainWindow.cpp:908 win32/MainWindow.cpp:1898
+#: win32/MainWindow.cpp:916 win32/MainWindow.cpp:1930
 #, fuzzy
 msgid "Download limit"
 msgstr "ダウンロード"
 
-#: win32/WinUtil.cpp:689
+#: win32/WinUtil.cpp:690
 #, fuzzy
 msgid "Download limit disabled"
 msgstr "ダウンロード"
 
-#: win32/WinUtil.cpp:689
+#: win32/WinUtil.cpp:690
 #, fuzzy, boost-format
 msgid "Download limit set to %1% KiB/s"
 msgstr "ダウンロード"
 
-#: win32/MainWindow.cpp:1235
+#: win32/MainWindow.cpp:1255
 #, fuzzy, boost-format
 msgid "Download limit: %1%/s - Click to adjust"
 msgstr "ダウンロード"
 
-#: win32/WinUtil.cpp:621
+#: win32/WinUtil.cpp:622
 #, fuzzy
 msgid "Download slots set"
 msgstr "ダウンロード"
@@ -1515,15 +1517,15 @@ msgstr "ダウンロード"
 msgid "Download speed"
 msgstr "受信量"
 
-#: win32/SearchFrame.cpp:897
+#: win32/SearchFrame.cpp:896
 msgid "Download to..."
 msgstr "ダウンロード（保存先指定）"
 
-#: win32/SearchFrame.cpp:873
+#: win32/SearchFrame.cpp:872
 msgid "Download whole directory"
 msgstr "ディレクトリごとダウンロード"
 
-#: win32/SearchFrame.cpp:925
+#: win32/SearchFrame.cpp:924
 msgid "Download whole directory to..."
 msgstr "ディレクトリごとダウンロード（保存先指定）"
 
@@ -1568,7 +1570,7 @@ msgstr "公開ハブのリストを取得中..."
 msgid "Downloading..."
 msgstr "受信中..."
 
-#: win32/MainWindow.cpp:417 win32/SettingsDialog.cpp:166
+#: win32/MainWindow.cpp:418 win32/SettingsDialog.cpp:166
 #: win32/StylesPage.cpp:164
 msgid "Downloads"
 msgstr "ダウンロード"
@@ -1581,7 +1583,7 @@ msgstr ""
 msgid "Drop sources below"
 msgstr ""
 
-#: win32/MainWindow.cpp:340
+#: win32/MainWindow.cpp:341
 msgid "E&xit\tAlt+F4"
 msgstr ""
 
@@ -1589,7 +1591,7 @@ msgstr ""
 msgid "E-Mail"
 msgstr "電子メール"
 
-#: win32/UserInfoBase.cpp:156
+#: win32/UserInfoBase.cpp:157
 #, fuzzy
 msgid "E-mail"
 msgstr "電子メール"
@@ -1613,7 +1615,7 @@ msgstr "電子メール"
 msgid "Empty hub address specified"
 msgstr ""
 
-#: win32/MainWindow.cpp:743 win32/PluginPage.cpp:101 win32/PluginPage.cpp:256
+#: win32/MainWindow.cpp:751 win32/PluginPage.cpp:101 win32/PluginPage.cpp:256
 #, fuzzy
 msgid "Enable"
 msgstr "有効"
@@ -1634,12 +1636,20 @@ msgstr ""
 msgid "Enable away mode when the Windows session is locked"
 msgstr ""
 
+#: win32/CertificatesPage.cpp:42
+msgid "Enable encrypted active search results in ADCS hubs"
+msgstr ""
+
 #: win32/AdvancedPage.cpp:43
 msgid "Enable safe and compressed transfers"
 msgstr "安全圧縮転送機能を有効にする"
 
 #: win32/AdvancedPage.cpp:52
 msgid "Enable segmented downloads"
+msgstr ""
+
+#: win32/AppearancePage.cpp:49
+msgid "Enable window previews in the taskbar (requires restart)"
 msgstr ""
 
 #: win32/ADLSProperties.cpp:113
@@ -1663,7 +1673,7 @@ msgstr ""
 msgid "Enter a new value"
 msgstr ""
 
-#: win32/SearchFrame.cpp:161
+#: win32/SearchFrame.cpp:160
 #, fuzzy
 msgid "Enter search here"
 msgstr "検索文字列の入力"
@@ -1672,11 +1682,11 @@ msgstr "検索文字列の入力"
 msgid "Enter your external address here"
 msgstr ""
 
-#: win32/CertificatesPage.cpp:126
+#: win32/CertificatesPage.cpp:127
 msgid "Error generating certificate"
 msgstr ""
 
-#: win32/NotepadFrame.cpp:51
+#: win32/NotepadFrame.cpp:52
 #, boost-format
 msgid "Error loading the notepad file: %1%"
 msgstr ""
@@ -1686,22 +1696,22 @@ msgstr ""
 msgid "Error processing version information"
 msgstr "個人情報"
 
-#: win32/WinUtil.cpp:1456
+#: win32/WinUtil.cpp:1457
 msgid ""
 "Error registering FearDC for automatic startup (could not find or create key)"
 msgstr ""
 
-#: win32/WinUtil.cpp:1466
+#: win32/WinUtil.cpp:1467
 msgid ""
 "Error registering FearDC for automatic startup (could not set key value)"
 msgstr ""
 
-#: win32/WinUtil.cpp:1395
+#: win32/WinUtil.cpp:1396
 #, boost-format
 msgid "Error registering the %1% handler"
 msgstr ""
 
-#: win32/WinUtil.cpp:1501
+#: win32/WinUtil.cpp:1502
 msgid ""
 "Error unregistering FearDC for automatic startup (could not delete key value)"
 msgstr ""
@@ -1710,7 +1720,7 @@ msgstr ""
 msgid "Errors"
 msgstr "エラー"
 
-#: win32/PrivateFrame.cpp:354
+#: win32/PrivateFrame.cpp:356
 msgid "Establishing a direct encrypted channel..."
 msgstr ""
 
@@ -1728,12 +1738,12 @@ msgid ""
 "FearDC is licenced under GPL."
 msgstr ""
 
-#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1169
+#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1170
 msgid "Exact match"
 msgstr ""
 
 #: win32/DirectoryListingFrame.cpp:66 win32/QueueFrame.cpp:58
-#: win32/SearchFrame.cpp:58
+#: win32/SearchFrame.cpp:57
 msgid "Exact size"
 msgstr "実サイズ"
 
@@ -1741,7 +1751,7 @@ msgstr "実サイズ"
 msgid "Example hub tab"
 msgstr ""
 
-#: win32/MainWindow.cpp:1901
+#: win32/MainWindow.cpp:1933
 msgid "Exit"
 msgstr ""
 
@@ -1779,7 +1789,7 @@ msgstr ""
 msgid "External / WAN IP address"
 msgstr ""
 
-#: win32/WinUtil.cpp:1578
+#: win32/WinUtil.cpp:1579
 msgid "External protocol request"
 msgstr ""
 
@@ -1803,7 +1813,7 @@ msgstr "お気に入りのハブ"
 msgid "Favorite Hub Properties"
 msgstr "お気に入りのハブのプロパティ"
 
-#: win32/FavHubsFrame.cpp:59 win32/MainWindow.cpp:458
+#: win32/FavHubsFrame.cpp:59 win32/MainWindow.cpp:459
 msgid "Favorite Hubs"
 msgstr "お気に入りのハブ"
 
@@ -1811,7 +1821,7 @@ msgstr "お気に入りのハブ"
 msgid "Favorite download directories"
 msgstr "お気に入りのダウンロードディレクトリ"
 
-#: win32/HubFrame.cpp:1245
+#: win32/HubFrame.cpp:1246
 msgid "Favorite hub added"
 msgstr "ハブをお気に入りに追加"
 
@@ -1820,7 +1830,7 @@ msgstr "ハブをお気に入りに追加"
 msgid "Favorite hub groups"
 msgstr "ハブをお気に入りに追加"
 
-#: win32/HubFrame.cpp:1255
+#: win32/HubFrame.cpp:1256
 #, fuzzy
 msgid "Favorite hub removed"
 msgstr "ハブをお気に入りに追加"
@@ -1830,11 +1840,11 @@ msgstr "ハブをお気に入りに追加"
 msgid "Favorite name"
 msgstr "名前"
 
-#: win32/PrivateFrame.cpp:407
+#: win32/PrivateFrame.cpp:409
 msgid "Favorite user added"
 msgstr "ユーザーをお気に入りに追加"
 
-#: win32/WinUtil.cpp:449
+#: win32/WinUtil.cpp:450
 #, boost-format
 msgid "Favorite users (added by %1%)"
 msgstr ""
@@ -1854,12 +1864,12 @@ msgstr ""
 msgid "Features"
 msgstr ""
 
-#: win32/MainWindow.cpp:1534 win32/MainWindow.cpp:1545
+#: win32/MainWindow.cpp:1553 win32/MainWindow.cpp:1564
 msgid "Feel free to report any bug via Help > Links > Report a bug."
 msgstr ""
 
 #: win32/DirectoryListingFrame.cpp:63 win32/DirectoryListingFrame.cpp:1565
-#: win32/SearchFrame.cpp:49 win32/TransferView.cpp:47
+#: win32/SearchFrame.cpp:48 win32/TransferView.cpp:47
 msgid "File"
 msgstr "ファイル"
 
@@ -1872,16 +1882,16 @@ msgstr ""
 msgid "File List"
 msgstr "ファイルリストメニュー"
 
-#: win32/QueueFrame.cpp:506 win32/WinUtil.cpp:865
+#: win32/QueueFrame.cpp:506 win32/WinUtil.cpp:866
 #, fuzzy
 msgid "File Lists"
 msgstr "ファイルリストメニュー"
 
-#: win32/UploadFilteringPage.cpp:102
+#: win32/UploadFilteringPage.cpp:104
 msgid "File extension filtering"
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:112
+#: win32/UploadFilteringPage.cpp:114
 msgid "File extensions"
 msgstr ""
 
@@ -1890,12 +1900,12 @@ msgstr ""
 msgid "File is already finished"
 msgstr "共有にすでに存在するファイルはダウンロードしない"
 
-#: win32/WinUtil.cpp:93
+#: win32/WinUtil.cpp:94
 #, fuzzy
 msgid "File list downloaded"
 msgstr "受信完了ファイル"
 
-#: win32/UploadFilteringPage.cpp:86
+#: win32/UploadFilteringPage.cpp:88
 msgid "File name filtering with regular expressions"
 msgstr ""
 
@@ -1913,7 +1923,7 @@ msgstr "ファイル取得不可"
 msgid "File size"
 msgstr "ファイル"
 
-#: win32/SearchFrame.cpp:209
+#: win32/SearchFrame.cpp:208
 msgid "File type"
 msgstr "種類"
 
@@ -1940,6 +1950,11 @@ msgstr "ファイル"
 msgid "Files (total): %1%"
 msgstr ""
 
+#: win32/MainWindow.cpp:1235
+#, fuzzy, boost-format
+msgid "Files shared: %1%"
+msgstr "ファイル名："
+
 #: win32/DirectoryListingFrame.cpp:1233 win32/QueueFrame.cpp:270
 #, boost-format
 msgid "Files: %1%"
@@ -1950,12 +1965,12 @@ msgstr ""
 msgid "Filter hubs"
 msgstr "ファイル"
 
-#: win32/SearchFrame.cpp:285
+#: win32/SearchFrame.cpp:284
 #, fuzzy
 msgid "Filter search results"
 msgstr "検索文字列の入力"
 
-#: win32/SearchFrame.cpp:281
+#: win32/SearchFrame.cpp:280
 #, fuzzy
 msgid "Filter search results:"
 msgstr "検索文字列の入力"
@@ -2012,13 +2027,13 @@ msgstr ""
 msgid "Finished"
 msgstr "検索"
 
-#: win32/FinishedDLFrame.cpp:27 win32/MainWindow.cpp:355
-#: win32/MainWindow.cpp:465 win32/TabsPage.cpp:42
+#: win32/FinishedDLFrame.cpp:27 win32/MainWindow.cpp:356
+#: win32/MainWindow.cpp:466 win32/TabsPage.cpp:42
 msgid "Finished Downloads"
 msgstr "受信完了ファイル"
 
-#: win32/FinishedULFrame.cpp:27 win32/MainWindow.cpp:357
-#: win32/MainWindow.cpp:467 win32/TabsPage.cpp:43
+#: win32/FinishedULFrame.cpp:27 win32/MainWindow.cpp:358
+#: win32/MainWindow.cpp:468 win32/TabsPage.cpp:43
 msgid "Finished Uploads"
 msgstr "送信完了ファイル"
 
@@ -2026,7 +2041,7 @@ msgstr "送信完了ファイル"
 msgid "Fire a balloon popup example"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:139
+#: win32/UserInfoBase.cpp:140
 msgid "Fireball"
 msgstr ""
 
@@ -2044,7 +2059,7 @@ msgstr "形式"
 msgid "Free slots"
 msgstr "最低必要開放スロット数"
 
-#: win32/MainWindow.cpp:418
+#: win32/MainWindow.cpp:419
 msgid "Frequently asked questions"
 msgstr "よく尋ねられる質問"
 
@@ -2065,7 +2080,7 @@ msgstr "GiB"
 msgid "General"
 msgstr ""
 
-#: win32/CertificatesPage.cpp:98
+#: win32/CertificatesPage.cpp:99
 msgid "Generate certificates"
 msgstr ""
 
@@ -2074,16 +2089,16 @@ msgstr ""
 msgid "Generated by %1%"
 msgstr ""
 
-#: win32/MainWindow.cpp:333
+#: win32/MainWindow.cpp:334
 msgid "GeoIP database update"
 msgstr "GeoIP データベースの更新"
 
-#: win32/MainWindow.cpp:409
+#: win32/MainWindow.cpp:410
 msgid "Get started"
 msgstr ""
 
 #: win32/ADLSProperties.cpp:102 win32/ListFilter.cpp:154
-#: win32/SearchFrame.cpp:206
+#: win32/SearchFrame.cpp:205
 msgid "GiB"
 msgstr "GiB"
 
@@ -2092,11 +2107,11 @@ msgstr "GiB"
 msgid "Global application style"
 msgstr "DC++ の終了には確認を求める"
 
-#: win32/WinUtil.cpp:1662 win32/UserInfoBase.h:176
+#: win32/WinUtil.cpp:1663 win32/UserInfoBase.h:176
 msgid "Grant &extra slot"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:438
+#: win32/PrivateFrame.cpp:440
 msgid ""
 "Grants the remote user a slot. Once they connect, or if they don't connect "
 "in 10 minutes, the granted slot is removed."
@@ -2136,28 +2151,28 @@ msgstr "ユーザーの国情報を取得する"
 msgid "HTTP Proxy (for hublist only)"
 msgstr "HTTP プロクシ （ハブリスト取得にのみ使用）"
 
-#: win32/AppearancePage.cpp:81
+#: win32/AppearancePage.cpp:82
 msgid "Height of the message editing box"
 msgstr ""
 
-#: win32/WinUtil.cpp:1142
+#: win32/WinUtil.cpp:1143
 msgid "Help"
 msgstr ""
 
-#: win32/MainWindow.cpp:408
+#: win32/MainWindow.cpp:409
 msgid "Help &Contents\tF1"
 msgstr ""
 
-#: win32/MainWindow.cpp:419
+#: win32/MainWindow.cpp:420
 msgid "Help center"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:119
+#: win32/UserInfoBase.cpp:120
 #, fuzzy
 msgid "Hidden user"
 msgstr "パッシブのユーザー"
 
-#: win32/SearchFrame.cpp:232
+#: win32/SearchFrame.cpp:231
 #, fuzzy
 msgid "Hide files already in share"
 msgstr "共有にすでに存在するファイルはダウンロードしない"
@@ -2182,7 +2197,7 @@ msgstr "最高優先度 サイズ"
 msgid "Highlighted tab"
 msgstr ""
 
-#: win32/WinUtil.cpp:558
+#: win32/WinUtil.cpp:559
 msgid ""
 "Highlights the last occourrence of the specified search string in the chat "
 "window."
@@ -2193,16 +2208,16 @@ msgstr ""
 msgid "History"
 msgstr "PM 履歴"
 
-#: win32/SearchFrame.cpp:50
+#: win32/SearchFrame.cpp:49
 msgid "Hits"
 msgstr ""
 
-#: win32/MainWindow.cpp:416
+#: win32/MainWindow.cpp:417
 #, fuzzy
 msgid "Homepage"
 msgstr "DC++ ホームページ"
 
-#: win32/FavHubProperties.cpp:74 win32/SearchFrame.cpp:57 win32/TabsPage.cpp:36
+#: win32/FavHubProperties.cpp:74 win32/SearchFrame.cpp:56 win32/TabsPage.cpp:36
 #: win32/TransferView.cpp:51 win32/UCPage.cpp:38 win32/FinishedFrameBase.h:742
 msgid "Hub"
 msgstr "ハブ"
@@ -2229,11 +2244,11 @@ msgstr ""
 msgid "Hub address cannot be empty"
 msgstr ""
 
-#: win32/MainWindow.cpp:975
+#: win32/MainWindow.cpp:984
 msgid "Hub address or Magnet link"
 msgstr ""
 
-#: win32/FavHubsFrame.cpp:232 win32/HubFrame.cpp:1247
+#: win32/FavHubsFrame.cpp:232 win32/HubFrame.cpp:1248
 msgid "Hub already exists as a favorite"
 msgstr ""
 
@@ -2247,7 +2262,7 @@ msgstr "受信完了ファイル"
 msgid "Hub offline"
 msgstr "ユーザーはオフライン"
 
-#: win32/UserInfoBase.cpp:123
+#: win32/UserInfoBase.cpp:124
 msgid "Hub operator"
 msgstr ""
 
@@ -2260,7 +2275,7 @@ msgstr ""
 msgid "Hublist"
 msgstr "ハブ"
 
-#: win32/HistoryPage.cpp:80 win32/SearchFrame.cpp:238
+#: win32/HistoryPage.cpp:80 win32/SearchFrame.cpp:237
 msgid "Hubs"
 msgstr "ハブ"
 
@@ -2277,17 +2292,17 @@ msgstr "ハブ"
 msgid "Hubs (registered)"
 msgstr ""
 
-#: win32/SearchFrame.cpp:252
+#: win32/SearchFrame.cpp:251
 #, fuzzy
 msgid "Hubs where I'm op"
 msgstr "自分が管理権限をもつハブのみ"
 
-#: win32/SearchFrame.cpp:254
+#: win32/SearchFrame.cpp:253
 msgid "Hubs with secure transfers"
 msgstr ""
 
-#: win32/MainWindow.cpp:1206 win32/PublicHubsFrame.cpp:260
-#: win32/UserInfoBase.cpp:105
+#: win32/MainWindow.cpp:1215 win32/PublicHubsFrame.cpp:260
+#: win32/UserInfoBase.cpp:106
 #, fuzzy, boost-format
 msgid "Hubs: %1%"
 msgstr "ハブ"
@@ -2297,8 +2312,8 @@ msgstr "ハブ"
 msgid "Hubs: %1% / %2%"
 msgstr "ハブ"
 
-#: win32/HubFrame.cpp:64 win32/ProxyPage.cpp:79 win32/SearchFrame.cpp:59
-#: win32/TransferView.cpp:57 win32/UserInfoBase.cpp:154
+#: win32/HubFrame.cpp:64 win32/ProxyPage.cpp:79 win32/SearchFrame.cpp:58
+#: win32/TransferView.cpp:57 win32/UserInfoBase.cpp:155
 #: win32/UserMatchDlg.cpp:222 win32/UserMatchPage.cpp:215
 msgid "IP"
 msgstr "IP"
@@ -2311,7 +2326,7 @@ msgstr ""
 msgid "IP (v6)"
 msgstr ""
 
-#: win32/MainWindow.cpp:1648
+#: win32/MainWindow.cpp:1667
 msgid ""
 "IP -> country mappings are disabled. Turn them back on via Settings > "
 "Appearance."
@@ -2346,7 +2361,7 @@ msgstr ""
 msgid "Idle"
 msgstr ""
 
-#: win32/WinUtil.cpp:555
+#: win32/WinUtil.cpp:556
 msgid ""
 "If no parameter is specified, it launches the log for the hub or private "
 "chat with the associated application in Windows. If one of the parameters is "
@@ -2379,7 +2394,7 @@ msgstr "プライベートメッセージを専用ウインドウで開く"
 msgid "Ignored message: %1%"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:125
+#: win32/UserInfoBase.cpp:126
 #, fuzzy
 msgid "In away mode"
 msgstr "離席モード オフ"
@@ -2389,7 +2404,7 @@ msgstr "離席モード オフ"
 msgid "Increase priority"
 msgstr "優先度の設定"
 
-#: win32/MainWindow.cpp:375
+#: win32/MainWindow.cpp:376
 msgid "Indexing progress"
 msgstr "共有ファイル索引作成の進捗状況"
 
@@ -2415,19 +2430,19 @@ msgstr ""
 msgid "Invalid extension: %1%"
 msgstr ""
 
-#: win32/MainWindow.cpp:1406
+#: win32/MainWindow.cpp:1425
 msgid "Invalid file list name"
 msgstr ""
 
-#: win32/SearchFrame.cpp:1020
+#: win32/SearchFrame.cpp:1018
 msgid "Invalid input value for TTH search"
 msgstr ""
 
-#: win32/WinUtil.cpp:615 win32/WinUtil.cpp:623
+#: win32/WinUtil.cpp:616 win32/WinUtil.cpp:624
 msgid "Invalid number of slots"
 msgstr "無効なスロット数"
 
-#: win32/WinUtil.cpp:683 win32/WinUtil.cpp:691
+#: win32/WinUtil.cpp:684 win32/WinUtil.cpp:692
 msgid "Invalid speed value"
 msgstr ""
 
@@ -2465,7 +2480,7 @@ msgstr "参加/退出 表示 オン"
 msgid "Joins <hub-ip>. See also Open new window when using /join."
 msgstr "/join を使用したとき、新しいウインドウで開く"
 
-#: win32/HubFrame.cpp:1044
+#: win32/HubFrame.cpp:1045
 #, boost-format
 msgid "Joins: %1%"
 msgstr ""
@@ -2484,7 +2499,7 @@ msgstr "自分のファイルリストに重複ファイルも載せる (共有�
 msgid "Keep finished files in the queue"
 msgstr "共有にすでに存在するファイルはダウンロードしない"
 
-#: win32/AppearancePage.cpp:90
+#: win32/AppearancePage.cpp:91
 msgid "Keep it between"
 msgstr ""
 
@@ -2496,7 +2511,7 @@ msgstr "検索"
 #: win32/ADLSProperties.cpp:100 win32/ExpertsPage.cpp:45
 #: win32/ExpertsPage.cpp:48 win32/ListFilter.cpp:158 win32/QueuePage.cpp:72
 #: win32/QueuePage.cpp:78 win32/QueuePage.cpp:84 win32/QueuePage.cpp:90
-#: win32/QueuePage.cpp:138 win32/SearchFrame.cpp:204
+#: win32/QueuePage.cpp:138 win32/SearchFrame.cpp:203
 msgid "KiB"
 msgstr "kiB"
 
@@ -2504,12 +2519,12 @@ msgstr "kiB"
 msgid "KiB/s"
 msgstr "kiB/s"
 
-#: win32/AppearancePage.cpp:108
+#: win32/AppearancePage.cpp:109
 #, fuzzy
 msgid "Language"
 msgstr "言語ファイル（ 例：Japanese.xml ）"
 
-#: win32/PrivateFrame.cpp:417
+#: win32/PrivateFrame.cpp:419
 #, boost-format
 msgid "Last message occured %1%"
 msgstr ""
@@ -2518,25 +2533,25 @@ msgstr ""
 msgid "Latest stable version"
 msgstr ""
 
-#: win32/WinUtil.cpp:551
+#: win32/WinUtil.cpp:552
 msgid ""
 "Launches your default web browser to the DuckDuckGo search engine with the "
 "specified search."
 msgstr ""
 
-#: win32/WinUtil.cpp:552
+#: win32/WinUtil.cpp:553
 msgid ""
 "Launches your default web browser to the Google search engine with the "
 "specified search."
 msgstr ""
 
-#: win32/WinUtil.cpp:553
+#: win32/WinUtil.cpp:554
 msgid ""
 "Launches your default web browser to the Internet Movie Database (imdb) with "
 "the specified query."
 msgstr ""
 
-#: win32/WinUtil.cpp:557
+#: win32/WinUtil.cpp:558
 msgid "Launches your default web browser with the given URL."
 msgstr ""
 
@@ -2558,7 +2573,7 @@ msgstr "制限"
 msgid "Line speed (upload)"
 msgstr "送信完了ファイル"
 
-#: win32/MainWindow.cpp:415 win32/StylesPage.cpp:167
+#: win32/MainWindow.cpp:416 win32/StylesPage.cpp:167
 #, fuzzy
 msgid "Links"
 msgstr "ユーザー名"
@@ -2567,7 +2582,7 @@ msgstr "ユーザー名"
 msgid "List configuration"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:447
+#: win32/PrivateFrame.cpp:449
 msgid "Lists the date and time when the last message was sent or received."
 msgstr ""
 
@@ -2634,7 +2649,7 @@ msgstr "ログ"
 msgid "Login"
 msgstr "ユーザー名"
 
-#: win32/HubFrame.cpp:1150
+#: win32/HubFrame.cpp:1151
 msgid "Login timeout, disconnecting and waiting for next attempt..."
 msgstr ""
 
@@ -2656,12 +2671,12 @@ msgid "Lowest"
 msgstr "最低"
 
 #: win32/ExpertsPage.cpp:110 win32/SearchTypesPage.cpp:85
-#: win32/UploadFilteringPage.cpp:95 win32/UploadFilteringPage.cpp:111
-#: win32/UploadFilteringPage.cpp:127
+#: win32/UploadFilteringPage.cpp:97 win32/UploadFilteringPage.cpp:113
+#: win32/UploadFilteringPage.cpp:129
 msgid "M&odify"
 msgstr ""
 
-#: win32/MagnetDlg.cpp:121 win32/WinUtil.cpp:1552
+#: win32/MagnetDlg.cpp:121 win32/WinUtil.cpp:1553
 msgid "MAGNET Link detected"
 msgstr "MAGNET リンク検出"
 
@@ -2670,7 +2685,7 @@ msgstr "MAGNET リンク検出"
 msgid "MB"
 msgstr "MiB"
 
-#: win32/WinUtil.cpp:94
+#: win32/WinUtil.cpp:95
 #, fuzzy
 msgid "Main chat message received"
 msgstr "プライベートメッセージ(PM)の受信の度に毎回音を鳴らす"
@@ -2685,7 +2700,7 @@ msgstr ""
 msgid "Manual configuration"
 msgstr "個人情報"
 
-#: win32/WinUtil.cpp:542
+#: win32/WinUtil.cpp:543
 msgid ""
 "Manually refreshes FearDC's share list by going through the shared "
 "directories and adding new folders and files. FearDC automatically refreshes "
@@ -2697,7 +2712,7 @@ msgstr ""
 msgid "Match bots"
 msgstr ""
 
-#: win32/MainWindow.cpp:322
+#: win32/MainWindow.cpp:323
 msgid "Match downloaded lists"
 msgstr ""
 
@@ -2781,7 +2796,7 @@ msgstr "最大同時ダウンロードﾞ数 ( 0 = 無制限 )"
 msgid "Maximum Upload Rate (KiB/s) (0 = infinite)"
 msgstr "最大同時ダウンロードﾞ数 ( 0 = 無制限 )"
 
-#: win32/HistoryPage.cpp:85 win32/MainWindow.cpp:883
+#: win32/HistoryPage.cpp:85 win32/MainWindow.cpp:891
 msgid "Maximum number of recent items to save"
 msgstr ""
 
@@ -2789,7 +2804,7 @@ msgstr ""
 msgid "Maximum simultaneous downloads (0 = infinite)"
 msgstr "最大同時ダウンロードﾞ数 ( 0 = 無制限 )"
 
-#: win32/MainWindow.cpp:377
+#: win32/MainWindow.cpp:378
 #, fuzzy
 msgid "Menu bar\tCtrl+0"
 msgstr "検索"
@@ -2800,7 +2815,7 @@ msgid "Message through hub: %1%"
 msgstr ""
 
 #: win32/ADLSProperties.cpp:101 win32/ExpertsPage.cpp:49
-#: win32/ListFilter.cpp:156 win32/SearchFrame.cpp:205
+#: win32/ListFilter.cpp:156 win32/SearchFrame.cpp:204
 msgid "MiB"
 msgstr "MiB"
 
@@ -2867,7 +2882,7 @@ msgstr ""
 msgid "Modify value"
 msgstr ""
 
-#: win32/CertificatesPage.cpp:106
+#: win32/CertificatesPage.cpp:107
 #, fuzzy
 msgid "Most of these options require that you restart FearDC."
 msgstr "注意： ここでの設定の大部分は変更の反映に DC++ の再起動を要します。"
@@ -2884,7 +2899,7 @@ msgstr ""
 msgid "Move &Up"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:145
+#: win32/UserInfoBase.cpp:146
 msgid "NAT"
 msgstr ""
 
@@ -2910,7 +2925,7 @@ msgstr ""
 msgid "Name of the new search type"
 msgstr ""
 
-#: win32/UploadPage.cpp:239 win32/UploadPage.cpp:296
+#: win32/UploadPage.cpp:221 win32/UploadPage.cpp:278
 msgid "Name under which the others see the directory"
 msgstr "他ユーザーに表示するディレクトリの名前"
 
@@ -2924,15 +2939,15 @@ msgstr "ユーザー"
 msgid "Name: %1%"
 msgstr "ユーザー"
 
-#: win32/MainWindow.cpp:368 win32/MainWindow.cpp:473 win32/StatsFrame.cpp:31
+#: win32/MainWindow.cpp:369 win32/MainWindow.cpp:474 win32/StatsFrame.cpp:31
 msgid "Network Statistics"
 msgstr "ネットワークの統計"
 
-#: win32/CertificatesPage.cpp:124
+#: win32/CertificatesPage.cpp:125
 msgid "New certificates are successfully generated."
 msgstr ""
 
-#: win32/MainWindow.cpp:943
+#: win32/MainWindow.cpp:951
 #, fuzzy
 msgid "New limit (KiB/s) (0 = infinite)"
 msgstr "最大同時ダウンロードﾞ数 ( 0 = 無制限 )"
@@ -2946,7 +2961,7 @@ msgstr "名前"
 msgid "New search type"
 msgstr ""
 
-#: win32/UploadPage.cpp:248
+#: win32/UploadPage.cpp:230
 msgid "New virtual name matches old name, skipping..."
 msgstr "新しい仮想名は古い名前と一致します。無視します..."
 
@@ -2964,16 +2979,16 @@ msgid "Nicks"
 msgstr "ニック"
 
 #: win32/ADLSearchFrame.cpp:330 win32/NotificationsPage.cpp:280
-#: win32/NotificationsPage.cpp:286 win32/WinUtil.cpp:1176
+#: win32/NotificationsPage.cpp:286 win32/WinUtil.cpp:1177
 #: win32/FinishedFrameBase.h:262
 msgid "No"
 msgstr ""
 
-#: win32/WinUtil.cpp:643
+#: win32/WinUtil.cpp:644
 msgid "No away message"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:363
+#: win32/PrivateFrame.cpp:365
 msgid "No direct encrypted channel available"
 msgstr ""
 
@@ -2981,7 +2996,7 @@ msgstr ""
 msgid "No errors"
 msgstr "エラーなし"
 
-#: win32/MainWindow.cpp:1042
+#: win32/MainWindow.cpp:1051
 #, fuzzy
 msgid "No favorite hub group found"
 msgstr "ハブをお気に入りに追加"
@@ -2995,7 +3010,7 @@ msgstr ""
 msgid "No full tree available"
 msgstr "ファイル取得不可"
 
-#: win32/WinUtil.cpp:1107
+#: win32/WinUtil.cpp:1108
 #, fuzzy
 msgid "No help information available"
 msgstr "ファイル取得不可"
@@ -3034,8 +3049,8 @@ msgstr "ダウンロード可能ユーザーなし"
 msgid "Noon"
 msgstr ""
 
-#: win32/QueueFrame.cpp:406 win32/QueueFrame.cpp:995 win32/SearchFrame.cpp:191
-#: win32/TransferView.cpp:551 win32/UserInfoBase.cpp:130
+#: win32/QueueFrame.cpp:406 win32/QueueFrame.cpp:995 win32/SearchFrame.cpp:190
+#: win32/TransferView.cpp:551 win32/UserInfoBase.cpp:131
 msgid "Normal"
 msgstr "標準"
 
@@ -3043,11 +3058,11 @@ msgstr "標準"
 msgid "Normal prio max size"
 msgstr "普通優先度 サイズ"
 
-#: win32/CertificatesPage.cpp:107
+#: win32/CertificatesPage.cpp:108
 msgid "Note: TLS might not protect search results and non-keyprinted hubs."
 msgstr ""
 
-#: win32/AppearancePage.cpp:115
+#: win32/AppearancePage.cpp:116
 #, fuzzy
 msgid "Note: some of these options require that you restart FearDC"
 msgstr "注意： ここでの設定の大部分は変更の反映に DC++ の再起動を要します。"
@@ -3066,7 +3081,7 @@ msgstr ""
 msgid "Note; because of changing download speeds, this is not 100% accurate..."
 msgstr "注意： 速度は変動するため、この機能に 100% の精確性はありません...."
 
-#: win32/MainWindow.cpp:485 win32/NotepadFrame.cpp:32
+#: win32/MainWindow.cpp:486 win32/NotepadFrame.cpp:33
 msgid "Notepad"
 msgstr "メモ帳"
 
@@ -3074,11 +3089,11 @@ msgstr "メモ帳"
 msgid "Notifications"
 msgstr ""
 
-#: win32/WinUtil.cpp:1122
+#: win32/WinUtil.cpp:1123
 msgid "OK"
 msgstr ""
 
-#: win32/UsersFrame.cpp:345 win32/UsersFrame.cpp:360 win32/WinUtil.cpp:744
+#: win32/UsersFrame.cpp:345 win32/UsersFrame.cpp:360 win32/WinUtil.cpp:745
 msgid "Offline"
 msgstr "オフライン"
 
@@ -3091,7 +3106,7 @@ msgstr "オンライン"
 msgid "Online users"
 msgstr "お気に入りのﾕｰｻﾞｰ"
 
-#: win32/UploadFilteringPage.cpp:67
+#: win32/UploadFilteringPage.cpp:69
 msgid "Only share files whose file size is above/below"
 msgstr ""
 
@@ -3105,28 +3120,28 @@ msgstr "ダウンロード可能ユーザーなし"
 msgid "Only show joins / parts for favorite users"
 msgstr "参加 / 退出 はお気に入りユーザーの場合のみ表示する"
 
-#: win32/SearchFrame.cpp:226
+#: win32/SearchFrame.cpp:225
 msgid "Only users with free slots"
 msgstr "スロットに空きがあるユーザーのみ表示"
 
-#: win32/SystemFrame.cpp:126 win32/FinishedFrameBase.h:464
+#: win32/SystemFrame.cpp:132 win32/FinishedFrameBase.h:464
 msgid "Open &folder"
 msgstr ""
 
-#: win32/MainWindow.cpp:327
+#: win32/MainWindow.cpp:328
 msgid "Open crash log"
 msgstr ""
 
-#: win32/MainWindow.cpp:326 win32/MainWindow.cpp:475 win32/MainWindow.cpp:1895
+#: win32/MainWindow.cpp:327 win32/MainWindow.cpp:476 win32/MainWindow.cpp:1927
 msgid "Open downloads directory"
 msgstr "受信ファイルの保存先を開く"
 
-#: win32/MainWindow.cpp:477
+#: win32/MainWindow.cpp:478
 #, fuzzy
 msgid "Open file list..."
 msgstr "自リストを開く"
 
-#: win32/MainWindow.cpp:320
+#: win32/MainWindow.cpp:321
 msgid "Open file list...\tCtrl+L"
 msgstr ""
 
@@ -3142,7 +3157,7 @@ msgstr "新着プライベートメッセージのウインドウをバックグ
 msgid "Open new window when using /join"
 msgstr "/join を使用したとき、新しいウインドウで開く"
 
-#: win32/MainWindow.cpp:321 win32/MainWindow.cpp:479
+#: win32/MainWindow.cpp:322 win32/MainWindow.cpp:480
 msgid "Open own list"
 msgstr "自リストを開く"
 
@@ -3164,7 +3179,7 @@ msgstr "プライベートメッセージを専用ウインドウで開く"
 msgid "OpenSSL version"
 msgstr ""
 
-#: win32/WinUtil.cpp:546
+#: win32/WinUtil.cpp:547
 msgid ""
 "Opens a new search window with the specified search string. It does not "
 "automatically send the search."
@@ -3176,17 +3191,17 @@ msgid ""
 "message, if one was specified."
 msgstr ""
 
-#: win32/WinUtil.cpp:562
+#: win32/WinUtil.cpp:563
 msgid "Opens the internal settings list debugging tool window."
 msgstr ""
 
-#: win32/WinUtil.cpp:459
+#: win32/WinUtil.cpp:460
 #, boost-format
 msgid "Operators (added by %1%)"
 msgstr ""
 
-#: win32/ACFrame.cpp:142 win32/AppearancePage.cpp:63
-#: win32/UploadFilteringPage.cpp:58
+#: win32/ACFrame.cpp:142 win32/AppearancePage.cpp:64
+#: win32/UploadFilteringPage.cpp:60
 msgid "Options"
 msgstr "オプション"
 
@@ -3195,7 +3210,7 @@ msgstr "オプション"
 msgid "Other queue options"
 msgstr "検索オプション"
 
-#: win32/CertificatesPage.cpp:78
+#: win32/CertificatesPage.cpp:79
 msgid "Own certificate file"
 msgstr ""
 
@@ -3215,11 +3230,11 @@ msgstr ""
 msgid "Partial file list loaded"
 msgstr ""
 
-#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1169
+#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1170
 msgid "Partial match"
 msgstr ""
 
-#: win32/HubFrame.cpp:1073
+#: win32/HubFrame.cpp:1074
 #, boost-format
 msgid "Parts: %1%"
 msgstr ""
@@ -3237,16 +3252,16 @@ msgstr "パッシブのユーザー"
 msgid "Password"
 msgstr "パスワード"
 
-#: win32/QueueFrame.cpp:57 win32/SearchFrame.cpp:54 win32/TransferView.cpp:48
+#: win32/QueueFrame.cpp:57 win32/SearchFrame.cpp:53 win32/TransferView.cpp:48
 #: win32/FinishedFrameBase.h:728
 msgid "Path"
 msgstr "パス"
 
-#: win32/UploadFilteringPage.cpp:118
+#: win32/UploadFilteringPage.cpp:120
 msgid "Path filtering"
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:128
+#: win32/UploadFilteringPage.cpp:130
 #, fuzzy
 msgid "Paths"
 msgstr "パス"
@@ -3297,7 +3312,7 @@ msgstr ""
 msgid "Play a sound"
 msgstr ""
 
-#: win32/WinUtil.cpp:503
+#: win32/WinUtil.cpp:504
 msgid "Please enter a nickname in the settings dialog!"
 msgstr "設定でニックネームを入力してください！"
 
@@ -3316,17 +3331,17 @@ msgstr ""
 msgid "Plugin information"
 msgstr "個人情報"
 
-#: win32/MainWindow.cpp:427
+#: win32/MainWindow.cpp:428
 msgid "Plugin repository"
 msgstr ""
 
-#: win32/MainWindow.cpp:336 win32/MainWindow.cpp:489 win32/MainWindow.cpp:896
+#: win32/MainWindow.cpp:337 win32/MainWindow.cpp:490 win32/MainWindow.cpp:904
 #: win32/PluginPage.cpp:252 win32/PluginPage.cpp:337
 #: win32/SettingsDialog.cpp:199
 msgid "Plugins"
 msgstr ""
 
-#: win32/WindowsPage.cpp:43
+#: win32/WindowsPage.cpp:42
 msgid "Popup box to input password for hubs"
 msgstr ""
 
@@ -3357,11 +3372,11 @@ msgstr ""
 msgid "Priority"
 msgstr "優先度"
 
-#: win32/CertificatesPage.cpp:70
+#: win32/CertificatesPage.cpp:71
 msgid "Private key file"
 msgstr ""
 
-#: win32/HubFrame.cpp:1172
+#: win32/HubFrame.cpp:1173
 #, boost-format
 msgid "Private main chat message from %1%: %2%"
 msgstr ""
@@ -3380,12 +3395,12 @@ msgstr ""
 msgid "Private message from %1%: %2%"
 msgstr ""
 
-#: win32/WinUtil.cpp:95
+#: win32/WinUtil.cpp:96
 #, fuzzy
 msgid "Private message received"
 msgstr "ステータスメッセージのログ出力"
 
-#: win32/WinUtil.cpp:96
+#: win32/WinUtil.cpp:97
 #, fuzzy
 msgid "Private message window opened"
 msgstr "プライベートメッセージ(PM)ウインドウが開かれた時に音を鳴らす"
@@ -3407,7 +3422,7 @@ msgstr ""
 msgid "Proxy settings for outgoing connections"
 msgstr ""
 
-#: win32/MainWindow.cpp:454 win32/PublicHubsFrame.cpp:88
+#: win32/MainWindow.cpp:455 win32/PublicHubsFrame.cpp:88
 msgid "Public Hubs"
 msgstr "公開ハブのリスト"
 
@@ -3419,7 +3434,7 @@ msgstr "公開ハブのリスト"
 msgid "Public Hubs list URL"
 msgstr "公開ハブリストの URL"
 
-#: win32/SearchFrame.cpp:170
+#: win32/SearchFrame.cpp:169
 msgid "Purge"
 msgstr "消去"
 
@@ -3437,7 +3452,7 @@ msgstr "ハブ"
 msgid "Queued files: %1%"
 msgstr ""
 
-#: win32/MainWindow.cpp:975
+#: win32/MainWindow.cpp:984
 msgid "Quick Connect"
 msgstr "クイック接続"
 
@@ -3473,7 +3488,7 @@ msgstr "ソースの再追加"
 msgid "Reached the %1% of the file list, continuing from the %2%"
 msgstr ""
 
-#: win32/SearchFrame.cpp:1149
+#: win32/SearchFrame.cpp:1146
 msgid "Ready to search..."
 msgstr "検索可能..."
 
@@ -3487,7 +3502,7 @@ msgstr "本当に削除しますか？"
 msgid "Really close?"
 msgstr "本当に削除しますか？"
 
-#: win32/MainWindow.cpp:1103
+#: win32/MainWindow.cpp:1112
 msgid "Really exit?"
 msgstr "本当に終了しますか？"
 
@@ -3497,7 +3512,7 @@ msgstr "本当に終了しますか？"
 msgid "Really remove?"
 msgstr "本当に削除しますか？"
 
-#: win32/WinUtil.cpp:554
+#: win32/WinUtil.cpp:555
 msgid ""
 "Rebuilds the HashIndex.xml and HashData.dat files, removing entries to files "
 "that are no longer shared, or old hashes for files that have since changed. "
@@ -3505,52 +3520,52 @@ msgid ""
 "rebuild is finished."
 msgstr ""
 
-#: win32/HubFrame.cpp:1090
+#: win32/HubFrame.cpp:1091
 #, boost-format
 msgid "Received a redirect request to %1%, click here to follow it"
 msgstr ""
 
-#: win32/HistoryPage.cpp:91 win32/MainWindow.cpp:875
+#: win32/HistoryPage.cpp:91 win32/MainWindow.cpp:883
 msgid "Recent PMs"
 msgstr ""
 
-#: win32/HistoryPage.cpp:94 win32/MainWindow.cpp:876
+#: win32/HistoryPage.cpp:94 win32/MainWindow.cpp:884
 #, fuzzy
 msgid "Recent file lists"
 msgstr "自リストを開く"
 
-#: win32/HistoryPage.cpp:88 win32/MainWindow.cpp:874
+#: win32/HistoryPage.cpp:88 win32/MainWindow.cpp:882
 msgid "Recent hubs"
 msgstr ""
 
-#: win32/MainWindow.cpp:481
+#: win32/MainWindow.cpp:482
 msgid "Recent windows"
 msgstr ""
 
-#: win32/MainWindow.cpp:456
+#: win32/MainWindow.cpp:457
 #, fuzzy
 msgid "Reconnect"
 msgstr "接続中"
 
-#: win32/MainWindow.cpp:386
+#: win32/MainWindow.cpp:387
 #, fuzzy
 msgid "Reconnect disconnected hubs"
 msgstr "切断状態のウインドウを閉じる"
 
-#: win32/HubFrame.cpp:1082 win32/HubFrame.cpp:1595
+#: win32/HubFrame.cpp:1083 win32/HubFrame.cpp:1604
 msgid "Redirect request received to a hub that's already connected"
 msgstr "リダイレクト要求は接続中のハブに受け取られました。"
 
-#: win32/HubFrame.cpp:1590
+#: win32/HubFrame.cpp:1599
 msgid "Redirect request to an empty hub address"
 msgstr ""
 
-#: win32/MainWindow.cpp:487
+#: win32/MainWindow.cpp:488
 #, fuzzy
 msgid "Refresh file list"
 msgstr "ファイルリストメニュー"
 
-#: win32/MainWindow.cpp:323
+#: win32/MainWindow.cpp:324
 #, fuzzy
 msgid "Refresh file list\tF5"
 msgstr "ファイルリストメニュー"
@@ -3575,11 +3590,11 @@ msgid "Register with Windows to handle magnet: URI links"
 msgstr "magnet: URI リンクを取り扱うよう Windows に登録する"
 
 #: win32/ADLSearchFrame.cpp:44 win32/ADLSProperties.cpp:67
-#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1169
+#: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1170
 msgid "Regular Expression"
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:96
+#: win32/UploadFilteringPage.cpp:98
 msgid "Regular expressions"
 msgstr ""
 
@@ -3612,7 +3627,7 @@ msgstr ""
 msgid "Remove source"
 msgstr "ソースの削除"
 
-#: win32/QueueFrame.cpp:1034 win32/WinUtil.cpp:1665 win32/UserInfoBase.h:180
+#: win32/QueueFrame.cpp:1034 win32/WinUtil.cpp:1666 win32/UserInfoBase.h:180
 msgid "Remove user from queue"
 msgstr "キューからユーザーを外す"
 
@@ -3624,11 +3639,11 @@ msgstr ""
 msgid "Rename a search type"
 msgstr ""
 
-#: win32/MainWindow.cpp:422
+#: win32/MainWindow.cpp:423
 msgid "Report a bug"
 msgstr "バグ報告"
 
-#: win32/MainWindow.cpp:421
+#: win32/MainWindow.cpp:422
 msgid "Request a feature"
 msgstr "新機能のリクエスト"
 
@@ -3667,19 +3682,19 @@ msgstr "SOCKS5"
 msgid "Save settings now"
 msgstr "設定"
 
-#: win32/ConnectivityManualPage.cpp:81 win32/MainWindow.cpp:469
-#: win32/NotepadFrame.cpp:108 win32/RichTextBox.cpp:111
-#: win32/SearchFrame.cpp:124 win32/SearchFrame.cpp:176 win32/TabsPage.cpp:39
+#: win32/ConnectivityManualPage.cpp:81 win32/MainWindow.cpp:470
+#: win32/RichTextBox.cpp:111 win32/SearchFrame.cpp:123
+#: win32/SearchFrame.cpp:175 win32/TabsPage.cpp:39
 msgid "Search"
 msgstr "検索"
 
-#: win32/SearchFrame.cpp:1022 win32/SearchFrame.cpp:1103
-#: win32/SearchFrame.cpp:1115 win32/SearchFrame.cpp:1145
+#: win32/SearchFrame.cpp:1020 win32/SearchFrame.cpp:1100
+#: win32/SearchFrame.cpp:1112 win32/SearchFrame.cpp:1142
 #, fuzzy, boost-format
 msgid "Search - %1%"
 msgstr "検索"
 
-#: win32/SearchFrame.cpp:1150
+#: win32/SearchFrame.cpp:1147
 #, fuzzy
 msgid "Search - Ready to search..."
 msgstr "検索可能..."
@@ -3692,16 +3707,21 @@ msgstr "検索画面メニュー"
 msgid "Search String"
 msgstr "検索文字列"
 
-#: win32/NotepadFrame.cpp:109
+#: win32/WinUtil.cpp:1742
 #, fuzzy
 msgid "Search by TTH"
 msgstr "検索画面メニュー"
 
-#: win32/SearchFrame.cpp:151
+#: win32/SearchFrame.cpp:150
 msgid "Search for"
 msgstr "検索文字列"
 
-#: win32/WinUtil.cpp:807
+#: win32/WinUtil.cpp:1736
+#, fuzzy, boost-format
+msgid "Search for \"%1%\""
+msgstr "検索文字列"
+
+#: win32/WinUtil.cpp:808
 msgid "Search for alternates"
 msgstr "代替ダウンロード先の検索"
 
@@ -3709,7 +3729,7 @@ msgstr "代替ダウンロード先の検索"
 msgid "Search history"
 msgstr "検索履歴"
 
-#: win32/SearchFrame.cpp:221
+#: win32/SearchFrame.cpp:220
 msgid "Search options"
 msgstr "検索オプション"
 
@@ -3723,7 +3743,7 @@ msgstr "検索文字列"
 msgid "Search port (v6)"
 msgstr "検索文字列"
 
-#: win32/HubFrame.cpp:1156
+#: win32/HubFrame.cpp:1157
 #, boost-format
 msgid "Search spam detected from %1%"
 msgstr ""
@@ -3738,7 +3758,7 @@ msgstr "検索監視"
 msgid "Search types"
 msgstr "検索監視"
 
-#: win32/SearchFrame.cpp:1097
+#: win32/SearchFrame.cpp:1094
 #, fuzzy, boost-format
 msgid "Searching for %1%..."
 msgstr "検索文字列"
@@ -3748,7 +3768,7 @@ msgstr "検索文字列"
 msgid "Searching for: %1%"
 msgstr "検索文字列"
 
-#: win32/SearchFrame.cpp:1113 win32/SearchFrame.cpp:1143
+#: win32/SearchFrame.cpp:1110 win32/SearchFrame.cpp:1140
 #, boost-format
 msgid "Searching too soon, next search in %1% second"
 msgid_plural "Searching too soon, next search in %1% seconds"
@@ -3763,7 +3783,7 @@ msgstr ""
 msgid "Secondary Transfer Rate Limiting Settings"
 msgstr ""
 
-#: win32/CertificatesPage.cpp:104
+#: win32/CertificatesPage.cpp:105
 #, fuzzy
 msgid "Secure connection settings"
 msgstr "回線の種類"
@@ -3772,7 +3792,7 @@ msgstr "回線の種類"
 msgid "Security & certificates"
 msgstr ""
 
-#: win32/CertificatesPage.cpp:56
+#: win32/CertificatesPage.cpp:57
 msgid "Security certificates"
 msgstr ""
 
@@ -3780,7 +3800,7 @@ msgstr ""
 msgid "Select &All\tCtrl+A"
 msgstr ""
 
-#: win32/MainWindow.cpp:1050
+#: win32/MainWindow.cpp:1059
 msgid "Select a favorite hub group"
 msgstr ""
 
@@ -3809,7 +3829,7 @@ msgid ""
 "Sends a private main chat message to the user if supported by hub, NMDC only."
 msgstr ""
 
-#: win32/WinUtil.cpp:548
+#: win32/WinUtil.cpp:549
 msgid ""
 "Sends a random FearDC advertising message to the chat, including a link to "
 "the FearDC homepage and the version number."
@@ -3819,7 +3839,7 @@ msgstr ""
 msgid "Separator"
 msgstr "セパレータ"
 
-#: win32/FavHubsFrame.cpp:53 win32/UserInfoBase.cpp:136
+#: win32/FavHubsFrame.cpp:53 win32/UserInfoBase.cpp:137
 msgid "Server"
 msgstr "サーバ"
 
@@ -3835,31 +3855,31 @@ msgstr "最低優先度 有効"
 msgid "Set priority"
 msgstr "優先度の設定"
 
-#: win32/WinUtil.cpp:559
+#: win32/WinUtil.cpp:560
 msgid ""
 "Set the download speed limit in KiBs. Zero or omitted value disables the "
 "limit."
 msgstr ""
 
-#: win32/WinUtil.cpp:560
+#: win32/WinUtil.cpp:561
 msgid ""
 "Set the upload speed limit in KiBs. Zero or omitted value disables the limit."
 msgstr ""
 
-#: win32/WinUtil.cpp:549
+#: win32/WinUtil.cpp:550
 msgid ""
 "Sets Away status. New private message windows will be responded to, once, "
 "with the message you specified, or the default away message configured in "
 "the Personal information settings page."
 msgstr ""
 
-#: win32/WinUtil.cpp:545
+#: win32/WinUtil.cpp:546
 msgid ""
 "Sets the current number of download slots to the number you specify. If this "
 "is less than the current number of slots, no downloads are cancelled."
 msgstr ""
 
-#: win32/WinUtil.cpp:544
+#: win32/WinUtil.cpp:545
 msgid ""
 "Sets the current number of upload slots to the number you specify. If this "
 "is less than the current number of slots, no uploads are cancelled."
@@ -3870,12 +3890,12 @@ msgstr ""
 msgid "Setting name"
 msgstr "設定"
 
-#: win32/MainWindow.cpp:483 win32/MainWindow.cpp:1897
+#: win32/MainWindow.cpp:484 win32/MainWindow.cpp:1929
 #: win32/SettingsDialog.cpp:372
 msgid "Settings"
 msgstr "設定"
 
-#: win32/MainWindow.cpp:330
+#: win32/MainWindow.cpp:331
 #, fuzzy
 msgid "Settings\tCtrl+F3"
 msgstr "設定"
@@ -3893,12 +3913,17 @@ msgstr "設定"
 msgid "Settings were exported to: "
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:61
+#: win32/UploadFilteringPage.cpp:63
 msgid "Share hidden files"
 msgstr "隠しファイルも共有"
 
+#: win32/MainWindow.cpp:1230
+#, fuzzy, boost-format
+msgid "Share size: %1%"
+msgstr "サイズ"
+
 #: win32/HubFrame.cpp:60 win32/HubFrame.cpp:439 win32/PublicHubsFrame.cpp:49
-#: win32/UserInfoBase.cpp:150
+#: win32/UserInfoBase.cpp:151
 msgid "Shared"
 msgstr "総共有量"
 
@@ -3928,7 +3953,7 @@ msgstr ""
 msgid "Shell menus"
 msgstr ""
 
-#: win32/MainWindow.cpp:1894
+#: win32/MainWindow.cpp:1926
 msgid "Show"
 msgstr "表示"
 
@@ -3957,8 +3982,8 @@ msgstr ""
 msgid "Show user country in chat"
 msgstr ""
 
-#: win32/DirectoryListingFrame.cpp:65 win32/MainWindow.cpp:1758
-#: win32/QueueFrame.cpp:53 win32/SearchFrame.cpp:53 win32/SearchFrame.cpp:181
+#: win32/DirectoryListingFrame.cpp:65 win32/MainWindow.cpp:1790
+#: win32/QueueFrame.cpp:53 win32/SearchFrame.cpp:52 win32/SearchFrame.cpp:180
 #: win32/TransferView.cpp:55 win32/UploadPage.cpp:47
 msgid "Size"
 msgstr "サイズ"
@@ -3986,15 +4011,15 @@ msgstr ""
 msgid "Skip zero-byte files"
 msgstr "ゼロバイトのファイルはダウンロードしない"
 
-#: win32/PrivateFrame.cpp:400
+#: win32/PrivateFrame.cpp:402
 msgid "Slot granted"
 msgstr "スロット供与"
 
-#: win32/SearchFrame.cpp:55 win32/UserInfoBase.cpp:163
+#: win32/SearchFrame.cpp:54 win32/UserInfoBase.cpp:164
 msgid "Slots"
 msgstr "スロット"
 
-#: win32/WinUtil.cpp:613
+#: win32/WinUtil.cpp:614
 msgid "Slots set"
 msgstr "スロット セット"
 
@@ -4034,7 +4059,7 @@ msgstr "検索対象"
 msgid "Source too slow"
 msgstr ""
 
-#: win32/WinUtil.cpp:543
+#: win32/WinUtil.cpp:544
 msgid "Speak as a third person."
 msgstr ""
 
@@ -4043,7 +4068,7 @@ msgstr ""
 msgid "Specified user is not online: %1%"
 msgstr ""
 
-#: win32/WinUtil.cpp:671
+#: win32/WinUtil.cpp:672
 msgid "Specify a URL"
 msgstr ""
 
@@ -4051,8 +4076,8 @@ msgstr ""
 msgid "Specify a name for this user matching definition"
 msgstr ""
 
-#: win32/WinUtil.cpp:629 win32/WinUtil.cpp:653 win32/WinUtil.cpp:659
-#: win32/WinUtil.cpp:665
+#: win32/WinUtil.cpp:630 win32/WinUtil.cpp:654 win32/WinUtil.cpp:660
+#: win32/WinUtil.cpp:666
 msgid "Specify a search string"
 msgstr "検索文字列の指定"
 
@@ -4084,7 +4109,7 @@ msgstr "総共有量"
 msgid "Start FearDC when Windows starts"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:542
+#: win32/PrivateFrame.cpp:549
 msgid "Start a direct encrypted channel"
 msgstr ""
 
@@ -4097,7 +4122,7 @@ msgstr "このファイルの検索を開始する"
 msgid "Started..."
 msgstr "総共有量"
 
-#: win32/PrivateFrame.cpp:434
+#: win32/PrivateFrame.cpp:436
 msgid ""
 "Starts a direct encrypted communication channel to avoid spying on your "
 "private messages."
@@ -4117,20 +4142,20 @@ msgstr "状態"
 msgid "Status / Time last seen"
 msgstr "最終確認日時"
 
-#: win32/MainWindow.cpp:380
+#: win32/MainWindow.cpp:381
 msgid "Status bar\tCtrl+3"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:148
+#: win32/UserInfoBase.cpp:149
 #, fuzzy, boost-format
 msgid "Status: %1%"
 msgstr "状態"
 
-#: win32/MainWindow.cpp:1245
+#: win32/MainWindow.cpp:1265
 msgid "Status: Available - Double-click to switch to Away"
 msgstr ""
 
-#: win32/MainWindow.cpp:1244
+#: win32/MainWindow.cpp:1264
 msgid "Status: Away - Double-click to switch to Available"
 msgstr ""
 
@@ -4150,16 +4175,21 @@ msgstr ""
 msgid "Support direct encrypted private message channels"
 msgstr ""
 
-#: win32/MainWindow.cpp:366 win32/SystemFrame.cpp:36 win32/TabsPage.cpp:40
+#: win32/SystemFrame.cpp:36 win32/TabsPage.cpp:40
 msgid "System Log"
 msgstr ""
+
+#: win32/MainWindow.cpp:367
+#, fuzzy
+msgid "System Log\tCtrl+O"
+msgstr "メモ帳"
 
 #: win32/ListFilter.cpp:160
 #, fuzzy
 msgid "TB"
 msgstr "B"
 
-#: win32/UserInfoBase.cpp:142
+#: win32/UserInfoBase.cpp:143
 msgid "TLS"
 msgstr ""
 
@@ -4168,7 +4198,7 @@ msgid "TLS Keyprint"
 msgstr ""
 
 #: win32/AboutDlg.cpp:116 win32/DirectoryListingFrame.cpp:67
-#: win32/QueueFrame.cpp:61 win32/SearchFrame.cpp:60 win32/TransferView.cpp:1003
+#: win32/QueueFrame.cpp:61 win32/SearchFrame.cpp:59 win32/TransferView.cpp:1003
 msgid "TTH"
 msgstr ""
 
@@ -4188,23 +4218,23 @@ msgstr ""
 msgid "Tabs"
 msgstr ""
 
-#: win32/HubFrame.cpp:62 win32/UserInfoBase.cpp:152 win32/UsersFrame.cpp:104
+#: win32/HubFrame.cpp:62 win32/UserInfoBase.cpp:153 win32/UsersFrame.cpp:104
 msgid "Tag"
 msgstr "タグ"
 
-#: win32/MainWindow.cpp:1536
+#: win32/MainWindow.cpp:1555
 msgid "Testing nags can be fully disabled via Settings > Advanced."
 msgstr ""
 
-#: win32/MainWindow.cpp:1532
+#: win32/MainWindow.cpp:1551
 msgid "Testing version of FearDC"
 msgstr ""
 
-#: win32/MainWindow.cpp:1533 win32/MainWindow.cpp:1544
+#: win32/MainWindow.cpp:1552 win32/MainWindow.cpp:1563
 msgid "Thank you for using a testing version of FearDC!"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:598
+#: win32/PrivateFrame.cpp:605
 msgid "The direct encrypted channel has been disconnected"
 msgstr ""
 
@@ -4219,7 +4249,7 @@ msgid ""
 "group."
 msgstr ""
 
-#: win32/MainWindow.cpp:1789
+#: win32/MainWindow.cpp:1821
 msgid ""
 "The menu bar is now hidden. Press Alt or F10 to temporarily bring it back "
 "into view."
@@ -4229,19 +4259,19 @@ msgstr ""
 msgid "The message cannot be delivered because the hub is offline."
 msgstr ""
 
-#: win32/PrivateFrame.cpp:465
+#: win32/PrivateFrame.cpp:467
 msgid "The message cannot be delivered because the user is offline."
 msgstr ""
 
-#: win32/WinUtil.cpp:1576
+#: win32/WinUtil.cpp:1577
 msgid "The requested link is "
 msgstr ""
 
-#: win32/PrivateFrame.cpp:346
+#: win32/PrivateFrame.cpp:348
 msgid "The user does not support secure encrypted connections"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:347
+#: win32/PrivateFrame.cpp:349
 msgid "The user does not support the CCPM ADC extension"
 msgstr ""
 
@@ -4253,7 +4283,7 @@ msgstr ""
 msgid "This hub does not support MCTo extension."
 msgstr ""
 
-#: win32/HubFrame.cpp:1257
+#: win32/HubFrame.cpp:1258
 msgid "This hub is not a favorite hub"
 msgstr ""
 
@@ -4261,7 +4291,7 @@ msgstr ""
 msgid "This is an example of a balloon popup notification!"
 msgstr ""
 
-#: win32/MainWindow.cpp:1535
+#: win32/MainWindow.cpp:1554
 msgid "This message will show up in the status bar in the future."
 msgstr ""
 
@@ -4289,7 +4319,7 @@ msgstr "日時"
 msgid "Time left"
 msgstr "残り時間"
 
-#: win32/AppearancePage.cpp:69
+#: win32/AppearancePage.cpp:70
 #, fuzzy
 msgid "Timestamp format"
 msgstr "タイムスタンプ表示：有効"
@@ -4298,7 +4328,7 @@ msgstr "タイムスタンプ表示：有効"
 msgid "To"
 msgstr ""
 
-#: win32/WindowsPage.cpp:42
+#: win32/WindowsPage.cpp:41
 msgid "Toggle window when selecting an active tab"
 msgstr "アクティブなタブを選択したとき、ウインドウを切り替える"
 
@@ -4318,11 +4348,11 @@ msgstr ""
 msgid "Toggles visibility of the list of users for the current hub."
 msgstr ""
 
-#: win32/MainWindow.cpp:1752
+#: win32/MainWindow.cpp:1784
 msgid "Toolbar"
 msgstr ""
 
-#: win32/MainWindow.cpp:378
+#: win32/MainWindow.cpp:379
 msgid "Toolbar\tCtrl+1"
 msgstr ""
 
@@ -4347,7 +4377,7 @@ msgstr ""
 msgid "Transfer Rate Limiting"
 msgstr ""
 
-#: win32/MainWindow.cpp:379
+#: win32/MainWindow.cpp:380
 msgid "Transfer view\tCtrl+2"
 msgstr ""
 
@@ -4363,21 +4393,21 @@ msgstr ""
 msgid "Transfers"
 msgstr ""
 
-#: win32/CertificatesPage.cpp:86
+#: win32/CertificatesPage.cpp:87
 msgid "Trusted certificates path"
 msgstr ""
 
 #: win32/ACFrame.cpp:39 win32/DirectoryListingFrame.cpp:64
-#: win32/QueueFrame.cpp:62 win32/SearchFrame.cpp:52
+#: win32/QueueFrame.cpp:62 win32/SearchFrame.cpp:51
 msgid "Type"
 msgstr "種類"
 
-#: win32/MainWindow.cpp:1223
+#: win32/MainWindow.cpp:1243
 #, boost-format
 msgid "U: %1%"
 msgstr ""
 
-#: win32/MainWindow.cpp:1231
+#: win32/MainWindow.cpp:1251
 #, boost-format
 msgid "U: %1%/s (%2%)"
 msgstr ""
@@ -4386,11 +4416,11 @@ msgstr ""
 msgid "Un-ignore chat"
 msgstr ""
 
-#: win32/WinUtil.cpp:550
+#: win32/WinUtil.cpp:551
 msgid "Un-sets Away status."
 msgstr ""
 
-#: win32/MainWindow.cpp:1393
+#: win32/MainWindow.cpp:1412
 #, boost-format
 msgid ""
 "Unable to open %1% port. Searching or file transfers will not work correctly "
@@ -4418,7 +4448,7 @@ msgstr ""
 msgid "Unknown"
 msgstr "不明"
 
-#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:454
+#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:456
 #, boost-format
 msgid "Unknown command: %1%"
 msgstr ""
@@ -4441,27 +4471,27 @@ msgstr ""
 msgid "Upload Slots"
 msgstr "アップロードスロット"
 
-#: win32/MainWindow.cpp:908 win32/MainWindow.cpp:1899
+#: win32/MainWindow.cpp:916 win32/MainWindow.cpp:1931
 #, fuzzy
 msgid "Upload limit"
 msgstr "アップロードスロット"
 
-#: win32/WinUtil.cpp:681
+#: win32/WinUtil.cpp:682
 #, fuzzy
 msgid "Upload limit disabled"
 msgstr "アップロードスロット"
 
-#: win32/WinUtil.cpp:681
+#: win32/WinUtil.cpp:682
 #, fuzzy, boost-format
 msgid "Upload limit set to %1% KiB/s"
 msgstr "ダウンロード"
 
-#: win32/MainWindow.cpp:1239
+#: win32/MainWindow.cpp:1259
 #, boost-format
 msgid "Upload limit: %1%/s - Click to adjust"
 msgstr ""
 
-#: win32/MainWindow.cpp:1858 win32/UploadPage.cpp:104
+#: win32/MainWindow.cpp:1890 win32/UploadPage.cpp:104
 msgid "Upload slots"
 msgstr "アップロードスロット"
 
@@ -4505,16 +4535,16 @@ msgstr ""
 msgid "Use second set of bandwidth limits from"
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:114
-msgid "Use semicolon to separate multiple extensions."
+#: win32/UploadFilteringPage.cpp:116
+msgid "Use semicolons to separate multiple extensions."
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:130
-msgid "Use semicolon to separate multiple paths."
+#: win32/UploadFilteringPage.cpp:132
+msgid "Use semicolons to separate multiple paths."
 msgstr ""
 
-#: win32/UploadFilteringPage.cpp:98
-msgid "Use semicolon to separate multiple regular expressions."
+#: win32/UploadFilteringPage.cpp:100
+msgid "Use semicolons to separate multiple regular expressions."
 msgstr ""
 
 #: win32/TabsPage.cpp:73
@@ -4526,7 +4556,7 @@ msgid "Use system icons when browsing files (slows browsing down a bit)"
 msgstr ""
 "ファイルの検索時にシステムのアイコンを使用する (参照に少し遅れが生じます)"
 
-#: win32/DirectoryListingFrame.cpp:916 win32/SearchFrame.cpp:51
+#: win32/DirectoryListingFrame.cpp:916 win32/SearchFrame.cpp:50
 #: win32/TransferView.cpp:50
 msgid "User"
 msgstr "ユーザー"
@@ -4566,8 +4596,8 @@ msgstr ""
 msgid "User matching definitions"
 msgstr ""
 
-#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:341
-#: win32/PrivateFrame.cpp:465 win32/QueueFrame.cpp:380
+#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:343
+#: win32/PrivateFrame.cpp:467 win32/QueueFrame.cpp:380
 msgid "User offline"
 msgstr "ユーザーはオフライン"
 
@@ -4585,7 +4615,7 @@ msgstr "ユーザーがオフラインに"
 msgid "User went online"
 msgstr "ユーザーがオフラインに"
 
-#: win32/MainWindow.cpp:461 win32/PublicHubsFrame.cpp:46
+#: win32/MainWindow.cpp:462 win32/PublicHubsFrame.cpp:46
 #: win32/QueueFrame.cpp:56 win32/StylesPage.cpp:149 win32/UsersFrame.cpp:111
 msgid "Users"
 msgstr "ユーザー"
@@ -4612,12 +4642,12 @@ msgstr ""
 msgid "View status messages in chat"
 msgstr "メインチャットにおいて、ステータス情報を表示する"
 
-#: win32/TextFrame.cpp:98
+#: win32/TextFrame.cpp:100
 #, boost-format
 msgid "Viewing text file: %1%"
 msgstr ""
 
-#: win32/UploadPage.cpp:45 win32/UploadPage.cpp:239 win32/UploadPage.cpp:296
+#: win32/UploadPage.cpp:45 win32/UploadPage.cpp:221 win32/UploadPage.cpp:278
 msgid "Virtual name"
 msgstr "仮想の名前"
 
@@ -4647,7 +4677,7 @@ msgid ""
 "Click here to proceed."
 msgstr ""
 
-#: win32/WinUtil.cpp:1573
+#: win32/WinUtil.cpp:1574
 msgid ""
 "Warning: Allowing content to open a program can be useful, but it can "
 "potentially harm your computer. Do not allow it unless you trust the source "
@@ -4674,7 +4704,7 @@ msgstr ""
 msgid "Website: "
 msgstr ""
 
-#: win32/MainWindow.cpp:492
+#: win32/MainWindow.cpp:493
 msgid "What's This?"
 msgstr ""
 
@@ -4682,7 +4712,7 @@ msgstr ""
 msgid "Whitelisted URIs to open"
 msgstr ""
 
-#: win32/WindowsPage.cpp:70
+#: win32/WindowsPage.cpp:69
 msgid "Window options"
 msgstr "ウインドウ オプション"
 
@@ -4696,7 +4726,7 @@ msgid "Write buffer size"
 msgstr "書込みバッファサイズ"
 
 #: win32/ADLSearchFrame.cpp:330 win32/NotificationsPage.cpp:287
-#: win32/WinUtil.cpp:1175 win32/FinishedFrameBase.h:262
+#: win32/WinUtil.cpp:1176 win32/FinishedFrameBase.h:262
 msgid "Yes"
 msgstr ""
 
@@ -4712,7 +4742,7 @@ msgstr ""
 msgid "You must enter a name"
 msgstr ""
 
-#: win32/HubFrame.cpp:1144
+#: win32/HubFrame.cpp:1145
 msgid "Your nick was already taken, please change to something else!"
 msgstr "あなたのニックは他の人に使用されています。変更してください!"
 
@@ -4720,7 +4750,7 @@ msgstr "あなたのニックは他の人に使用されています。変更し
 msgid "[Ignored some incomplete directories]"
 msgstr ""
 
-#: win32/AppearancePage.cpp:97
+#: win32/AppearancePage.cpp:98
 #, fuzzy
 msgid "and"
 msgstr "コマンド"
@@ -4743,7 +4773,7 @@ msgstr "コマンド"
 msgid "file list"
 msgstr "ファイルリストメニュー"
 
-#: win32/AppearancePage.cpp:104
+#: win32/AppearancePage.cpp:105
 #, fuzzy
 msgid "lines"
 msgstr "オンライン"

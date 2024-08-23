@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-31 18:44+0200\n"
+"POT-Creation-Date: 2024-08-23 10:56+0200\n"
 "PO-Revision-Date: 2012-03-04 17:40+0000\n"
 "Last-Translator: FlipFlop™ <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,32 +23,32 @@ msgstr ""
 msgid " - Queued: %1%"
 msgstr ""
 
-#: dcpp/Util.cpp:566
+#: dcpp/Util.cpp:565
 #, c-format, boost-format
 msgid "%'lld B"
 msgstr "%'lld B"
 
-#: dcpp/Util.cpp:528
+#: dcpp/Util.cpp:527
 #, c-format, boost-format
 msgid "%.02f GiB"
 msgstr "%.02f GiB"
 
-#: dcpp/Util.cpp:524
+#: dcpp/Util.cpp:523
 #, c-format, boost-format
 msgid "%.02f KiB"
 msgstr "%.02f KiB"
 
-#: dcpp/Util.cpp:526
+#: dcpp/Util.cpp:525
 #, c-format, boost-format
 msgid "%.02f MiB"
 msgstr "%.02f MiB"
 
-#: dcpp/Util.cpp:532
+#: dcpp/Util.cpp:531
 #, c-format, boost-format
 msgid "%.02f PiB"
 msgstr "%.02f PiB"
 
-#: dcpp/Util.cpp:530
+#: dcpp/Util.cpp:529
 #, c-format, boost-format
 msgid "%.02f TiB"
 msgstr "%.02f TiB"
@@ -69,7 +69,7 @@ msgstr ""
 msgid "%1% (%2%)"
 msgstr ""
 
-#: dcpp/AdcHub.cpp:163
+#: dcpp/AdcHub.cpp:164
 #, boost-format
 msgid "%1% (%2%) has same CID {%3%} as %4% (%5%), ignoring"
 msgstr "%1% (%2%) heeft dezelfde CID {%3%} als %4% (%5%), negeren"
@@ -109,12 +109,12 @@ msgstr ""
 msgid "%1% not shared; hashing did not complete."
 msgstr ""
 
-#: dcpp/AdcHub.cpp:302
+#: dcpp/AdcHub.cpp:303
 #, boost-format
 msgid "%1% was kicked by %2%: %3%"
 msgstr "%1% is geblokkeerd door %2%: %3%"
 
-#: dcpp/AdcHub.cpp:305
+#: dcpp/AdcHub.cpp:306
 #, boost-format
 msgid "%1% was kicked: %2%"
 msgstr "%1% was geblokkeerd: %2%"
@@ -134,12 +134,12 @@ msgstr ""
 msgid "%1%: File not available"
 msgstr "%1%: Bestand niet beschikbaar"
 
-#: dcpp/Util.cpp:522
+#: dcpp/Util.cpp:521
 #, c-format, boost-format
 msgid "%d B"
 msgstr "%d B"
 
-#: dcpp/Util.cpp:562
+#: dcpp/Util.cpp:561
 #, c-format, boost-format
 msgid "%s B"
 msgstr "%s B"
@@ -188,11 +188,11 @@ msgstr "Alle Downloadslots in gebruik"
 msgid "Another port mapping attempt is in progress..."
 msgstr ""
 
-#: dcpp/SearchManager.cpp:35
+#: dcpp/SearchManager.cpp:39
 msgid "Any"
 msgstr "Alle"
 
-#: dcpp/SearchManager.cpp:36
+#: dcpp/SearchManager.cpp:40
 msgid "Audio"
 msgstr "Geluid"
 
@@ -220,7 +220,7 @@ msgstr "CRC32 Inconsistentie (SFV-Check)"
 msgid "Certificate verification for %1% failed with error: %2%"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:37
+#: dcpp/SearchManager.cpp:41
 msgid "Compressed"
 msgstr "Gecomprimeerd"
 
@@ -287,15 +287,15 @@ msgstr ""
 msgid "Determining the best connectivity settings..."
 msgstr ""
 
-#: dcpp/SearchManager.cpp:42
+#: dcpp/SearchManager.cpp:46
 msgid "Directory"
 msgstr "Directory"
 
-#: dcpp/ShareManager.cpp:399
+#: dcpp/ShareManager.cpp:408
 msgid "Directory already shared"
 msgstr "Map is reeds gedeeld"
 
-#: dcpp/ShareManager.cpp:386
+#: dcpp/ShareManager.cpp:395
 msgid "Directory is hidden"
 msgstr "Map is verborgen"
 
@@ -320,7 +320,7 @@ msgstr "Verbroken"
 msgid "Disconnected user leaving the hub: %1%"
 msgstr "Verbroken gebruiker verlaat de hub: %1%"
 
-#: dcpp/SearchManager.cpp:38
+#: dcpp/SearchManager.cpp:42
 msgid "Document"
 msgstr "Documenten"
 
@@ -328,7 +328,7 @@ msgstr "Documenten"
 msgid "Download Queue"
 msgstr "Download wachtrij"
 
-#: dcpp/ShareManager.cpp:794
+#: dcpp/ShareManager.cpp:832
 #, boost-format
 msgid ""
 "Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
@@ -397,7 +397,7 @@ msgstr "Fout tijdens hashen %1%: %2%"
 msgid "Error saving hash data: %1%"
 msgstr "Fout bij opslaan van hashdata: %1%"
 
-#: dcpp/SearchManager.cpp:39
+#: dcpp/SearchManager.cpp:43
 msgid "Executable"
 msgstr "Applicatie"
 
@@ -432,7 +432,7 @@ msgstr ""
 msgid "Failed to map the %1% port (%2% %3%) with the %4% interface"
 msgstr "Thread kan niet gecreëerd worden"
 
-#: dcpp/AdcHub.cpp:225
+#: dcpp/AdcHub.cpp:226
 msgid "Failed to negotiate base protocol"
 msgstr "Fout tijdens onderhandelen basis protocol"
 
@@ -454,21 +454,21 @@ msgstr ""
 msgid "File already exists at the target location"
 msgstr "Bestand bestaat reeds op de doellocatie"
 
-#: dcpp/ShareManager.cpp:961
+#: dcpp/ShareManager.cpp:999
 #, boost-format
 msgid "File list %1% generated"
 msgstr "Bestandslijst %1% gegenereerd"
 
-#: dcpp/ShareManager.cpp:826
+#: dcpp/ShareManager.cpp:864
 #, boost-format
 msgid "File list refresh failed: %1%"
 msgstr "Vernieuwen van bestandslijst niet gelukt: %1%"
 
-#: dcpp/ShareManager.cpp:890
+#: dcpp/ShareManager.cpp:928
 msgid "File list refresh finished"
 msgstr "Vernieuwen van bestandslijst is voltooid"
 
-#: dcpp/ShareManager.cpp:809
+#: dcpp/ShareManager.cpp:847
 msgid ""
 "File list refresh in progress, please wait for it to finish before trying to "
 "refresh again"
@@ -476,7 +476,7 @@ msgstr ""
 "Bestandslijst wordt nu vernieuwd. Wacht totdat deze taak voltooid is voordat "
 "u opnieuw probeert te vernieuwen"
 
-#: dcpp/ShareManager.cpp:854
+#: dcpp/ShareManager.cpp:892
 msgid "File list refresh initiated"
 msgstr "Gestart met vernieuwen van de bestandslijst"
 
@@ -512,6 +512,11 @@ msgstr ""
 msgid "HTTP file download failed to create file %1%, error: %2%"
 msgstr ""
 
+#: dcpp/HashManager.cpp:257
+#, fuzzy, boost-format
+msgid "Hash data rebuilding failed: %1%"
+msgstr "Fout tijdens hashen: %1%"
+
 #: dcpp/DCPlusPlus.cpp:120
 msgid "Hash database"
 msgstr "Hash-Database"
@@ -520,12 +525,12 @@ msgstr "Hash-Database"
 msgid "Hash database rebuilt"
 msgstr "Hash database vernieuwd"
 
-#: dcpp/HashManager.cpp:69 dcpp/HashManager.cpp:257
+#: dcpp/HashManager.cpp:69
 #, boost-format
 msgid "Hashing failed: %1%"
 msgstr "Fout tijdens hashen: %1%"
 
-#: dcpp/AdcHub.cpp:231
+#: dcpp/AdcHub.cpp:232
 msgid ""
 "Hub probably uses an old version of ADC, please encourage the owner to "
 "upgrade"
@@ -556,7 +561,7 @@ msgstr "Ongeldige gegevens"
 msgid "Invalid file list extension (must be .xml or .bz2)"
 msgstr ""
 
-#: dcpp/ShareManager.cpp:577
+#: dcpp/ShareManager.cpp:615
 #, boost-format
 msgid "Invalid file name found while hashing folder %1%"
 msgstr "Ongeldige bestandsnaam gevonden tijdens het hashen van directory %1%"
@@ -566,7 +571,7 @@ msgstr "Ongeldige bestandsnaam gevonden tijdens het hashen van directory %1%"
 msgid "Invalid regular expression: %1%"
 msgstr ""
 
-#: dcpp/SettingsManager.cpp:714
+#: dcpp/SettingsManager.cpp:717
 msgid "Invalid search type name"
 msgstr "Ongeldige naam voor zoektype"
 
@@ -607,7 +612,7 @@ msgstr "Meer bytes geschreven dan gevraagd"
 msgid "No certificate file chosen"
 msgstr "Geen certificaat gekozen"
 
-#: dcpp/ShareManager.cpp:382
+#: dcpp/ShareManager.cpp:391
 msgid "No directory specified"
 msgstr "Geen map gekozen"
 
@@ -619,7 +624,7 @@ msgstr "Geen vertrouwde sleutelfile gekozen"
 msgid "No slots available"
 msgstr "Geen Slots beschikbaar"
 
-#: dcpp/SettingsManager.cpp:772
+#: dcpp/SettingsManager.cpp:775
 msgid "No such search type"
 msgstr "Zoektype bestaat niet"
 
@@ -627,15 +632,15 @@ msgstr "Zoektype bestaat niet"
 msgid "Non-UTF-8 data in an ADC connection"
 msgstr "Niet-UTF8-gegevens in ADC-verbinding"
 
-#: dcpp/AdcHub.cpp:701
+#: dcpp/AdcHub.cpp:702
 #, boost-format
 msgid "Not listening for connections - please restart %1%"
 msgstr "Niet reageren op verbinding - s.v.p. herstarten %1%"
 
 #: dcpp/ClientManager.cpp:152 dcpp/ClientManager.cpp:183
 #: dcpp/FinishedManager.cpp:130 dcpp/FinishedManager.cpp:136
-#: dcpp/FinishedManager.cpp:142 dcpp/SearchManager.cpp:322
-#: dcpp/SearchManager.cpp:383 dcpp/Transfer.cpp:80 dcpp/Transfer.cpp:84
+#: dcpp/FinishedManager.cpp:142 dcpp/SearchManager.cpp:337
+#: dcpp/SearchManager.cpp:398 dcpp/Transfer.cpp:80 dcpp/Transfer.cpp:84
 msgid "Offline"
 msgstr "Offline"
 
@@ -647,7 +652,7 @@ msgstr ""
 msgid "Passive mode"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:40
+#: dcpp/SearchManager.cpp:44
 msgid "Picture"
 msgstr "Afbeelding"
 
@@ -667,7 +672,7 @@ msgstr ""
 msgid "Redirect user(s)"
 msgstr "Gebruiker omleiden"
 
-#: dcpp/ShareManager.cpp:402
+#: dcpp/ShareManager.cpp:411
 msgid "Remove all subdirectories before adding this one"
 msgstr "Alle submappen verwijderen voordat deze toegevoegd wordt"
 
@@ -679,17 +684,17 @@ msgstr "Mapstructuur komt niet overeen met TTH Root"
 msgid "Search"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:364
+#: dcpp/ConnectivityManager.cpp:360
 #, fuzzy
 msgid "Search (UDP)"
 msgstr " Zoekpoort (%1% UDP)"
 
-#: dcpp/SearchManager.cpp:159
+#: dcpp/SearchManager.cpp:174
 #, boost-format
 msgid "Search disabled: %1%"
 msgstr "Zoeken uitgeschakeld: %1%"
 
-#: dcpp/SearchManager.cpp:151
+#: dcpp/SearchManager.cpp:166
 msgid "Search enabled again"
 msgstr "Zoeken weer hervat"
 
@@ -752,7 +757,7 @@ msgstr "TLS uitgeschakeld, geen certificaat bestand geladen"
 msgid "TLS error"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:43
+#: dcpp/SearchManager.cpp:47
 msgid "TTH"
 msgstr "TTH"
 
@@ -793,7 +798,7 @@ msgstr "Socks Server kon geen verbinding maken"
 msgid "The socks server requires authentication"
 msgstr "Socks Server heeft authentificatie nodig"
 
-#: dcpp/ShareManager.cpp:390
+#: dcpp/ShareManager.cpp:399
 msgid "The temporary download directory cannot be shared"
 msgstr "De tijdelijke downloadmap kan niet worden gedeeld"
 
@@ -814,7 +819,7 @@ msgstr ""
 "Deze hub probeert je client %1% te spammen, dring er bij de hubeigenaar op "
 "aan dit op te lossen"
 
-#: dcpp/SettingsManager.cpp:718 dcpp/SettingsManager.cpp:740
+#: dcpp/SettingsManager.cpp:721 dcpp/SettingsManager.cpp:743
 msgid "This search type already exists"
 msgstr "Dit zoektype bestaat al"
 
@@ -827,7 +832,7 @@ msgstr ""
 msgid "Transfer"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:358
+#: dcpp/ConnectivityManager.cpp:354
 #, fuzzy
 msgid "Transfer (TCP)"
 msgstr " Overdrachtspoort (%1% TCP)"
@@ -896,7 +901,7 @@ msgstr ""
 msgid "Users"
 msgstr "Gebruikers"
 
-#: dcpp/SearchManager.cpp:41
+#: dcpp/SearchManager.cpp:45
 msgid "Video"
 msgstr "Video"
 

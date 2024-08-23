@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-03-31 18:44+0200\n"
+"POT-Creation-Date: 2024-08-23 10:56+0200\n"
 "PO-Revision-Date: 2012-10-19 07:10+0000\n"
 "Last-Translator: comet <Unknown>\n"
 "Language-Team: Simplified Chinese <zh_CN@li.org>\n"
@@ -23,32 +23,32 @@ msgstr ""
 msgid " - Queued: %1%"
 msgstr ""
 
-#: dcpp/Util.cpp:566
+#: dcpp/Util.cpp:565
 #, c-format, boost-format
 msgid "%'lld B"
 msgstr "%'lld B"
 
-#: dcpp/Util.cpp:528
+#: dcpp/Util.cpp:527
 #, c-format, boost-format
 msgid "%.02f GiB"
 msgstr "%.02f GiB"
 
-#: dcpp/Util.cpp:524
+#: dcpp/Util.cpp:523
 #, c-format, boost-format
 msgid "%.02f KiB"
 msgstr "%.02f KiB"
 
-#: dcpp/Util.cpp:526
+#: dcpp/Util.cpp:525
 #, c-format, boost-format
 msgid "%.02f MiB"
 msgstr "%.02f MiB"
 
-#: dcpp/Util.cpp:532
+#: dcpp/Util.cpp:531
 #, c-format, boost-format
 msgid "%.02f PiB"
 msgstr "%.02f PiB"
 
-#: dcpp/Util.cpp:530
+#: dcpp/Util.cpp:529
 #, c-format, boost-format
 msgid "%.02f TiB"
 msgstr "%.02f TiB"
@@ -69,7 +69,7 @@ msgstr "%1% %2% 端口 (%3% %4%)"
 msgid "%1% (%2%)"
 msgstr "%1% (%2%)"
 
-#: dcpp/AdcHub.cpp:163
+#: dcpp/AdcHub.cpp:164
 #, boost-format
 msgid "%1% (%2%) has same CID {%3%} as %4% (%5%), ignoring"
 msgstr "%1% (%2%) 和 %4% (%5%)有相同的CID {%3%}，忽略"
@@ -107,12 +107,12 @@ msgstr "%1% 未被共享；算出的CRC32值和在SFV文件中的值不匹配"
 msgid "%1% not shared; hashing did not complete."
 msgstr ""
 
-#: dcpp/AdcHub.cpp:302
+#: dcpp/AdcHub.cpp:303
 #, boost-format
 msgid "%1% was kicked by %2%: %3%"
 msgstr "%1% 被 %2% 踢走：%3%"
 
-#: dcpp/AdcHub.cpp:305
+#: dcpp/AdcHub.cpp:306
 #, boost-format
 msgid "%1% was kicked: %2%"
 msgstr "%1% 被踢：%2%"
@@ -132,12 +132,12 @@ msgstr ""
 msgid "%1%: File not available"
 msgstr "%1%：文件不可用"
 
-#: dcpp/Util.cpp:522
+#: dcpp/Util.cpp:521
 #, c-format, boost-format
 msgid "%d B"
 msgstr "%d B"
 
-#: dcpp/Util.cpp:562
+#: dcpp/Util.cpp:561
 #, c-format, boost-format
 msgid "%s B"
 msgstr "%s B"
@@ -186,11 +186,11 @@ msgstr "对方所有上传通道都已被占用"
 msgid "Another port mapping attempt is in progress..."
 msgstr "正在进行另一个端口映射尝试..."
 
-#: dcpp/SearchManager.cpp:35
+#: dcpp/SearchManager.cpp:39
 msgid "Any"
 msgstr "任何"
 
-#: dcpp/SearchManager.cpp:36
+#: dcpp/SearchManager.cpp:40
 msgid "Audio"
 msgstr "音频"
 
@@ -218,7 +218,7 @@ msgstr "CRC32 不一致 (SFV-Check): %1%"
 msgid "Certificate verification for %1% failed with error: %2%"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:37
+#: dcpp/SearchManager.cpp:41
 msgid "Compressed"
 msgstr "已压缩"
 
@@ -296,15 +296,15 @@ msgstr "国家信息"
 msgid "Determining the best connectivity settings..."
 msgstr "正在检测最好的连接设置..."
 
-#: dcpp/SearchManager.cpp:42
+#: dcpp/SearchManager.cpp:46
 msgid "Directory"
 msgstr "文件夹"
 
-#: dcpp/ShareManager.cpp:399
+#: dcpp/ShareManager.cpp:408
 msgid "Directory already shared"
 msgstr "目录已经共享"
 
-#: dcpp/ShareManager.cpp:386
+#: dcpp/ShareManager.cpp:395
 msgid "Directory is hidden"
 msgstr "隐藏目录"
 
@@ -330,7 +330,7 @@ msgstr "已断开"
 msgid "Disconnected user leaving the hub: %1%"
 msgstr "已断开离线用户：%1%"
 
-#: dcpp/SearchManager.cpp:38
+#: dcpp/SearchManager.cpp:42
 msgid "Document"
 msgstr "文档"
 
@@ -338,7 +338,7 @@ msgstr "文档"
 msgid "Download Queue"
 msgstr "下载队列"
 
-#: dcpp/ShareManager.cpp:794
+#: dcpp/ShareManager.cpp:832
 #, boost-format
 msgid ""
 "Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
@@ -404,7 +404,7 @@ msgstr "载入错误%1%： %2%"
 msgid "Error saving hash data: %1%"
 msgstr "保存哈希数据失败：%1%"
 
-#: dcpp/SearchManager.cpp:39
+#: dcpp/SearchManager.cpp:43
 msgid "Executable"
 msgstr "可执行文件"
 
@@ -439,7 +439,7 @@ msgstr "从%1%加载证书失败"
 msgid "Failed to map the %1% port (%2% %3%) with the %4% interface"
 msgstr "在 %4% 接口映射 %1% 端口 (%2% %3%)失败"
 
-#: dcpp/AdcHub.cpp:225
+#: dcpp/AdcHub.cpp:226
 msgid "Failed to negotiate base protocol"
 msgstr "基础协议协商失败"
 
@@ -459,27 +459,27 @@ msgstr "socks服务器UDP回应失败(检查socks服务器的地址和端口)"
 msgid "File already exists at the target location"
 msgstr "目标位置文件已存在"
 
-#: dcpp/ShareManager.cpp:961
+#: dcpp/ShareManager.cpp:999
 #, boost-format
 msgid "File list %1% generated"
 msgstr "已获取文件列表 %1%"
 
-#: dcpp/ShareManager.cpp:826
+#: dcpp/ShareManager.cpp:864
 #, boost-format
 msgid "File list refresh failed: %1%"
 msgstr "文件列表刷新失败：%1%"
 
-#: dcpp/ShareManager.cpp:890
+#: dcpp/ShareManager.cpp:928
 msgid "File list refresh finished"
 msgstr "文件列表已更新"
 
-#: dcpp/ShareManager.cpp:809
+#: dcpp/ShareManager.cpp:847
 msgid ""
 "File list refresh in progress, please wait for it to finish before trying to "
 "refresh again"
 msgstr "文件列表正在刷新，请稍候再尝试刷新"
 
-#: dcpp/ShareManager.cpp:854
+#: dcpp/ShareManager.cpp:892
 msgid "File list refresh initiated"
 msgstr "文件列表刷新已开始"
 
@@ -515,6 +515,11 @@ msgstr "常规"
 msgid "HTTP file download failed to create file %1%, error: %2%"
 msgstr ""
 
+#: dcpp/HashManager.cpp:257
+#, fuzzy, boost-format
+msgid "Hash data rebuilding failed: %1%"
+msgstr "哈希失败：%1%"
+
 #: dcpp/DCPlusPlus.cpp:120
 msgid "Hash database"
 msgstr "Hash 数据库"
@@ -523,12 +528,12 @@ msgstr "Hash 数据库"
 msgid "Hash database rebuilt"
 msgstr "Hash 数据库已重建"
 
-#: dcpp/HashManager.cpp:69 dcpp/HashManager.cpp:257
+#: dcpp/HashManager.cpp:69
 #, boost-format
 msgid "Hashing failed: %1%"
 msgstr "哈希失败：%1%"
 
-#: dcpp/AdcHub.cpp:231
+#: dcpp/AdcHub.cpp:232
 msgid ""
 "Hub probably uses an old version of ADC, please encourage the owner to "
 "upgrade"
@@ -557,7 +562,7 @@ msgstr "无效的数据"
 msgid "Invalid file list extension (must be .xml or .bz2)"
 msgstr "无效的的文件列表扩展名(必须是 .xml 或 .bz2)"
 
-#: dcpp/ShareManager.cpp:577
+#: dcpp/ShareManager.cpp:615
 #, boost-format
 msgid "Invalid file name found while hashing folder %1%"
 msgstr "当hashing %1%文件夹时发现无效的文件名"
@@ -567,7 +572,7 @@ msgstr "当hashing %1%文件夹时发现无效的文件名"
 msgid "Invalid regular expression: %1%"
 msgstr "无效的正则表达式：%1%"
 
-#: dcpp/SettingsManager.cpp:714
+#: dcpp/SettingsManager.cpp:717
 msgid "Invalid search type name"
 msgstr "无效的搜索类型名称"
 
@@ -606,7 +611,7 @@ msgstr "写入的字节数超过请求的"
 msgid "No certificate file chosen"
 msgstr "未选择证书文件"
 
-#: dcpp/ShareManager.cpp:382
+#: dcpp/ShareManager.cpp:391
 msgid "No directory specified"
 msgstr "没有指定目录"
 
@@ -618,7 +623,7 @@ msgstr "未选择密钥文件"
 msgid "No slots available"
 msgstr "对方上传通道都已经满了"
 
-#: dcpp/SettingsManager.cpp:772
+#: dcpp/SettingsManager.cpp:775
 msgid "No such search type"
 msgstr "无此搜索类型"
 
@@ -626,15 +631,15 @@ msgstr "无此搜索类型"
 msgid "Non-UTF-8 data in an ADC connection"
 msgstr "在ADC连接中有非UTF-8数据"
 
-#: dcpp/AdcHub.cpp:701
+#: dcpp/AdcHub.cpp:702
 #, boost-format
 msgid "Not listening for connections - please restart %1%"
 msgstr "未监听连接 - 请重启 %1%"
 
 #: dcpp/ClientManager.cpp:152 dcpp/ClientManager.cpp:183
 #: dcpp/FinishedManager.cpp:130 dcpp/FinishedManager.cpp:136
-#: dcpp/FinishedManager.cpp:142 dcpp/SearchManager.cpp:322
-#: dcpp/SearchManager.cpp:383 dcpp/Transfer.cpp:80 dcpp/Transfer.cpp:84
+#: dcpp/FinishedManager.cpp:142 dcpp/SearchManager.cpp:337
+#: dcpp/SearchManager.cpp:398 dcpp/Transfer.cpp:80 dcpp/Transfer.cpp:84
 msgid "Offline"
 msgstr "离线"
 
@@ -646,7 +651,7 @@ msgstr "部分的文件列表"
 msgid "Passive mode"
 msgstr "被动模式"
 
-#: dcpp/SearchManager.cpp:40
+#: dcpp/SearchManager.cpp:44
 msgid "Picture"
 msgstr "图片"
 
@@ -664,7 +669,7 @@ msgstr "检测到外部IP，选择直接连接的主动模式"
 msgid "Redirect user(s)"
 msgstr "重定向用户"
 
-#: dcpp/ShareManager.cpp:402
+#: dcpp/ShareManager.cpp:411
 msgid "Remove all subdirectories before adding this one"
 msgstr "增加前先删除所有子文件夹"
 
@@ -676,16 +681,16 @@ msgstr "响应与请求不匹配"
 msgid "Search"
 msgstr "搜索"
 
-#: dcpp/ConnectivityManager.cpp:364
+#: dcpp/ConnectivityManager.cpp:360
 msgid "Search (UDP)"
 msgstr "搜索 (UDP)"
 
-#: dcpp/SearchManager.cpp:159
+#: dcpp/SearchManager.cpp:174
 #, boost-format
 msgid "Search disabled: %1%"
 msgstr "禁止搜索：%1%"
 
-#: dcpp/SearchManager.cpp:151
+#: dcpp/SearchManager.cpp:166
 msgid "Search enabled again"
 msgstr "再次允许搜索"
 
@@ -748,7 +753,7 @@ msgstr "禁用 TLS，未设置证书文件"
 msgid "TLS error"
 msgstr ""
 
-#: dcpp/SearchManager.cpp:43
+#: dcpp/SearchManager.cpp:47
 msgid "TTH"
 msgstr "TTH"
 
@@ -789,7 +794,7 @@ msgstr "Socks代理连接失败"
 msgid "The socks server requires authentication"
 msgstr "Socks代理需要「用户/密码」验证"
 
-#: dcpp/ShareManager.cpp:390
+#: dcpp/ShareManager.cpp:399
 msgid "The temporary download directory cannot be shared"
 msgstr "不能共享下载的临时文件目录"
 
@@ -809,7 +814,7 @@ msgid ""
 msgstr ""
 "这个站点在尝试利用你的客户端去发送垃圾信息%1%，请让站点管理员去修复这个问题"
 
-#: dcpp/SettingsManager.cpp:718 dcpp/SettingsManager.cpp:740
+#: dcpp/SettingsManager.cpp:721 dcpp/SettingsManager.cpp:743
 msgid "This search type already exists"
 msgstr "此搜索类型已存在"
 
@@ -822,7 +827,7 @@ msgstr ""
 msgid "Transfer"
 msgstr "传输"
 
-#: dcpp/ConnectivityManager.cpp:358
+#: dcpp/ConnectivityManager.cpp:354
 msgid "Transfer (TCP)"
 msgstr "传输(TCP)"
 
@@ -888,7 +893,7 @@ msgstr ""
 msgid "Users"
 msgstr "用户"
 
-#: dcpp/SearchManager.cpp:41
+#: dcpp/SearchManager.cpp:45
 msgid "Video"
 msgstr "视频"
 
