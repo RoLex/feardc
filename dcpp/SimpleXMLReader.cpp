@@ -66,24 +66,28 @@ static bool isNameChar(int c) {
 		;
 }
 
-SimpleXMLReader::SimpleXMLReader(SimpleXMLReader::CallBack* callback) :
-	bufPos(0), pos(0), cb(callback), state(STATE_START)
+SimpleXMLReader::SimpleXMLReader(SimpleXMLReader::CallBack* callback, int aFlags) :
+	bufPos(0), pos(0), cb(callback), state(STATE_START), flags(aFlags)
 {
 	elements.reserve(64);
 	attribs.reserve(16);
 }
 
 void SimpleXMLReader::append(std::string& str, size_t maxLen, int c) {
-	if (str.size() + 1 > maxLen)
-		error("Buffer overflow");
-
+	if(str.size() + 1 > maxLen) {
+		if (flags & FLAG_SAFE_SOURCE) {
+			return;
+		} else {
+			error("Buffer overflow");
+		}
+	}
 	str.append(1, (std::string::value_type)c);
 }
 
 void SimpleXMLReader::append(std::string& str, size_t maxLen, std::string::const_iterator begin, std::string::const_iterator end) {
-	if (str.size() + (end - begin) > maxLen)
+	if(str.size() + (end - begin) > maxLen) {
 		error("Buffer overflow");
-
+	}
 	str.append(begin, end);
 }
 
@@ -248,9 +252,7 @@ bool SimpleXMLReader::elementAttrValue() {
 		if((state == STATE_ELEMENT_ATTR_VALUE_APOS && c == '\'') || (state == STATE_ELEMENT_ATTR_VALUE_QUOT && c == '"')) {
 			append(attribs.back().second, MAX_VALUE_SIZE, buf.begin() + bufPos, buf.begin() + bufPos + i);
 
-			if(!encoding.empty() && encoding != Text::utf8) {
-				attribs.back().second = Text::toUtf8(attribs.back().second, encoding);
-			}
+			decodeString(attribs.back().second);
 
 			state = STATE_ELEMENT_ATTR;
 			advancePos(i + 1);
@@ -409,16 +411,21 @@ bool SimpleXMLReader::cdata() {
 			}
 		}
 
-		append(value, MAX_CONTENT_SIZE, c);
+		append(value, MAX_VALUE_SIZE, c);
 		advancePos(1);
 	}
 
 	return true;
 }
 
-bool SimpleXMLReader::entref(string& d) { // todo: needs rewrite
-	if (d.size() + 1 >= MAX_CONTENT_SIZE)
-		error("Buffer overflow");
+bool SimpleXMLReader::entref(string& d) {
+	if(d.size() + 1 > (flags & FLAG_SAFE_SOURCE ? MAX_VALUE_SIZE_SAFE : MAX_VALUE_SIZE)) {
+		if (flags & FLAG_SAFE_SOURCE) {
+			return true;
+		} else {
+			error("Buffer overflow");
+		}
+	}
 
 	if(bufSize() > 6) {
 		if(charAt(1) == 'l' && charAt(2) == 't' && charAt(3) == ';') {
@@ -490,7 +497,7 @@ bool SimpleXMLReader::content() {
 		return entref(value);
 	}
 
-	append(value, MAX_CONTENT_SIZE, c);
+	append(value, flags & FLAG_SAFE_SOURCE ? MAX_VALUE_SIZE_SAFE : MAX_VALUE_SIZE, c);
 
 	advancePos(1);
 
@@ -533,7 +540,7 @@ bool SimpleXMLReader::elementEndEnd() {
 	return false;
 }
 
-bool SimpleXMLReader::skipSpace(bool store) { // todo: needs rewrite
+bool SimpleXMLReader::skipSpace(bool store) {
 	if(!needChars(1)) {
 		return true;
 	}
@@ -541,7 +548,7 @@ bool SimpleXMLReader::skipSpace(bool store) { // todo: needs rewrite
 	int c;
 	while(needChars(1) && isSpace(c = charAt(0))) {
 		if(store) {
-			append(value, MAX_CONTENT_SIZE, c);
+			append(value, MAX_VALUE_SIZE, c);
 		}
 		advancePos();
 		skipped = true;
@@ -642,7 +649,7 @@ bool SimpleXMLReader::process() {
 		case STATE_DECL_ENCODING_NAME_QUOT:
 			declEncodingValue()
 			|| spaceOrError("Expecting encoding value");
-			break;
+			break; // todo: should not be here but gives warning, resolve when have time > https://en.cppreference.com/w/cpp/language/switch
 		case STATE_DECL_STANDALONE:
 			literal(LITN("standalone"), false, STATE_DECL_STANDALONE_EQ)
 			|| literal(LITN("?>"), false, STATE_CONTENT)
@@ -735,9 +742,7 @@ bool SimpleXMLReader::process() {
 		}
 
 		if(oldState == STATE_CONTENT && state != oldState && !value.empty()) {
-			if(!encoding.empty() && encoding != Text::utf8) {
-				value = Text::toUtf8(value, encoding);
-			}
+			decodeString(value);
 			cb->data(value);
 			value.clear();
 		}
@@ -748,6 +753,20 @@ bool SimpleXMLReader::process() {
 
 	// should never happen
 	return false;
-};
+}
+
+void SimpleXMLReader::decodeString(string& str_) {
+	auto isUtf8 = encoding.empty() || compare(encoding, Text::utf8) == 0;
+
+	if (!isUtf8) {
+		str_ = Text::toUtf8(str_, encoding);
+	} else if (!(flags & FLAG_SAFE_SOURCE) && !Text::validateUtf8(str_)) {
+		if (flags & FLAG_REPLACE_INVALID_UTF8) {
+			str_ = Text::sanitizeUtf8(str_);
+		} else {
+			error("Malformed UTF-8 data");
+		}
+	}
+}
 
 }

@@ -120,3 +120,20 @@ TEST(testxml, test_file)
 	}
 }
 
+TEST(testxml, test_utf_validation)
+{
+	const char xml[] = "<Hub Name='\xc3Name'/>";
+
+	Collector collector;
+	SimpleXMLReader reader(&collector, SimpleXMLReader::FLAG_REPLACE_INVALID_UTF8);
+
+	for (size_t i = 0, iend = sizeof(xml); i < iend; ++i) {
+		reader.parse(xml + i, 1);
+	}
+
+#ifdef _WIN32
+	ASSERT_EQ(collector.attribValues["\ufffdName"], 1);
+#else
+	ASSERT_EQ(collector.attribValues["_Name"], 1);
+#endif
+}

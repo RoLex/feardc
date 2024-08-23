@@ -1192,7 +1192,7 @@ void NmdcHub::myInfo(bool alwaysSend) {
 	}
 }
 
-void NmdcHub::search(int aSizeType, int64_t aSize, int aFileType, const string& aString, const string&, const StringList&) {
+void NmdcHub::search(int aSizeType, int64_t aSize, int aFileType, const string& aString, const string&, const StringList&, const string&) {
 	checkstate();
 
 	if ((aFileType == SearchManager::TYPE_TTH) && haveSupports(SUPPORTS_TTHS)) { // tths extension
@@ -1394,14 +1394,14 @@ void NmdcHub::on(Second, uint64_t aTick) noexcept {
 		after 2 minutes we force disconnect due to unfinished login
 		this check was missing in all clients since the beginning
 	*/
-	if ((state > STATE_CONNECTING) && (state < STATE_NORMAL) && (sinceConnect > 0) && (aTick >= ((sinceConnect + 120) * 1000))) {
+	if ((state > STATE_CONNECTING) && (state < STATE_NORMAL) && (sinceConnect > 0) && (aTick >= (sinceConnect + 120 * 1000))) {
 		sinceConnect = 0;
 		disconnect(true);
 		fire(ClientListener::LoginTimeout(), this);
 		return;
 	}
 
-	if ((state == STATE_NORMAL) && (aTick > ((getLastActivity() + 120) * 1000)))
+	if ((state == STATE_NORMAL) && (aTick > (getLastActivity() + 120 * 1000)))
 		send("|", 1);
 }
 
@@ -1411,7 +1411,7 @@ void NmdcHub::on(Minute, uint64_t aTick) noexcept {
 
 	refreshLocalIp();
 
-	if (aTick > (((lastProtectedIPsUpdate + 24) * 3600) * 1000)) {
+	if (aTick > (lastProtectedIPsUpdate + 24 * 3600 * 1000)) {
 		protectedIPs = {
 			"dchublist.org",
 			"hublist.pwiam.com",

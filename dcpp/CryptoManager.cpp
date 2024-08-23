@@ -557,6 +557,85 @@ void CryptoManager::decodeBZ2(const uint8_t* is, size_t sz, string& os) {
 	}
 }
 
+string CryptoManager::encryptSUDP(const uint8_t* aKey, const string& aCmd) {
+	string inData = aCmd;
+	uint8_t ivd[16] = { };
+
+	// prepend 16 random bytes to message
+	RAND_bytes(ivd, 16);
+	inData.insert(0, (char*)ivd, 16);
+
+	// use PKCS#5 padding to align the message length to the cipher block size (16)
+	uint8_t pad = 16 - (aCmd.length() & 15);
+	inData.append(pad, (char)pad);
+
+	// encrypt it
+	boost::scoped_array<uint8_t> out(new uint8_t[inData.length()]);
+	memset(ivd, 0, 16);
+	auto commandLength = inData.length();
+
+#define CHECK(n) if(!(n)) { dcassert(0); }
+
+	int len, tmpLen;
+	auto ctx = EVP_CIPHER_CTX_new();
+	CHECK(EVP_CipherInit_ex(ctx, EVP_aes_128_cbc(), NULL, aKey, ivd, 1));
+	CHECK(EVP_CIPHER_CTX_set_padding(ctx, 0));
+	CHECK(EVP_EncryptUpdate(ctx, out.get(), &len, (unsigned char*)inData.c_str(), inData.length()));
+	CHECK(EVP_EncryptFinal_ex(ctx, out.get() + len, &tmpLen));
+	EVP_CIPHER_CTX_free(ctx);
+
+	dcassert((commandLength & 15) == 0);
+
+#undef CHECK
+
+	inData.clear();
+	inData.insert(0, (char*)out.get(), commandLength);
+	return inData;
+}
+
+bool CryptoManager::decryptSUDP(const uint8_t* aKey, const uint8_t* aData, size_t aDataLen, string& result_) {
+	boost::scoped_array<uint8_t> out(new uint8_t[aDataLen]);
+
+	uint8_t ivd[16] = { };
+
+	auto ctx = EVP_CIPHER_CTX_new();
+
+#define CHECK(n) if(!(n)) { dcassert(0); }
+
+	int len;
+	CHECK(EVP_CipherInit_ex(ctx, EVP_aes_128_cbc(), NULL, aKey, ivd, 0));
+	CHECK(EVP_CIPHER_CTX_set_padding(ctx, 0));
+	CHECK(EVP_DecryptUpdate(ctx, out.get(), &len, aData, aDataLen));
+	CHECK(EVP_DecryptFinal_ex(ctx, out.get() + len, &len));
+	EVP_CIPHER_CTX_free(ctx);
+
+#undef CHECK
+
+	// Validate padding and replace with 0-bytes.
+	int padlen = out[aDataLen - 1];
+	if (padlen < 1 || padlen > 16) {
+		return false;
+	}
+
+	bool valid = true;
+	for (auto r = 0; r < padlen; r++) {
+		if (out[aDataLen - padlen + r] != padlen) {
+			valid = false;
+			break;
+		} else {
+			out[aDataLen - padlen + r] = 0;
+		}
+	}
+
+	if (valid) {
+		result_ = (char*)&out[0] + 16;
+		return true;
+	}
+
+	return false;
+}
+
+
 string CryptoManager::keySubst(const uint8_t* aKey, size_t len, size_t n) {
 	boost::scoped_array<uint8_t> temp(new uint8_t[len + n * 10]);
 

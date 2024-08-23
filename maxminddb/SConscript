@@ -7,7 +7,7 @@ env, target, sources = dev.prepare_build(
 env.Append(
     CPPDEFINES=[
         "HAVE_STDINT_H=1",
-        ('PACKAGE_VERSION', '\\"1.9.1\\"')
+        ('PACKAGE_VERSION', '\\"1.11.0\\"')
         # todo: update PACKAGE_VERSION manually
         # its defined by cmake since version 1.8.0
         # we dont use or support cmake

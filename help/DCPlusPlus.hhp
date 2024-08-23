@@ -10,7 +10,7 @@ Enhanced decompilation=Yes
 Full-text search=Yes
 Index file=index.hhk
 Language=0x0409
-Title=Help for DC++
+Title=Help for FearDC
 
 [WINDOWS]
 main=,"toc.hhc","index.hhk","index.html","index.html",,,,,0x42520,220,0x204e,[0,0,640,480],,,,,,,0

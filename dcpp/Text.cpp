@@ -208,7 +208,7 @@ const string& wideToUtf8(const wstring& str, string& tgt) noexcept {
 	
 	tgt.resize( size );
 	return tgt;
-#else	
+#else
 	string::size_type n = str.length();
 	tgt.clear();
 	for(string::size_type i = 0; i < n; ++i) {
@@ -261,6 +261,10 @@ bool validateUtf8(const string& str) noexcept {
 	return true;
 }
 
+string sanitizeUtf8(const string& str) noexcept {
+	return wideToUtf8(utf8ToWide(str));
+}
+
 const string& utf8ToAcp(const string& str, string& tmp, const string& toCharset) noexcept {
 	wstring wtmp;
 	return wideToAcp(utf8ToWide(str, wtmp), tmp, toCharset);
@@ -280,7 +284,7 @@ const wstring& utf8ToWide(const string& str, wstring& tgt) noexcept {
 	}
 	tgt.resize( size );
 	return tgt;
-#else
+#else 
 	tgt.reserve(str.length());
 	string::size_type n = str.length();
 	for(string::size_type i = 0; i < n; ) {
@@ -379,52 +383,51 @@ const string& convert(const string& str, string& tmp, const string& fromCharset,
 		return acpToUtf8(str, tmp);
 	if(fromCharset == utf8 || toLower(fromCharset, tmp) == utf8)
 		return utf8ToAcp(str, tmp);
-
-	// We don't know how to convert arbitrary charsets
-	dcdebug("Unknown conversion from %s to %s\n", fromCharset.c_str(), toCharset.c_str());
-	return str;
 #else
-
 	// Initialize the converter
 	iconv_t cd = iconv_open(toCharset.c_str(), fromCharset.c_str());
-	if(cd == (iconv_t)-1)
-		return str;
+	if (cd != (iconv_t)-1) {
+		size_t rv;
+		size_t len = str.length() * 2; // optimization
+		size_t inleft = str.length();
+		size_t outleft = len;
+		tmp.resize(len);
+		const char *inbuf = str.data();
+		char *outbuf = (char *)tmp.data();
 
-	size_t rv;
-	size_t len = str.length() * 2; // optimization
-	size_t inleft = str.length();
-	size_t outleft = len;
-	tmp.resize(len);
-	const char *inbuf = str.data();
-	char *outbuf = (char *)tmp.data();
-
-	while(inleft > 0) {
-		rv = iconv(cd, (ICONV_CONST char **)&inbuf, &inleft, &outbuf, &outleft);
-		if(rv == (size_t)-1) {
-			size_t used = outbuf - tmp.data();
-			if(errno == E2BIG) {
-				len *= 2;
-				tmp.resize(len);
-				outbuf = (char *)tmp.data() + used;
-				outleft = len - used;
-			} else if(errno == EILSEQ) {
-				++inbuf;
-				--inleft;
-				tmp[used] = '_';
-			} else {
-				tmp.replace(used, inleft, string(inleft, '_'));
-				inleft = 0;
+		while (inleft > 0) {
+			rv = iconv(cd, (ICONV_CONST char **)&inbuf, &inleft, &outbuf, &outleft);
+			if (rv == (size_t)-1) {
+				size_t used = outbuf - tmp.data();
+				if (errno == E2BIG) {
+					len *= 2;
+					tmp.resize(len);
+					outbuf = (char *)tmp.data() + used;
+					outleft = len - used;
+				}
+				else if (errno == EILSEQ) {
+					++inbuf;
+					--inleft;
+					tmp[used] = '_';
+				}
+				else {
+					tmp.replace(used, inleft, string(inleft, '_'));
+					inleft = 0;
+				}
 			}
 		}
+		iconv_close(cd);
+		if (outleft > 0) {
+			tmp.resize(len - outleft);
+		}
+		return tmp;
 	}
-	iconv_close(cd);
-	if(outleft > 0) {
-		tmp.resize(len - outleft);
-	}
-	return tmp;
 #endif
+	// We don't know how to convert arbitrary charsets
+	dcdebug("Unknown conversion from %s to %s\n", fromCharset.c_str(), toCharset.c_str());
+	return Util::emptyString;
 }
-}
+} // namespace Text
 
 string Text::toDOS(string tmp) {
 	if(tmp.empty())

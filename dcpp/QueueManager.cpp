@@ -150,7 +150,7 @@ static QueueItem* findCandidate(QueueItem* cand, QueueItem::StringMap::iterator 
 
 QueueItem* QueueManager::FileQueue::findAutoSearch(StringList& recent) {
 	// We pick a start position at random, hoping that we will find something to search for...
-	QueueItem::StringMap::size_type start = (QueueItem::StringMap::size_type)Util::rand((uint32_t)queue.size());
+	QueueItem::StringMap::size_type start = (QueueItem::StringMap::size_type)Util::rand(0, (uint32_t)queue.size());
 
 	auto i = queue.begin();
 	advance(i, start);

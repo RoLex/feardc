@@ -21,6 +21,7 @@
 
 #include <dcpp/File.h>
 #include <dcpp/Text.h>
+#include <dcpp/Magnet.h>
 
 using dwt::Grid;
 using dwt::GridInfo;
@@ -103,10 +104,17 @@ bool NotepadFrame::handleMenu(dwt::ScreenCoordinate pt) {
 MenuPtr NotepadFrame::makeMenu(dwt::ScreenCoordinate pt) {
 	auto menu = pad->getMenu();
 
-	menu->appendSeparator();
+	string name, hash, key;
+	tstring searchText;
+	WinUtil::getChatSelText(pad, searchText, pt);
 
-	menu->appendItem(T_("Search"), [this, pt] { WinUtil::searchAny(pad->textUnderCursor(pt)); });
-	menu->appendItem(T_("Search by TTH"), [this, pt] { WinUtil::searchHash(TTHValue(Text::fromT(pad->textUnderCursor(pt)))); });
+	if (!searchText.empty()) {
+		if(searchText.size() > 8 && Magnet::parseUri(Text::fromT(searchText), hash, name, key) && (!name.empty() || !key.empty())) {
+			searchText = name.empty() ? Text::toT(key) : Text::toT(name);
+		}
+
+		WinUtil::addSearchMenu(menu.get(), searchText, hash);
+	}
 
 	return menu;
 }

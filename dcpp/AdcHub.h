@@ -39,7 +39,7 @@ public:
 	virtual void hubMessage(const string& aMessage, bool thirdPerson = false);
 	virtual void privateMessage(const OnlineUser& user, const string& aMessage, bool thirdPerson = false);
 	virtual void sendUserCmd(const UserCommand& command, const ParamMap& params);
-	virtual void search(int aSizeMode, int64_t aSize, int aFileType, const string& aString, const string& aToken, const StringList& aExtList);
+	virtual void search(int aSizeMode, int64_t aSize, int aFileType, const string& aString, const string& aToken, const StringList& aExtList, const string& aKey = Util::emptyString);
 	virtual void password(const string& pwd);
 	virtual void infoImpl();
 
@@ -56,7 +56,7 @@ public:
 	static StringList parseSearchExts(int flag);
 
 	static const string CLIENT_PROTOCOL;
-	static const string SECURE_CLIENT_PROTOCOL_TEST;
+	static const string SECURE_CLIENT_PROTOCOL;
 	static const string ADCS_FEATURE;
 	static const string TCP4_FEATURE;
 	static const string TCP6_FEATURE;
@@ -65,6 +65,7 @@ public:
 	static const string NAT0_FEATURE;
 	static const string SEGA_FEATURE;
 	static const string CCPM_FEATURE;
+	static const string SUDP_FEATURE;
 	static const string BASE_SUPPORT;
 	static const string BAS0_SUPPORT;
 	static const string TIGR_SUPPORT;

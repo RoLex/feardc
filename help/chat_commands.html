@@ -117,10 +117,12 @@ with the specified search.</dd>
   <dd>Launches your default web browser to the Internet Movie Database
 (imdb) with the specified query.</dd>
   <dt><untranslated>/rebuild</untranslated></dt>
-  <dd>Rebuilds the HashIndex.xml and HashData.dat files, removing
-entries to files that are no longer shared, or old hashes for files
-that have since changed. This runs in the main DC++ thread, so
-the interface will freeze until the rebuild is finished.</dd>
+  <dd>Rebuilds the hash storage files (HashIndex.xml and HashData.dat) by removing
+entries to files that are no longer shared and old hashes for files that have changed
+or removed since. This can notably improve the startup time of DC++ when large number
+of files are shared. Note that rebuilding is most effective when shares have not changed
+a lot in the current DC++ session so it is recommended to restart DC++ before 
+issuing a /rebuild command.</dd>
   <dt><untranslated>/log &lt;status, system, downloads, uploads&gt;</untranslated></dt>
   <dd>If no parameter is specified, it launches the log for the hub or
 private chat with the associated application in Windows. If one of the

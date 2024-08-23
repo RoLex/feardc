@@ -878,7 +878,8 @@ bool HubFrame::UserInfo::update(const Identity& identity, int sortCol) {
 	columns[COLUMN_DESCRIPTION] = Text::toT(identity.getDescription());
 	columns[COLUMN_TAG] = Text::toT(identity.getTag());
 	columns[COLUMN_CONNECTION] = Text::toT(identity.getConnection());
-	columns[COLUMN_IP] = Text::toT(identity.getIp());
+	// Show the addy where we actually connect to
+	columns[COLUMN_IP] = Text::toT(CONNSTATE(INCOMING_CONNECTIONS6) ? identity.getIp() : identity.getIp4());
 	columns[COLUMN_COUNTRY] = Text::toT(identity.getCountry());
 	columns[COLUMN_EMAIL] = Text::toT(identity.getEmail());
 	columns[COLUMN_CID] = Text::toT(identity.getUser()->getCID().toBase32());
@@ -1308,8 +1309,8 @@ void HubFrame::updateUserList(UserInfo* ui) {
 	statusDirty = true;
 }
 
-bool HubFrame::userClick(const dwt::ScreenCoordinate& pt) {
-	tstring txt = chat->textUnderCursor(pt);
+bool HubFrame::userClick(tstring& txt, const dwt::ScreenCoordinate& pt) {
+	txt = chat->textUnderCursor(pt);
 	if(txt.empty())
 		return false;
 
@@ -1342,11 +1343,19 @@ bool HubFrame::handleChatContextMenu(dwt::ScreenCoordinate pt) {
 		pt = chat->getContextMenuPos();
 	}
 
-	if(userClick(pt) && handleUsersContextMenu(pt))
+	tstring searchText;
+	if(userClick(searchText, pt) && handleUsersContextMenu(pt))
 		return true;
 
-	auto menu = chat->getMenu();
+	auto sel = chat->getSelection();
+	if (!sel.empty()) {
+		searchText = sel;
+	}
 
+	auto menu = chat->getMenu(searchText);
+	
+	WinUtil::addSearchMenu(menu.get(), searchText);
+	
 	menu->setTitle(escapeMenu(getText()), getParent()->getIcon(this));
 
 	prepareMenu(menu.get(), UserCommand::CONTEXT_HUB, url);

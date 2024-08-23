@@ -169,17 +169,21 @@ inline int RichTextBox::lineFromChar(int c) {
 
 tstring RichTextBox::getSelection() const {
 	std::pair<int, int> range = getCaretPosRange();
-	tstring tmp = getText();
 
-	// This is uglier than it has to be because of the
-	// \r\n vs \r handling - note that WINE, for example,
-	// uses consistent line endings between the internal
-	// and external buffer representations, but Windows does
-	// not - so it cannot even assume getText() consistently
-	// is broken.
-	int realS = fixupLineEndings(tmp.begin(), tmp.end(), range.first),
-	    realE = fixupLineEndings(tmp.begin() + realS, tmp.end(), range.second - range.first);
-	return tmp.substr(realS, realE);
+	DWORD size = ((range.second - range.first) * sizeof(TCHAR) * 2) + 1; // Double buf size due to possible CRLFs
+
+	if (size < 2)
+		return tstring();
+
+	boost::scoped_array< TCHAR > buf(new TCHAR[size]);
+
+	// This gets text with consistent line endigs and without rtf hidden control fields content across
+	// all modern Windows versions. 
+	// Wine doesn't support GT_NOHIDDENTEXT as of 2024.05 but nor does those rtf fields so there's nothing to avoid...
+	GETTEXTEX gte { size, GT_SELECTION | GT_NOHIDDENTEXT | GT_USECRLF, 1200, NULL, NULL };
+	sendMessage(EM_GETTEXTEX, reinterpret_cast< WPARAM >(&gte), reinterpret_cast< LPARAM >(buf.get()));
+
+	return buf.get();
 }
 
 Point RichTextBox::getScrollPos() const {
@@ -213,6 +217,7 @@ int RichTextBox::fixupLineEndings(tstring::const_iterator begin, tstring::const_
 	// https://web.archive.org/web/20140518113109/http://rubyforge.org/pipermail/wxruby-users/2006-August/002116.html
 	// ("TE_RICH2 RichEdit control"). Otherwise charFromPos will be increasingly
 	// off from getText with each new line by one character.
+	// @todo test whether this fixup is still needed for currently supported Windows versions and under Wine.
 	int cur = 0;
 	return std::find_if(begin, end, (cur += (boost::lambda::_1 != static_cast< TCHAR >('\r')),
 		boost::lambda::var(cur) > ibo)) - begin;

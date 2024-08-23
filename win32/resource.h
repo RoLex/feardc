@@ -91,6 +91,7 @@
 #define IDI_DECREMENT 185
 #define IDI_REMOVEQUEUE 186
 #define IDI_DCPP_WARNING 187
+#define IDI_PRIVATE_BOT 188
 
 // Stuff that uses multiple id's
 

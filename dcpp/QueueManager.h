@@ -135,6 +135,11 @@ public:
 	string getListPath(const HintedUser& user);
 	void noDeleteFileList(const string& path);
 
+	bool hasRunning(void) const {
+		Lock l(cs);
+		return !userQueue.isEmpty();
+	};
+
 	GETSET(uint64_t, lastSave, LastSave);
 	GETSET(string, queueFile, QueueFile);
 
@@ -214,7 +219,7 @@ private:
 		bool isRunning(const UserPtr& aUser) const {
 			return (running.find(aUser) != running.end());
 		}
-
+		bool isEmpty(void) const { return running.empty(); }
 		pair<size_t, int64_t> getQueued(const UserPtr& aUser) const;
 	private:
 		/** QueueItems by priority and user (this is where the download order is determined) */

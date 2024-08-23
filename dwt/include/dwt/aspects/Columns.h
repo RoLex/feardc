@@ -125,9 +125,11 @@ inline int Columns<WidgetType>::insertColumn(const Column& column, int after) {
 
 template<typename WidgetType>
 inline void Columns<WidgetType>::setColumns(const std::vector<Column>& columns) {
-	/** @todo "auto" doesn't pass here; strange error on GCC 6.2:
-	 * "inconsistent deduction for 'auto': 'unsigned int' and then 'auto'" */
+	/** @todo "auto" still produces a strange warning on GCC 11.2:
+	 * " comparison of integer expressions of different signedness: 'int' and 'unsigned int' " */
 	for(decltype(getColumnCount()) i = 0, iend = getColumnCount(); i < iend; ++i) eraseColumn(i);
+	/** @todo "auto" doesn't pass here; strange error on GCC 11.2:
+	 * "inconsistent deduction for 'auto':  'int' and then 'long long unsigned int'" */
 	for(decltype(columns.size()) i = 0, iend = columns.size(); i < iend; ++i) insertColumn(columns[i], i);
 }
 

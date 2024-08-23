@@ -39,6 +39,7 @@ PropPage::ListItem CertificatesPage::listItems[] = {
 	{ SettingsManager::ALLOW_UNTRUSTED_CLIENTS, N_("Allow TLS connections to clients without trusted certificate"), IDH_SETTINGS_CERTIFICATES_ALLOW_UNTRUSTED_CLIENTS },
 	{ SettingsManager::ENABLE_CCPM, N_("Support direct encrypted private message channels"), IDH_SETTINGS_CERTIFICATES_ENABLE_CCPM },
 	{ SettingsManager::ALWAYS_CCPM, N_("Always attempt to establish direct encrypted private message channels"), IDH_SETTINGS_CERTIFICATES_ALWAYS_CCPM },
+	{ SettingsManager::ENABLE_SUDP, N_("Enable encrypted active search results in ADCS hubs"), IDH_SETTINGS_ADVANCED_ENABLE_SUDP },
 	{ 0, 0 }
 };
 

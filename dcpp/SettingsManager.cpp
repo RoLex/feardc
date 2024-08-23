@@ -101,7 +101,7 @@ const string SettingsManager::settingTags[] =
 	"DontDlAlreadyQueued", "DontDLAlreadyShared", "EnableCCPM", "FavShowJoins",
 	"FilterMessages",
 	"FinishedDLOnlyFull", "FollowLinks", "GetUserCountry", "ShowUserIp", "ShowUserCountry", "GetUserInfo",
-	"HubUserCommands", "IgnoreBotPms", "IgnoreHubPms", "SkipTrayBotPms", "DisableTaskbarMenu", "OpenNewWindow", "KeepFinishedFiles",
+	"HubUserCommands", "IgnoreBotPms", "IgnoreHubPms", "SkipTrayBotPms", "OpenNewWindow", "KeepFinishedFiles",
 	"KeepLists", "AllowNATTraversal", "ListDuplicates", "LogDownloads", "LogFilelistTransfers", "LogFinishedDownloads",
 	"LogMainChat", "LogPrivateChat", "LogStatusMessages", "LogSystem", "LogUploads", "MagnetAsk",
 	"MagnetRegister", "MinimizeToTray", "NoAwayMsgToBots", "NoIpOverride", "NoIpOverride6", "OpenUserCmdHelp",
@@ -113,7 +113,8 @@ const string SettingsManager::settingTags[] =
 	"StatusInChat", "TimeDependentThrottle", "TimeStamps",
 	"ToggleActiveTab", "UrlHandler", "UseCTRLForLineHistory", "UseSystemIcons",
 	"UsersFilterFavorite", "UsersFilterOnline", "UsersFilterQueue", "UsersFilterWaiting",
-	"RegisterSystemStartup", "DontLogCCPMChat", "AboutCfgDisclaimer",
+	"RegisterSystemStartup", "DontLogCCPMChat", "AboutCfgDisclaimer", "EnableTaskbarPreview",
+	"EnableSUDP",
 	"SENTRY",
 	// Int64
 	"TotalUpload", "TotalDownload", "SharingSkiplistMinSize", "SharingSkiplistMaxSize",
@@ -193,7 +194,6 @@ SettingsManager::SettingsManager() {
 	setDefault(IGNORE_HUB_PMS, false);
 	setDefault(IGNORE_BOT_PMS, false);
 	setDefault(SKIP_TRAY_BOT_PMS, false);
-	setDefault(DISABLE_TASKBAR_MENU, false);
 	setDefault(LIST_DUPES, true);
 	setDefault(BUFFER_SIZE, 64);
 	setDefault(HUBLIST_SERVERS, "https://te-home.net/?do=hublist&get=hublist.xml.bz2;https://hublist.pwiam.com/hublist.xml.bz2;https://dchublist.biz/?do=hublist&get=hublist.xml.bz2;https://dchublist.ru/hublist.xml.bz2;https://dcnf.github.io/Hublist/hublist.xml.bz2;");
@@ -378,6 +378,7 @@ SettingsManager::SettingsManager() {
 	setDefault(MAX_EXTRA_SLOTS, 3);
 	setDefault(TESTING_STATUS, TESTING_ENABLED);
 	setDefault(WHITELIST_OPEN_URIS, "http:;https:;www;mailto:");
+	setDefault(ENABLE_SUDP, true);
 	setDefault(AC_DISCLAIM, true);
 
 	setSearchTypeDefaults();
@@ -392,6 +393,8 @@ SettingsManager::SettingsManager() {
 	setDefault(UPLOAD_BG_COLOR, RGB(205, 60, 55));
 	setDefault(DOWNLOAD_TEXT_COLOR, RGB(255, 255, 255));
 	setDefault(DOWNLOAD_BG_COLOR, RGB(55, 170, 85));
+
+	setDefault(ENABLE_TASKBAR_PREVIEW, true);
 #endif
 }
 

@@ -38,7 +38,6 @@ WindowsPage::ListItem WindowsPage::optionItems[] = {
 	{ SettingsManager::IGNORE_HUB_PMS, N_("Ignore private messages from the hub"), IDH_SETTINGS_WINDOWS_IGNORE_HUB_PMS },
 	{ SettingsManager::IGNORE_BOT_PMS, N_("Ignore private messages from bots"), IDH_SETTINGS_WINDOWS_IGNORE_BOT_PMS },
 	{ SettingsManager::SKIP_TRAY_BOT_PMS, N_("Skip tray icon notification on PM from bots and hub"), IDH_SETTINGS_WINDOWS_SKIP_TRAY_BOT_PMS },
-	{ SettingsManager::DISABLE_TASKBAR_MENU, N_("Disable taskbar menu creation"), IDH_SETTINGS_WINDOWS_DISABLE_TASKBAR_MENU },
 	{ SettingsManager::TOGGLE_ACTIVE_WINDOW, N_("Toggle window when selecting an active tab"), IDH_SETTINGS_WINDOWS_TOGGLE_ACTIVE_WINDOW },
 	{ SettingsManager::PROMPT_PASSWORD, N_("Popup box to input password for hubs"), IDH_SETTINGS_WINDOWS_PROMPT_PASSWORD },
 	{ 0, 0 }

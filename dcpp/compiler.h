@@ -26,6 +26,12 @@
 #error GCC 8.1 is required
 #endif
 
+//@todo remove when we raise WIN32 gcc version requirement to higher than this
+
+#if __GNUC__ < 9 || (__GNUC__ == 9 && __GNUC_MINOR__ < 2)
+#warning "Randomization quality will be poor using this compiler, see https://gcc.gnu.org/bugzilla/show_bug.cgi?id=85494"
+#endif
+
 #ifdef HAVE_OLD_MINGW
 #error Regular MinGW may have stability problems; use a MinGW package from mingw-w64
 // see <https://bugs.launchpad.net/dcplusplus/+bug/2032940> for details
@@ -33,8 +39,8 @@
 
 #else // _WIN32
 
-#if __GNUC__ < 5 || (__GNUC__ == 5 && __GNUC_MINOR__ < 4)
-#error GCC 5.4 is required
+#if __GNUC__ < 7 || (__GNUC__ == 7 && __GNUC_MINOR__ < 5)
+#error GCC 7.5 is required
 #endif
 
 #endif // _WIN32

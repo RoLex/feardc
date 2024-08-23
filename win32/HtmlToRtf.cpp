@@ -64,6 +64,7 @@ private:
 	void parseFont(const string& s);
 	void parseColor(size_t& contextColor, const string& s);
 	void parseDecoration(const string& s);
+	static tstring rtfEscape(const string& s);
 
 	tstring ret;
 
@@ -75,7 +76,7 @@ private:
 
 tstring HtmlToRtf::convert(const string& html, dwt::RichTextBox* box) {
 	Parser parser(box);
-	try { SimpleXMLReader(&parser).parse(html); }
+	try { SimpleXMLReader(&parser, SimpleXMLReader::FLAG_SAFE_SOURCE).parse(html); }
 	catch(const SimpleXMLException& e) { return Text::toT(e.getError()); }
 	return parser.finalize();
 }
@@ -181,8 +182,12 @@ void Parser::startTag(const string& name_, StringPairList& attribs, bool simple)
 	}
 }
 
+tstring Parser::rtfEscape(const string& data) {
+	return dwt::RichTextBox::rtfEscape(Text::toT(Text::toDOS(data)));
+}
+
 void Parser::data(const string& data) {
-	ret += dwt::RichTextBox::rtfEscape(Text::toT(Text::toDOS(data)));
+	ret += rtfEscape(data);
 }
 
 void Parser::endTag(const string& name) {
@@ -214,7 +219,8 @@ tstring Parser::Context::getBegin() const {
 		/* Wine doesn't support chat links so display them as plain text.
 		 * See <https://bugs.winehq.org/show_bug.cgi?id=34824>. */
 		if(SETTING(CLICKABLE_CHAT_LINKS)) {
-			ret += "\\field{\\*\\fldinst HYPERLINK \"" + link + "\"}{\\fldrslt";
+			//RFC 3986 allows {}\ etc... in URIs so links also need escaping for proper display and to avoid formatting issues
+			ret += "\\field{\\*\\fldinst HYPERLINK \"" + Text::fromT(rtfEscape(link)) + "\"}{\\fldrslt";
 		} else {
 			ret += "{";
 		}

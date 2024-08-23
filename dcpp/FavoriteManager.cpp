@@ -483,7 +483,7 @@ void FavoriteManager::load() {
 	try {
 		SimpleXML xml;
 		Util::migrate(getConfigFile());
-		xml.fromXML(File(getConfigFile(), File::READ, File::OPEN).read());
+		xml.fromXML(File(getConfigFile(), File::READ, File::OPEN).read(), SimpleXMLReader::FLAG_REPLACE_INVALID_UTF8);
 
 		if(xml.findChild("Favorites")) {
 			xml.stepIn();

@@ -51,6 +51,9 @@ public:
 
 	void decodeBZ2(const uint8_t* is, size_t sz, string& os);
 
+	string encryptSUDP(const uint8_t* aKey, const string& aCmd);
+	bool decryptSUDP(const uint8_t* aKey, const uint8_t* aData, size_t aDataLen, string& result_);
+
 	SSL_CTX* getSSLContext(SSLContext wanted);
 
 	void loadCertificates() noexcept;

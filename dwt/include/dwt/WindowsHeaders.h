@@ -80,7 +80,7 @@
 
 // Other quirks
 
-// LM_GETIDEALSIZE is a >=Vista message; we check the OS version before using it.
+// as of 2024-05-09, Debian sid's mingw-w64 does not define LM_GETIDEALSIZE
 #ifndef LM_GETIDEALSIZE
 #define LM_GETIDEALSIZE LM_GETIDEALHEIGHT
 #endif

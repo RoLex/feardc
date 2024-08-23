@@ -165,10 +165,9 @@ void UploadPage::write()
 {
 	PropPage::write(items);
 
-	if(SETTING(SLOTS) < 1)
+	if(SETTING(SLOTS) < 1) {
 		SettingsManager::getInstance()->set(SettingsManager::SLOTS, 1);
-
-	ShareManager::getInstance()->refresh();
+	}
 }
 
 void UploadPage::handleDoubleClick() {
@@ -201,23 +200,6 @@ void UploadPage::handleDragDrop(const TStringList& files) {
 	for(auto& i: files)
 		if(PathIsDirectory(i.c_str()))
 			addDirectory(i);
-}
-
-void UploadPage::handleShareHiddenClicked(CheckBoxPtr checkBox, int setting) {
-	// Save the checkbox state so that ShareManager knows to include/exclude hidden files
-	SettingsManager::getInstance()->set(static_cast<SettingsManager::BoolSetting>(setting), checkBox->getChecked());
-
-	// Refresh the share. This is a blocking refresh. Might cause problems?
-	// Hopefully people won't click the checkbox enough for it to be an issue. :-)
-	ShareManager::getInstance()->setDirty();
-	ShareManager::getInstance()->refresh(true, false, true);
-
-	// Clear the GUI list, for insertion of updated shares
-	directories->clear();
-	fillList();
-
-	// Display the new total share size
-	refreshTotalSize();
 }
 
 void UploadPage::handleAddClicked() {

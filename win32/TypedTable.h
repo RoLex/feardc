@@ -268,10 +268,9 @@ private:
 	define_if(HasText, void) handleText(NMLVDISPINFO& data) {
 		ContentType* content = reinterpret_cast<ContentType*>(data.item.lParam);
 		const tstring& text = content->getText(data.item.iSubItem);
-		_tcsncpy(data.item.pszText, text.data(), std::min(text.size(), static_cast<size_t>(data.item.cchTextMax)));
-		if(text.size() < static_cast<size_t>(data.item.cchTextMax)) {
-			data.item.pszText[text.size()] = 0;
-		}
+		const size_t length = std::min(text.size(), static_cast<size_t>(data.item.cchTextMax) - 1);
+		_tcsncpy(data.item.pszText, text.data(), length);
+		data.item.pszText[length] = 0;
 	}
 
 	define_if(HasImage, void) handleImage(NMLVDISPINFO& data) {

@@ -22,6 +22,7 @@
 
 #include <cstdlib>
 #include <ctime>
+#include <random>
 
 #include <map>
 
@@ -450,10 +451,8 @@ public:
 	static string getAwayMessage();
 	static void setAwayMessage(const string& aMsg) { awayMsg = aMsg; }
 
-	static uint32_t rand();
-	static uint32_t rand(uint32_t high) { return rand() % high; }
-	static uint32_t rand(uint32_t low, uint32_t high) { return rand(high-low) + low; }
-	static double randd() { return ((double)rand()) / ((double)0xffffffff); }
+	static uint32_t rand(uint32_t low = 0, uint32_t high = UINT32_MAX);
+	inline static std::mt19937 mt;
 
 	static bool isAdcUrl(const string& aHubURL);
 	static bool isAdcsUrl(const string& aHubURL);

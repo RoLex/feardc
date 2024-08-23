@@ -14,7 +14,11 @@
 <h2>Context menu commands</h2>
 
 <p>Messages may contain path of file(s) associated with them. The path appears between &lt;brackets&gt; and a right click in it will bring up a context menu with possibility to open/check the particular file in Windows Explorer.</p>
-<!--#include virtual="commands_file_management.inc" --> 
+<!--#include virtual="commands_file_general.inc" -->
+<!--#include virtual="commands_file_management.inc" -->
+<p>If the current selection is not a path to a file then above basic text selection and copy to clipboard commands the following search related commands will appear in the menu:</p>
+<!--#include virtual="commands_search.inc" -->
+
 
 <h2>Event messages</h2>
 <dl style="margin-left: 40px;">
@@ -103,7 +107,7 @@
 	<dd>Only one file list refreshing operation can be run at the same time.</dd>
 	<dt>File list refresh failed: [error message]</dt>
 	<dd>The background process for refreshing file list is failed to start.</dd>
-	<dt>Hashing failed: [error message]</dt>
+	<dt>Hashing failed / Hash data rebuilding failed: [error message]</dt>
 	<dd>Error occured during indexing or share rebuilding.</dd>
 	<dt>Error hashing [path]: [error message]</dt>
 	<dd>Error when hashing the file specified in [path].</dd>

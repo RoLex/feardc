@@ -417,7 +417,7 @@ pot_args = [
     "--boost",
     "-s",
     "--output=$TARGET",
-    "$SOURCES",
+    '${list(filter(lambda _: not str(_).endswith(".o"), SOURCES))}'
 ]
 pot_bld = Builder(
     action=Action([pot_args], "Extracting messages to $TARGET from $SOURCES")

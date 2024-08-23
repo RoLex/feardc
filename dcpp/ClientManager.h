@@ -79,8 +79,8 @@ public:
 	bool isConnected(const string& aUrl) const;
 	bool isHubConnected(const string& aUrl) const;
 
-	void search(int aSizeMode, int64_t aSize, int aFileType, const string& aString, const string& aToken);
-	void search(StringList& who, int aSizeMode, int64_t aSize, int aFileType, const string& aString, const string& aToken, const StringList& aExtList);
+	void search(int aSizeMode, int64_t aSize, int aFileType, const string& aString, const string& aToken, const string& aKey);
+	void search(StringList& who, int aSizeMode, int64_t aSize, int aFileType, const string& aString, const string& aToken, const StringList& aExtList, const string& aKey);
 	void infoUpdated();
 
 	UserPtr getUser(const string& aNick, const string& aHubUrl) noexcept;
@@ -121,7 +121,7 @@ public:
 
 	UserPtr& getMe();
 
-	void sendUDP(AdcCommand& cmd, const OnlineUser& user);
+	void sendUDP(AdcCommand& cmd, const OnlineUser& user, const string& aKey = Util::emptyString);
 
 	void connect(const HintedUser& user, const string& token, ConnectionType type = CONNECTION_TYPE_LAST);
 	void privateMessage(const HintedUser& user, const string& msg, bool thirdPerson);
@@ -183,7 +183,7 @@ private:
 	*/
 	OnlineUser* findOnlineUserHint(const CID& cid, const string& hintUrl, OnlinePairC& p) const;
 
-	void sendUDP(const string& ip, const string& port, const string& data);
+	void sendUDP(const string& ip, const string& port, const string& data, const string& aKey = Util::emptyString);
 
 	string getUsersFile() const { return Util::getPath(Util::PATH_USER_LOCAL) + "Users.xml"; }
 

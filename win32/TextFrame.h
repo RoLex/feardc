@@ -48,6 +48,9 @@ private:
 
 	void handleFontChange();
 
+	bool handleMenu(dwt::ScreenCoordinate pt);
+	MenuPtr makeMenu(dwt::ScreenCoordinate pt);
+
 	GridPtr grid;
 	TextBoxPtr pad;
 

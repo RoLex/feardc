@@ -64,7 +64,6 @@ public:
 	bool isRunning() const { return running; }
 	const string& getStatus(bool v6) const;
 	string getInformation() const;
-	bool getConnectivityStatus(bool v6) const;
 
 private:
 	friend class Singleton<ConnectivityManager>;
@@ -101,6 +100,7 @@ private:
 };
 
 #define CONNSETTING(k) ConnectivityManager::getInstance()->get(SettingsManager::k)
+#define CONNSTATE(k) CONNSETTING(k) != SettingsManager::INCOMING_DISABLED
 
 } // namespace dcpp
 

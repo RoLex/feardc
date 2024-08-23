@@ -51,7 +51,19 @@ public:
 		static const std::string& getAttrib(StringPairList& attribs, const std::string& name, size_t hint);
 	};
 
-	SimpleXMLReader(CallBack* callback);
+	enum Flags {
+		/* Replace invalid UTF-8 data with placeholder characters */
+		FLAG_REPLACE_INVALID_UTF8 = 0x01,
+
+		/* Relax a few checks so internally generated safe input data that
+		   can occasionally go larger than usual can be parsed error free.
+		   - double-sized output buffer for simple content (without CDATA), 
+		   - more graceful buffer overflow error handling,
+		   - no UTF8 encoding verification */
+		FLAG_SAFE_SOURCE = 0x02
+	};
+
+	SimpleXMLReader(CallBack* callback, int aFlags = 0);
 	virtual ~SimpleXMLReader() { }
 
 	void parse(InputStream& is, size_t maxSize = 0);
@@ -62,7 +74,7 @@ private:
 
 	static const size_t MAX_NAME_SIZE = 256;
 	static const size_t MAX_VALUE_SIZE = 64*1024;
-	static const size_t MAX_CONTENT_SIZE = 64*1024*2;
+	static const size_t MAX_VALUE_SIZE_SAFE = 128*1024;
 	static const size_t MAX_NESTING = 32;
 
 	enum ParseState {
@@ -189,6 +201,10 @@ private:
 	bool spaceOrError(const char* error);
 
 	bool error(const char* message);
+
+	void decodeString(string& str_);
+
+	const int flags;
 };
 
 

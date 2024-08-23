@@ -85,7 +85,7 @@ from xml.dom.minidom import parse
 # gather the files necessary to create the installer
 sources = Glob("*.*")
 x64_rename = []
-reg = re.compile('^\W*File.+"([^"]+)"')
+reg = re.compile(r'^\W*File.+"([^"]+)"')
 f = codecs.open("DCPlusPlus.nsi", "rb", "utf_16_le")
 for line in f:
     match = reg.search(line)

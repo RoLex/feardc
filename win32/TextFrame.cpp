@@ -83,6 +83,8 @@ temporary(temporary)
 		pad = grid->addChild(cs);
 		addWidget(pad);
 		WinUtil::handleDblClicks(pad);
+
+		pad->onContextMenu([this](const dwt::ScreenCoordinate &sc) { return handleMenu(sc); });
 	}
 
 	{
@@ -137,4 +139,24 @@ void TextFrame::handleFontChange() {
 		SettingsManager::getInstance()->set(SettingsManager::TEXT_VIEWER_FONT, Text::fromT(WinUtil::encodeFont(logFont)));
 		pad->setFont(new dwt::Font(logFont));
 	}
+}
+
+bool TextFrame::handleMenu(dwt::ScreenCoordinate pt) {
+	if(pt.x() == -1 && pt.y() == -1) {
+		pt = pad->getContextMenuPos();
+	}
+
+	makeMenu(pt)->open(pt);
+
+	return true;
+}
+
+MenuPtr TextFrame::makeMenu(dwt::ScreenCoordinate pt) {
+	auto menu = pad->getMenu();
+
+	tstring searchText;
+	WinUtil::getChatSelText(pad, searchText, pt);
+	WinUtil::addSearchMenu(menu.get(), searchText);
+
+	return menu;
 }

@@ -398,8 +398,7 @@ void Table::initGroupSupport() {
 
 					if(groupImageList) {
 						// don't invert the icon. let's find out where it is placed...
-						/// @todo explicit cast for the VS Nov 2012 CTP - recheck later
-						if(static_cast<bool>(theme)) {
+						if(theme) {
 							auto temp = rect;
 							theme.formatRect(canvas, LVP_GROUPHEADER, LVGH_OPEN, temp);
 							iconPos = temp.left() - rect.left();

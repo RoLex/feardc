@@ -117,18 +117,30 @@ bool SystemFrame::preClosing() {
 }
 
 bool SystemFrame::handleContextMenu(const dwt::ScreenCoordinate& pt) {
-	tstring path = log->textUnderCursor(pt, true);
-	string path_a = Text::fromT(path);
+	tstring text = log->textUnderCursor(pt, true);
+	string path_a = Text::fromT(text);
 	if(File::getSize(path_a) != -1) {
 		auto menu = addChild(ShellMenu::Seed(WinUtil::Seeds::menu));
-		menu->setTitle(escapeMenu(path), WinUtil::fileImages->getIcon(WinUtil::getFileIcon(path_a)));
+		menu->setTitle(escapeMenu(text), WinUtil::fileImages->getIcon(WinUtil::getFileIcon(path_a)));
+
+		auto tth = ShareManager::getInstance()->getTTHFromReal(path_a);
+		if (tth) {
+			WinUtil::addHashItems(menu.get(), tth.value(), Util::getFileName(text), File::getSize(path_a));
+		} 
+
 		menu->appendItem(T_("&Open"), [this, path_a] { openFile(path_a); }, dwt::IconPtr(), true, true);
-		menu->appendItem(T_("Open &folder"), [path] { WinUtil::openFolder(path); });
+		menu->appendItem(T_("Open &folder"), [text] { WinUtil::openFolder(text); });
+		
 		menu->appendShellMenu(StringList(1, path_a));
 		menu->open(pt);
-		return true;
+	} else {
+		WinUtil::getChatSelText(log, text, pt);
+		auto menu = log->getMenu();
+		WinUtil::addSearchMenu(menu.get(), text);
+		menu->open(pt);
 	}
-	return false;
+	
+	return true;
 }
 
 bool SystemFrame::handleDoubleClick(const dwt::MouseEvent& mouseEvent) {

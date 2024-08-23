@@ -9,7 +9,7 @@ def gen_toc(target, source, lcid):
     import re
     from build_util import get_win_cp
 
-    spaces = re.compile("\s+")
+    spaces = re.compile(r"\s+")
 
     # define our HTML parsing class derived from HTMLParser
     class Parser(HTMLParser):

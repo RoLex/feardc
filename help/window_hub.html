@@ -32,6 +32,11 @@ found <a href="#messages">below</a>.</p>
 <p>Click on links (URLs that start with https://, ftp://, www, etc) shown in the chat window to
 open them with the registered browser/viewer software.</p>
 
+<h3>Context menu commands</h3>
+<!--#include virtual="commands_find.inc" -->
+<!--#include virtual="commands_search.inc" -->
+<!--#include virtual="menu_user_commands.inc" -->
+
 <h2>Users list (right)</h2>
 <p>
 List of users connected to the hub. You can right-click them to see the menu options available for each.<br/>
@@ -69,6 +74,7 @@ This window can be focused with Alt+U.
 <!--#include virtual="commands_copy.inc" -->
 <p>Shortcut to the "Get file list" command: Alt+G.</p>
 <p>Shortcut to the "Send private message" command: Alt+P.</p>
+<!--#include virtual="menu_user_commands.inc" -->
 
 <h2>Users list filter (bottom right)</h2>
 <p cshelp="IDH_HUB_FILTER">
@@ -108,8 +114,10 @@ When composing a multiline message, this box resizes itself automatically accord
     	<li>Everything which comes from the hub and does not start with a valid nick (NMDC hubs only)</li>
     </ul>	
   </dd>
-  <dt><img src="Secure.ico" width="16" height="16" alt="Hub secure status"/> Hub secure status</dt>
-  <dd cshelp="IDH_HUB_SECURE_STATUS">Shows the hub's secure status. If the hub uses secure hub-client communications then a padlock icon shown here with the actual trusted status and cipher shown as a tooltip of the icon. If the hub isn't secure this part of the status bar is completly missing.</dd>
+  <dt><img src="Secure.ico" width="16" height="16" alt="Secure hub status"/> <img src="Trusted.ico" width="16" height="16" alt="Trusted secure hub status"/> Hub security status indicator</dt>
+  <dd cshelp="IDH_HUB_SECURE_STATUS">
+  	<div>Shows the hub's security status. If the hub uses encrypted hub-client communications then one of these icons are shown indicating the actual secure / trusted secure status of the hub connection. The cipher used for encoding is shown in the tooltip text for the icon. A trusted hub connection means that the hub is protected with either a trusted security certificate and / or a keyprint and their validity have been successfully verified before logging on to the hub.</div>
+  	<div>If the hub connection isn't secure at all then this item is completly missing from the status bar.</div></dd>
   <dt><img src="Users.ico" width="16" height="16" alt="Users"/> Users</dt>
   <dd cshelp="IDH_HUB_USERS_COUNT">Shows the number of users connected to the hub.</dd>
   <dt>Total shared</dt>

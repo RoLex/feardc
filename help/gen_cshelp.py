@@ -11,7 +11,7 @@ def gen_cshelp(target, source):
     import re
     from build_util import html_to_rtf
 
-    spaces = re.compile("\s+")
+    spaces = re.compile(r"\s+")
 
     # will hold [id, text] pairs
     output = []

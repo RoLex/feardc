@@ -135,7 +135,7 @@ public:
 		return (!tmp.empty()) && tmp[0] == '1';
 	}
 
-	void fromXML(const string& aXML);
+	void fromXML(const string& aXML, int aFlags = 0);
 	string toXML();
 	void toXML(OutputStream* f) { if(!root.children.empty()) root.children[0]->toXML(0, f); }
 

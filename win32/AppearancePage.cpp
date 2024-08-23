@@ -46,6 +46,7 @@ PropPage::ListItem AppearancePage::listItems[] = {
 	{ SettingsManager::GET_USER_COUNTRY, N_("Guess user country from IP"), IDH_SETTINGS_APPEARANCE_GET_USER_COUNTRY },
 	{ SettingsManager::SHOW_USER_IP, N_("Show user IP in chat"), IDH_SETTINGS_APPEARANCE_SHOW_USER_IP },
 	{ SettingsManager::SHOW_USER_COUNTRY, N_("Show user country in chat"), IDH_SETTINGS_APPEARANCE_SHOW_USER_COUNTRY },
+	{ SettingsManager::ENABLE_TASKBAR_PREVIEW, N_("Enable window previews in the taskbar (requires restart)"), IDH_SETTINGS_APPEARANCE_TASKBAR_PREVIEW },
 	{ 0, 0 }
 };
 

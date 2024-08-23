@@ -301,7 +301,9 @@ void PrivateFrame::updateOnlineStatus(bool newChannel) {
 		if(!newChannel) {
 			addStatus((online ? T_("User went online") : T_("User went offline")) + _T(" - ") + WinUtil::getHubName(replyTo.getUser()));
 		}
-		setIcon(online ? IDI_PRIVATE : IDI_PRIVATE_OFF);
+
+		auto ou = ClientManager::getInstance()->findOnlineUserHint(replyTo.getUser().user->getCID(), replyTo.getUser().hint);
+		setIcon(online ? ((ou && (ou->getIdentity().isHub() || ou->getIdentity().isBot())) ? IDI_PRIVATE_BOT : IDI_PRIVATE) : IDI_PRIVATE_OFF);
 		status->setIcon(STATUS_CHANNEL, WinUtil::statusIcon(ccReady() ? IDI_SECURE : online ? IDI_HUB : IDI_HUB_OFF));
 		newChannel = true;
 	}
@@ -500,7 +502,12 @@ bool PrivateFrame::handleChatContextMenu(dwt::ScreenCoordinate pt) {
 		pt = chat->getContextMenuPos();
 	}
 
-	auto menu = chat->getMenu();
+	tstring searchText;
+	WinUtil::getChatSelText(chat, searchText, pt);
+
+	auto menu = chat->getMenu(searchText);
+	
+	WinUtil::addSearchMenu(menu.get(), searchText);
 
 	menu->setTitle(escapeMenu(getText()), getParent()->getIcon(this));
 

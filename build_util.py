@@ -572,7 +572,7 @@ def html_to_rtf(string):
                         "(" + line + ")+",
                         line,
                         re.sub(
-                            "\s*<br ?/?>\s*",
+                            r"\s*<br ?/?>\s*",
                             line,
                             string.replace("\\", "\\\\")
                             .replace("{", "\\{")
@@ -594,12 +594,12 @@ def msvcproj_workarounds(target, source, env):
 
     # clean up empty commands for non-built projects to avoid build failures.
     contents = re.sub(
-        b"echo Starting SCons &amp;&amp;\s*(-c)?\s*&quot;&quot;", b"", contents
+        br"echo Starting SCons &amp;&amp;\s*(-c)?\s*&quot;&quot;", b"", contents
     )
 
     # remove SConstruct from included files since it points nowhere anyway.
     contents = re.sub(
-        b'<ItemGroup>\s*<None Include="SConstruct" />\s*</ItemGroup>', b"", contents
+        br'<ItemGroup>\s*<None Include="SConstruct" />\s*</ItemGroup>', b"", contents
     )
 
     # update the platform toolset to the VS 2022 one.

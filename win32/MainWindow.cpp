@@ -109,6 +109,7 @@ stopperThread(NULL),
 lastUp(0),
 lastDown(0),
 lastTick(GET_TICK()),
+lastGetShare(0),
 away(false),
 awayIdle(false),
 fullSlots(false)
@@ -146,6 +147,7 @@ fullSlots(false)
 	addAccel(FCONTROL, 'H', [this] { FavHubsFrame::openWindow(getTabView()); });
 	addAccel(FCONTROL, 'L', [this] { handleOpenFileList(); });
 	addAccel(FCONTROL, 'N', [this] { NotepadFrame::openWindow(getTabView()); });
+	addAccel(FCONTROL, 'O', [this] { SystemFrame::openWindow(getTabView()); });
 	addAccel(FCONTROL, 'P', [this] { PublicHubsFrame::openWindow(getTabView()); });
 	addAccel(FCONTROL, 'Q', [this] { handleQuickConnect(); });
 	addAccel(FCONTROL, 'S', [this] { SearchFrame::openWindow(getTabView()); });
@@ -177,7 +179,7 @@ fullSlots(false)
 	onRaw([this](WPARAM, LPARAM l) { return handleCopyData(l); }, dwt::Message(WM_COPYDATA));
 	onRaw([this](WPARAM, LPARAM) { return handleWhereAreYou(); }, dwt::Message(SingleInstance::WMU_WHERE_ARE_YOU));
 
-	if (!SETTING(DISABLE_TASKBAR_MENU)) {
+	if(SETTING(ENABLE_TASKBAR_PREVIEW)) {
 		//In the event that explorer.exe crashes lets make sure the overlay icon is reset
 		UINT tbcMsg = ::RegisterWindowMessage(L"TaskbarButtonCreated");
 		if(tbcMsg != WM_NULL) {
@@ -274,8 +276,7 @@ fullSlots(false)
 	if(SETTING(SETTINGS_SAVE_INTERVAL) > 0)
 		setSaveTimer();
 
-	if (!SETTING(DISABLE_TASKBAR_MENU))
-		handleTaskbarOverlay();
+	handleTaskbarOverlay();
 }
 
 void MainWindow::initWindow() {
@@ -363,7 +364,7 @@ void MainWindow::initMenu() {
 		viewMenu->appendSeparator();
 		viewIndexes[NotepadFrame::id] = viewMenu->appendItem(T_("&Notepad\tCtrl+N"),
 			[this] { NotepadFrame::openWindow(getTabView()); }, WinUtil::menuIcon(IDI_NOTEPAD));
-		viewIndexes[SystemFrame::id] = viewMenu->appendItem(T_("System Log"),
+		viewIndexes[SystemFrame::id] = viewMenu->appendItem(T_("System Log\tCtrl+O"),
 			[this] { SystemFrame::openWindow(getTabView()); }, WinUtil::menuIcon(IDI_LOGS));
 		viewIndexes[StatsFrame::id] = viewMenu->appendItem(T_("Network Statistics"),
 			[this] { StatsFrame::openWindow(getTabView()); }, WinUtil::menuIcon(IDI_NET_STATS));
@@ -552,6 +553,13 @@ void MainWindow::initStatusBar() {
 	status->setIcon(STATUS_COUNTS, WinUtil::statusIcon(IDI_HUB));
 	status->setIcon(STATUS_SLOTS, WinUtil::statusIcon(IDI_SLOTS));
 	{
+		dwt::IconPtr icon_Files(WinUtil::statusIcon(IDI_FILE));
+		dwt::IconPtr icon_Shared(WinUtil::statusIcon(IDI_UP));
+		status->setIcon(STATUS_SHARE_SIZE, icon_Shared);
+		status->setIcon(STATUS_FILES_SHARED, icon_Files);
+	}
+
+	{
 		dwt::IconPtr icon_DL(WinUtil::statusIcon(IDI_DOWNLOAD));
 		dwt::IconPtr icon_UL(WinUtil::statusIcon(IDI_UPLOAD));
 		status->setIcon(STATUS_DOWN_TOTAL, icon_DL);
@@ -597,6 +605,8 @@ void MainWindow::initStatusBar() {
 	status->setHelpId(STATUS_AWAY, IDH_MAIN_AWAY);
 	status->setHelpId(STATUS_COUNTS, IDH_MAIN_HUBS);
 	status->setHelpId(STATUS_SLOTS, IDH_MAIN_SLOTS);
+	status->setHelpId(STATUS_SHARE_SIZE, IDH_MAIN_SHARE_SIZE);
+	status->setHelpId(STATUS_FILES_SHARED, IDH_MAIN_FILES_SHARED);
 	status->setHelpId(STATUS_DOWN_TOTAL, IDH_MAIN_DOWN_TOTAL);
 	status->setHelpId(STATUS_UP_TOTAL, IDH_MAIN_UP_TOTAL);
 	status->setHelpId(STATUS_DOWN_DIFF, IDH_MAIN_DOWN_DIFF);
@@ -624,10 +634,8 @@ void MainWindow::initTabs() {
 	seed.toggleActive = SETTING(TOGGLE_ACTIVE_WINDOW);
 	seed.ctrlTab = true;
 	tabs = paned->addChild(seed);
-
-	if (!SETTING(DISABLE_TASKBAR_MENU))
+	if(SETTING(ENABLE_TASKBAR_PREVIEW))
 		tabs->initTaskbar(this);
-
 	tabs->onTitleChanged([this](const tstring &title) { handleTabsTitleChanged(title); });
 	tabs->onHelp(&WinUtil::help);
 }
@@ -965,6 +973,7 @@ void MainWindow::forwardHub(void (HubFrame::*f)()) {
 }
 
 void MainWindow::handleTaskbarOverlay() {
+	if(!SETTING(ENABLE_TASKBAR_PREVIEW)) { return; }
 	tabs->setOverlayIcon(tabs->getActive(), WinUtil::createIcon(away ? IDI_RED_BALL : IDI_GREEN_BALL, 16), away ? _T("Away") : _T("Available"));
 }
 
@@ -1214,6 +1223,17 @@ void MainWindow::updateStatus() {
 		status->setIcon(STATUS_SLOTS, WinUtil::statusIcon(fullSlots ? IDI_SLOTS_FULL : IDI_SLOTS));
 	}
 
+	if (!lastGetShare || now > lastGetShare + (60 * 1000)) {
+		lastGetShare = now;
+		s = Text::toT(Util::formatBytes(ShareManager::getInstance()->getShareSize()));
+		status->setText(STATUS_SHARE_SIZE, s);
+		status->setToolTip(STATUS_SHARE_SIZE, str(TF_("Share size: %1%") % s));
+	}
+
+	s = Text::toT(std::to_string(ShareManager::getInstance()->getSharedFiles()));
+	status->setText(STATUS_FILES_SHARED, s);
+	status->setToolTip(STATUS_FILES_SHARED, str(TF_("Files shared: %1%") % s));
+
 	s = Text::toT(Util::formatBytes(down));
 	status->setText(STATUS_DOWN_TOTAL, s);
 	status->setToolTip(STATUS_DOWN_TOTAL, str(TF_("D: %1%") % s));
@@ -1244,8 +1264,7 @@ void MainWindow::updateAwayStatus() {
 	status->setToolTip(STATUS_AWAY, away ? (T_("Status: Away - Double-click to switch to Available")) :
 		(T_("Status: Available - Double-click to switch to Away")));
 
-	if (!SETTING(DISABLE_TASKBAR_MENU))
-		handleTaskbarOverlay();
+	handleTaskbarOverlay();
 }
 
 MainWindow::~MainWindow() {
@@ -1731,6 +1750,19 @@ void MainWindow::handleOpenDownloadsDir() {
 
 LRESULT MainWindow::handleEndSession() {
 	saveSettings();
+
+	ConnectionManager::getInstance()->disconnectAll();
+
+	// Poll to see if all queue items are stopped so their progress can be saved.
+	// We've got at least 30 seconds here before termination but
+	// also let's allow some time to get larger queues saved properly...
+	// See https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ms700677(v=vs.85)
+	// Looks like these all still apply to Windows 10 / 11.
+
+	for(int i = 0; (i < 20) && QueueManager::getInstance()->hasRunning(); i++) {
+		::Sleep(200);
+	}
+
 	QueueManager::getInstance()->saveQueue();
 
 	return 0;

@@ -117,6 +117,7 @@ public:
 
 	void disconnect(const UserPtr& user); // disconnect all transfers for the user
 	void disconnect(const UserPtr& user, ConnectionType type);
+	void disconnectAll(); // disconnect all transfers for all users
 
 	void shutdown();
 

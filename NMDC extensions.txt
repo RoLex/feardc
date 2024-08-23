@@ -264,38 +264,3 @@ Since: 0.307
 Usage: This indicates that the client supports searching for queued 
 files by TTH, if there is one available to it.  TTH searching is more 
 CPU efficient than the previous method. 
-
---------------------------------------------------------------------
-
-Feature: TLS
-Since: 0.870
-
-Usage: See https://nmdc.sourceforge.io/NMDC.html#_tls
-
---------------------------------------------------------------------
-
-Feature: BotList
-Since: 0.871
-
-Usage: See https://nmdc.sourceforge.io/NMDC.html#_botlist
-
---------------------------------------------------------------------
-
-Feature: TTHS
-Since: 0.871
-
-Usage: See https://www.te-home.net/?do=work&id=verlihub&page=nmdc#tths
-
---------------------------------------------------------------------
-
-Feature: HubTopic
-Since: 0.880
-
-Usage: See https://nmdc.sourceforge.io/NMDC.html#_hubtopic
-
---------------------------------------------------------------------
-
-Feature: MCTo
-Since: 0.880
-
-Usage: See https://nmdc.sourceforge.io/NMDC.html#_mcto

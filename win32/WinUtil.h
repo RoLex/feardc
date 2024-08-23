@@ -26,6 +26,7 @@
 #include <dcpp/forward.h>
 #include <dcpp/MerkleTree.h>
 #include <dcpp/HintedUser.h>
+#include <dcpp/Encoder.h>
 
 #include <dwt/forward.h>
 #include <dwt/widgets/Button.h>
@@ -216,6 +217,9 @@ public:
 		const string& order = Util::emptyString, const string& widths = Util::emptyString);
 	static void addCopyMenu(Menu* menu, dwt::TablePtr table);
 
+	static void addSearchMenu(Menu* menu, const tstring& searchText, const string& hash = Util::emptyString);
+	static void getChatSelText(dwt::TextBoxBase* box, tstring& text, const dwt::ScreenCoordinate& pt);
+
 	/* functions to get / set table column sorting. a little trick is used to encode both the
 	column index & the "ascending sort" flag into an int. */
 private:
@@ -277,6 +281,8 @@ public:
 	static void searchAny(const tstring& aSearch);
 	static void searchHash(const TTHValue& aHash);
 	static void searchHub(const tstring& aUrl);
+	static bool checkTTH(const tstring& aText) { return aText.size() == 39 && Encoder::isBase32(Text::fromT(aText)); }
+
 	static string makeMagnet(const TTHValue& aHash, const string& aFile, int64_t size);
 
 	static void addLastDir(const tstring& dir);

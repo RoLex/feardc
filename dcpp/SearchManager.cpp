@@ -18,8 +18,11 @@
 #include "stdinc.h"
 #include "SearchManager.h"
 
+#include <boost/range/adaptors.hpp>
 #include <boost/range/algorithm/find_if.hpp>
 #include <boost/scoped_array.hpp>
+
+#include <openssl/rand.h>
 
 #include "ClientManager.h"
 #include "ConnectivityManager.h"
@@ -28,6 +31,7 @@
 #include "PluginManager.h"
 #include "SearchResult.h"
 #include "ShareManager.h"
+#include "CryptoManager.h"
 
 namespace dcpp {
 
@@ -50,7 +54,7 @@ SearchManager::SearchManager() :
 	stop(false),
 	lastSearch(GET_TICK())
 {
-
+	TimerManager::getInstance()->addListener(this);
 }
 
 SearchManager::~SearchManager() {
@@ -61,6 +65,9 @@ SearchManager::~SearchManager() {
 		join();
 #endif
 	}
+
+	TimerManager::getInstance()->removeListener(this); 
+	searchKeys.clear();
 }
 
 string SearchManager::normalizeWhitespace(const string& aString){
@@ -75,14 +82,18 @@ string SearchManager::normalizeWhitespace(const string& aString){
 
 void SearchManager::search(const string& aName, int64_t aSize, TypeModes aTypeMode /* = TYPE_ANY */, SizeModes aSizeMode /* = SIZE_ATLEAST */, const string& aToken /* = Util::emptyString */) {
 	if(okToSearch()) {
-		ClientManager::getInstance()->search(aSizeMode, aSize, aTypeMode, normalizeWhitespace(aName), aToken);
+		string aKey;
+		genSUDPKey(aKey);
+		ClientManager::getInstance()->search(aSizeMode, aSize, aTypeMode, normalizeWhitespace(aName), aToken, aKey);
 		lastSearch = GET_TICK();
 	}
 }
 
 void SearchManager::search(StringList& who, const string& aName, int64_t aSize /* = 0 */, TypeModes aTypeMode /* = TYPE_ANY */, SizeModes aSizeMode /* = SIZE_ATLEAST */, const string& aToken /* = Util::emptyString */, const StringList& aExtList) {
 	if(okToSearch()) {
-		ClientManager::getInstance()->search(who, aSizeMode, aSize, aTypeMode, normalizeWhitespace(aName), aToken, aExtList);
+		string aKey;
+		genSUDPKey(aKey);
+		ClientManager::getInstance()->search(who, aSizeMode, aSize, aTypeMode, normalizeWhitespace(aName), aToken, aExtList, aKey);
 		lastSearch = GET_TICK();
 	}
 }
@@ -130,6 +141,10 @@ int SearchManager::run() {
 
 			if((len = socket->read(&buf[0], BUFSIZE, remoteAddr)) > 0) {
 				string data(reinterpret_cast<char*>(&buf[0]), len);
+
+				if(SETTING(ENABLE_SUDP) && len >= 32 && ((len & 15) == 0)) {
+					decryptPacket(data, len, buf.get());
+				}
 
 				if(PluginManager::getInstance()->onUDP(false, remoteAddr, port, data))
 					continue;
@@ -387,6 +402,32 @@ void SearchManager::onRES(const AdcCommand& cmd, const UserPtr& from, const stri
 		type, 0, freeSlots, size, file, hubName, remoteIp, TTHValue(tth), token, style)));
 }
 
+void SearchManager::genSUDPKey(string& aKey) {
+	string keyStr = Util::emptyString;
+	if(SETTING(ENABLE_SUDP)) {
+		auto key = std::make_unique<uint8_t[]>(16);
+		RAND_bytes(key.get(), 16);
+		keyStr = Encoder::toBase32(key.get(), 16);
+		{
+			Lock l(cs);
+			searchKeys.emplace_back(move(key), GET_TICK());
+		}
+	}
+	aKey = keyStr;
+}
+
+bool SearchManager::decryptPacket(string& x, size_t aLen, const uint8_t* aBuf) {
+	Lock l(cs);
+
+	for (const auto& i: searchKeys | boost::adaptors::reversed) {
+		if(CryptoManager::getInstance()->decryptSUDP(i.first.get(), aBuf, aLen, x)) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
 void SearchManager::respond(const AdcCommand& cmd, const OnlineUser& user) {
 	// Filter own searches
 	if(user.getUser() == ClientManager::getInstance()->getMe())
@@ -396,14 +437,27 @@ void SearchManager::respond(const AdcCommand& cmd, const OnlineUser& user) {
 	if(results.empty())
 		return;
 
-	string token;
+	string token, key;
 	cmd.getParam("TO", 0, token);
+	cmd.getParam("KY", 0, key);
 
 	for(auto& i: results) {
 		AdcCommand res = i->toRES(AdcCommand::TYPE_UDP);
 		if(!token.empty())
 			res.addParam("TO", token);
-		ClientManager::getInstance()->sendUDP(res, user);
+		ClientManager::getInstance()->sendUDP(res, user, key);
+	}
+}
+
+void SearchManager::on(TimerManagerListener::Minute, uint64_t aTick) noexcept {
+	Lock l(cs);
+	for (auto i = searchKeys.begin(); i != searchKeys.end();) {
+		if (i->second + 1000 * 60 * 5 < aTick) {
+			searchKeys.erase(i);
+			i = searchKeys.begin();
+		} else {
+			++i;
+		}
 	}
 }
 

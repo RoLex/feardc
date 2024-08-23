@@ -412,7 +412,7 @@ void ConnectionManager::adcConnect(const OnlineUser& aUser, const string& aPort,
 	}
 
 	try {
-		uc->connect(ConnectivityManager::getInstance()->getConnectivityStatus(true /*V6*/) ? aUser.getIdentity().getIp() : aUser.getIdentity().getIp4(), aPort, localPort, natRole, aUser.getUser());
+		uc->connect(CONNSTATE(INCOMING_CONNECTIONS6) ? aUser.getIdentity().getIp() : aUser.getIdentity().getIp4(), aPort, localPort, natRole, aUser.getUser());
 	} catch(const Exception&) {
 		putConnection(uc);
 		delete uc;
@@ -905,17 +905,19 @@ void ConnectionManager::disconnect(const UserPtr& user, ConnectionType type) {
 	}
 }
 
+void ConnectionManager::disconnectAll() {
+	Lock l(cs);
+	for(auto j: userConnections) {
+		j->disconnect(true);
+	}
+}
+
 void ConnectionManager::shutdown() {
 	TimerManager::getInstance()->removeListener(this);
 
 	shuttingDown = true;
 	disconnect();
-	{
-		Lock l(cs);
-		for(auto j: userConnections) {
-			j->disconnect(true);
-		}
-	}
+	disconnectAll();
 	// Wait until all connections have died out...
 	while(true) {
 		{

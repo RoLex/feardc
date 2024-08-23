@@ -237,7 +237,7 @@ void HashManager::HashStore::rebuild() {
 			decltype(fileIndex)::mapped_type newFileList;
 
 			for (auto& j: i.second) {
-				if (newTreeIndex.find(j.getRoot()) != newTreeIndex.end()) {
+				if (newTreeIndex.find(j.getRoot()) != newTreeIndex.end() && j.getUsed()) {
 					newFileList.push_back(j);
 				}
 			}
@@ -254,7 +254,7 @@ void HashManager::HashStore::rebuild() {
 		dirty = true;
 		save();
 	} catch (const Exception& e) {
-		LogManager::getInstance()->message(str(F_("Hashing failed: %1%") % e.getError()));
+		LogManager::getInstance()->message(str(F_("Hash data rebuilding failed: %1%") % e.getError()));
 	}
 }
 

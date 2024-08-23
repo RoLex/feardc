@@ -45,7 +45,7 @@ namespace dcpp {
 using std::make_pair;
 
 const string AdcHub::CLIENT_PROTOCOL("ADC/1.0");
-const string AdcHub::SECURE_CLIENT_PROTOCOL_TEST("ADCS/0.10");
+const string AdcHub::SECURE_CLIENT_PROTOCOL("ADCS/0.10");
 const string AdcHub::ADCS_FEATURE("ADC0");
 const string AdcHub::TCP4_FEATURE("TCP4");
 const string AdcHub::TCP6_FEATURE("TCP6");
@@ -54,6 +54,7 @@ const string AdcHub::UDP6_FEATURE("UDP6");
 const string AdcHub::NAT0_FEATURE("NAT0");
 const string AdcHub::SEGA_FEATURE("SEGA");
 const string AdcHub::CCPM_FEATURE("CCPM");
+const string AdcHub::SUDP_FEATURE("SUDP");
 const string AdcHub::BASE_SUPPORT("ADBASE");
 const string AdcHub::BAS0_SUPPORT("ADBAS0");
 const string AdcHub::TIGR_SUPPORT("ADTIGR");
@@ -346,7 +347,7 @@ void AdcHub::handle(AdcCommand::CTM, AdcCommand& c) noexcept {
 	bool secure = false;
 	if(protocol == CLIENT_PROTOCOL && !SETTING(REQUIRE_TLS)) {
 		// Nothing special
-	} else if(protocol == SECURE_CLIENT_PROTOCOL_TEST && CryptoManager::getInstance()->TLSOk()) {
+	} else if(protocol == SECURE_CLIENT_PROTOCOL && CryptoManager::getInstance()->TLSOk()) {
 		secure = true;
 	} else {
 		unknownProtocol(c.getFrom(), protocol, token);
@@ -376,7 +377,7 @@ void AdcHub::handle(AdcCommand::RCM, AdcCommand& c) noexcept {
 	bool secure;
 	if(protocol == CLIENT_PROTOCOL && !SETTING(REQUIRE_TLS)) {
 		secure = false;
-	} else if(protocol == SECURE_CLIENT_PROTOCOL_TEST && CryptoManager::getInstance()->TLSOk()) {
+	} else if(protocol == SECURE_CLIENT_PROTOCOL && CryptoManager::getInstance()->TLSOk()) {
 		secure = true;
 	} else {
 		unknownProtocol(c.getFrom(), protocol, token);
@@ -440,7 +441,7 @@ void AdcHub::sendUDP(const AdcCommand& cmd) noexcept {
 		if(!ou.getIdentity().isUdpActive()) {
 			return;
 		}
-		ip = ou.getIdentity().getIp();
+		ip = CONNSTATE(INCOMING_CONNECTIONS6) ? ou.getIdentity().getIp() : ou.getIdentity().getIp4();
 		port = ou.getIdentity().getUdpPort();
 		command = cmd.toString(ou.getUser()->getCID());
 	}
@@ -491,7 +492,7 @@ void AdcHub::handle(AdcCommand::STA, AdcCommand& c) noexcept {
 			if(c.getParam("PR", 1, tmp)) {
 				if(tmp == CLIENT_PROTOCOL) {
 					u->getUser()->setFlag(User::NO_ADC_1_0_PROTOCOL);
-				} else if(tmp == SECURE_CLIENT_PROTOCOL_TEST) {
+				} else if(tmp == SECURE_CLIENT_PROTOCOL) {
 					u->getUser()->setFlag(User::NO_ADCS_0_10_PROTOCOL);
 					u->getUser()->unsetFlag(User::TLS);
 				}
@@ -602,7 +603,7 @@ void AdcHub::handle(AdcCommand::NAT, AdcCommand& c) noexcept {
 	bool secure = false;
 	if(protocol == CLIENT_PROTOCOL) {
 		// Nothing special
-	} else if(protocol == SECURE_CLIENT_PROTOCOL_TEST && CryptoManager::getInstance()->TLSOk()) {
+	} else if(protocol == SECURE_CLIENT_PROTOCOL && CryptoManager::getInstance()->TLSOk()) {
 		secure = true;
 	} else {
 		unknownProtocol(c.getFrom(), protocol, token);
@@ -637,7 +638,7 @@ void AdcHub::handle(AdcCommand::RNT, AdcCommand& c) noexcept {
 	bool secure = false;
 	if(protocol == CLIENT_PROTOCOL) {
 		// Nothing special
-	} else if(protocol == SECURE_CLIENT_PROTOCOL_TEST && CryptoManager::getInstance()->TLSOk()) {
+	} else if(protocol == SECURE_CLIENT_PROTOCOL && CryptoManager::getInstance()->TLSOk()) {
 		secure = true;
 	} else {
 		unknownProtocol(c.getFrom(), protocol, token);
@@ -683,7 +684,7 @@ void AdcHub::connect(const OnlineUser& user, const string& token, ConnectionType
 			/// @todo log
 			return;
 		}
-		proto = &SECURE_CLIENT_PROTOCOL_TEST;
+		proto = &SECURE_CLIENT_PROTOCOL;
 	} else {
 		if(user.getUser()->isSet(User::NO_ADC_1_0_PROTOCOL) || SETTING(REQUIRE_TLS)) {
 			/// @todo log, consider removing from queue
@@ -783,7 +784,7 @@ StringList AdcHub::parseSearchExts(int flag) {
 	return ret;
 }
 
-void AdcHub::search(int aSizeMode, int64_t aSize, int aFileType, const string& aString, const string& aToken, const StringList& aExtList) {
+void AdcHub::search(int aSizeMode, int64_t aSize, int aFileType, const string& aString, const string& aToken, const StringList& aExtList, const string& aKey) {
 	if(state != STATE_NORMAL)
 		return;
 
@@ -884,6 +885,11 @@ void AdcHub::search(int aSizeMode, int64_t aSize, int aFileType, const string& a
 
 		for(auto& i: aExtList)
 			c.addParam("EX", i);
+	}
+
+	// Verify that it is an active ADCS hub
+	if(SETTING(ENABLE_SUDP) && !aKey.empty() && ClientManager::getInstance()->isActive() && isSecure()) {
+		c.addParam("KY", aKey);
 	}
 
 	sendSearch(c);
@@ -1031,6 +1037,10 @@ void AdcHub::infoImpl() {
 		addParam(lastInfoMap, c, "KP", CryptoManager::getInstance()->keyprintToString(kp));
 	}
 
+	if(SETTING(ENABLE_SUDP) && isSecure()) {
+		su += "," + SUDP_FEATURE;
+	}
+
 	bool addV4 = !sock->isV6Valid() || (get(HubSettings::Connection) != SettingsManager::INCOMING_DISABLED);
 	bool addV6 = sock->isV6Valid() || (get(HubSettings::Connection6) != SettingsManager::INCOMING_DISABLED);
 	
@@ -1146,14 +1156,14 @@ void AdcHub::on(Second s, uint64_t aTick) noexcept {
 		after 2 minutes we force disconnect due to unfinished login
 		this check was missing in all clients since the beginning
 	*/
-	if ((state > STATE_CONNECTING) && (state < STATE_NORMAL) && (sinceConnect > 0) && (aTick >= ((sinceConnect + 120) * 1000))) {
+	if ((state > STATE_CONNECTING) && (state < STATE_NORMAL) && (sinceConnect > 0) && (aTick >= (sinceConnect + 120 * 1000))) {
 		sinceConnect = 0;
 		disconnect(true);
 		fire(ClientListener::LoginTimeout(), this);
 		return;
 	}
 
-	if ((state == STATE_NORMAL) && (aTick > ((getLastActivity() + 120) * 1000)))
+	if ((state == STATE_NORMAL) && (aTick > (getLastActivity() + 120 * 1000)))
 		send("\n", 1);
 }
 

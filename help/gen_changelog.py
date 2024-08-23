@@ -42,7 +42,7 @@ See the version history of DC++ below.
     new_change = re.compile(r"^\* (?P<change>.*?)$")
     bugzilla_change = re.compile(r"^\* \[B#(?P<bug_id>\d+?)\] (?P<change>.*?)$")
     launchpad_change = re.compile(r"^\* \[L#(?P<bug_id>\d+?)\] (?P<change>.*?)$")
-    continue_change = re.compile("^\w*?(?P<change>.*?)$")
+    continue_change = re.compile(r"^\w*?(?P<change>.*?)$")
     warning_change = re.compile("^(?P<change>[^ ].*?)$")
 
     fp_txt = open(str(source[0]), "r")

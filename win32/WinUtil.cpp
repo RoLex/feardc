@@ -49,6 +49,7 @@
 #include <dwt/widgets/LoadDialog.h>
 #include <dwt/widgets/MessageBox.h>
 #include <dwt/widgets/SaveDialog.h>
+#include <dwt/util/StringUtils.h>
 
 #include "ParamDlg.h"
 #include "MagnetDlg.h"
@@ -1722,6 +1723,32 @@ void WinUtil::addCopyMenu(Menu* menu, dwt::TablePtr table) {
 		}
 		setClipboard(text);
 	});
+}
+
+void WinUtil::addSearchMenu(Menu* menu, const tstring& searchText, const string& hash) {
+	if (searchText.empty() && hash.empty()) { return; }
+
+	menu->appendSeparator();
+
+	if (!searchText.empty()) {
+		auto disp = dwt::util::escapeMenu(searchText);
+		dwt::util::cutStr(disp, 50);
+		menu->appendItem(str(TF_("Search for \"%1%\"") % disp), [=] { searchAny(searchText.substr(0, MAX_PATH)); });
+	}
+
+	string searchTTH = hash.empty() && checkTTH(searchText) ? Text::fromT(searchText) : hash;
+
+	if (!searchTTH.empty()) {
+		menu->appendItem(T_("Search by TTH"), [=] { searchHash(TTHValue(searchTTH)); });
+	}
+}
+
+void WinUtil::getChatSelText(dwt::TextBoxBase* box, tstring& text, const dwt::ScreenCoordinate& pt) {
+	text = box->getSelection();
+
+	if (text.empty() && box->hasFocus()) {
+		text = box->textUnderCursor(pt);
+	}
 }
 
 int WinUtil::tableSortSetting(int column, bool ascending) {

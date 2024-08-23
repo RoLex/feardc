@@ -19,6 +19,7 @@
 #define DCPLUSPLUS_WIN32_RichTextBox_H_
 
 #include <dcpp/typedefs.h>
+#include <dcpp/Util.h>
 
 #include <dwt/widgets/RichTextBox.h>
 
@@ -47,11 +48,11 @@ public:
 
 	bool handleMessage(const MSG& msg, LRESULT& retVal);
 
-	MenuPtr getMenu();
+	MenuPtr getMenu(const tstring& searchText);
 
-	tstring findTextPopup();
-	void findTextNew();
-	void findTextNext();
+	tstring findTextPopup(const tstring& searchText = Util::emptyStringT);
+	void findTextNew(const tstring& searchText);
+	void findTextNext(const tstring& searchText = Util::emptyStringT);
 
 	/// provides a chance to handle links differently
 	void onLink(LinkF f);

@@ -80,6 +80,8 @@ namespace Text {
 	int utf8ToWc(const char* str, wchar_t& c);
 	void wcToUtf8(wchar_t c, string& str);
 
+	string sanitizeUtf8(const string& str) noexcept;
+
 	inline const tstring& toT(const string& str, tstring& tmp) noexcept { return utf8ToWide(str, tmp); }
 	inline tstring toT(const string& str) noexcept { return utf8ToWide(str); }
 

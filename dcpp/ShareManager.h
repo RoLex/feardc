@@ -77,6 +77,7 @@ public:
 	void renameDirectory(const string& realPath, const string& virtualName);
 
 	string toVirtual(const TTHValue& tth) const;
+	optional<TTHValue> getTTHFromReal(const string& realPath) noexcept;
 	string toReal(const string& virtualFile);
 	/** @return Actual file path & size. Returns 0 for file lists. */
 	pair<string, int64_t> toRealWithSize(const string& virtualFile);

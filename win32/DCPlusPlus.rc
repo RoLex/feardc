@@ -101,6 +101,7 @@ IDI_INCREMENT           ICON                    "res/Increment.ico"
 IDI_DECREMENT           ICON                    "res/Decrement.ico"
 IDI_REMOVEQUEUE         ICON                    "res/RemoveQueue.ico"
 IDI_DCPP_WARNING        ICON                    "res/Warning.ico"
+IDI_PRIVATE_BOT         ICON                    "res/BotOn.ico"
 /////////////////////////////////////////////////////////////////////////////
 //
 // Version

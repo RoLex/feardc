@@ -1,5 +1,17 @@
+* Show share totals information in main window statusbar (iceman50)
+* [L#1828593] Save segment progress info of running downloads upon OS shutdown (emtee)
+* [L#226441] Display virtual share sizes correctly (emtee)
+* [L#1649066] Validate UTF-8 data when parsing XML (maksis)
+* [L#919424] More efficient hash data rebuilding (emtee)
+* Fix share refresh after share filter options have changed (emtee)
+* [L#2066921] [ADC] Add encrypted active search results feature (SUDP) (emtee, iceman50, based on code from AirDC++)
+* Improve find text in chats; add hub search context menu commands to chats and various other windows containig text boxes (emtee)
+* Quick get Magnet links of recently hashed files through System Log's context menu (emtee)
+* Improve randomization (iceman50)
+* Add option to disable window previews in the taskbar (this will disable taskbar overlay icons) (iceman50)
 * Remove TLSv1.2 DHE-RSA-AES128-SHA256 ciphersuite support (cologic)
 * Increase minimum transfer segment size to 512KiB (cologic)
+* Update zlib to version 1.3.1
 
 -- 0.881 2023-11-06 --
 * Require SSE4.2 for 64-bit builds (cologic)

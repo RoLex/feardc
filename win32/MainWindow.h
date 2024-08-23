@@ -54,6 +54,8 @@ public:
 		STATUS_AWAY,
 		STATUS_COUNTS,
 		STATUS_SLOTS,
+		STATUS_SHARE_SIZE,
+		STATUS_FILES_SHARED,
 		STATUS_DOWN_TOTAL,
 		STATUS_UP_TOTAL,
 		STATUS_DOWN_DIFF,
@@ -161,6 +163,7 @@ private:
 	uint64_t lastUp;
 	uint64_t lastDown;
 	uint64_t lastTick;
+	uint64_t lastGetShare;
 	bool away;
 	bool awayIdle;
 	bool fullSlots;
