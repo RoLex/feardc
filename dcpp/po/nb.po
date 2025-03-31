@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-08-23 10:56+0200\n"
+"POT-Creation-Date: 2025-03-31 18:57+0200\n"
 "PO-Revision-Date: 2010-07-03 18:19+0000\n"
 "Last-Translator: Mathias Bøhn Grytemark <Unknown>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
@@ -703,7 +703,7 @@ msgstr "Søk påslått igjen"
 msgid "Security certificates"
 msgstr "Feil under generering av sertifikat"
 
-#: dcpp/ChatMessage.cpp:73
+#: dcpp/ChatMessage.cpp:74
 #, boost-format
 msgid "Sent %1%"
 msgstr ""

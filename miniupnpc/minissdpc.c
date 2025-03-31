@@ -1,9 +1,9 @@
-/* $Id: minissdpc.c,v 1.49 2021/05/13 11:00:36 nanard Exp $ */
+/* $Id: minissdpc.c,v 1.52 2025/01/12 15:47:17 nanard Exp $ */
 /* vim: tabstop=4 shiftwidth=4 noexpandtab
  * Project : miniupnp
  * Web : http://miniupnp.free.fr/ or https://miniupnp.tuxfamily.org/
  * Author : Thomas BERNARD
- * copyright (c) 2005-2021 Thomas Bernard
+ * copyright (c) 2005-2025 Thomas Bernard
  * This software is subjet to the conditions detailed in the
  * provided LICENCE file. */
 #include <stdio.h>
@@ -38,6 +38,9 @@ typedef unsigned short uint16_t;
 #define in6addr_any in6addr_any_init
 static const IN6_ADDR in6addr_any_init = {0};
 #endif
+#endif
+#if !defined(_WIN32_WINNT_VISTA)
+#define _WIN32_WINNT_VISTA 0x0600
 #endif
 #endif /* _WIN32 */
 #if defined(__amigaos__) || defined(__amigaos4__)
@@ -338,7 +341,7 @@ receiveDevicesFromMiniSSDPD(int s, int * error)
 #ifdef DEBUG
 		printf("   usnsize=%u\n", usnsize);
 #endif /* DEBUG */
-		tmp = (struct UPNPDev *)malloc(sizeof(struct UPNPDev)+urlsize+stsize+usnsize);
+		tmp = (struct UPNPDev *)malloc(sizeof(struct UPNPDev)+urlsize+stsize+usnsize+3);
 		if(tmp == NULL) {
 			if (error)
 				*error = MINISSDPC_MEMORY_ERROR;
@@ -460,7 +463,7 @@ parseMSEARCHReply(const char * reply, int size,
 static int upnp_gettimeofday(struct timeval * tv)
 {
 #if defined(_WIN32)
-#if _WIN32_WINNT >= 0x0600 // _WIN32_WINNT_VISTA
+#if _WIN32_WINNT >= _WIN32_WINNT_VISTA
 	ULONGLONG ts = GetTickCount64();
 #else
 	DWORD ts = GetTickCount();
@@ -548,7 +551,7 @@ ssdpDiscoverDevices(const char * const deviceTypes[],
 #ifdef _WIN32
 	unsigned long _ttl = (unsigned long)ttl;
 #endif
-	int linklocal = 1;
+	int linklocal = 0;	/* try first with site-local multicast */
 	int sentok;
 
 	if(error)
@@ -591,8 +594,8 @@ ssdpDiscoverDevices(const char * const deviceTypes[],
  * in order to give this ip to setsockopt(sudp, IPPROTO_IP, IP_MULTICAST_IF) */
 	if(!ipv6) {
 		DWORD ifbestidx;
-#if _WIN32_WINNT >= 0x0600 // _WIN32_WINNT_VISTA
-		// While we don't need IPv6 support, the IPv4 only funciton is not available in UWP apps.
+#if _WIN32_WINNT >= _WIN32_WINNT_VISTA
+		// While we don't need IPv6 support, the IPv4 only function is not available in UWP apps.
 		SOCKADDR_IN destAddr;
 		memset(&destAddr, 0, sizeof(destAddr));
 		destAddr.sin_family = AF_INET;
@@ -747,7 +750,7 @@ ssdpDiscoverDevices(const char * const deviceTypes[],
 		} else {
 			struct in_addr mc_if;
 #if defined(_WIN32)
-#if _WIN32_WINNT >= 0x0600 // _WIN32_WINNT_VISTA
+#if _WIN32_WINNT >= _WIN32_WINNT_VISTA
 			InetPtonA(AF_INET, multicastif, &mc_if);
 #else
 			mc_if.s_addr = inet_addr(multicastif); /* old Windows SDK do not support InetPtoA() */
@@ -1007,9 +1010,10 @@ ssdpDiscoverDevices(const char * const deviceTypes[],
 			/* switch linklocal flag */
 			if(linklocal) {
 				linklocal = 0;
-				--deviceIndex;
 			} else {
+				/* try again with linklocal multicast */
 				linklocal = 1;
+				--deviceIndex;
 			}
 		}
 	}

@@ -1,3 +1,38 @@
+## 1.12.2 - 2025-01-10
+
+* `MMDB_get_entry_data_list()` now always sets the passed `entry_data_list`
+  parameter to either `NULL` or valid memory. This makes it safe for
+  callers to use `MMDB_free_entry_data_list()` on it even in case of error.
+  In 1.12.0 `MMDB_get_entry_data_list()` was changed to not set this
+  parameter to valid memory in additional error cases. That change caused
+  segfaults for certain libraries that assumed it was safe to free memory
+  on error. Doing so was never safe, but worked in some cases. This change
+  makes such calls safe. Reported by Petr Pisar. GitHub
+  maxmind/MaxMind-DB-Reader-XS#39.
+
+## 1.12.1 - 2025-01-08
+
+* Added missing `cmake_uninstall.cmake.in` to the source distribution. This
+  was missing from 1.12.0, causing CMake builds to fail. Reported by Marcel
+  Raad. GitHub #367.
+
+## 1.12.0 - 2025-01-07
+
+* Fixed memory leaks in `MMDB_open()`. These could happen with invalid
+  databases or in error situations such as failing to allocate memory. As
+  part of the fix, `MMDB_get_entry_data_list()` now frees memory it
+  allocates on additional errors. Previously it failed to clean up when
+  certain errors occurred. Pull request by pkillarjun. GitHub #356.
+* There is now a build target to fuzz the library. Pull request by
+  pkillarjun. GitHub #357.
+* Updated `cmake_minimum_required` to a version range to quiet deprecation
+  warnings on new CMake versions. Reported by gmou3. GitHub #359.
+* The script for generating man pages no longer uses `autodie`. This
+  eliminates the dependency on `IPC::System::Simple`. Reported by gmou3.
+  GitHub #359.
+* An uninstall target is now included for CMake. Pull request by gmou3.
+  GitHub #362.
+
 ## 1.11.0 - 2024-08-21
 
 * When building with CMake, the man pages will now be generated and

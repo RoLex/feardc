@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-08-22 18:19+0200\n"
+"POT-Creation-Date: 2025-03-31 18:57+0200\n"
 "PO-Revision-Date: 2016-09-06 21:33+0000\n"
 "Last-Translator: Fredrik Ullner <ullner@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -431,12 +431,12 @@ msgstr "(%1%)"
 msgid "(No recent item found)"
 msgstr "(Inget nytt objekt hittades)"
 
-#: win32/PrivateFrame.cpp:528
+#: win32/PrivateFrame.cpp:529
 msgid "(User offline)"
 msgstr "(Användare offline)"
 
-#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:425
-#: win32/PrivateFrame.cpp:432
+#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:426
+#: win32/PrivateFrame.cpp:433
 msgid "*** Keyboard commands:"
 msgstr "*** Kortkommandon:"
 
@@ -467,15 +467,15 @@ msgstr ""
 "En MAGNET-länk gavs till DC++, men den innehöll ingen giltig filhash för "
 "användning i Direct Connect-nätverket. Inga åtgärder kommer att vidtas."
 
-#: win32/PrivateFrame.cpp:592
+#: win32/PrivateFrame.cpp:593
 msgid "A direct encrypted channel has been established"
 msgstr "En krypterad direktkanal har upprättats"
 
-#: win32/PrivateFrame.cpp:335
+#: win32/PrivateFrame.cpp:336
 msgid "A direct encrypted channel is already available"
 msgstr "En krypterad direktkanal finns redan"
 
-#: win32/PrivateFrame.cpp:347
+#: win32/PrivateFrame.cpp:348
 msgid ""
 "A secure ADC hub is required; this feature is not supported on NMDC hubs"
 msgstr "En säker ADC-hub krävs. Denna funktion stöds inte av NMDC-hubbar"
@@ -560,7 +560,7 @@ msgstr "Lägg till en plugin"
 msgid "Address"
 msgstr "Adress"
 
-#: win32/PrivateFrame.cpp:445
+#: win32/PrivateFrame.cpp:446
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to ignore chat messages from the current user."
@@ -576,7 +576,7 @@ msgstr ""
 "Lägger till en användarmatchad definition (eller modifierar en befintlig, om "
 "möjligt) för ignorering av chattmeddelanden från den valda användaren."
 
-#: win32/PrivateFrame.cpp:447
+#: win32/PrivateFrame.cpp:448
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to stop ignoring chat messages from the current user."
@@ -601,11 +601,11 @@ msgstr ""
 "Lägger till den nuvarande hubben (tillsammans med användarnamn och lösenord, "
 "om tillgängligt) till listan av favorithubbar."
 
-#: win32/PrivateFrame.cpp:443
+#: win32/PrivateFrame.cpp:444
 msgid "Adds the current user to the list of Favorite Users."
 msgstr "Lägger till den nuvarande användaren till listan av favoritanvändare."
 
-#: win32/PrivateFrame.cpp:438
+#: win32/PrivateFrame.cpp:439
 msgid "Adds the current user's list to the Download Queue."
 msgstr "Lägger till den aktuella användarens fillista till nerladdningskön."
 
@@ -904,7 +904,7 @@ msgstr "Kan inte aktivera pluginen:"
 msgid "Cannot install the plugin:"
 msgstr "Kan inte installera pluginen:"
 
-#: win32/PrivateFrame.cpp:351
+#: win32/PrivateFrame.cpp:352
 #, boost-format
 msgid "Cannot start the direct encrypted channel: %1%"
 msgstr "Kan inte starta den direkta och krypterade kanalen: %1%"
@@ -1021,7 +1021,7 @@ msgstr "Kommando"
 msgid "Command Type"
 msgstr "Typ av kommando"
 
-#: win32/PrivateFrame.cpp:523
+#: win32/PrivateFrame.cpp:524
 msgid "Communication channel"
 msgstr "Kommunikationskanal"
 
@@ -1095,7 +1095,7 @@ msgstr "Anslut till alla hubbar i den här gruppen"
 msgid "Connect to hub"
 msgstr "Anslut till hubb"
 
-#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1807
+#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1808
 msgid "Connected"
 msgstr "Ansluten"
 
@@ -1176,7 +1176,7 @@ msgstr "Skapar TTH-filindex..."
 msgid "Cu&t\tCtrl+X"
 msgstr "Klipp &ut\tCtrl+X"
 
-#: win32/PrivateFrame.cpp:166
+#: win32/PrivateFrame.cpp:167
 msgid "Current communication channel - click to change"
 msgstr "Nuvarande kommunikationskanal - klicka för att ändra"
 
@@ -1269,7 +1269,7 @@ msgstr "Anslutningslog"
 msgid "Direct connection"
 msgstr "Direkt anslutning"
 
-#: win32/PrivateFrame.cpp:328
+#: win32/PrivateFrame.cpp:329
 msgid "Direct encrypted channel"
 msgstr "Direkt och krypterad kanal"
 
@@ -1313,15 +1313,15 @@ msgstr "Stäng av anslutning"
 msgid "Disabled"
 msgstr "Inaktiverad"
 
-#: win32/PrivateFrame.cpp:547
+#: win32/PrivateFrame.cpp:548
 msgid "Disconnect the direct encrypted channel"
 msgstr "Koppla ner från den direkta och krypterade kanalen"
 
-#: win32/WinUtil.cpp:1812
+#: win32/WinUtil.cpp:1813
 msgid "Disconnected"
 msgstr "Frånkopplad"
 
-#: win32/PrivateFrame.cpp:362
+#: win32/PrivateFrame.cpp:363
 msgid "Disconnecting the direct encrypted channel..."
 msgstr "Kopplar ner från den direkta och krypterade kanalen..."
 
@@ -1682,7 +1682,7 @@ msgstr ""
 msgid "Errors"
 msgstr "Fel"
 
-#: win32/PrivateFrame.cpp:356
+#: win32/PrivateFrame.cpp:357
 msgid "Establishing a direct encrypted channel..."
 msgstr "Etablerar en direkt och krypterad kanal"
 
@@ -1808,7 +1808,7 @@ msgstr "Hub borttagen ur favoriter"
 msgid "Favorite name"
 msgstr "Favoritnamn"
 
-#: win32/PrivateFrame.cpp:409
+#: win32/PrivateFrame.cpp:410
 msgid "Favorite user added"
 msgstr "Favoritanvändare inlagd"
 
@@ -2060,7 +2060,7 @@ msgstr "Global programstil"
 msgid "Grant &extra slot"
 msgstr "Bevilja &extra slot"
 
-#: win32/PrivateFrame.cpp:440
+#: win32/PrivateFrame.cpp:441
 msgid ""
 "Grants the remote user a slot. Once they connect, or if they don't connect "
 "in 10 minutes, the granted slot is removed."
@@ -2460,7 +2460,7 @@ msgstr "KiB/s"
 msgid "Language"
 msgstr "Språk"
 
-#: win32/PrivateFrame.cpp:419
+#: win32/PrivateFrame.cpp:420
 #, boost-format
 msgid "Last message occured %1%"
 msgstr "Senaste meddelande var %1%"
@@ -2523,7 +2523,7 @@ msgstr "Länkar"
 msgid "List configuration"
 msgstr "Visa inställningar"
 
-#: win32/PrivateFrame.cpp:449
+#: win32/PrivateFrame.cpp:450
 msgid "Lists the date and time when the last message was sent or received."
 msgstr ""
 "Visa datum och tid när det senaste meddelandet skickades eller togs emot."
@@ -2908,7 +2908,7 @@ msgstr "Nej"
 msgid "No away message"
 msgstr "Inget bortameddelande"
 
-#: win32/PrivateFrame.cpp:365
+#: win32/PrivateFrame.cpp:366
 msgid "No direct encrypted channel available"
 msgstr "Inga direkta och krypterade kanaler tillgängliga"
 
@@ -3606,6 +3606,11 @@ msgstr "Sök - %1%"
 msgid "Search - Ready to search..."
 msgstr "Sök - Färdig att söka..."
 
+#: win32/WinUtil.cpp:1737
+#, fuzzy, boost-format
+msgid "Search Hubs for \"%1%\""
+msgstr "Söker efter: %1%"
+
 #: win32/CommandDlg.cpp:115
 msgid "Search Menu"
 msgstr "Sökmeny"
@@ -3614,18 +3619,13 @@ msgstr "Sökmeny"
 msgid "Search String"
 msgstr "Söksträng"
 
-#: win32/WinUtil.cpp:1742
+#: win32/WinUtil.cpp:1743
 msgid "Search by TTH"
 msgstr "Sök med TTH"
 
 #: win32/SearchFrame.cpp:150
 msgid "Search for"
 msgstr "Sök efter"
-
-#: win32/WinUtil.cpp:1736
-#, fuzzy, boost-format
-msgid "Search for \"%1%\""
-msgstr "Söker efter: %1%"
 
 #: win32/WinUtil.cpp:808
 msgid "Search for alternates"
@@ -3924,7 +3924,7 @@ msgstr ""
 msgid "Skip zero-byte files"
 msgstr "Skippa noll-byte filer"
 
-#: win32/PrivateFrame.cpp:402
+#: win32/PrivateFrame.cpp:403
 msgid "Slot granted"
 msgstr "Slots givna"
 
@@ -4018,7 +4018,7 @@ msgstr "Start"
 msgid "Start FearDC when Windows starts"
 msgstr "Starta DC++ när Windows startar"
 
-#: win32/PrivateFrame.cpp:549
+#: win32/PrivateFrame.cpp:550
 msgid "Start a direct encrypted channel"
 msgstr "Starta en direkt och krypterad kanal"
 
@@ -4030,7 +4030,7 @@ msgstr "Starta en sökning efter den här filen"
 msgid "Started..."
 msgstr "Startad..."
 
-#: win32/PrivateFrame.cpp:436
+#: win32/PrivateFrame.cpp:437
 msgid ""
 "Starts a direct encrypted communication channel to avoid spying on your "
 "private messages."
@@ -4142,7 +4142,7 @@ msgstr ""
 msgid "Thank you for using a testing version of FearDC!"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:605
+#: win32/PrivateFrame.cpp:606
 msgid "The direct encrypted channel has been disconnected"
 msgstr "Den direkta och krypterade kanalen har blivit nerstängd"
 
@@ -4172,7 +4172,7 @@ msgstr ""
 msgid "The message cannot be delivered because the hub is offline."
 msgstr "Meddelandet kunde inte skickas för att hubben är inte igång."
 
-#: win32/PrivateFrame.cpp:467
+#: win32/PrivateFrame.cpp:468
 msgid "The message cannot be delivered because the user is offline."
 msgstr ""
 "Meddelandet kunde inte skickas för att användaren är inte längre tillgänglig."
@@ -4181,12 +4181,12 @@ msgstr ""
 msgid "The requested link is "
 msgstr "Den begärda länken är "
 
-#: win32/PrivateFrame.cpp:348
+#: win32/PrivateFrame.cpp:349
 #, fuzzy
 msgid "The user does not support secure encrypted connections"
 msgstr "Användaren stödjer inte CCPM i ADC"
 
-#: win32/PrivateFrame.cpp:349
+#: win32/PrivateFrame.cpp:350
 msgid "The user does not support the CCPM ADC extension"
 msgstr "Användaren stödjer inte CCPM i ADC"
 
@@ -4374,7 +4374,7 @@ msgstr "Den oavslutad filen är för liten"
 msgid "Unknown"
 msgstr "Okänd"
 
-#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:456
+#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:457
 #, boost-format
 msgid "Unknown command: %1%"
 msgstr "Okänt kommando: %1%"
@@ -4519,8 +4519,8 @@ msgstr "Användarmatchningsdefinition"
 msgid "User matching definitions"
 msgstr "Användarmatchningsdefinitioner"
 
-#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:343
-#: win32/PrivateFrame.cpp:467 win32/QueueFrame.cpp:380
+#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:344
+#: win32/PrivateFrame.cpp:468 win32/QueueFrame.cpp:380
 msgid "User offline"
 msgstr "Användare offline"
 
@@ -4529,11 +4529,11 @@ msgstr "Användare offline"
 msgid "User set"
 msgstr "Användare"
 
-#: win32/PrivateFrame.cpp:302
+#: win32/PrivateFrame.cpp:303
 msgid "User went offline"
 msgstr "Användaren blev offline"
 
-#: win32/PrivateFrame.cpp:302
+#: win32/PrivateFrame.cpp:303
 msgid "User went online"
 msgstr "Användaren kopplade ner"
 

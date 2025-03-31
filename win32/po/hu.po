@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-08-22 18:19+0200\n"
+"POT-Creation-Date: 2025-03-31 18:57+0200\n"
 "PO-Revision-Date: 2022-09-26 10:04+0000\n"
 "Last-Translator: eMTee <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -430,12 +430,12 @@ msgstr "(%1%)"
 msgid "(No recent item found)"
 msgstr "(Nincs még elmentett elem)"
 
-#: win32/PrivateFrame.cpp:528
+#: win32/PrivateFrame.cpp:529
 msgid "(User offline)"
 msgstr "(Felhasználó offline)"
 
-#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:425
-#: win32/PrivateFrame.cpp:432
+#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:426
+#: win32/PrivateFrame.cpp:433
 msgid "*** Keyboard commands:"
 msgstr "*** Chat parancsok:"
 
@@ -467,15 +467,15 @@ msgstr ""
 "hash-t ami a Direct Connect hálózatban használható. A DC++ nem hajt végre "
 "semmilyen műveletet."
 
-#: win32/PrivateFrame.cpp:592
+#: win32/PrivateFrame.cpp:593
 msgid "A direct encrypted channel has been established"
 msgstr "Közvetlen titkosított csatorna létrejött"
 
-#: win32/PrivateFrame.cpp:335
+#: win32/PrivateFrame.cpp:336
 msgid "A direct encrypted channel is already available"
 msgstr "Közvetlen titkosított csatorna már elérhető"
 
-#: win32/PrivateFrame.cpp:347
+#: win32/PrivateFrame.cpp:348
 msgid ""
 "A secure ADC hub is required; this feature is not supported on NMDC hubs"
 msgstr ""
@@ -564,7 +564,7 @@ msgstr "Bővítmény hozzáadása"
 msgid "Address"
 msgstr "Cim"
 
-#: win32/PrivateFrame.cpp:445
+#: win32/PrivateFrame.cpp:446
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to ignore chat messages from the current user."
@@ -580,7 +580,7 @@ msgstr ""
 "Felhasználó-megfeleltetési szabályt hoz létre (vagy változtat meg ha már "
 "létezik) a megadott felhasználó chat üzeneteinek mellőzésére."
 
-#: win32/PrivateFrame.cpp:447
+#: win32/PrivateFrame.cpp:448
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to stop ignoring chat messages from the current user."
@@ -604,11 +604,11 @@ msgstr ""
 "Az aktuális hubot (az aktuális nick-el és jelszóval, ha meg volt adva) "
 "hozzáadja a Kedvenc Hubok listájához."
 
-#: win32/PrivateFrame.cpp:443
+#: win32/PrivateFrame.cpp:444
 msgid "Adds the current user to the list of Favorite Users."
 msgstr "Az aktuális felhasználót a Kedvenc Felhasználók listájához adja."
 
-#: win32/PrivateFrame.cpp:438
+#: win32/PrivateFrame.cpp:439
 msgid "Adds the current user's list to the Download Queue."
 msgstr "Az aktuális felhasználó fájl listáját a Letöltési sorhoz adja"
 
@@ -915,7 +915,7 @@ msgstr "A bővítményt nem lehet engedélyezni"
 msgid "Cannot install the plugin:"
 msgstr "A bővítményt nem lehet telepíteni:"
 
-#: win32/PrivateFrame.cpp:351
+#: win32/PrivateFrame.cpp:352
 #, boost-format
 msgid "Cannot start the direct encrypted channel: %1%"
 msgstr "Közvetlen titkosított csatorna nem hozható létre: %1%"
@@ -1031,7 +1031,7 @@ msgstr "Parancs"
 msgid "Command Type"
 msgstr "Parancs típus"
 
-#: win32/PrivateFrame.cpp:523
+#: win32/PrivateFrame.cpp:524
 msgid "Communication channel"
 msgstr "Kommunikációs csatorna"
 
@@ -1104,7 +1104,7 @@ msgstr "Kapcsolódás a csoportban lévő hubokhoz"
 msgid "Connect to hub"
 msgstr "Kapcsolódás a hubhoz"
 
-#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1807
+#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1808
 msgid "Connected"
 msgstr "Kapcsolódva"
 
@@ -1183,7 +1183,7 @@ msgstr "Fájl index készítése..."
 msgid "Cu&t\tCtrl+X"
 msgstr "&Kivágás\tCtrl+X"
 
-#: win32/PrivateFrame.cpp:166
+#: win32/PrivateFrame.cpp:167
 msgid "Current communication channel - click to change"
 msgstr "Aktuális kommunikációs csatorna - kattints a váltáshoz"
 
@@ -1276,7 +1276,7 @@ msgstr "Észlelési napló"
 msgid "Direct connection"
 msgstr "Közvetlen kapcsolat"
 
-#: win32/PrivateFrame.cpp:328
+#: win32/PrivateFrame.cpp:329
 msgid "Direct encrypted channel"
 msgstr "Közvetlen titkosított csatorna"
 
@@ -1320,15 +1320,15 @@ msgstr "Kapcsolódás tiltása"
 msgid "Disabled"
 msgstr "Tiltva"
 
-#: win32/PrivateFrame.cpp:547
+#: win32/PrivateFrame.cpp:548
 msgid "Disconnect the direct encrypted channel"
 msgstr "Közvetlen titkosított csatorna szétkapcsolása"
 
-#: win32/WinUtil.cpp:1812
+#: win32/WinUtil.cpp:1813
 msgid "Disconnected"
 msgstr "Szétkapcsolódott"
 
-#: win32/PrivateFrame.cpp:362
+#: win32/PrivateFrame.cpp:363
 msgid "Disconnecting the direct encrypted channel..."
 msgstr "Közvetlen titkosított csatorna szétkapcsolása..."
 
@@ -1690,7 +1690,7 @@ msgstr ""
 msgid "Errors"
 msgstr "Hibák"
 
-#: win32/PrivateFrame.cpp:356
+#: win32/PrivateFrame.cpp:357
 msgid "Establishing a direct encrypted channel..."
 msgstr "Közvetlen titkosított csatorna felépítése..."
 
@@ -1814,7 +1814,7 @@ msgstr "Kedvenc hub eltávolítva"
 msgid "Favorite name"
 msgstr "Kedvenc neve"
 
-#: win32/PrivateFrame.cpp:409
+#: win32/PrivateFrame.cpp:410
 msgid "Favorite user added"
 msgstr "Kedvenc felhasználó felvéve"
 
@@ -2067,7 +2067,7 @@ msgstr "Általános alkalmazás stílus"
 msgid "Grant &extra slot"
 msgstr "&Extra slot biztosítása"
 
-#: win32/PrivateFrame.cpp:440
+#: win32/PrivateFrame.cpp:441
 msgid ""
 "Grants the remote user a slot. Once they connect, or if they don't connect "
 "in 10 minutes, the granted slot is removed."
@@ -2469,7 +2469,7 @@ msgstr "KiB/s"
 msgid "Language"
 msgstr "Nyelv"
 
-#: win32/PrivateFrame.cpp:419
+#: win32/PrivateFrame.cpp:420
 #, boost-format
 msgid "Last message occured %1%"
 msgstr "Az utolsó üzenet ideje: %1%"
@@ -2533,7 +2533,7 @@ msgstr "Hivatkozások"
 msgid "List configuration"
 msgstr "Lista konfigurációs ablak"
 
-#: win32/PrivateFrame.cpp:449
+#: win32/PrivateFrame.cpp:450
 msgid "Lists the date and time when the last message was sent or received."
 msgstr "Kiírja az utolsó küldött vagy fogadott üzenet dátumát és idejét."
 
@@ -2918,7 +2918,7 @@ msgstr "Nem"
 msgid "No away message"
 msgstr "Nincs távolléti üzenet"
 
-#: win32/PrivateFrame.cpp:365
+#: win32/PrivateFrame.cpp:366
 msgid "No direct encrypted channel available"
 msgstr "Nincs elérhető közvetlen titkosított csatorna"
 
@@ -3623,6 +3623,11 @@ msgstr "Keresés - %1%"
 msgid "Search - Ready to search..."
 msgstr "Keresés - Keresésre kész..."
 
+#: win32/WinUtil.cpp:1737
+#, fuzzy, boost-format
+msgid "Search Hubs for \"%1%\""
+msgstr "%1% keresése"
+
 #: win32/CommandDlg.cpp:115
 msgid "Search Menu"
 msgstr "Kereső Menü"
@@ -3631,18 +3636,13 @@ msgstr "Kereső Menü"
 msgid "Search String"
 msgstr "Keresett szöveg"
 
-#: win32/WinUtil.cpp:1742
+#: win32/WinUtil.cpp:1743
 msgid "Search by TTH"
 msgstr "Keresés TTH alapján"
 
 #: win32/SearchFrame.cpp:150
 msgid "Search for"
 msgstr "A következő keresése:"
-
-#: win32/WinUtil.cpp:1736
-#, fuzzy, boost-format
-msgid "Search for \"%1%\""
-msgstr "%1% keresése"
 
 #: win32/WinUtil.cpp:808
 msgid "Search for alternates"
@@ -3949,7 +3949,7 @@ msgstr ""
 msgid "Skip zero-byte files"
 msgstr "Nulla hosszúságú fájlok kihagyása"
 
-#: win32/PrivateFrame.cpp:402
+#: win32/PrivateFrame.cpp:403
 msgid "Slot granted"
 msgstr "Feltöltési slot biztosítva"
 
@@ -4043,7 +4043,7 @@ msgstr "Indítás"
 msgid "Start FearDC when Windows starts"
 msgstr "A DC++ indítása a Windows indulásakor"
 
-#: win32/PrivateFrame.cpp:549
+#: win32/PrivateFrame.cpp:550
 msgid "Start a direct encrypted channel"
 msgstr "Közvetlen titkosított csatorna létrehozása"
 
@@ -4055,7 +4055,7 @@ msgstr "Keresés indítása ehhez a fájlhoz"
 msgid "Started..."
 msgstr "Folyamatban..."
 
-#: win32/PrivateFrame.cpp:436
+#: win32/PrivateFrame.cpp:437
 msgid ""
 "Starts a direct encrypted communication channel to avoid spying on your "
 "private messages."
@@ -4171,7 +4171,7 @@ msgstr "DC++ teszt verzió"
 msgid "Thank you for using a testing version of FearDC!"
 msgstr "Köszönjük, hogy a DC++ teszt verzióját használod!"
 
-#: win32/PrivateFrame.cpp:605
+#: win32/PrivateFrame.cpp:606
 msgid "The direct encrypted channel has been disconnected"
 msgstr "A közvetlen titkosított csatorna szétkapcsolódott"
 
@@ -4205,7 +4205,7 @@ msgstr ""
 msgid "The message cannot be delivered because the hub is offline."
 msgstr "Az üzenet nem továbbítható mivel a hub nincs kapcsolódva."
 
-#: win32/PrivateFrame.cpp:467
+#: win32/PrivateFrame.cpp:468
 msgid "The message cannot be delivered because the user is offline."
 msgstr "Az üzenet nem továbbítható mivel a felhasználó kilépett."
 
@@ -4213,11 +4213,11 @@ msgstr "Az üzenet nem továbbítható mivel a felhasználó kilépett."
 msgid "The requested link is "
 msgstr "A kért hívatkozás "
 
-#: win32/PrivateFrame.cpp:348
+#: win32/PrivateFrame.cpp:349
 msgid "The user does not support secure encrypted connections"
 msgstr "A felhasználó nem támogatja a biztonságos kódolt kapcsolatokat."
 
-#: win32/PrivateFrame.cpp:349
+#: win32/PrivateFrame.cpp:350
 msgid "The user does not support the CCPM ADC extension"
 msgstr "A felhasználó nem támogatja a CCPM ADC kiterjesztést"
 
@@ -4405,7 +4405,7 @@ msgstr "A befejezetlen fájl túl kicsi"
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:456
+#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:457
 #, boost-format
 msgid "Unknown command: %1%"
 msgstr "Ismeretlen parancs: %1%"
@@ -4549,8 +4549,8 @@ msgstr "Felhasználó-megfeleltetési szabályok"
 msgid "User matching definitions"
 msgstr "Felhasználó-megfeleltetési szabályok"
 
-#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:343
-#: win32/PrivateFrame.cpp:467 win32/QueueFrame.cpp:380
+#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:344
+#: win32/PrivateFrame.cpp:468 win32/QueueFrame.cpp:380
 msgid "User offline"
 msgstr "Felhasználó offline"
 
@@ -4558,11 +4558,11 @@ msgstr "Felhasználó offline"
 msgid "User set"
 msgstr "Átállított"
 
-#: win32/PrivateFrame.cpp:302
+#: win32/PrivateFrame.cpp:303
 msgid "User went offline"
 msgstr "Felhasználó kilépett"
 
-#: win32/PrivateFrame.cpp:302
+#: win32/PrivateFrame.cpp:303
 msgid "User went online"
 msgstr "Felhasználó belépett"
 

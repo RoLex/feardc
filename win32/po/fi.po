@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-08-22 18:19+0200\n"
+"POT-Creation-Date: 2025-03-31 18:57+0200\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -433,13 +433,13 @@ msgstr ""
 msgid "(No recent item found)"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:528
+#: win32/PrivateFrame.cpp:529
 #, fuzzy
 msgid "(User offline)"
 msgstr "Käyttäjä offline-tilassa"
 
-#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:425
-#: win32/PrivateFrame.cpp:432
+#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:426
+#: win32/PrivateFrame.cpp:433
 #, fuzzy
 msgid "*** Keyboard commands:"
 msgstr "Käyttäjäkomennot"
@@ -473,15 +473,15 @@ msgstr ""
 "tarkistussummaa Direct Connect -verkkoa varten. Mitään toimintoa ei "
 "suoriteta."
 
-#: win32/PrivateFrame.cpp:592
+#: win32/PrivateFrame.cpp:593
 msgid "A direct encrypted channel has been established"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:335
+#: win32/PrivateFrame.cpp:336
 msgid "A direct encrypted channel is already available"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:347
+#: win32/PrivateFrame.cpp:348
 msgid ""
 "A secure ADC hub is required; this feature is not supported on NMDC hubs"
 msgstr ""
@@ -567,7 +567,7 @@ msgstr ""
 msgid "Address"
 msgstr "Osoite"
 
-#: win32/PrivateFrame.cpp:445
+#: win32/PrivateFrame.cpp:446
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to ignore chat messages from the current user."
@@ -579,7 +579,7 @@ msgid ""
 "to ignore chat messages from the specified user."
 msgstr ""
 
-#: win32/PrivateFrame.cpp:447
+#: win32/PrivateFrame.cpp:448
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to stop ignoring chat messages from the current user."
@@ -597,11 +597,11 @@ msgid ""
 "list of Favorite Hubs."
 msgstr ""
 
-#: win32/PrivateFrame.cpp:443
+#: win32/PrivateFrame.cpp:444
 msgid "Adds the current user to the list of Favorite Users."
 msgstr ""
 
-#: win32/PrivateFrame.cpp:438
+#: win32/PrivateFrame.cpp:439
 msgid "Adds the current user's list to the Download Queue."
 msgstr ""
 
@@ -899,7 +899,7 @@ msgstr ""
 msgid "Cannot install the plugin:"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:351
+#: win32/PrivateFrame.cpp:352
 #, boost-format
 msgid "Cannot start the direct encrypted channel: %1%"
 msgstr ""
@@ -1016,7 +1016,7 @@ msgstr "Komento"
 msgid "Command Type"
 msgstr "Komennon tyyppi"
 
-#: win32/PrivateFrame.cpp:523
+#: win32/PrivateFrame.cpp:524
 msgid "Communication channel"
 msgstr ""
 
@@ -1090,7 +1090,7 @@ msgstr "Yhdistä kaikkiin hubeihin tässä ryhmässä"
 msgid "Connect to hub"
 msgstr "Yhdistä hubiin"
 
-#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1807
+#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1808
 msgid "Connected"
 msgstr "Yhdistetty"
 
@@ -1174,7 +1174,7 @@ msgstr "Luodaan tarkistussummaa..."
 msgid "Cu&t\tCtrl+X"
 msgstr "&Leikkaa\tCtrl+X"
 
-#: win32/PrivateFrame.cpp:166
+#: win32/PrivateFrame.cpp:167
 msgid "Current communication channel - click to change"
 msgstr ""
 
@@ -1270,7 +1270,7 @@ msgstr "Suora yhteys"
 msgid "Direct connection"
 msgstr "Suora yhteys"
 
-#: win32/PrivateFrame.cpp:328
+#: win32/PrivateFrame.cpp:329
 msgid "Direct encrypted channel"
 msgstr ""
 
@@ -1315,16 +1315,16 @@ msgstr "Yhteys"
 msgid "Disabled"
 msgstr "Pois käytöstä"
 
-#: win32/PrivateFrame.cpp:547
+#: win32/PrivateFrame.cpp:548
 msgid "Disconnect the direct encrypted channel"
 msgstr ""
 
-#: win32/WinUtil.cpp:1812
+#: win32/WinUtil.cpp:1813
 #, fuzzy
 msgid "Disconnected"
 msgstr "&Katkaise yhteys"
 
-#: win32/PrivateFrame.cpp:362
+#: win32/PrivateFrame.cpp:363
 msgid "Disconnecting the direct encrypted channel..."
 msgstr ""
 
@@ -1676,7 +1676,7 @@ msgstr ""
 msgid "Errors"
 msgstr "Virheet"
 
-#: win32/PrivateFrame.cpp:356
+#: win32/PrivateFrame.cpp:357
 msgid "Establishing a direct encrypted channel..."
 msgstr ""
 
@@ -1794,7 +1794,7 @@ msgstr "Hubi poistettu suosikeista"
 msgid "Favorite name"
 msgstr "Suosikkikansion nimi"
 
-#: win32/PrivateFrame.cpp:409
+#: win32/PrivateFrame.cpp:410
 msgid "Favorite user added"
 msgstr "Käyttäjä lisätty suosikkikäyttäjiin"
 
@@ -2060,7 +2060,7 @@ msgstr "Pyydä vahvistus lopetettaessa"
 msgid "Grant &extra slot"
 msgstr "Anna &ylimääräinen latauspaikka"
 
-#: win32/PrivateFrame.cpp:440
+#: win32/PrivateFrame.cpp:441
 msgid ""
 "Grants the remote user a slot. Once they connect, or if they don't connect "
 "in 10 minutes, the granted slot is removed."
@@ -2461,7 +2461,7 @@ msgstr "Kt/s"
 msgid "Language"
 msgstr "Kieli"
 
-#: win32/PrivateFrame.cpp:419
+#: win32/PrivateFrame.cpp:420
 #, fuzzy, boost-format
 msgid "Last message occured %1%"
 msgstr "Yksityisviesti käyttäjältä %1%: %2%"
@@ -2518,7 +2518,7 @@ msgstr "Linkit"
 msgid "List configuration"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:449
+#: win32/PrivateFrame.cpp:450
 msgid "Lists the date and time when the last message was sent or received."
 msgstr ""
 
@@ -2907,7 +2907,7 @@ msgstr "Ei"
 msgid "No away message"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:365
+#: win32/PrivateFrame.cpp:366
 msgid "No direct encrypted channel available"
 msgstr ""
 
@@ -3608,6 +3608,11 @@ msgstr "Etsi - %1%"
 msgid "Search - Ready to search..."
 msgstr "Etsi - Valmis hakemaan..."
 
+#: win32/WinUtil.cpp:1737
+#, fuzzy, boost-format
+msgid "Search Hubs for \"%1%\""
+msgstr "Haetaan: %1%"
+
 #: win32/CommandDlg.cpp:115
 msgid "Search Menu"
 msgstr "Hakuvalikko"
@@ -3616,7 +3621,7 @@ msgstr "Hakuvalikko"
 msgid "Search String"
 msgstr "Hakusana"
 
-#: win32/WinUtil.cpp:1742
+#: win32/WinUtil.cpp:1743
 #, fuzzy
 msgid "Search by TTH"
 msgstr "Hakuvalikko"
@@ -3624,11 +3629,6 @@ msgstr "Hakuvalikko"
 #: win32/SearchFrame.cpp:150
 msgid "Search for"
 msgstr "Hakusana"
-
-#: win32/WinUtil.cpp:1736
-#, fuzzy, boost-format
-msgid "Search for \"%1%\""
-msgstr "Haetaan: %1%"
 
 #: win32/WinUtil.cpp:808
 msgid "Search for alternates"
@@ -3923,7 +3923,7 @@ msgstr ""
 msgid "Skip zero-byte files"
 msgstr "Ohita nolla-kokoiset tiedostot"
 
-#: win32/PrivateFrame.cpp:402
+#: win32/PrivateFrame.cpp:403
 msgid "Slot granted"
 msgstr "Latauspaikka annettu"
 
@@ -4017,7 +4017,7 @@ msgstr "Aloitettu..."
 msgid "Start FearDC when Windows starts"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:549
+#: win32/PrivateFrame.cpp:550
 msgid "Start a direct encrypted channel"
 msgstr ""
 
@@ -4029,7 +4029,7 @@ msgstr "Aloita tämän tiedoston etsiminen"
 msgid "Started..."
 msgstr "Aloitettu..."
 
-#: win32/PrivateFrame.cpp:436
+#: win32/PrivateFrame.cpp:437
 msgid ""
 "Starts a direct encrypted communication channel to avoid spying on your "
 "private messages."
@@ -4141,7 +4141,7 @@ msgstr ""
 msgid "Thank you for using a testing version of FearDC!"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:605
+#: win32/PrivateFrame.cpp:606
 msgid "The direct encrypted channel has been disconnected"
 msgstr ""
 
@@ -4166,7 +4166,7 @@ msgstr ""
 msgid "The message cannot be delivered because the hub is offline."
 msgstr ""
 
-#: win32/PrivateFrame.cpp:467
+#: win32/PrivateFrame.cpp:468
 msgid "The message cannot be delivered because the user is offline."
 msgstr ""
 
@@ -4174,11 +4174,11 @@ msgstr ""
 msgid "The requested link is "
 msgstr ""
 
-#: win32/PrivateFrame.cpp:348
+#: win32/PrivateFrame.cpp:349
 msgid "The user does not support secure encrypted connections"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:349
+#: win32/PrivateFrame.cpp:350
 msgid "The user does not support the CCPM ADC extension"
 msgstr ""
 
@@ -4357,7 +4357,7 @@ msgstr "Keskeneräinen tiedosto on liian pieni"
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:456
+#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:457
 #, boost-format
 msgid "Unknown command: %1%"
 msgstr "Tuntematon komento: %1%"
@@ -4504,8 +4504,8 @@ msgstr ""
 msgid "User matching definitions"
 msgstr ""
 
-#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:343
-#: win32/PrivateFrame.cpp:467 win32/QueueFrame.cpp:380
+#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:344
+#: win32/PrivateFrame.cpp:468 win32/QueueFrame.cpp:380
 msgid "User offline"
 msgstr "Käyttäjä offline-tilassa"
 
@@ -4514,11 +4514,11 @@ msgstr "Käyttäjä offline-tilassa"
 msgid "User set"
 msgstr "Käyttäjiä"
 
-#: win32/PrivateFrame.cpp:302
+#: win32/PrivateFrame.cpp:303
 msgid "User went offline"
 msgstr "Käyttäjä siirtyi offline-tilaan"
 
-#: win32/PrivateFrame.cpp:302
+#: win32/PrivateFrame.cpp:303
 #, fuzzy
 msgid "User went online"
 msgstr "Käyttäjä siirtyi offline-tilaan"

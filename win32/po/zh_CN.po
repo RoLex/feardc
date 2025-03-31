@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-08-22 18:19+0200\n"
+"POT-Creation-Date: 2025-03-31 18:57+0200\n"
 "PO-Revision-Date: 2021-09-05 08:03+0000\n"
 "Last-Translator: Eric Xu <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -427,12 +427,12 @@ msgstr "(%1%)"
 msgid "(No recent item found)"
 msgstr "(未找到最近使用的条目)"
 
-#: win32/PrivateFrame.cpp:528
+#: win32/PrivateFrame.cpp:529
 msgid "(User offline)"
 msgstr "（用户离线）"
 
-#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:425
-#: win32/PrivateFrame.cpp:432
+#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:426
+#: win32/PrivateFrame.cpp:433
 msgid "*** Keyboard commands:"
 msgstr "***键盘命令："
 
@@ -463,15 +463,15 @@ msgstr ""
 "一个MAGNET链接已经加给DC++, 但是它不包含一个在DC网络上可用的hash值. 没有动作"
 "执行."
 
-#: win32/PrivateFrame.cpp:592
+#: win32/PrivateFrame.cpp:593
 msgid "A direct encrypted channel has been established"
 msgstr "已建立一条直接加密通道"
 
-#: win32/PrivateFrame.cpp:335
+#: win32/PrivateFrame.cpp:336
 msgid "A direct encrypted channel is already available"
 msgstr "一条直接加密通道已可用"
 
-#: win32/PrivateFrame.cpp:347
+#: win32/PrivateFrame.cpp:348
 msgid ""
 "A secure ADC hub is required; this feature is not supported on NMDC hubs"
 msgstr "需要一个安全的 ADC 枢纽；NMDC 枢纽不支持此功能"
@@ -555,7 +555,7 @@ msgstr "添加一个插件"
 msgid "Address"
 msgstr "服务器地址"
 
-#: win32/PrivateFrame.cpp:445
+#: win32/PrivateFrame.cpp:446
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to ignore chat messages from the current user."
@@ -567,7 +567,7 @@ msgid ""
 "to ignore chat messages from the specified user."
 msgstr "添加一个用户匹配的定义(或修改现有的一个)并从指定用户忽略聊天消息"
 
-#: win32/PrivateFrame.cpp:447
+#: win32/PrivateFrame.cpp:448
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to stop ignoring chat messages from the current user."
@@ -586,11 +586,11 @@ msgid ""
 "list of Favorite Hubs."
 msgstr "将当前枢纽 （以及你的昵称和密码，如果使用的话）到收藏枢纽的列表"
 
-#: win32/PrivateFrame.cpp:443
+#: win32/PrivateFrame.cpp:444
 msgid "Adds the current user to the list of Favorite Users."
 msgstr "添加当前用户到收藏用户列表"
 
-#: win32/PrivateFrame.cpp:438
+#: win32/PrivateFrame.cpp:439
 msgid "Adds the current user's list to the Download Queue."
 msgstr "添加当前用户列表到下载队列"
 
@@ -882,7 +882,7 @@ msgstr "无法启用插件："
 msgid "Cannot install the plugin:"
 msgstr "无法安装插件："
 
-#: win32/PrivateFrame.cpp:351
+#: win32/PrivateFrame.cpp:352
 #, boost-format
 msgid "Cannot start the direct encrypted channel: %1%"
 msgstr "无法启动直接加密通道： %1%"
@@ -997,7 +997,7 @@ msgstr "命令"
 msgid "Command Type"
 msgstr "命令类型"
 
-#: win32/PrivateFrame.cpp:523
+#: win32/PrivateFrame.cpp:524
 msgid "Communication channel"
 msgstr "通信信道"
 
@@ -1069,7 +1069,7 @@ msgstr "连接本组的全部站点"
 msgid "Connect to hub"
 msgstr "连接到Hub"
 
-#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1807
+#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1808
 msgid "Connected"
 msgstr "已连接"
 
@@ -1150,7 +1150,7 @@ msgstr "正在建立文件索引..."
 msgid "Cu&t\tCtrl+X"
 msgstr "剪切(&t)\tCtrl+X"
 
-#: win32/PrivateFrame.cpp:166
+#: win32/PrivateFrame.cpp:167
 msgid "Current communication channel - click to change"
 msgstr "当前通信信道 - 点击更改"
 
@@ -1243,7 +1243,7 @@ msgstr "检测日志"
 msgid "Direct connection"
 msgstr "直接连接"
 
-#: win32/PrivateFrame.cpp:328
+#: win32/PrivateFrame.cpp:329
 msgid "Direct encrypted channel"
 msgstr "直接加密通道"
 
@@ -1287,15 +1287,15 @@ msgstr "禁用连接"
 msgid "Disabled"
 msgstr "已禁用"
 
-#: win32/PrivateFrame.cpp:547
+#: win32/PrivateFrame.cpp:548
 msgid "Disconnect the direct encrypted channel"
 msgstr "断开直接加密通道"
 
-#: win32/WinUtil.cpp:1812
+#: win32/WinUtil.cpp:1813
 msgid "Disconnected"
 msgstr "已断开"
 
-#: win32/PrivateFrame.cpp:362
+#: win32/PrivateFrame.cpp:363
 msgid "Disconnecting the direct encrypted channel..."
 msgstr "正断开直接加密通道..."
 
@@ -1648,7 +1648,7 @@ msgstr "取消DC++ 自启动注册时出错 （无法删除注册表键值）"
 msgid "Errors"
 msgstr "错误"
 
-#: win32/PrivateFrame.cpp:356
+#: win32/PrivateFrame.cpp:357
 msgid "Establishing a direct encrypted channel..."
 msgstr "建立直接加密通道中..."
 
@@ -1764,7 +1764,7 @@ msgstr "收藏Hub已被移除"
 msgid "Favorite name"
 msgstr "收藏的目录名"
 
-#: win32/PrivateFrame.cpp:409
+#: win32/PrivateFrame.cpp:410
 msgid "Favorite user added"
 msgstr "已加入好友列表"
 
@@ -2014,7 +2014,7 @@ msgstr "全局程序样式"
 msgid "Grant &extra slot"
 msgstr "开启额外的通道(&e)"
 
-#: win32/PrivateFrame.cpp:440
+#: win32/PrivateFrame.cpp:441
 msgid ""
 "Grants the remote user a slot. Once they connect, or if they don't connect "
 "in 10 minutes, the granted slot is removed."
@@ -2409,7 +2409,7 @@ msgstr "KB/秒"
 msgid "Language"
 msgstr "语言"
 
-#: win32/PrivateFrame.cpp:419
+#: win32/PrivateFrame.cpp:420
 #, boost-format
 msgid "Last message occured %1%"
 msgstr "上条信息出现于 %1%"
@@ -2467,7 +2467,7 @@ msgstr "连接"
 msgid "List configuration"
 msgstr "列出配置"
 
-#: win32/PrivateFrame.cpp:449
+#: win32/PrivateFrame.cpp:450
 msgid "Lists the date and time when the last message was sent or received."
 msgstr "列出发送或接收上条消息的日期和时间"
 
@@ -2848,7 +2848,7 @@ msgstr "否"
 msgid "No away message"
 msgstr "不用离开信息"
 
-#: win32/PrivateFrame.cpp:365
+#: win32/PrivateFrame.cpp:366
 msgid "No direct encrypted channel available"
 msgstr "无直接加密通道可用"
 
@@ -3535,6 +3535,11 @@ msgstr "搜索 - %1%"
 msgid "Search - Ready to search..."
 msgstr "搜索 - 就绪..."
 
+#: win32/WinUtil.cpp:1737
+#, fuzzy, boost-format
+msgid "Search Hubs for \"%1%\""
+msgstr "正在搜索：%1%"
+
 #: win32/CommandDlg.cpp:115
 msgid "Search Menu"
 msgstr "搜索菜单"
@@ -3543,18 +3548,13 @@ msgstr "搜索菜单"
 msgid "Search String"
 msgstr "搜索关键字"
 
-#: win32/WinUtil.cpp:1742
+#: win32/WinUtil.cpp:1743
 msgid "Search by TTH"
 msgstr "按 TTH 搜索"
 
 #: win32/SearchFrame.cpp:150
 msgid "Search for"
 msgstr "搜索"
-
-#: win32/WinUtil.cpp:1736
-#, fuzzy, boost-format
-msgid "Search for \"%1%\""
-msgstr "正在搜索：%1%"
 
 #: win32/WinUtil.cpp:808
 msgid "Search for alternates"
@@ -3845,7 +3845,7 @@ msgstr ""
 msgid "Skip zero-byte files"
 msgstr "跳过零字节文件"
 
-#: win32/PrivateFrame.cpp:402
+#: win32/PrivateFrame.cpp:403
 msgid "Slot granted"
 msgstr "开启额外通道"
 
@@ -3939,7 +3939,7 @@ msgstr "启动"
 msgid "Start FearDC when Windows starts"
 msgstr "当 Windows 开机时启动 DC++"
 
-#: win32/PrivateFrame.cpp:549
+#: win32/PrivateFrame.cpp:550
 msgid "Start a direct encrypted channel"
 msgstr "启动直接加密通道"
 
@@ -3951,7 +3951,7 @@ msgstr "开始搜索这个文件"
 msgid "Started..."
 msgstr "开始..."
 
-#: win32/PrivateFrame.cpp:436
+#: win32/PrivateFrame.cpp:437
 msgid ""
 "Starts a direct encrypted communication channel to avoid spying on your "
 "private messages."
@@ -4063,7 +4063,7 @@ msgstr "DC++ 测试版"
 msgid "Thank you for using a testing version of FearDC!"
 msgstr "感谢您使用 DC++ 测试版！"
 
-#: win32/PrivateFrame.cpp:605
+#: win32/PrivateFrame.cpp:606
 msgid "The direct encrypted channel has been disconnected"
 msgstr "直接加密通道已被断开"
 
@@ -4093,7 +4093,7 @@ msgstr "菜单栏现在是隐藏的。按Alt或F10暂时显示出来。"
 msgid "The message cannot be delivered because the hub is offline."
 msgstr "无法传递消息，因枢纽离线"
 
-#: win32/PrivateFrame.cpp:467
+#: win32/PrivateFrame.cpp:468
 msgid "The message cannot be delivered because the user is offline."
 msgstr "无法传递消息，因用户离线"
 
@@ -4101,11 +4101,11 @@ msgstr "无法传递消息，因用户离线"
 msgid "The requested link is "
 msgstr "请求的链接为 "
 
-#: win32/PrivateFrame.cpp:348
+#: win32/PrivateFrame.cpp:349
 msgid "The user does not support secure encrypted connections"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:349
+#: win32/PrivateFrame.cpp:350
 msgid "The user does not support the CCPM ADC extension"
 msgstr "用户不支持 CCPM ADC 扩展"
 
@@ -4283,7 +4283,7 @@ msgstr "未完成文件太小"
 msgid "Unknown"
 msgstr "未知"
 
-#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:456
+#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:457
 #, boost-format
 msgid "Unknown command: %1%"
 msgstr "未知命令: %1%"
@@ -4426,8 +4426,8 @@ msgstr "用户匹配的定义"
 msgid "User matching definitions"
 msgstr "用户匹配的定义"
 
-#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:343
-#: win32/PrivateFrame.cpp:467 win32/QueueFrame.cpp:380
+#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:344
+#: win32/PrivateFrame.cpp:468 win32/QueueFrame.cpp:380
 msgid "User offline"
 msgstr "用户离线中"
 
@@ -4436,11 +4436,11 @@ msgstr "用户离线中"
 msgid "User set"
 msgstr "人数"
 
-#: win32/PrivateFrame.cpp:302
+#: win32/PrivateFrame.cpp:303
 msgid "User went offline"
 msgstr "用户已离线"
 
-#: win32/PrivateFrame.cpp:302
+#: win32/PrivateFrame.cpp:303
 msgid "User went online"
 msgstr "用户上线了"
 

@@ -1013,7 +1013,7 @@ void SearchFrame::runSearch() {
 
 	int ftype = fileType->getData(fileType->getSelected());
 	if(ftype == SearchManager::TYPE_TTH) {
-		s.erase(std::remove_if(begin(s), end(s), [l = std::locale{}](auto c) { return std::isspace(c, l); }), end(s));
+		s.erase(std::remove_if(begin(s), end(s), [l = std::locale{""}](auto c) { return std::isspace(c, l); }), end(s));
 		if(!WinUtil::checkTTH(s)) {
 			auto text = T_("Invalid input value for TTH search");
 			status->setText(STATUS_STATUS, text);

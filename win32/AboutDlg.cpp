@@ -102,7 +102,7 @@ bool AboutDlg::handleInitDialog() {
 
 		ls.caption = Text::toT(dcpp::fullVersionString) +
 			_T("\nBased on: " DCAPPNAME " " DCVERSIONSTRING "\n") +
-			_T("\n(c) Copyright 2001-2024 Jacek Sieka\n");
+			_T("\n(c) Copyright 2001-2025 Jacek Sieka\n");
 
 		ls.caption += T_("Ex-main project contributors: Todd Pederzani, poy\nEx-codeveloper: Per Lind\303\251n\nOriginal DC++ logo design: Martin Skogevall\nGraphics: Radox and various GPL and CC authors\n\nFearDC is licenced under GPL.");
 		cur->addChild(ls);

@@ -1725,7 +1725,8 @@ void WinUtil::addCopyMenu(Menu* menu, dwt::TablePtr table) {
 	});
 }
 
-void WinUtil::addSearchMenu(Menu* menu, const tstring& searchText, const string& hash) {
+void WinUtil::addSearchMenu(Menu* menu, tstring& searchText, const string& hash) {
+	Util::trim(searchText);
 	if (searchText.empty() && hash.empty()) { return; }
 
 	menu->appendSeparator();
@@ -1733,7 +1734,7 @@ void WinUtil::addSearchMenu(Menu* menu, const tstring& searchText, const string&
 	if (!searchText.empty()) {
 		auto disp = dwt::util::escapeMenu(searchText);
 		dwt::util::cutStr(disp, 50);
-		menu->appendItem(str(TF_("Search for \"%1%\"") % disp), [=] { searchAny(searchText.substr(0, MAX_PATH)); });
+		menu->appendItem(str(TF_("Search Hubs for \"%1%\"") % disp), [=] { searchAny(searchText.substr(0, MAX_PATH)); });
 	}
 
 	string searchTTH = hash.empty() && checkTTH(searchText) ? Text::fromT(searchText) : hash;

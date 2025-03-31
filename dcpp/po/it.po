@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-08-23 10:56+0200\n"
+"POT-Creation-Date: 2025-03-31 18:57+0200\n"
 "PO-Revision-Date: 2017-03-22 12:21+0000\n"
 "Last-Translator: SebastianoPistore <sebastiano.pistore.info@aol.com>\n"
 "Language-Team: Italian language <netcelli@gmail.com>\n"
@@ -726,7 +726,7 @@ msgstr "Ricerca nuovamente abilitata"
 msgid "Security certificates"
 msgstr "Certificati di sicurezza"
 
-#: dcpp/ChatMessage.cpp:73
+#: dcpp/ChatMessage.cpp:74
 #, boost-format
 msgid "Sent %1%"
 msgstr "Inviato %1%"

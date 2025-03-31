@@ -217,7 +217,7 @@ public:
 		const string& order = Util::emptyString, const string& widths = Util::emptyString);
 	static void addCopyMenu(Menu* menu, dwt::TablePtr table);
 
-	static void addSearchMenu(Menu* menu, const tstring& searchText, const string& hash = Util::emptyString);
+	static void addSearchMenu(Menu* menu, tstring& searchText, const string& hash = Util::emptyString);
 	static void getChatSelText(dwt::TextBoxBase* box, tstring& text, const dwt::ScreenCoordinate& pt);
 
 	/* functions to get / set table column sorting. a little trick is used to encode both the

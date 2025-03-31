@@ -376,6 +376,13 @@ public:
 		return t1;
 	}
 
+	template<typename T>
+	static void trim(T& s) {
+		auto l = std::locale{""};
+		s.erase(s.begin(), std::find_if_not(s.begin(), s.end(), [&l](char c){ return std::isspace(c, l); }));
+ 		s.erase(std::find_if_not(s.rbegin(), s.rend(), [&l](char c){ return std::isspace(c, l); }).base(), s.end());
+	}
+
 	/// make a color suitable for a CSS declaration (implementation dependant).
 	static string cssColor(int color);
 	/// make a font suitable for a CSS declaration (implementation dependant).

@@ -76,7 +76,8 @@ private:
 
 tstring HtmlToRtf::convert(const string& html, dwt::RichTextBox* box) {
 	Parser parser(box);
-	try { SimpleXMLReader(&parser, SimpleXMLReader::FLAG_SAFE_SOURCE).parse(html); }
+	try { SimpleXMLReader(&parser).parse(html); } // todo: patch
+	//try { SimpleXMLReader(&parser, SimpleXMLReader::FLAG_SAFE_SOURCE).parse(html); }
 	catch(const SimpleXMLException& e) { return Text::toT(e.getError()); }
 	return parser.finalize();
 }

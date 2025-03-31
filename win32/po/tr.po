@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-08-22 18:19+0200\n"
+"POT-Creation-Date: 2025-03-31 18:57+0200\n"
 "PO-Revision-Date: 2013-05-22 06:48+0000\n"
 "Last-Translator: H. Cem ÖZTÜRK <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -432,13 +432,13 @@ msgstr ""
 msgid "(No recent item found)"
 msgstr "(Yakın zamanda kullanılan herhangi bir dosya bulunamadı)"
 
-#: win32/PrivateFrame.cpp:528
+#: win32/PrivateFrame.cpp:529
 #, fuzzy
 msgid "(User offline)"
 msgstr "Kullanıcı Çevrimdışı"
 
-#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:425
-#: win32/PrivateFrame.cpp:432
+#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:426
+#: win32/PrivateFrame.cpp:433
 #, fuzzy
 msgid "*** Keyboard commands:"
 msgstr "Kullanıcı komutları"
@@ -471,15 +471,15 @@ msgstr ""
 "(!) Girilen MAGNET kısayolu'nun içinde DC++ ağında kullanılabilecek bir "
 "veritabanı kodu olmadığından hiçbir şey yapılmayacak."
 
-#: win32/PrivateFrame.cpp:592
+#: win32/PrivateFrame.cpp:593
 msgid "A direct encrypted channel has been established"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:335
+#: win32/PrivateFrame.cpp:336
 msgid "A direct encrypted channel is already available"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:347
+#: win32/PrivateFrame.cpp:348
 msgid ""
 "A secure ADC hub is required; this feature is not supported on NMDC hubs"
 msgstr ""
@@ -566,7 +566,7 @@ msgstr ""
 msgid "Address"
 msgstr "Merkez Bulunağı"
 
-#: win32/PrivateFrame.cpp:445
+#: win32/PrivateFrame.cpp:446
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to ignore chat messages from the current user."
@@ -578,7 +578,7 @@ msgid ""
 "to ignore chat messages from the specified user."
 msgstr ""
 
-#: win32/PrivateFrame.cpp:447
+#: win32/PrivateFrame.cpp:448
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to stop ignoring chat messages from the current user."
@@ -596,11 +596,11 @@ msgid ""
 "list of Favorite Hubs."
 msgstr ""
 
-#: win32/PrivateFrame.cpp:443
+#: win32/PrivateFrame.cpp:444
 msgid "Adds the current user to the list of Favorite Users."
 msgstr ""
 
-#: win32/PrivateFrame.cpp:438
+#: win32/PrivateFrame.cpp:439
 msgid "Adds the current user's list to the Download Queue."
 msgstr ""
 
@@ -904,7 +904,7 @@ msgstr ""
 msgid "Cannot install the plugin:"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:351
+#: win32/PrivateFrame.cpp:352
 #, boost-format
 msgid "Cannot start the direct encrypted channel: %1%"
 msgstr ""
@@ -1019,7 +1019,7 @@ msgstr "Komut"
 msgid "Command Type"
 msgstr "Komut Türü"
 
-#: win32/PrivateFrame.cpp:523
+#: win32/PrivateFrame.cpp:524
 #, fuzzy
 msgid "Communication channel"
 msgstr "Topluluk haberleri"
@@ -1094,7 +1094,7 @@ msgstr "Bu gruptaki tüm merkezlere bağlan"
 msgid "Connect to hub"
 msgstr "Merkeze Bağlan"
 
-#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1807
+#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1808
 msgid "Connected"
 msgstr "Bağlandı"
 
@@ -1177,7 +1177,7 @@ msgstr "Dosyalar veritabanına ekleniyor..."
 msgid "Cu&t\tCtrl+X"
 msgstr "Ke&s\tCtrl+X"
 
-#: win32/PrivateFrame.cpp:166
+#: win32/PrivateFrame.cpp:167
 msgid "Current communication channel - click to change"
 msgstr ""
 
@@ -1272,7 +1272,7 @@ msgstr "Algılama günlüğü"
 msgid "Direct connection"
 msgstr "Direk Bağlantı"
 
-#: win32/PrivateFrame.cpp:328
+#: win32/PrivateFrame.cpp:329
 msgid "Direct encrypted channel"
 msgstr ""
 
@@ -1317,16 +1317,16 @@ msgstr "Bağlanılırlık"
 msgid "Disabled"
 msgstr "Devre dışı"
 
-#: win32/PrivateFrame.cpp:547
+#: win32/PrivateFrame.cpp:548
 msgid "Disconnect the direct encrypted channel"
 msgstr ""
 
-#: win32/WinUtil.cpp:1812
+#: win32/WinUtil.cpp:1813
 #, fuzzy
 msgid "Disconnected"
 msgstr "&Bağlantıyı kes"
 
-#: win32/PrivateFrame.cpp:362
+#: win32/PrivateFrame.cpp:363
 msgid "Disconnecting the direct encrypted channel..."
 msgstr ""
 
@@ -1677,7 +1677,7 @@ msgstr ""
 msgid "Errors"
 msgstr "Hatalar"
 
-#: win32/PrivateFrame.cpp:356
+#: win32/PrivateFrame.cpp:357
 msgid "Establishing a direct encrypted channel..."
 msgstr ""
 
@@ -1796,7 +1796,7 @@ msgstr "Gözde merkez silindi"
 msgid "Favorite name"
 msgstr "Klasör ismi"
 
-#: win32/PrivateFrame.cpp:409
+#: win32/PrivateFrame.cpp:410
 msgid "Favorite user added"
 msgstr "Favori kullanıcı'lara eklendi"
 
@@ -2052,7 +2052,7 @@ msgstr "Genel uygulama biçimi"
 msgid "Grant &extra slot"
 msgstr "Bu kullanıcıya ekstra slot  ver"
 
-#: win32/PrivateFrame.cpp:440
+#: win32/PrivateFrame.cpp:441
 msgid ""
 "Grants the remote user a slot. Once they connect, or if they don't connect "
 "in 10 minutes, the granted slot is removed."
@@ -2450,7 +2450,7 @@ msgstr "kB/sn"
 msgid "Language"
 msgstr "Dil"
 
-#: win32/PrivateFrame.cpp:419
+#: win32/PrivateFrame.cpp:420
 #, fuzzy, boost-format
 msgid "Last message occured %1%"
 msgstr "%1%'den özel mesaj: %2%"
@@ -2508,7 +2508,7 @@ msgstr "Bağlantılar"
 msgid "List configuration"
 msgstr "Liste düzenleme"
 
-#: win32/PrivateFrame.cpp:449
+#: win32/PrivateFrame.cpp:450
 msgid "Lists the date and time when the last message was sent or received."
 msgstr ""
 
@@ -2893,7 +2893,7 @@ msgstr "Hayır"
 msgid "No away message"
 msgstr "Dışarda iletisi yok"
 
-#: win32/PrivateFrame.cpp:365
+#: win32/PrivateFrame.cpp:366
 msgid "No direct encrypted channel available"
 msgstr ""
 
@@ -3596,6 +3596,11 @@ msgstr "Ara - %1%"
 msgid "Search - Ready to search..."
 msgstr "Arama - Arama için hazır"
 
+#: win32/WinUtil.cpp:1737
+#, fuzzy, boost-format
+msgid "Search Hubs for \"%1%\""
+msgstr "Aranıyor: %1%"
+
 #: win32/CommandDlg.cpp:115
 msgid "Search Menu"
 msgstr "Arama Sonuçlarında"
@@ -3604,7 +3609,7 @@ msgstr "Arama Sonuçlarında"
 msgid "Search String"
 msgstr "Aratılan kelime"
 
-#: win32/WinUtil.cpp:1742
+#: win32/WinUtil.cpp:1743
 #, fuzzy
 msgid "Search by TTH"
 msgstr "Arama Sonuçlarında"
@@ -3612,11 +3617,6 @@ msgstr "Arama Sonuçlarında"
 #: win32/SearchFrame.cpp:150
 msgid "Search for"
 msgstr "Aranacak dosyanın adını yazın"
-
-#: win32/WinUtil.cpp:1736
-#, fuzzy, boost-format
-msgid "Search for \"%1%\""
-msgstr "Aranıyor: %1%"
 
 #: win32/WinUtil.cpp:808
 msgid "Search for alternates"
@@ -3903,7 +3903,7 @@ msgstr ""
 msgid "Skip zero-byte files"
 msgstr "Boyutsuz dosyaları atla"
 
-#: win32/PrivateFrame.cpp:402
+#: win32/PrivateFrame.cpp:403
 msgid "Slot granted"
 msgstr "Slot verildi"
 
@@ -3997,7 +3997,7 @@ msgstr "Başlandı..."
 msgid "Start FearDC when Windows starts"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:549
+#: win32/PrivateFrame.cpp:550
 msgid "Start a direct encrypted channel"
 msgstr ""
 
@@ -4009,7 +4009,7 @@ msgstr "Bu dosyayı aramaya başla"
 msgid "Started..."
 msgstr "Başlandı..."
 
-#: win32/PrivateFrame.cpp:436
+#: win32/PrivateFrame.cpp:437
 msgid ""
 "Starts a direct encrypted communication channel to avoid spying on your "
 "private messages."
@@ -4119,7 +4119,7 @@ msgstr ""
 msgid "Thank you for using a testing version of FearDC!"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:605
+#: win32/PrivateFrame.cpp:606
 msgid "The direct encrypted channel has been disconnected"
 msgstr ""
 
@@ -4150,7 +4150,7 @@ msgstr ""
 msgid "The message cannot be delivered because the hub is offline."
 msgstr ""
 
-#: win32/PrivateFrame.cpp:467
+#: win32/PrivateFrame.cpp:468
 msgid "The message cannot be delivered because the user is offline."
 msgstr ""
 
@@ -4158,11 +4158,11 @@ msgstr ""
 msgid "The requested link is "
 msgstr ""
 
-#: win32/PrivateFrame.cpp:348
+#: win32/PrivateFrame.cpp:349
 msgid "The user does not support secure encrypted connections"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:349
+#: win32/PrivateFrame.cpp:350
 msgid "The user does not support the CCPM ADC extension"
 msgstr ""
 
@@ -4345,7 +4345,7 @@ msgstr "Bitirilmeyen dosya çok küçük"
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:456
+#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:457
 #, boost-format
 msgid "Unknown command: %1%"
 msgstr "Bilinmeyen komut: %1%"
@@ -4488,8 +4488,8 @@ msgstr "Kullanıcı eşleme tanımı"
 msgid "User matching definitions"
 msgstr "Kullanıcı eşleme tanımları"
 
-#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:343
-#: win32/PrivateFrame.cpp:467 win32/QueueFrame.cpp:380
+#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:344
+#: win32/PrivateFrame.cpp:468 win32/QueueFrame.cpp:380
 msgid "User offline"
 msgstr "Kullanıcı Çevrimdışı"
 
@@ -4498,11 +4498,11 @@ msgstr "Kullanıcı Çevrimdışı"
 msgid "User set"
 msgstr "Kullanıcılar"
 
-#: win32/PrivateFrame.cpp:302
+#: win32/PrivateFrame.cpp:303
 msgid "User went offline"
 msgstr "Kullanıcı'nın bağlantısı kesildi"
 
-#: win32/PrivateFrame.cpp:302
+#: win32/PrivateFrame.cpp:303
 #, fuzzy
 msgid "User went online"
 msgstr "Kullanıcı'nın bağlantısı kesildi"

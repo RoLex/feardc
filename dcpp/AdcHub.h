@@ -65,13 +65,13 @@ public:
 	static const string NAT0_FEATURE;
 	static const string SEGA_FEATURE;
 	static const string CCPM_FEATURE;
-	static const string SUDP_FEATURE;
 	static const string BASE_SUPPORT;
 	static const string BAS0_SUPPORT;
 	static const string TIGR_SUPPORT;
 	static const string UCM0_SUPPORT;
 	static const string BLO0_SUPPORT;
 	static const string ZLIF_SUPPORT;
+	static const string SUDP_FEATURE;
 
 private:
 	friend class ClientManager;

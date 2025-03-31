@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-08-22 18:19+0200\n"
+"POT-Creation-Date: 2025-03-31 18:57+0200\n"
 "PO-Revision-Date: 2022-09-19 23:14+0000\n"
 "Last-Translator: adrian_007 <Unknown>\n"
 "Language-Team: <gnomepl@pandora.info.bielsko.pl>\n"
@@ -434,12 +434,12 @@ msgstr "(%1%)"
 msgid "(No recent item found)"
 msgstr "(Nie znaleziono ostatniego elementu)"
 
-#: win32/PrivateFrame.cpp:528
+#: win32/PrivateFrame.cpp:529
 msgid "(User offline)"
 msgstr "(Użytkownik offline)"
 
-#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:425
-#: win32/PrivateFrame.cpp:432
+#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:426
+#: win32/PrivateFrame.cpp:433
 msgid "*** Keyboard commands:"
 msgstr "*** Polecenia z klawiatury"
 
@@ -471,15 +471,15 @@ msgstr ""
 "hasha dla pliku, aby użyć go w sieci Direct Connect. Żadna akcja nie "
 "zostanie podjęta."
 
-#: win32/PrivateFrame.cpp:592
+#: win32/PrivateFrame.cpp:593
 msgid "A direct encrypted channel has been established"
 msgstr "Ustanowiono zaszyfrowany bezpośredni kanał"
 
-#: win32/PrivateFrame.cpp:335
+#: win32/PrivateFrame.cpp:336
 msgid "A direct encrypted channel is already available"
 msgstr "Bezpośredni zaszyfrowany kanał jest już dostępny"
 
-#: win32/PrivateFrame.cpp:347
+#: win32/PrivateFrame.cpp:348
 msgid ""
 "A secure ADC hub is required; this feature is not supported on NMDC hubs"
 msgstr ""
@@ -567,7 +567,7 @@ msgstr "Dodawanie wtyczki"
 msgid "Address"
 msgstr "Adres"
 
-#: win32/PrivateFrame.cpp:445
+#: win32/PrivateFrame.cpp:446
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to ignore chat messages from the current user."
@@ -583,7 +583,7 @@ msgstr ""
 "Dodaj definicję użytkownika (lub modyfikuj istniejący, jeśli to możliwe) aby "
 "ignorować na czacie wiadmości określonych użytkowników."
 
-#: win32/PrivateFrame.cpp:447
+#: win32/PrivateFrame.cpp:448
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to stop ignoring chat messages from the current user."
@@ -607,11 +607,11 @@ msgstr ""
 "Dodaje aktualny hub (wraz z twoją nazwą oraz hasłem, jeśli go użyto) na "
 "listę Ulubionych Hubów."
 
-#: win32/PrivateFrame.cpp:443
+#: win32/PrivateFrame.cpp:444
 msgid "Adds the current user to the list of Favorite Users."
 msgstr "Dodaje aktualnego użytkownika do listy Ulubionych Użytkowników."
 
-#: win32/PrivateFrame.cpp:438
+#: win32/PrivateFrame.cpp:439
 msgid "Adds the current user's list to the Download Queue."
 msgstr "Dodaje listy użytkowników do Kolejki Pobierań"
 
@@ -911,7 +911,7 @@ msgstr "Nie można włączyć wtyczki:"
 msgid "Cannot install the plugin:"
 msgstr "Nie można zainstalować wtyczki:"
 
-#: win32/PrivateFrame.cpp:351
+#: win32/PrivateFrame.cpp:352
 #, boost-format
 msgid "Cannot start the direct encrypted channel: %1%"
 msgstr "Nie można włączyć bezpośredniego szyfrowanego kanału: %1%"
@@ -1027,7 +1027,7 @@ msgstr "Polecenie"
 msgid "Command Type"
 msgstr "Typ komendy"
 
-#: win32/PrivateFrame.cpp:523
+#: win32/PrivateFrame.cpp:524
 msgid "Communication channel"
 msgstr "Kanał komunikacyjny"
 
@@ -1099,7 +1099,7 @@ msgstr "Połącz z wszystkimi hubami tej grupy"
 msgid "Connect to hub"
 msgstr "Połącz z hubem"
 
-#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1807
+#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1808
 msgid "Connected"
 msgstr "Połączony"
 
@@ -1180,7 +1180,7 @@ msgstr "Tworzenie indeksu plików..."
 msgid "Cu&t\tCtrl+X"
 msgstr "&Wytnij\tCtrl+X"
 
-#: win32/PrivateFrame.cpp:166
+#: win32/PrivateFrame.cpp:167
 msgid "Current communication channel - click to change"
 msgstr "Aktualny kanał komunikacyjny - kliknij aby zmienić"
 
@@ -1273,7 +1273,7 @@ msgstr "Log wykrywania"
 msgid "Direct connection"
 msgstr "Bezpośrednie połączenie"
 
-#: win32/PrivateFrame.cpp:328
+#: win32/PrivateFrame.cpp:329
 msgid "Direct encrypted channel"
 msgstr "Bezpośredni kanał szyfrowany"
 
@@ -1316,16 +1316,16 @@ msgstr "Łączenie"
 msgid "Disabled"
 msgstr "Wyłączony"
 
-#: win32/PrivateFrame.cpp:547
+#: win32/PrivateFrame.cpp:548
 msgid "Disconnect the direct encrypted channel"
 msgstr "Rozłącz bezpośredni szyfrowany kanał"
 
-#: win32/WinUtil.cpp:1812
+#: win32/WinUtil.cpp:1813
 #, fuzzy
 msgid "Disconnected"
 msgstr "&Rozłącz"
 
-#: win32/PrivateFrame.cpp:362
+#: win32/PrivateFrame.cpp:363
 msgid "Disconnecting the direct encrypted channel..."
 msgstr "Rozłączanie bezpośredniego szyfrowanego kanału..."
 
@@ -1677,7 +1677,7 @@ msgstr ""
 msgid "Errors"
 msgstr "Błędy"
 
-#: win32/PrivateFrame.cpp:356
+#: win32/PrivateFrame.cpp:357
 msgid "Establishing a direct encrypted channel..."
 msgstr ""
 
@@ -1796,7 +1796,7 @@ msgstr "Usunięto ulubiony hub"
 msgid "Favorite name"
 msgstr "Ulubiona nazwa"
 
-#: win32/PrivateFrame.cpp:409
+#: win32/PrivateFrame.cpp:410
 msgid "Favorite user added"
 msgstr "Dodano do ulubionych użytkowników"
 
@@ -2052,7 +2052,7 @@ msgstr "Globalne ustawienia stylu"
 msgid "Grant &extra slot"
 msgstr "Przyznaj ekstra slot"
 
-#: win32/PrivateFrame.cpp:440
+#: win32/PrivateFrame.cpp:441
 msgid ""
 "Grants the remote user a slot. Once they connect, or if they don't connect "
 "in 10 minutes, the granted slot is removed."
@@ -2448,7 +2448,7 @@ msgstr "KiB/s"
 msgid "Language"
 msgstr "Język"
 
-#: win32/PrivateFrame.cpp:419
+#: win32/PrivateFrame.cpp:420
 #, fuzzy, boost-format
 msgid "Last message occured %1%"
 msgstr "Wiadomość prywatna od %1%: %2%"
@@ -2506,7 +2506,7 @@ msgstr "Linki"
 msgid "List configuration"
 msgstr "Konfiguracja listy"
 
-#: win32/PrivateFrame.cpp:449
+#: win32/PrivateFrame.cpp:450
 msgid "Lists the date and time when the last message was sent or received."
 msgstr ""
 
@@ -2889,7 +2889,7 @@ msgstr "Nie"
 msgid "No away message"
 msgstr "Brak wiadomości trybu \"z dala od komputera\""
 
-#: win32/PrivateFrame.cpp:365
+#: win32/PrivateFrame.cpp:366
 msgid "No direct encrypted channel available"
 msgstr ""
 
@@ -3589,6 +3589,11 @@ msgstr "Szukaj - %1%"
 msgid "Search - Ready to search..."
 msgstr "Szukaj - Gotowy do wyszukania..."
 
+#: win32/WinUtil.cpp:1737
+#, fuzzy, boost-format
+msgid "Search Hubs for \"%1%\""
+msgstr "Wyszukiwanie: %1%"
+
 #: win32/CommandDlg.cpp:115
 msgid "Search Menu"
 msgstr "Menu wyszukiwania"
@@ -3597,7 +3602,7 @@ msgstr "Menu wyszukiwania"
 msgid "Search String"
 msgstr "Szukany ciąg"
 
-#: win32/WinUtil.cpp:1742
+#: win32/WinUtil.cpp:1743
 #, fuzzy
 msgid "Search by TTH"
 msgstr "&Szukaj na hubie"
@@ -3605,11 +3610,6 @@ msgstr "&Szukaj na hubie"
 #: win32/SearchFrame.cpp:150
 msgid "Search for"
 msgstr "Wyszukaj podanę frazę"
-
-#: win32/WinUtil.cpp:1736
-#, fuzzy, boost-format
-msgid "Search for \"%1%\""
-msgstr "Wyszukiwanie: %1%"
 
 #: win32/WinUtil.cpp:808
 msgid "Search for alternates"
@@ -3898,7 +3898,7 @@ msgstr ""
 msgid "Skip zero-byte files"
 msgstr "Pomiń puste pliki"
 
-#: win32/PrivateFrame.cpp:402
+#: win32/PrivateFrame.cpp:403
 msgid "Slot granted"
 msgstr "Slot przyznany"
 
@@ -3992,7 +3992,7 @@ msgstr "Rozpoczęto..."
 msgid "Start FearDC when Windows starts"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:549
+#: win32/PrivateFrame.cpp:550
 msgid "Start a direct encrypted channel"
 msgstr ""
 
@@ -4004,7 +4004,7 @@ msgstr "Rozpocznij wyszukanie dla tego pliku"
 msgid "Started..."
 msgstr "Rozpoczęto..."
 
-#: win32/PrivateFrame.cpp:436
+#: win32/PrivateFrame.cpp:437
 msgid ""
 "Starts a direct encrypted communication channel to avoid spying on your "
 "private messages."
@@ -4114,7 +4114,7 @@ msgstr ""
 msgid "Thank you for using a testing version of FearDC!"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:605
+#: win32/PrivateFrame.cpp:606
 msgid "The direct encrypted channel has been disconnected"
 msgstr ""
 
@@ -4145,7 +4145,7 @@ msgstr ""
 msgid "The message cannot be delivered because the hub is offline."
 msgstr ""
 
-#: win32/PrivateFrame.cpp:467
+#: win32/PrivateFrame.cpp:468
 msgid "The message cannot be delivered because the user is offline."
 msgstr ""
 
@@ -4153,11 +4153,11 @@ msgstr ""
 msgid "The requested link is "
 msgstr ""
 
-#: win32/PrivateFrame.cpp:348
+#: win32/PrivateFrame.cpp:349
 msgid "The user does not support secure encrypted connections"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:349
+#: win32/PrivateFrame.cpp:350
 msgid "The user does not support the CCPM ADC extension"
 msgstr ""
 
@@ -4340,7 +4340,7 @@ msgstr "Niedokończony plik jest za mały"
 msgid "Unknown"
 msgstr "Nieznany"
 
-#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:456
+#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:457
 #, boost-format
 msgid "Unknown command: %1%"
 msgstr "Nieznana komenda: %1%"
@@ -4481,8 +4481,8 @@ msgstr "Definicja dopasowania użytkownika"
 msgid "User matching definitions"
 msgstr "Definicje dopasowania użytkownika"
 
-#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:343
-#: win32/PrivateFrame.cpp:467 win32/QueueFrame.cpp:380
+#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:344
+#: win32/PrivateFrame.cpp:468 win32/QueueFrame.cpp:380
 msgid "User offline"
 msgstr "Użytkownik niedostępny"
 
@@ -4491,11 +4491,11 @@ msgstr "Użytkownik niedostępny"
 msgid "User set"
 msgstr "Użytkownicy"
 
-#: win32/PrivateFrame.cpp:302
+#: win32/PrivateFrame.cpp:303
 msgid "User went offline"
 msgstr "Użytkownik jest niedostępny"
 
-#: win32/PrivateFrame.cpp:302
+#: win32/PrivateFrame.cpp:303
 #, fuzzy
 msgid "User went online"
 msgstr "Użytkownik jest niedostępny"

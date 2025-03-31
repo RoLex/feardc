@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-08-23 10:56+0200\n"
+"POT-Creation-Date: 2025-03-31 18:57+0200\n"
 "PO-Revision-Date: 2010-04-15 15:22+0000\n"
 "Last-Translator: main(void) <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -701,7 +701,7 @@ msgstr "Pretraga ponovo omogućena"
 msgid "Security certificates"
 msgstr "Greška u kreiranju certifikata"
 
-#: dcpp/ChatMessage.cpp:73
+#: dcpp/ChatMessage.cpp:74
 #, boost-format
 msgid "Sent %1%"
 msgstr ""

@@ -17,6 +17,7 @@
 
 #include "stdinc.h"
 #include "ChatMessage.h"
+
 #include "Client.h"
 #include "format.h"
 #include "Magnet.h"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-08-23 10:56+0200\n"
+"POT-Creation-Date: 2025-03-31 18:57+0200\n"
 "PO-Revision-Date: 2013-09-15 14:06+0000\n"
 "Last-Translator: Gabriel O <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
@@ -713,7 +713,7 @@ msgstr "Hľadanie znova zapnuté"
 msgid "Security certificates"
 msgstr "Bezpečnostné certifikáty"
 
-#: dcpp/ChatMessage.cpp:73
+#: dcpp/ChatMessage.cpp:74
 #, boost-format
 msgid "Sent %1%"
 msgstr "Odoslané %1%"

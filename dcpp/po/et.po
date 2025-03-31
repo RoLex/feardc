@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-08-23 10:56+0200\n"
+"POT-Creation-Date: 2025-03-31 18:57+0200\n"
 "PO-Revision-Date: 2013-07-21 09:59+0000\n"
 "Last-Translator: Gabberworld <Unknown>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -691,7 +691,7 @@ msgstr "Otsing uuesti lubatud"
 msgid "Security certificates"
 msgstr "Sertifikaadi loomise viga"
 
-#: dcpp/ChatMessage.cpp:73
+#: dcpp/ChatMessage.cpp:74
 #, boost-format
 msgid "Sent %1%"
 msgstr ""

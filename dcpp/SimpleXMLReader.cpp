@@ -75,11 +75,12 @@ SimpleXMLReader::SimpleXMLReader(SimpleXMLReader::CallBack* callback, int aFlags
 
 void SimpleXMLReader::append(std::string& str, size_t maxLen, int c) {
 	if(str.size() + 1 > maxLen) {
-		if (flags & FLAG_SAFE_SOURCE) {
-			return;
-		} else {
+		// todo: patch
+		//if (flags & FLAG_SAFE_SOURCE) {
+		//	return;
+		//} else {
 			error("Buffer overflow");
-		}
+		//}
 	}
 	str.append(1, (std::string::value_type)c);
 }
@@ -419,12 +420,13 @@ bool SimpleXMLReader::cdata() {
 }
 
 bool SimpleXMLReader::entref(string& d) {
-	if(d.size() + 1 > (flags & FLAG_SAFE_SOURCE ? MAX_VALUE_SIZE_SAFE : MAX_VALUE_SIZE)) {
-		if (flags & FLAG_SAFE_SOURCE) {
-			return true;
-		} else {
+	if(d.size() + 1 >= MAX_VALUE_SIZE) { // todo: patch
+	//if(d.size() + 1 > (flags & FLAG_SAFE_SOURCE ? MAX_VALUE_SIZE_SAFE : MAX_VALUE_SIZE)) {
+	//	if (flags & FLAG_SAFE_SOURCE) {
+	//		return true;
+	//	} else {
 			error("Buffer overflow");
-		}
+	//	}
 	}
 
 	if(bufSize() > 6) {
@@ -497,7 +499,8 @@ bool SimpleXMLReader::content() {
 		return entref(value);
 	}
 
-	append(value, flags & FLAG_SAFE_SOURCE ? MAX_VALUE_SIZE_SAFE : MAX_VALUE_SIZE, c);
+	append(value, MAX_VALUE_SIZE, c); // todo: patch
+	//append(value, flags & FLAG_SAFE_SOURCE ? MAX_VALUE_SIZE_SAFE : MAX_VALUE_SIZE, c);
 
 	advancePos(1);
 
@@ -760,7 +763,8 @@ void SimpleXMLReader::decodeString(string& str_) {
 
 	if (!isUtf8) {
 		str_ = Text::toUtf8(str_, encoding);
-	} else if (!(flags & FLAG_SAFE_SOURCE) && !Text::validateUtf8(str_)) {
+	} else if (!Text::validateUtf8(str_)) { // todo: patch
+	//} else if (!(flags & FLAG_SAFE_SOURCE) && !Text::validateUtf8(str_)) {
 		if (flags & FLAG_REPLACE_INVALID_UTF8) {
 			str_ = Text::sanitizeUtf8(str_);
 		} else {

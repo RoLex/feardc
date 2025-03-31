@@ -63,12 +63,13 @@ bool PrivateFrame::gotMessage(TabViewPtr parent, const ChatMessage& message, con
 		}
 
 		auto hintedUser = HintedUser(user, hubHint);
-		auto p = new PrivateFrame(parent, hintedUser);
 
+		auto p = new PrivateFrame(parent, hintedUser);
 		if(!SETTING(POPUNDER_PM))
 			p->activate();
 
 		p->addStatus(Text::toT(str(F_("Message through hub: %1%") % ClientManager::getInstance()->getHubName(hintedUser))));
+
 		p->addChat(message);
 		p->lastMessageTime = message.timestamp;
 

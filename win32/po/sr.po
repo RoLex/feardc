@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-08-22 18:19+0200\n"
+"POT-Creation-Date: 2025-03-31 18:57+0200\n"
 "PO-Revision-Date: 2016-10-03 21:14+0000\n"
 "Last-Translator: Igor Jerosimić <Unknown>\n"
 "Language-Team: Serbian <sr@li.org>\n"
@@ -434,12 +434,12 @@ msgstr "(%1%)"
 msgid "(No recent item found)"
 msgstr "(Nisu pronađene skorašnje stavke)"
 
-#: win32/PrivateFrame.cpp:528
+#: win32/PrivateFrame.cpp:529
 msgid "(User offline)"
 msgstr "(Korisnik nije povezan)"
 
-#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:425
-#: win32/PrivateFrame.cpp:432
+#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:426
+#: win32/PrivateFrame.cpp:433
 msgid "*** Keyboard commands:"
 msgstr "*** Komande na tastaturi:"
 
@@ -471,15 +471,15 @@ msgstr ""
 "mogao da se koristi u Direct Connect mreži. Nikakva akcija neće biti "
 "preduzeta."
 
-#: win32/PrivateFrame.cpp:592
+#: win32/PrivateFrame.cpp:593
 msgid "A direct encrypted channel has been established"
 msgstr "Uspostavljen je direktno šifrovan kanal"
 
-#: win32/PrivateFrame.cpp:335
+#: win32/PrivateFrame.cpp:336
 msgid "A direct encrypted channel is already available"
 msgstr "Direktno šifrovan kanal je već dostupan"
 
-#: win32/PrivateFrame.cpp:347
+#: win32/PrivateFrame.cpp:348
 msgid ""
 "A secure ADC hub is required; this feature is not supported on NMDC hubs"
 msgstr ""
@@ -566,7 +566,7 @@ msgstr "Dodajem priključak"
 msgid "Address"
 msgstr "Adresa"
 
-#: win32/PrivateFrame.cpp:445
+#: win32/PrivateFrame.cpp:446
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to ignore chat messages from the current user."
@@ -582,7 +582,7 @@ msgstr ""
 "Dodaje definiciju koja odgovara korisniku (ili menja već postojeću, ukoliko "
 "je moguće) da ignoriše čet poruke izabranog korisnika."
 
-#: win32/PrivateFrame.cpp:447
+#: win32/PrivateFrame.cpp:448
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to stop ignoring chat messages from the current user."
@@ -606,11 +606,11 @@ msgstr ""
 "Dodaje trenutni hab (zajedno sa vašim nadimkom i šifrom ukoliko postoji) u "
 "listu Omiljenih habova."
 
-#: win32/PrivateFrame.cpp:443
+#: win32/PrivateFrame.cpp:444
 msgid "Adds the current user to the list of Favorite Users."
 msgstr "Dodaje trenutnog korisnika u listu omiljenih korisnika"
 
-#: win32/PrivateFrame.cpp:438
+#: win32/PrivateFrame.cpp:439
 msgid "Adds the current user's list to the Download Queue."
 msgstr "Dodaje trenutnu korisnikovu listu u red za preuzimanje."
 
@@ -906,7 +906,7 @@ msgstr "Ne mogu da uključim priključak"
 msgid "Cannot install the plugin:"
 msgstr "Ne mogu da instaliram priključak:"
 
-#: win32/PrivateFrame.cpp:351
+#: win32/PrivateFrame.cpp:352
 #, boost-format
 msgid "Cannot start the direct encrypted channel: %1%"
 msgstr "Ne mogu da pokrenem direktno šifrovan kanal: %1%"
@@ -1024,7 +1024,7 @@ msgstr "Naredba"
 msgid "Command Type"
 msgstr "Tip naredbe"
 
-#: win32/PrivateFrame.cpp:523
+#: win32/PrivateFrame.cpp:524
 msgid "Communication channel"
 msgstr "Komunikacioni kanal"
 
@@ -1097,7 +1097,7 @@ msgstr "Poveži se na sve habove u ovoj grupi"
 msgid "Connect to hub"
 msgstr "Poveži se na hab"
 
-#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1807
+#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1808
 msgid "Connected"
 msgstr "Povezan"
 
@@ -1178,7 +1178,7 @@ msgstr "Pravim popis datoteka..."
 msgid "Cu&t\tCtrl+X"
 msgstr "Iseci\tCtrl+X"
 
-#: win32/PrivateFrame.cpp:166
+#: win32/PrivateFrame.cpp:167
 msgid "Current communication channel - click to change"
 msgstr "Trenutni komunikacioni kanal - klikni da promeniš"
 
@@ -1271,7 +1271,7 @@ msgstr "Log detekcije"
 msgid "Direct connection"
 msgstr "Direktna veza"
 
-#: win32/PrivateFrame.cpp:328
+#: win32/PrivateFrame.cpp:329
 msgid "Direct encrypted channel"
 msgstr "Direktno šifrovan kanal"
 
@@ -1315,15 +1315,15 @@ msgstr "Onemogući povezivanje"
 msgid "Disabled"
 msgstr "Onemogućen"
 
-#: win32/PrivateFrame.cpp:547
+#: win32/PrivateFrame.cpp:548
 msgid "Disconnect the direct encrypted channel"
 msgstr "Prekini vezu direktno šifrovanom kanalu"
 
-#: win32/WinUtil.cpp:1812
+#: win32/WinUtil.cpp:1813
 msgid "Disconnected"
 msgstr "Veza je prekinuta"
 
-#: win32/PrivateFrame.cpp:362
+#: win32/PrivateFrame.cpp:363
 msgid "Disconnecting the direct encrypted channel..."
 msgstr "Prekidam vezu direktno šifrovanom kanalu..."
 
@@ -1687,7 +1687,7 @@ msgstr ""
 msgid "Errors"
 msgstr "Greške"
 
-#: win32/PrivateFrame.cpp:356
+#: win32/PrivateFrame.cpp:357
 msgid "Establishing a direct encrypted channel..."
 msgstr "Uspostavljam direktno šifrovan kanal..."
 
@@ -1814,7 +1814,7 @@ msgstr "Omiljeni hab uklonjen"
 msgid "Favorite name"
 msgstr "Ime"
 
-#: win32/PrivateFrame.cpp:409
+#: win32/PrivateFrame.cpp:410
 msgid "Favorite user added"
 msgstr "Dodat omiljeni korisnik"
 
@@ -2066,7 +2066,7 @@ msgstr "Globalni stil programa"
 msgid "Grant &extra slot"
 msgstr "&Dozvoli dodatni slot"
 
-#: win32/PrivateFrame.cpp:440
+#: win32/PrivateFrame.cpp:441
 msgid ""
 "Grants the remote user a slot. Once they connect, or if they don't connect "
 "in 10 minutes, the granted slot is removed."
@@ -2467,7 +2467,7 @@ msgstr "KiB/s"
 msgid "Language"
 msgstr "Jezik"
 
-#: win32/PrivateFrame.cpp:419
+#: win32/PrivateFrame.cpp:420
 #, boost-format
 msgid "Last message occured %1%"
 msgstr "Poslednja poruka se desila %1%"
@@ -2531,7 +2531,7 @@ msgstr "Adrese"
 msgid "List configuration"
 msgstr "Konfiguracija liste"
 
-#: win32/PrivateFrame.cpp:449
+#: win32/PrivateFrame.cpp:450
 msgid "Lists the date and time when the last message was sent or received."
 msgstr ""
 "Prikazuje datum i vreme kada je poslednja poruka poslata ili primljena."
@@ -2917,7 +2917,7 @@ msgstr "Ne"
 msgid "No away message"
 msgstr "Bez poruke odsutnosti"
 
-#: win32/PrivateFrame.cpp:365
+#: win32/PrivateFrame.cpp:366
 msgid "No direct encrypted channel available"
 msgstr "Nema dostupnih direktno šifrovanih kanala"
 
@@ -3616,6 +3616,11 @@ msgstr "Pretraži - %1%"
 msgid "Search - Ready to search..."
 msgstr "Pretraži - Spreman da tražim..."
 
+#: win32/WinUtil.cpp:1737
+#, fuzzy, boost-format
+msgid "Search Hubs for \"%1%\""
+msgstr "Tražim: %1%"
+
 #: win32/CommandDlg.cpp:115
 msgid "Search Menu"
 msgstr "Meni pretrage"
@@ -3624,18 +3629,13 @@ msgstr "Meni pretrage"
 msgid "Search String"
 msgstr "Tekst za pretragu"
 
-#: win32/WinUtil.cpp:1742
+#: win32/WinUtil.cpp:1743
 msgid "Search by TTH"
 msgstr "Pretraži po TTH"
 
 #: win32/SearchFrame.cpp:150
 msgid "Search for"
 msgstr "Traži tekst:"
-
-#: win32/WinUtil.cpp:1736
-#, fuzzy, boost-format
-msgid "Search for \"%1%\""
-msgstr "Tražim: %1%"
 
 #: win32/WinUtil.cpp:808
 msgid "Search for alternates"
@@ -3934,7 +3934,7 @@ msgstr ""
 msgid "Skip zero-byte files"
 msgstr "Preskoči datoteke veličine nula bajtova"
 
-#: win32/PrivateFrame.cpp:402
+#: win32/PrivateFrame.cpp:403
 msgid "Slot granted"
 msgstr "Slot dodeljen"
 
@@ -4028,7 +4028,7 @@ msgstr "Pokreni"
 msgid "Start FearDC when Windows starts"
 msgstr "Pokreni DC++ kada se Windows pokrene"
 
-#: win32/PrivateFrame.cpp:549
+#: win32/PrivateFrame.cpp:550
 msgid "Start a direct encrypted channel"
 msgstr "Pokreni direktno šifrovan kanal"
 
@@ -4040,7 +4040,7 @@ msgstr "Počni pretragu za ovu datoteku"
 msgid "Started..."
 msgstr "Pokrenuto..."
 
-#: win32/PrivateFrame.cpp:436
+#: win32/PrivateFrame.cpp:437
 msgid ""
 "Starts a direct encrypted communication channel to avoid spying on your "
 "private messages."
@@ -4152,7 +4152,7 @@ msgstr ""
 msgid "Thank you for using a testing version of FearDC!"
 msgstr ""
 
-#: win32/PrivateFrame.cpp:605
+#: win32/PrivateFrame.cpp:606
 msgid "The direct encrypted channel has been disconnected"
 msgstr "Prekinuta veza direktno šifrovanom kanalu"
 
@@ -4184,7 +4184,7 @@ msgstr ""
 msgid "The message cannot be delivered because the hub is offline."
 msgstr "Poruka nije dostavljena jer hab nije povezan"
 
-#: win32/PrivateFrame.cpp:467
+#: win32/PrivateFrame.cpp:468
 msgid "The message cannot be delivered because the user is offline."
 msgstr "Poruka nije dostavljena jer korisnik nije povezan"
 
@@ -4192,12 +4192,12 @@ msgstr "Poruka nije dostavljena jer korisnik nije povezan"
 msgid "The requested link is "
 msgstr "Zahtevana adresa je "
 
-#: win32/PrivateFrame.cpp:348
+#: win32/PrivateFrame.cpp:349
 #, fuzzy
 msgid "The user does not support secure encrypted connections"
 msgstr "Korisnik ne podržava CCPM ADC dodatak"
 
-#: win32/PrivateFrame.cpp:349
+#: win32/PrivateFrame.cpp:350
 msgid "The user does not support the CCPM ADC extension"
 msgstr "Korisnik ne podržava CCPM ADC dodatak"
 
@@ -4385,7 +4385,7 @@ msgstr "Nedovršena datoteka je premala"
 msgid "Unknown"
 msgstr "Nepoznata"
 
-#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:456
+#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:457
 #, boost-format
 msgid "Unknown command: %1%"
 msgstr "Nepoznata komanda: %1%"
@@ -4529,8 +4529,8 @@ msgstr "Definicija podudaranja korisnika"
 msgid "User matching definitions"
 msgstr "Definicije podudaranje korisnika"
 
-#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:343
-#: win32/PrivateFrame.cpp:467 win32/QueueFrame.cpp:380
+#: win32/DirectoryListingFrame.cpp:1266 win32/PrivateFrame.cpp:344
+#: win32/PrivateFrame.cpp:468 win32/QueueFrame.cpp:380
 msgid "User offline"
 msgstr "Korisnik nije povezan"
 
@@ -4539,11 +4539,11 @@ msgstr "Korisnik nije povezan"
 msgid "User set"
 msgstr "Korisnici"
 
-#: win32/PrivateFrame.cpp:302
+#: win32/PrivateFrame.cpp:303
 msgid "User went offline"
 msgstr "Korisnik više nije na vezi"
 
-#: win32/PrivateFrame.cpp:302
+#: win32/PrivateFrame.cpp:303
 msgid "User went online"
 msgstr "Korisnik se isključio"
 

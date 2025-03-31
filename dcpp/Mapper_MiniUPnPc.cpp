@@ -46,7 +46,7 @@ bool Mapper_MiniUPnPc::init() {
 	UPNPUrls urls;
 	IGDdatas data;
 
-	auto ret = UPNP_GetValidIGD(devices, &urls, &data, 0, 0);
+	auto ret = UPNP_GetValidIGD(devices, &urls, &data, 0, 0, 0, 0);
 
 	bool ok = ret == 1;
 	if(ok) {

@@ -1120,12 +1120,12 @@ void AdcHub::on(Connected c) noexcept {
 	if(SETTING(HUB_USER_COMMANDS)) {
 		cmd.addParam(UCM0_SUPPORT);
 	}
-
 	if(SETTING(SEND_BLOOM)) {
 		cmd.addParam(BLO0_SUPPORT);
 	}
 
 	cmd.addParam(ZLIF_SUPPORT);
+
 	send(cmd);
 	sinceConnect = GET_TICK();
 }
