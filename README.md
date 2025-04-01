@@ -7,7 +7,7 @@
 
 ```
 * Merge with DC++ 0.882
-* Update OpenSSL to version 3.2.1, requires linking FearDC with crypt32
+* Update OpenSSL to version 3.2.4, requires linking FearDC with crypt32
 * Update PO4A to version 0.71
 * Update NAT-PMP to version 20230423
 * Update MiniUPnPc to version 2.3.2
