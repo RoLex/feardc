@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-03-31 18:57+0200\n"
+"POT-Creation-Date: 2025-04-05 11:30+0200\n"
 "PO-Revision-Date: 2022-09-19 19:14+0000\n"
 "Last-Translator: Kcchouette <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,48 @@ msgstr ""
 "X-Launchpad-Export-Date: 2022-10-18 11:20+0000\n"
 "X-Generator: Launchpad (build 25877e98ba44ca75f9c22db1fc37efee03e4606a)\n"
 
+#: win32/AboutDlg.cpp:124
+msgid ""
+"\n"
+"Compiler version: "
+msgstr ""
+
+#: win32/AboutDlg.cpp:118
+msgid ""
+"\n"
+"Copyright © 2001-2025 Jacek Sieka"
+msgstr ""
+
+#: win32/AboutDlg.cpp:120
+msgid ""
+"\n"
+"Ex-codeveloper: Per Lindén"
+msgstr ""
+
+#: win32/AboutDlg.cpp:119
+msgid ""
+"\n"
+"Ex-main project contributors: Todd Pederzani, poy"
+msgstr ""
+
+#: win32/AboutDlg.cpp:122
+msgid ""
+"\n"
+"Graphics: Radox and various GPL and CC authors"
+msgstr ""
+
+#: win32/AboutDlg.cpp:121
+msgid ""
+"\n"
+"Original DC++ logo design: Martin Skogevall"
+msgstr ""
+
 #: win32/MainWindow.cpp:1949
 msgid " "
+msgstr ""
+
+#: win32/AboutDlg.cpp:136
+msgid " Debug"
 msgstr ""
 
 #: win32/ACFrame.cpp:226
@@ -30,6 +70,14 @@ msgstr " Paramètre(s) correspondant(s) trouvé(s)"
 #: win32/ACFrame.cpp:201
 msgid " settings loaded"
 msgstr " paramètres chargés"
+
+#: win32/AboutDlg.cpp:140
+msgid " x64"
+msgstr ""
+
+#: win32/AboutDlg.cpp:142
+msgid " x86"
+msgstr ""
 
 #: win32/FinishedFrameBase.h:732
 msgid "% transferred"
@@ -501,7 +549,7 @@ msgstr "Recherche ADL"
 msgid "ADLSearch Properties"
 msgstr "Propriétés de la Recherche ADL"
 
-#: win32/AboutDlg.cpp:175 win32/MainWindow.cpp:413
+#: win32/AboutDlg.cpp:198 win32/MainWindow.cpp:413
 #, fuzzy
 msgid "About FearDC"
 msgstr "À propos de DC++"
@@ -1030,10 +1078,6 @@ msgstr "Type de Commande"
 msgid "Communication channel"
 msgstr "Canal de communication"
 
-#: win32/AboutDlg.cpp:120
-msgid "Compiler"
-msgstr "Compilateur"
-
 #: win32/MainWindow.cpp:737 win32/MainWindow.cpp:755
 msgid "Configure"
 msgstr "Configurer"
@@ -1221,6 +1265,10 @@ msgstr "T : %1%/s (%2%)"
 #: win32/MainWindow.cpp:427
 msgid "DC Network Foundation community"
 msgstr "Communauté \"DC Network Foundation\""
+
+#: win32/AboutDlg.cpp:152
+msgid "DC++ and FearDC are licenced under GNU General Public License"
+msgstr ""
 
 #: win32/QueueFrame.cpp:132
 msgid "Decrease priority"
@@ -1535,7 +1583,7 @@ msgstr "Téléchargement de la liste de hubs publics..."
 msgid "Downloading public hub list... (%1%)"
 msgstr "Téléchargement de la liste de hubs publics... (%1%)"
 
-#: win32/AboutDlg.cpp:166
+#: win32/AboutDlg.cpp:185
 msgid "Downloading..."
 msgstr "Téléchargement..."
 
@@ -1655,7 +1703,7 @@ msgstr "Erreur lors de la génération du certificat"
 msgid "Error loading the notepad file: %1%"
 msgstr "Erreur lors du chargement du fichier du bloc-notes : %1%"
 
-#: win32/AboutDlg.cpp:214
+#: win32/AboutDlg.cpp:237
 msgid "Error processing version information"
 msgstr "Erreur lors du traitement des informations de version"
 
@@ -1699,23 +1747,6 @@ msgstr "Établissement d'un canal direct crypté..."
 #: win32/NotificationsPage.cpp:36
 msgid "Event"
 msgstr "Événement"
-
-#: win32/AboutDlg.cpp:107
-#, fuzzy
-msgid ""
-"Ex-main project contributors: Todd Pederzani, poy\n"
-"Ex-codeveloper: Per Lindén\n"
-"Original DC++ logo design: Martin Skogevall\n"
-"Graphics: Radox and various GPL and CC authors\n"
-"\n"
-"FearDC is licenced under GPL."
-msgstr ""
-"Ex-contributeurs principaux du projet : Todd Pederzani, poy\n"
-"Ex-codeveloppeur : Per Lindén\n"
-"Conception du logo DC++ original : Martin Skogevall\n"
-"Graphiques : Radox et divers auteurs GPL et CC\n"
-"\n"
-"DC++ est sous licence GPL."
 
 #: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1170
 msgid "Exact match"
@@ -2077,7 +2108,7 @@ msgstr ""
 "Accorde un slot à l'utilisateur. Une fois qu'il est connecté, ou s'il ne se "
 "connecte pas dans les 10 minutes, le slot accordé ne l'est plus."
 
-#: win32/AboutDlg.cpp:143
+#: win32/AboutDlg.cpp:157
 msgid "Greetz and Contributors"
 msgstr "Remerciements et Contributeurs"
 
@@ -2478,7 +2509,7 @@ msgstr "Langue"
 msgid "Last message occured %1%"
 msgstr "Dernier message : %1%"
 
-#: win32/AboutDlg.cpp:165
+#: win32/AboutDlg.cpp:184
 msgid "Latest stable version"
 msgstr "Dernière version stable"
 
@@ -2962,7 +2993,7 @@ msgstr "Pas de nouveau téléch. si la vitesse > (Kio/s, 0 = désactivé)"
 msgid "No plugin has been selected"
 msgstr "Aucun plugin n'est sélectionné"
 
-#: win32/AboutDlg.cpp:161
+#: win32/AboutDlg.cpp:178
 msgid "No transfers yet"
 msgstr "Pas encore de transferts"
 
@@ -3103,10 +3134,6 @@ msgstr "Ouvrir les messages privés de hubs dans leur propre fenêtre"
 #: win32/WindowsPage.cpp:32
 msgid "Open private messages in their own window"
 msgstr "Ouvrir les messages privés dans leur propre fenêtre"
-
-#: win32/AboutDlg.cpp:137
-msgid "OpenSSL version"
-msgstr ""
 
 #: win32/WinUtil.cpp:547
 msgid ""
@@ -3390,7 +3417,7 @@ msgstr "Connexion Rapide"
 msgid "Rating"
 msgstr "Évaluation"
 
-#: win32/AboutDlg.cpp:160
+#: win32/AboutDlg.cpp:177
 #, c-format, boost-format
 msgid "Ratio (up/down): %1$0.2f"
 msgstr "Ratio (envoi/téléchargement) : %1$0.2f"
@@ -4129,8 +4156,8 @@ msgstr ""
 msgid "TLS Keyprint"
 msgstr "Clé TLS"
 
-#: win32/AboutDlg.cpp:116 win32/DirectoryListingFrame.cpp:67
-#: win32/QueueFrame.cpp:61 win32/SearchFrame.cpp:59 win32/TransferView.cpp:1003
+#: win32/DirectoryListingFrame.cpp:67 win32/QueueFrame.cpp:61
+#: win32/SearchFrame.cpp:59 win32/TransferView.cpp:1003
 msgid "TTH"
 msgstr "TTH"
 
@@ -4316,7 +4343,7 @@ msgstr "Taille totale :"
 msgid "Total slots"
 msgstr "Slots au total"
 
-#: win32/AboutDlg.cpp:152
+#: win32/AboutDlg.cpp:168
 msgid "Totals"
 msgstr "Totaux"
 
@@ -4399,7 +4426,8 @@ msgstr "Fichier incomplet introuvable"
 msgid "Unfinished file too small"
 msgstr "Fichier incomplet trop petit"
 
-#: win32/QueueFrame.cpp:392 win32/QueueFrame.cpp:393 win32/UsersFrame.cpp:268
+#: win32/AboutDlg.cpp:132 win32/QueueFrame.cpp:392 win32/QueueFrame.cpp:393
+#: win32/UsersFrame.cpp:268
 msgid "Unknown"
 msgstr "Inconnu"
 
@@ -4450,7 +4478,7 @@ msgstr "Slots d'envoi"
 msgid "Upload speed"
 msgstr "Vitesse d'envoi"
 
-#: win32/AboutDlg.cpp:156
+#: win32/AboutDlg.cpp:173
 #, boost-format
 msgid "Upload: %1%, Download: %2%"
 msgstr "Envoi : %1%, Téléchargement : %2%"
@@ -4769,6 +4797,25 @@ msgstr "à"
 #: win32/ConnectivityManualPage.cpp:144
 msgid "transfer"
 msgstr "transfert"
+
+#~ msgid "Compiler"
+#~ msgstr "Compilateur"
+
+#, fuzzy
+#~ msgid ""
+#~ "Ex-main project contributors: Todd Pederzani, poy\n"
+#~ "Ex-codeveloper: Per Lindén\n"
+#~ "Original DC++ logo design: Martin Skogevall\n"
+#~ "Graphics: Radox and various GPL and CC authors\n"
+#~ "\n"
+#~ "FearDC is licenced under GPL."
+#~ msgstr ""
+#~ "Ex-contributeurs principaux du projet : Todd Pederzani, poy\n"
+#~ "Ex-codeveloppeur : Per Lindén\n"
+#~ "Conception du logo DC++ original : Martin Skogevall\n"
+#~ "Graphiques : Radox et divers auteurs GPL et CC\n"
+#~ "\n"
+#~ "DC++ est sous licence GPL."
 
 #~ msgid "General information"
 #~ msgstr "Informations générales"

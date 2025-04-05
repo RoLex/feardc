@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-03-31 18:57+0200\n"
+"POT-Creation-Date: 2025-04-05 11:30+0200\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,48 @@ msgstr ""
 "X-Launchpad-Export-Date: 2022-10-18 11:20+0000\n"
 "X-Generator: Launchpad (build 25877e98ba44ca75f9c22db1fc37efee03e4606a)\n"
 
+#: win32/AboutDlg.cpp:124
+msgid ""
+"\n"
+"Compiler version: "
+msgstr ""
+
+#: win32/AboutDlg.cpp:118
+msgid ""
+"\n"
+"Copyright © 2001-2025 Jacek Sieka"
+msgstr ""
+
+#: win32/AboutDlg.cpp:120
+msgid ""
+"\n"
+"Ex-codeveloper: Per Lindén"
+msgstr ""
+
+#: win32/AboutDlg.cpp:119
+msgid ""
+"\n"
+"Ex-main project contributors: Todd Pederzani, poy"
+msgstr ""
+
+#: win32/AboutDlg.cpp:122
+msgid ""
+"\n"
+"Graphics: Radox and various GPL and CC authors"
+msgstr ""
+
+#: win32/AboutDlg.cpp:121
+msgid ""
+"\n"
+"Original DC++ logo design: Martin Skogevall"
+msgstr ""
+
 #: win32/MainWindow.cpp:1949
 msgid " "
+msgstr ""
+
+#: win32/AboutDlg.cpp:136
+msgid " Debug"
 msgstr ""
 
 #: win32/ACFrame.cpp:226
@@ -31,6 +71,14 @@ msgstr ""
 #, fuzzy
 msgid " settings loaded"
 msgstr "Konfigurmiet"
+
+#: win32/AboutDlg.cpp:140
+msgid " x64"
+msgstr ""
+
+#: win32/AboutDlg.cpp:142
+msgid " x86"
+msgstr ""
 
 #: win32/FinishedFrameBase.h:732
 msgid "% transferred"
@@ -515,7 +563,7 @@ msgstr "ADL Kërkim"
 msgid "ADLSearch Properties"
 msgstr "Konfigurimet e ADL Kërkimit"
 
-#: win32/AboutDlg.cpp:175 win32/MainWindow.cpp:413
+#: win32/AboutDlg.cpp:198 win32/MainWindow.cpp:413
 #, fuzzy
 msgid "About FearDC"
 msgstr "Rreth DC++"
@@ -1036,10 +1084,6 @@ msgstr "Lloji i Komandës"
 msgid "Communication channel"
 msgstr ""
 
-#: win32/AboutDlg.cpp:120
-msgid "Compiler"
-msgstr ""
-
 #: win32/MainWindow.cpp:737 win32/MainWindow.cpp:755
 #, fuzzy
 msgid "Configure"
@@ -1236,6 +1280,10 @@ msgstr "D: %1%/s (%2%)"
 
 #: win32/MainWindow.cpp:427
 msgid "DC Network Foundation community"
+msgstr ""
+
+#: win32/AboutDlg.cpp:152
+msgid "DC++ and FearDC are licenced under GNU General Public License"
 msgstr ""
 
 #: win32/QueueFrame.cpp:132
@@ -1556,7 +1604,7 @@ msgstr "Shkarkohet lista e hubave publik..."
 msgid "Downloading public hub list... (%1%)"
 msgstr "Duke e shkarkuar listen e hubsave... (%1%)"
 
-#: win32/AboutDlg.cpp:166
+#: win32/AboutDlg.cpp:185
 msgid "Downloading..."
 msgstr "Shkarkohet..."
 
@@ -1681,7 +1729,7 @@ msgstr "Gabim në marrjen e qertifikatës"
 msgid "Error loading the notepad file: %1%"
 msgstr ""
 
-#: win32/AboutDlg.cpp:214
+#: win32/AboutDlg.cpp:237
 msgid "Error processing version information"
 msgstr "Gabim gjat procesimit të versionit të informacionit"
 
@@ -1715,16 +1763,6 @@ msgstr ""
 
 #: win32/NotificationsPage.cpp:36
 msgid "Event"
-msgstr ""
-
-#: win32/AboutDlg.cpp:107
-msgid ""
-"Ex-main project contributors: Todd Pederzani, poy\n"
-"Ex-codeveloper: Per Lindén\n"
-"Original DC++ logo design: Martin Skogevall\n"
-"Graphics: Radox and various GPL and CC authors\n"
-"\n"
-"FearDC is licenced under GPL."
 msgstr ""
 
 #: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1170
@@ -2100,7 +2138,7 @@ msgid ""
 "in 10 minutes, the granted slot is removed."
 msgstr ""
 
-#: win32/AboutDlg.cpp:143
+#: win32/AboutDlg.cpp:157
 msgid "Greetz and Contributors"
 msgstr ""
 
@@ -2516,7 +2554,7 @@ msgstr "Fil Gjuhësor"
 msgid "Last message occured %1%"
 msgstr "Mesazh privat"
 
-#: win32/AboutDlg.cpp:165
+#: win32/AboutDlg.cpp:184
 msgid "Latest stable version"
 msgstr ""
 
@@ -3015,7 +3053,7 @@ msgstr "Shpejtësia e zvogëluar/s`ka shkarkime të reja(KiB/s, 0 = disable)"
 msgid "No plugin has been selected"
 msgstr ""
 
-#: win32/AboutDlg.cpp:161
+#: win32/AboutDlg.cpp:178
 msgid "No transfers yet"
 msgstr ""
 
@@ -3156,10 +3194,6 @@ msgstr "Hap mesazhet private në dritaret e tyre"
 #: win32/WindowsPage.cpp:32
 msgid "Open private messages in their own window"
 msgstr "Hap mesazhet private në dritaret e tyre"
-
-#: win32/AboutDlg.cpp:137
-msgid "OpenSSL version"
-msgstr ""
 
 #: win32/WinUtil.cpp:547
 msgid ""
@@ -3444,7 +3478,7 @@ msgstr "Lidhje e shpejt"
 msgid "Rating"
 msgstr "Populariteti"
 
-#: win32/AboutDlg.cpp:160
+#: win32/AboutDlg.cpp:177
 #, c-format, boost-format
 msgid "Ratio (up/down): %1$0.2f"
 msgstr ""
@@ -4183,8 +4217,8 @@ msgstr ""
 msgid "TLS Keyprint"
 msgstr ""
 
-#: win32/AboutDlg.cpp:116 win32/DirectoryListingFrame.cpp:67
-#: win32/QueueFrame.cpp:61 win32/SearchFrame.cpp:59 win32/TransferView.cpp:1003
+#: win32/DirectoryListingFrame.cpp:67 win32/QueueFrame.cpp:61
+#: win32/SearchFrame.cpp:59 win32/TransferView.cpp:1003
 msgid "TTH"
 msgstr ""
 
@@ -4351,7 +4385,7 @@ msgstr "Madhësia e përgjithëshme:"
 msgid "Total slots"
 msgstr "Kanalet për ngarkime"
 
-#: win32/AboutDlg.cpp:152
+#: win32/AboutDlg.cpp:168
 msgid "Totals"
 msgstr ""
 
@@ -4438,7 +4472,8 @@ msgstr ""
 msgid "Unfinished file too small"
 msgstr ""
 
-#: win32/QueueFrame.cpp:392 win32/QueueFrame.cpp:393 win32/UsersFrame.cpp:268
+#: win32/AboutDlg.cpp:132 win32/QueueFrame.cpp:392 win32/QueueFrame.cpp:393
+#: win32/UsersFrame.cpp:268
 msgid "Unknown"
 msgstr "Panjohur"
 
@@ -4494,7 +4529,7 @@ msgstr "Kanalet për ngarkime"
 msgid "Upload speed"
 msgstr "Ngarkimet"
 
-#: win32/AboutDlg.cpp:156
+#: win32/AboutDlg.cpp:173
 #, boost-format
 msgid "Upload: %1%, Download: %2%"
 msgstr ""

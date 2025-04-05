@@ -149,7 +149,7 @@ bool AboutDlg::handleInitDialog() {
 
 		cur->addChild(Link::Seed(_T("https://client.feardc.net/"), true)); // 3 - website
 
-		ls.caption = T_("DC++ and FearDC are licenced under GNU General Public License");
+		ls.caption = T_("DC++ and FearDC are licensed under GNU General Public License");
 		cur->addChild(ls); // 4 - license
 	}
 

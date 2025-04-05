@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-03-31 18:57+0200\n"
+"POT-Creation-Date: 2025-04-05 11:30+0200\n"
 "PO-Revision-Date: 2013-05-22 06:48+0000\n"
 "Last-Translator: H. Cem ÖZTÜRK <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -19,8 +19,48 @@ msgstr ""
 "X-Launchpad-Export-Date: 2018-11-11 22:49+0000\n"
 "X-Generator: Launchpad (build 18816)\n"
 
+#: win32/AboutDlg.cpp:124
+msgid ""
+"\n"
+"Compiler version: "
+msgstr ""
+
+#: win32/AboutDlg.cpp:118
+msgid ""
+"\n"
+"Copyright © 2001-2025 Jacek Sieka"
+msgstr ""
+
+#: win32/AboutDlg.cpp:120
+msgid ""
+"\n"
+"Ex-codeveloper: Per Lindén"
+msgstr ""
+
+#: win32/AboutDlg.cpp:119
+msgid ""
+"\n"
+"Ex-main project contributors: Todd Pederzani, poy"
+msgstr ""
+
+#: win32/AboutDlg.cpp:122
+msgid ""
+"\n"
+"Graphics: Radox and various GPL and CC authors"
+msgstr ""
+
+#: win32/AboutDlg.cpp:121
+msgid ""
+"\n"
+"Original DC++ logo design: Martin Skogevall"
+msgstr ""
+
 #: win32/MainWindow.cpp:1949
 msgid " "
+msgstr ""
+
+#: win32/AboutDlg.cpp:136
+msgid " Debug"
 msgstr ""
 
 #: win32/ACFrame.cpp:226
@@ -31,6 +71,14 @@ msgstr ""
 #, fuzzy
 msgid " settings loaded"
 msgstr "Ses ayarları"
+
+#: win32/AboutDlg.cpp:140
+msgid " x64"
+msgstr ""
+
+#: win32/AboutDlg.cpp:142
+msgid " x86"
+msgstr ""
 
 #: win32/FinishedFrameBase.h:732
 msgid "% transferred"
@@ -504,7 +552,7 @@ msgstr "ADL arama"
 msgid "ADLSearch Properties"
 msgstr "ADLArama Özellikleri"
 
-#: win32/AboutDlg.cpp:175 win32/MainWindow.cpp:413
+#: win32/AboutDlg.cpp:198 win32/MainWindow.cpp:413
 #, fuzzy
 msgid "About FearDC"
 msgstr "DC++ Hakkında"
@@ -1024,10 +1072,6 @@ msgstr "Komut Türü"
 msgid "Communication channel"
 msgstr "Topluluk haberleri"
 
-#: win32/AboutDlg.cpp:120
-msgid "Compiler"
-msgstr ""
-
 #: win32/MainWindow.cpp:737 win32/MainWindow.cpp:755
 #, fuzzy
 msgid "Configure"
@@ -1218,6 +1262,10 @@ msgstr "A: %1%/s (%2%)"
 
 #: win32/MainWindow.cpp:427
 msgid "DC Network Foundation community"
+msgstr ""
+
+#: win32/AboutDlg.cpp:152
+msgid "DC++ and FearDC are licenced under GNU General Public License"
 msgstr ""
 
 #: win32/QueueFrame.cpp:132
@@ -1526,7 +1574,7 @@ msgstr "Ortak merkez listesi indiriliyor..."
 msgid "Downloading public hub list... (%1%)"
 msgstr "Ortak merkez listesi indiriliyor... (%1%)"
 
-#: win32/AboutDlg.cpp:166
+#: win32/AboutDlg.cpp:185
 msgid "Downloading..."
 msgstr "Dosya indiriliyor..."
 
@@ -1649,7 +1697,7 @@ msgstr "Sertifika oluşturulurken hata meydana geldi"
 msgid "Error loading the notepad file: %1%"
 msgstr "Not defteri dosyasını yüklerken hata oluştu: %1%"
 
-#: win32/AboutDlg.cpp:214
+#: win32/AboutDlg.cpp:237
 msgid "Error processing version information"
 msgstr "Sürüm bilgisini işlerken hata oluştu"
 
@@ -1684,16 +1732,6 @@ msgstr ""
 #: win32/NotificationsPage.cpp:36
 msgid "Event"
 msgstr "Olay"
-
-#: win32/AboutDlg.cpp:107
-msgid ""
-"Ex-main project contributors: Todd Pederzani, poy\n"
-"Ex-codeveloper: Per Lindén\n"
-"Original DC++ logo design: Martin Skogevall\n"
-"Graphics: Radox and various GPL and CC authors\n"
-"\n"
-"FearDC is licenced under GPL."
-msgstr ""
 
 #: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1170
 msgid "Exact match"
@@ -2058,7 +2096,7 @@ msgid ""
 "in 10 minutes, the granted slot is removed."
 msgstr ""
 
-#: win32/AboutDlg.cpp:143
+#: win32/AboutDlg.cpp:157
 msgid "Greetz and Contributors"
 msgstr "Karşılama ve Katkıda Bulunanlar"
 
@@ -2455,7 +2493,7 @@ msgstr "Dil"
 msgid "Last message occured %1%"
 msgstr "%1%'den özel mesaj: %2%"
 
-#: win32/AboutDlg.cpp:165
+#: win32/AboutDlg.cpp:184
 msgid "Latest stable version"
 msgstr "Son kararlı sürüm"
 
@@ -2935,7 +2973,7 @@ msgstr "Hız bunu aşarsa yeni indirme yapma (KiB/s, 0 = etkisizleştir)"
 msgid "No plugin has been selected"
 msgstr ""
 
-#: win32/AboutDlg.cpp:161
+#: win32/AboutDlg.cpp:178
 msgid "No transfers yet"
 msgstr "Henüz aktarım yok"
 
@@ -3076,10 +3114,6 @@ msgstr "Merkezden gelen özel iletileri kendi pencerelerinde aç"
 #: win32/WindowsPage.cpp:32
 msgid "Open private messages in their own window"
 msgstr "Gelen kişisel mesajları üste çıkar"
-
-#: win32/AboutDlg.cpp:137
-msgid "OpenSSL version"
-msgstr ""
 
 #: win32/WinUtil.cpp:547
 msgid ""
@@ -3360,7 +3394,7 @@ msgstr "Hızlı Bağlan"
 msgid "Rating"
 msgstr "Puanlama"
 
-#: win32/AboutDlg.cpp:160
+#: win32/AboutDlg.cpp:177
 #, c-format, boost-format
 msgid "Ratio (up/down): %1$0.2f"
 msgstr "Oran (Gönderme/Alma) : %1$0.2f"
@@ -4082,8 +4116,8 @@ msgstr ""
 msgid "TLS Keyprint"
 msgstr "TLS Anahtarizi"
 
-#: win32/AboutDlg.cpp:116 win32/DirectoryListingFrame.cpp:67
-#: win32/QueueFrame.cpp:61 win32/SearchFrame.cpp:59 win32/TransferView.cpp:1003
+#: win32/DirectoryListingFrame.cpp:67 win32/QueueFrame.cpp:61
+#: win32/SearchFrame.cpp:59 win32/TransferView.cpp:1003
 msgid "TTH"
 msgstr "TTH"
 
@@ -4259,7 +4293,7 @@ msgstr "Toplamda:"
 msgid "Total slots"
 msgstr "Toplam yuva"
 
-#: win32/AboutDlg.cpp:152
+#: win32/AboutDlg.cpp:168
 msgid "Totals"
 msgstr "Toplamlar"
 
@@ -4341,7 +4375,8 @@ msgstr "Bitirilmeyen dosya bulunamadı"
 msgid "Unfinished file too small"
 msgstr "Bitirilmeyen dosya çok küçük"
 
-#: win32/QueueFrame.cpp:392 win32/QueueFrame.cpp:393 win32/UsersFrame.cpp:268
+#: win32/AboutDlg.cpp:132 win32/QueueFrame.cpp:392 win32/QueueFrame.cpp:393
+#: win32/UsersFrame.cpp:268
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
@@ -4393,7 +4428,7 @@ msgstr "Gönderme slotları"
 msgid "Upload speed"
 msgstr "Yükleme hızı"
 
-#: win32/AboutDlg.cpp:156
+#: win32/AboutDlg.cpp:173
 #, boost-format
 msgid "Upload: %1%, Download: %2%"
 msgstr "Aktarma: %1%, İndirme: %2%"

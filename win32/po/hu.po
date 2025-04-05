@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-03-31 18:57+0200\n"
+"POT-Creation-Date: 2025-04-05 11:30+0200\n"
 "PO-Revision-Date: 2022-09-26 10:04+0000\n"
 "Last-Translator: eMTee <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -19,8 +19,48 @@ msgstr ""
 "X-Launchpad-Export-Date: 2022-10-18 11:20+0000\n"
 "X-Generator: Launchpad (build 25877e98ba44ca75f9c22db1fc37efee03e4606a)\n"
 
+#: win32/AboutDlg.cpp:124
+msgid ""
+"\n"
+"Compiler version: "
+msgstr ""
+
+#: win32/AboutDlg.cpp:118
+msgid ""
+"\n"
+"Copyright © 2001-2025 Jacek Sieka"
+msgstr ""
+
+#: win32/AboutDlg.cpp:120
+msgid ""
+"\n"
+"Ex-codeveloper: Per Lindén"
+msgstr ""
+
+#: win32/AboutDlg.cpp:119
+msgid ""
+"\n"
+"Ex-main project contributors: Todd Pederzani, poy"
+msgstr ""
+
+#: win32/AboutDlg.cpp:122
+msgid ""
+"\n"
+"Graphics: Radox and various GPL and CC authors"
+msgstr ""
+
+#: win32/AboutDlg.cpp:121
+msgid ""
+"\n"
+"Original DC++ logo design: Martin Skogevall"
+msgstr ""
+
 #: win32/MainWindow.cpp:1949
 msgid " "
+msgstr ""
+
+#: win32/AboutDlg.cpp:136
+msgid " Debug"
 msgstr ""
 
 #: win32/ACFrame.cpp:226
@@ -30,6 +70,14 @@ msgstr " egyező beállítás találva"
 #: win32/ACFrame.cpp:201
 msgid " settings loaded"
 msgstr " beállítás betöltve"
+
+#: win32/AboutDlg.cpp:140
+msgid " x64"
+msgstr ""
+
+#: win32/AboutDlg.cpp:142
+msgid " x86"
+msgstr ""
 
 #: win32/FinishedFrameBase.h:732
 msgid "% transferred"
@@ -502,7 +550,7 @@ msgstr "ADL keresés"
 msgid "ADLSearch Properties"
 msgstr "ADL keresés tulajdonságai"
 
-#: win32/AboutDlg.cpp:175 win32/MainWindow.cpp:413
+#: win32/AboutDlg.cpp:198 win32/MainWindow.cpp:413
 #, fuzzy
 msgid "About FearDC"
 msgstr "A DC++-ról"
@@ -1035,10 +1083,6 @@ msgstr "Parancs típus"
 msgid "Communication channel"
 msgstr "Kommunikációs csatorna"
 
-#: win32/AboutDlg.cpp:120
-msgid "Compiler"
-msgstr "Fordítóprogram"
-
 #: win32/MainWindow.cpp:737 win32/MainWindow.cpp:755
 msgid "Configure"
 msgstr "Beállítások"
@@ -1225,6 +1269,10 @@ msgstr "L: %1%/s (%2%)"
 #: win32/MainWindow.cpp:427
 msgid "DC Network Foundation community"
 msgstr "DC Network Foundation alapítvány"
+
+#: win32/AboutDlg.cpp:152
+msgid "DC++ and FearDC are licenced under GNU General Public License"
+msgstr ""
 
 #: win32/QueueFrame.cpp:132
 msgid "Decrease priority"
@@ -1535,7 +1583,7 @@ msgstr "Publikus hublista letöltése..."
 msgid "Downloading public hub list... (%1%)"
 msgstr "Publikus hublista letöltése... (%1%)"
 
-#: win32/AboutDlg.cpp:166
+#: win32/AboutDlg.cpp:185
 msgid "Downloading..."
 msgstr "Letöltés..."
 
@@ -1655,7 +1703,7 @@ msgstr "Hiba a tanúsítvány készítésekor"
 msgid "Error loading the notepad file: %1%"
 msgstr "Hiba a Jegyzettömb fájl betöltésekor: %1%"
 
-#: win32/AboutDlg.cpp:214
+#: win32/AboutDlg.cpp:237
 msgid "Error processing version information"
 msgstr "Hiba a verzió információ feldolgozása közben"
 
@@ -1697,23 +1745,6 @@ msgstr "Közvetlen titkosított csatorna felépítése..."
 #: win32/NotificationsPage.cpp:36
 msgid "Event"
 msgstr "Esemény"
-
-#: win32/AboutDlg.cpp:107
-#, fuzzy
-msgid ""
-"Ex-main project contributors: Todd Pederzani, poy\n"
-"Ex-codeveloper: Per Lindén\n"
-"Original DC++ logo design: Martin Skogevall\n"
-"Graphics: Radox and various GPL and CC authors\n"
-"\n"
-"FearDC is licenced under GPL."
-msgstr ""
-"Korábbi projekt vezető fejlesztők: Todd Pederzani, poy\\n\n"
-"Korábbi társfejlesztő: Per Lindén\\n\n"
-"Eredeti DC++ logó dizájner: Martin Skogevall\\n\n"
-"Grafika: Radox és számos más GPL és CC szerző\\n\n"
-"\\n\n"
-"A DC++ a GPL licensz alatt lett kiadva."
 
 #: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1170
 msgid "Exact match"
@@ -2076,7 +2107,7 @@ msgstr ""
 "a felhasználó 10 percig nem kapcsolódik az extra slot automatikusan "
 "visszavonásra kerül."
 
-#: win32/AboutDlg.cpp:143
+#: win32/AboutDlg.cpp:157
 msgid "Greetz and Contributors"
 msgstr "Köszönetnyilvánítás és Közreműködők"
 
@@ -2474,7 +2505,7 @@ msgstr "Nyelv"
 msgid "Last message occured %1%"
 msgstr "Az utolsó üzenet ideje: %1%"
 
-#: win32/AboutDlg.cpp:165
+#: win32/AboutDlg.cpp:184
 msgid "Latest stable version"
 msgstr "Utolsó stabil verzió"
 
@@ -2960,7 +2991,7 @@ msgstr "Ne legyen új letöltés, ha a sebesség ezt túllépi (KiB/s, 0 = letil
 msgid "No plugin has been selected"
 msgstr "Nincs kiválasztva bővítmény"
 
-#: win32/AboutDlg.cpp:161
+#: win32/AboutDlg.cpp:178
 msgid "No transfers yet"
 msgstr "Nem volt még átvitel"
 
@@ -3103,10 +3134,6 @@ msgstr "A hubtól érkező privát üzenetek megnyitása a saját ablakukban"
 #: win32/WindowsPage.cpp:32
 msgid "Open private messages in their own window"
 msgstr "Privát üzenetek megnyitása a saját ablakukban"
-
-#: win32/AboutDlg.cpp:137
-msgid "OpenSSL version"
-msgstr ""
 
 #: win32/WinUtil.cpp:547
 msgid ""
@@ -3390,7 +3417,7 @@ msgstr "Gyors Csatlakozás"
 msgid "Rating"
 msgstr "Minősítés"
 
-#: win32/AboutDlg.cpp:160
+#: win32/AboutDlg.cpp:177
 #, c-format, boost-format
 msgid "Ratio (up/down): %1$0.2f"
 msgstr "Arány (fel/letöltés): %1$0.2f"
@@ -4130,8 +4157,8 @@ msgstr ""
 msgid "TLS Keyprint"
 msgstr "TLS Keyprint"
 
-#: win32/AboutDlg.cpp:116 win32/DirectoryListingFrame.cpp:67
-#: win32/QueueFrame.cpp:61 win32/SearchFrame.cpp:59 win32/TransferView.cpp:1003
+#: win32/DirectoryListingFrame.cpp:67 win32/QueueFrame.cpp:61
+#: win32/SearchFrame.cpp:59 win32/TransferView.cpp:1003
 msgid "TTH"
 msgstr "TTH"
 
@@ -4319,7 +4346,7 @@ msgstr "Teljes méret:"
 msgid "Total slots"
 msgstr "Összes slot"
 
-#: win32/AboutDlg.cpp:152
+#: win32/AboutDlg.cpp:168
 msgid "Totals"
 msgstr "Összesítés"
 
@@ -4401,7 +4428,8 @@ msgstr "A befejezetlen fájl nem található"
 msgid "Unfinished file too small"
 msgstr "A befejezetlen fájl túl kicsi"
 
-#: win32/QueueFrame.cpp:392 win32/QueueFrame.cpp:393 win32/UsersFrame.cpp:268
+#: win32/AboutDlg.cpp:132 win32/QueueFrame.cpp:392 win32/QueueFrame.cpp:393
+#: win32/UsersFrame.cpp:268
 msgid "Unknown"
 msgstr "Ismeretlen"
 
@@ -4452,7 +4480,7 @@ msgstr "Feltöltési slotok"
 msgid "Upload speed"
 msgstr "Feltöltési sebesség"
 
-#: win32/AboutDlg.cpp:156
+#: win32/AboutDlg.cpp:173
 #, boost-format
 msgid "Upload: %1%, Download: %2%"
 msgstr "Feltöltve: %1%, Letöltve: %2%"
@@ -4768,6 +4796,25 @@ msgstr "-"
 #: win32/ConnectivityManualPage.cpp:144
 msgid "transfer"
 msgstr "átvitel"
+
+#~ msgid "Compiler"
+#~ msgstr "Fordítóprogram"
+
+#, fuzzy
+#~ msgid ""
+#~ "Ex-main project contributors: Todd Pederzani, poy\n"
+#~ "Ex-codeveloper: Per Lindén\n"
+#~ "Original DC++ logo design: Martin Skogevall\n"
+#~ "Graphics: Radox and various GPL and CC authors\n"
+#~ "\n"
+#~ "FearDC is licenced under GPL."
+#~ msgstr ""
+#~ "Korábbi projekt vezető fejlesztők: Todd Pederzani, poy\\n\n"
+#~ "Korábbi társfejlesztő: Per Lindén\\n\n"
+#~ "Eredeti DC++ logó dizájner: Martin Skogevall\\n\n"
+#~ "Grafika: Radox és számos más GPL és CC szerző\\n\n"
+#~ "\\n\n"
+#~ "A DC++ a GPL licensz alatt lett kiadva."
 
 #~ msgid "General information"
 #~ msgstr "Általános információk"

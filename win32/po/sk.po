@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-03-31 18:57+0200\n"
+"POT-Creation-Date: 2025-04-05 11:30+0200\n"
 "PO-Revision-Date: 2013-09-15 10:47+0000\n"
 "Last-Translator: Gabriel O <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
@@ -19,8 +19,48 @@ msgstr ""
 "X-Launchpad-Export-Date: 2018-11-11 22:48+0000\n"
 "X-Generator: Launchpad (build 18816)\n"
 
+#: win32/AboutDlg.cpp:124
+msgid ""
+"\n"
+"Compiler version: "
+msgstr ""
+
+#: win32/AboutDlg.cpp:118
+msgid ""
+"\n"
+"Copyright © 2001-2025 Jacek Sieka"
+msgstr ""
+
+#: win32/AboutDlg.cpp:120
+msgid ""
+"\n"
+"Ex-codeveloper: Per Lindén"
+msgstr ""
+
+#: win32/AboutDlg.cpp:119
+msgid ""
+"\n"
+"Ex-main project contributors: Todd Pederzani, poy"
+msgstr ""
+
+#: win32/AboutDlg.cpp:122
+msgid ""
+"\n"
+"Graphics: Radox and various GPL and CC authors"
+msgstr ""
+
+#: win32/AboutDlg.cpp:121
+msgid ""
+"\n"
+"Original DC++ logo design: Martin Skogevall"
+msgstr ""
+
 #: win32/MainWindow.cpp:1949
 msgid " "
+msgstr ""
+
+#: win32/AboutDlg.cpp:136
+msgid " Debug"
 msgstr ""
 
 #: win32/ACFrame.cpp:226
@@ -31,6 +71,14 @@ msgstr ""
 #, fuzzy
 msgid " settings loaded"
 msgstr "Nastavenie zvuku"
+
+#: win32/AboutDlg.cpp:140
+msgid " x64"
+msgstr ""
+
+#: win32/AboutDlg.cpp:142
+msgid " x86"
+msgstr ""
 
 #: win32/FinishedFrameBase.h:732
 msgid "% transferred"
@@ -505,7 +553,7 @@ msgstr "Automatické hľadanie v zoznamoch súboru"
 msgid "ADLSearch Properties"
 msgstr "Vlastnosti ADL hľadania"
 
-#: win32/AboutDlg.cpp:175 win32/MainWindow.cpp:413
+#: win32/AboutDlg.cpp:198 win32/MainWindow.cpp:413
 #, fuzzy
 msgid "About FearDC"
 msgstr "O DC++"
@@ -1012,10 +1060,6 @@ msgstr "Typ príkazu"
 msgid "Communication channel"
 msgstr ""
 
-#: win32/AboutDlg.cpp:120
-msgid "Compiler"
-msgstr "Kompilátor"
-
 #: win32/MainWindow.cpp:737 win32/MainWindow.cpp:755
 msgid "Configure"
 msgstr "Nastaviť"
@@ -1203,6 +1247,10 @@ msgstr "S: %1%/s (%2%)"
 
 #: win32/MainWindow.cpp:427
 msgid "DC Network Foundation community"
+msgstr ""
+
+#: win32/AboutDlg.cpp:152
+msgid "DC++ and FearDC are licenced under GNU General Public License"
 msgstr ""
 
 #: win32/QueueFrame.cpp:132
@@ -1510,7 +1558,7 @@ msgstr "Sťahuje sa zoznam verejných hub-ov"
 msgid "Downloading public hub list... (%1%)"
 msgstr "Sťahuje sa zoznam verejných hub-ov... (%1%)"
 
-#: win32/AboutDlg.cpp:166
+#: win32/AboutDlg.cpp:185
 msgid "Downloading..."
 msgstr "Sťahuje sa..."
 
@@ -1631,7 +1679,7 @@ msgstr "Chyba pri vytváraní certifikátu"
 msgid "Error loading the notepad file: %1%"
 msgstr "Chyba pri načítaní súboru notepad: %1%"
 
-#: win32/AboutDlg.cpp:214
+#: win32/AboutDlg.cpp:237
 msgid "Error processing version information"
 msgstr "Chyba pri spracovaní informácií o verzii"
 
@@ -1666,24 +1714,6 @@ msgstr ""
 #: win32/NotificationsPage.cpp:36
 msgid "Event"
 msgstr "Udalosť"
-
-#: win32/AboutDlg.cpp:107
-#, fuzzy
-msgid ""
-"Ex-main project contributors: Todd Pederzani, poy\n"
-"Ex-codeveloper: Per Lindén\n"
-"Original DC++ logo design: Martin Skogevall\n"
-"Graphics: Radox and various GPL and CC authors\n"
-"\n"
-"FearDC is licenced under GPL."
-msgstr ""
-"Hlavný prispievateľ projektu: poy\n"
-"Bývalý prispievateľ projektu: Todd Pederzani\n"
-"Bývalý vývojár: Per Lindén\n"
-"Originálny dizajn DC++ loga: Martin Skogevall\n"
-"Grafika: Radox a rôzni GPL a CC autori\n"
-"\n"
-"DC++ je licencované pod GPL."
 
 #: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1170
 msgid "Exact match"
@@ -2048,7 +2078,7 @@ msgid ""
 "in 10 minutes, the granted slot is removed."
 msgstr ""
 
-#: win32/AboutDlg.cpp:143
+#: win32/AboutDlg.cpp:157
 msgid "Greetz and Contributors"
 msgstr "Poďakovania a príspevky"
 
@@ -2442,7 +2472,7 @@ msgstr "Jazyk"
 msgid "Last message occured %1%"
 msgstr "Súkromná správa od %1%: %2%"
 
-#: win32/AboutDlg.cpp:165
+#: win32/AboutDlg.cpp:184
 msgid "Latest stable version"
 msgstr "Posledná stabilná verzia"
 
@@ -2918,7 +2948,7 @@ msgstr "Žiadne ďalšie sťahovania ak rýchlosť prekročí (KiB/s, 0 = vypnú
 msgid "No plugin has been selected"
 msgstr "Žiadny zásovný modul nebol nájdený"
 
-#: win32/AboutDlg.cpp:161
+#: win32/AboutDlg.cpp:178
 msgid "No transfers yet"
 msgstr "Zatiaľ žiadne prenosy"
 
@@ -3055,10 +3085,6 @@ msgstr "Otvoriť súkromné správy od hub-u vo vlastnom okne"
 #: win32/WindowsPage.cpp:32
 msgid "Open private messages in their own window"
 msgstr "Otvoriť súkromné správy vo vlastnom okne"
-
-#: win32/AboutDlg.cpp:137
-msgid "OpenSSL version"
-msgstr ""
 
 #: win32/WinUtil.cpp:547
 msgid ""
@@ -3338,7 +3364,7 @@ msgstr "Rýchle pripojenie"
 msgid "Rating"
 msgstr "Hodnotenie"
 
-#: win32/AboutDlg.cpp:160
+#: win32/AboutDlg.cpp:177
 #, c-format, boost-format
 msgid "Ratio (up/down): %1$0.2f"
 msgstr "Pomer (nahr/stiah): %1$0.2f"
@@ -4057,8 +4083,8 @@ msgstr ""
 msgid "TLS Keyprint"
 msgstr "TLS kľúč"
 
-#: win32/AboutDlg.cpp:116 win32/DirectoryListingFrame.cpp:67
-#: win32/QueueFrame.cpp:61 win32/SearchFrame.cpp:59 win32/TransferView.cpp:1003
+#: win32/DirectoryListingFrame.cpp:67 win32/QueueFrame.cpp:61
+#: win32/SearchFrame.cpp:59 win32/TransferView.cpp:1003
 msgid "TTH"
 msgstr "TTH"
 
@@ -4235,7 +4261,7 @@ msgstr "Celková veľkosť:"
 msgid "Total slots"
 msgstr "Slotov celkovo"
 
-#: win32/AboutDlg.cpp:152
+#: win32/AboutDlg.cpp:168
 msgid "Totals"
 msgstr "Celkom"
 
@@ -4317,7 +4343,8 @@ msgstr "nedokončený súbor nenájdený"
 msgid "Unfinished file too small"
 msgstr "Nedokončený súbor je príliš malý"
 
-#: win32/QueueFrame.cpp:392 win32/QueueFrame.cpp:393 win32/UsersFrame.cpp:268
+#: win32/AboutDlg.cpp:132 win32/QueueFrame.cpp:392 win32/QueueFrame.cpp:393
+#: win32/UsersFrame.cpp:268
 msgid "Unknown"
 msgstr "Neznámy"
 
@@ -4368,7 +4395,7 @@ msgstr "Slotov pre nahrávanie"
 msgid "Upload speed"
 msgstr "Rýchlosť odosielania"
 
-#: win32/AboutDlg.cpp:156
+#: win32/AboutDlg.cpp:173
 #, boost-format
 msgid "Upload: %1%, Download: %2%"
 msgstr "Nahrávanie: %1%, Sťahovanie: %2%"
@@ -4672,6 +4699,26 @@ msgstr "pre"
 #, fuzzy
 msgid "transfer"
 msgstr "Prenos"
+
+#~ msgid "Compiler"
+#~ msgstr "Kompilátor"
+
+#, fuzzy
+#~ msgid ""
+#~ "Ex-main project contributors: Todd Pederzani, poy\n"
+#~ "Ex-codeveloper: Per Lindén\n"
+#~ "Original DC++ logo design: Martin Skogevall\n"
+#~ "Graphics: Radox and various GPL and CC authors\n"
+#~ "\n"
+#~ "FearDC is licenced under GPL."
+#~ msgstr ""
+#~ "Hlavný prispievateľ projektu: poy\n"
+#~ "Bývalý prispievateľ projektu: Todd Pederzani\n"
+#~ "Bývalý vývojár: Per Lindén\n"
+#~ "Originálny dizajn DC++ loga: Martin Skogevall\n"
+#~ "Grafika: Radox a rôzni GPL a CC autori\n"
+#~ "\n"
+#~ "DC++ je licencované pod GPL."
 
 #~ msgid "General information"
 #~ msgstr "Všeobecné informácie"

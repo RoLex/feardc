@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-03-31 18:57+0200\n"
+"POT-Creation-Date: 2025-04-05 11:30+0200\n"
 "PO-Revision-Date: 2021-09-05 08:03+0000\n"
 "Last-Translator: Eric Xu <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,48 @@ msgstr ""
 "X-Launchpad-Export-Date: 2022-10-18 11:20+0000\n"
 "X-Generator: Launchpad (build 25877e98ba44ca75f9c22db1fc37efee03e4606a)\n"
 
+#: win32/AboutDlg.cpp:124
+msgid ""
+"\n"
+"Compiler version: "
+msgstr ""
+
+#: win32/AboutDlg.cpp:118
+msgid ""
+"\n"
+"Copyright © 2001-2025 Jacek Sieka"
+msgstr ""
+
+#: win32/AboutDlg.cpp:120
+msgid ""
+"\n"
+"Ex-codeveloper: Per Lindén"
+msgstr ""
+
+#: win32/AboutDlg.cpp:119
+msgid ""
+"\n"
+"Ex-main project contributors: Todd Pederzani, poy"
+msgstr ""
+
+#: win32/AboutDlg.cpp:122
+msgid ""
+"\n"
+"Graphics: Radox and various GPL and CC authors"
+msgstr ""
+
+#: win32/AboutDlg.cpp:121
+msgid ""
+"\n"
+"Original DC++ logo design: Martin Skogevall"
+msgstr ""
+
 #: win32/MainWindow.cpp:1949
 msgid " "
+msgstr ""
+
+#: win32/AboutDlg.cpp:136
+msgid " Debug"
 msgstr ""
 
 #: win32/ACFrame.cpp:226
@@ -31,6 +71,14 @@ msgstr ""
 #, fuzzy
 msgid " settings loaded"
 msgstr "声音设置"
+
+#: win32/AboutDlg.cpp:140
+msgid " x64"
+msgstr ""
+
+#: win32/AboutDlg.cpp:142
+msgid " x86"
+msgstr ""
 
 #: win32/FinishedFrameBase.h:732
 msgid "% transferred"
@@ -495,7 +543,7 @@ msgstr "ADL 搜索"
 msgid "ADLSearch Properties"
 msgstr "ADL搜索选项"
 
-#: win32/AboutDlg.cpp:175 win32/MainWindow.cpp:413
+#: win32/AboutDlg.cpp:198 win32/MainWindow.cpp:413
 #, fuzzy
 msgid "About FearDC"
 msgstr "关于 DC++"
@@ -1001,10 +1049,6 @@ msgstr "命令类型"
 msgid "Communication channel"
 msgstr "通信信道"
 
-#: win32/AboutDlg.cpp:120
-msgid "Compiler"
-msgstr "编译器"
-
 #: win32/MainWindow.cpp:737 win32/MainWindow.cpp:755
 msgid "Configure"
 msgstr "设置"
@@ -1192,6 +1236,10 @@ msgstr "D: %1%/s (%2%)"
 #: win32/MainWindow.cpp:427
 msgid "DC Network Foundation community"
 msgstr "DC 网络基金会社区"
+
+#: win32/AboutDlg.cpp:152
+msgid "DC++ and FearDC are licenced under GNU General Public License"
+msgstr ""
 
 #: win32/QueueFrame.cpp:132
 msgid "Decrease priority"
@@ -1497,7 +1545,7 @@ msgstr "正在下载公共服务器列表..."
 msgid "Downloading public hub list... (%1%)"
 msgstr "正在下载公共服务器列表... (%1%)"
 
-#: win32/AboutDlg.cpp:166
+#: win32/AboutDlg.cpp:185
 msgid "Downloading..."
 msgstr "下载中..."
 
@@ -1617,7 +1665,7 @@ msgstr "生成证书发生错误"
 msgid "Error loading the notepad file: %1%"
 msgstr "载入notepad文件时出错: %1%"
 
-#: win32/AboutDlg.cpp:214
+#: win32/AboutDlg.cpp:237
 msgid "Error processing version information"
 msgstr "版本信息处理错误"
 
@@ -1655,16 +1703,6 @@ msgstr "建立直接加密通道中..."
 #: win32/NotificationsPage.cpp:36
 msgid "Event"
 msgstr "事件"
-
-#: win32/AboutDlg.cpp:107
-msgid ""
-"Ex-main project contributors: Todd Pederzani, poy\n"
-"Ex-codeveloper: Per Lindén\n"
-"Original DC++ logo design: Martin Skogevall\n"
-"Graphics: Radox and various GPL and CC authors\n"
-"\n"
-"FearDC is licenced under GPL."
-msgstr ""
 
 #: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1170
 msgid "Exact match"
@@ -2022,7 +2060,7 @@ msgstr ""
 "授予远程用户一个插槽。一旦他们连接，或如果他们在 10 分钟内没有连接，授予的插"
 "槽将被删除。"
 
-#: win32/AboutDlg.cpp:143
+#: win32/AboutDlg.cpp:157
 msgid "Greetz and Contributors"
 msgstr "致谢以及捐助者"
 
@@ -2414,7 +2452,7 @@ msgstr "语言"
 msgid "Last message occured %1%"
 msgstr "上条信息出现于 %1%"
 
-#: win32/AboutDlg.cpp:165
+#: win32/AboutDlg.cpp:184
 msgid "Latest stable version"
 msgstr "最新稳定版"
 
@@ -2890,7 +2928,7 @@ msgstr "速度超过此值时不开始新的下载任务 (kB/s, 0 =禁用)"
 msgid "No plugin has been selected"
 msgstr "没有插件被选中"
 
-#: win32/AboutDlg.cpp:161
+#: win32/AboutDlg.cpp:178
 msgid "No transfers yet"
 msgstr "还未传输"
 
@@ -3025,10 +3063,6 @@ msgstr "在单独窗口弹出来自站点的私聊消息"
 #: win32/WindowsPage.cpp:32
 msgid "Open private messages in their own window"
 msgstr "弹出私聊窗口交谈"
-
-#: win32/AboutDlg.cpp:137
-msgid "OpenSSL version"
-msgstr ""
 
 #: win32/WinUtil.cpp:547
 msgid ""
@@ -3305,7 +3339,7 @@ msgstr "快速连接"
 msgid "Rating"
 msgstr "Rating"
 
-#: win32/AboutDlg.cpp:160
+#: win32/AboutDlg.cpp:177
 #, c-format, boost-format
 msgid "Ratio (up/down): %1$0.2f"
 msgstr "比率(上传/下载)): %1$0.2f"
@@ -4024,8 +4058,8 @@ msgstr ""
 msgid "TLS Keyprint"
 msgstr "TLS 密钥"
 
-#: win32/AboutDlg.cpp:116 win32/DirectoryListingFrame.cpp:67
-#: win32/QueueFrame.cpp:61 win32/SearchFrame.cpp:59 win32/TransferView.cpp:1003
+#: win32/DirectoryListingFrame.cpp:67 win32/QueueFrame.cpp:61
+#: win32/SearchFrame.cpp:59 win32/TransferView.cpp:1003
 msgid "TTH"
 msgstr "TTH"
 
@@ -4198,7 +4232,7 @@ msgstr "总大小："
 msgid "Total slots"
 msgstr "总共槽"
 
-#: win32/AboutDlg.cpp:152
+#: win32/AboutDlg.cpp:168
 msgid "Totals"
 msgstr "总计"
 
@@ -4279,7 +4313,8 @@ msgstr "未发现未完成下载文件"
 msgid "Unfinished file too small"
 msgstr "未完成文件太小"
 
-#: win32/QueueFrame.cpp:392 win32/QueueFrame.cpp:393 win32/UsersFrame.cpp:268
+#: win32/AboutDlg.cpp:132 win32/QueueFrame.cpp:392 win32/QueueFrame.cpp:393
+#: win32/UsersFrame.cpp:268
 msgid "Unknown"
 msgstr "未知"
 
@@ -4330,7 +4365,7 @@ msgstr "上传通道数"
 msgid "Upload speed"
 msgstr "上传速度"
 
-#: win32/AboutDlg.cpp:156
+#: win32/AboutDlg.cpp:173
 #, boost-format
 msgid "Upload: %1%, Download: %2%"
 msgstr "上传: %1%, 下载: %2%"
@@ -4636,6 +4671,9 @@ msgstr "至"
 #: win32/ConnectivityManualPage.cpp:144
 msgid "transfer"
 msgstr "传输"
+
+#~ msgid "Compiler"
+#~ msgstr "编译器"
 
 #~ msgid "General information"
 #~ msgstr "常规信息"

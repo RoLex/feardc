@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-03-31 18:57+0200\n"
+"POT-Creation-Date: 2025-04-05 11:30+0200\n"
 "PO-Revision-Date: 2013-10-23 18:45+0000\n"
 "Last-Translator: Guybrush88 <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -20,8 +20,48 @@ msgstr ""
 "X-Launchpad-Export-Date: 2018-11-11 22:48+0000\n"
 "X-Generator: Launchpad (build 18816)\n"
 
+#: win32/AboutDlg.cpp:124
+msgid ""
+"\n"
+"Compiler version: "
+msgstr ""
+
+#: win32/AboutDlg.cpp:118
+msgid ""
+"\n"
+"Copyright © 2001-2025 Jacek Sieka"
+msgstr ""
+
+#: win32/AboutDlg.cpp:120
+msgid ""
+"\n"
+"Ex-codeveloper: Per Lindén"
+msgstr ""
+
+#: win32/AboutDlg.cpp:119
+msgid ""
+"\n"
+"Ex-main project contributors: Todd Pederzani, poy"
+msgstr ""
+
+#: win32/AboutDlg.cpp:122
+msgid ""
+"\n"
+"Graphics: Radox and various GPL and CC authors"
+msgstr ""
+
+#: win32/AboutDlg.cpp:121
+msgid ""
+"\n"
+"Original DC++ logo design: Martin Skogevall"
+msgstr ""
+
 #: win32/MainWindow.cpp:1949
 msgid " "
+msgstr ""
+
+#: win32/AboutDlg.cpp:136
+msgid " Debug"
 msgstr ""
 
 #: win32/ACFrame.cpp:226
@@ -32,6 +72,14 @@ msgstr ""
 #, fuzzy
 msgid " settings loaded"
 msgstr "Настройки"
+
+#: win32/AboutDlg.cpp:140
+msgid " x64"
+msgstr ""
+
+#: win32/AboutDlg.cpp:142
+msgid " x86"
+msgstr ""
 
 #: win32/FinishedFrameBase.h:732
 msgid "% transferred"
@@ -510,7 +558,7 @@ msgstr "ADL поиск"
 msgid "ADLSearch Properties"
 msgstr "Настройки ADL поиска"
 
-#: win32/AboutDlg.cpp:175 win32/MainWindow.cpp:413
+#: win32/AboutDlg.cpp:198 win32/MainWindow.cpp:413
 #, fuzzy
 msgid "About FearDC"
 msgstr "О DC++"
@@ -1024,10 +1072,6 @@ msgstr "Тип команды"
 msgid "Communication channel"
 msgstr "Новости сообщества"
 
-#: win32/AboutDlg.cpp:120
-msgid "Compiler"
-msgstr "Компилятор"
-
 #: win32/MainWindow.cpp:737 win32/MainWindow.cpp:755
 msgid "Configure"
 msgstr "Настроить"
@@ -1217,6 +1261,10 @@ msgstr "D: %1%/с (%2%)"
 
 #: win32/MainWindow.cpp:427
 msgid "DC Network Foundation community"
+msgstr ""
+
+#: win32/AboutDlg.cpp:152
+msgid "DC++ and FearDC are licenced under GNU General Public License"
 msgstr ""
 
 #: win32/QueueFrame.cpp:132
@@ -1530,7 +1578,7 @@ msgstr "Закачка списка Интернет хабов..."
 msgid "Downloading public hub list... (%1%)"
 msgstr "Закачка списка открытых хабов... (%1%)"
 
-#: win32/AboutDlg.cpp:166
+#: win32/AboutDlg.cpp:185
 msgid "Downloading..."
 msgstr "Закачка..."
 
@@ -1652,7 +1700,7 @@ msgstr "Ошибка при генерации сертификата"
 msgid "Error loading the notepad file: %1%"
 msgstr "Ошибка загрузки файла блокнота: %1%"
 
-#: win32/AboutDlg.cpp:214
+#: win32/AboutDlg.cpp:237
 msgid "Error processing version information"
 msgstr "Ошибка обработки информации о версии"
 
@@ -1687,16 +1735,6 @@ msgstr ""
 #: win32/NotificationsPage.cpp:36
 msgid "Event"
 msgstr "Событие"
-
-#: win32/AboutDlg.cpp:107
-msgid ""
-"Ex-main project contributors: Todd Pederzani, poy\n"
-"Ex-codeveloper: Per Lindén\n"
-"Original DC++ logo design: Martin Skogevall\n"
-"Graphics: Radox and various GPL and CC authors\n"
-"\n"
-"FearDC is licenced under GPL."
-msgstr ""
 
 #: win32/UserMatchPage.cpp:216 win32/WinUtil.cpp:1170
 msgid "Exact match"
@@ -2067,7 +2105,7 @@ msgstr ""
 "Предоставляет пользователю слот. Как только пользователь подключится, либо "
 "если он не подключится в течение 10 минут, предоставленный слот будет закрыт."
 
-#: win32/AboutDlg.cpp:143
+#: win32/AboutDlg.cpp:157
 msgid "Greetz and Contributors"
 msgstr "Благодарности"
 
@@ -2470,7 +2508,7 @@ msgstr "Язык"
 msgid "Last message occured %1%"
 msgstr "Личное сообщение от %1%: %2%"
 
-#: win32/AboutDlg.cpp:165
+#: win32/AboutDlg.cpp:184
 msgid "Latest stable version"
 msgstr "Последняя стабильная версия"
 
@@ -2962,7 +3000,7 @@ msgstr "Не добавл. загрузки, если скорость выше 
 msgid "No plugin has been selected"
 msgstr ""
 
-#: win32/AboutDlg.cpp:161
+#: win32/AboutDlg.cpp:178
 msgid "No transfers yet"
 msgstr "Нет передач"
 
@@ -3099,10 +3137,6 @@ msgstr "Открывать сообщения ботов в отдельном �
 #: win32/WindowsPage.cpp:32
 msgid "Open private messages in their own window"
 msgstr "Открывать личные сообщения (ЛС) в отдельном окне"
-
-#: win32/AboutDlg.cpp:137
-msgid "OpenSSL version"
-msgstr ""
 
 #: win32/WinUtil.cpp:547
 msgid ""
@@ -3387,7 +3421,7 @@ msgstr "Быстрое соединение"
 msgid "Rating"
 msgstr "Рейтинг"
 
-#: win32/AboutDlg.cpp:160
+#: win32/AboutDlg.cpp:177
 #, c-format, boost-format
 msgid "Ratio (up/down): %1$0.2f"
 msgstr "Соотношение (up/down): %1$0.2f"
@@ -4128,8 +4162,8 @@ msgstr ""
 msgid "TLS Keyprint"
 msgstr ""
 
-#: win32/AboutDlg.cpp:116 win32/DirectoryListingFrame.cpp:67
-#: win32/QueueFrame.cpp:61 win32/SearchFrame.cpp:59 win32/TransferView.cpp:1003
+#: win32/DirectoryListingFrame.cpp:67 win32/QueueFrame.cpp:61
+#: win32/SearchFrame.cpp:59 win32/TransferView.cpp:1003
 msgid "TTH"
 msgstr "TTH"
 
@@ -4309,7 +4343,7 @@ msgstr "Шара:"
 msgid "Total slots"
 msgstr "Всего"
 
-#: win32/AboutDlg.cpp:152
+#: win32/AboutDlg.cpp:168
 msgid "Totals"
 msgstr "Всего"
 
@@ -4391,7 +4425,8 @@ msgstr "Не найден незавершенный файл"
 msgid "Unfinished file too small"
 msgstr "Незавершенный файл слишком мал"
 
-#: win32/QueueFrame.cpp:392 win32/QueueFrame.cpp:393 win32/UsersFrame.cpp:268
+#: win32/AboutDlg.cpp:132 win32/QueueFrame.cpp:392 win32/QueueFrame.cpp:393
+#: win32/UsersFrame.cpp:268
 msgid "Unknown"
 msgstr "Неизвестный"
 
@@ -4444,7 +4479,7 @@ msgstr "Слоты передачи"
 msgid "Upload speed"
 msgstr "Скорость отдачи"
 
-#: win32/AboutDlg.cpp:156
+#: win32/AboutDlg.cpp:173
 #, boost-format
 msgid "Upload: %1%, Download: %2%"
 msgstr "Передано: %1%, закачано: %2%"
@@ -4743,6 +4778,9 @@ msgstr "К"
 #, fuzzy
 msgid "transfer"
 msgstr "Передано:"
+
+#~ msgid "Compiler"
+#~ msgstr "Компилятор"
 
 #~ msgid "General information"
 #~ msgstr "Общие сведения"
