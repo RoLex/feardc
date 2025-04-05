@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -140,6 +140,20 @@ string GeoIP::getCountry(const string& ip) const {
 		dcdebug("Got an error from libmaxminddb (MMDB_lookup_string): %s\n", MMDB_strerror(mmdb_error));
 
 	return Util::emptyString;
+}
+
+string GeoIP::getEpoch() const {
+	Lock l(cs);
+
+	if (!geo)
+		return Util::emptyString;
+
+	time_t epoch = geo->metadata.build_epoch;
+	return Util::formatTime("%d %b %Y", time(&epoch));
+}
+
+string GeoIP::getVersion() const {
+	return MMDB_lib_version();
 }
 
 void GeoIP::update() {

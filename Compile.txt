@@ -87,7 +87,7 @@
 
 	b. OpenSSL
 
-		Download OpenSSL from <www.openssl.org>, copy the 'openssl-*.tar.gz' archive to the openssl/build folder.
+		Download OpenSSL from <https://openssl-library.org/>, copy the 'openssl-*.tar.gz' archive to the openssl/build folder.
 
 		Compiling with MinGW
 

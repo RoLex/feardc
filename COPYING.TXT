@@ -2,11 +2,12 @@ DC++ COPYING.TXT
 
 --------------------------------------------------
 DC++
-Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail com
+Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail com
+
 License
 
-This program is licensed under GPLv3 with the notable exception
-that you may compile and link it with OpenSSL (www.openssl.org).
+This program is licensed under GPLv3 with the notable exception that
+you may compile and link it with OpenSSL <https://openssl-library.org/>.
 You can find the full text of the license in License.txt that
 should have been distributed with the rest of the application.
 

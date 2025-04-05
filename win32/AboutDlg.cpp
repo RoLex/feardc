@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,6 +25,7 @@
 #include <dcpp/SimpleXML.h>
 #include <dcpp/Streams.h>
 #include <dcpp/version.h>
+#include <dcpp/GeoManager.h>
 #include <openssl/opensslv.h>
 
 #include <dwt/widgets/Grid.h>
@@ -39,16 +40,25 @@ using dwt::GridInfo;
 using dwt::Label;
 using dwt::Link;
 
-static const char thanks[] = "Big thanks to all donators and people who have contributed with ideas and code! "
-"This product uses BZip2 <https://sourceware.org/bzip2/>, thanks to Julian Seward and team for providing it. "
-"This product uses ZLib <https://www.zlib.net/>, thanks to Jean-loup Gailly and Mark Adler for providing it. "
-"This product includes parts of the MaxMindDB library created by MaxMind Inc, available from <https://github.com/maxmind/libmaxminddb/>. "
-"This product includes updated GeoLite2 databases provided by MaxMind Inc, available from <https://www.maxmind.com/en/geoip2-databases/>. "
-"This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit <https://www.openssl.org/>. "
-"This product uses the MiniUPnP client library <https://miniupnp.tuxfamily.org/> and NAT-PMP library by Thomas Bernard. "
-"This product uses DWARF library <https://www.prevanders.net/dwarf.html> by SGI & David Anderson. "
-"The following people have contributed code to DC++ and FearDC (I hope I haven't missed someone, they're "
-"roughly in chronological order... =):\r\n"
+static const char thanks[] =
+"Big thanks to all donators and people who have contributed with ideas and code!\r\n\r\n"
+
+"This product uses following components:\r\n\r\n"
+
+"* Boost <https://www.boost.org/>\r\n"
+"* BZip2 <https://sourceware.org/bzip2/>\r\n"
+"* DWARF <https://www.prevanders.net/dwarf.html>\r\n"
+"* LibIntl <https://gnuwin32.sourceforge.net/packages/libintl.htm>\r\n"
+"* MaxMindDB <https://github.com/maxmind/libmaxminddb/>\r\n"
+"* GeoLite2 <https://www.maxmind.com/en/geoip2-databases/>\r\n"
+"* MiniUPnPc <https://miniupnp.tuxfamily.org/>\r\n"
+"* NAT-PMP <https://miniupnp.tuxfamily.org/libnatpmp.html>\r\n"
+"* OpenSSL <https://openssl-library.org/>\r\n"
+"* PO4A <https://www.po4a.org/>\r\n"
+"* ZLib <https://www.zlib.net/>\r\n\r\n"
+
+"The following people have contributed code to DC++:\r\n\r\n"
+
 "geoff, carxor, luca rota, dan kline, mike, anton, zc, sarf, farcry, kyrre aalerud, opera, "
 "patbateman, xeroc, fusbar, vladimir marko, kenneth skovhede, ondrea, who, "
 "sedulus, sandos, henrik engstr\303\266m, dwomac, robert777, saurod, atomicjo, bzbetty, orkblutt, "
@@ -61,7 +71,9 @@ static const char thanks[] = "Big thanks to all donators and people who have con
 "stanislav maslovski, david grundberg, pavel andreev, yakov suraev, kulmegil, smir, emtee, individ, "
 "pseudonym, crise, ben, ximin luo, razzloss, andrew browne, darkklor, vasily.n, netcelli, "
 "gennady proskurin, iceman50, flow84, alexander sashnov, yorhel, irainman, maksis, "
-"pavel pimenov, konstantin, night, klondike, rolex. Keep it coming!";
+"pavel pimenov, konstantin, night, klondike, rolex\r\n\r\n"
+
+"Keep it coming! I hope I haven't missed someone, they're roughly in chronological order... =)";
 
 AboutDlg::AboutDlg(dwt::Widget* parent) :
 dwt::ModalDialog(parent),
@@ -76,12 +88,12 @@ AboutDlg::~AboutDlg() {
 }
 
 int AboutDlg::run() {
-	create(dwt::Point(400, 600));
+	create(dwt::Point(500, 750));
 	return show();
 }
 
 bool AboutDlg::handleInitDialog() {
-	grid = addChild(Grid::Seed(6, 1));
+	grid = addChild(Grid::Seed(5, 1));
 	grid->column(0).mode = GridInfo::FILL;
 	grid->row(1).mode = GridInfo::FILL;
 	grid->row(1).align = GridInfo::STRETCH;
@@ -89,88 +101,99 @@ bool AboutDlg::handleInitDialog() {
 	// horizontally centered seeds
 	GroupBox::Seed gs;
 	gs.style |= BS_CENTER;
-	gs.padding.y = 2;
+	gs.padding.y = 10;
+	gs.caption = Text::toT(dcpp::fullVersionString);
+
 	Label::Seed ls;
 	ls.style |= SS_CENTER;
 
-	{
-		auto cur = grid->addChild(gs)->addChild(Grid::Seed(6, 1));
+	{ // 1 - texts
+		auto cur = grid->addChild(gs)->addChild(Grid::Seed(4, 1));
 		cur->column(0).mode = GridInfo::FILL;
 		cur->column(0).align = GridInfo::CENTER;
 
-		cur->addChild(Label::Seed(WinUtil::createIcon(IDI_DCPP, 48)));
+		cur->addChild(Label::Seed(WinUtil::createIcon(IDI_DCPP, 128))); // 1 - icon
 
-		ls.caption = Text::toT(dcpp::fullVersionString) +
-			_T("\nBased on: " DCAPPNAME " " DCVERSIONSTRING "\n") +
-			_T("\n(c) Copyright 2001-2025 Jacek Sieka\n");
+		ls.caption = _T("\nBased on " DCAPPNAME " " DCVERSIONSTRING);
+		ls.caption += T_("\nCopyright © 2001-2025 Jacek Sieka");
+		ls.caption += T_("\nEx-main project contributors: Todd Pederzani, poy");
+		ls.caption += T_("\nEx-codeveloper: Per Lind\303\251n");
+		ls.caption += T_("\nOriginal DC++ logo design: Martin Skogevall");
+		ls.caption += T_("\nGraphics: Radox and various GPL and CC authors");
+		ls.caption += _T("\n\nTTH: " + WinUtil::tth);
+		ls.caption += T_("\nCompiler version: ");
 
-		ls.caption += T_("Ex-main project contributors: Todd Pederzani, poy\nEx-codeveloper: Per Lind\303\251n\nOriginal DC++ logo design: Martin Skogevall\nGraphics: Radox and various GPL and CC authors\n\nFearDC is licenced under GPL.");
-		cur->addChild(ls);
-
-		cur->addChild(Link::Seed(_T("https://client.feardc.net"), true));
-
-		auto ts = WinUtil::Seeds::Dialog::textBox;
-		ts.style |= ES_READONLY;
-		ts.exStyle &= ~WS_EX_CLIENTEDGE;
-
-		gs.caption = T_("TTH");
-		ts.caption = WinUtil::tth;
-		cur->addChild(gs)->addChild(ts);
-
-		gs.caption = T_("Compiler");
-		// see also CrashLogger.cpp for similar tests.
+// see also CrashLogger.cpp for similar tests
 #ifdef __MINGW64_VERSION_MAJOR
-		ts.caption = Text::toT("MinGW-w64's GCC " __VERSION__);
+		ls.caption += Text::toT("MinGW GCC " __VERSION__);
 #elif defined(_MSC_VER)
-		ts.caption = Text::toT("MS Visual Studio " + Util::toString(_MSC_VER));
+		ls.caption += Text::toT("MSVS " + Util::toString(_MSC_VER));
 #else
-		ts.caption = _T("Unknown");
+		ls.caption += T_("Unknown");
 #endif
-#ifdef _DEBUG
-		ts.caption += _T(" (debug)");
-#endif
-#ifdef _WIN64
-		ts.caption += _T(" (x64)");
-#endif
-		cur->addChild(gs)->addChild(ts);
 
-		gs.caption = T_("OpenSSL version");
-		ts.caption = Text::toT(OPENSSL_VERSION_TEXT);
-		cur->addChild(gs)->addChild(ts);
+#ifdef _DEBUG
+		ls.caption += T_(" Debug");
+#endif
+
+#ifdef _WIN64
+		ls.caption += T_(" x64");
+#else
+		ls.caption += T_(" x86");
+#endif
+
+		ls.caption += _T("\nOpenSSL version: " OPENSSL_VERSION_TEXT);
+		ls.caption += Text::toT("\nMMDB version: " + GeoManager::getInstance()->getVersion() + ", " + GeoManager::getInstance()->getEpoch() + "\n");
+
+		cur->addChild(ls); // 2 - info
+
+		cur->addChild(Link::Seed(_T("https://client.feardc.net/"), true)); // 3 - website
+
+		ls.caption = T_("DC++ and FearDC are licenced under GNU General Public License");
+		cur->addChild(ls); // 4 - license
 	}
 
-	{
+	{ // 2 - greets
 		gs.caption = T_("Greetz and Contributors");
+
 		auto seed = WinUtil::Seeds::Dialog::textBox;
 		seed.style &= ~ES_AUTOHSCROLL;
 		seed.style |= ES_MULTILINE | WS_VSCROLL | ES_READONLY;
 		seed.caption = Text::toT(thanks);
+
 		grid->addChild(gs)->addChild(seed);
 	}
 
-	{
+	{ // 3 - totals
 		gs.caption = T_("Totals");
+
 		auto cur = grid->addChild(gs)->addChild(Grid::Seed(2, 1));
 		cur->column(0).mode = GridInfo::FILL;
 
 		ls.caption = str(TF_("Upload: %1%, Download: %2%") % Text::toT(Util::formatBytes(SETTING(TOTAL_UPLOAD))) % Text::toT(Util::formatBytes(SETTING(TOTAL_DOWNLOAD))));
-		cur->addChild(ls);
+		cur->addChild(ls); // 1 - bytes
 
 		ls.caption = (SETTING(TOTAL_DOWNLOAD) > 0)
 			? str(TF_("Ratio (up/down): %1$0.2f") % (((double)SETTING(TOTAL_UPLOAD)) / ((double)SETTING(TOTAL_DOWNLOAD))))
 			: T_("No transfers yet");
-		cur->addChild(ls);
+
+		cur->addChild(ls); // 2 - ratio
 	}
 
-	gs.caption = T_("Latest stable version");
-	ls.caption = T_("Downloading...");
-	version = grid->addChild(gs)->addChild(ls);
+	{ // 4 - version
+		gs.caption = T_("Latest stable version");
+		ls.caption = T_("Downloading...");
+		version = grid->addChild(gs)->addChild(ls);
+	}
 
-	auto buttons = WinUtil::addDlgButtons(grid,
-		[this] { endDialog(IDOK); },
-		[this] { endDialog(IDCANCEL); });
-	buttons.first->setFocus();
-	buttons.second->setVisible(false);
+	{ // 5 - buttons
+		auto buttons = WinUtil::addDlgButtons(grid,
+			[this] { endDialog(IDOK); },
+			[this] { endDialog(IDCANCEL); });
+
+		buttons.first->setFocus();
+		buttons.second->setVisible(false);
+	}
 
 	setText(T_("About FearDC"));
 	setSmallIcon(WinUtil::createIcon(IDI_DCPP, 16));

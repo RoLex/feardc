@@ -1,12 +1,14 @@
 -- 1.3.2.1 2025-##-## --
 
 * Merge with DC++ 0.882
-* Update OpenSSL to version 3.2.4, requires linking FearDC with crypt32
+* Update OpenSSL to version 3.2.4, requires linking with crypt32
 * Update PO4A to version 0.71
 * Update NAT-PMP to version 20230423
 * Update MiniUPnPc to version 2.3.2
 * Replace GeoIP with MaxMindDB version 1.12.2
 * Correctly set language in PO files, language team remains to fix
+* Add missing copyrights and licenses for components used in this product
+* Add MMDB version including database date to about dialog
 * Add hublist.pwiam.com and dchublist.biz to list protected against CTM requests
 * Add dchublist.biz hublist by default
 * Remove dchublist.org hublist due to user count falsification for own interests

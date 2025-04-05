@@ -1,5 +1,5 @@
-This directory contains a subset of OpenSSL <www.openssl.org>, namely header
-files and static libraries compiled with MinGW and MSVC.
+This directory contains a subset of OpenSSL <https://openssl-library.org/>,
+namely header files and static libraries compiled with MinGW and MSVC.
 
 Info on the MinGW and MSVC compilers is in the "Compile.txt" file at the
 root of this repository.

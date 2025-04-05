@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -51,6 +51,20 @@ string GeoManager::getCountry(const string& ip) const {
 		return Util::emptyString;
 
 	return geo->getCountry(ip);
+}
+
+string GeoManager::getEpoch() const {
+	if (!geo.get())
+		return Util::emptyString;
+
+	return geo->getEpoch();
+}
+
+string GeoManager::getVersion() const {
+	if (!geo.get())
+		return Util::emptyString;
+
+	return geo->getVersion();
 }
 
 string GeoManager::getDbPath() {
