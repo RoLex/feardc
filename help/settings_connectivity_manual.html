@@ -121,6 +121,17 @@ search and download from users</a> of the DC network.
 	if the preferred port mapping interface were to fail.
 	</dd>
 
+	<dt id="broaddet">Enable broad device detection</dt>
+	<dd cshelp="IDH_SETTINGS_CONNECTIVITY_BROADDET">
+	If the interface supports the feature, enabling this option allows a broader selection of devices to be considered for port mapping.
+	It is recommended to enable this setting only if your device cannot be found using the normal detection method. The broader detection 
+	method may include devices that do not fully meet the usual criteria for port mapping. For example, devices with non-standard responses, 
+	firmware bugs, or those that appear on your network but report as disconnected or not properly connected to the internet may still be 
+	detected this way.
+	Please note that there is no guarantee that devices detected through this method will function correctly, even if port mapping appears 
+	to succeed. However, this option may occasionally allow buggy, but otherwise usable devices to work with DC++.
+	</dd>
+
 	<dt id="bindaddress">Bind Address</dt>
 	<dd cshelp="IDH_SETTINGS_CONNECTIVITY_BIND_ADDRESS">
 	This setting allows binding DC++ network connections of the specified protocol to a specific network 

@@ -5,34 +5,34 @@ This is continued list of NMDC_extensions.txt but for FearDC specifically.
 Feature: TLS
 Since: 1.3.x.x
 
-Usage: See https://client.feardc.net/NMDC.html#_tls
+Usage: See https://dc-protocols.github.io/NMDC.html#_tls
 
 --------------------------------------------------------------------
 
 Feature: BotList
 Since: 1.3.x.x
 
-Usage: See https://client.feardc.net/NMDC.html#_botlist
+Usage: See https://dc-protocols.github.io/NMDC.html#_botlist
 
 --------------------------------------------------------------------
 
 Feature: TTHS
 Since: 1.3.x.x
 
-Usage: See https://client.feardc.net/NMDC.html#_tths
+Usage: See https://dc-protocols.github.io/NMDC.html#_tths
 
 --------------------------------------------------------------------
 
 Feature: HubTopic
 Since: 1.3.x.x
 
-Usage: See https://client.feardc.net/NMDC.html#_hubtopic
+Usage: See https://dc-protocols.github.io/NMDC.html#_hubtopic
 
 --------------------------------------------------------------------
 
 Feature: MCTo
 Since: 1.3.x.x
 
-Usage: See https://client.feardc.net/NMDC.html#_mcto
+Usage: See https://dc-protocols.github.io/NMDC.html#_mcto
 
 --------------------------------------------------------------------

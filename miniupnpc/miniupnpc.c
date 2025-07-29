@@ -1,4 +1,4 @@
-/* $Id: miniupnpc.c,v 1.166 2025/03/02 01:16:23 nanard Exp $ */
+/* $Id: miniupnpc.c,v 1.167 2025/05/25 21:56:48 nanard Exp $ */
 /* vim: tabstop=4 shiftwidth=4 noexpandtab
  * Project : miniupnp
  * Web : http://miniupnp.free.fr/ or https://miniupnp.tuxfamily.org/
@@ -11,6 +11,7 @@
 #include <string.h>
 #ifdef _WIN32
 /* Win32 Specific includes and defines */
+#define WIN32_LEAN_AND_MEAN
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include <io.h>

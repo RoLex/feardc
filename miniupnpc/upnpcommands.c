@@ -1,4 +1,4 @@
-/* $Id: upnpcommands.c,v 1.54 2025/03/02 01:14:01 nanard Exp $ */
+/* $Id: upnpcommands.c,v 1.56 2025/03/29 18:08:59 nanard Exp $ */
 /* vim: tabstop=4 shiftwidth=4 noexpandtab
  * Project : miniupnp
  * Author : Thomas Bernard
@@ -421,7 +421,7 @@ UPNP_AddAnyPortMapping(const char * controlURL, const char * servicetype,
 	const char * resVal;
 	int ret;
 
-	if(!inPort || !inClient || !proto || !extPort)
+	if(!inPort || !inClient || !proto || !extPort || !reservedPort)
 		return UPNPCOMMAND_INVALID_ARGS;
 	buffer = simpleUPnPcommand(controlURL, servicetype,
 	                           "AddAnyPortMapping", AddAnyPortMappingArgs,
@@ -537,15 +537,36 @@ UPNP_DeletePortMappingRange(const char * controlURL, const char * servicetype,
 MINIUPNP_LIBSPEC int
 UPNP_GetGenericPortMappingEntry(const char * controlURL,
                                 const char * servicetype,
-							 const char * index,
-							 char * extPort,
-							 char * intClient,
-							 char * intPort,
-							 char * protocol,
-							 char * desc,
-							 char * enabled,
-							 char * rHost,
-							 char * duration)
+                                const char * index,
+                                char * extPort,
+                                char * intClient,
+                                char * intPort,
+                                char * protocol,
+                                char * desc,
+                                char * enabled,
+                                char * rHost,
+                                char * duration)
+{
+	return UPNP_GetGenericPortMappingEntryExt(controlURL, servicetype, index,
+	                                          extPort, intClient, intPort,
+	                                          protocol, desc, 80, enabled,
+	                                          rHost, 64, duration);
+}
+
+MINIUPNP_LIBSPEC int
+UPNP_GetGenericPortMappingEntryExt(const char * controlURL,
+                                   const char * servicetype,
+                                   const char * index,
+                                   char * extPort,
+                                   char * intClient,
+                                   char * intPort,
+                                   char * protocol,
+                                   char * desc,
+                                   size_t desclen,
+                                   char * enabled,
+                                   char * rHost,
+                                   size_t rHostlen,
+                                   char * duration)
 {
 	struct NameValueParserData pdata;
 	struct UPNParg GetPortMappingArgs[] = {
@@ -556,10 +577,8 @@ UPNP_GetGenericPortMappingEntry(const char * controlURL,
 	int bufsize;
 	char * p;
 	int ret = UPNPCOMMAND_UNKNOWN_ERROR;
-	if(!index)
+	if(!index || !extPort || !intClient || !intPort || !protocol)
 		return UPNPCOMMAND_INVALID_ARGS;
-	intClient[0] = '\0';
-	intPort[0] = '\0';
 	buffer = simpleUPnPcommand(controlURL, servicetype,
 	                           "GetGenericPortMappingEntry",
 	                           GetPortMappingArgs, &bufsize);
@@ -572,21 +591,29 @@ UPNP_GetGenericPortMappingEntry(const char * controlURL,
 	p = GetValueFromNameValueList(&pdata, "NewRemoteHost");
 	if(p && rHost)
 	{
-		strncpy(rHost, p, 64);
-		rHost[63] = '\0';
+		strncpy(rHost, p, rHostlen);
+		rHost[rHostlen-1] = '\0';
 	}
 	p = GetValueFromNameValueList(&pdata, "NewExternalPort");
-	if(p && extPort)
+	if(p)
 	{
 		strncpy(extPort, p, 6);
 		extPort[5] = '\0';
 		ret = UPNPCOMMAND_SUCCESS;
 	}
+	else
+	{
+		extPort[0] = '\0';
+	}
 	p = GetValueFromNameValueList(&pdata, "NewProtocol");
-	if(p && protocol)
+	if(p)
 	{
 		strncpy(protocol, p, 4);
 		protocol[3] = '\0';
+	}
+	else
+	{
+		protocol[0] = '\0';
 	}
 	p = GetValueFromNameValueList(&pdata, "NewInternalClient");
 	if(p)
@@ -595,11 +622,19 @@ UPNP_GetGenericPortMappingEntry(const char * controlURL,
 		intClient[15] = '\0';
 		ret = 0;
 	}
+	else
+	{
+		intClient[0] = '\0';
+	}
 	p = GetValueFromNameValueList(&pdata, "NewInternalPort");
 	if(p)
 	{
 		strncpy(intPort, p, 6);
 		intPort[5] = '\0';
+	}
+	else
+	{
+		intPort[0] = '\0';
 	}
 	p = GetValueFromNameValueList(&pdata, "NewEnabled");
 	if(p && enabled)
@@ -610,8 +645,8 @@ UPNP_GetGenericPortMappingEntry(const char * controlURL,
 	p = GetValueFromNameValueList(&pdata, "NewPortMappingDescription");
 	if(p && desc)
 	{
-		strncpy(desc, p, 80);
-		desc[79] = '\0';
+		strncpy(desc, p, desclen);
+		desc[desclen-1] = '\0';
 	}
 	p = GetValueFromNameValueList(&pdata, "NewLeaseDuration");
 	if(p && duration)
@@ -681,6 +716,26 @@ UPNP_GetSpecificPortMappingEntry(const char * controlURL,
                                  char * enabled,
                                  char * leaseDuration)
 {
+	return UPNP_GetSpecificPortMappingEntryExt(controlURL, servicetype,
+	                                           extPort, proto, remoteHost,
+	                                           intClient, intPort,
+	                                           desc, 80, enabled,
+	                                           leaseDuration);
+}
+
+MINIUPNP_LIBSPEC int
+UPNP_GetSpecificPortMappingEntryExt(const char * controlURL,
+                                    const char * servicetype,
+                                    const char * extPort,
+                                    const char * proto,
+                                    const char * remoteHost,
+                                    char * intClient,
+                                    char * intPort,
+                                    char * desc,
+                                    size_t desclen,
+                                    char * enabled,
+                                    char * leaseDuration)
+{
 	struct NameValueParserData pdata;
 	struct UPNParg GetPortMappingArgs[] = {
 		{"NewRemoteHost", remoteHost},
@@ -729,8 +784,8 @@ UPNP_GetSpecificPortMappingEntry(const char * controlURL,
 
 	p = GetValueFromNameValueList(&pdata, "NewPortMappingDescription");
 	if(p && desc) {
-		strncpy(desc, p, 80);
-		desc[79] = '\0';
+		strncpy(desc, p, desclen);
+		desc[desclen-1] = '\0';
 	}
 
 	p = GetValueFromNameValueList(&pdata, "NewLeaseDuration");

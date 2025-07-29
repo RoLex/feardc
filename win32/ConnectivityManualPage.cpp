@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -169,6 +169,7 @@ PageContent::PageContent(dwt::GridPtr grid_) :
 	passive(0),
 	inactive(0),
 	mapper(0),
+	isBroad(0),
 	bind(0),
 	grid(grid_)
 {
@@ -219,8 +220,15 @@ void PageContent::initializeUI()
 
 		{
 			auto group = cur->addChild(GroupBox::Seed(T_("Preferred port mapper")));
-			group->setHelpId(IDH_SETTINGS_CONNECTIVITY_MAPPER);
-			mapper = group->addChild(WinUtil::Seeds::Dialog::comboBox);
+
+			auto cur = group->addChild(Grid::Seed(2, 1));
+
+			mapper = cur->addChild(WinUtil::Seeds::Dialog::comboBox);
+			mapper->setHelpId(IDH_SETTINGS_CONNECTIVITY_MAPPER);
+
+			isBroad = cur->addChild(CheckBox::Seed(T_("Enable broad device detection")));
+			items.emplace_back(isBroad, settingIsBroad, PropPage::T_BOOL);
+			isBroad->setHelpId(IDH_SETTINGS_CONNECTIVITY_BROADDET);
 		}
 
 		auto group = cur->addChild(GroupBox::Seed(T_("Bind Address")));
@@ -319,6 +327,7 @@ PageContentV4::PageContentV4(dwt::GridPtr grid) : PageContent(grid)
 	settingNoIPOverride = SettingsManager::NO_IP_OVERRIDE;
 	settingBindAddress = SettingsManager::BIND_ADDRESS;
 	settingMapper = SettingsManager::MAPPER;
+	settingIsBroad = SettingsManager::BROAD_DETECTION;
 
 	isV6 = false;
 
@@ -332,6 +341,7 @@ PageContentV6::PageContentV6(dwt::GridPtr grid) : PageContent(grid)
 	settingNoIPOverride = SettingsManager::NO_IP_OVERRIDE6;
 	settingBindAddress = SettingsManager::BIND_ADDRESS6;
 	settingMapper = SettingsManager::MAPPER6;
+	settingIsBroad = SettingsManager::BROAD_DETECTION6;
 
 	isV6 = true;
 

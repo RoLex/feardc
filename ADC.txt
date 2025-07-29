@@ -1,1 +1,1 @@
-See <https://adc.sourceforge.io/> for ADC documentation.
+See <https://dc-protocols.github.io/> for ADC documentation.

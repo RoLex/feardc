@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -45,6 +45,7 @@
 #endif
 
 #include <limits>
+#include <memory>
 
 // define this to 1 to measure the time taken by searches to complete.
 #ifndef DCPP_TIME_SEARCHES
@@ -886,8 +887,10 @@ void ShareManager::runRefresh(function<void (float)> progressF) {
 	if(dirs.empty())
 		refreshDirs = false;
 
+	std::shared_ptr<HashManager::HashPauser> pauser;
+
 	if(refreshDirs) {
-		HashManager::HashPauser pauser;
+		pauser = std::make_shared<HashManager::HashPauser>();
 
 		LogManager::getInstance()->message(_("File list refresh initiated"));
 
@@ -929,7 +932,9 @@ void ShareManager::runRefresh(function<void (float)> progressF) {
 	}
 
 	if(update) {
-		ClientManager::getInstance()->infoUpdated();
+		/* Hold off hashing until all infos have been sent out 
+		   so we properly signal the update to possible bloom requesters. */
+		ClientManager::getInstance()->infoUpdated(std::move(pauser));
 	}
 
 	refreshing.clear();
@@ -1456,6 +1461,8 @@ void ShareManager::on(HashManagerListener::TTHDone, const string& realPath, cons
 
 		setDirty();
 		forceXmlRefresh = true;
+
+		bloom.add(Text::toLower(Util::getFileName(realPath)));
 	}
 }
 

@@ -1,5 +1,22 @@
-$Id: Changelog.txt,v 1.276 2025/03/05 10:29:50 nanard Exp $
+$Id: Changelog.txt,v 1.280 2025/05/25 21:56:47 nanard Exp $
 miniUPnP client Changelog.
+
+VERSION 2.3.3 : released 2025/05/27
+
+2025/05/25:
+  define WIN32_LEAN_AND_MEAN
+
+2025/03/29:
+  fix a bug in ssdpDiscoverDevices() that has been there since 2010/04/05
+    and the use of getaddrinfo()
+  more argument checks in UPNP_AddAnyPortMapping() and
+    UPNP_GetGenericPortMappingEntryExt()
+
+2025/03/18:
+  Add UPNP_GetSpecificPortMappingEntryExt() and
+  UPNP_GetGenericPortMappingEntryExt() functions to support retrieving
+  arbitrary long descriptions.
+  Increments API_VERSION to 21
 
 VERSION 2.3.2 : released 2025/03/05
 

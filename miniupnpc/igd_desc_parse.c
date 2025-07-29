@@ -82,7 +82,14 @@ void IGDdata(void * d, const char * data, int l)
 /*	else if( !strcmp(datas->cureltname, "deviceType") )
 		dstmember = datas->devicetype_tmp;*/
 	else if( !strcmp(datas->cureltname, "friendlyName") )
-		dstmember = datas->tmp.friendlyName;
+ 		dstmember = datas->tmp.friendlyName;
+	else if( !strcmp(datas->cureltname, "manufacturer") )
+		dstmember = datas->tmp.manufacturer;
+	else if( !strcmp(datas->cureltname, "modelName") )
+		dstmember = datas->tmp.modelName;
+	else if( !strcmp(datas->cureltname, "modelNumber") )
+		dstmember = datas->tmp.modelNumber;
+
 	if(dstmember)
 	{
 		if(l>=MINIUPNPC_URL_MAXSIZE)

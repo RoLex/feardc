@@ -1,4 +1,4 @@
-/* $Id: addr_is_reserved.c,v 1.7 2025/01/12 15:47:17 nanard Exp $ */
+/* $Id: addr_is_reserved.c,v 1.8 2025/05/25 21:56:48 nanard Exp $ */
 /* vim: tabstop=4 shiftwidth=4 noexpandtab
  * Project : miniupnp
  * Web : http://miniupnp.free.fr/ or https://miniupnp.tuxfamily.org/
@@ -8,6 +8,7 @@
  * provided LICENSE file. */
 #ifdef _WIN32
 /* Win32 Specific includes and defines */
+#define WIN32_LEAN_AND_MEAN
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #if !defined(_MSC_VER)

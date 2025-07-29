@@ -383,14 +383,14 @@ class Dev:
             if env["arch"] != "x86":
                 openssl_lib += env["arch"] + "/"
             env.Append(LIBPATH=[openssl_lib])
-
+            env.Append(LIBS=["crypt32"])
         if "msvc" in env["TOOLS"]:
             if env["mode"] == "debug":
                 env.Prepend(LIBS=["libssld", "libcryptod"])
             else:
                 env.Prepend(LIBS=["libssl", "libcrypto"])
         else:
-            env.Prepend(LIBS=["ssl", "crypto", "crypt32"])
+            env.Prepend(LIBS=["ssl", "crypto"])
 
     def force_console(self, env):
         if "-mwindows" in env["CCFLAGS"]:

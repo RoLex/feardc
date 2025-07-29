@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -55,7 +55,7 @@ public:
 	virtual void search(int aSizeMode, int64_t aSize, int aFileType, const string& aString, const string& aToken, const StringList& aExtList, const string& aKey) = 0;
 	virtual void password(const string& pwd) = 0;
 	/** Send new information about oneself. Thread-safe. */
-	void info();
+	void info(Holder h = nullptr);
 
 	virtual size_t getUserCount() const = 0;
 	virtual int64_t getAvailable() const = 0;

@@ -38,6 +38,8 @@
 	<dt>Duplicate file will not be shared: [path1] (Size: [size]) Dupe matched against: [path2]</dt>
 	<dd>This means that since you have <a href="settings_advanced.html#listdupes">Keep duplicate files in your file list</a>
 	setting disabled, a file ([path1]) beeing indexed and already shared (as [path2]) won't be added to your share again.</dd>
+	<dt>Hash database rebuild has been scheduled</dt>
+	<dd>A <a href="chat_commands.html">/rebuild</a> command received while the hashing process was paused. The hash database will be rebuilt once hashing is resumed.</dd>
 	<dt>Hash database rebuilt</dt>
 	<dd>Informs you about the finish of a full hash database rebuilding process which can be initiated by the <a href="chat_commands.html">/rebuild</a> chat command</dd>
 	<dt>Disconnected user leaving the hub: [nick]</dt>
@@ -64,9 +66,10 @@
 <p>Some errors shown in the log contain additional system messages provided by the operating system. These messages usually tell you more about the exact problem; they are marked as [error message] in the description of possible logged errors below. Note that system messages are always shown in the language of your operating system even if you have chosen another one for DC++.</p>
 <dl style="margin-left: 40px;">
 	<dt>Error registering dchub:// link handler</dt>
+	<dt>Error registering nmdcs:// link handler</dt>
 	<dt>Error registering adc(s):// link handler</dt>
 	<dt>Error registering Magnet link handler</dt>
-	<dd>These errors mean that DC++ was unable to register the appropriate link handler(s) in Windows, per the <a href="settings_advanced.html#registrymagnet">Register with Windows to handle magnet: URI links</a> and <a href="settings_advanced.html#registrydchubadc">Register with Windows to handle dchub://, adc:// and adcs:// URL links</a> settings. The most common reason of an unsuccesful registration is that the user account under which DC++ is running does not have appropriate rights for (write) access the required parts of the Windows Registry.</dd>
+	<dd>These errors mean that DC++ was unable to register the appropriate link handler(s) in Windows, per the <a href="settings_advanced.html#registrymagnet">Register with Windows to handle magnet: URI links</a> and <a href="settings_advanced.html#registrydchubadc">Register with Windows to handle dchub://, nmdcs://, adc:// and adcs:// URL links</a> settings. The most common reason of an unsuccesful registration is that the user account under which DC++ is running does not have appropriate rights for (write) access the required parts of the Windows Registry.</dd>
 	<dt>Port mapping: Failed to get external IP</dt>
 	<dd>This error message can appear when DC++ tries to map ports for incoming connections via NAT-PMP / UPnP and means that although port mappings were successful, DC++ couldn't get the external IP address from the gateway (router) device. If this message persists, it may be because of broken NAT-PMP / UPnP support of the device. This is not very important, since DC++ can still gather the external IP from connected hubs <a href="settings_connectivity_manual.html#noipoverride">if it is allowed to do so</a>.</dd>
 	<dt>Port mapping: Another port mapping attempt is in progress...</dt>
@@ -112,9 +115,9 @@
 	<dt>Error hashing [path]: [error message]</dt>
 	<dd>Error when hashing the file specified in [path].</dd>
 	<dt>Error saving hash data: [error message]</dt>
-	<dd>Error when creating or updating hash index file (HashIndex.xml).</dd>
+	<dd>Error when creating or updating hash database files (HashIndex.xml, HashData.dat). This message appearing repeatedly may indicate hash database corruption or issues accessing the <a href="faq_settings_files.html">settings folder or files</a>.</dd>
 	<dt>Error creating hash data file: [error message]</dt>
-	<dd>Error when creating hash data file (HashData.dat).</dd>
+	<dd>Error when creating hash data file (HashData.dat). This message may indicate issues accessing the <a href="faq_settings_files.html">settings folder or files</a>.</dd>
 	<dt>[path] not shared; calculated CRC32 does not match the one found in SFV file.</dt>
 	<dd>Before sharing files DC++ will automatically check them against an .SFV file (if one exists in the same directory) to make sure that no corrupted files will be shared. If you get this error then either your file(s) are corrupted or the control data in the corresponding .SFV file is outdated or damaged.</dd>
 	<dt>Unable to move [path1] to [path2] ([error message]); renamed to [path3]</dt>

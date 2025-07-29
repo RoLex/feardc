@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -149,8 +149,8 @@ public:
 		STATUS_IN_CHAT, TIME_DEPENDENT_THROTTLE, TIME_STAMPS,
 		TOGGLE_ACTIVE_WINDOW, URL_HANDLER, USE_CTRL_FOR_LINE_HISTORY, USE_SYSTEM_ICONS,
 		USERS_FILTER_FAVORITE, USERS_FILTER_ONLINE, USERS_FILTER_QUEUE, USERS_FILTER_WAITING,
-		REGISTER_SYSTEM_STARTUP, DONT_LOG_CCPM, AC_DISCLAIM, ENABLE_TASKBAR_PREVIEW,
-		ENABLE_SUDP,
+		REGISTER_SYSTEM_STARTUP, DONT_LOG_CCPM, AC_DISCLAIM, ENABLE_TASKBAR_PREVIEW, ENABLE_SUDP,
+		BROAD_DETECTION, BROAD_DETECTION6,
 		BOOL_LAST };
 
 	enum Int64Setting { INT64_FIRST = BOOL_LAST + 1,

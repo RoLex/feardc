@@ -1,8 +1,8 @@
-/* $Id: miniwget.c,v 1.87 2024/06/04 23:52:36 nanard Exp $ */
+/* $Id: miniwget.c,v 1.88 2025/05/25 21:56:49 nanard Exp $ */
 /* Project : miniupnp
  * Website : http://miniupnp.free.fr/ or https://miniupnp.tuxfamily.org/
  * Author : Thomas Bernard
- * Copyright (c) 2005-2024 Thomas Bernard
+ * Copyright (c) 2005-2025 Thomas Bernard
  * This software is subject to the conditions detailed in the
  * LICENCE file provided in this distribution. */
 
@@ -11,15 +11,13 @@
 #include <string.h>
 #include <ctype.h>
 #ifdef _WIN32
+#define WIN32_LEAN_AND_MEAN
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include <io.h>
 #define MAXHOSTNAMELEN 64
 #include "win32_snprintf.h"
 #define socklen_t int
-#ifdef strncasecmp
-#undef strncasecmp
-#endif
 #ifndef strncasecmp
 #if defined(_MSC_VER) && (_MSC_VER >= 1400)
 #define strncasecmp _memicmp

@@ -1,4 +1,4 @@
-/* $Id: minissdpc.c,v 1.52 2025/01/12 15:47:17 nanard Exp $ */
+/* $Id: minissdpc.c,v 1.56 2025/05/25 21:56:48 nanard Exp $ */
 /* vim: tabstop=4 shiftwidth=4 noexpandtab
  * Project : miniupnp
  * Web : http://miniupnp.free.fr/ or https://miniupnp.tuxfamily.org/
@@ -16,6 +16,7 @@
 #endif
 #if defined(_WIN32) || defined(__amigaos__) || defined(__amigaos4__)
 #ifdef _WIN32
+#define WIN32_LEAN_AND_MEAN
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include <io.h>
@@ -390,7 +391,7 @@ free_tmp_and_return:
  * the last 4 arguments are filled during the parsing :
  *    - location/locationsize : "location:" field of the SSDP reply packet
  *    - st/stsize : "st:" field of the SSDP reply packet.
- *    - usn/usnsize : "usn:" filed of the SSDP reply packet
+ *    - usn/usnsize : "usn:" field of the SSDP reply packet
  * The strings are NOT null terminated */
 static void
 parseMSEARCHReply(const char * reply, int size,
@@ -542,10 +543,10 @@ ssdpDiscoverDevices(const char * const deviceTypes[],
 	int n;
 	struct sockaddr_storage sockudp_r;
 	unsigned int mx;
+	int rv;
 #ifdef NO_GETADDRINFO
 	struct sockaddr_storage sockudp_w;
 #else
-	int rv;
 	struct addrinfo hints, *servinfo;
 #endif
 #ifdef _WIN32
@@ -874,9 +875,9 @@ ssdpDiscoverDevices(const char * const deviceTypes[],
 			p->sin_port = htons(SSDP_PORT);
 			p->sin_addr.s_addr = inet_addr(UPNP_MCAST_ADDR);
 		}
-		n = sendto(sudp, bufr, n, 0, &sockudp_w,
-		           ipv6 ? sizeof(struct sockaddr_in6) : sizeof(struct sockaddr_in));
-		if (n < 0) {
+		rv = sendto(sudp, bufr, n, 0, (struct sockaddr *)&sockudp_w,
+		            ipv6 ? sizeof(struct sockaddr_in6) : sizeof(struct sockaddr_in));
+		if (rv < 0) {
 			if(error)
 				*error = MINISSDPC_SOCKET_ERROR;
 			PRINT_SOCKET_ERROR("sendto");
@@ -902,9 +903,11 @@ ssdpDiscoverDevices(const char * const deviceTypes[],
 			break;
 		} else {
 			struct addrinfo *p;
+			/* as getaddrinfo() returns a linked list, we are iterating it
+			 * even thought it should only return one result here */
 			for(p = servinfo; p; p = p->ai_next) {
-				n = sendto(sudp, bufr, n, 0, p->ai_addr, MSC_CAST_INT p->ai_addrlen);
-				if (n < 0) {
+				rv = sendto(sudp, bufr, n, 0, p->ai_addr, MSC_CAST_INT p->ai_addrlen);
+				if (rv < 0) {
 #ifdef DEBUG
 					char hbuf[NI_MAXHOST], sbuf[NI_MAXSERV];
 					if (getnameinfo(p->ai_addr, (socklen_t)p->ai_addrlen, hbuf, sizeof(hbuf), sbuf,

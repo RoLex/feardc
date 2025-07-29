@@ -29,7 +29,7 @@ configured active mode connection. For a more in-depth explanation, read
 downloads</b> to work. These settings <b>have no effect on ability to connecting to hubs
 or downloading hublists</b>. This FAQ assumes that <u>you are able to download hublists
 and connect to hubs</u> as well as other peers can upload files from you. If this is not
-true then you must elminate another kind of problems before go on with this FAQ:
+the case, then you must check the following before continuing with this FAQ:
 <ul>
 	<li>Make sure DC++ isn't blocked by any firewall and similar security software. For tips
 	how to workaround this situation and unblock DC++ please follow <a href="faq_unblock.html">
@@ -177,15 +177,13 @@ a successful attempt. To enable automatic port mapping
 		and downloads still don't work as the port mapping operation is actually failed. In this case you can 
 		<a href="settings_connectivity_manual.html#prefmap">select another mapping interface to try first</a> in a hope of a
 		better result.</li>
+	<li>Try enabling <a href="settings_connectivity_manual.html#broaddet">Broad Device Detection</a>, a feature supported by
+		 some of the mapping interfaces. This may help discover and successfully utilize mapping devices (routers) that would
+		 otherwise be ignored due to issues or incompatibility.</li>
 	<li>Try to <a href="settings_connectivity_manual.html#extip">set your external IP manually</a> (see above how to determine it)
 		especially if you see 'Port mapping: Failed to get external IP' message in the <a href="window_system_log.html">
 		System Log</a> window or wrong IP addess shown if you use the /conn chat command. Don't forget to 
 		<a href="settings_connectivity_manual.html#noipoverride">disallow the automatic IP override</a> in these cases.</li>
-	<!--Readd this when DC++ gets WinUPnP support again
-	<li>While the preferred UPnP interface is MiniUPnP, in some cases you may find the legacy Windows UPnP mapper more 
-		successful (eg. if you have an older router model and it worked well with older versions of DC++). In any case it
-		worth a try if the other mappers are failed and you'll find troubleshooting tips for the <u>Windows UPnP only</u> in
-		<a href="https://www.dslreports.com/faq/11043" target="_blank" class="external">this FAQ</a>.</li>-->
 </ul>
 </p>
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -53,6 +53,7 @@ protected:
 			cs.style |= ES_READONLY;
 			chat = dwt::WidgetCreator<RichTextBox>::create(parent, cs);
 			chat->setTextLimit(1024*64*2);
+			chat->onSearchStrNotFound([this](const tstring& text) { t().addStatus(T_("String not found : ") + text); });
 		}
 
 		{

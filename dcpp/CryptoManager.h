@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,7 +58,7 @@ public:
 
 	void loadCertificates() noexcept;
 	void generateCertificate();
-	bool checkCertificate() noexcept;
+	bool checkCertificate(int minValidityDays = 0) noexcept;
 	const ByteVector& getKeyprint() const noexcept;
 
 	bool TLSOk() const noexcept;

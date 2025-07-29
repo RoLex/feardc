@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -70,7 +70,7 @@ public:
 	/** Return block size of the tree associated with root, or 0 if no such tree is in the store */
 	int64_t getBlockSize(const TTHValue& root);
 
-	void addTree(const TigerTree& tree) { Lock l(cs); store.addTree(tree); }
+	bool addTree(const TigerTree& tree) { Lock l(cs); return store.addTree(tree); }
 
 	void getStats(string& curFile, uint64_t& bytesLeft, size_t& filesLeft) const {
 		hasher.getStats(curFile, bytesLeft, filesLeft);
@@ -93,11 +93,9 @@ public:
 	struct HashPauser {
 		HashPauser();
 		~HashPauser();
-
-	private:
-		bool resume;
 	};
 
+	/** Hash pausing & resuming for GUI purposes. No more nr. of resume calls than pause */
 	/// @return whether hashing was already paused
 	bool pauseHashing() noexcept;
 	void resumeHashing() noexcept;
@@ -106,7 +104,7 @@ public:
 private:
 	class Hasher : public Thread {
 	public:
-		Hasher() : stop(false), running(false), paused(0), rebuild(false), currentSize(0) { }
+		Hasher() : stop(false), running(false), idle(true), paused(0), rebuild(false), currentSize(0) { }
 
 		void hashFile(const string& fileName, int64_t size) noexcept;
 
@@ -120,7 +118,7 @@ private:
 		bool fastHash(const string& fname, uint8_t* buf, TigerTree& tth, int64_t size, CRC32Filter* xcrc32);
 		void getStats(string& curFile, uint64_t& bytesLeft, size_t& filesLeft) const;
 		void shutdown() { stop = true; if(paused) s.signal(); s.signal(); }
-		void scheduleRebuild() { rebuild = true; if(paused) s.signal(); s.signal(); }
+		void scheduleRebuild();
 
 	private:
 		// Case-sensitive (faster), it is rather unlikely that case changes, and if it does it's harmless.
@@ -130,7 +128,10 @@ private:
 		Semaphore s;
 
 		bool stop;
+		/** A queue item's currently being processed */ 
 		bool running;
+		/** The queue is empty */ 
+		bool idle;
 		unsigned paused;
 		bool rebuild;
 		string currentFile;
@@ -153,7 +154,7 @@ private:
 
 		optional<TTHValue> getTTH(const string& aFileName, int64_t aSize, uint32_t aTimeStamp) noexcept;
 
-		void addTree(const TigerTree& tt) noexcept;
+		bool addTree(const TigerTree& tt) noexcept;
 		bool getTree(const TTHValue& root, TigerTree& tth);
 		int64_t getBlockSize(const TTHValue& root) const;
 		bool isDirty() { return dirty; }

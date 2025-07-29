@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,6 +19,10 @@
 #define DCPLUSPLUS_DCPP_MAPPER_MINIUPNPC_H
 
 #include "Mapper.h"
+
+extern "C" {
+	struct IGDdatas;
+}
 
 namespace dcpp {
 
@@ -41,11 +45,16 @@ private:
 	string getDeviceName();
 	string getExternalIP();
 
+	void formatDeviceName(const IGDdatas* igdData);
+
 	const string& getName() const { return name; }
+
+	void setDetectionMode(bool isBroad) { broadDetection = isBroad; }
 
 	string url;
 	string service;
 	string device;
+	bool broadDetection;
 };
 
 } // dcpp namespace

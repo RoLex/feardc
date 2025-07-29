@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ namespace dcpp {
 const string Mapper_MiniUPnPc::name = "MiniUPnP";
 
 Mapper_MiniUPnPc::Mapper_MiniUPnPc(string&& localIp, bool v6) :
-Mapper(move(localIp), v6)
+Mapper(move(localIp), v6), broadDetection(false)
 {
 }
 
@@ -48,16 +48,16 @@ bool Mapper_MiniUPnPc::init() {
 
 	auto ret = UPNP_GetValidIGD(devices, &urls, &data, 0, 0, 0, 0);
 
-	bool ok = ret == 1;
+	bool ok = broadDetection ? ret > UPNP_NO_IGD && ret < UPNP_UNKNOWN_DEVICE : ret == UPNP_CONNECTED_IGD;
 	if(ok) {
 		url = urls.controlURL;
 		service = data.first.servicetype;
-		device = data.CIF.friendlyName;
+		formatDeviceName(&data);
 	}
 
-	if(ret > 0) {
+	freeUPNPDevlist(devices);
+	if(ret > UPNP_NO_IGD) {
 		FreeUPNPUrls(&urls);
-		freeUPNPDevlist(devices);
 	}
 
 	return ok;
@@ -84,6 +84,17 @@ string Mapper_MiniUPnPc::getExternalIP() {
 	if(UPNP_GetExternalIPAddress(url.c_str(), service.c_str(), buf) == UPNPCOMMAND_SUCCESS)
 		return buf;
 	return string();
+}
+
+void Mapper_MiniUPnPc::formatDeviceName(const IGDdatas* igdData) {
+	device = igdData->CIF.friendlyName;
+
+	if (igdData->CIF.manufacturer[0] || igdData->CIF.modelName[0]) {
+		device += string(" - ") + igdData->CIF.manufacturer + " " + igdData->CIF.modelName;
+		if (igdData->CIF.modelNumber[0]) {
+			device += string(" ") + igdData->CIF.modelNumber;
+		}
+	}
 }
 
 } // dcpp namespace

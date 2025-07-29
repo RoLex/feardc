@@ -50,7 +50,7 @@ Update version numbers in:
 4) Changelog update
 -------------------
 
-Set the first line of the ``changelog.txt`` file to refer to the new version. Example:
+Set the first line of the ``changelog_feardc.txt`` file to refer to the new version. Example:
 
     -- 0.851 2015-04-06 --
 

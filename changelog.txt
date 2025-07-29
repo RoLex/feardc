@@ -1,3 +1,16 @@
+* [L#1993817] Add option for a broader port mapping device detection method (currently works with MiniUPnPc only) (emtee)
+* Improve port mapping device indentification in the logs (emtee)
+* [L#1981899] Make self generated certs valid for a year, regenerate them sooner than the expriation time (code adapted from AirDC++) (emtee)
+* Meaningful TLS error messages (code adapted from AirDC++) (emtee)
+* [L#2078913] Fix NAT-PNP mapping removal (maksis)
+* [L#1194085] Avoid flooding with infinite full tree requests (emtee)
+* Fix a possible crash when saving hash data (emtee)
+* [L#2110291] [ADC] Fix a possible latency in the availability of TTH search results for updated files on hubs with BLOM support (emtee)
+* Ensure that files are always instantly searchable by name after they have been hashed (emtee)
+* [L#2111115] Fix hash pausing so it always works instantly (emtee)
+* Update OpenSSL to version 3.2.4
+* Update MiniUPnPc to version 2.3.3
+
 -- 0.882 2024-11-09 --
 * Show share totals information in main window statusbar (iceman50)
 * [L#1828593] Save segment progress info of running downloads upon OS shutdown (emtee)

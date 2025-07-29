@@ -1,4 +1,4 @@
-/* $Id: miniupnpc.h,v 1.74 2025/03/02 01:16:25 nanard Exp $ */
+/* $Id: miniupnpc.h,v 1.79 2025/05/25 21:51:11 nanard Exp $ */
 /* vim: tabstop=4 shiftwidth=4 noexpandtab
  * Project: miniupnp
  * http://miniupnp.free.fr/ or https://miniupnp.tuxfamily.org/
@@ -19,7 +19,7 @@
  * MiniUPnPc (MiniUPnP client) is a library implementing a UPnP
  * Internet Gateway Device (IGD) control point.
  *
- * It should be used by applications that needs to listen to incoming
+ * It should be used by applications that need to listen to incoming
  * traffic from the internet which are running on a LAN where a
  * UPnP IGD is running on the router (or gateway).
  *
@@ -42,9 +42,9 @@
 #define UPNPDISCOVER_MEMORY_ERROR (-102)
 
 /*! \brief software version */
-#define MINIUPNPC_VERSION	"2.3.2"
+#define MINIUPNPC_VERSION	"2.3.3"
 /*! \brief C API version */
-#define MINIUPNPC_API_VERSION	19
+#define MINIUPNPC_API_VERSION	21
 
 /*! \brief any (ie system chosen) port */
 #define UPNP_LOCAL_PORT_ANY     0
@@ -67,6 +67,8 @@ struct UPNParg {
 
 /*!
  * \brief execute a UPnP method (SOAP action)
+ *
+ * \todo error reporting should be improved
  *
  * \param[in] url Control URL for the service
  * \param[in] service service to use
@@ -279,7 +281,7 @@ GetUPNPUrls(struct UPNPUrls * urls, struct IGDdatas * data,
  * \brief free the members of a UPNPUrls struct
  *
  * All URLs buffers are freed and zeroed
- * \param[out] urls
+ * \param[out] urls URL structure to free
  */
 MINIUPNP_LIBSPEC void
 FreeUPNPUrls(struct UPNPUrls * urls);

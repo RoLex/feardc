@@ -1,7 +1,7 @@
 /*
   DC++ Widget Toolkit
 
-  Copyright (c) 2007-2024, Jacek Sieka
+  Copyright (c) 2007-2025, Jacek Sieka
 
   All rights reserved.
 
@@ -344,9 +344,9 @@ void RichTextBox::findText(tstring const& needle) {
 		setFocus();
 		sendMessage(EM_EXSETSEL, 0, reinterpret_cast< LPARAM >(&ft.chrg));
 	} else {
-#ifdef PORT_ME
-		addStatus(T_("String not found: ") + needle);
-#endif
+		if (searchNotFound) {
+			searchNotFound(needle);
+		}
 		clearCurrentNeedle();
 	}
 }

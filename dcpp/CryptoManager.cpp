@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -164,7 +164,7 @@ void CryptoManager::generateCertificate() {
 		throw CryptoException(_("Error generating certificate"));
 	}
 
-	int days = 90;
+	int days = 365;
 	int keylength = 2048;
 
 #define CHECK(n) if(!(n)) { throw CryptoException(#n); }
@@ -249,8 +249,9 @@ void CryptoManager::loadCertificates() noexcept {
 		return;
 	}
 
-	if(File::getSize(cert) == -1 || File::getSize(key) == -1 || !checkCertificate()) {
-		// Try to generate them...
+	// If not found, invalid or expire within 90 days...
+	if(File::getSize(cert) == -1 || File::getSize(key) == -1 || !checkCertificate(90)) {
+		// Try to (re)generate them...
 		try {
 			generateCertificate();
 			LogManager::getInstance()->message(_("Generated new TLS certificate"));
@@ -294,7 +295,7 @@ void CryptoManager::loadCertificates() noexcept {
 	certsLoaded = true;
 }
 
-bool CryptoManager::checkCertificate() noexcept {
+bool CryptoManager::checkCertificate(int minValidityDays) noexcept {
 	auto x509 = ssl::getX509(SETTING(TLS_CERTIFICATE_FILE).c_str());
 	if(!x509) {
 		return false;
@@ -317,7 +318,8 @@ bool CryptoManager::checkCertificate() noexcept {
 
 	ASN1_TIME* t = X509_get_notAfter(x509);
 	if(t) {
-		if(X509_cmp_current_time(t) < 0) {
+		time_t minValid = GET_TIME() + 60 * 60 * 24 * minValidityDays;
+		if (X509_cmp_time(t, &minValid) < 0) {
 			return false;
 		}
 	}

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -114,7 +114,7 @@ const string SettingsManager::settingTags[] =
 	"ToggleActiveTab", "UrlHandler", "UseCTRLForLineHistory", "UseSystemIcons",
 	"UsersFilterFavorite", "UsersFilterOnline", "UsersFilterQueue", "UsersFilterWaiting",
 	"RegisterSystemStartup", "DontLogCCPMChat", "AboutCfgDisclaimer", "EnableTaskbarPreview",
-	"EnableSUDP",
+	"EnableSUDP", "BroadDetection", "BroadDetection6",
 	"SENTRY",
 	// Int64
 	"TotalUpload", "TotalDownload", "SharingSkiplistMinSize", "SharingSkiplistMaxSize",
@@ -178,6 +178,8 @@ SettingsManager::SettingsManager() {
 	setDefault(INCOMING_CONNECTIONS, INCOMING_ACTIVE);
 	setDefault(INCOMING_CONNECTIONS6, INCOMING_DISABLED);
 	setDefault(OUTGOING_CONNECTIONS, OUTGOING_DIRECT);
+	setDefault(BROAD_DETECTION, false);
+	setDefault(BROAD_DETECTION6, false);
 	setDefault(AUTO_DETECT_CONNECTION, true);
 	setDefault(AUTO_FOLLOW, true);
 	setDefault(CLEAR_SEARCH, true);

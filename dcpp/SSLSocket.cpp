@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -187,14 +187,40 @@ int SSLSocket::checkSSL(int ret) {
 					}
 					sys_err = getLastError();
 				}
-				throw SSLSocketException(sys_err);
+
+				if (sys_err != 0) {
+					throw SSLSocketException(sys_err);
+				} else {
+					// For compatibility, see the BUGS section at https://www.openssl.org/docs/man1.1.1/man3/SSL_get_error.html
+					// @todo remove when drop support of the 1.1.1 branch 
+					throw SSLSocketException(_("Connection closed"));
+				}
 			}
 		default:
-			/* don't bother getting error messages from the codes because 1) there is some
-			additional management necessary (eg SSL_load_error_strings) and 2) openssl error codes
-			aren't shown to the end user; they only hit standard output in debug builds. */
-			dcdebug("TLS error: call ret = %d, SSL_get_error = %d, ERR_get_error = %d\n", ret, err, ERR_get_error());
-			throw SSLSocketException(_("TLS error"));
+			/* Check for a few more errors like unclean TLS connection closures and keyprint mismatch first.
+			If the error is none of these then display the error string provided by the lib - 
+			not localized but still much more informative than a vague default. */
+			auto sys_err = ERR_get_error();
+			string errorMsg;
+
+#if OPENSSL_VERSION_NUMBER >= 0x30000000L
+			if (err == SSL_ERROR_SSL && ERR_GET_REASON(sys_err) == SSL_R_UNEXPECTED_EOF_WHILE_READING) {
+				errorMsg = _("Connection closed");
+			} else
+#endif
+			{
+				int v_err = SSL_get_verify_result(ssl);
+				if (v_err == X509_V_ERR_APPLICATION_VERIFICATION) {
+					errorMsg = _("Keyprint mismatch");
+				} else if (v_err != X509_V_OK) {
+					errorMsg = X509_verify_cert_error_string(v_err);
+				} else {
+					errorMsg = ERR_error_string(sys_err, NULL);
+				}
+			}
+
+			dcdebug("TLS error: call ret = %d, SSL_get_error = %d, ERR_get_error = %lu, error string: %s\n", ret, err, sys_err, errorMsg);
+			throw SSLSocketException(str(F_("TLS error : %1%") % errorMsg));
 		}
 	}
 	return ret;

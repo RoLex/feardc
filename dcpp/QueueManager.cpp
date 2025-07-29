@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1030,7 +1030,11 @@ void QueueManager::putDownload(Download* aDownload, bool finished) noexcept {
 			} else if(d->getType() == Transfer::TYPE_TREE) {
 				// Got a full tree, now add it to the HashManager
 				dcassert(d->getTreeValid());
-				HashManager::getInstance()->addTree(d->getTigerTree());
+
+				if(!HashManager::getInstance()->addTree(d->getTigerTree())) {
+					// Huh? Hash data corruption or access problems. Avoid flooding with infinite retries if the problem persists...
+					q->getSource(d->getUser())->setFlag(QueueItem::Source::FLAG_NO_TREE);
+				}
 
 				userQueue.removeDownload(q, d->getUser());
 				fire(QueueManagerListener::StatusUpdated(), q);

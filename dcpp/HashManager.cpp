@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -99,7 +99,7 @@ void HashManager::HashStore::addFile(const string& aFileName, uint32_t aTimeStam
 	dirty = true;
 }
 
-void HashManager::HashStore::addTree(const TigerTree& tt) noexcept {
+bool HashManager::HashStore::addTree(const TigerTree& tt) noexcept {
 	if (treeIndex.find(tt.getRoot()) == treeIndex.end()) {
 		try {
 			File f(getDataFile(), File::READ | File::WRITE, File::OPEN);
@@ -108,8 +108,11 @@ void HashManager::HashStore::addTree(const TigerTree& tt) noexcept {
 			dirty = true;
 		} catch (const FileException& e) {
 			LogManager::getInstance()->message(str(F_("Error saving hash data: %1%") % e.getError()));
+			return false;
 		}
 	}
+
+	return true;
 }
 
 int64_t HashManager::HashStore::saveTree(File& f, const TigerTree& tt) {
@@ -120,7 +123,7 @@ int64_t HashManager::HashStore::saveTree(File& f, const TigerTree& tt) {
 	int64_t pos = 0;
 	size_t n = sizeof(pos);
 	if (f.read(&pos, n) != sizeof(pos))
-		throw HashException(_("Unable to read hash data file"));
+		throw FileException(_("Unable to read hash data file"));
 
 	// Check if we should grow the file, we grow by a meg at a time...
 	int64_t datsz = f.getSize();
@@ -521,11 +524,8 @@ void HashManager::HashStore::createDataFile(const string& name) {
 
 void HashManager::Hasher::hashFile(const string& fileName, int64_t size) noexcept {
 	Lock l(cs);
-	if(w.insert(make_pair(fileName, size)).second) {
-		if(paused > 0)
-			paused++;
-		else
-			s.signal();
+	if(w.insert(make_pair(fileName, size)).second && idle) {
+		s.signal();
 	}
 }
 
@@ -536,7 +536,8 @@ bool HashManager::Hasher::pause() noexcept {
 
 void HashManager::Hasher::resume() noexcept {
 	Lock l(cs);
-	while(--paused > 0)
+	dcassert(paused > 0);
+	if(--paused == 0)
 		s.signal();
 }
 
@@ -573,13 +574,21 @@ void HashManager::Hasher::instantPause() {
 	bool wait = false;
 	{
 		Lock l(cs);
-		if(paused > 0) {
-			paused++;
+		if(paused > 0 && !stop) {
 			wait = true;
 		}
 	}
 	if(wait)
 		s.wait();
+}
+
+void HashManager::Hasher::scheduleRebuild() {
+	rebuild = true; 
+	if(idle) {
+		s.signal();
+	} else {
+		LogManager::getInstance()->message(_("Hash database rebuild has been scheduled"));
+	}
 }
 
 int HashManager::Hasher::run() {
@@ -595,6 +604,7 @@ int HashManager::Hasher::run() {
 			HashManager::getInstance()->doRebuild();
 			rebuild = false;
 			LogManager::getInstance()->message(_("Hash database rebuilt"));
+			s.signal();
 			continue;
 		}
 		{
@@ -603,12 +613,15 @@ int HashManager::Hasher::run() {
 				currentFile = fname = w.begin()->first;
 				currentSize = w.begin()->second;
 				w.erase(w.begin());
+				idle = false;
 			} else {
 				fname.clear();
+				idle = true;
+				continue;
 			}
 		}
-		running = true;
 
+		running = true;
 		if(!fname.empty()) {
 			try {
 				auto start = GET_TICK();
@@ -683,17 +696,17 @@ int HashManager::Hasher::run() {
 			currentSize = 0;
 		}
 		running = false;
+		s.signal();
 	}
 	return 0;
 }
 
 HashManager::HashPauser::HashPauser() {
-	resume = !HashManager::getInstance()->pauseHashing();
+	HashManager::getInstance()->pauseHashing();
 }
 
 HashManager::HashPauser::~HashPauser() {
-	if(resume)
-		HashManager::getInstance()->resumeHashing();
+	HashManager::getInstance()->resumeHashing();
 }
 
 bool HashManager::pauseHashing() noexcept {

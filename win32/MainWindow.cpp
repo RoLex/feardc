@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1309,6 +1309,8 @@ void MainWindow::handleSettings() {
 	auto prevConn6 = SETTING(INCOMING_CONNECTIONS6);
 	auto prevMapper = SETTING(MAPPER);
 	auto prevMapper6 = SETTING(MAPPER6);
+	auto prevIsBroad = SETTING(BROAD_DETECTION);
+	auto prevIsBroad6 = SETTING(BROAD_DETECTION6);
 	auto prevBind = SETTING(BIND_ADDRESS);
 	auto prevBind6 = SETTING(BIND_ADDRESS6);
 	auto prevProxy = CONNSETTING(OUTGOING_CONNECTIONS);
@@ -1333,10 +1335,12 @@ void MainWindow::handleSettings() {
 		try {
 			ConnectivityManager::getInstance()->setup((SETTING(INCOMING_CONNECTIONS) != prevConn ||
 				SETTING(TCP_PORT) != prevTCP || SETTING(UDP_PORT) != prevUDP || SETTING(TLS_PORT) != prevTLS ||
-				SETTING(MAPPER) != prevMapper || SETTING(BIND_ADDRESS) != prevBind), 
+				SETTING(MAPPER) != prevMapper || prevIsBroad != SETTING(BROAD_DETECTION) ||
+				SETTING(BIND_ADDRESS) != prevBind), 
 				(SETTING(INCOMING_CONNECTIONS6) != prevConn6 || 
 				SETTING(TCP_PORT) != prevTCP || SETTING(UDP_PORT) != prevUDP || SETTING(TLS_PORT) != prevTLS ||
-				SETTING(MAPPER6) != prevMapper6 || SETTING(BIND_ADDRESS6) != prevBind6));
+				SETTING(MAPPER6) != prevMapper6 || prevIsBroad6 != SETTING(BROAD_DETECTION6) ||
+				SETTING(BIND_ADDRESS6) != prevBind6));
 		} catch (const Exception& e) {
 			showPortsError(e.getError());
 		}

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -41,6 +41,7 @@ protected:
 	SettingsManager::BoolSetting settingNoIPOverride;
 	SettingsManager::StrSetting settingBindAddress;
 	SettingsManager::StrSetting settingMapper;
+	SettingsManager::BoolSetting settingIsBroad;
 
 	bool isV6;
 
@@ -51,6 +52,7 @@ private:
 	RadioButtonPtr inactive;
 
 	ComboBoxPtr mapper;
+	CheckBoxPtr isBroad;
 	ComboBoxPtr bind;
 
 	PropPage::ItemList items;

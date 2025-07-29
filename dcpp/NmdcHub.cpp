@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -829,7 +829,7 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 		}
 
 	} else if (cmd == "$LogedIn") {
-		// we are operator - https://nmdc.sourceforge.io/NMDC.html#_logedin
+		// we are operator - https://dc-protocols.github.io/NMDC.html#_logedin
 
 	} else if(cmd == "$ForceMove") {
 		disconnect(false);

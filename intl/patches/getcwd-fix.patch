@@ -1,0 +1,4 @@
+--- dcigettext.c
++++ dcigettext.c
+-        char *getcwd ();
++        char *getcwd (char *, int);

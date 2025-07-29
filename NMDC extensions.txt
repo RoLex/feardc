@@ -148,7 +148,7 @@ Usage:
 
 "$ADCGET <type> <filename> <startpos> <bytes> <flag0>...<flagN>"
 A complete replacement for all binary data transfers using an ADC-like syntax.
-See the ADC specs to see how GET behaves. (https://adc.sourceforge.io/ADC.html#_get)
+See the ADC specs to see how GET behaves. (https://dc-protocols.github.io/ADC.html#_get)
 
 --------------------------------------------------------------------
 

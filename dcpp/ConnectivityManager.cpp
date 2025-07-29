@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -80,10 +80,12 @@ void ConnectivityManager::set(SettingsManager::StrSetting setting, const string&
 
 void ConnectivityManager::clearAutoSettings(bool v6, bool resetDefaults) {
 	int settings6[] = { SettingsManager::EXTERNAL_IP6, SettingsManager::BIND_ADDRESS6, 
-		SettingsManager::NO_IP_OVERRIDE6, SettingsManager::INCOMING_CONNECTIONS6 };
+		SettingsManager::NO_IP_OVERRIDE6, SettingsManager::INCOMING_CONNECTIONS6, 
+		SettingsManager::BROAD_DETECTION6 };
 
 	int settings4[] = { SettingsManager::EXTERNAL_IP, SettingsManager::NO_IP_OVERRIDE,
-		SettingsManager::BIND_ADDRESS, SettingsManager::INCOMING_CONNECTIONS };
+		SettingsManager::BIND_ADDRESS, SettingsManager::INCOMING_CONNECTIONS,
+		SettingsManager::BROAD_DETECTION };
 
 	int portSettings[] = { SettingsManager::TCP_PORT, SettingsManager::UDP_PORT,
 		SettingsManager::TLS_PORT };

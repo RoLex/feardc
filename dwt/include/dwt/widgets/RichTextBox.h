@@ -1,7 +1,7 @@
 /*
   DC++ Widget Toolkit
 
-  Copyright (c) 2007-2024, Jacek Sieka
+  Copyright (c) 2007-2025, Jacek Sieka
 
   SmartWin++
 
@@ -134,6 +134,11 @@ public:
 
 	virtual bool handleMessage(const MSG& msg, LRESULT& retVal);
 
+	typedef std::function<void(const tstring&)> Callback;
+ 
+	/// Search string was not found
+	void onSearchStrNotFound(Callback callback) { searchNotFound = callback; } 
+
 	/** Utility structure to surround "scroll-steady" rich text-box operations; when an instance of
 	 * this structure goes out of scope, the scroll position is guaranteed to be kept. */
 	struct HoldScroll  {
@@ -181,6 +186,8 @@ private:
 
 	COLORREF textColor;
 	COLORREF bgColor;
+
+	Callback searchNotFound;
 };
 
 // end namespace dwt

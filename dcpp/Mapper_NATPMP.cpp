@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -127,7 +127,9 @@ bool Mapper_NATPMP::remove(const string& port, const Protocol protocol) {
 	auto port_ = Util::toInt(port);
 	if(sendRequest(port_, protocol, 0)) {
 		natpmpresp_t response;
-		return read(response) && response.type == respType(protocol) && response.pnu.newportmapping.mappedpublicport == port_;
+		// https://datatracker.ietf.org/doc/html/rfc6886#section-3.4
+		return read(response) && response.type == respType(protocol) && response.pnu.newportmapping.privateport == port_ &&
+				response.pnu.newportmapping.lifetime == 0;
 	}
 	return false;
 }

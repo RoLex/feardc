@@ -27,6 +27,7 @@ gcc_flags = {
         "-Wno-missing-field-initializers",
         "-Wno-unknown-pragmas",
         "-Wno-unused-parameter",
+        "-Wno-overloaded-virtual", # todo, gcc 15
 #       "-Wno-unused-value",
 #       "-Wno-unused-but-set-variable",
         "-Wno-deprecated-declarations", # todo: remove when openssl deprecations are fixed
