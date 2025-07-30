@@ -81,14 +81,15 @@ void IGDdata(void * d, const char * data, int l)
 		dstmember = datas->tmp.scpdurl;
 /*	else if( !strcmp(datas->cureltname, "deviceType") )
 		dstmember = datas->devicetype_tmp;*/
-	else if( !strcmp(datas->cureltname, "friendlyName") )
- 		dstmember = datas->tmp.friendlyName;
-	else if( !strcmp(datas->cureltname, "manufacturer") )
-		dstmember = datas->tmp.manufacturer;
-	else if( !strcmp(datas->cureltname, "modelName") )
-		dstmember = datas->tmp.modelName;
-	else if( !strcmp(datas->cureltname, "modelNumber") )
-		dstmember = datas->tmp.modelNumber;
+	else if( !strcmp(datas->cureltname, "friendlyName") ) {
+		if (!datas->friendlyName[0]) dstmember = datas->friendlyName;
+	} else if( !strcmp(datas->cureltname, "manufacturer") ) {
+		if (!datas->manufacturer[0]) dstmember = datas->manufacturer;
+	} else if( !strcmp(datas->cureltname, "modelName") ) {
+		if (!datas->modelName[0]) dstmember = datas->modelName;
+	} else if( !strcmp(datas->cureltname, "modelNumber") ) {
+		if (!datas->modelNumber[0]) dstmember = datas->modelNumber;
+	}
 
 	if(dstmember)
 	{

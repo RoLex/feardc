@@ -29,10 +29,6 @@ struct IGDdatas_service {
 	/*! \brief serviceType */
 	char servicetype[MINIUPNPC_URL_MAXSIZE];
 	/*char devicetype[MINIUPNPC_URL_MAXSIZE];*/
- 	char friendlyName[MINIUPNPC_URL_MAXSIZE];
-	char manufacturer[MINIUPNPC_URL_MAXSIZE];
-	char modelName[MINIUPNPC_URL_MAXSIZE];
-	char modelNumber[MINIUPNPC_URL_MAXSIZE];
 };
 
 /*! \brief Structure to store the result of the parsing of UPnP
@@ -44,6 +40,13 @@ struct IGDdatas {
 	char urlbase[MINIUPNPC_URL_MAXSIZE];
 	/*! \brief presentationURL */
 	char presentationurl[MINIUPNPC_URL_MAXSIZE];
+
+	// model information
+ 	char friendlyName[MINIUPNPC_URL_MAXSIZE];
+	char manufacturer[MINIUPNPC_URL_MAXSIZE];
+	char modelName[MINIUPNPC_URL_MAXSIZE];
+	char modelNumber[MINIUPNPC_URL_MAXSIZE];
+
 	/*! \brief depth into the XML tree */
 	int level;
 	/*! \brief "urn:schemas-upnp-org:service:WANCommonInterfaceConfig:1" */
