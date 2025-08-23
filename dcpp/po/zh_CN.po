@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-03-31 18:57+0200\n"
+"POT-Creation-Date: 2025-08-23 11:46+0200\n"
 "PO-Revision-Date: 2012-10-19 07:10+0000\n"
 "Last-Translator: comet <Unknown>\n"
 "Language-Team: Simplified Chinese <zh_CN@li.org>\n"
@@ -58,7 +58,7 @@ msgstr "%.02f TiB"
 msgid "%1% %2% (added by %3%)"
 msgstr "%1% %2% (由%3%添加)"
 
-#: dcpp/MappingManager.cpp:136 dcpp/MappingManager.cpp:187
+#: dcpp/MappingManager.cpp:136 dcpp/MappingManager.cpp:190
 #, boost-format
 msgid "%1% %2% port (%3% %4%)"
 msgstr "%1% %2% 端口 (%3% %4%)"
@@ -96,13 +96,13 @@ msgstr "%1% 不是有效的插件"
 msgid "%1% is not compatible with %2%"
 msgstr ""
 
-#: dcpp/HashManager.cpp:670
+#: dcpp/HashManager.cpp:687
 #, boost-format
 msgid ""
 "%1% not shared; calculated CRC32 does not match the one found in SFV file."
 msgstr "%1% 未被共享；算出的CRC32值和在SFV文件中的值不匹配"
 
-#: dcpp/HashManager.cpp:672
+#: dcpp/HashManager.cpp:689
 #, boost-format
 msgid "%1% not shared; hashing did not complete."
 msgstr ""
@@ -122,7 +122,7 @@ msgstr "%1% 被踢：%2%"
 msgid "%1%/s"
 msgstr "%1%/秒"
 
-#: dcpp/ConnectivityManager.cpp:322
+#: dcpp/ConnectivityManager.cpp:324
 #, boost-format
 msgid "%1%: %2%"
 msgstr ""
@@ -158,23 +158,23 @@ msgstr "存在大小不同的同名文件"
 msgid "A file with the same hash already exists in your share"
 msgstr "在你的共享中已经有一个相同hash值的文件了"
 
-#: dcpp/ConnectivityManager.cpp:258
+#: dcpp/ConnectivityManager.cpp:260
 msgid "Active mode"
 msgstr "主动模式"
 
-#: dcpp/ConnectivityManager.cpp:260
+#: dcpp/ConnectivityManager.cpp:262
 #, boost-format
 msgid ""
 "Active mode behind a router that %1% can configure; port mapping status: %2%"
 msgstr "这是在路由后面的主动模式，因此%1%能配置；端口映射状态：%2%"
 
-#: dcpp/ConnectivityManager.cpp:309
+#: dcpp/ConnectivityManager.cpp:311
 msgid ""
 "Active mode could not be achieved; a manual configuration is recommended for "
 "better connectivity"
 msgstr "不能实现主动模式；推荐使用手动配置以便实现更好的连接"
 
-#: dcpp/ConnectivityManager.cpp:186
+#: dcpp/ConnectivityManager.cpp:188
 msgid "All IPv6 addresses found are local; disabling connectivity"
 msgstr ""
 
@@ -204,16 +204,16 @@ msgstr ""
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1668
+#: dcpp/QueueManager.cpp:1672
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "CRC32 出错(SFV-Check)"
 
-#: dcpp/QueueManager.cpp:1659
+#: dcpp/QueueManager.cpp:1663
 #, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "CRC32 不一致 (SFV-Check): %1%"
 
-#: dcpp/CryptoManager.cpp:372
+#: dcpp/CryptoManager.cpp:374
 #, boost-format
 msgid "Certificate verification for %1% failed with error: %2%"
 msgstr ""
@@ -223,6 +223,7 @@ msgid "Compressed"
 msgstr "已压缩"
 
 #: dcpp/BufferedSocket.cpp:202 dcpp/SSLSocket.cpp:179 dcpp/SSLSocket.cpp:186
+#: dcpp/SSLSocket.cpp:196 dcpp/SSLSocket.cpp:208
 msgid "Connection closed"
 msgstr "连接已关闭"
 
@@ -231,7 +232,7 @@ msgstr "连接已关闭"
 msgid "Connection timeout"
 msgstr "连接超时"
 
-#: dcpp/ConnectivityManager.cpp:321
+#: dcpp/ConnectivityManager.cpp:323
 #, fuzzy, boost-format
 msgid "Connectivity (%1%): %2%"
 msgstr "连接信息： "
@@ -241,7 +242,7 @@ msgstr "连接信息： "
 msgid "Connectivity error: %1%"
 msgstr "连接错误：%1%"
 
-#: dcpp/ConnectivityManager.cpp:270
+#: dcpp/ConnectivityManager.cpp:272
 #, fuzzy, boost-format
 msgid ""
 "Connectivity information:\n"
@@ -275,7 +276,7 @@ msgstr ""
 msgid "Connectivity restored"
 msgstr "连接恢复"
 
-#: dcpp/ConnectivityManager.cpp:248
+#: dcpp/ConnectivityManager.cpp:250
 msgid "Connectivity settings are being configured; try again later"
 msgstr "连接设置正在配置；稍后再试"
 
@@ -292,7 +293,7 @@ msgstr "无法打开目标文件：%1%"
 msgid "Country information"
 msgstr "国家信息"
 
-#: dcpp/ConnectivityManager.cpp:150
+#: dcpp/ConnectivityManager.cpp:152
 msgid "Determining the best connectivity settings..."
 msgstr "正在检测最好的连接设置..."
 
@@ -300,11 +301,11 @@ msgstr "正在检测最好的连接设置..."
 msgid "Directory"
 msgstr "文件夹"
 
-#: dcpp/ShareManager.cpp:408
+#: dcpp/ShareManager.cpp:409
 msgid "Directory already shared"
 msgstr "目录已经共享"
 
-#: dcpp/ShareManager.cpp:395
+#: dcpp/ShareManager.cpp:396
 msgid "Directory is hidden"
 msgstr "隐藏目录"
 
@@ -312,7 +313,7 @@ msgstr "隐藏目录"
 msgid "Directory missing name attribute"
 msgstr "路径无名称属性"
 
-#: dcpp/ConnectivityManager.cpp:263
+#: dcpp/ConnectivityManager.cpp:265
 #, fuzzy
 msgid "Disabled"
 msgstr "已禁用"
@@ -338,7 +339,7 @@ msgstr "文档"
 msgid "Download Queue"
 msgstr "下载队列"
 
-#: dcpp/ShareManager.cpp:832
+#: dcpp/ShareManager.cpp:833
 #, boost-format
 msgid ""
 "Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
@@ -354,7 +355,7 @@ msgstr ""
 msgid "Duplicate source: %1%"
 msgstr "重复的源：%1%"
 
-#: dcpp/MappingManager.cpp:142 dcpp/MappingManager.cpp:199
+#: dcpp/MappingManager.cpp:142 dcpp/MappingManager.cpp:202
 msgid "Encrypted transfer"
 msgstr "加密传输"
 
@@ -363,7 +364,7 @@ msgstr "加密传输"
 msgid "Endless redirection loop (%1%)"
 msgstr "无限重定向循环 (%1%)"
 
-#: dcpp/HashManager.cpp:518
+#: dcpp/HashManager.cpp:521
 #, boost-format
 msgid "Error creating hash data file: %1%"
 msgstr "生成哈希数据文件出错：%1%"
@@ -374,8 +375,8 @@ msgid "Error during compression"
 msgstr "压缩过程发生错误"
 
 #: dcpp/BZUtils.cpp:75 dcpp/BZUtils.cpp:97 dcpp/BZUtils.cpp:100
-#: dcpp/CryptoManager.cpp:523 dcpp/CryptoManager.cpp:542
-#: dcpp/CryptoManager.cpp:556 dcpp/ZUtils.cpp:117 dcpp/ZUtils.cpp:142
+#: dcpp/CryptoManager.cpp:525 dcpp/CryptoManager.cpp:544
+#: dcpp/CryptoManager.cpp:558 dcpp/ZUtils.cpp:117 dcpp/ZUtils.cpp:142
 #: dcpp/ZUtils.cpp:156
 msgid "Error during decompression"
 msgstr "解压缩出错"
@@ -384,7 +385,7 @@ msgstr "解压缩出错"
 msgid "Error generating certificate"
 msgstr "生成证书发生错误"
 
-#: dcpp/HashManager.cpp:677
+#: dcpp/HashManager.cpp:694
 #, boost-format
 msgid "Error hashing %1%: %2%"
 msgstr "对 %1% 进行哈希出错：%2%"
@@ -399,7 +400,7 @@ msgstr "载入错误%1%： %2%"
 msgid "Error loading %1%: %2%"
 msgstr "载入错误%1%： %2%"
 
-#: dcpp/HashManager.cpp:110 dcpp/HashManager.cpp:312
+#: dcpp/HashManager.cpp:110 dcpp/HashManager.cpp:315
 #, boost-format
 msgid "Error saving hash data: %1%"
 msgstr "保存哈希数据失败：%1%"
@@ -408,33 +409,33 @@ msgstr "保存哈希数据失败：%1%"
 msgid "Executable"
 msgstr "可执行文件"
 
-#: dcpp/MappingManager.cpp:109 dcpp/MappingManager.cpp:226
+#: dcpp/MappingManager.cpp:109 dcpp/MappingManager.cpp:229
 msgid "Failed to create port mappings"
 msgstr "未能创建端口映射"
 
-#: dcpp/MappingManager.cpp:215
+#: dcpp/MappingManager.cpp:218
 msgid "Failed to get external IP"
 msgstr "获取外部IP失败"
 
-#: dcpp/MappingManager.cpp:182
+#: dcpp/MappingManager.cpp:185
 #, fuzzy, boost-format
 msgid "Failed to initialize the %1% interface"
 msgstr "初始化%1%接口失败"
 
-#: dcpp/CryptoManager.cpp:267
+#: dcpp/CryptoManager.cpp:268
 msgid "Failed to load certificate file"
 msgstr "读取证书文件出错"
 
-#: dcpp/CryptoManager.cpp:275
+#: dcpp/CryptoManager.cpp:276
 msgid "Failed to load private key"
 msgstr "读取密钥失败"
 
-#: dcpp/CryptoManager.cpp:288
+#: dcpp/CryptoManager.cpp:289
 #, boost-format
 msgid "Failed to load trusted certificate from %1%"
 msgstr "从%1%加载证书失败"
 
-#: dcpp/MappingManager.cpp:190
+#: dcpp/MappingManager.cpp:193
 #, boost-format
 msgid "Failed to map the %1% port (%2% %3%) with the %4% interface"
 msgstr "在 %4% 接口映射 %1% 端口 (%2% %3%)失败"
@@ -443,7 +444,7 @@ msgstr "在 %4% 接口映射 %1% 端口 (%2% %3%)失败"
 msgid "Failed to negotiate base protocol"
 msgstr "基础协议协商失败"
 
-#: dcpp/MappingManager.cpp:237
+#: dcpp/MappingManager.cpp:240
 #, boost-format
 msgid ""
 "Failed to remove port mappings from the %1% device with the %2% interface"
@@ -459,27 +460,27 @@ msgstr "socks服务器UDP回应失败(检查socks服务器的地址和端口)"
 msgid "File already exists at the target location"
 msgstr "目标位置文件已存在"
 
-#: dcpp/ShareManager.cpp:999
+#: dcpp/ShareManager.cpp:1004
 #, boost-format
 msgid "File list %1% generated"
 msgstr "已获取文件列表 %1%"
 
-#: dcpp/ShareManager.cpp:864
+#: dcpp/ShareManager.cpp:865
 #, boost-format
 msgid "File list refresh failed: %1%"
 msgstr "文件列表刷新失败：%1%"
 
-#: dcpp/ShareManager.cpp:928
+#: dcpp/ShareManager.cpp:931
 msgid "File list refresh finished"
 msgstr "文件列表已更新"
 
-#: dcpp/ShareManager.cpp:847
+#: dcpp/ShareManager.cpp:848
 msgid ""
 "File list refresh in progress, please wait for it to finish before trying to "
 "refresh again"
 msgstr "文件列表正在刷新，请稍候再尝试刷新"
 
-#: dcpp/ShareManager.cpp:892
+#: dcpp/ShareManager.cpp:895
 msgid "File list refresh initiated"
 msgstr "文件列表刷新已开始"
 
@@ -502,11 +503,11 @@ msgstr "完成hashing：%1% (%2%)"
 msgid "Full tree does not match TTH root"
 msgstr "已下载的“树”不匹配于 TTH root"
 
-#: dcpp/CryptoManager.cpp:256
+#: dcpp/CryptoManager.cpp:257
 msgid "Generated new TLS certificate"
 msgstr "生成新 TLS 证书"
 
-#: dcpp/MappingManager.cpp:248
+#: dcpp/MappingManager.cpp:251
 msgid "Generic"
 msgstr "常规"
 
@@ -515,7 +516,7 @@ msgstr "常规"
 msgid "HTTP file download failed to create file %1%, error: %2%"
 msgstr ""
 
-#: dcpp/HashManager.cpp:257
+#: dcpp/HashManager.cpp:260
 #, fuzzy, boost-format
 msgid "Hash data rebuilding failed: %1%"
 msgstr "哈希失败：%1%"
@@ -524,7 +525,12 @@ msgstr "哈希失败：%1%"
 msgid "Hash database"
 msgstr "Hash 数据库"
 
-#: dcpp/HashManager.cpp:597
+#: dcpp/HashManager.cpp:595
+#, fuzzy
+msgid "Hash database rebuild has been scheduled"
+msgstr "Hash 数据库已重建"
+
+#: dcpp/HashManager.cpp:610
 msgid "Hash database rebuilt"
 msgstr "Hash 数据库已重建"
 
@@ -562,7 +568,7 @@ msgstr "无效的数据"
 msgid "Invalid file list extension (must be .xml or .bz2)"
 msgstr "无效的的文件列表扩展名(必须是 .xml 或 .bz2)"
 
-#: dcpp/ShareManager.cpp:615
+#: dcpp/ShareManager.cpp:616
 #, boost-format
 msgid "Invalid file name found while hashing folder %1%"
 msgstr "当hashing %1%文件夹时发现无效的文件名"
@@ -572,7 +578,7 @@ msgstr "当hashing %1%文件夹时发现无效的文件名"
 msgid "Invalid regular expression: %1%"
 msgstr "无效的正则表达式：%1%"
 
-#: dcpp/SettingsManager.cpp:717
+#: dcpp/SettingsManager.cpp:719
 msgid "Invalid search type name"
 msgstr "无效的搜索类型名称"
 
@@ -586,11 +592,15 @@ msgid ""
 "setting)"
 msgstr "目标文件无法访问(目录已被删除, 请检查缺省的下载地址设置)"
 
+#: dcpp/SSLSocket.cpp:214
+msgid "Keyprint mismatch"
+msgstr ""
+
 #: dcpp/FavoriteManager.cpp:477
 msgid "Kick user(s)"
 msgstr "踢出该用户"
 
-#: dcpp/ConnectivityManager.cpp:194
+#: dcpp/ConnectivityManager.cpp:196
 msgid "Local network with possible NAT detected, trying to map the ports..."
 msgstr "本地网络可能是NAT，尝试端口映射..."
 
@@ -611,7 +621,7 @@ msgstr "写入的字节数超过请求的"
 msgid "No certificate file chosen"
 msgstr "未选择证书文件"
 
-#: dcpp/ShareManager.cpp:391
+#: dcpp/ShareManager.cpp:392
 msgid "No directory specified"
 msgstr "没有指定目录"
 
@@ -623,7 +633,7 @@ msgstr "未选择密钥文件"
 msgid "No slots available"
 msgstr "对方上传通道都已经满了"
 
-#: dcpp/SettingsManager.cpp:775
+#: dcpp/SettingsManager.cpp:777
 msgid "No such search type"
 msgstr "无此搜索类型"
 
@@ -636,7 +646,7 @@ msgstr "在ADC连接中有非UTF-8数据"
 msgid "Not listening for connections - please restart %1%"
 msgstr "未监听连接 - 请重启 %1%"
 
-#: dcpp/ClientManager.cpp:152 dcpp/ClientManager.cpp:183
+#: dcpp/ClientManager.cpp:150 dcpp/ClientManager.cpp:181
 #: dcpp/FinishedManager.cpp:130 dcpp/FinishedManager.cpp:136
 #: dcpp/FinishedManager.cpp:142 dcpp/SearchManager.cpp:337
 #: dcpp/SearchManager.cpp:398 dcpp/Transfer.cpp:80 dcpp/Transfer.cpp:84
@@ -647,7 +657,7 @@ msgstr "离线"
 msgid "Partial file list"
 msgstr "部分的文件列表"
 
-#: dcpp/ConnectivityManager.cpp:262
+#: dcpp/ConnectivityManager.cpp:264
 msgid "Passive mode"
 msgstr "被动模式"
 
@@ -655,12 +665,12 @@ msgstr "被动模式"
 msgid "Picture"
 msgstr "图片"
 
-#: dcpp/MappingManager.cpp:242
+#: dcpp/MappingManager.cpp:245
 #, boost-format
 msgid "Port mapping: %1%"
 msgstr "端口映射中：%1%"
 
-#: dcpp/ConnectivityManager.cpp:176
+#: dcpp/ConnectivityManager.cpp:178
 msgid ""
 "Public IP address detected, selecting active mode with direct connection"
 msgstr "检测到外部IP，选择直接连接的主动模式"
@@ -669,7 +679,7 @@ msgstr "检测到外部IP，选择直接连接的主动模式"
 msgid "Redirect user(s)"
 msgstr "重定向用户"
 
-#: dcpp/ShareManager.cpp:411
+#: dcpp/ShareManager.cpp:412
 msgid "Remove all subdirectories before adding this one"
 msgstr "增加前先删除所有子文件夹"
 
@@ -677,11 +687,11 @@ msgstr "增加前先删除所有子文件夹"
 msgid "Response does not match request"
 msgstr "响应与请求不匹配"
 
-#: dcpp/MappingManager.cpp:143 dcpp/MappingManager.cpp:200
+#: dcpp/MappingManager.cpp:143 dcpp/MappingManager.cpp:203
 msgid "Search"
 msgstr "搜索"
 
-#: dcpp/ConnectivityManager.cpp:360
+#: dcpp/ConnectivityManager.cpp:362
 msgid "Search (UDP)"
 msgstr "搜索 (UDP)"
 
@@ -711,7 +721,7 @@ msgstr "共享文件"
 msgid "Socks server authentication failed (bad login / password?)"
 msgstr "Socks代理鉴权失败 (用户名/密码错误?)"
 
-#: dcpp/MappingManager.cpp:203
+#: dcpp/MappingManager.cpp:206
 #, boost-format
 msgid ""
 "Successfully created port mappings (Transfers: %1%, Encrypted transfers: "
@@ -725,22 +735,22 @@ msgid ""
 "Successfully created port mappings on the %1% device with the %2% interface"
 msgstr "在%1%设备的%2% 接口上创建端口映射成功"
 
-#: dcpp/MappingManager.cpp:236
+#: dcpp/MappingManager.cpp:239
 #, boost-format
 msgid ""
 "Successfully removed port mappings from the %1% device with the %2% interface"
 msgstr "在%1%设备的%2% 接口上删除端口映射成功"
 
-#: dcpp/CryptoManager.cpp:471
+#: dcpp/CryptoManager.cpp:473
 #, boost-format
 msgid "Supplied KeyPrint %1% did not match %2%."
 msgstr ""
 
-#: dcpp/CryptoManager.cpp:469
+#: dcpp/CryptoManager.cpp:471
 msgid "Supplied KeyPrint did not match any certificate."
 msgstr ""
 
-#: dcpp/CryptoManager.cpp:258
+#: dcpp/CryptoManager.cpp:259
 #, boost-format
 msgid "TLS disabled, failed to generate certificate: %1%"
 msgstr "TLS已禁用，获取证书失败：%1%"
@@ -749,8 +759,9 @@ msgstr "TLS已禁用，获取证书失败：%1%"
 msgid "TLS disabled, no certificate file set"
 msgstr "禁用 TLS，未设置证书文件"
 
-#: dcpp/SSLSocket.cpp:197
-msgid "TLS error"
+#: dcpp/SSLSocket.cpp:223
+#, boost-format
+msgid "TLS error : %1%"
 msgstr ""
 
 #: dcpp/SearchManager.cpp:47
@@ -775,7 +786,7 @@ msgid ""
 "encrypted transfers will be disabled"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1502
+#: dcpp/QueueManager.cpp:1506
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -794,7 +805,7 @@ msgstr "Socks代理连接失败"
 msgid "The socks server requires authentication"
 msgstr "Socks代理需要「用户/密码」验证"
 
-#: dcpp/ShareManager.cpp:399
+#: dcpp/ShareManager.cpp:400
 msgid "The temporary download directory cannot be shared"
 msgstr "不能共享下载的临时文件目录"
 
@@ -814,7 +825,7 @@ msgid ""
 msgstr ""
 "这个站点在尝试利用你的客户端去发送垃圾信息%1%，请让站点管理员去修复这个问题"
 
-#: dcpp/SettingsManager.cpp:721 dcpp/SettingsManager.cpp:743
+#: dcpp/SettingsManager.cpp:723 dcpp/SettingsManager.cpp:745
 msgid "This search type already exists"
 msgstr "此搜索类型已存在"
 
@@ -823,11 +834,11 @@ msgstr "此搜索类型已存在"
 msgid "Too much data in response body (%1%)"
 msgstr ""
 
-#: dcpp/MappingManager.cpp:141 dcpp/MappingManager.cpp:198
+#: dcpp/MappingManager.cpp:141 dcpp/MappingManager.cpp:201
 msgid "Transfer"
 msgstr "传输"
 
-#: dcpp/ConnectivityManager.cpp:354
+#: dcpp/ConnectivityManager.cpp:356
 msgid "Transfer (TCP)"
 msgstr "传输(TCP)"
 
@@ -854,18 +865,18 @@ msgstr "无法移动 %1% 到 %2% (%3%) 或无法重命名为 %4% (%5%)"
 msgid "Unable to move %1% to %2% (%3%); renamed to %4%"
 msgstr "无法移动 %1% 到 %2% (%3%) ；重命名为 %4%"
 
-#: dcpp/ConnectivityManager.cpp:164
+#: dcpp/ConnectivityManager.cpp:166
 #, boost-format
 msgid ""
 "Unable to open %1% port(s); connectivity settings must be configured manually"
 msgstr "无法打开%1%端口；手动配置必须连接信息"
 
-#: dcpp/QueueManager.cpp:1112
+#: dcpp/QueueManager.cpp:1116
 #, boost-format
 msgid "Unable to open filelist: %1%"
 msgstr "无法打开文件列表：%1%"
 
-#: dcpp/HashManager.cpp:123
+#: dcpp/HashManager.cpp:126
 msgid "Unable to read hash data file"
 msgstr "无法读取哈希数据文件"
 
@@ -901,15 +912,15 @@ msgstr "视频"
 msgid "You're trying to download from yourself!"
 msgstr "不能下载自己!"
 
-#: dcpp/ConnectivityManager.cpp:254
+#: dcpp/ConnectivityManager.cpp:256
 msgid "disabled"
 msgstr "已禁用"
 
-#: dcpp/SettingsManager.cpp:214 dcpp/SettingsManager.cpp:215
+#: dcpp/SettingsManager.cpp:216 dcpp/SettingsManager.cpp:217
 msgid "downloaded from"
 msgstr "下载自"
 
-#: dcpp/ConnectivityManager.cpp:252
+#: dcpp/ConnectivityManager.cpp:254
 #, boost-format
 msgid ""
 "enabled\n"
@@ -917,10 +928,10 @@ msgid ""
 "\tIPv6 detection: %2%"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:267
+#: dcpp/ConnectivityManager.cpp:269
 msgid "undefined"
 msgstr "未定义"
 
-#: dcpp/SettingsManager.cpp:216
+#: dcpp/SettingsManager.cpp:218
 msgid "uploaded to"
 msgstr "上传至"

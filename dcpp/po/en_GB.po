@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-03-31 18:57+0200\n"
+"POT-Creation-Date: 2025-08-23 11:46+0200\n"
 "PO-Revision-Date: 2013-01-22 00:43+0000\n"
 "Last-Translator: Andi Chandler <Unknown>\n"
 "Language-Team: English (United Kingdom) <en_GB@li.org>\n"
@@ -58,7 +58,7 @@ msgstr "%.02f TiB"
 msgid "%1% %2% (added by %3%)"
 msgstr "%1% %2% (added by %3%)"
 
-#: dcpp/MappingManager.cpp:136 dcpp/MappingManager.cpp:187
+#: dcpp/MappingManager.cpp:136 dcpp/MappingManager.cpp:190
 #, boost-format
 msgid "%1% %2% port (%3% %4%)"
 msgstr "%1% %2% port (%3% %4%)"
@@ -96,14 +96,14 @@ msgstr "%1% is not a valid plug-in"
 msgid "%1% is not compatible with %2%"
 msgstr ""
 
-#: dcpp/HashManager.cpp:670
+#: dcpp/HashManager.cpp:687
 #, boost-format
 msgid ""
 "%1% not shared; calculated CRC32 does not match the one found in SFV file."
 msgstr ""
 "%1% not shared; calculated CRC32 does not match the one found in SFV file."
 
-#: dcpp/HashManager.cpp:672
+#: dcpp/HashManager.cpp:689
 #, boost-format
 msgid "%1% not shared; hashing did not complete."
 msgstr ""
@@ -123,7 +123,7 @@ msgstr "%1% was kicked: %2%"
 msgid "%1%/s"
 msgstr "%1%/s"
 
-#: dcpp/ConnectivityManager.cpp:322
+#: dcpp/ConnectivityManager.cpp:324
 #, boost-format
 msgid "%1%: %2%"
 msgstr ""
@@ -159,18 +159,18 @@ msgstr "A file with a different size already exists in the queue"
 msgid "A file with the same hash already exists in your share"
 msgstr "A file with the same hash already exists in your share"
 
-#: dcpp/ConnectivityManager.cpp:258
+#: dcpp/ConnectivityManager.cpp:260
 msgid "Active mode"
 msgstr "Active mode"
 
-#: dcpp/ConnectivityManager.cpp:260
+#: dcpp/ConnectivityManager.cpp:262
 #, boost-format
 msgid ""
 "Active mode behind a router that %1% can configure; port mapping status: %2%"
 msgstr ""
 "Active mode behind a router that %1% can configure; port mapping status: %2%"
 
-#: dcpp/ConnectivityManager.cpp:309
+#: dcpp/ConnectivityManager.cpp:311
 msgid ""
 "Active mode could not be achieved; a manual configuration is recommended for "
 "better connectivity"
@@ -178,7 +178,7 @@ msgstr ""
 "Active mode could not be achieved; a manual configuration is recommended for "
 "better connectivity"
 
-#: dcpp/ConnectivityManager.cpp:186
+#: dcpp/ConnectivityManager.cpp:188
 msgid "All IPv6 addresses found are local; disabling connectivity"
 msgstr ""
 
@@ -208,16 +208,16 @@ msgstr ""
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1668
+#: dcpp/QueueManager.cpp:1672
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "CRC32 inconsistency (SFV-Check)"
 
-#: dcpp/QueueManager.cpp:1659
+#: dcpp/QueueManager.cpp:1663
 #, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "CRC32 inconsistency (SFV-Check): %1%"
 
-#: dcpp/CryptoManager.cpp:372
+#: dcpp/CryptoManager.cpp:374
 #, boost-format
 msgid "Certificate verification for %1% failed with error: %2%"
 msgstr ""
@@ -227,6 +227,7 @@ msgid "Compressed"
 msgstr "Compressed"
 
 #: dcpp/BufferedSocket.cpp:202 dcpp/SSLSocket.cpp:179 dcpp/SSLSocket.cpp:186
+#: dcpp/SSLSocket.cpp:196 dcpp/SSLSocket.cpp:208
 msgid "Connection closed"
 msgstr "Connection closed"
 
@@ -235,7 +236,7 @@ msgstr "Connection closed"
 msgid "Connection timeout"
 msgstr "Connection timeout"
 
-#: dcpp/ConnectivityManager.cpp:321
+#: dcpp/ConnectivityManager.cpp:323
 #, fuzzy, boost-format
 msgid "Connectivity (%1%): %2%"
 msgstr "Connectivity: "
@@ -245,7 +246,7 @@ msgstr "Connectivity: "
 msgid "Connectivity error: %1%"
 msgstr "Connectivity error: %1%"
 
-#: dcpp/ConnectivityManager.cpp:270
+#: dcpp/ConnectivityManager.cpp:272
 #, fuzzy, boost-format
 msgid ""
 "Connectivity information:\n"
@@ -279,7 +280,7 @@ msgstr ""
 msgid "Connectivity restored"
 msgstr "Connectivity restored"
 
-#: dcpp/ConnectivityManager.cpp:248
+#: dcpp/ConnectivityManager.cpp:250
 msgid "Connectivity settings are being configured; try again later"
 msgstr "Connectivity settings are being configured; try again later"
 
@@ -296,7 +297,7 @@ msgstr "Could not open target file: %1%"
 msgid "Country information"
 msgstr "Country information"
 
-#: dcpp/ConnectivityManager.cpp:150
+#: dcpp/ConnectivityManager.cpp:152
 msgid "Determining the best connectivity settings..."
 msgstr "Determining the best connectivity settings..."
 
@@ -304,11 +305,11 @@ msgstr "Determining the best connectivity settings..."
 msgid "Directory"
 msgstr "Directory"
 
-#: dcpp/ShareManager.cpp:408
+#: dcpp/ShareManager.cpp:409
 msgid "Directory already shared"
 msgstr "Directory already shared"
 
-#: dcpp/ShareManager.cpp:395
+#: dcpp/ShareManager.cpp:396
 msgid "Directory is hidden"
 msgstr "Directory is hidden"
 
@@ -316,7 +317,7 @@ msgstr "Directory is hidden"
 msgid "Directory missing name attribute"
 msgstr "Directory missing name attribute"
 
-#: dcpp/ConnectivityManager.cpp:263
+#: dcpp/ConnectivityManager.cpp:265
 #, fuzzy
 msgid "Disabled"
 msgstr "disabled"
@@ -342,7 +343,7 @@ msgstr "Document"
 msgid "Download Queue"
 msgstr "Download Queue"
 
-#: dcpp/ShareManager.cpp:832
+#: dcpp/ShareManager.cpp:833
 #, boost-format
 msgid ""
 "Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
@@ -360,7 +361,7 @@ msgstr ""
 msgid "Duplicate source: %1%"
 msgstr "Duplicate source: %1%"
 
-#: dcpp/MappingManager.cpp:142 dcpp/MappingManager.cpp:199
+#: dcpp/MappingManager.cpp:142 dcpp/MappingManager.cpp:202
 msgid "Encrypted transfer"
 msgstr "Encrypted transfer"
 
@@ -369,7 +370,7 @@ msgstr "Encrypted transfer"
 msgid "Endless redirection loop (%1%)"
 msgstr "Endless redirection loop (%1%)"
 
-#: dcpp/HashManager.cpp:518
+#: dcpp/HashManager.cpp:521
 #, boost-format
 msgid "Error creating hash data file: %1%"
 msgstr "Error creating hash data file: %1%"
@@ -380,8 +381,8 @@ msgid "Error during compression"
 msgstr "Error during compression"
 
 #: dcpp/BZUtils.cpp:75 dcpp/BZUtils.cpp:97 dcpp/BZUtils.cpp:100
-#: dcpp/CryptoManager.cpp:523 dcpp/CryptoManager.cpp:542
-#: dcpp/CryptoManager.cpp:556 dcpp/ZUtils.cpp:117 dcpp/ZUtils.cpp:142
+#: dcpp/CryptoManager.cpp:525 dcpp/CryptoManager.cpp:544
+#: dcpp/CryptoManager.cpp:558 dcpp/ZUtils.cpp:117 dcpp/ZUtils.cpp:142
 #: dcpp/ZUtils.cpp:156
 msgid "Error during decompression"
 msgstr "Error during decompression"
@@ -390,7 +391,7 @@ msgstr "Error during decompression"
 msgid "Error generating certificate"
 msgstr "Error generating certificate"
 
-#: dcpp/HashManager.cpp:677
+#: dcpp/HashManager.cpp:694
 #, boost-format
 msgid "Error hashing %1%: %2%"
 msgstr "Error hashing %1%: %2%"
@@ -405,7 +406,7 @@ msgstr "Error loading %1%: %2%"
 msgid "Error loading %1%: %2%"
 msgstr "Error loading %1%: %2%"
 
-#: dcpp/HashManager.cpp:110 dcpp/HashManager.cpp:312
+#: dcpp/HashManager.cpp:110 dcpp/HashManager.cpp:315
 #, boost-format
 msgid "Error saving hash data: %1%"
 msgstr "Error saving hash data: %1%"
@@ -414,33 +415,33 @@ msgstr "Error saving hash data: %1%"
 msgid "Executable"
 msgstr "Executable"
 
-#: dcpp/MappingManager.cpp:109 dcpp/MappingManager.cpp:226
+#: dcpp/MappingManager.cpp:109 dcpp/MappingManager.cpp:229
 msgid "Failed to create port mappings"
 msgstr "Failed to create port mappings"
 
-#: dcpp/MappingManager.cpp:215
+#: dcpp/MappingManager.cpp:218
 msgid "Failed to get external IP"
 msgstr "Failed to get external IP"
 
-#: dcpp/MappingManager.cpp:182
+#: dcpp/MappingManager.cpp:185
 #, fuzzy, boost-format
 msgid "Failed to initialize the %1% interface"
 msgstr "Failed to initalise the %1% interface"
 
-#: dcpp/CryptoManager.cpp:267
+#: dcpp/CryptoManager.cpp:268
 msgid "Failed to load certificate file"
 msgstr "Failed to load certificate file"
 
-#: dcpp/CryptoManager.cpp:275
+#: dcpp/CryptoManager.cpp:276
 msgid "Failed to load private key"
 msgstr "Failed to load private key"
 
-#: dcpp/CryptoManager.cpp:288
+#: dcpp/CryptoManager.cpp:289
 #, boost-format
 msgid "Failed to load trusted certificate from %1%"
 msgstr "Failed to load trusted certificate from %1%"
 
-#: dcpp/MappingManager.cpp:190
+#: dcpp/MappingManager.cpp:193
 #, boost-format
 msgid "Failed to map the %1% port (%2% %3%) with the %4% interface"
 msgstr "Failed to map the %1% port (%2% %3%) with the %4% interface"
@@ -449,7 +450,7 @@ msgstr "Failed to map the %1% port (%2% %3%) with the %4% interface"
 msgid "Failed to negotiate base protocol"
 msgstr "Failed to negotiate base protocol"
 
-#: dcpp/MappingManager.cpp:237
+#: dcpp/MappingManager.cpp:240
 #, boost-format
 msgid ""
 "Failed to remove port mappings from the %1% device with the %2% interface"
@@ -468,21 +469,21 @@ msgstr ""
 msgid "File already exists at the target location"
 msgstr "File already exists at the target location"
 
-#: dcpp/ShareManager.cpp:999
+#: dcpp/ShareManager.cpp:1004
 #, boost-format
 msgid "File list %1% generated"
 msgstr "File list %1% generated"
 
-#: dcpp/ShareManager.cpp:864
+#: dcpp/ShareManager.cpp:865
 #, boost-format
 msgid "File list refresh failed: %1%"
 msgstr "File list refresh failed: %1%"
 
-#: dcpp/ShareManager.cpp:928
+#: dcpp/ShareManager.cpp:931
 msgid "File list refresh finished"
 msgstr "File list refresh finished"
 
-#: dcpp/ShareManager.cpp:847
+#: dcpp/ShareManager.cpp:848
 msgid ""
 "File list refresh in progress, please wait for it to finish before trying to "
 "refresh again"
@@ -490,7 +491,7 @@ msgstr ""
 "File list refresh in progress, please wait for it to finish before trying to "
 "refresh again"
 
-#: dcpp/ShareManager.cpp:892
+#: dcpp/ShareManager.cpp:895
 msgid "File list refresh initiated"
 msgstr "File list refresh initiated"
 
@@ -513,11 +514,11 @@ msgstr "Finished hashing: %1% (%2%)"
 msgid "Full tree does not match TTH root"
 msgstr "Full tree does not match TTH root"
 
-#: dcpp/CryptoManager.cpp:256
+#: dcpp/CryptoManager.cpp:257
 msgid "Generated new TLS certificate"
 msgstr "Generated new TLS certificate"
 
-#: dcpp/MappingManager.cpp:248
+#: dcpp/MappingManager.cpp:251
 msgid "Generic"
 msgstr "Generic"
 
@@ -526,7 +527,7 @@ msgstr "Generic"
 msgid "HTTP file download failed to create file %1%, error: %2%"
 msgstr ""
 
-#: dcpp/HashManager.cpp:257
+#: dcpp/HashManager.cpp:260
 #, fuzzy, boost-format
 msgid "Hash data rebuilding failed: %1%"
 msgstr "Hashing failed: %1%"
@@ -535,7 +536,12 @@ msgstr "Hashing failed: %1%"
 msgid "Hash database"
 msgstr "Hash database"
 
-#: dcpp/HashManager.cpp:597
+#: dcpp/HashManager.cpp:595
+#, fuzzy
+msgid "Hash database rebuild has been scheduled"
+msgstr "Hash database rebuilt"
+
+#: dcpp/HashManager.cpp:610
 msgid "Hash database rebuilt"
 msgstr "Hash database rebuilt"
 
@@ -575,7 +581,7 @@ msgstr "Invalid data"
 msgid "Invalid file list extension (must be .xml or .bz2)"
 msgstr "Invalid file list extension (must be .xml or .bz2)"
 
-#: dcpp/ShareManager.cpp:615
+#: dcpp/ShareManager.cpp:616
 #, boost-format
 msgid "Invalid file name found while hashing folder %1%"
 msgstr "Invalid file name found while hashing folder %1%"
@@ -585,7 +591,7 @@ msgstr "Invalid file name found while hashing folder %1%"
 msgid "Invalid regular expression: %1%"
 msgstr "Invalid regular expression: %1%"
 
-#: dcpp/SettingsManager.cpp:717
+#: dcpp/SettingsManager.cpp:719
 msgid "Invalid search type name"
 msgstr "Invalid search type name"
 
@@ -601,11 +607,15 @@ msgstr ""
 "Invalid target file (missing directory, check default download directory "
 "setting)"
 
+#: dcpp/SSLSocket.cpp:214
+msgid "Keyprint mismatch"
+msgstr ""
+
 #: dcpp/FavoriteManager.cpp:477
 msgid "Kick user(s)"
 msgstr "Kick user(s)"
 
-#: dcpp/ConnectivityManager.cpp:194
+#: dcpp/ConnectivityManager.cpp:196
 msgid "Local network with possible NAT detected, trying to map the ports..."
 msgstr "Local network with possible NAT detected, trying to map the ports..."
 
@@ -626,7 +636,7 @@ msgstr "More bytes written than requested"
 msgid "No certificate file chosen"
 msgstr "No certificate file chosen"
 
-#: dcpp/ShareManager.cpp:391
+#: dcpp/ShareManager.cpp:392
 msgid "No directory specified"
 msgstr "No directory specified"
 
@@ -638,7 +648,7 @@ msgstr "No private key file chosen"
 msgid "No slots available"
 msgstr "No slots available"
 
-#: dcpp/SettingsManager.cpp:775
+#: dcpp/SettingsManager.cpp:777
 msgid "No such search type"
 msgstr "No such search type"
 
@@ -651,7 +661,7 @@ msgstr "Non-UTF-8 data in an ADC connection"
 msgid "Not listening for connections - please restart %1%"
 msgstr "Not listening for connections - please restart %1%"
 
-#: dcpp/ClientManager.cpp:152 dcpp/ClientManager.cpp:183
+#: dcpp/ClientManager.cpp:150 dcpp/ClientManager.cpp:181
 #: dcpp/FinishedManager.cpp:130 dcpp/FinishedManager.cpp:136
 #: dcpp/FinishedManager.cpp:142 dcpp/SearchManager.cpp:337
 #: dcpp/SearchManager.cpp:398 dcpp/Transfer.cpp:80 dcpp/Transfer.cpp:84
@@ -662,7 +672,7 @@ msgstr "Offline"
 msgid "Partial file list"
 msgstr "Partial file list"
 
-#: dcpp/ConnectivityManager.cpp:262
+#: dcpp/ConnectivityManager.cpp:264
 msgid "Passive mode"
 msgstr "Passive mode"
 
@@ -670,12 +680,12 @@ msgstr "Passive mode"
 msgid "Picture"
 msgstr "Picture"
 
-#: dcpp/MappingManager.cpp:242
+#: dcpp/MappingManager.cpp:245
 #, boost-format
 msgid "Port mapping: %1%"
 msgstr "Port mapping: %1%"
 
-#: dcpp/ConnectivityManager.cpp:176
+#: dcpp/ConnectivityManager.cpp:178
 msgid ""
 "Public IP address detected, selecting active mode with direct connection"
 msgstr ""
@@ -685,7 +695,7 @@ msgstr ""
 msgid "Redirect user(s)"
 msgstr "Redirect user(s)"
 
-#: dcpp/ShareManager.cpp:411
+#: dcpp/ShareManager.cpp:412
 msgid "Remove all subdirectories before adding this one"
 msgstr "Remove all subdirectories before adding this one"
 
@@ -693,11 +703,11 @@ msgstr "Remove all subdirectories before adding this one"
 msgid "Response does not match request"
 msgstr "Response does not match request"
 
-#: dcpp/MappingManager.cpp:143 dcpp/MappingManager.cpp:200
+#: dcpp/MappingManager.cpp:143 dcpp/MappingManager.cpp:203
 msgid "Search"
 msgstr "Search"
 
-#: dcpp/ConnectivityManager.cpp:360
+#: dcpp/ConnectivityManager.cpp:362
 msgid "Search (UDP)"
 msgstr "Search (UDP)"
 
@@ -727,7 +737,7 @@ msgstr "Shared Files"
 msgid "Socks server authentication failed (bad login / password?)"
 msgstr "Socks server authentication failed (bad login / password?)"
 
-#: dcpp/MappingManager.cpp:203
+#: dcpp/MappingManager.cpp:206
 #, boost-format
 msgid ""
 "Successfully created port mappings (Transfers: %1%, Encrypted transfers: "
@@ -743,23 +753,23 @@ msgid ""
 msgstr ""
 "uccessfully created port mappings on the %1% device with the %2% interface"
 
-#: dcpp/MappingManager.cpp:236
+#: dcpp/MappingManager.cpp:239
 #, boost-format
 msgid ""
 "Successfully removed port mappings from the %1% device with the %2% interface"
 msgstr ""
 "Successfully removed port mappings from the %1% device with the %2% interface"
 
-#: dcpp/CryptoManager.cpp:471
+#: dcpp/CryptoManager.cpp:473
 #, boost-format
 msgid "Supplied KeyPrint %1% did not match %2%."
 msgstr ""
 
-#: dcpp/CryptoManager.cpp:469
+#: dcpp/CryptoManager.cpp:471
 msgid "Supplied KeyPrint did not match any certificate."
 msgstr ""
 
-#: dcpp/CryptoManager.cpp:258
+#: dcpp/CryptoManager.cpp:259
 #, boost-format
 msgid "TLS disabled, failed to generate certificate: %1%"
 msgstr "TLS disabled, failed to generate certificate: %1%"
@@ -768,8 +778,9 @@ msgstr "TLS disabled, failed to generate certificate: %1%"
 msgid "TLS disabled, no certificate file set"
 msgstr "TLS disabled, no certificate file set"
 
-#: dcpp/SSLSocket.cpp:197
-msgid "TLS error"
+#: dcpp/SSLSocket.cpp:223
+#, boost-format
+msgid "TLS error : %1%"
 msgstr ""
 
 #: dcpp/SearchManager.cpp:47
@@ -794,7 +805,7 @@ msgid ""
 "encrypted transfers will be disabled"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1502
+#: dcpp/QueueManager.cpp:1506
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -813,7 +824,7 @@ msgstr "The socks server failed establish a connection"
 msgid "The socks server requires authentication"
 msgstr "The socks server requires authentication"
 
-#: dcpp/ShareManager.cpp:399
+#: dcpp/ShareManager.cpp:400
 msgid "The temporary download directory cannot be shared"
 msgstr "The temporary download directory cannot be shared"
 
@@ -834,7 +845,7 @@ msgstr ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "
 "fix this"
 
-#: dcpp/SettingsManager.cpp:721 dcpp/SettingsManager.cpp:743
+#: dcpp/SettingsManager.cpp:723 dcpp/SettingsManager.cpp:745
 msgid "This search type already exists"
 msgstr "This search type already exists"
 
@@ -843,11 +854,11 @@ msgstr "This search type already exists"
 msgid "Too much data in response body (%1%)"
 msgstr ""
 
-#: dcpp/MappingManager.cpp:141 dcpp/MappingManager.cpp:198
+#: dcpp/MappingManager.cpp:141 dcpp/MappingManager.cpp:201
 msgid "Transfer"
 msgstr "Transfer"
 
-#: dcpp/ConnectivityManager.cpp:354
+#: dcpp/ConnectivityManager.cpp:356
 msgid "Transfer (TCP)"
 msgstr "Transfer (TCP)"
 
@@ -874,19 +885,19 @@ msgstr "Unable to move %1% to %2% (%3%) nor to rename to %4% (%5%)"
 msgid "Unable to move %1% to %2% (%3%); renamed to %4%"
 msgstr "Unable to move %1% to %2% (%3%); renamed to %4%"
 
-#: dcpp/ConnectivityManager.cpp:164
+#: dcpp/ConnectivityManager.cpp:166
 #, boost-format
 msgid ""
 "Unable to open %1% port(s); connectivity settings must be configured manually"
 msgstr ""
 "Unable to open %1% port(s); connectivity settings must be configured manually"
 
-#: dcpp/QueueManager.cpp:1112
+#: dcpp/QueueManager.cpp:1116
 #, boost-format
 msgid "Unable to open filelist: %1%"
 msgstr "Unable to open filelist: %1%"
 
-#: dcpp/HashManager.cpp:123
+#: dcpp/HashManager.cpp:126
 msgid "Unable to read hash data file"
 msgstr "Unable to read hash data file"
 
@@ -922,15 +933,15 @@ msgstr "Video"
 msgid "You're trying to download from yourself!"
 msgstr "You're trying to download from yourself!"
 
-#: dcpp/ConnectivityManager.cpp:254
+#: dcpp/ConnectivityManager.cpp:256
 msgid "disabled"
 msgstr "disabled"
 
-#: dcpp/SettingsManager.cpp:214 dcpp/SettingsManager.cpp:215
+#: dcpp/SettingsManager.cpp:216 dcpp/SettingsManager.cpp:217
 msgid "downloaded from"
 msgstr "downloaded from"
 
-#: dcpp/ConnectivityManager.cpp:252
+#: dcpp/ConnectivityManager.cpp:254
 #, boost-format
 msgid ""
 "enabled\n"
@@ -938,10 +949,10 @@ msgid ""
 "\tIPv6 detection: %2%"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:267
+#: dcpp/ConnectivityManager.cpp:269
 msgid "undefined"
 msgstr "Undefined"
 
-#: dcpp/SettingsManager.cpp:216
+#: dcpp/SettingsManager.cpp:218
 msgid "uploaded to"
 msgstr "uploaded to"

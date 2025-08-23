@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-03-31 18:57+0200\n"
+"POT-Creation-Date: 2025-08-23 11:46+0200\n"
 "PO-Revision-Date: 2022-10-01 21:02+0000\n"
 "Last-Translator: Crise / MW <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,7 +58,7 @@ msgstr "%.02f Tt"
 msgid "%1% %2% (added by %3%)"
 msgstr ""
 
-#: dcpp/MappingManager.cpp:136 dcpp/MappingManager.cpp:187
+#: dcpp/MappingManager.cpp:136 dcpp/MappingManager.cpp:190
 #, boost-format
 msgid "%1% %2% port (%3% %4%)"
 msgstr "%1% %2% portti (%3% %4%)"
@@ -97,7 +97,7 @@ msgstr "%1% ei ole toimiva plugin"
 msgid "%1% is not compatible with %2%"
 msgstr "%1% ei ole yhteensopiva %2%:n kanssa"
 
-#: dcpp/HashManager.cpp:670
+#: dcpp/HashManager.cpp:687
 #, boost-format
 msgid ""
 "%1% not shared; calculated CRC32 does not match the one found in SFV file."
@@ -105,7 +105,7 @@ msgstr ""
 "Tiedostoa %1% ei jaeta; laskettu CRC32 ei vastaa SFV-tiedostossa olevaa "
 "arvoa."
 
-#: dcpp/HashManager.cpp:672
+#: dcpp/HashManager.cpp:689
 #, boost-format
 msgid "%1% not shared; hashing did not complete."
 msgstr ""
@@ -125,7 +125,7 @@ msgstr "%1% potkaistiin: %2%"
 msgid "%1%/s"
 msgstr "%1%/s"
 
-#: dcpp/ConnectivityManager.cpp:322
+#: dcpp/ConnectivityManager.cpp:324
 #, boost-format
 msgid "%1%: %2%"
 msgstr "%1%: %2%"
@@ -162,23 +162,23 @@ msgstr "Jonossa on jo samanniminen mutta erikokoinen tiedosto"
 msgid "A file with the same hash already exists in your share"
 msgstr "Jaossa on jo tiedosto, jolla on sama TTH-tarkiste"
 
-#: dcpp/ConnectivityManager.cpp:258
+#: dcpp/ConnectivityManager.cpp:260
 msgid "Active mode"
 msgstr "Aktiivitila"
 
-#: dcpp/ConnectivityManager.cpp:260
+#: dcpp/ConnectivityManager.cpp:262
 #, boost-format
 msgid ""
 "Active mode behind a router that %1% can configure; port mapping status: %2%"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:309
+#: dcpp/ConnectivityManager.cpp:311
 msgid ""
 "Active mode could not be achieved; a manual configuration is recommended for "
 "better connectivity"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:186
+#: dcpp/ConnectivityManager.cpp:188
 msgid "All IPv6 addresses found are local; disabling connectivity"
 msgstr ""
 
@@ -208,16 +208,16 @@ msgstr ""
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1668
+#: dcpp/QueueManager.cpp:1672
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "Laskettu CRC32-tarkistussumma ei ollut sama kuin SFV-tiedostossa"
 
-#: dcpp/QueueManager.cpp:1659
+#: dcpp/QueueManager.cpp:1663
 #, fuzzy, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "Laskettu CRC32-tarkistussumma ei ollut sama kuin SFV-tiedostossa"
 
-#: dcpp/CryptoManager.cpp:372
+#: dcpp/CryptoManager.cpp:374
 #, boost-format
 msgid "Certificate verification for %1% failed with error: %2%"
 msgstr ""
@@ -227,6 +227,7 @@ msgid "Compressed"
 msgstr ""
 
 #: dcpp/BufferedSocket.cpp:202 dcpp/SSLSocket.cpp:179 dcpp/SSLSocket.cpp:186
+#: dcpp/SSLSocket.cpp:196 dcpp/SSLSocket.cpp:208
 msgid "Connection closed"
 msgstr "Yhteys suljettu"
 
@@ -235,7 +236,7 @@ msgstr "Yhteys suljettu"
 msgid "Connection timeout"
 msgstr "Yhteys aikakatkaistu"
 
-#: dcpp/ConnectivityManager.cpp:321
+#: dcpp/ConnectivityManager.cpp:323
 #, fuzzy, boost-format
 msgid "Connectivity (%1%): %2%"
 msgstr "Yhteysvirhe: %1%"
@@ -245,7 +246,7 @@ msgstr "Yhteysvirhe: %1%"
 msgid "Connectivity error: %1%"
 msgstr "Yhteysvirhe: %1%"
 
-#: dcpp/ConnectivityManager.cpp:270
+#: dcpp/ConnectivityManager.cpp:272
 #, boost-format
 msgid ""
 "Connectivity information:\n"
@@ -267,7 +268,7 @@ msgstr ""
 msgid "Connectivity restored"
 msgstr "Yhdistettävyys palautunut"
 
-#: dcpp/ConnectivityManager.cpp:248
+#: dcpp/ConnectivityManager.cpp:250
 msgid "Connectivity settings are being configured; try again later"
 msgstr ""
 
@@ -285,7 +286,7 @@ msgstr "Kohdetiedostoa %1% ei voi avata."
 msgid "Country information"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:150
+#: dcpp/ConnectivityManager.cpp:152
 msgid "Determining the best connectivity settings..."
 msgstr ""
 
@@ -294,11 +295,11 @@ msgstr ""
 msgid "Directory"
 msgstr "Hakemisto on jo jaettu"
 
-#: dcpp/ShareManager.cpp:408
+#: dcpp/ShareManager.cpp:409
 msgid "Directory already shared"
 msgstr "Hakemisto on jo jaettu"
 
-#: dcpp/ShareManager.cpp:395
+#: dcpp/ShareManager.cpp:396
 #, fuzzy
 msgid "Directory is hidden"
 msgstr "Hakemisto on jo jaettu"
@@ -307,7 +308,7 @@ msgstr "Hakemisto on jo jaettu"
 msgid "Directory missing name attribute"
 msgstr "Kansiolta puuttuu nimiattribuutti"
 
-#: dcpp/ConnectivityManager.cpp:263
+#: dcpp/ConnectivityManager.cpp:265
 msgid "Disabled"
 msgstr ""
 
@@ -332,7 +333,7 @@ msgstr ""
 msgid "Download Queue"
 msgstr "Latausjono"
 
-#: dcpp/ShareManager.cpp:832
+#: dcpp/ShareManager.cpp:833
 #, boost-format
 msgid ""
 "Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
@@ -348,7 +349,7 @@ msgstr ""
 msgid "Duplicate source: %1%"
 msgstr "Sama lähde: %1%"
 
-#: dcpp/MappingManager.cpp:142 dcpp/MappingManager.cpp:199
+#: dcpp/MappingManager.cpp:142 dcpp/MappingManager.cpp:202
 msgid "Encrypted transfer"
 msgstr ""
 
@@ -357,7 +358,7 @@ msgstr ""
 msgid "Endless redirection loop (%1%)"
 msgstr ""
 
-#: dcpp/HashManager.cpp:518
+#: dcpp/HashManager.cpp:521
 #, boost-format
 msgid "Error creating hash data file: %1%"
 msgstr "Virhe tarkistussummatiedoston luonnissa: %1%"
@@ -368,8 +369,8 @@ msgid "Error during compression"
 msgstr "Virhe pakkaamisessa"
 
 #: dcpp/BZUtils.cpp:75 dcpp/BZUtils.cpp:97 dcpp/BZUtils.cpp:100
-#: dcpp/CryptoManager.cpp:523 dcpp/CryptoManager.cpp:542
-#: dcpp/CryptoManager.cpp:556 dcpp/ZUtils.cpp:117 dcpp/ZUtils.cpp:142
+#: dcpp/CryptoManager.cpp:525 dcpp/CryptoManager.cpp:544
+#: dcpp/CryptoManager.cpp:558 dcpp/ZUtils.cpp:117 dcpp/ZUtils.cpp:142
 #: dcpp/ZUtils.cpp:156
 msgid "Error during decompression"
 msgstr "Virhe purkamisessa"
@@ -378,7 +379,7 @@ msgstr "Virhe purkamisessa"
 msgid "Error generating certificate"
 msgstr "Sertifikaatin luominen epäonnistui"
 
-#: dcpp/HashManager.cpp:677
+#: dcpp/HashManager.cpp:694
 #, boost-format
 msgid "Error hashing %1%: %2%"
 msgstr "Virhe tarkistussumman luonnissa tiedostolle %1%: %2%"
@@ -393,7 +394,7 @@ msgstr "Virhe tarkistussumman luonnissa tiedostolle %1%: %2%"
 msgid "Error loading %1%: %2%"
 msgstr "Virhe tarkistussumman luonnissa tiedostolle %1%: %2%"
 
-#: dcpp/HashManager.cpp:110 dcpp/HashManager.cpp:312
+#: dcpp/HashManager.cpp:110 dcpp/HashManager.cpp:315
 #, boost-format
 msgid "Error saving hash data: %1%"
 msgstr "Virhe tallennettaessa tarkistussummaa: %1%"
@@ -402,34 +403,34 @@ msgstr "Virhe tallennettaessa tarkistussummaa: %1%"
 msgid "Executable"
 msgstr ""
 
-#: dcpp/MappingManager.cpp:109 dcpp/MappingManager.cpp:226
+#: dcpp/MappingManager.cpp:109 dcpp/MappingManager.cpp:229
 #, fuzzy
 msgid "Failed to create port mappings"
 msgstr "Säikeen luonti epäonnistui"
 
-#: dcpp/MappingManager.cpp:215
+#: dcpp/MappingManager.cpp:218
 msgid "Failed to get external IP"
 msgstr ""
 
-#: dcpp/MappingManager.cpp:182
+#: dcpp/MappingManager.cpp:185
 #, fuzzy, boost-format
 msgid "Failed to initialize the %1% interface"
 msgstr "Tiedostolistan päivitys aloitettiin"
 
-#: dcpp/CryptoManager.cpp:267
+#: dcpp/CryptoManager.cpp:268
 msgid "Failed to load certificate file"
 msgstr "Sertifikaattitiedoston lataaminen epäonnistui"
 
-#: dcpp/CryptoManager.cpp:275
+#: dcpp/CryptoManager.cpp:276
 msgid "Failed to load private key"
 msgstr "Yksityisavaimen lataaminen epäonnistui"
 
-#: dcpp/CryptoManager.cpp:288
+#: dcpp/CryptoManager.cpp:289
 #, boost-format
 msgid "Failed to load trusted certificate from %1%"
 msgstr ""
 
-#: dcpp/MappingManager.cpp:190
+#: dcpp/MappingManager.cpp:193
 #, fuzzy, boost-format
 msgid "Failed to map the %1% port (%2% %3%) with the %4% interface"
 msgstr "Säikeen luonti epäonnistui"
@@ -438,7 +439,7 @@ msgstr "Säikeen luonti epäonnistui"
 msgid "Failed to negotiate base protocol"
 msgstr "Perusprotokollan neuvottelu epäonnistui"
 
-#: dcpp/MappingManager.cpp:237
+#: dcpp/MappingManager.cpp:240
 #, fuzzy, boost-format
 msgid ""
 "Failed to remove port mappings from the %1% device with the %2% interface"
@@ -457,21 +458,21 @@ msgstr ""
 msgid "File already exists at the target location"
 msgstr "Kohdehakemistossa on jo samankokoinen tai suurempi tiedosto."
 
-#: dcpp/ShareManager.cpp:999
+#: dcpp/ShareManager.cpp:1004
 #, fuzzy, boost-format
 msgid "File list %1% generated"
 msgstr "Tiedostolistan päivitys aloitettiin"
 
-#: dcpp/ShareManager.cpp:864
+#: dcpp/ShareManager.cpp:865
 #, boost-format
 msgid "File list refresh failed: %1%"
 msgstr "Tiedostolistan päivitys epäonnistui: %1%"
 
-#: dcpp/ShareManager.cpp:928
+#: dcpp/ShareManager.cpp:931
 msgid "File list refresh finished"
 msgstr "Tiedostolistan päivitys valmis"
 
-#: dcpp/ShareManager.cpp:847
+#: dcpp/ShareManager.cpp:848
 msgid ""
 "File list refresh in progress, please wait for it to finish before trying to "
 "refresh again"
@@ -479,7 +480,7 @@ msgstr ""
 "Tiedostolistan päivitys on jo meneillään, odota että se valmistuu ennen kuin "
 "yrität päivitystä uudelleen"
 
-#: dcpp/ShareManager.cpp:892
+#: dcpp/ShareManager.cpp:895
 msgid "File list refresh initiated"
 msgstr "Tiedostolistan päivitys aloitettiin"
 
@@ -502,11 +503,11 @@ msgstr "Tarkistussumman laskeminen valmistui tiedostolle %1% (nopeus %2%/s)"
 msgid "Full tree does not match TTH root"
 msgstr "Laskettu TTH-puu ei vastaa TTH-tarkistussummaa"
 
-#: dcpp/CryptoManager.cpp:256
+#: dcpp/CryptoManager.cpp:257
 msgid "Generated new TLS certificate"
 msgstr "Uusi TLS-serfifikaatti luotu"
 
-#: dcpp/MappingManager.cpp:248
+#: dcpp/MappingManager.cpp:251
 msgid "Generic"
 msgstr ""
 
@@ -515,7 +516,7 @@ msgstr ""
 msgid "HTTP file download failed to create file %1%, error: %2%"
 msgstr ""
 
-#: dcpp/HashManager.cpp:257
+#: dcpp/HashManager.cpp:260
 #, fuzzy, boost-format
 msgid "Hash data rebuilding failed: %1%"
 msgstr "Tarkistussumman laskenta epäonnistui: %1%"
@@ -524,7 +525,12 @@ msgstr "Tarkistussumman laskenta epäonnistui: %1%"
 msgid "Hash database"
 msgstr "Tarkistussummatietokanta"
 
-#: dcpp/HashManager.cpp:597
+#: dcpp/HashManager.cpp:595
+#, fuzzy
+msgid "Hash database rebuild has been scheduled"
+msgstr "Tarkistussummatietokanta luotiin uudelleen"
+
+#: dcpp/HashManager.cpp:610
 msgid "Hash database rebuilt"
 msgstr "Tarkistussummatietokanta luotiin uudelleen"
 
@@ -565,7 +571,7 @@ msgstr "Virheellinen koko"
 msgid "Invalid file list extension (must be .xml or .bz2)"
 msgstr ""
 
-#: dcpp/ShareManager.cpp:615
+#: dcpp/ShareManager.cpp:616
 #, boost-format
 msgid "Invalid file name found while hashing folder %1%"
 msgstr ""
@@ -575,7 +581,7 @@ msgstr ""
 msgid "Invalid regular expression: %1%"
 msgstr ""
 
-#: dcpp/SettingsManager.cpp:717
+#: dcpp/SettingsManager.cpp:719
 msgid "Invalid search type name"
 msgstr ""
 
@@ -591,11 +597,15 @@ msgstr ""
 "Kohdetiedosto ei kelpaa (hakemistoa ei ole, tarkista lataushakemisto "
 "asetuksista)"
 
+#: dcpp/SSLSocket.cpp:214
+msgid "Keyprint mismatch"
+msgstr ""
+
 #: dcpp/FavoriteManager.cpp:477
 msgid "Kick user(s)"
 msgstr "Potkaise käyttäjä(t)"
 
-#: dcpp/ConnectivityManager.cpp:194
+#: dcpp/ConnectivityManager.cpp:196
 msgid "Local network with possible NAT detected, trying to map the ports..."
 msgstr ""
 
@@ -616,7 +626,7 @@ msgstr "Kirjoitettiin enemmän tavuja kuin pyydettiin"
 msgid "No certificate file chosen"
 msgstr "Sertifikaattitiedostoa ei ole valittu"
 
-#: dcpp/ShareManager.cpp:391
+#: dcpp/ShareManager.cpp:392
 msgid "No directory specified"
 msgstr "Hakemistoa ei ole määritetty"
 
@@ -628,7 +638,7 @@ msgstr "Yksityisavaintiedostoa ei ole valittu"
 msgid "No slots available"
 msgstr "Ei vapaita latauspaikkoja"
 
-#: dcpp/SettingsManager.cpp:775
+#: dcpp/SettingsManager.cpp:777
 msgid "No such search type"
 msgstr ""
 
@@ -641,7 +651,7 @@ msgstr ""
 msgid "Not listening for connections - please restart %1%"
 msgstr "Yhteyksien kuunteleminen epäonnistui, %1% on käynnistettävä uudestaan"
 
-#: dcpp/ClientManager.cpp:152 dcpp/ClientManager.cpp:183
+#: dcpp/ClientManager.cpp:150 dcpp/ClientManager.cpp:181
 #: dcpp/FinishedManager.cpp:130 dcpp/FinishedManager.cpp:136
 #: dcpp/FinishedManager.cpp:142 dcpp/SearchManager.cpp:337
 #: dcpp/SearchManager.cpp:398 dcpp/Transfer.cpp:80 dcpp/Transfer.cpp:84
@@ -652,7 +662,7 @@ msgstr "Tavoittamattomissa"
 msgid "Partial file list"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:262
+#: dcpp/ConnectivityManager.cpp:264
 msgid "Passive mode"
 msgstr ""
 
@@ -660,12 +670,12 @@ msgstr ""
 msgid "Picture"
 msgstr ""
 
-#: dcpp/MappingManager.cpp:242
+#: dcpp/MappingManager.cpp:245
 #, boost-format
 msgid "Port mapping: %1%"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:176
+#: dcpp/ConnectivityManager.cpp:178
 msgid ""
 "Public IP address detected, selecting active mode with direct connection"
 msgstr ""
@@ -674,7 +684,7 @@ msgstr ""
 msgid "Redirect user(s)"
 msgstr "Uudelleenohjaa käyttäjä(t)"
 
-#: dcpp/ShareManager.cpp:411
+#: dcpp/ShareManager.cpp:412
 msgid "Remove all subdirectories before adding this one"
 msgstr "Poista kaikki tämän hakemiston alihakemistot ennen sen lisäämistä"
 
@@ -682,11 +692,11 @@ msgstr "Poista kaikki tämän hakemiston alihakemistot ennen sen lisäämistä"
 msgid "Response does not match request"
 msgstr "Vastaus ei täsmää pyyntöön"
 
-#: dcpp/MappingManager.cpp:143 dcpp/MappingManager.cpp:200
+#: dcpp/MappingManager.cpp:143 dcpp/MappingManager.cpp:203
 msgid "Search"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:360
+#: dcpp/ConnectivityManager.cpp:362
 msgid "Search (UDP)"
 msgstr ""
 
@@ -719,7 +729,7 @@ msgstr ""
 "SOCKS-palvelimelle kirjautuminen epäonnistui (väärä käyttäjätunnus tai "
 "salasana?)"
 
-#: dcpp/MappingManager.cpp:203
+#: dcpp/MappingManager.cpp:206
 #, boost-format
 msgid ""
 "Successfully created port mappings (Transfers: %1%, Encrypted transfers: "
@@ -732,22 +742,22 @@ msgid ""
 "Successfully created port mappings on the %1% device with the %2% interface"
 msgstr ""
 
-#: dcpp/MappingManager.cpp:236
+#: dcpp/MappingManager.cpp:239
 #, fuzzy, boost-format
 msgid ""
 "Successfully removed port mappings from the %1% device with the %2% interface"
 msgstr "Säikeen luonti epäonnistui"
 
-#: dcpp/CryptoManager.cpp:471
+#: dcpp/CryptoManager.cpp:473
 #, boost-format
 msgid "Supplied KeyPrint %1% did not match %2%."
 msgstr ""
 
-#: dcpp/CryptoManager.cpp:469
+#: dcpp/CryptoManager.cpp:471
 msgid "Supplied KeyPrint did not match any certificate."
 msgstr ""
 
-#: dcpp/CryptoManager.cpp:258
+#: dcpp/CryptoManager.cpp:259
 #, boost-format
 msgid "TLS disabled, failed to generate certificate: %1%"
 msgstr "TLS poissa käytöstä koska sertifikaatin luonti epäonnistui: %1%"
@@ -756,8 +766,9 @@ msgstr "TLS poissa käytöstä koska sertifikaatin luonti epäonnistui: %1%"
 msgid "TLS disabled, no certificate file set"
 msgstr "TLS ei käytössä, sertifikaattitiedostoja ei ole asetettu"
 
-#: dcpp/SSLSocket.cpp:197
-msgid "TLS error"
+#: dcpp/SSLSocket.cpp:223
+#, boost-format
+msgid "TLS error : %1%"
 msgstr ""
 
 #: dcpp/SearchManager.cpp:47
@@ -782,7 +793,7 @@ msgid ""
 "encrypted transfers will be disabled"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1502
+#: dcpp/QueueManager.cpp:1506
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -802,7 +813,7 @@ msgstr "SOCKS-palvelin ei voinut avata yhteyttä"
 msgid "The socks server requires authentication"
 msgstr "SOCKS-palvelin vaatii kirjautumisen"
 
-#: dcpp/ShareManager.cpp:399
+#: dcpp/ShareManager.cpp:400
 msgid "The temporary download directory cannot be shared"
 msgstr "Keskeneräisten tiedostojen hakemistoa ei voi jakaa"
 
@@ -822,7 +833,7 @@ msgid ""
 "fix this"
 msgstr ""
 
-#: dcpp/SettingsManager.cpp:721 dcpp/SettingsManager.cpp:743
+#: dcpp/SettingsManager.cpp:723 dcpp/SettingsManager.cpp:745
 msgid "This search type already exists"
 msgstr ""
 
@@ -831,11 +842,11 @@ msgstr ""
 msgid "Too much data in response body (%1%)"
 msgstr ""
 
-#: dcpp/MappingManager.cpp:141 dcpp/MappingManager.cpp:198
+#: dcpp/MappingManager.cpp:141 dcpp/MappingManager.cpp:201
 msgid "Transfer"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:354
+#: dcpp/ConnectivityManager.cpp:356
 msgid "Transfer (TCP)"
 msgstr ""
 
@@ -862,18 +873,18 @@ msgstr ""
 msgid "Unable to move %1% to %2% (%3%); renamed to %4%"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:164
+#: dcpp/ConnectivityManager.cpp:166
 #, boost-format
 msgid ""
 "Unable to open %1% port(s); connectivity settings must be configured manually"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1112
+#: dcpp/QueueManager.cpp:1116
 #, boost-format
 msgid "Unable to open filelist: %1%"
 msgstr "Tiedostolistan avaus epäonnistui: %1%"
 
-#: dcpp/HashManager.cpp:123
+#: dcpp/HashManager.cpp:126
 msgid "Unable to read hash data file"
 msgstr "TTH-tietokantatiedostoa ei voi lukea."
 
@@ -909,15 +920,15 @@ msgstr ""
 msgid "You're trying to download from yourself!"
 msgstr "Yrität ladata itseltäsi!"
 
-#: dcpp/ConnectivityManager.cpp:254
+#: dcpp/ConnectivityManager.cpp:256
 msgid "disabled"
 msgstr ""
 
-#: dcpp/SettingsManager.cpp:214 dcpp/SettingsManager.cpp:215
+#: dcpp/SettingsManager.cpp:216 dcpp/SettingsManager.cpp:217
 msgid "downloaded from"
 msgstr "ladattu käyttäjältä"
 
-#: dcpp/ConnectivityManager.cpp:252
+#: dcpp/ConnectivityManager.cpp:254
 #, boost-format
 msgid ""
 "enabled\n"
@@ -925,10 +936,10 @@ msgid ""
 "\tIPv6 detection: %2%"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:267
+#: dcpp/ConnectivityManager.cpp:269
 msgid "undefined"
 msgstr ""
 
-#: dcpp/SettingsManager.cpp:216
+#: dcpp/SettingsManager.cpp:218
 msgid "uploaded to"
 msgstr "lähetetty käyttäjälle"

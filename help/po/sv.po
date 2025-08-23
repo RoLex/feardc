@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2024-08-22 22:24+0200\n"
+"POT-Creation-Date: 2025-08-23 11:48+0200\n"
 "PO-Revision-Date: 2022-09-19 23:22+0000\n"
 "Last-Translator: Sopor <Unknown>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Launchpad (build 25877e98ba44ca75f9c22db1fc37efee03e4606a)\n"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div><placeholder><a>
-#: help/chat_commands.html:9 help/index.html:148 help/window_main.html:116
+#: help/chat_commands.html:9 help/index.html:148 help/window_main.html:117
 msgid "Chat Commands"
 msgstr "Chattkommandon"
 
@@ -143,7 +143,7 @@ msgstr ""
 #: help/settings_appearance.html:89 help/settings_expert.html:51
 #: help/settings_expert.html:53 help/settings_history.html:25
 #: help/settings_history.html:43 help/settings_notifications.html:37
-#: help/window_main.html:155 help/window_main.html:157 help/window_pm.html:10
+#: help/window_main.html:156 help/window_main.html:158 help/window_pm.html:10
 #: help/window_pm.html:11
 msgid "Private Message"
 msgstr "Privat meddelande"
@@ -534,7 +534,7 @@ msgstr ""
 #: help/settings_plugins.html:51 help/settings_search_types.html:28
 #: help/settings_sharing.html:34 help/settings_user_commands.html:22
 #: help/settings_user_matching.html:43 help/window_adlsearch.html:54
-#: help/window_download_queue.html:39 help/window_favorite_hubs.html:44
+#: help/window_download_queue.html:39 help/window_favorite_hubs.html:46
 msgid "Remove"
 msgstr "Ta bort"
 
@@ -685,28 +685,29 @@ msgstr "Skicka privat meddelande"
 #: help/settings_styles.html:79 help/settings_user_matching.html:22
 #: help/settings_user_matching.html:29 help/settings_user_matching.html:50
 #: help/window_download_queue.html:54 help/window_favorite_hubs.html:30
-#: help/window_favorite_hubs.html:50 help/window_favorite_hubs.html:51
-#: help/window_hub.html:97 help/window_main.html:28 help/window_main.html:29
-#: help/window_main.html:47 help/window_main.html:58
-#: /home/hundr/feardc/help/menu_plugins.inc:6 help/window_main.html:71
-#: help/window_main.html:75 help/window_main.html:79 help/window_main.html:83
-#: help/window_main.html:87 help/window_main.html:91 help/window_main.html:95
-#: help/window_main.html:99 help/window_main.html:103 help/window_main.html:107
-#: help/window_main.html:111 help/window_main.html:115
-#: help/window_main.html:116 help/window_main.html:119
-#: help/window_main.html:143 help/window_main.html:146
-#: help/window_main.html:147 help/window_main.html:151
-#: help/window_main.html:152 help/window_main.html:155
-#: help/window_main.html:157 help/window_main.html:161
-#: help/window_main.html:240 help/window_main.html:247
+#: help/window_favorite_hubs.html:52 help/window_favorite_hubs.html:53
+#: help/window_hub.html:97 help/window_main.html:29 help/window_main.html:30
+#: help/window_main.html:48 help/window_main.html:59
+#: /home/hundr/feardc/help/menu_plugins.inc:6 help/window_main.html:72
+#: help/window_main.html:76 help/window_main.html:80 help/window_main.html:84
+#: help/window_main.html:88 help/window_main.html:92 help/window_main.html:96
+#: help/window_main.html:100 help/window_main.html:104
+#: help/window_main.html:108 help/window_main.html:112
+#: help/window_main.html:116 help/window_main.html:117
+#: help/window_main.html:120 help/window_main.html:144
+#: help/window_main.html:147 help/window_main.html:148
+#: help/window_main.html:152 help/window_main.html:153
+#: help/window_main.html:156 help/window_main.html:158
+#: help/window_main.html:162 help/window_main.html:241
 #: help/window_main.html:248 help/window_main.html:249
-#: help/window_main.html:253 help/window_main.html:256
-#: help/window_main.html:259 help/window_main.html:262
-#: help/window_main.html:265 help/window_main.html:268
-#: help/window_main.html:271 help/window_main.html:301
-#: help/window_main.html:306 help/window_main.html:375
-#: help/window_main.html:379 help/window_main.html:383
-#: help/window_main.html:387 help/window_pm.html:32 help/window_pm.html:74
+#: help/window_main.html:250 help/window_main.html:254
+#: help/window_main.html:257 help/window_main.html:260
+#: help/window_main.html:263 help/window_main.html:266
+#: help/window_main.html:269 help/window_main.html:272
+#: help/window_main.html:302 help/window_main.html:307
+#: help/window_main.html:376 help/window_main.html:380
+#: help/window_main.html:384 help/window_main.html:388 help/window_pm.html:32
+#: help/window_pm.html:74
 msgid "<placeholder id=0/>"
 msgstr "<placeholder id=0/>"
 
@@ -795,7 +796,7 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
 #: /home/hundr/feardc/help/commands_user_favorites.inc:2
-#: help/window_public_hubs.html:42
+#: help/window_public_hubs.html:44
 msgid "Add to favorites"
 msgstr "Lägg till i favoriter"
 
@@ -1292,32 +1293,32 @@ msgstr ""
 #: help/dialog_fav_hub_groups.html:9 help/dialog_favorite_hub.html:38
 #: help/dialog_favorite_hub.html:42 help/dialog_favorite_hub.html:43
 #: help/index.html:62 help/window_favorite_hubs.html:30
-#: help/window_favorite_hubs.html:50 help/window_favorite_hubs.html:51
-#: help/window_main.html:29 help/window_main.html:147 help/window_main.html:152
-#: help/window_main.html:249
+#: help/window_favorite_hubs.html:52 help/window_favorite_hubs.html:53
+#: help/window_main.html:30 help/window_main.html:148 help/window_main.html:153
+#: help/window_main.html:250
 msgid "Favorite hub groups"
 msgstr "Favorithubgrupper"
 
 #. type: Content of: <html><body><dl><dd><div><placeholder><a>
 #: help/dialog_fav_hub_groups.html:10 help/index.html:33
-#: help/keyboard_commands.html:46 help/window_main.html:74
-#: help/window_main.html:75 help/window_main.html:212 help/window_main.html:245
-#: help/window_main.html:247 help/window_main.html:248
+#: help/keyboard_commands.html:46 help/window_main.html:75
+#: help/window_main.html:76 help/window_main.html:213 help/window_main.html:246
+#: help/window_main.html:248 help/window_main.html:249
 msgid "Favorite Hubs"
 msgstr "Favorithubbar"
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/dialog_fav_hub_groups.html:10 help/window_main.html:26
+#: help/dialog_fav_hub_groups.html:10 help/window_main.html:27
 msgid "Connect to a favorite hub group"
 msgstr "Anslut till en favorithubgrupp"
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/dialog_fav_hub_groups.html:10 help/window_main.html:144
+#: help/dialog_fav_hub_groups.html:10 help/window_main.html:145
 msgid "Close all hubs of a favorite group"
 msgstr "Stäng alla hubbar i en favoritgrupp"
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/dialog_fav_hub_groups.html:10 help/window_main.html:149
+#: help/dialog_fav_hub_groups.html:10 help/window_main.html:150
 msgid "Close hubs not in a favorite group"
 msgstr "Stäng hubbar som inte tillhör en favoritgrupp"
 
@@ -1436,9 +1437,9 @@ msgstr "Egenskaper för favorithub"
 #: help/settings_tabs.html:41 /home/hundr/feardc/help/window_hublists.inc:4
 #: /home/hundr/feardc/help/window_hublists.inc:5
 #: help/window_finished_downloads.html:36 help/window_finished_uploads.html:36
-#: help/window_hub.html:10 help/window_hub.html:11 help/window_main.html:28
-#: help/window_main.html:143 help/window_main.html:146
-#: help/window_main.html:151 help/window_search.html:81
+#: help/window_hub.html:10 help/window_hub.html:11 help/window_main.html:29
+#: help/window_main.html:144 help/window_main.html:147
+#: help/window_main.html:152 help/window_search.html:81
 #: help/window_transfers.html:46
 msgid "Hub"
 msgstr "Nätnav"
@@ -1594,12 +1595,12 @@ msgstr ""
 "hjälpavsnitten kopplat till <placeholder id=0/>dialogen."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/dialog_favorite_hub.html:40 help/window_favorite_hubs.html:48
+#: help/dialog_favorite_hub.html:40 help/window_favorite_hubs.html:50
 msgid "Manage groups"
 msgstr "Hantera grupper"
 
 #. type: Content of: <html><body><dl><dd><div>
-#: help/dialog_favorite_hub.html:42 help/window_favorite_hubs.html:50
+#: help/dialog_favorite_hub.html:42 help/window_favorite_hubs.html:52
 msgid ""
 "Open the <placeholder id=0/> dialog where you can add, edit, remove groups."
 msgstr ""
@@ -1608,7 +1609,7 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
 #: help/dialog_indexing_progress.html:9 help/index.html:58
-#: help/window_main.html:118
+#: help/window_main.html:119
 msgid "Indexing progress"
 msgstr "Indexeringsstatus"
 
@@ -1658,7 +1659,7 @@ msgstr "Notera att filer inte kommer delas ut förrän de blivit indexerade."
 
 #. type: Content of: <html><body><h2>
 #: help/dialog_public_hub_lists.html:9 help/index.html:64
-#: help/settings_downloads.html:97 help/window_public_hubs.html:58
+#: help/settings_downloads.html:97 help/window_public_hubs.html:60
 msgid "Configured Public Hub Lists"
 msgstr "Konfigurerade Publika Hubblistor"
 
@@ -2257,10 +2258,10 @@ msgstr "Matcha favoritanvändare"
 #: help/dialog_user_matching.html:27 help/index.html:34
 #: help/keyboard_commands.html:62 help/keyboard_commands.html:91
 #: help/settings_styles.html:47 help/window_download_queue.html:74
-#: help/window_hub.html:121 help/window_main.html:78 help/window_main.html:79
-#: help/window_main.html:213 help/window_main.html:252
-#: help/window_main.html:253 help/window_public_hubs.html:16
-#: help/window_public_hubs.html:84 help/window_users.html:10
+#: help/window_hub.html:121 help/window_main.html:79 help/window_main.html:80
+#: help/window_main.html:214 help/window_main.html:253
+#: help/window_main.html:254 help/window_public_hubs.html:16
+#: help/window_public_hubs.html:85 help/window_users.html:10
 #: help/window_users.html:11
 msgid "Users"
 msgstr "Användare"
@@ -2436,8 +2437,8 @@ msgid ""
 "and file downloads</b> to work. These settings <b>have no effect on ability "
 "to connecting to hubs or downloading hublists</b>. This FAQ assumes that "
 "<u>you are able to download hublists and connect to hubs</u> as well as "
-"other peers can upload files from you. If this is not true then you must "
-"elminate another kind of problems before go on with this FAQ:"
+"other peers can upload files from you. If this is not the case, then you "
+"must check the following before continuing with this FAQ:"
 msgstr ""
 
 #. type: Content of: <html><body><p><ul><li>
@@ -2775,6 +2776,15 @@ msgstr ""
 #. type: Content of: <html><body><p><ul><li>
 #: help/faq_connection.html:180
 msgid ""
+"Try enabling <a po4a-id=0>Broad Device Detection</a>, a feature supported by "
+"some of the mapping interfaces. This may help discover and successfully "
+"utilize mapping devices (routers) that would otherwise be ignored due to "
+"issues or incompatibility."
+msgstr ""
+
+#. type: Content of: <html><body><p><ul><li>
+#: help/faq_connection.html:183
+msgid ""
 "Try to <a po4a-id=0>set your external IP manually</a> (see above how to "
 "determine it)  especially if you see 'Port mapping: Failed to get external "
 "IP' message in the <a po4a-id=1> System Log</a> window or wrong IP addess "
@@ -2783,12 +2793,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><h3>
-#: help/faq_connection.html:192
+#: help/faq_connection.html:190
 msgid "Manual port mapping configuration"
 msgstr "Manuell portmappningskonfiguration"
 
 #. type: Content of: <html><body><p>
-#: help/faq_connection.html:194
+#: help/faq_connection.html:192
 msgid ""
 "If you are unable to automate port forwarding with NAT-PMP or UPnP, you can "
 "follow the <a po4a-id=0> Manual port forwarding FAQ</a> to achieve active "
@@ -2797,12 +2807,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><h3>
-#: help/faq_connection.html:198
+#: help/faq_connection.html:196
 msgid "Select passive mode as the last resort"
 msgstr "Välj passivt läge som en sista utväg"
 
 #. type: Content of: <html><body><p>
-#: help/faq_connection.html:200
+#: help/faq_connection.html:198
 #, fuzzy
 msgid ""
 "If none of the above helped or you are not able to use active mode in your "
@@ -2820,7 +2830,7 @@ msgstr ""
 "nackdelar."
 
 #. type: Content of: <html><body><p>
-#: help/faq_connection.html:207
+#: help/faq_connection.html:205
 msgid ""
 "If you still unable to search and/or download even in passive mode another "
 "possibility is that your ISP is blocking DC (and often other p2p protocols "
@@ -2984,13 +2994,14 @@ msgstr ""
 #: help/faq_install.html:23
 #, fuzzy
 msgid ""
-"If you didn't use the installer (portable version): You can safely delete "
-"your DC++ directory, but be aware that dchub://, adc://, adcs:// and magnet: "
-"links will remain in the registry and will point to the nonexistent "
-"application. If you disable the <a po4a-id=0>Register with Windows to Handle "
-"dchub://, adc:// and adcs:// URL Links</a> and <a po4a-id=1>Register with "
-"Windows to Handle magnet: URI Links</a> options before uninstalling, these "
-"registry settings will be removed."
+"If you didn't use the installer (you use the portable DC++ version): you can "
+"safely delete your DC++ directory, but be aware that adc://, adcs://, "
+"dchub://, nmdcs:// and magnet: links will remain in the registry and will "
+"point to the nonexistent application. If you disable the <a po4a-"
+"id=0>Register with Windows to Handle adc://, adcs://, dchub://, nmdcs:// URL "
+"Links</a> and <a po4a-id=1>Register with Windows to Handle magnet: URI "
+"Links</a> options before removing DC++ then these registry settings will be "
+"also removed."
 msgstr ""
 "Om du inte använde installationspaketet utan den portabla versione: Du kan "
 "utan problem radera din Dc++-folder, men tänk på att dchub://, adc://, "
@@ -3583,10 +3594,11 @@ msgstr ""
 
 #. type: Content of: <html><body><ol><li>
 #: help/faq_portforward.html:61
+#, fuzzy
 msgid ""
 "In the External / WAN IP field, you need to enter the <b>external</b> IP "
-"address of your router.  Your external IP can be checked on <a po4a-"
-"id=0>DSLReport's IP page</a> or at <a po4a-id=1>WhatIsMyIP.com</a>."
+"address of your router.  Your external IP can be checked online at <a po4a-"
+"id=0>What Is My IP Address</a> or at <a po4a-id=1>WhatIsMyIP.com</a>."
 msgstr ""
 "I fältet för External / WAN IP ska du skriva in den <b>externa</b> IP-"
 "adressen som din router har. Din externa IP-adress kan du få fram med hjälp "
@@ -3594,7 +3606,7 @@ msgstr ""
 "id=1>WhatIsMyIP.com</a>."
 
 #. type: Content of: <html><body><ol><li>
-#: help/faq_portforward.html:66
+#: help/faq_portforward.html:65
 #, fuzzy
 msgid ""
 "Active mode should now be working. For checking or troubleshooting if you "
@@ -3615,7 +3627,7 @@ msgstr ""
 "a>."
 
 #. type: Content of: <html><body><p>
-#: help/faq_portforward.html:71
+#: help/faq_portforward.html:70
 msgid ""
 "<u>TIP:</u>Before you fill out the required settings it may worth to check "
 "if DC++ is able to automatically detect some of the required parameters. To "
@@ -3627,12 +3639,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><h2>
-#: help/faq_portforward.html:77
+#: help/faq_portforward.html:76
 msgid "Troubleshooting"
 msgstr "Felsökning"
 
 #. type: Content of: <html><body><p>
-#: help/faq_portforward.html:79
+#: help/faq_portforward.html:78
 #, fuzzy
 msgid ""
 "If you have problems finding the correct port forwarding settings in your "
@@ -3641,8 +3653,7 @@ msgid ""
 "huge list of models there, click on your model name, then select DC++ from "
 "the list of applications. An interactive guide will appear to help you how "
 "to access your router's configuration page and how to set up port forwarding "
-"for DC++.  You can find some more how-to's for popular router models at the "
-"<a po4a-id=1>DSLReport FAQ page</a> as well."
+"for DC++."
 msgstr ""
 "Du hittar en detaljerad \"hur gör man\" guide med skärmbilder för olika "
 "routermodeller på hemsidan <a po4a-id=0>www.portforward.com</a>. Där finns "
@@ -3654,7 +3665,7 @@ msgstr ""
 "routermodeller på hemsidan <a po4a-id=1>DSLReport FAQ page</a>."
 
 #. type: Content of: <html><body><p>
-#: help/faq_portforward.html:85
+#: help/faq_portforward.html:83
 msgid ""
 "If active mode is working for a while, but <u>the next time when you use DC+"
 "+</u>, you only get <i>Connection Timeout</i>s or no results when searching, "
@@ -3670,7 +3681,7 @@ msgstr ""
 "för att undvika ständiga IP-adressändringar."
 
 #. type: Content of: <html><body><ul><li>
-#: help/faq_portforward.html:90
+#: help/faq_portforward.html:88
 #, fuzzy
 msgid ""
 "If you find the external IP is constantly changing, you can sign up to a "
@@ -3699,7 +3710,7 @@ msgstr ""
 "automatiskt hantera uppdatering av ditt DNS-adress."
 
 #. type: Content of: <html><body><ul><li>
-#: help/faq_portforward.html:95
+#: help/faq_portforward.html:93
 msgid ""
 "If you find that your internal IP changes when you restart your computer "
 "then your operating system is obtaining an IP address from your router at "
@@ -3721,7 +3732,7 @@ msgstr ""
 "ta reda på MAC-adressen."
 
 #. type: Content of: <html><body><ul><li>
-#: help/faq_portforward.html:96
+#: help/faq_portforward.html:94
 msgid ""
 "Another option to ensure you'll always have the same internal IP address is "
 "to set up static IP address for your computer. Here's a <a po4a-id=0>FAQ</a> "
@@ -3733,7 +3744,7 @@ msgstr ""
 "att två datorer i samma nätverk INTE kan ha samma IP-adress."
 
 #. type: Content of: <html><body><p>
-#: help/faq_portforward.html:99
+#: help/faq_portforward.html:97
 #, fuzzy
 msgid ""
 "Besides normal file transfers DC++ is capable of <a po4a-id=0>secure</a> (<a "
@@ -4469,8 +4480,8 @@ msgstr "Lösning: försök att hitta fler källor för dina nerladdningar"
 #. type: Content of: <html><body><dl><dd><placeholder><a>
 #: help/faq_slowdownload.html:70 help/index.html:35
 #: help/keyboard_commands.html:35 help/settings_tabs.html:56
-#: help/window_main.html:82 help/window_main.html:83 help/window_main.html:214
-#: help/window_main.html:255 help/window_main.html:256
+#: help/window_main.html:83 help/window_main.html:84 help/window_main.html:215
+#: help/window_main.html:256 help/window_main.html:257
 msgid "Download Queue"
 msgstr "Nedladdningskö"
 
@@ -4478,9 +4489,9 @@ msgstr "Nedladdningskö"
 #: help/faq_slowdownload.html:73 help/index.html:38
 #: help/keyboard_commands.html:60 help/settings_history.html:58
 #: help/settings_search_types.html:12 help/settings_tabs.html:50
-#: help/window_main.html:94 help/window_main.html:95 help/window_main.html:161
-#: help/window_main.html:217 help/window_main.html:264
-#: help/window_main.html:265 help/window_search.html:10
+#: help/window_main.html:95 help/window_main.html:96 help/window_main.html:162
+#: help/window_main.html:218 help/window_main.html:265
+#: help/window_main.html:266 help/window_search.html:10
 #: help/window_search.html:11 help/window_search.html:42
 msgid "Search"
 msgstr "Sök"
@@ -4628,26 +4639,20 @@ msgstr ""
 "vara igångslagen per standard. Titta i routerns dokumentation eller "
 "konfigureringssida för sådana inställningar."
 
-#. type: Attribute 'title' of: <html><body><p><acronym>
-msgid "peer to peer"
-msgstr ""
-
 #. type: Content of: <html><body><ol><li>
 #: help/faq_slowdownload.html:130
+#, fuzzy
 msgid ""
 "You need to optimize your operating system for your current connection "
-"speed. First, <b>close <u>all</u></b> <acronym po4a-id=0>P2P</acronym> "
-"applications. Next run the <a po4a-id=1>DSLReports TweakTest</a>. Once you "
-"have optimized it, then run a speed test at <a po4a-id=2>DSLReports "
-"SpeedTest Page</a> or at the nice looking <a po4a-id=3>SpeedTest.Net</a> "
-"page (select a test site closest to your location for accurate results). "
-"This will give you a good idea what your maximum download and upload speeds "
-"are. If you're getting within 10% of your connection speed, that's the best "
-"you can get! If you are having trouble with your <i>broadband</i> "
-"connection, and it relates to packet loss, excessive latency, or Internet or "
-"<acronym po4a-id=4>ISP</acronym> congestion, running the <a po4a-id=5>Line "
-"Quality Test </a> may help find the cause (<i>requires logon, free signup).</"
-"i>"
+"speed. See some general tips <a po4a-id=0>here</a>.  Once you have done, run "
+"a speed and line quality test at <a po4a-id=1>SpeedTest.Net</a> page (select "
+"a test site closest to your location and close all p2p programs during the "
+"test for accurate results). This will give you a good idea what your maximum "
+"download and upload speeds are. If you're getting within 10% of your "
+"connection speed, that's the best you can get! The test can also reveal that "
+"you may having trouble with your <i>broadband</i> connection, and it relates "
+"to packet loss, excessive latency, or Internet or <acronym po4a-id=2>ISP</"
+"acronym> congestion."
 msgstr ""
 "Du behöver optimera ditt operativsystem för din aktuella anslutning. Först, "
 "<b>stäng <u>all</u></b> <acronym po4a-id=0>P2P</acronym> program. Kör sedan "
@@ -4666,7 +4671,7 @@ msgid "Digital Subscriber Loop"
 msgstr ""
 
 #. type: Content of: <html><body><ol><li><p>
-#: help/faq_slowdownload.html:150
+#: help/faq_slowdownload.html:144
 msgid ""
 "Your Internet connection is <acronym po4a-id=0>DSL</acronym>, cable, or "
 "satellite one with an asymmetrical connection speed, such as 768/128 Kib/s "
@@ -4688,7 +4693,7 @@ msgstr ""
 "lägre)."
 
 #. type: Content of: <html><body><ol><li><p>
-#: help/faq_slowdownload.html:160
+#: help/faq_slowdownload.html:154
 msgid ""
 "If you aren't allowed to use upload limiting you can also experiment with "
 "changing the size of <a po4a-id=0>Socket Write Buffer</a> in Experts Only "
@@ -4710,7 +4715,7 @@ msgid "Quality of Service"
 msgstr ""
 
 #. type: Content of: <html><body><ol><li>
-#: help/faq_slowdownload.html:167
+#: help/faq_slowdownload.html:161
 #, fuzzy
 msgid ""
 "The &quot;<acronym po4a-id=0>QoS</acronym> Packet Scheduler&quot; is enabled "
@@ -4728,7 +4733,7 @@ msgstr ""
 "dokumentation för mer information."
 
 #. type: Content of: <html><body><ol><li>
-#: help/faq_slowdownload.html:174
+#: help/faq_slowdownload.html:168
 #, fuzzy
 msgid ""
 "Your computer is infected with malicious software which altered the low "
@@ -4992,22 +4997,13 @@ msgstr ""
 #, fuzzy
 msgid ""
 "If you use a third party software firewall or securty suite then make sure "
-"you have the <a po4a-id=0>internal Windows firewall disabled</a>.  On "
-"Windows 7 and later Windows versions your 3rd party firewall application "
-"most likely disables the internal firewall automatically."
+"you have the <a po4a-id=0>internal Windows firewall disabled</a> although on "
+"modern Windows versions your 3rd party firewall application most likely able "
+"to successfully disable the internal firewall automatically."
 msgstr ""
 "Om du använder Windows XP med en tredjepartsbrandvägg så se till att du har "
 "den <a po4a-id=0>interna Windowsbrandväggen avstängd</a>. I Vista och 7 görs "
 "detta oftast av tredjepartsbrandväggen själv."
-
-#. type: Content of: <html><body><p><ul><li>
-#: help/faq_unblock.html:95
-msgid ""
-"You can find configuration instructions for some popular firewall software "
-"<a po4a-id=0>here</a>."
-msgstr ""
-"Du kan hitta konfigurationsinstruktioner för några populära "
-"brandväggsprogram <a po4a-id=0>här</a>."
 
 #. type: Content of: <html><body><ul><li><ul><li><placeholder><a>
 #: help/faq_units.html:9 help/index.html:132
@@ -5168,6 +5164,10 @@ msgstr ""
 #: help/faq_university.html:10
 msgid "Blocking and Throttling"
 msgstr "Blockering och strypning"
+
+#. type: Attribute 'title' of: <html><body><p><acronym>
+msgid "peer to peer"
+msgstr ""
 
 #. type: Content of: <html><body><p>
 #: help/faq_university.html:11
@@ -5371,7 +5371,7 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
 #: help/get_started.html:4 help/get_started.html:11 help/index.html:16
-#: help/window_main.html:170
+#: help/window_main.html:171
 msgid "Get started"
 msgstr "Kom igång"
 
@@ -5531,8 +5531,18 @@ msgstr ""
 "egna <a po4a-id=3>favorithubbar</a>. Om du enkelt vill ansluta till en "
 "speciell hubb med en känd adress finns snabbvägen File/Quick Connect."
 
+#. type: Content of: <html><body><dl><dd><p>
+#: /home/hundr/feardc/help/hub_connections.inc:1
+msgid ""
+"DC++ supports connecting to both legacy non-secure hub servers and hubs that "
+"support fully encrypted, secure connections. If specified, the URI part of "
+"the hub address determines whether the target hub supports secure "
+"connections. Addresses with adcs:// and nmdcs:// URIs will connect to secure "
+"hubs."
+msgstr ""
+
 #. type: Content of: <html><body><p>
-#: help/get_started.html:73
+#: help/get_started.html:75
 msgid ""
 "However, before connecting to any hub you should familiarize yourself with "
 "the basic principles of the DC network and have your client set up correctly "
@@ -5543,12 +5553,12 @@ msgstr ""
 "för att kunna använda alla möjligheter och fördelar med Direct Connect."
 
 #. type: Content of: <html><body><h2>
-#: help/get_started.html:77
+#: help/get_started.html:79
 msgid "Basic settings and usage"
 msgstr "Grundläggande inställningar och användning"
 
 #. type: Content of: <html><body><p>
-#: help/get_started.html:79
+#: help/get_started.html:81
 #, fuzzy
 msgid ""
 "<a po4a-id=0>The FearDC Quick Start Tutorial</a> is an easy to understand "
@@ -5566,7 +5576,7 @@ msgstr ""
 "id=1>General settings</a>, osv), annars kan duy inte ansluta till någon hubb."
 
 #. type: Content of: <html><body><p>
-#: help/get_started.html:85
+#: help/get_started.html:87
 msgid ""
 "In most cases, after concluding this basic setup you must be able to connect "
 "to hubs, search for files and download from any user. If you don't "
@@ -5575,12 +5585,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><h2>
-#: help/get_started.html:89
+#: help/get_started.html:91
 msgid "Troubleshooting connectivity problems"
 msgstr "Felsök anslutningsproblem"
 
 #. type: Content of: <html><body><p>
-#: help/get_started.html:91
+#: help/get_started.html:93
 msgid ""
 "If you experience any connectivity problems after the required basic setup "
 "(eg. not able to connect to any hub, no search results, downloads don't "
@@ -5590,7 +5600,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><ul><li><p>
-#: help/get_started.html:97
+#: help/get_started.html:99
 msgid ""
 "<u>DC++ itself or its access to the Internet is blocked by some security "
 "software</u>.  Typical sympthoms of this problem are that you cannot connect "
@@ -5599,7 +5609,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><ul><li><p>
-#: help/get_started.html:100
+#: help/get_started.html:102
 msgid ""
 "In this case you have to allow (unblock) DC++ in <b>all</b> the installed "
 "security software (firewall, anti-virus, anti-spyware, etc..). For "
@@ -5609,7 +5619,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><ul><li><p>
-#: help/get_started.html:105
+#: help/get_started.html:107
 msgid ""
 "<u>Misconfigured or incorrectly detected connectivity settings</u>. The most "
 "obivious sign of this problem is that you are <i>able</i> to pull down the "
@@ -5619,7 +5629,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><ul><li><p>
-#: help/get_started.html:109
+#: help/get_started.html:111
 msgid ""
 "In most cases DC++ should be able to configure connectivity settings on your "
 "behalf, provided the <a po4a-id=0>Automatic connectivity setup</a> feature "
@@ -5632,17 +5642,17 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><h2>
-#: help/get_started.html:118
+#: help/get_started.html:120
 msgid "Help resources"
 msgstr "Hjälpinstanser"
 
 #. type: Content of: <html><body><p>
-#: help/get_started.html:120
+#: help/get_started.html:122
 msgid "Need more help?"
 msgstr "Behöver du mer hjälp?"
 
 #. type: Content of: <html><body><ul><li>
-#: help/get_started.html:123
+#: help/get_started.html:125
 msgid ""
 "You can find <a po4a-id=0>FAQs</a> and explanation of ALL settings in the "
 "built-in context sensitive Help of DC++. Just move the question mark icon "
@@ -5655,7 +5665,7 @@ msgstr ""
 "över, eller klicka på det först och tryck sedan F1."
 
 #. type: Content of: <html><body><ul><li>
-#: help/get_started.html:127
+#: help/get_started.html:129
 msgid ""
 "There is a complete <a po4a-id=0>Direct Connect FAQ</a> maintained at "
 "dslreports.com."
@@ -5663,7 +5673,7 @@ msgstr ""
 "Hos dslreports.com finns en komplett <a po4a-id=0>Direct Connect FAQ</a>."
 
 #. type: Content of: <html><body><ul><li>
-#: help/get_started.html:130
+#: help/get_started.html:132
 msgid ""
 "There are more answers to the most frequent support problems at the <a po4a-"
 "id=0>FAQ section of the DC++ Launchpad page</a>."
@@ -5672,7 +5682,7 @@ msgstr ""
 "section of the DC++ Launchpad page</a>."
 
 #. type: Content of: <html><body><p>
-#: help/get_started.html:135
+#: help/get_started.html:137
 msgid ""
 "There is an online <u>support forum and a bug &amp; feature tracker</u> also "
 "available. You can access these pages through the Help menu of DC++ or from "
@@ -5688,7 +5698,7 @@ msgstr ""
 "besvarade i FAQn eller i den inbyggda hjälpen."
 
 #. type: Content of: <html><body><p>
-#: help/get_started.html:142
+#: help/get_started.html:144
 msgid ""
 "<u>Important :</u> before asking for support please keep in mind that DC++ "
 "is a <u>client for connecting to a network and developers of DC++ have no "
@@ -5765,23 +5775,23 @@ msgstr "Fillista"
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
 #: help/index.html:32 help/keyboard_commands.html:54
-#: help/keyboard_commands.html:91 help/window_main.html:70
-#: help/window_main.html:71 help/window_main.html:210 help/window_main.html:239
-#: help/window_main.html:240
+#: help/keyboard_commands.html:91 help/window_main.html:71
+#: help/window_main.html:72 help/window_main.html:211 help/window_main.html:240
+#: help/window_main.html:241
 msgid "Public Hubs"
 msgstr "Publika hubbar"
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
-#: help/index.html:36 help/settings_tabs.html:59 help/window_main.html:86
-#: help/window_main.html:87 help/window_main.html:215 help/window_main.html:258
-#: help/window_main.html:259
+#: help/index.html:36 help/settings_tabs.html:59 help/window_main.html:87
+#: help/window_main.html:88 help/window_main.html:216 help/window_main.html:259
+#: help/window_main.html:260
 msgid "Finished Downloads"
 msgstr "Färdiga nerladdningar"
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
-#: help/index.html:37 help/settings_tabs.html:62 help/window_main.html:90
-#: help/window_main.html:91 help/window_main.html:216 help/window_main.html:261
-#: help/window_main.html:262
+#: help/index.html:37 help/settings_tabs.html:62 help/window_main.html:91
+#: help/window_main.html:92 help/window_main.html:217 help/window_main.html:262
+#: help/window_main.html:263
 msgid "Finished Uploads"
 msgstr "Färdiga uppladdningar"
 
@@ -5791,31 +5801,31 @@ msgid "ADLSearch"
 msgstr "ADL-sökningar"
 
 #. type: Content of: <html><body><h1>
-#: help/index.html:40 help/keyboard_commands.html:48 help/window_main.html:102
-#: help/window_main.html:103 help/window_main.html:226
-#: help/window_main.html:300 help/window_main.html:301
+#: help/index.html:40 help/keyboard_commands.html:48 help/window_main.html:103
+#: help/window_main.html:104 help/window_main.html:227
+#: help/window_main.html:301 help/window_main.html:302
 #: help/window_notepad.html:10 help/window_notepad.html:11
 msgid "Notepad"
 msgstr "Anteckningar"
 
 #. type: Content of: <html><body><h1>
-#: help/index.html:41 help/window_main.html:47 help/window_text_viewer.html:10
+#: help/index.html:41 help/window_main.html:48 help/window_text_viewer.html:10
 msgid "Text viewer"
 msgstr "Textläsare"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div><placeholder><a>
 #: help/index.html:42 help/keyboard_commands.html:52
-#: help/settings_connectivity.html:54 help/window_main.html:106
-#: help/window_main.html:107
+#: help/settings_connectivity.html:54 help/window_main.html:107
+#: help/window_main.html:108
 msgid "System Log"
 msgstr "Systemlogg"
 
 #. type: Content of: <html><body><dl><dd><div><placeholder><a>
-#: help/index.html:43 help/window_main.html:110 help/window_main.html:111
-#: help/window_main.html:219 help/window_main.html:270
-#: help/window_main.html:271 help/window_main.html:375
-#: help/window_main.html:379 help/window_main.html:383
-#: help/window_main.html:387
+#: help/index.html:43 help/window_main.html:111 help/window_main.html:112
+#: help/window_main.html:220 help/window_main.html:271
+#: help/window_main.html:272 help/window_main.html:376
+#: help/window_main.html:380 help/window_main.html:384
+#: help/window_main.html:388
 msgid "Network Statistics"
 msgstr "Nätverksstatistik"
 
@@ -5845,8 +5855,8 @@ msgid "Dialogs"
 msgstr "Dialoger"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/index.html:70 help/window_main.html:49 help/window_main.html:225
-#: help/window_main.html:297
+#: help/index.html:70 help/window_main.html:50 help/window_main.html:226
+#: help/window_main.html:298
 msgid "Settings"
 msgstr "Inställningar"
 
@@ -5880,7 +5890,7 @@ msgstr "Proxyserver"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
 #: help/index.html:80 help/links.html:17 help/settings_downloads.html:9
-#: help/settings_styles.html:29 help/window_main.html:182
+#: help/settings_styles.html:29 help/window_main.html:183
 msgid "Downloads"
 msgstr "Nedladdningar"
 
@@ -5910,7 +5920,7 @@ msgid "Appearance"
 msgstr "Uppträdande"
 
 #. type: Content of: <html><body><h2>
-#: help/index.html:96 help/window_main.html:321
+#: help/index.html:96 help/window_main.html:322
 msgid "Tabs"
 msgstr "Flikar"
 
@@ -5951,9 +5961,9 @@ msgid "Search types"
 msgstr "Söktyper"
 
 #. type: Content of: <html><body><dl><dd><ul><li><placeholder><a>
-#: help/index.html:117 help/window_main.html:57 help/window_main.html:58
-#: /home/hundr/feardc/help/menu_plugins.inc:6 help/window_main.html:227
-#: help/window_main.html:303 help/window_main.html:306
+#: help/index.html:117 help/window_main.html:58 help/window_main.html:59
+#: /home/hundr/feardc/help/menu_plugins.inc:6 help/window_main.html:228
+#: help/window_main.html:304 help/window_main.html:307
 msgid "Plugins"
 msgstr "Insticksmoduler"
 
@@ -6042,7 +6052,7 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
 #: help/index.html:166 help/links.html:9 help/settings_styles.html:35
-#: help/window_main.html:176
+#: help/window_main.html:177
 msgid "Links"
 msgstr "Länkar"
 
@@ -6150,7 +6160,7 @@ msgid "Ctrl + 0"
 msgstr "Ctrl + 0"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/keyboard_commands.html:25 help/window_main.html:124
+#: help/keyboard_commands.html:25 help/window_main.html:125
 msgid ""
 "Toggle the permanent visibility of the main menu bar. When it is hidden, the "
 "menu bar can be temporarily brought back into view with standard Windows "
@@ -6163,7 +6173,7 @@ msgid "Ctrl + 1"
 msgstr "Ctrl + 1"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/keyboard_commands.html:29 help/window_main.html:129
+#: help/keyboard_commands.html:29 help/window_main.html:130
 msgid "Enable or disable the toolbar."
 msgstr "Visa eller dölj verktygsraden."
 
@@ -6173,7 +6183,7 @@ msgid "Ctrl + 2"
 msgstr "Ctrl + 2"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/keyboard_commands.html:31 help/window_main.html:132
+#: help/keyboard_commands.html:31 help/window_main.html:133
 msgid "Enable or disable the transfer view."
 msgstr "Visa eller dölj filöverföringsvyn"
 
@@ -6183,7 +6193,7 @@ msgid "Ctrl + 3"
 msgstr "Ctrl + 3"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/keyboard_commands.html:33 help/window_main.html:135
+#: help/keyboard_commands.html:33 help/window_main.html:136
 msgid "Enable or disable the status bar."
 msgstr "Visa eller dölj statusraden."
 
@@ -6196,16 +6206,17 @@ msgstr "Ctrl + D"
 #: help/keyboard_commands.html:35 help/keyboard_commands.html:46
 #: help/keyboard_commands.html:48 help/keyboard_commands.html:52
 #: help/keyboard_commands.html:54 help/keyboard_commands.html:60
-#: help/keyboard_commands.html:62 help/window_main.html:71
-#: help/window_main.html:75 help/window_main.html:79 help/window_main.html:83
-#: help/window_main.html:87 help/window_main.html:91 help/window_main.html:95
-#: help/window_main.html:99 help/window_main.html:103 help/window_main.html:107
-#: help/window_main.html:111 help/window_main.html:115
-#: help/window_main.html:240 help/window_main.html:247
-#: help/window_main.html:253 help/window_main.html:256
-#: help/window_main.html:259 help/window_main.html:262
-#: help/window_main.html:265 help/window_main.html:268
-#: help/window_main.html:271 help/window_main.html:301
+#: help/keyboard_commands.html:62 help/window_main.html:72
+#: help/window_main.html:76 help/window_main.html:80 help/window_main.html:84
+#: help/window_main.html:88 help/window_main.html:92 help/window_main.html:96
+#: help/window_main.html:100 help/window_main.html:104
+#: help/window_main.html:108 help/window_main.html:112
+#: help/window_main.html:116 help/window_main.html:241
+#: help/window_main.html:248 help/window_main.html:254
+#: help/window_main.html:257 help/window_main.html:260
+#: help/window_main.html:263 help/window_main.html:266
+#: help/window_main.html:269 help/window_main.html:272
+#: help/window_main.html:302
 msgid "Open the <placeholder id=0/> window."
 msgstr "Öppna <placeholder id=0/> fönstret."
 
@@ -6327,7 +6338,7 @@ msgid "Ctrl + F3"
 msgstr "Ctrl + F3"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/keyboard_commands.html:64 help/window_main.html:298
+#: help/keyboard_commands.html:64 help/window_main.html:299
 msgid "Open the Settings dialog."
 msgstr "Öppnar inställningssidan,"
 
@@ -6486,7 +6497,7 @@ msgid "FearDC homepage"
 msgstr "DC++ hemsida"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/links.html:21 help/window_main.html:184
+#: help/links.html:21 help/window_main.html:185
 msgid "Frequently asked questions"
 msgstr "Vanliga frågor"
 
@@ -6502,12 +6513,12 @@ msgid "FearDC discussion forum"
 msgstr "DC++ diskussionsforum"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/links.html:33 help/window_main.html:190
+#: help/links.html:33 help/window_main.html:191
 msgid "Request a feature"
 msgstr "Föreslå en funktion"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/links.html:37 help/window_main.html:192
+#: help/links.html:37 help/window_main.html:193
 msgid "Report a bug"
 msgstr "Rapportera ett fel"
 
@@ -6818,19 +6829,24 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
 #: help/settings_advanced.html:27
-msgid "Register with Windows to handle dchub://, adc:// and adcs:// URL links"
+#, fuzzy
+msgid ""
+"Register with Windows to handle adc://, adcs://, dchub:// and nmdcs:// URL "
+"links"
 msgstr ""
 "Registrera DC++ som applikation för hubblänkar; dchub://, adc:// och adcs:// "
 "länkar"
 
 #. type: Content of: <html><body><dl><dd>
 #: help/settings_advanced.html:28
+#, fuzzy
 msgid ""
-"When set, DC++ will be the default handler for all dchub://, adc:// and "
-"adcs:// links. These links can appear on web pages, internet shortcuts on "
-"your computer, or be typed and run as a program from the Start Menu. Disable "
-"this if you prefer for a different application to handle Direct Connect hub "
-"links. Disabling will make DC++ remove the keys from the Windows registry."
+"When set, DC++ will be the default handler for all adc://, adcs://, dchub:// "
+"and nmdcs:// links. These links can appear on web pages, internet shortcuts "
+"on your computer, or be typed and run as a program from the Start Menu. "
+"Disable this if you prefer for a different application to handle Direct "
+"Connect hub links. Disabling will make DC++ remove the keys from the Windows "
+"registry."
 msgstr ""
 "Om aktiverad blir DC++ standardprogrammet för alla länkar som börjar på "
 "dchub://, adc:// and adcs://. Dessa länkar kan finnas på hemsidor, "
@@ -6840,12 +6856,12 @@ msgstr ""
 "Windowsregistret."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:35
+#: help/settings_advanced.html:33
 msgid "Register with Windows to handle magnet: URI links"
 msgstr "Registrera DC++ som applikation för magnetlänkar"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:36
+#: help/settings_advanced.html:34
 msgid ""
 "When set, DC++ will register itself to handle magnet: links.  These links "
 "will let you search the Direct Connect network for a file matching a given "
@@ -6859,24 +6875,24 @@ msgstr ""
 "Avaktivering raderar inställningen i Windowsregistret."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:44
+#: help/settings_advanced.html:42
 msgid "Register with Windows to handle .dcext files"
 msgstr "Registrera med Windows för att hantera .dcext-filer"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:46
+#: help/settings_advanced.html:44
 msgid ""
 "Associate DC++ with the .dcext file extension in Windows. Those files are "
 "plugins that can be installed into DC++ to extend its functionality."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:50
+#: help/settings_advanced.html:48
 msgid "Don't delete file lists when exiting"
 msgstr "Ta inte bort fillistor vid avslut"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:51
+#: help/settings_advanced.html:49
 msgid ""
 "If this option is disabled, DC++ will delete the contents of the file list "
 "directory, where file lists are stored, when exiting. However, you can open "
@@ -6894,24 +6910,24 @@ msgstr ""
 "flyttade inom utdelningen.</em>"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:60
+#: help/settings_advanced.html:58
 msgid "Allow NAT traversal for connections with passive NMDC users"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:61
+#: help/settings_advanced.html:59
 msgid ""
 "Allow NAT traversal for connections with passive NMDC users.  <em>Disabling "
 "this feature can resolve connectivity issues with certain hub softwares.</em>"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:64
+#: help/settings_advanced.html:62
 msgid "Automatically disconnect users who leave the hub"
 msgstr "Koppla automatiskt ner användare som lämnar hubben"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:65
+#: help/settings_advanced.html:63
 msgid ""
 "The Direct Connect spirit is all about sharing. You are only sharing when "
 "you are connected to one or more hubs. In the past, users of questionable "
@@ -6938,12 +6954,12 @@ msgstr ""
 "hubben.</em>"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:77
+#: help/settings_advanced.html:75
 msgid "Enable automatic SFV checking"
 msgstr "Tillåt automatisk SFV-kontroll"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:78
+#: help/settings_advanced.html:76
 msgid ""
 "Simple File Verification (SFV) is a scheme in which a set of files are "
 "accompanied by a so-called sfv-file which contains CRC32 checksums of each "
@@ -6957,12 +6973,12 @@ msgstr ""
 "skadade filer igen om det behövs."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:83
+#: help/settings_advanced.html:81
 msgid "Don't send the away message to bots"
 msgstr "Skicka inte frånvaromeddelanden till bottar."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:84
+#: help/settings_advanced.html:82
 msgid ""
 "When in away mode, don't send the away message to users that appear to be "
 "bots. Having this option disabled is very annoying if you get messages from "
@@ -6978,12 +6994,12 @@ msgstr ""
 "om du är osäker..</i>"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:90
+#: help/settings_advanced.html:88
 msgid "Break on first ADLSearch match"
 msgstr "Avbryt vid första träff med funktionen ADL-sökning"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:91
+#: help/settings_advanced.html:89
 msgid ""
 "If you're using the <a po4a-id=0>ADLSearch</a> features, keeping this option "
 "enabled will make a file show up in only the first search it matches. If "
@@ -6995,12 +7011,12 @@ msgstr ""
 "träffar fås, i bland dubbletter. <i>Stäng av om du är osäker.</i>"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:96
+#: help/settings_advanced.html:94
 msgid "Enable safe and compressed transfers"
 msgstr "Aktivera säkra och komprimerade överföringar"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:97
+#: help/settings_advanced.html:95
 msgid ""
 "When transfering data with a compatible client, DC++ will try to use ZLIB "
 "compression with integrity checks. This uses some CPU cycles, but can "
@@ -7015,12 +7031,12 @@ msgstr ""
 "noll). <i>Aktivera om du är osäker.</i>"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:101
+#: help/settings_advanced.html:99
 msgid "Accept custom user commands from hub"
 msgstr "Acceptera användardefinerade kommandon från hubben"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:102
+#: help/settings_advanced.html:100
 msgid ""
 "This option lets you enable or disable DC++'s ability to retrieve custom "
 "commands from a remote hub. Custom User Commands may show when you click on "
@@ -7035,12 +7051,12 @@ msgstr ""
 "och så vidare."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:107
+#: help/settings_advanced.html:105
 msgid "Send unknown /commands to the hub"
 msgstr "Skicka okända /kommandon till hubben"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:108
+#: help/settings_advanced.html:106
 msgid ""
 "Enable this to send <a po4a-id=0>/commands</a> that DC++ does not recognize "
 "to the hub as normal chat."
@@ -7049,14 +7065,14 @@ msgstr ""
 "igen till hubben som ett normal chattmeddelande."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:110
+#: help/settings_advanced.html:108
 msgid "Add finished files to share instantly (if shared)"
 msgstr ""
 "Lägg automatiskt till nedladdade filer till utdelningsfoldern (om nedladdas "
 "till utdelad folder)."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:111
+#: help/settings_advanced.html:109
 msgid ""
 "If you download files directly to a shared directory, enabling this option "
 "will add the files to your share as soon as they're finished. Searches will "
@@ -7069,12 +7085,12 @@ msgstr ""
 "finnas i din fillista förrän den uppdateras nästa gång."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:115
+#: help/settings_advanced.html:113
 msgid "Use CTRL for line history"
 msgstr "Använd CTRL för egen chatthistorik"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:116
+#: help/settings_advanced.html:114
 msgid ""
 "Press up arrow while holding down CTRL to scroll through line history. If "
 "not enabled, you can still use ALT."
@@ -7084,12 +7100,12 @@ msgstr ""
 "ALT."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:118
+#: help/settings_advanced.html:116
 msgid "Don't automatically disconnect favorite users who leave the hub"
 msgstr "Koppla inte automatiskt bort favoritanvändare som lämnar hubben."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:119
+#: help/settings_advanced.html:117
 msgid ""
 "With this option enabled, and <a po4a-id=0>Automatically disconnect users "
 "who leave the hub</a>, users who are in your <a po4a-id=1>Favorite users</a> "
@@ -7100,12 +7116,12 @@ msgstr ""
 "fortfarande ladda ner från dig trots att de lämnar hubben."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:120
+#: help/settings_advanced.html:118
 msgid "Use extended menus with icons and titles"
 msgstr "Använd utökade menyer med ikoner och titlar"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:121
+#: help/settings_advanced.html:119
 msgid ""
 "Have DC++ draw its own menus, which allows icons and titles to be added. "
 "Disable to revert to classic Windows menus."
@@ -7114,14 +7130,14 @@ msgstr ""
 "använda klassiska Windowsmenyer."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:122
+#: help/settings_advanced.html:120
 msgid "Use system icons when browsing files (slows browsing down a bit)"
 msgstr ""
 "Använd systemikoner när du bläddrar igenom filer (saktar ner bläddrandet en "
 "del)"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:124
+#: help/settings_advanced.html:122
 msgid ""
 "Ask Windows Explorer for per-extension file icons rather than using default "
 "ones distributed with DC++. <i>Turning this option on might reduce file "
@@ -7129,24 +7145,24 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:127
+#: help/settings_advanced.html:125
 msgid "Clickable chat links (disable on Wine)"
 msgstr "Klickbara chattlänkar (avstängd med Wine)"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:129
+#: help/settings_advanced.html:127
 msgid ""
 "Pretty link formatting in the chat control. Disable on messed up systems "
 "(such as old versions of Wine) should chat links fail to show up."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:132
+#: help/settings_advanced.html:130
 msgid "Enable segmented downloads"
 msgstr "Aktivera segmenterade nedladdningar"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:133
+#: help/settings_advanced.html:131
 msgid ""
 "With this option enabled, DC++ uses segmented downloading. i.e. it downloads "
 "each file in many parts simultaneously from all available sources."
@@ -7155,12 +7171,12 @@ msgstr ""
 "ner i många små delar från flera olika källor samtidigt."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:134
+#: help/settings_advanced.html:132
 msgid "Start DC++ when Windows starts"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:135
+#: help/settings_advanced.html:133
 #, fuzzy
 msgid ""
 "With this option enabled, DC++ will start up automatically when Windows "
@@ -7170,12 +7186,12 @@ msgstr ""
 "detekteras som för långsam."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_advanced.html:136
+#: help/settings_advanced.html:134
 msgid "Show testing release announcements and information"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_advanced.html:138
+#: help/settings_advanced.html:136
 msgid ""
 "Display occasional announcements of available new testing versions (that has "
 "not yet been marked as stable by the DC++ team) at startup as well as show "
@@ -8211,12 +8227,33 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
 #: help/settings_connectivity_manual.html:124
+msgid "Enable broad device detection"
+msgstr ""
+
+#. type: Content of: <html><body><dl><dd>
+#: help/settings_connectivity_manual.html:126
+msgid ""
+"If the interface supports the feature, enabling this option allows a broader "
+"selection of devices to be considered for port mapping.  It is recommended "
+"to enable this setting only if your device cannot be found using the normal "
+"detection method. The broader detection method may include devices that do "
+"not fully meet the usual criteria for port mapping. For example, devices "
+"with non-standard responses, firmware bugs, or those that appear on your "
+"network but report as disconnected or not properly connected to the internet "
+"may still be detected this way.  Please note that there is no guarantee that "
+"devices detected through this method will function correctly, even if port "
+"mapping appears to succeed. However, this option may occasionally allow "
+"buggy, but otherwise usable devices to work with DC++."
+msgstr ""
+
+#. type: Content of: <html><body><dl><dt>
+#: help/settings_connectivity_manual.html:135
 #, fuzzy
 msgid "Bind Address"
 msgstr "Bindningadress"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_connectivity_manual.html:126
+#: help/settings_connectivity_manual.html:137
 msgid ""
 "This setting allows binding DC++ network connections of the specified "
 "protocol to a specific network adapter by its IP address. Useful when you "
@@ -8226,7 +8263,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_connectivity_manual.html:130
+#: help/settings_connectivity_manual.html:141
 msgid ""
 "If this setting is set to 'Default' it means that DC++ is relying on the "
 "operating system to find the best adapter. In case of the adapter offered by "
@@ -8235,7 +8272,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_connectivity_manual.html:133
+#: help/settings_connectivity_manual.html:144
 msgid ""
 "If binding with the selected adapter fails, it will do so silently and the "
 "'Default' setting (INADDR_ANY) will be used instead."
@@ -8954,8 +8991,8 @@ msgid "Chat lines to recall from history when opening a window"
 msgstr "Antal rader att hämta från historiken när ett fönster öppnas"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_history.html:14 help/window_main.html:354
-#: help/window_public_hubs.html:81 help/window_search.html:58
+#: help/settings_history.html:14 help/window_main.html:355
+#: help/window_public_hubs.html:82 help/window_search.html:58
 msgid "Hubs"
 msgstr "Hubbar"
 
@@ -11446,7 +11483,7 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div><placeholder><a>
 #: help/window_about_config.html:11 help/window_about_config.html:12
-#: help/window_main.html:114 help/window_main.html:115
+#: help/window_main.html:115 help/window_main.html:116
 msgid "About:config"
 msgstr ""
 
@@ -11599,7 +11636,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><h2>
-#: help/window_about_config.html:46 help/window_public_hubs.html:47
+#: help/window_about_config.html:46 help/window_public_hubs.html:49
 msgid "Filter"
 msgstr "Filtrera"
 
@@ -11617,7 +11654,7 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dd><p><div>
 #: /home/hundr/feardc/help/window_list_filter.inc:2
-#: help/window_public_hubs.html:56
+#: help/window_public_hubs.html:58
 #, fuzzy
 msgid "The filter input box can be focused with Alt+I."
 msgstr "Fokusera detta fönster med Alt + I"
@@ -11741,7 +11778,7 @@ msgid "Buttons / Context menu commands"
 msgstr "Knappar / Menyberoende kommandon"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_adlsearch.html:46 help/window_favorite_hubs.html:36
+#: help/window_adlsearch.html:46 help/window_favorite_hubs.html:38
 msgid "New"
 msgstr "Ny"
 
@@ -11751,7 +11788,7 @@ msgid "Create a new ADLSearch entry."
 msgstr "Skapa en ny ADLsökningspost"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_adlsearch.html:48 help/window_favorite_hubs.html:38
+#: help/window_adlsearch.html:48 help/window_favorite_hubs.html:40
 msgid "Properties"
 msgstr "Egenskaper"
 
@@ -11761,7 +11798,7 @@ msgid "Change pre-existing ADLSearch properties for the selected entries."
 msgstr "Ändra fördefinierade inställningar för valda ADLsökningar."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_adlsearch.html:50 help/window_favorite_hubs.html:40
+#: help/window_adlsearch.html:50 help/window_favorite_hubs.html:42
 msgid "Move up"
 msgstr "Flytta uppåt"
 
@@ -11771,7 +11808,7 @@ msgid "Move up selected ADLSearch entries in the list."
 msgstr "Flyttar vald ADLsökning uppåt i listan"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_adlsearch.html:52 help/window_favorite_hubs.html:42
+#: help/window_adlsearch.html:52 help/window_favorite_hubs.html:44
 msgid "Move down"
 msgstr "Flytta nedåt"
 
@@ -11859,7 +11896,7 @@ msgstr "Nedladdningskö"
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
 #: help/window_download_queue.html:13 help/window_file_list.html:14
-#: help/window_main.html:128
+#: help/window_main.html:129
 msgid "Toolbar"
 msgstr "Verktygsfält"
 
@@ -12381,15 +12418,15 @@ msgstr "Kopiera"
 #: /home/hundr/feardc/help/commands_copy.inc:3
 msgid ""
 "Allows copying the content of any column to the clipboard. An &quot;All "
-"columns&quot;\r command is available as well to gather all the columns in "
-"the copied text (one column per\r copied line)."
+"columns&quot; command is available as well to gather all the columns in the "
+"copied text (one column per copied line)."
 msgstr ""
 
 #. type: Content of: <html><body><h2>
 #: help/window_download_queue.html:146 help/window_finished_downloads.html:58
 #: help/window_finished_uploads.html:58 help/window_hub.html:102
-#: help/window_main.html:134 help/window_pm.html:36
-#: help/window_public_hubs.html:69 help/window_search.html:127
+#: help/window_main.html:135 help/window_pm.html:36
+#: help/window_public_hubs.html:70 help/window_search.html:127
 msgid "Status bar"
 msgstr "Statusfält"
 
@@ -12519,8 +12556,8 @@ msgstr ""
 "övers. Notera att visningen av grupper bara är tillgängligt i Windows."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_favorite_hubs.html:30 help/window_favorite_hubs.html:51
-#: help/window_main.html:29 help/window_main.html:147 help/window_main.html:152
+#: help/window_favorite_hubs.html:30 help/window_favorite_hubs.html:53
+#: help/window_main.html:30 help/window_main.html:148 help/window_main.html:153
 msgid ""
 "More information about the use of favorite hub groups in the help topics "
 "associated to the <placeholder id=0/> dialog."
@@ -12533,44 +12570,45 @@ msgstr ""
 msgid "Connect"
 msgstr "Anslut"
 
+#.  [SSI comment parsed by po4a] include virtual="hub_connections.inc" 
 #. type: Content of: <html><body><dl><dd>
 #: help/window_favorite_hubs.html:35
 msgid "Connect to selected hubs."
 msgstr "Anslut till valda hubbar."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_favorite_hubs.html:37
+#: help/window_favorite_hubs.html:39
 msgid "Create a new favorite hub."
 msgstr "Skapa en ny favorithubb."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_favorite_hubs.html:39
+#: help/window_favorite_hubs.html:41
 msgid "Change pre-existing hub properties for the selected hub."
 msgstr "Ändra egenskaperna för vald hubb."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_favorite_hubs.html:41
+#: help/window_favorite_hubs.html:43
 msgid "Move up selected hubs in the list."
 msgstr "Flytta vald hubb uppåt i listan."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_favorite_hubs.html:43
+#: help/window_favorite_hubs.html:45
 msgid "Move down selected hubs in the list."
 msgstr "Flytta vald hub nedåt i listan."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_favorite_hubs.html:45
+#: help/window_favorite_hubs.html:47
 #, fuzzy
 msgid "Remove selected hubs from the favorite hubs list."
 msgstr "Tar bort valda hubbar från favoritlistan."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_favorite_hubs.html:46
+#: help/window_favorite_hubs.html:48
 msgid "Move to group"
 msgstr "Flytta till grupp"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_favorite_hubs.html:47
+#: help/window_favorite_hubs.html:49
 msgid ""
 "Open a menu with the available favorite hub groups in order to move the "
 "selected hubs to the choosen group."
@@ -12806,7 +12844,7 @@ msgid "User <b>&gt;</b>"
 msgstr ""
 
 #. type: Content of: <html><body><h2>
-#: help/window_file_list.html:96 help/window_main.html:344
+#: help/window_file_list.html:96 help/window_main.html:345
 msgid "Status bar (bottom)"
 msgstr "Statusrad (nederst)"
 
@@ -13497,7 +13535,7 @@ msgid "This window can be focused with Alt+M."
 msgstr "Detta fönster kan fokuseras med ALT + M"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_hub.html:104 help/window_public_hubs.html:71
+#: help/window_hub.html:104 help/window_public_hubs.html:72
 msgid "Messages part (left)"
 msgstr "Meddelandedel (vänster)"
 
@@ -13672,6 +13710,7 @@ msgstr ""
 msgid "Quick connect..."
 msgstr "Snabbanslutning..."
 
+#.  [SSI comment parsed by po4a] include virtual="hub_connections.inc" 
 #. type: Content of: <html><body><dl><dd><dl><dd>
 #: help/window_main.html:23
 msgid ""
@@ -13680,7 +13719,7 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:28
+#: help/window_main.html:29
 msgid ""
 "Opens a dialog asking to select a favorite hub group; after pressing \"OK\" "
 "in that dialog, <placeholder id=0/> windows will be opened for every hub "
@@ -13690,12 +13729,12 @@ msgstr ""
 "ett <placeholder id=0/>fönster för varje hubb som finns i favorithubbgruppen."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:31 help/window_main.html:211 help/window_main.html:242
+#: help/window_main.html:32 help/window_main.html:212 help/window_main.html:243
 msgid "Reconnect"
 msgstr "Återanslut"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:32
+#: help/window_main.html:33
 msgid ""
 "To reconnect (disconnect and connect again) the hub which is currently in "
 "the foreground. If the active window is not a hub, it does nothing."
@@ -13704,13 +13743,13 @@ msgstr ""
 "aktiva fönstret inte är en hubb händer ingenting."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:33 help/window_main.html:159 help/window_main.html:221
-#: help/window_main.html:278
+#: help/window_main.html:34 help/window_main.html:160 help/window_main.html:222
+#: help/window_main.html:279
 msgid "Open file list..."
 msgstr "Öppna fillista..."
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:34
+#: help/window_main.html:35
 #, fuzzy
 msgid ""
 "This menu is for opening a previously downloaded filelist. It defaults to "
@@ -13721,12 +13760,12 @@ msgstr ""
 "öppnas fillistkatalogen där DC++ är installerat."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:35 help/window_main.html:222 help/window_main.html:283
+#: help/window_main.html:36 help/window_main.html:223 help/window_main.html:284
 msgid "Open own list"
 msgstr "Öppna egen fillista"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:36 help/window_main.html:285
+#: help/window_main.html:37 help/window_main.html:286
 msgid ""
 "You can open and check how your own file list looks like. Useful to see "
 "what's displayed to others when they get your file list."
@@ -13735,12 +13774,12 @@ msgstr ""
 "att se vad andra användare ser när de tittar i din fillista."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:37
+#: help/window_main.html:38
 msgid "Match downloaded lists"
 msgstr "Matcha nerladdade fillistor"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:38
+#: help/window_main.html:39
 #, fuzzy
 msgid ""
 "This function is used to match your download queue for already downloaded "
@@ -13751,12 +13790,12 @@ msgstr ""
 "fillistor (som finns sparade i fillistkatalogen där DC++ är installerat)."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:39 help/window_main.html:223 help/window_main.html:289
+#: help/window_main.html:40 help/window_main.html:224 help/window_main.html:290
 msgid "Refresh file list"
 msgstr "Uppdatera fillista"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:40 help/window_main.html:290
+#: help/window_main.html:41 help/window_main.html:291
 msgid ""
 "This will immediately rescan your shared directories for new or changed "
 "content and updates your file list."
@@ -13765,22 +13804,22 @@ msgstr ""
 "uppdaterar din fillista därefter."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:41 help/window_main.html:220 help/window_main.html:273
+#: help/window_main.html:42 help/window_main.html:221 help/window_main.html:274
 msgid "Open downloads directory"
 msgstr "Öppna nerladdningskatalogen"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:42
+#: help/window_main.html:43
 msgid "Opens your downloads folder in Windows Explorer."
 msgstr "Öppnar din nedladdningskatalog i ett Windows Explorerfönster."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:43
+#: help/window_main.html:44
 msgid "Open crash log"
 msgstr "Öppna kraschlogg"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:45
+#: help/window_main.html:46
 msgid ""
 "When DC++ encounters a crash, it writes a \"CrashLog.txt\" file. This "
 "command helps view the contents of the crash log in a <placeholder id=0/> "
@@ -13789,37 +13828,37 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:50
+#: help/window_main.html:51
 msgid "Opens the Settings panel."
 msgstr "Öppnar inställningsfönstret."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:51
+#: help/window_main.html:52
 #, fuzzy
 msgid "GeoIP database update"
 msgstr "Uppdatera GeoIP databasen"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:52
+#: help/window_main.html:53
 msgid ""
 "Starts downloading the latest GeoIP databases (provided they aren't already "
 "being downloaded) then handles saving them at the right place."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:54
+#: help/window_main.html:55
 msgid "Note that this operation is automatically run every 16 days."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:55
+#: help/window_main.html:56
 msgid ""
 "<a po4a-id=0>MaxMind's GeoIP</a> databases are used by DC++ to get "
 "information about user countries."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dd><p>
-#: help/window_main.html:58
+#: help/window_main.html:59
 msgid ""
 "Opens the <placeholder id=0/> configuration submenu containing the following "
 "commands:"
@@ -13846,22 +13885,22 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:61
+#: help/window_main.html:62
 msgid "Exit"
 msgstr "Avsluta"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:62
+#: help/window_main.html:63
 msgid "Closes DC++."
 msgstr "Stänger ner DC++."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:65
+#: help/window_main.html:66
 msgid "View Menu"
 msgstr "Visamenyn"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:67
+#: help/window_main.html:68
 msgid ""
 "You can open all DC++ tabs and windows with the sub-items of this menu. Some "
 "kind of tabbed windows can have only one instance opened while you are able "
@@ -13874,18 +13913,18 @@ msgstr ""
 "en öppen visas den redan öppna fliken."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:72
+#: help/window_main.html:73
 msgid "In there, you can retreive lists of available hubs and connect to them."
 msgstr "Här kan du hämta listor över tillgängliga hubbar och ansluta till dem."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:76
+#: help/window_main.html:77
 msgid ""
 "In there, you can store and manage you favorite places in the DC network."
 msgstr "Här kan du lagra och redigera dina favortställen inom DC-nätverket."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:80
+#: help/window_main.html:81
 #, fuzzy
 msgid ""
 "You can see all the users of the connected hubs listed in there. "
@@ -13896,38 +13935,38 @@ msgstr ""
 "automatslottar."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:84
+#: help/window_main.html:85
 msgid "In there, you can track and manage your files being downloaded."
 msgstr "Här kan du administrera filer som laddas ned."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:88
+#: help/window_main.html:89
 msgid "It lists your downloaded files in the current session."
 msgstr "Visar dina nedladdade filer för aktuell session."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:92
+#: help/window_main.html:93
 msgid "It lists the files uploaded from you in the current session."
 msgstr "Visar de filer du laddat upp till andra användera för aktuell session."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:96
+#: help/window_main.html:97
 msgid "This is the place where you can search for files to download."
 msgstr "Här kan du leta efter filer som du vill ladda ner."
 
 #. type: Content of: <html><body><dl><dd><placeholder><a>
-#: help/window_main.html:98 help/window_main.html:99 help/window_main.html:218
-#: help/window_main.html:267 help/window_main.html:268
+#: help/window_main.html:99 help/window_main.html:100 help/window_main.html:219
+#: help/window_main.html:268 help/window_main.html:269
 msgid "ADL Search"
 msgstr "ADL-sökning"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:100
+#: help/window_main.html:101
 msgid "It incorporates a tool for filtering file lists downloaded from users."
 msgstr "Här finns ett verktyg för att filtrer nedladdae fillistor."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:104
+#: help/window_main.html:105
 msgid ""
 "In there, you can store random text. The text will be kept even if you close "
 "DC++."
@@ -13936,12 +13975,12 @@ msgstr ""
 "stänger ner DC++."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:108
+#: help/window_main.html:109
 msgid "It is where all the system messages of the current session are logged."
 msgstr "Här loggas alla systemmeddelanden för den aktuella sessionen."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:112
+#: help/window_main.html:113
 msgid ""
 "It displays a real-time chart of the average speed of data sent and received "
 "by DC++."
@@ -13949,7 +13988,7 @@ msgstr ""
 "Här visas en realtidsvy över upp- och nedladdningshastigheten för DC++."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:116
+#: help/window_main.html:117
 msgid ""
 "It is an internal settings list debugging and testing helper tool window. "
 "This menu item exists only in development builds of DC++. See the /about:"
@@ -13957,17 +13996,17 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div><placeholder><a>
-#: help/window_main.html:119
+#: help/window_main.html:120
 msgid "Indexing progess"
 msgstr "Indexeringsförlopp"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:119
+#: help/window_main.html:120
 msgid "Open the <placeholder id=0/> dialog."
 msgstr "Öppnar dialogen <placeholder id=0/>."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:120
+#: help/window_main.html:121
 msgid ""
 "It shows you the current state of file hashing operation and how much time "
 "there is left from it."
@@ -13976,22 +14015,22 @@ msgstr ""
 "är klar."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:122
+#: help/window_main.html:123
 msgid "Menu bar"
 msgstr "Menyrad"
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:131
+#: help/window_main.html:132
 msgid "Transfer view"
 msgstr "ÖVerföringsvy"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:138
+#: help/window_main.html:139
 msgid "Window Menu"
 msgstr "Fönstermeny"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:140
+#: help/window_main.html:141
 msgid ""
 "You can find options here to close all instance of specific groups of tabs "
 "by one click."
@@ -14000,17 +14039,17 @@ msgstr ""
 "ett enda klick."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:142
+#: help/window_main.html:143
 msgid "Close disconnected hubs"
 msgstr "Stäng frånkopplade hubbar"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:143
+#: help/window_main.html:144
 msgid "Closes all disconnected <placeholder id=0/> windows."
 msgstr "Stänger alla fönster bortkopplade <placeholder id=0/>."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:146
+#: help/window_main.html:147
 msgid ""
 "Opens a dialog asking to select a favorite hub group; after pressing \"OK\" "
 "in that dialog, all opened <placeholder id=0/> windows that are part of the "
@@ -14021,7 +14060,7 @@ msgstr ""
 "<placeholder id=0/>fönster som är medlem i vald favorithubbgrupp."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><div>
-#: help/window_main.html:151
+#: help/window_main.html:152
 msgid ""
 "Opens a dialog asking to select a favorite hub group; after pressing \"OK\" "
 "in that dialog, all opened <placeholder id=0/> windows that are <b>not</b> "
@@ -14032,33 +14071,33 @@ msgstr ""
 "<placeholder id=0/>fönster som <b>inte</b> är medlem i vald favorithubbgrupp."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:154
+#: help/window_main.html:155
 msgid "Close all PM windows"
 msgstr "Stäng alla PM-fönster"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:155
+#: help/window_main.html:156
 msgid ""
 "Closes all <placeholder id=0/> windows regardless of their online status."
 msgstr "Stänger alla <placeholder id=0/>fönster oavsett status."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:156
+#: help/window_main.html:157
 msgid "Close all offline PM windows"
 msgstr "Stäng alla nedkopplade PM-fönster"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:157
+#: help/window_main.html:158
 msgid "Closes all offline <placeholder id=0/> windows."
 msgstr "Stänger alla nedkopplade <placeholder id=0/>fönster."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:158
+#: help/window_main.html:159
 msgid "Close all file list windows"
 msgstr "Stäng alla fillistfönster"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:159
+#: help/window_main.html:160
 msgid ""
 "Closes all opened file list windows. Saved file lists can be reopened by "
 "selecting \"<placeholder id=0/>\" from the <a po4a-id=0>File menu</a>."
@@ -14067,22 +14106,22 @@ msgstr ""
 "att välja \"<placeholder id=0/>\" på <a po4a-id=0>Arkivmenyn</a>."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:160
+#: help/window_main.html:161
 msgid "Close all search windows"
 msgstr "Stäng alla sökfönster"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:161
+#: help/window_main.html:162
 msgid "Closes all opened <placeholder id=0/> windows."
 msgstr "Stänger alla öppna <placeholder id=0/>fönster."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:164
+#: help/window_main.html:165
 msgid "Help Menu"
 msgstr "Hjälpmeny"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:166
+#: help/window_main.html:167
 msgid ""
 "Here you can access the built-in Help, FAQs, guides and some documentation. "
 "It also contains hotlinks to reach the different parts of the DC++ online "
@@ -14092,39 +14131,39 @@ msgstr ""
 "finns också snabblänkar till olika delar av DC++ på webben."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:168
+#: help/window_main.html:169
 msgid "Help Contents"
 msgstr "Hjälpinnehåll"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:169
+#: help/window_main.html:170
 msgid "Opens the Overview page of the built-in Help."
 msgstr "Öppnar översiktssidan för den inbyggda hjälpen."
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:171
+#: help/window_main.html:172
 msgid "The best way to start here if you are new to DC++."
 msgstr "Det här är bästa stället att börja om du är nybörjare på DC++."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:172
+#: help/window_main.html:173
 msgid "Change Log"
 msgstr "Ändringslogg"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:173
+#: help/window_main.html:174
 msgid ""
 "You can follow what's been changed in the different DC++ versions since the "
 "development started."
 msgstr "Du kan läsa vilka förändringar som DC++ genomgått sedan starten."
 
 #. type: Content of: <html><body><dl><dd><dl><dt>
-#: help/window_main.html:174
+#: help/window_main.html:175
 msgid "About DC++"
 msgstr "Om DC++"
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:175
+#: help/window_main.html:176
 msgid ""
 "You can see the copyrights, list of all names who ever contributed to DC++ "
 "as well as some useful statistical information about your up/download ratio. "
@@ -14137,70 +14176,70 @@ msgstr ""
 "DC++."
 
 #. type: Content of: <html><body><dl><dd><dl><dd>
-#: help/window_main.html:177
+#: help/window_main.html:178
 #, fuzzy
 msgid "Web links that will open in your web browser."
 msgstr "Öppnar DC++ hemsida i din webbläsare."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/window_main.html:180
+#: help/window_main.html:181
 msgid "Homepage"
 msgstr "Hemsida"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:181
+#: help/window_main.html:182
 msgid "Opens the DC++ home page in your web browser."
 msgstr "Öppnar DC++ hemsida i din webbläsare."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:183
+#: help/window_main.html:184
 msgid "Opens the trusted DC++ download page in your web browser."
 msgstr ""
 "Öppnar DC++ egen hemsida i din webbläsare, där du kan ladda ner programmet."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:185
+#: help/window_main.html:186
 #, fuzzy
 msgid "Opens the DC++ FAQ page in your web browser."
 msgstr "Öppnar DC++ hemsida i din webbläsare."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/window_main.html:186
+#: help/window_main.html:187
 msgid "Help center"
 msgstr "Hjälpcenter"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:187
+#: help/window_main.html:188
 msgid "Points to the DC++ support forum."
 msgstr "Pekar mot DC++ supportforum"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/window_main.html:188
+#: help/window_main.html:189
 msgid "Discussion forum"
 msgstr "Diskussionsforum"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:189
+#: help/window_main.html:190
 msgid "Points to the DC++ discussion forum."
 msgstr "Pekar mot DC++ diskussionsforum"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:191
+#: help/window_main.html:192
 msgid "You can propose modifications or request new features here."
 msgstr "Du kan föreslå förändringar eller nya funktioner här."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:193
+#: help/window_main.html:194
 msgid "You can report problems about DC++ here."
 msgstr "Du kan rapportera problem med DC++ här."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/window_main.html:194
+#: help/window_main.html:195
 msgid "Donate (paypal)"
 msgstr "Donera (Paypal)"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:195
+#: help/window_main.html:196
 #, fuzzy
 msgid ""
 "Found this free program useful? Then you please consider donating some "
@@ -14210,65 +14249,65 @@ msgstr ""
 "donera så att det kan vidareutvecklas. Du gör det här, via Paypal."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/window_main.html:196
+#: help/window_main.html:197
 msgid "Blog"
 msgstr "Blogg"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:197
+#: help/window_main.html:198
 msgid "Opens the DC++ blog in your web browser."
 msgstr "Öppnar DC++-bloggen i din webbläsare."
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dt>
-#: help/window_main.html:198
+#: help/window_main.html:199
 msgid "Community news"
 msgstr "Gemenskapsnyheter"
 
 #. type: Content of: <html><body><dl><dd><dl><dd><dl><dd>
-#: help/window_main.html:199
+#: help/window_main.html:200
 msgid "Opens the DCBase portal in your web browser."
 msgstr "Öppnar DCBase-portalen i din webbläsare"
 
 #. type: Content of: <html><body><h2>
-#: help/window_main.html:208
+#: help/window_main.html:209
 msgid "Toolbar (top, icons below menus)"
 msgstr "Knapprad (överst, ikoner under menyer)"
 
 #. type: Content of: <html><body><p><a>
-#: help/window_main.html:210
+#: help/window_main.html:211
 msgid "<a po4a-id=0>"
 msgstr "<a po4a-id=0>"
 
 #. type: Content of: <html><body><p><a>
-#: help/window_main.html:210 help/window_main.html:211
-#: help/window_main.html:212 help/window_main.html:213
-#: help/window_main.html:214 help/window_main.html:215
-#: help/window_main.html:216 help/window_main.html:217
-#: help/window_main.html:218 help/window_main.html:219
-#: help/window_main.html:220 help/window_main.html:221
-#: help/window_main.html:222 help/window_main.html:223
-#: help/window_main.html:224 help/window_main.html:225
-#: help/window_main.html:226 help/window_main.html:227
+#: help/window_main.html:211 help/window_main.html:212
+#: help/window_main.html:213 help/window_main.html:214
+#: help/window_main.html:215 help/window_main.html:216
+#: help/window_main.html:217 help/window_main.html:218
+#: help/window_main.html:219 help/window_main.html:220
+#: help/window_main.html:221 help/window_main.html:222
+#: help/window_main.html:223 help/window_main.html:224
+#: help/window_main.html:225 help/window_main.html:226
+#: help/window_main.html:227 help/window_main.html:228
 msgid "</a> <a po4a-id=0>"
 msgstr "</a> <a po4a-id=0>"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:224 help/window_main.html:292
+#: help/window_main.html:225 help/window_main.html:293
 msgid "Recent windows"
 msgstr "Senaste fönster"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:228 help/window_main.html:315
+#: help/window_main.html:229 help/window_main.html:316
 msgid "What's This?"
 msgstr "Vad är detta?"
 
 #. type: Content of: <html><body><p>
-#: help/window_main.html:228
+#: help/window_main.html:229
 msgid "</a>"
 msgstr "</a>"
 
 #. type: Content of: <html><body><p>
-#: help/window_main.html:230
+#: help/window_main.html:231
 msgid ""
 "The toolbar provides quick access to some regularly used parts and functions "
 "of DC++. You can customize the toolbar for yourself, add, remove and group "
@@ -14279,7 +14318,7 @@ msgstr ""
 "gruppera knapparna genom varje knapprads förändringsfunktion."
 
 #. type: Content of: <html><body><ul><li>
-#: help/window_main.html:233
+#: help/window_main.html:234
 msgid ""
 "Holding the \"shift\" key you can drag &amp; drop toolbar buttons wherever "
 "you want."
@@ -14288,7 +14327,7 @@ msgstr ""
 "du vill."
 
 #. type: Content of: <html><body><ul><li>
-#: help/window_main.html:234
+#: help/window_main.html:235
 msgid ""
 "Right-click to the toolbar will bring up the toolbar context menu with a "
 "\"Customize\" item to open the <a po4a-id=0>Customize Toolbar dialog</a>."
@@ -14297,26 +14336,26 @@ msgstr ""
 "att öppna <a po4a-id=0>förändringsdialogen för knapprader</a>."
 
 #. type: Content of: <html><body><ul><li>
-#: help/window_main.html:235
+#: help/window_main.html:236
 msgid ""
 "As a shortcut, double-click to the empty area of the toolbar will also open "
 "the <a po4a-id=0>Customize Toolbar dialog</a>."
 msgstr ""
 
 #. type: Content of: <html><body><p>
-#: help/window_main.html:237
+#: help/window_main.html:238
 msgid "The toolbar can hold the following available icons:"
 msgstr "Knappraden kan innehålla följande ikoner:"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:243
+#: help/window_main.html:244
 msgid ""
 "Reconnect (disconnect and connect again) the hub which is currently in the "
 "foreground."
 msgstr "Återanslut (kopplar ner och ansluter igen) till fokuserad hubb."
 
 #. type: Content of: <html><body><dl><dd><div>
-#: help/window_main.html:248
+#: help/window_main.html:249
 msgid ""
 "Use the arrow placed on the right of the icon to easily connect to one of "
 "your favorite hubs without having to open the <placeholder id=0/> window."
@@ -14325,7 +14364,7 @@ msgstr ""
 "dina favorithubbar utan att behöva öppna <placeholder id=0/>fönstret."
 
 #. type: Content of: <html><body><dl><dd><div>
-#: help/window_main.html:249
+#: help/window_main.html:250
 msgid ""
 "Consult the help topic associated to the <placeholder id=0/> dialog to find "
 "out how to add sub-menus to the menu that appears under the arrow."
@@ -14334,14 +14373,14 @@ msgstr ""
 "undermenyer på menyn som visas med hjälp av nedåtpilen."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:275
+#: help/window_main.html:276
 msgid ""
 "Opens your default finished downloads folder in Windows Explorer. Useful for "
 "quick accessing your downloaded files."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:280
+#: help/window_main.html:281
 msgid ""
 "Open a file list previously saved on your disk (a dialog will appear so you "
 "can pick the one you wish to open)."
@@ -14354,7 +14393,7 @@ msgid "Most Recently Used"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:294
+#: help/window_main.html:295
 msgid ""
 "Open menus with <acronym po4a-id=0>MRU</acronym> lists of recently opened "
 "windows. The list is saved across DC++ restarts."
@@ -14363,17 +14402,17 @@ msgstr ""
 "fönster. Denna lista sparas när DC++ stängs av."
 
 #. type: Content of: <html><body><dl><dd><p>
-#: help/window_main.html:306
+#: help/window_main.html:307
 msgid "Open the <placeholder id=0/> configuration page."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd><p>
-#: help/window_main.html:310
+#: help/window_main.html:311
 msgid "Use the arrow placed on the right of the icon to manage plugins:"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:317
+#: help/window_main.html:318
 msgid ""
 "You can get help on specific parts of DC++ by using the &quot;What's This?"
 "&quot; help button: click it once, and your mouse cursor will change into a "
@@ -14384,7 +14423,7 @@ msgstr ""
 "klicka sedan på det du vill veta mer om."
 
 #. type: Content of: <html><body><p>
-#: help/window_main.html:322
+#: help/window_main.html:323
 msgid ""
 "Each window opened in DC++ has a corresponding tab, which appears in the "
 "global tab control."
@@ -14393,7 +14432,7 @@ msgstr ""
 "flikkontrollen."
 
 #. type: Content of: <html><body><p>
-#: help/window_main.html:323
+#: help/window_main.html:324
 msgid ""
 "Tabs in DC++ behave the same as in standard Windows applications; moreover, "
 "they have the following additional features:"
@@ -14402,12 +14441,12 @@ msgstr ""
 "dessutom har de även följande exterafunktioner:"
 
 #. type: Content of: <html><body><ul><li>
-#: help/window_main.html:326
+#: help/window_main.html:327
 msgid "They can be moved around in a drag-and-drop fashion."
 msgstr "Du kan flytta runt dem genom dra och släppa."
 
 #. type: Content of: <html><body><ul><li>
-#: help/window_main.html:327
+#: help/window_main.html:328
 msgid ""
 "There are some easy ways to switch between them: with mouse extra buttons or "
 "using Ctrl+Tab."
@@ -14416,7 +14455,7 @@ msgstr ""
 "eller Ctrl + Tab."
 
 #. type: Content of: <html><body><ul><li>
-#: help/window_main.html:328
+#: help/window_main.html:329
 msgid ""
 "When many tabs are opened, and they can't fit into a single row, they will "
 "automatically occupy more rows."
@@ -14425,7 +14464,7 @@ msgstr ""
 "rad automatiskt."
 
 #. type: Content of: <html><body><ul><li>
-#: help/window_main.html:329
+#: help/window_main.html:330
 msgid ""
 "Each tab has its own context-menu which provides commands related to the "
 "window the tab belongs to.  Description of the common context menu options "
@@ -14436,54 +14475,54 @@ msgstr ""
 "po4a-id=0>generella menykommandon</a>."
 
 #. type: Content of: <html><body><ul><li>
-#: help/window_main.html:332
+#: help/window_main.html:333
 msgid "Tabs can be closed with:"
 msgstr "Flikar kan stängas med:"
 
 #. type: Content of: <html><body><ul><li><ul><li>
-#: help/window_main.html:333
+#: help/window_main.html:334
 msgid "Middle mouse click"
 msgstr "Klick på musens mittknapp."
 
 #. type: Content of: <html><body><ul><li><ul><li>
-#: help/window_main.html:334
+#: help/window_main.html:335
 msgid "Shift + left mouse click"
 msgstr "Skift + vänster musknapp"
 
 #. type: Content of: <html><body><ul><li><ul><li>
-#: help/window_main.html:335
+#: help/window_main.html:336
 msgid "Left mouse click on the"
 msgstr "Vänsterklicka på"
 
 #. type: Attribute 'alt' of: <html><body><ul><li><ul><li><img>
-#: help/window_main.html:335
+#: help/window_main.html:336
 msgid "Close tab button"
 msgstr "Stänga flikknapp"
 
 #. type: Content of: <html><body><ul><li><ul><li>
-#: help/window_main.html:335
+#: help/window_main.html:336
 msgid ""
 "button on the right of the tabs (appears only if <a po4a-id=0>DC++'s own tab "
 "style</a> is used)"
 msgstr ""
 
 #. type: Content of: <html><body><ul><li><ul><li>
-#: help/window_main.html:336
+#: help/window_main.html:337
 msgid "The &quot;Close&quot; command from the tab context-menu"
 msgstr "&quot;Stäng&quot;kommandot från flikens submeny."
 
 #. type: Content of: <html><body><ul><li><ul><li>
-#: help/window_main.html:337
+#: help/window_main.html:338
 msgid "Ctrl+W"
 msgstr "Ctrl + W"
 
 #. type: Content of: <html><body><ul><li><ul><li>
-#: help/window_main.html:338
+#: help/window_main.html:339
 msgid "Ctrl+F4"
 msgstr "Ctrl + F4"
 
 #. type: Content of: <html><body>
-#: help/window_main.html:341
+#: help/window_main.html:342
 msgid ""
 "You can customize the look and behavior of tabs from the <a po4a-id=0>Tabs "
 "settings</a> and <a po4a-id=1>Windows settings</a> respectively."
@@ -14492,7 +14531,7 @@ msgstr ""
 "id=0>flikinställningar</a> respektive <a po4a-id=1>fönsterinställingar</a>.."
 
 #. type: Content of: <html><body>
-#: help/window_main.html:345
+#: help/window_main.html:346
 msgid ""
 "The main status bar is always visible in the bottom of the DC++ window. You "
 "can get information from the current state of several parameters of DC++ "
@@ -14504,12 +14543,12 @@ msgstr ""
 "sektioner för enkelhetens skull. Från vänster till höger betyder de:"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:347
+#: help/window_main.html:348
 msgid "System messages"
 msgstr "Systemmeddelanden"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:348
+#: help/window_main.html:349
 msgid ""
 "The first part of the status bar contains the last system message with a "
 "timestamp. To see more from the recent system messages you can move the "
@@ -14525,23 +14564,23 @@ msgstr ""
 "eller dubbelklicka på statusraden där systemmeddelande visas."
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:350
+#: help/window_main.html:351
 msgid "Online user"
 msgstr ""
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:350
+#: help/window_main.html:351
 #, fuzzy
 msgid "Away user"
 msgstr "Högsta användarantal"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:350
+#: help/window_main.html:351
 msgid "Away indicator"
 msgstr "Frånvaroindikator"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:351
+#: help/window_main.html:352
 #, fuzzy
 msgid ""
 "The user icon turns from green to grey when DC++ is in <a po4a-id=0>away "
@@ -14551,34 +14590,34 @@ msgstr ""
 "id=0>frånvaroläge</a>."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:352
+#: help/window_main.html:353
 msgid "Double-click to switch away mode on and off."
 msgstr "Dubbelklicka för att (av)aktivera frånvaroläget."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:355
+#: help/window_main.html:356
 msgid ""
 "Shows the number of hubs you are currently connected to in the following "
 "format: x/y/z, where:"
 msgstr "Visar antalet hubbar du är ansluten till med formatet: x/y/z, där:"
 
 #. type: Content of: <html><body><dl><dd><p>
-#: help/window_main.html:357
+#: help/window_main.html:358
 msgid "x = number of connected hubs where you're not a registered user;"
 msgstr "x = antalet anslutna hubbar där du inte är en registrerad användare;"
 
 #. type: Content of: <html><body><dl><dd><p>
-#: help/window_main.html:358
+#: help/window_main.html:359
 msgid "y = number of connected hubs where you're registered in;"
 msgstr "y = antalet anslutna hubbar där du är en registrerad användare;"
 
 #. type: Content of: <html><body><dl><dd><p>
-#: help/window_main.html:359
+#: help/window_main.html:360
 msgid "z = number of connected hubs where you're an operator;"
 msgstr "z = antalet anslutna hubbar där du är registrerad som operatör;"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:361
+#: help/window_main.html:362
 msgid ""
 "just the same way as in the <a po4a-id=0>DC++ tags</a> of the users listed "
 "on a hub."
@@ -14587,18 +14626,18 @@ msgstr ""
 "användarlistan för respektive hubb."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:364 help/window_search.html:75
+#: help/window_main.html:365 help/window_search.html:75
 msgid "Slots"
 msgstr "Slottar"
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:364
+#: help/window_main.html:365
 #, fuzzy
 msgid "Slots full"
 msgstr "Slottar"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:365
+#: help/window_main.html:366
 msgid ""
 "Indicates the number of currently free upload slots out of the total number "
 "of slots opened."
@@ -14606,41 +14645,41 @@ msgstr ""
 "Indikerar antalet lediga uppladdningsslottar av totala antalet öppna slottar."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:367
+#: help/window_main.html:368
 #, fuzzy
 msgid "Share size"
 msgstr "Filstorlek"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:368
+#: help/window_main.html:369
 #, fuzzy
 msgid "Shows the size of all files shared."
 msgstr "Den uppladdade filens storlek."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:370
+#: help/window_main.html:371
 #, fuzzy
 msgid "Total number of files shared"
 msgstr "Det totala antalet köade filer."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:371
+#: help/window_main.html:372
 #, fuzzy
 msgid "Shows the total number of files in the share."
 msgstr "Visar antalet anslutna användare som hubben har."
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:373
+#: help/window_main.html:374
 msgid "Downloaded bytes"
 msgstr "Nerladdade bytes"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:373
+#: help/window_main.html:374
 msgid "Total downloaded bytes"
 msgstr "Totalt antal nedladdade bytes"
 
 #. type: Content of: <html><body><dl><dd><div>
-#: help/window_main.html:374
+#: help/window_main.html:375
 msgid ""
 "Shows the total number of bytes received in the current session, including "
 "file transfers, hub-client communication and hublists."
@@ -14649,23 +14688,23 @@ msgstr ""
 "filöverföringar, hubb-klient-kommunikation och hubblistor."
 
 #. type: Content of: <html><body><dl><dd><div>
-#: help/window_main.html:375 help/window_main.html:379
-#: help/window_main.html:383 help/window_main.html:387
+#: help/window_main.html:376 help/window_main.html:380
+#: help/window_main.html:384 help/window_main.html:388
 msgid "Double-click to open the <placeholder id=0/> window."
 msgstr "Dubbelklicka för att öppna <placeholder id=0/>fönstret."
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:377
+#: help/window_main.html:378
 msgid "Uploaded bytes"
 msgstr "Uppladdade bytes"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:377
+#: help/window_main.html:378
 msgid "Total uploaded bytes"
 msgstr "Totala antalet uppladdade bytes"
 
 #. type: Content of: <html><body><dl><dd><div>
-#: help/window_main.html:378
+#: help/window_main.html:379
 msgid ""
 "Shows the total number of bytes sent in the current session, including file "
 "transfers and hub-client communication."
@@ -14674,17 +14713,17 @@ msgstr ""
 "filöverföringar och hubb-klient-kommunikation."
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:381
+#: help/window_main.html:382
 msgid "Download speed"
 msgstr "Nerladdningshastighet"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:381
+#: help/window_main.html:382
 msgid "Current download speed"
 msgstr "Aktuell nedladdningshastighet"
 
 #. type: Content of: <html><body><dl><dd><div>
-#: help/window_main.html:382
+#: help/window_main.html:383
 msgid ""
 "Shows the current overall download speed and the number of current download "
 "connections in parentheses (updated in every second)."
@@ -14693,17 +14732,17 @@ msgstr ""
 "nedladdningar inom parentens (uppdateras varje sekund)."
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:385
+#: help/window_main.html:386
 msgid "Upload speed"
 msgstr "Uppladdningshastighet"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:385
+#: help/window_main.html:386
 msgid "Current upload speed"
 msgstr "Aktuell uppladdningshastighet"
 
 #. type: Content of: <html><body><dl><dd><div>
-#: help/window_main.html:386
+#: help/window_main.html:387
 msgid ""
 "Shows the current overall upload speed and the number of current upload "
 "connections in parentheses (updated in every second)."
@@ -14712,17 +14751,17 @@ msgstr ""
 "uppladdningar inom parentens (uppdateras varje sekund)."
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:389
+#: help/window_main.html:390
 msgid "Download speed limit"
 msgstr "Nerladdningshastighetsbegränsning"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:389
+#: help/window_main.html:390
 msgid "Current download limit"
 msgstr "Aktuell nedladdningsgräns"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:390
+#: help/window_main.html:391
 msgid ""
 "Shows the current maximum download rate. Zero speed value means that "
 "download limiting is disabled."
@@ -14731,17 +14770,17 @@ msgstr ""
 "begränsningen är avstängd."
 
 #. type: Attribute 'alt' of: <html><body><dl><dt><img>
-#: help/window_main.html:392
+#: help/window_main.html:393
 msgid "Upload speed limit"
 msgstr "Uppladdningshastighetsbegränsning"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_main.html:392
+#: help/window_main.html:393
 msgid "Current upload limit"
 msgstr "Aktuell uppladdningsgräns"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_main.html:393
+#: help/window_main.html:394
 msgid ""
 "Shows the current maximum upload rate. Zero speed value means that upload "
 "limiting is disabled."
@@ -15052,25 +15091,26 @@ msgstr ""
 "Om hubblistan tillåter användare att rösta på en hubb visas här hubbens "
 "betyg. Ju fler stjärnor desto bättre..."
 
+#.  [SSI comment parsed by po4a] include virtual="hub_connections.inc" 
 #. type: Content of: <html><body><dl><dd>
 #: help/window_public_hubs.html:41
 msgid "Will open a new hub window and try to connect to the selected hub."
 msgstr "Öppnar ett nytt fönster och försöker ansluta till vald hubb."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_public_hubs.html:43
+#: help/window_public_hubs.html:45
 msgid "Will add the selected hub to the <a po4a-id=0>Favorite hubs</a>."
 msgstr "Lägger till vald hubb till listan över <a po4a-id=0>favorithubbar</a>."
 
 #. type: Content of: <html><body><p><div>
-#: help/window_public_hubs.html:50
+#: help/window_public_hubs.html:52
 msgid ""
 "Here, you can filter the hublist so you will only see specific hubs in the "
 "hublist."
 msgstr ""
 
 #. type: Content of: <html><body><p><div>
-#: help/window_public_hubs.html:54
+#: help/window_public_hubs.html:56
 #, fuzzy
 msgid ""
 "Eg, selecting 'address' in the drop down, and writing \"foo\" in the filter, "
@@ -15083,7 +15123,7 @@ msgstr ""
 "visade och bortfiltrerade hubbar i statusraden."
 
 #. type: Content of: <html><body><p>
-#: help/window_public_hubs.html:60
+#: help/window_public_hubs.html:62
 msgid ""
 "In the dropdown, you may select different hublists you want to see. If the "
 "hublist was downloaded before you will have the cached version displayed. "
@@ -15094,7 +15134,7 @@ msgstr ""
 "att ladda ner hubblistan på nytt."
 
 #. type: Content of: <html><body><p>
-#: help/window_public_hubs.html:62
+#: help/window_public_hubs.html:64
 msgid ""
 "If you click on 'Configure', you will be able to change, add and remove "
 "hublists. The order in <a po4a-id=0>Configured Public Hub Lists</a> "
@@ -15104,30 +15144,25 @@ msgstr ""
 "Ordningen på The order in <a po4a-id=0>Konfigurerade publika hubblisstor</a> "
 "bestämmer ordningen på hubblistorna i rullgardinslistan nämnd ovan."
 
-#. type: Content of: <html><body><p>
-#: help/window_public_hubs.html:64
-msgid "<a po4a-id=0>List of alternative hublists.</a>"
-msgstr "<a po4a-id=0>Lista över alternativa hubblistor.</a>"
-
 #. type: Content of: <html><body><h2>
-#: help/window_public_hubs.html:65
+#: help/window_public_hubs.html:66
 msgid "Refresh"
 msgstr "Uppdatera"
 
 #. type: Content of: <html><body><p>
-#: help/window_public_hubs.html:67
+#: help/window_public_hubs.html:68
 msgid ""
 "Download a fresh version of the hublist. If the download fails click Refresh "
 "again to get the next available hublist in the dropdown."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_public_hubs.html:73
+#: help/window_public_hubs.html:74
 msgid "Shows status messages about the loading of public hub lists;"
 msgstr "Visar statusmeddelanden över laddningen publika hubblistor."
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: help/window_public_hubs.html:75
+#: help/window_public_hubs.html:76
 msgid ""
 "&quot;downloading&quot;: hub list is currently being downloaded from the "
 "server, this may take a while;"
@@ -15135,7 +15170,7 @@ msgstr ""
 "&quot;nedladdas&quot;: Hubblistan laddas ned från servern, kan ta ett tag;"
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: help/window_public_hubs.html:76
+#: help/window_public_hubs.html:77
 msgid ""
 "&quot;downloaded&quot;: hub list has been successfully downloaded from the "
 "server, and is currently being displayed; you're looking at a fresh version "
@@ -15145,7 +15180,7 @@ msgstr ""
 "ser nu den aktuella version av hubblistan;"
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: help/window_public_hubs.html:77
+#: help/window_public_hubs.html:78
 msgid ""
 "&quot;loaded from chache&quot;: a previously saved hub list has been "
 "successfully loaded from your DC++ cache directory, and is currently being "
@@ -15157,7 +15192,7 @@ msgstr ""
 "se den senaste versionen;"
 
 #. type: Content of: <html><body><dl><dd><ul><li>
-#: help/window_public_hubs.html:78
+#: help/window_public_hubs.html:79
 msgid ""
 "error messages may also appear in this area: when a hub list download has "
 "failed, DC++ will automatically switch to the next hub list."
@@ -15166,7 +15201,7 @@ msgstr ""
 "försöker DC++ automatiskt med nästa hubblista."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_public_hubs.html:83
+#: help/window_public_hubs.html:84
 msgid ""
 "The total number of individual hubs in the current hub list. When the "
 "hublist is filtered, it shows the number of hubs filtered out as well."
@@ -15175,7 +15210,7 @@ msgstr ""
 "antalet visade hubbar och utfiltrerade hubbar."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_public_hubs.html:85
+#: help/window_public_hubs.html:86
 msgid "Sum of the users numbers of every hubs in the current hub list."
 msgstr "Summan av alla användare i alla hubbar i hubblistan."
 
@@ -15777,11 +15812,24 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
 #: help/window_system_log.html:41
-msgid "Hash database rebuilt"
+#, fuzzy
+msgid "Hash database rebuild has been scheduled"
 msgstr "Indexeringsdatabasen återuppbyggd"
 
 #. type: Content of: <html><body><dl><dd>
 #: help/window_system_log.html:42
+msgid ""
+"A <a po4a-id=0>/rebuild</a> command received while the hashing process was "
+"paused. The hash database will be rebuilt once hashing is resumed."
+msgstr ""
+
+#. type: Content of: <html><body><dl><dt>
+#: help/window_system_log.html:43
+msgid "Hash database rebuilt"
+msgstr "Indexeringsdatabasen återuppbyggd"
+
+#. type: Content of: <html><body><dl><dd>
+#: help/window_system_log.html:44
 msgid ""
 "Informs you about the finish of a full hash database rebuilding process "
 "which can be initiated by the <a po4a-id=0>/rebuild</a> chat command"
@@ -15790,12 +15838,12 @@ msgstr ""
 "startas genom <a po4a-id=0>/rebuild</a> chat kommandot."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:43
+#: help/window_system_log.html:45
 msgid "Disconnected user leaving the hub: [nick]"
 msgstr "Användare som lämnar hubben: [användarnamn]"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:44
+#: help/window_system_log.html:46
 msgid ""
 "You have <a po4a-id=0>Automatically disconnect users who leave the hub</a> "
 "setting enabled and this message informs you about its effect."
@@ -15804,22 +15852,22 @@ msgstr ""
 "hubben</a> och får detta meddelande."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:45
+#: help/window_system_log.html:47
 msgid "MAGNET Link detected: [link]"
 msgstr "MAGNET-länk upptäckt: [länk]"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:46
+#: help/window_system_log.html:48
 msgid "The client received a <a po4a-id=0>magnet link</a> handle request."
 msgstr "Klienten har fått en <a po4a-id=0>magnetlänk</a>begäran."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:47
+#: help/window_system_log.html:49
 msgid "Generated new TLS certificate"
 msgstr "Nygenererade TLS-certifikat"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:48
+#: help/window_system_log.html:50
 msgid ""
 "As <a po4a-id=0>Security certificates</a> enabled but no existing TLS "
 "certificate files found (or they are invalid), new certificate files "
@@ -15831,7 +15879,7 @@ msgstr ""
 "katalogen 'Certificates' där DC++-konfigurationsfiler sparas."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:49
+#: help/window_system_log.html:51
 msgid ""
 "Port mapping: Successfully created port mappings (Transfers: [port1], "
 "Searches: [port2], Encrypted transfers: [port3]) on the [router name] device "
@@ -15839,47 +15887,47 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:50
+#: help/window_system_log.html:52
 msgid ""
 "DC++ has managed to automatically create port forwarding rules on the router "
 "using <a po4a-id=0>NAT-PMP or UPnP</a>."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:51
+#: help/window_system_log.html:53
 msgid ""
 "Port mapping: Successfully removed port mappings from the [router name] "
 "device with the [interface identification] interface"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:52
+#: help/window_system_log.html:54
 msgid ""
 "DC++ has managed to remove the existing port forwarding rules from the "
 "router made by <a po4a-id=0>NAT-PMP or UPnP</a>."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:53
+#: help/window_system_log.html:55
 msgid "Connectivity: Determining the best connectivity settings..."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:54
+#: help/window_system_log.html:56
 msgid ""
 "This message signals that <a po4a-id=0>Automatic connectivity setup</a> has "
 "started."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:55
+#: help/window_system_log.html:57
 msgid ""
 "Connectivity: Public IP address detected, selecting active mode with direct "
 "connection"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:56
+#: help/window_system_log.html:58
 msgid ""
 "It means that <a po4a-id=0>Automatic connectivity setup</a> determined that "
 "you have a public IP address so it assumed that you are directly connected "
@@ -15887,14 +15935,14 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:57
+#: help/window_system_log.html:59
 msgid ""
 "Connectivity: Local network with possible NAT detected, trying to map the "
 "ports..."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:58
+#: help/window_system_log.html:60
 msgid ""
 "<a po4a-id=0>Automatic connectivity setup</a> determined that you have a <a "
 "po4a-id=1>private</a> IP address and it started to discover for a possible "
@@ -15902,14 +15950,14 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:59
+#: help/window_system_log.html:61
 msgid ""
 "Connectivity: Active mode could not be achieved; a manual configuration is "
 "recommended for better connectivity"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:60
+#: help/window_system_log.html:62
 msgid ""
 "<a po4a-id=0>Automatic connectivity setup</a> did not find any way to "
 "configure any kind of active connection so as a last resort it selected "
@@ -15917,12 +15965,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><h2>
-#: help/window_system_log.html:63
+#: help/window_system_log.html:65
 msgid "Error messages"
 msgstr "Felmeddelanden"
 
 #. type: Content of: <html><body><p>
-#: help/window_system_log.html:64
+#: help/window_system_log.html:66
 msgid ""
 "Some errors shown in the log contain additional system messages provided by "
 "the operating system. These messages usually tell you more about the exact "
@@ -15938,30 +15986,37 @@ msgstr ""
 "operativsystemet språk oavsett vilket språk du har i DC++."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:66
+#: help/window_system_log.html:68
 msgid "Error registering dchub:// link handler"
 msgstr "Fel vid registrering av dchub://-länkar"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:67
+#: help/window_system_log.html:69
+#, fuzzy
+msgid "Error registering nmdcs:// link handler"
+msgstr "Fel vid registrering av adc(s)://-länkar"
+
+#. type: Content of: <html><body><dl><dt>
+#: help/window_system_log.html:70
 msgid "Error registering adc(s):// link handler"
 msgstr "Fel vid registrering av adc(s)://-länkar"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:68
+#: help/window_system_log.html:71
 msgid "Error registering Magnet link handler"
 msgstr "Fel vid registrering av magnetlänkar"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:69
+#: help/window_system_log.html:72
+#, fuzzy
 msgid ""
 "These errors mean that DC++ was unable to register the appropriate link "
 "handler(s) in Windows, per the <a po4a-id=0>Register with Windows to handle "
 "magnet: URI links</a> and <a po4a-id=1>Register with Windows to handle "
-"dchub://, adc:// and adcs:// URL links</a> settings. The most common reason "
-"of an unsuccesful registration is that the user account under which DC++ is "
-"running does not have appropriate rights for (write) access the required "
-"parts of the Windows Registry."
+"adc://, adcs://, dchub:// and nmdcs:// URL links</a> settings. The most "
+"common reason of an unsuccesful registration is that the user account under "
+"which DC++ is running does not have appropriate rights for (write) access "
+"the required parts of the Windows Registry."
 msgstr ""
 "Dessa fel beror på att DC++ inte kunde registrera dessa länkar i "
 "Windowsregistret, inställningarna <a po4a-id=0>Registrera magnetlänkar i "
@@ -15970,12 +16025,12 @@ msgstr ""
 "har tillräckliga rättigheter för att skriva i Windowsregistret."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:70
+#: help/window_system_log.html:73
 msgid "Port mapping: Failed to get external IP"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:71
+#: help/window_system_log.html:74
 #, fuzzy
 msgid ""
 "This error message can appear when DC++ tries to map ports for incoming "
@@ -15992,12 +16047,12 @@ msgstr ""
 "det betyda att support för UPnP i enheten inte fungerar."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:72
+#: help/window_system_log.html:75
 msgid "Port mapping: Another port mapping attempt is in progress..."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:73
+#: help/window_system_log.html:76
 msgid ""
 "This means that an <a po4a-id=0>Automatic connectivity setup</a> attempt was "
 "started too soon (the previous operation has not been finished). Try "
@@ -16007,27 +16062,27 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:74
+#: help/window_system_log.html:77
 msgid ""
 "Port mapping: Failed to initalize the [interface identification] interface"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:75
+#: help/window_system_log.html:78
 msgid ""
 "DC++ failed to initalize one of its NAT-PMP or UPnP interfaces and will try "
 "to use the next one in the row."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:76
+#: help/window_system_log.html:79
 msgid ""
 "Port mapping: Failed to map the [Transfer/Encrypted transfer/Search] port "
 "([port number] [TCP/UDP]) with the [interface identification] interface"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:77
+#: help/window_system_log.html:80
 msgid ""
 "The currently used port mapping interface failed to map the shown port. This "
 "error message can appear when DC++ tries to map ports for incoming "
@@ -16043,14 +16098,14 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:78
+#: help/window_system_log.html:81
 msgid ""
 "Port mapping: Failed to remove port mappings from the [router name] device "
 "with the [interface identification] interface"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:79
+#: help/window_system_log.html:82
 msgid ""
 "DC++ has failed to remove the existing port forwarding rules from the router "
 "made by <a po4a-id=0>NAT-PMP or UPnP</a>. This message can appear at "
@@ -16061,14 +16116,14 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:80
+#: help/window_system_log.html:83
 msgid ""
 "Connectivity: Unable to open TCP/UDP/TLS port(s); connectivity settings must "
 "be configured manually"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:81
+#: help/window_system_log.html:84
 msgid ""
 "You can get this message only when <a po4a-id=0>Automatic connectivity "
 "setup</a> is enabled and DC++ failed to open port(s) before trying to "
@@ -16078,14 +16133,14 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:82
+#: help/window_system_log.html:85
 msgid ""
 "The encrypted transfer port cannot be the same as the transfer port, "
 "encrypted transfers will be disabled"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:83
+#: help/window_system_log.html:86
 msgid ""
 "The two kind of transfers cannot use the same port therfore the secure one "
 "had to be disabled. You have to specify different TCP port for the different "
@@ -16094,12 +16149,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:84
+#: help/window_system_log.html:87
 msgid "Not listening for connections - please restart DC++"
 msgstr "Lyssnar inte efter anslutningar - vänligen starta om DC++"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:85
+#: help/window_system_log.html:88
 msgid ""
 "An unrecoverable low level networking error keeps DC++ from listening for "
 "connections. Search and download won't work until you restart DC++."
@@ -16108,17 +16163,17 @@ msgstr ""
 "Sökning och nedladdning kommer inte att fungera förrän du startar om DC++."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:86
+#: help/window_system_log.html:89
 msgid "Connectivity error: [error message]"
 msgstr "Anslutningsfel: [felmeddelande]"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:87
+#: help/window_system_log.html:90
 msgid "Connectivity restored"
 msgstr "Anslutning återställd"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:88
+#: help/window_system_log.html:91
 msgid ""
 "Because of a low level networking error DC++ does not listen for file "
 "transfer connections. The problem lasts until the next 'Connectivity "
@@ -16128,17 +16183,17 @@ msgstr ""
 "Problemet pågår tills meddelandet 'Anslutning återställd' erhålls."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:89
+#: help/window_system_log.html:92
 msgid "Search disabled: [error message]"
 msgstr "Sökning avstängd: [felmeddelande]"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:90
+#: help/window_system_log.html:93
 msgid "Search enabled again"
 msgstr "Sökning aktiverad igen"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:91
+#: help/window_system_log.html:94
 msgid ""
 "Because of a low level networking error DC++ does not listen for search "
 "results. The problem lasts until the next 'Search enabled again' message."
@@ -16147,12 +16202,12 @@ msgstr ""
 "Problemet består tills nästa 'Sökning aktiverad igen' erhålls."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:92
+#: help/window_system_log.html:95
 msgid "Failed to load certificate file"
 msgstr "Misslyckades att ladda certifikatfil"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:93
+#: help/window_system_log.html:96
 #, fuzzy
 msgid ""
 "There was a problem loading your own certificate file, its contents are "
@@ -16162,12 +16217,12 @@ msgstr ""
 "inaktuellt."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:94
+#: help/window_system_log.html:97
 msgid "Failed to load private key"
 msgstr "Misslyckades att ladda privat nyckel"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:95
+#: help/window_system_log.html:98
 #, fuzzy
 msgid ""
 "There was a problem loading your own private key file, its contents are "
@@ -16177,13 +16232,13 @@ msgstr ""
 "inaktuellt."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:96
+#: help/window_system_log.html:99
 #, fuzzy
 msgid "Failed to load trusted certificate from [path]"
 msgstr "Misslyckades att ladda certifikatfil"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:97
+#: help/window_system_log.html:100
 #, fuzzy
 msgid ""
 "There was a problem loading one of the trusted certificate files, its "
@@ -16193,12 +16248,12 @@ msgstr ""
 "inaktuellt."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:98
+#: help/window_system_log.html:101
 msgid "TLS disabled, failed to generate certificate: [error message]"
 msgstr "TLS avaktiverat, certifikatgenering misslyckadea: [felmeddelande]"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:99
+#: help/window_system_log.html:102
 msgid ""
 "TLS certificate files are missing or could not be opened. DC++ tried to "
 "regenrerate them but it wasn't successful, either. Make sure you have write "
@@ -16210,12 +16265,12 @@ msgstr ""
 "till 'Certificates'-katalogen där DC++ konfigurationsfiler ligger."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:100
+#: help/window_system_log.html:103
 msgid "TLS disabled, no certificate file set"
 msgstr "TLS avstängd, ingen certifikatsfil angiven"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:101
+#: help/window_system_log.html:104
 #, fuzzy
 msgid ""
 "TLS can't be used because no certificate files set. You should set or "
@@ -16226,26 +16281,26 @@ msgstr ""
 "generera ny på sidan för <a po4a-id=0>säkerhetscertifikat</a>"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:102
+#: help/window_system_log.html:105
 msgid ""
 "Certificate verification for [CA name] failed with error: [error message] "
 "(certificate KeyPrint: [keyprint])"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:103
+#: help/window_system_log.html:106
 msgid ""
 "The security certificate verification of user or hub with keyprint "
 "[keyprint] has failed because of [error message]."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:104
+#: help/window_system_log.html:107
 msgid "CRC32 inconsistency (SFV-Check) : [path]"
 msgstr "CRC32-inkonsekves (SFV-kontroll) : [sökväg]"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:105
+#: help/window_system_log.html:108
 msgid ""
 "You have <a po4a-id=0>automatic SFV checking enabled</a> and a downloaded "
 "file is not passed the SFV-check. The file will be downloaded again."
@@ -16254,7 +16309,7 @@ msgstr ""
 "fil passerade inte SFV-kontrollen. Den kommer att laddas ned igen."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:106
+#: help/window_system_log.html:109
 msgid ""
 "File list refresh in progress, please wait for it to finish before trying to "
 "refresh again"
@@ -16263,72 +16318,75 @@ msgstr ""
 "försöker uppdatera igen"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:107
+#: help/window_system_log.html:110
 msgid "Only one file list refreshing operation can be run at the same time."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:108
+#: help/window_system_log.html:111
 msgid "File list refresh failed: [error message]"
 msgstr "Uppdatering av fillista misslyckades: [felmeddelande]"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:109
+#: help/window_system_log.html:112
 msgid "The background process for refreshing file list is failed to start."
 msgstr "Bakgrundsprocessen för uppdatering av fillistan startades inte."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:110
+#: help/window_system_log.html:113
 #, fuzzy
 msgid "Hashing failed / Hash data rebuilding failed: [error message]"
 msgstr "Indexeringsfel: [felmeddelande]"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:111
+#: help/window_system_log.html:114
 msgid "Error occured during indexing or share rebuilding."
 msgstr "Ett fel inträffade vid indexering eller återuppbyggnad av utdelningen."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:112
+#: help/window_system_log.html:115
 msgid "Error hashing [path]: [error message]"
 msgstr "Indexeringsfel [sökväg]: [felmeddelande]"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:113
+#: help/window_system_log.html:116
 msgid "Error when hashing the file specified in [path]."
 msgstr "Fel vid indexering av filen [sökväg]"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:114
+#: help/window_system_log.html:117
 msgid "Error saving hash data: [error message]"
 msgstr "Fel vid sparande av indexeringsfil: [felmeddelande]"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:115
-msgid "Error when creating or updating hash index file (HashIndex.xml)."
+#: help/window_system_log.html:118
+msgid ""
+"Error when creating or updating hash database files (HashIndex.xml, HashData."
+"dat). This message appearing repeatedly may indicate hash database "
+"corruption or issues accessing the <a po4a-id=0>settings folder or files</a>."
 msgstr ""
-"Ett fel inträffade vid skapande eller uppdatering av indexeringsfilen "
-"HashIndex.xml."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:116
+#: help/window_system_log.html:119
 msgid "Error creating hash data file: [error message]"
 msgstr "Fel vid skapande av indexeringdatafilen: [felmeddelande]"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:117
-msgid "Error when creating hash data file (HashData.dat)."
-msgstr "Ett fel inträffade vid skapande av indexeringsdatafilen HashData.dat."
+#: help/window_system_log.html:120
+msgid ""
+"Error when creating hash data file (HashData.dat). This message may indicate "
+"issues accessing the <a po4a-id=0>settings folder or files</a>."
+msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:118
+#: help/window_system_log.html:121
 msgid ""
 "[path] not shared; calculated CRC32 does not match the one found in SFV file."
 msgstr ""
 "[sökväg] inte utdelad; Kalkylerad CRC32 matchar inte den funnen i SFV-filen."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:119
+#: help/window_system_log.html:122
 msgid ""
 "Before sharing files DC++ will automatically check them against an .SFV file "
 "(if one exists in the same directory) to make sure that no corrupted files "
@@ -16341,14 +16399,14 @@ msgstr ""
 "filen är gammal/felaktig eller så är .SFV-filen skadad."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:120
+#: help/window_system_log.html:123
 msgid "Unable to move [path1] to [path2] ([error message]); renamed to [path3]"
 msgstr ""
 "Misslyckades att flytta [path1] till [path2] ([felmeddelande]); flyttad till "
 "[sökväg3]"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:121
+#: help/window_system_log.html:124
 msgid ""
 "Moving a finished download [path1] from the unfinished downloads folder to "
 "its target place [path2] wasn't successful because of [error message] so the "
@@ -16361,7 +16419,7 @@ msgstr ""
 "([sökväg3])."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:122
+#: help/window_system_log.html:125
 msgid ""
 "Unable to move [path1] to [path2] ([error message1]) nor to rename to "
 "[path3] ([error message2])"
@@ -16370,7 +16428,7 @@ msgstr ""
 "byta namn till [sökväg3] ([felmeddelande2])."
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:123
+#: help/window_system_log.html:126
 msgid ""
 "Moving a finished download [path1] from the unfinished downloads folder to "
 "its target place [path2] wasn't successful because of [error message1] so "
@@ -16384,12 +16442,12 @@ msgstr ""
 "originalnamn [sökväg3] misslyckades på grund av [felmeddelande2]."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:124
+#: help/window_system_log.html:127
 msgid "Unable to open filelist: [filename]"
 msgstr "Klarade ej av att öppna fillistan: [filename]"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:125
+#: help/window_system_log.html:128
 msgid ""
 "There were problems opening a downloaded filelist, its corrupted or its size "
 "is <a po4a-id=0>bigger than the maximum size allowed to open</a>."
@@ -16398,12 +16456,12 @@ msgstr ""
 "är <a po4a-id=0>större än största tillåtna fillista att öppna</a>."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:126
+#: help/window_system_log.html:129
 msgid "Unable to send file [path]: [error message]"
 msgstr "Misslyckades att ladda upp fil [path]: [felmeddelande]"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:127
+#: help/window_system_log.html:130
 msgid ""
 "There was a problem preparing file [path] upon an upload request by a peer."
 msgstr ""
@@ -16411,26 +16469,26 @@ msgstr ""
 "till en användare."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:128
+#: help/window_system_log.html:131
 msgid "Invalid regular expression: [regex]"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:129
+#: help/window_system_log.html:132
 msgid ""
 "There was a problem applying a regular experssion [regex] specified in one "
 "of the filter functions."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/window_system_log.html:130
+#: help/window_system_log.html:133
 #, fuzzy
 msgid ""
 "HTTP file download failed to create file [filename], error: [error message]"
 msgstr "TLS avaktiverat, certifikatgenering misslyckadea: [felmeddelande]"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/window_system_log.html:131
+#: help/window_system_log.html:134
 msgid ""
 "The built-in HTTP downloader couldn't save the file it has downloaded "
 "because of [error message]."
@@ -16839,6 +16897,25 @@ msgid ""
 "Waiting Users window). These users have have queued one more files from you, "
 "but haven't been able to get a slot."
 msgstr ""
+
+#~ msgid ""
+#~ "You can find configuration instructions for some popular firewall "
+#~ "software <a po4a-id=0>here</a>."
+#~ msgstr ""
+#~ "Du kan hitta konfigurationsinstruktioner för några populära "
+#~ "brandväggsprogram <a po4a-id=0>här</a>."
+
+#~ msgid "<a po4a-id=0>List of alternative hublists.</a>"
+#~ msgstr "<a po4a-id=0>Lista över alternativa hubblistor.</a>"
+
+#~ msgid "Error when creating or updating hash index file (HashIndex.xml)."
+#~ msgstr ""
+#~ "Ett fel inträffade vid skapande eller uppdatering av indexeringsfilen "
+#~ "HashIndex.xml."
+
+#~ msgid "Error when creating hash data file (HashData.dat)."
+#~ msgstr ""
+#~ "Ett fel inträffade vid skapande av indexeringsdatafilen HashData.dat."
 
 #~ msgid ""
 #~ "Rebuilds the HashIndex.xml and HashData.dat files, removing entries to "

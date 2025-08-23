@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-04-05 11:30+0200\n"
+"POT-Creation-Date: 2025-08-23 12:02+0200\n"
 "PO-Revision-Date: 2022-09-26 10:04+0000\n"
 "Last-Translator: eMTee <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -55,7 +55,7 @@ msgid ""
 "Original DC++ logo design: Martin Skogevall"
 msgstr ""
 
-#: win32/MainWindow.cpp:1949
+#: win32/MainWindow.cpp:1953
 msgid " "
 msgstr ""
 
@@ -83,7 +83,7 @@ msgstr ""
 msgid "% transferred"
 msgstr "% átvíve"
 
-#: win32/MainWindow.cpp:1538
+#: win32/MainWindow.cpp:1542
 #, boost-format
 msgid ""
 "%1%\n"
@@ -248,7 +248,7 @@ msgstr "Hozzá&adás"
 msgid "&Add folder"
 msgstr "Hozzá&adás"
 
-#: win32/WinUtil.cpp:1651 win32/UserInfoBase.h:166
+#: win32/WinUtil.cpp:1651 win32/UserInfoBase.h:167
 msgid "&Browse file list"
 msgstr "&Fájl-lista böngészése"
 
@@ -288,7 +288,7 @@ msgstr "&Másolás"
 msgid "&Copy\tCtrl+C"
 msgstr "Má&solás\tCtrl+C"
 
-#: win32/MainWindow.cpp:1786
+#: win32/MainWindow.cpp:1790
 msgid "&Customize\tDouble-click"
 msgstr "&Testreszabás\tDupla kattintás"
 
@@ -337,7 +337,7 @@ msgstr "&Keresés...\tCtrl+F"
 msgid "&Force attempt"
 msgstr "&Kényszerített próbálkozás"
 
-#: win32/QueueFrame.cpp:1002 win32/WinUtil.cpp:1648 win32/UserInfoBase.h:165
+#: win32/QueueFrame.cpp:1002 win32/WinUtil.cpp:1648 win32/UserInfoBase.h:166
 msgid "&Get file list"
 msgstr "&Fájl-lista letöltése"
 
@@ -349,11 +349,11 @@ msgstr "&Könyvtárhoz ugrás"
 msgid "&Help"
 msgstr "&Segítség"
 
-#: win32/MainWindow.cpp:1802
+#: win32/MainWindow.cpp:1806
 msgid "&Hide\tCtrl+1"
 msgstr "El&rejtés\tCtrl+1"
 
-#: win32/WinUtil.cpp:1654 win32/UserInfoBase.h:167
+#: win32/WinUtil.cpp:1654 win32/UserInfoBase.h:168
 msgid "&Match queue"
 msgstr "&Egyeztetés a letöltésekkel"
 
@@ -432,7 +432,7 @@ msgstr "&Keresés\tCtrl+S"
 msgid "&Search hub"
 msgstr "&Keresés a hubon"
 
-#: win32/QueueFrame.cpp:1009 win32/WinUtil.cpp:1657 win32/UserInfoBase.h:170
+#: win32/QueueFrame.cpp:1009 win32/WinUtil.cpp:1657 win32/UserInfoBase.h:171
 msgid "&Send private message"
 msgstr "&Privát üzenet küldése"
 
@@ -567,11 +567,11 @@ msgstr "Minimális fájlméret"
 msgid "Accept custom user commands from hub"
 msgstr "Felhasználói parancsok elfogadása a hubtól"
 
-#: win32/ConnectivityManualPage.cpp:185
+#: win32/ConnectivityManualPage.cpp:186
 msgid "Active mode (I have no router / I have configured my router)"
 msgstr "Aktív mód (Nincs routerem / magam állítom be a routerem)"
 
-#: win32/ConnectivityManualPage.cpp:188
+#: win32/ConnectivityManualPage.cpp:189
 #, fuzzy
 msgid "Active mode (let FearDC configure my router with NAT-PMP / UPnP)"
 msgstr ""
@@ -582,7 +582,7 @@ msgid "Add"
 msgstr "Hozzáadás"
 
 #: win32/HubFrame.cpp:1395 win32/PublicHubsFrame.cpp:402 win32/WinUtil.cpp:1660
-#: win32/UserInfoBase.h:175
+#: win32/UserInfoBase.h:176
 msgid "Add To &Favorites"
 msgstr "&Kedvencekhez Ad"
 
@@ -905,7 +905,7 @@ msgstr "Hangjelzés"
 msgid "Below (maximum size)"
 msgstr "Maximális fájlméret"
 
-#: win32/ConnectivityManualPage.cpp:226
+#: win32/ConnectivityManualPage.cpp:234
 msgid "Bind Address"
 msgstr "Kötési cím"
 
@@ -1047,7 +1047,7 @@ msgstr "Minden fájl-lista ablak bezárása"
 msgid "Close all hubs"
 msgstr "Az összes hub bezárása"
 
-#: win32/MainWindow.cpp:392 win32/MainWindow.cpp:1739
+#: win32/MainWindow.cpp:392 win32/MainWindow.cpp:1743
 msgid "Close all hubs of a favorite group"
 msgstr "Egy kedvenc csoport összes hubjának bezárása"
 
@@ -1063,7 +1063,7 @@ msgstr "Minden kereső-ablak bezárása"
 msgid "Close disconnected hubs"
 msgstr "Szétkapcsolódott hubok bezárása"
 
-#: win32/MainWindow.cpp:393 win32/MainWindow.cpp:1739
+#: win32/MainWindow.cpp:393 win32/MainWindow.cpp:1743
 msgid "Close hubs not in a favorite group"
 msgstr "Egy kedvenc csoporton kívüli összes hub bezárása"
 
@@ -1144,7 +1144,7 @@ msgstr "Kapcsolódás egy kedvenc hub csoporthoz"
 msgid "Connect to all hubs in this group"
 msgstr "Kapcsolódás a csoportban lévő hubokhoz"
 
-#: win32/UserInfoBase.h:178
+#: win32/UserInfoBase.h:179
 msgid "Connect to hub"
 msgstr "Kapcsolódás a hubhoz"
 
@@ -1202,7 +1202,7 @@ msgstr "Cím másolása a vágólapra &keyprint-tel együtt"
 msgid "Copy magnet link to clipboard"
 msgstr "Magnet link másolása a vágólapra"
 
-#: win32/UserInfoBase.h:189
+#: win32/UserInfoBase.h:190
 msgid "Copy user information"
 msgstr "Felhasználói információk másolása"
 
@@ -1271,7 +1271,7 @@ msgid "DC Network Foundation community"
 msgstr "DC Network Foundation alapítvány"
 
 #: win32/AboutDlg.cpp:152
-msgid "DC++ and FearDC are licenced under GNU General Public License"
+msgid "DC++ and FearDC are licensed under GNU General Public License"
 msgstr ""
 
 #: win32/QueueFrame.cpp:132
@@ -1279,7 +1279,7 @@ msgid "Decrease priority"
 msgstr "Prioritás csökkentése"
 
 #: win32/AppearancePage.cpp:142 win32/AppearancePage.cpp:175
-#: win32/ConnectivityManualPage.cpp:260 win32/FavHubProperties.cpp:282
+#: win32/ConnectivityManualPage.cpp:268 win32/FavHubProperties.cpp:282
 #: win32/WinUtil.cpp:1175 win32/ACFrame.h:140
 msgid "Default"
 msgstr "Alapértelmezett"
@@ -1360,7 +1360,7 @@ msgstr "Kötelező TLS titkosítás az ADC kilens-kilens kapcsolatokhoz"
 msgid "Disable TLS client-client connections"
 msgstr "Kötelező TLS titkosítás az ADC kilens-kilens kapcsolatokhoz"
 
-#: win32/ConnectivityManualPage.cpp:194
+#: win32/ConnectivityManualPage.cpp:195
 msgid "Disable connectivity"
 msgstr "Kapcsolódás tiltása"
 
@@ -1433,7 +1433,7 @@ msgid "Do you still want to allow to open a program on your computer?"
 msgstr ""
 "Biztosan szeretnéd engedélyezni a program megnyitását ezen a számítógépen?"
 
-#: win32/ConnectivityManualPage.cpp:211
+#: win32/ConnectivityManualPage.cpp:212
 msgid "Don't allow hubs/NAT-PMP/UPnP to override"
 msgstr "Ne engedje a hubnak/NAT-PMP-nek/UPnP-nek felülírni"
 
@@ -1509,7 +1509,7 @@ msgstr "Letöltés befejeződött"
 msgid "Download full list"
 msgstr "Teljes lista letöltése"
 
-#: win32/MainWindow.cpp:916 win32/MainWindow.cpp:1930
+#: win32/MainWindow.cpp:916 win32/MainWindow.cpp:1934
 msgid "Download limit"
 msgstr "Letöltési korlát"
 
@@ -1650,6 +1650,10 @@ msgstr "Távollét mód engedélyezése ha a DC++ ablak minimalizálva van"
 msgid "Enable away mode when the Windows session is locked"
 msgstr "Távollét mód engedélyezése ha a Windows zárolva van"
 
+#: win32/ConnectivityManualPage.cpp:229
+msgid "Enable broad device detection"
+msgstr ""
+
 #: win32/CertificatesPage.cpp:42
 msgid "Enable encrypted active search results in ADCS hubs"
 msgstr ""
@@ -1690,7 +1694,7 @@ msgstr "Adj meg egy új értéket"
 msgid "Enter search here"
 msgstr "Itt kereshetsz..."
 
-#: win32/ConnectivityManualPage.cpp:207
+#: win32/ConnectivityManualPage.cpp:208
 msgid "Enter your external address here"
 msgstr "Itt add meg a küldső IP címed"
 
@@ -1759,7 +1763,7 @@ msgstr "Pontos méret"
 msgid "Example hub tab"
 msgstr "Hub fül példa"
 
-#: win32/MainWindow.cpp:1933
+#: win32/MainWindow.cpp:1937
 msgid "Exit"
 msgstr "Kilépés"
 
@@ -1792,7 +1796,7 @@ msgstr "A(z) %1% keresés típus kiterjesztései"
 msgid "External / WAN IP"
 msgstr "Külső / WAN IP"
 
-#: win32/ConnectivityManualPage.cpp:200
+#: win32/ConnectivityManualPage.cpp:201
 msgid "External / WAN IP address"
 msgstr "Külső / WAN IP cím"
 
@@ -1871,7 +1875,7 @@ msgstr ""
 msgid "Features"
 msgstr "Jellemzők"
 
-#: win32/MainWindow.cpp:1553 win32/MainWindow.cpp:1564
+#: win32/MainWindow.cpp:1557 win32/MainWindow.cpp:1568
 msgid "Feel free to report any bug via Help > Links > Report a bug."
 msgstr ""
 "Az esetleges problémák jelentése a Segítség > Hívatkozások > Hibajelentés "
@@ -2094,7 +2098,7 @@ msgstr "GiB"
 msgid "Global application style"
 msgstr "Általános alkalmazás stílus"
 
-#: win32/WinUtil.cpp:1663 win32/UserInfoBase.h:176
+#: win32/WinUtil.cpp:1663 win32/UserInfoBase.h:177
 msgid "Grant &extra slot"
 msgstr "&Extra slot biztosítása"
 
@@ -2306,7 +2310,7 @@ msgstr "IP (v4)"
 msgid "IP (v6)"
 msgstr "IP (v6)"
 
-#: win32/MainWindow.cpp:1667
+#: win32/MainWindow.cpp:1671
 msgid ""
 "IP -> country mappings are disabled. Turn them back on via Settings > "
 "Appearance."
@@ -2356,7 +2360,7 @@ msgstr ""
 "megfelelő naplófájl nyílik meg. A státusz log megnyittására csak a közös "
 "chatba beírt paranccsal van lehetőség."
 
-#: win32/UserInfoBase.h:184
+#: win32/UserInfoBase.h:185
 msgid "Ignore chat"
 msgstr "Chat üzenetek mellőzése"
 
@@ -2411,7 +2415,7 @@ msgstr "Sértetlenség-ellenőrzés: %1% (%2%)"
 msgid "Invalid extension: %1%"
 msgstr "Érvénytelen kiterjesztés: %1%"
 
-#: win32/MainWindow.cpp:1425
+#: win32/MainWindow.cpp:1429
 msgid "Invalid file list name"
 msgstr "Érvénytelen fájl-ista név"
 
@@ -3095,7 +3099,7 @@ msgstr "&Mappa megnyitása"
 msgid "Open crash log"
 msgstr "Összeomlás-napló megnyitása"
 
-#: win32/MainWindow.cpp:327 win32/MainWindow.cpp:476 win32/MainWindow.cpp:1927
+#: win32/MainWindow.cpp:327 win32/MainWindow.cpp:476 win32/MainWindow.cpp:1931
 msgid "Open downloads directory"
 msgstr "Letöltési könyvtár megnyitása"
 
@@ -3198,7 +3202,7 @@ msgstr "Részleges egyezés"
 msgid "Parts: %1%"
 msgstr "Kilép: %1%"
 
-#: win32/ConnectivityManualPage.cpp:191
+#: win32/ConnectivityManualPage.cpp:192
 msgid "Passive mode (last resort - has serious limitations)"
 msgstr "Passzív mód (végső lehetőség, komoly korlátai vannak)"
 
@@ -3311,7 +3315,7 @@ msgstr "Port"
 msgid "Predefined"
 msgstr "Előre def."
 
-#: win32/ConnectivityManualPage.cpp:221
+#: win32/ConnectivityManualPage.cpp:222
 msgid "Preferred port mapper"
 msgstr "Előnyben részesített port-továbbító"
 
@@ -3535,7 +3539,10 @@ msgid "Register with Windows to handle .dcext files"
 msgstr "A .dcext fájlok kezelésének DC++-hoz regisztrálása"
 
 #: win32/AdvancedPage.cpp:34
-msgid "Register with Windows to handle dchub://, adc:// and adcs:// URL links"
+#, fuzzy
+msgid ""
+"Register with Windows to handle adc://, adcs://, dchub:// and nmdcs:// URL "
+"links"
 msgstr "A dchub://, adc:// és adcs:// URL hivatkozások DC++-hoz regisztrálása"
 
 #: win32/AdvancedPage.cpp:35
@@ -3581,7 +3588,7 @@ msgstr "Lassú fájl-listák eltávolítása"
 msgid "Remove source"
 msgstr "Forrás eltávolítása"
 
-#: win32/QueueFrame.cpp:1034 win32/WinUtil.cpp:1666 win32/UserInfoBase.h:180
+#: win32/QueueFrame.cpp:1034 win32/WinUtil.cpp:1666 win32/UserInfoBase.h:181
 msgid "Remove user from queue"
 msgstr "Felhasználó eltávolítása a sorból"
 
@@ -3855,7 +3862,7 @@ msgstr ""
 msgid "Setting name"
 msgstr "Beállítás neve"
 
-#: win32/MainWindow.cpp:484 win32/MainWindow.cpp:1929
+#: win32/MainWindow.cpp:484 win32/MainWindow.cpp:1933
 #: win32/SettingsDialog.cpp:372
 msgid "Settings"
 msgstr "Beállítások"
@@ -3915,7 +3922,7 @@ msgstr "Rendszermenü"
 msgid "Shell menus"
 msgstr "Rendszermenü"
 
-#: win32/MainWindow.cpp:1926
+#: win32/MainWindow.cpp:1930
 msgid "Show"
 msgstr "Megjelenítés"
 
@@ -3947,7 +3954,7 @@ msgstr ""
 msgid "Show user country in chat"
 msgstr ""
 
-#: win32/DirectoryListingFrame.cpp:65 win32/MainWindow.cpp:1790
+#: win32/DirectoryListingFrame.cpp:65 win32/MainWindow.cpp:1794
 #: win32/QueueFrame.cpp:53 win32/SearchFrame.cpp:52 win32/SearchFrame.cpp:180
 #: win32/TransferView.cpp:55 win32/UploadPage.cpp:47
 msgid "Size"
@@ -4124,6 +4131,10 @@ msgstr "Állapot: Távol - Kattints kétszer az Elérhetővé váláshoz"
 msgid "Stored password sent..."
 msgstr "A tárolt jelszó elküldve..."
 
+#: win32/AspectChat.h:56
+msgid "String not found : "
+msgstr ""
+
 #: win32/SettingsDialog.cpp:178 win32/StylesPage.cpp:67
 msgid "Styles"
 msgstr "Stílusok"
@@ -4182,18 +4193,18 @@ msgstr "Fülek"
 msgid "Tag"
 msgstr "Tag"
 
-#: win32/MainWindow.cpp:1555
+#: win32/MainWindow.cpp:1559
 msgid "Testing nags can be fully disabled via Settings > Advanced."
 msgstr ""
 "A teszteléssel kapcsolatos infók megjelenítése teljesen tiltható a "
 "Beállítások > Haladó panelon."
 
-#: win32/MainWindow.cpp:1551
+#: win32/MainWindow.cpp:1555
 #, fuzzy
 msgid "Testing version of FearDC"
 msgstr "DC++ teszt verzió"
 
-#: win32/MainWindow.cpp:1552 win32/MainWindow.cpp:1563
+#: win32/MainWindow.cpp:1556 win32/MainWindow.cpp:1567
 #, fuzzy
 msgid "Thank you for using a testing version of FearDC!"
 msgstr "Köszönjük, hogy a DC++ teszt verzióját használod!"
@@ -4220,7 +4231,7 @@ msgstr ""
 "Ha a Nem-et választod, ezek a hubok egyszerűen visszakerülnek az "
 "alapértlemezett csoportba."
 
-#: win32/MainWindow.cpp:1821
+#: win32/MainWindow.cpp:1825
 msgid ""
 "The menu bar is now hidden. Press Alt or F10 to temporarily bring it back "
 "into view."
@@ -4265,7 +4276,7 @@ msgstr "Ez a hub nincs a kedvencek között"
 msgid "This is an example of a balloon popup notification!"
 msgstr "Ez egy példa a felugró buborék értesítésre!"
 
-#: win32/MainWindow.cpp:1554
+#: win32/MainWindow.cpp:1558
 msgid "This message will show up in the status bar in the future."
 msgstr "Ez az üzenet innentől a státuszsorban jelenik majd meg."
 
@@ -4330,7 +4341,7 @@ msgstr ""
 msgid "Toggles visibility of the list of users for the current hub."
 msgstr "Ki-be kapcsolja a felhasználó lista megjelenítését az aktuális hubon."
 
-#: win32/MainWindow.cpp:1784
+#: win32/MainWindow.cpp:1788
 msgid "Toolbar"
 msgstr "Eszköztár"
 
@@ -4393,7 +4404,7 @@ msgstr "F: %1%"
 msgid "U: %1%/s (%2%)"
 msgstr "F: %1%/s (%2%)"
 
-#: win32/UserInfoBase.h:186
+#: win32/UserInfoBase.h:187
 msgid "Un-ignore chat"
 msgstr "Üzenetek újra engedélyezése"
 
@@ -4401,7 +4412,7 @@ msgstr "Üzenetek újra engedélyezése"
 msgid "Un-sets Away status."
 msgstr "Kikapcsolja a Távolléti módot"
 
-#: win32/MainWindow.cpp:1412
+#: win32/MainWindow.cpp:1416
 #, boost-format
 msgid ""
 "Unable to open %1% port. Searching or file transfers will not work correctly "
@@ -4454,7 +4465,7 @@ msgstr "Bővítmény frissítése"
 msgid "Upload Slots"
 msgstr "Feltöltési slotok"
 
-#: win32/MainWindow.cpp:916 win32/MainWindow.cpp:1931
+#: win32/MainWindow.cpp:916 win32/MainWindow.cpp:1935
 msgid "Upload limit"
 msgstr "Feltöltési korlát"
 
@@ -4472,7 +4483,7 @@ msgstr "A feltöltési korlát %1% KiB/s-ra lett állítva"
 msgid "Upload limit: %1%/s - Click to adjust"
 msgstr "Feltöltési korlát: %1%/s - Kattints a beállításhoz"
 
-#: win32/MainWindow.cpp:1890 win32/UploadPage.cpp:104
+#: win32/MainWindow.cpp:1894 win32/UploadPage.cpp:104
 msgid "Upload slots"
 msgstr "Feltöltési slotok"
 

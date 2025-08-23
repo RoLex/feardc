@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-03-31 18:57+0200\n"
+"POT-Creation-Date: 2025-08-23 11:46+0200\n"
 "PO-Revision-Date: 2013-05-22 06:47+0000\n"
 "Last-Translator: Serkan Arıkuşu <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,7 +58,7 @@ msgstr "%.02f TiB"
 msgid "%1% %2% (added by %3%)"
 msgstr "%1% %2% (%3% tarafından eklendi)"
 
-#: dcpp/MappingManager.cpp:136 dcpp/MappingManager.cpp:187
+#: dcpp/MappingManager.cpp:136 dcpp/MappingManager.cpp:190
 #, boost-format
 msgid "%1% %2% port (%3% %4%)"
 msgstr "%1% %2% port (%3% %4%)"
@@ -96,14 +96,14 @@ msgstr "%1% geçerli bir eklenti değil"
 msgid "%1% is not compatible with %2%"
 msgstr "%1% %2% ile uyumlu değil"
 
-#: dcpp/HashManager.cpp:670
+#: dcpp/HashManager.cpp:687
 #, boost-format
 msgid ""
 "%1% not shared; calculated CRC32 does not match the one found in SFV file."
 msgstr ""
 "%1% paylaşılmamış; hesaplanan CRC32 SFV dosyasında bulunan ile aynı değil."
 
-#: dcpp/HashManager.cpp:672
+#: dcpp/HashManager.cpp:689
 #, boost-format
 msgid "%1% not shared; hashing did not complete."
 msgstr ""
@@ -123,7 +123,7 @@ msgstr "%1% atıldı: %2%"
 msgid "%1%/s"
 msgstr "%1%/s"
 
-#: dcpp/ConnectivityManager.cpp:322
+#: dcpp/ConnectivityManager.cpp:324
 #, boost-format
 msgid "%1%: %2%"
 msgstr ""
@@ -159,23 +159,23 @@ msgstr "Farklı boyuta sahip bir dosya zaten listenizde mevcut"
 msgid "A file with the same hash already exists in your share"
 msgstr "Aynı TTH'a sahip bir dosya zaten paylaşımda"
 
-#: dcpp/ConnectivityManager.cpp:258
+#: dcpp/ConnectivityManager.cpp:260
 msgid "Active mode"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:260
+#: dcpp/ConnectivityManager.cpp:262
 #, boost-format
 msgid ""
 "Active mode behind a router that %1% can configure; port mapping status: %2%"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:309
+#: dcpp/ConnectivityManager.cpp:311
 msgid ""
 "Active mode could not be achieved; a manual configuration is recommended for "
 "better connectivity"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:186
+#: dcpp/ConnectivityManager.cpp:188
 msgid "All IPv6 addresses found are local; disabling connectivity"
 msgstr ""
 
@@ -205,16 +205,16 @@ msgstr ""
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1668
+#: dcpp/QueueManager.cpp:1672
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "CRC32 uyumsuzluğu (SFV-Kontrol)"
 
-#: dcpp/QueueManager.cpp:1659
+#: dcpp/QueueManager.cpp:1663
 #, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "CRC32 tutarsızlığı (SFV'yi Denetleyin): %1%"
 
-#: dcpp/CryptoManager.cpp:372
+#: dcpp/CryptoManager.cpp:374
 #, boost-format
 msgid "Certificate verification for %1% failed with error: %2%"
 msgstr ""
@@ -224,6 +224,7 @@ msgid "Compressed"
 msgstr "Sıkıştırılmış"
 
 #: dcpp/BufferedSocket.cpp:202 dcpp/SSLSocket.cpp:179 dcpp/SSLSocket.cpp:186
+#: dcpp/SSLSocket.cpp:196 dcpp/SSLSocket.cpp:208
 msgid "Connection closed"
 msgstr "Bağlantı kapandı."
 
@@ -232,7 +233,7 @@ msgstr "Bağlantı kapandı."
 msgid "Connection timeout"
 msgstr "Bağlantı yeterli sürede sağlanamadı"
 
-#: dcpp/ConnectivityManager.cpp:321
+#: dcpp/ConnectivityManager.cpp:323
 #, fuzzy, boost-format
 msgid "Connectivity (%1%): %2%"
 msgstr "Bağlanılırlık: "
@@ -242,7 +243,7 @@ msgstr "Bağlanılırlık: "
 msgid "Connectivity error: %1%"
 msgstr "Bağlantı hatası: %1%"
 
-#: dcpp/ConnectivityManager.cpp:270
+#: dcpp/ConnectivityManager.cpp:272
 #, boost-format
 msgid ""
 "Connectivity information:\n"
@@ -264,7 +265,7 @@ msgstr ""
 msgid "Connectivity restored"
 msgstr "Bağlantı sağlandı"
 
-#: dcpp/ConnectivityManager.cpp:248
+#: dcpp/ConnectivityManager.cpp:250
 msgid "Connectivity settings are being configured; try again later"
 msgstr ""
 
@@ -282,7 +283,7 @@ msgstr "Hedef dosya açılamadı: %1%"
 msgid "Country information"
 msgstr "Ülke bilgisi"
 
-#: dcpp/ConnectivityManager.cpp:150
+#: dcpp/ConnectivityManager.cpp:152
 msgid "Determining the best connectivity settings..."
 msgstr "En iyi bağlantı ayarları belirleniyor..."
 
@@ -290,11 +291,11 @@ msgstr "En iyi bağlantı ayarları belirleniyor..."
 msgid "Directory"
 msgstr "Dizin"
 
-#: dcpp/ShareManager.cpp:408
+#: dcpp/ShareManager.cpp:409
 msgid "Directory already shared"
 msgstr "Dikkat! Klasör zaten paylaştırılmış"
 
-#: dcpp/ShareManager.cpp:395
+#: dcpp/ShareManager.cpp:396
 msgid "Directory is hidden"
 msgstr "Dizin gizlenmiş"
 
@@ -302,7 +303,7 @@ msgstr "Dizin gizlenmiş"
 msgid "Directory missing name attribute"
 msgstr "Klasörün isim özelliği kayıp"
 
-#: dcpp/ConnectivityManager.cpp:263
+#: dcpp/ConnectivityManager.cpp:265
 #, fuzzy
 msgid "Disabled"
 msgstr "devre dışı"
@@ -328,7 +329,7 @@ msgstr "Belge"
 msgid "Download Queue"
 msgstr "İndirilecekler"
 
-#: dcpp/ShareManager.cpp:832
+#: dcpp/ShareManager.cpp:833
 #, boost-format
 msgid ""
 "Duplicate file will not be shared: %1% (Size: %2% B) Dupe matched against: "
@@ -344,7 +345,7 @@ msgstr ""
 msgid "Duplicate source: %1%"
 msgstr "Kopya kaynak: %1%"
 
-#: dcpp/MappingManager.cpp:142 dcpp/MappingManager.cpp:199
+#: dcpp/MappingManager.cpp:142 dcpp/MappingManager.cpp:202
 msgid "Encrypted transfer"
 msgstr "Şifrelenmiş aktarım"
 
@@ -353,7 +354,7 @@ msgstr "Şifrelenmiş aktarım"
 msgid "Endless redirection loop (%1%)"
 msgstr ""
 
-#: dcpp/HashManager.cpp:518
+#: dcpp/HashManager.cpp:521
 #, boost-format
 msgid "Error creating hash data file: %1%"
 msgstr "İndex dosyası oluşturulurken hata : %1%"
@@ -364,8 +365,8 @@ msgid "Error during compression"
 msgstr "Sıkıştırma yapılamadı!"
 
 #: dcpp/BZUtils.cpp:75 dcpp/BZUtils.cpp:97 dcpp/BZUtils.cpp:100
-#: dcpp/CryptoManager.cpp:523 dcpp/CryptoManager.cpp:542
-#: dcpp/CryptoManager.cpp:556 dcpp/ZUtils.cpp:117 dcpp/ZUtils.cpp:142
+#: dcpp/CryptoManager.cpp:525 dcpp/CryptoManager.cpp:544
+#: dcpp/CryptoManager.cpp:558 dcpp/ZUtils.cpp:117 dcpp/ZUtils.cpp:142
 #: dcpp/ZUtils.cpp:156
 msgid "Error during decompression"
 msgstr "Hata! Sıkıştırma açılamadı"
@@ -374,7 +375,7 @@ msgstr "Hata! Sıkıştırma açılamadı"
 msgid "Error generating certificate"
 msgstr "Sertifika oluşturulurken hata meydana geldi"
 
-#: dcpp/HashManager.cpp:677
+#: dcpp/HashManager.cpp:694
 #, boost-format
 msgid "Error hashing %1%: %2%"
 msgstr "İndeksleme işleminde hata %1%: %2%"
@@ -389,7 +390,7 @@ msgstr "İndeksleme işleminde hata %1%: %2%"
 msgid "Error loading %1%: %2%"
 msgstr "İndeksleme işleminde hata %1%: %2%"
 
-#: dcpp/HashManager.cpp:110 dcpp/HashManager.cpp:312
+#: dcpp/HashManager.cpp:110 dcpp/HashManager.cpp:315
 #, boost-format
 msgid "Error saving hash data: %1%"
 msgstr "İndeks verisini kaydederken hata oluştu: %1%"
@@ -398,33 +399,33 @@ msgstr "İndeks verisini kaydederken hata oluştu: %1%"
 msgid "Executable"
 msgstr "Çalıştırılabilir"
 
-#: dcpp/MappingManager.cpp:109 dcpp/MappingManager.cpp:226
+#: dcpp/MappingManager.cpp:109 dcpp/MappingManager.cpp:229
 msgid "Failed to create port mappings"
 msgstr "Port haritası çıkarılırken hata oluştu"
 
-#: dcpp/MappingManager.cpp:215
+#: dcpp/MappingManager.cpp:218
 msgid "Failed to get external IP"
 msgstr "Harici IP alınırken hata oluştu."
 
-#: dcpp/MappingManager.cpp:182
+#: dcpp/MappingManager.cpp:185
 #, fuzzy, boost-format
 msgid "Failed to initialize the %1% interface"
 msgstr "%1% arayüzünün başlatılması başarısız oldu"
 
-#: dcpp/CryptoManager.cpp:267
+#: dcpp/CryptoManager.cpp:268
 msgid "Failed to load certificate file"
 msgstr "Sertifika dosyası yüklenemedi"
 
-#: dcpp/CryptoManager.cpp:275
+#: dcpp/CryptoManager.cpp:276
 msgid "Failed to load private key"
 msgstr "Hata! Özel şifre yüklenemedi"
 
-#: dcpp/CryptoManager.cpp:288
+#: dcpp/CryptoManager.cpp:289
 #, boost-format
 msgid "Failed to load trusted certificate from %1%"
 msgstr ""
 
-#: dcpp/MappingManager.cpp:190
+#: dcpp/MappingManager.cpp:193
 #, fuzzy, boost-format
 msgid "Failed to map the %1% port (%2% %3%) with the %4% interface"
 msgstr "İşlem yaratılamadı"
@@ -433,7 +434,7 @@ msgstr "İşlem yaratılamadı"
 msgid "Failed to negotiate base protocol"
 msgstr "Temel protokol anlaşması sağlanamadı"
 
-#: dcpp/MappingManager.cpp:237
+#: dcpp/MappingManager.cpp:240
 #, fuzzy, boost-format
 msgid ""
 "Failed to remove port mappings from the %1% device with the %2% interface"
@@ -451,21 +452,21 @@ msgstr ""
 msgid "File already exists at the target location"
 msgstr "Dosya hedef konumda mevcut"
 
-#: dcpp/ShareManager.cpp:999
+#: dcpp/ShareManager.cpp:1004
 #, boost-format
 msgid "File list %1% generated"
 msgstr "%1% dosya listesi oluşturuldu"
 
-#: dcpp/ShareManager.cpp:864
+#: dcpp/ShareManager.cpp:865
 #, boost-format
 msgid "File list refresh failed: %1%"
 msgstr "Dosya listesi güncellenemedi: %1%"
 
-#: dcpp/ShareManager.cpp:928
+#: dcpp/ShareManager.cpp:931
 msgid "File list refresh finished"
 msgstr "Dosya listeniz güncellendi!"
 
-#: dcpp/ShareManager.cpp:847
+#: dcpp/ShareManager.cpp:848
 msgid ""
 "File list refresh in progress, please wait for it to finish before trying to "
 "refresh again"
@@ -473,7 +474,7 @@ msgstr ""
 "Dosya listesi güncelleniyor, tekrar güncellemeden önce işlemin bitmesini "
 "bekleyin"
 
-#: dcpp/ShareManager.cpp:892
+#: dcpp/ShareManager.cpp:895
 msgid "File list refresh initiated"
 msgstr "Dosya listeniz güncelleniyor..."
 
@@ -496,11 +497,11 @@ msgstr "Karıştırma dizini oluşturuluyor: %1% (%2%)"
 msgid "Full tree does not match TTH root"
 msgstr "İndirme listesindeki TTH ile uyuşmuyor"
 
-#: dcpp/CryptoManager.cpp:256
+#: dcpp/CryptoManager.cpp:257
 msgid "Generated new TLS certificate"
 msgstr "Yeni TLS sertifikası oluşturuldu"
 
-#: dcpp/MappingManager.cpp:248
+#: dcpp/MappingManager.cpp:251
 msgid "Generic"
 msgstr "Genel"
 
@@ -509,7 +510,7 @@ msgstr "Genel"
 msgid "HTTP file download failed to create file %1%, error: %2%"
 msgstr ""
 
-#: dcpp/HashManager.cpp:257
+#: dcpp/HashManager.cpp:260
 #, fuzzy, boost-format
 msgid "Hash data rebuilding failed: %1%"
 msgstr "indeksleme başarısız: %1%"
@@ -518,7 +519,12 @@ msgstr "indeksleme başarısız: %1%"
 msgid "Hash database"
 msgstr "Dosya veritabanı"
 
-#: dcpp/HashManager.cpp:597
+#: dcpp/HashManager.cpp:595
+#, fuzzy
+msgid "Hash database rebuild has been scheduled"
+msgstr "Dosya veritabanı yenilendi"
+
+#: dcpp/HashManager.cpp:610
 msgid "Hash database rebuilt"
 msgstr "Dosya veritabanı yenilendi"
 
@@ -558,7 +564,7 @@ msgstr "Geçersiz veri"
 msgid "Invalid file list extension (must be .xml or .bz2)"
 msgstr ""
 
-#: dcpp/ShareManager.cpp:615
+#: dcpp/ShareManager.cpp:616
 #, boost-format
 msgid "Invalid file name found while hashing folder %1%"
 msgstr "%1% karıştırma dizini oluşturulurken geçersiz dosya adı bulundu"
@@ -568,7 +574,7 @@ msgstr "%1% karıştırma dizini oluşturulurken geçersiz dosya adı bulundu"
 msgid "Invalid regular expression: %1%"
 msgstr ""
 
-#: dcpp/SettingsManager.cpp:717
+#: dcpp/SettingsManager.cpp:719
 msgid "Invalid search type name"
 msgstr "Geçersiz arama türü adı"
 
@@ -584,11 +590,15 @@ msgstr ""
 "(!) Geçersiz hedef dosya (Klasör yok, lütfen indirme ayarınızı kontrol "
 "ediniz)"
 
+#: dcpp/SSLSocket.cpp:214
+msgid "Keyprint mismatch"
+msgstr ""
+
 #: dcpp/FavoriteManager.cpp:477
 msgid "Kick user(s)"
 msgstr "Kullanıcı(ları) At!"
 
-#: dcpp/ConnectivityManager.cpp:194
+#: dcpp/ConnectivityManager.cpp:196
 msgid "Local network with possible NAT detected, trying to map the ports..."
 msgstr ""
 
@@ -609,7 +619,7 @@ msgstr "İstenenden daha fazla byte yazıldı"
 msgid "No certificate file chosen"
 msgstr "Sertifika dosyası seçilmemiş"
 
-#: dcpp/ShareManager.cpp:391
+#: dcpp/ShareManager.cpp:392
 msgid "No directory specified"
 msgstr "Geçerli bir klasör belirtilmedi"
 
@@ -621,7 +631,7 @@ msgstr "Özel şifre dosyası şeçilmemiş"
 msgid "No slots available"
 msgstr "Boş slot bekleniyor"
 
-#: dcpp/SettingsManager.cpp:775
+#: dcpp/SettingsManager.cpp:777
 msgid "No such search type"
 msgstr "Böyle bir arama tipi yok"
 
@@ -634,7 +644,7 @@ msgstr "Gelişmiş bir direkt bağlantıda(ADC) UTF-8 kodlaması içermeyen veri
 msgid "Not listening for connections - please restart %1%"
 msgstr "Bağlantılar için dinleme yapmıyor - lütfen yeniden başlatın %1%"
 
-#: dcpp/ClientManager.cpp:152 dcpp/ClientManager.cpp:183
+#: dcpp/ClientManager.cpp:150 dcpp/ClientManager.cpp:181
 #: dcpp/FinishedManager.cpp:130 dcpp/FinishedManager.cpp:136
 #: dcpp/FinishedManager.cpp:142 dcpp/SearchManager.cpp:337
 #: dcpp/SearchManager.cpp:398 dcpp/Transfer.cpp:80 dcpp/Transfer.cpp:84
@@ -645,7 +655,7 @@ msgstr "Çevrimdışı"
 msgid "Partial file list"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:262
+#: dcpp/ConnectivityManager.cpp:264
 msgid "Passive mode"
 msgstr ""
 
@@ -653,12 +663,12 @@ msgstr ""
 msgid "Picture"
 msgstr "Resim"
 
-#: dcpp/MappingManager.cpp:242
+#: dcpp/MappingManager.cpp:245
 #, boost-format
 msgid "Port mapping: %1%"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:176
+#: dcpp/ConnectivityManager.cpp:178
 msgid ""
 "Public IP address detected, selecting active mode with direct connection"
 msgstr ""
@@ -669,7 +679,7 @@ msgstr ""
 msgid "Redirect user(s)"
 msgstr "Kullanıcı(ları) Yönlendir"
 
-#: dcpp/ShareManager.cpp:411
+#: dcpp/ShareManager.cpp:412
 msgid "Remove all subdirectories before adding this one"
 msgstr "Bunu eklemeden önce tüm alt klasörleri kaldır"
 
@@ -677,11 +687,11 @@ msgstr "Bunu eklemeden önce tüm alt klasörleri kaldır"
 msgid "Response does not match request"
 msgstr "Yanıt ile istek birbirini tutmuyor"
 
-#: dcpp/MappingManager.cpp:143 dcpp/MappingManager.cpp:200
+#: dcpp/MappingManager.cpp:143 dcpp/MappingManager.cpp:203
 msgid "Search"
 msgstr "Ara"
 
-#: dcpp/ConnectivityManager.cpp:360
+#: dcpp/ConnectivityManager.cpp:362
 #, fuzzy
 msgid "Search (UDP)"
 msgstr " Arama Portu (%1% UDP)"
@@ -712,7 +722,7 @@ msgstr "Paylaşılan Dosyalar"
 msgid "Socks server authentication failed (bad login / password?)"
 msgstr "SOCKS sunucusunda kimlik doğrulanamadı (kullanıcı adı / şifre yanlış)"
 
-#: dcpp/MappingManager.cpp:203
+#: dcpp/MappingManager.cpp:206
 #, boost-format
 msgid ""
 "Successfully created port mappings (Transfers: %1%, Encrypted transfers: "
@@ -725,22 +735,22 @@ msgid ""
 "Successfully created port mappings on the %1% device with the %2% interface"
 msgstr ""
 
-#: dcpp/MappingManager.cpp:236
+#: dcpp/MappingManager.cpp:239
 #, fuzzy, boost-format
 msgid ""
 "Successfully removed port mappings from the %1% device with the %2% interface"
 msgstr "İşlem yaratılamadı"
 
-#: dcpp/CryptoManager.cpp:471
+#: dcpp/CryptoManager.cpp:473
 #, boost-format
 msgid "Supplied KeyPrint %1% did not match %2%."
 msgstr ""
 
-#: dcpp/CryptoManager.cpp:469
+#: dcpp/CryptoManager.cpp:471
 msgid "Supplied KeyPrint did not match any certificate."
 msgstr ""
 
-#: dcpp/CryptoManager.cpp:258
+#: dcpp/CryptoManager.cpp:259
 #, boost-format
 msgid "TLS disabled, failed to generate certificate: %1%"
 msgstr "TLS aktif değil, sertifika oluşturulamadı: %1%"
@@ -749,8 +759,9 @@ msgstr "TLS aktif değil, sertifika oluşturulamadı: %1%"
 msgid "TLS disabled, no certificate file set"
 msgstr "TLS aktif değil, sertifika dosyası tanımlanmamış"
 
-#: dcpp/SSLSocket.cpp:197
-msgid "TLS error"
+#: dcpp/SSLSocket.cpp:223
+#, boost-format
+msgid "TLS error : %1%"
 msgstr ""
 
 #: dcpp/SearchManager.cpp:47
@@ -775,7 +786,7 @@ msgid ""
 "encrypted transfers will be disabled"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1502
+#: dcpp/QueueManager.cpp:1506
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -794,7 +805,7 @@ msgstr "SOCKS sunucusu ile bağlantı kurulamadı"
 msgid "The socks server requires authentication"
 msgstr "SOCKS sunucusu kimlik doğrulaması gerektiriyor"
 
-#: dcpp/ShareManager.cpp:399
+#: dcpp/ShareManager.cpp:400
 msgid "The temporary download directory cannot be shared"
 msgstr "(!) Geçici dosyaların bulunduğu klasörü paylaştıramazsınız."
 
@@ -815,7 +826,7 @@ msgstr ""
 "Bu hub sizi %1% spam yapmak için kullanıyor, lütfen hub sahibini bunu "
 "düzeltmesi için teşvik edin"
 
-#: dcpp/SettingsManager.cpp:721 dcpp/SettingsManager.cpp:743
+#: dcpp/SettingsManager.cpp:723 dcpp/SettingsManager.cpp:745
 msgid "This search type already exists"
 msgstr "Bu arama tipi zaten mevcut"
 
@@ -824,11 +835,11 @@ msgstr "Bu arama tipi zaten mevcut"
 msgid "Too much data in response body (%1%)"
 msgstr ""
 
-#: dcpp/MappingManager.cpp:141 dcpp/MappingManager.cpp:198
+#: dcpp/MappingManager.cpp:141 dcpp/MappingManager.cpp:201
 msgid "Transfer"
 msgstr "Aktarım"
 
-#: dcpp/ConnectivityManager.cpp:354
+#: dcpp/ConnectivityManager.cpp:356
 msgid "Transfer (TCP)"
 msgstr "Aktarma (TCP)"
 
@@ -855,18 +866,18 @@ msgstr "%1% %2% (%3%)'e taşınamadı ve %4% (%5%)olarak da adlandırılamadı"
 msgid "Unable to move %1% to %2% (%3%); renamed to %4%"
 msgstr "%1% %2% (%3%)'e taşınamadı; %4% olarak yeniden adlandırıldı"
 
-#: dcpp/ConnectivityManager.cpp:164
+#: dcpp/ConnectivityManager.cpp:166
 #, boost-format
 msgid ""
 "Unable to open %1% port(s); connectivity settings must be configured manually"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1112
+#: dcpp/QueueManager.cpp:1116
 #, boost-format
 msgid "Unable to open filelist: %1%"
 msgstr "Dosya listesi açılamadı: %1%"
 
-#: dcpp/HashManager.cpp:123
+#: dcpp/HashManager.cpp:126
 msgid "Unable to read hash data file"
 msgstr "İndeks veritabanı okunamadı"
 
@@ -902,15 +913,15 @@ msgstr "Görüntü (video)"
 msgid "You're trying to download from yourself!"
 msgstr "Kendinizden dosya indirmeye calışıyorsunuz!"
 
-#: dcpp/ConnectivityManager.cpp:254
+#: dcpp/ConnectivityManager.cpp:256
 msgid "disabled"
 msgstr "devre dışı"
 
-#: dcpp/SettingsManager.cpp:214 dcpp/SettingsManager.cpp:215
+#: dcpp/SettingsManager.cpp:216 dcpp/SettingsManager.cpp:217
 msgid "downloaded from"
 msgstr "indirildi:"
 
-#: dcpp/ConnectivityManager.cpp:252
+#: dcpp/ConnectivityManager.cpp:254
 #, boost-format
 msgid ""
 "enabled\n"
@@ -918,10 +929,10 @@ msgid ""
 "\tIPv6 detection: %2%"
 msgstr ""
 
-#: dcpp/ConnectivityManager.cpp:267
+#: dcpp/ConnectivityManager.cpp:269
 msgid "undefined"
 msgstr "tanımsız"
 
-#: dcpp/SettingsManager.cpp:216
+#: dcpp/SettingsManager.cpp:218
 msgid "uploaded to"
 msgstr "yüklendi:"
