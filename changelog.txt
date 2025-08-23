@@ -1,3 +1,6 @@
+-- 0.883 2025-xx-xx --
+* [L#841189] Enable support for secure NMDC (nmdcs://) hub connections (emtee)
+* Prefer secure hub addresses, if available, in Public hub lists
 * [L#1993817] Add option for a broader port mapping device detection method (currently works with MiniUPnPc only) (emtee)
 * Improve port mapping device indentification in the logs (emtee)
 * [L#1981899] Make self generated certs valid for a year, regenerate them sooner than the expriation time (code adapted from AirDC++) (emtee)

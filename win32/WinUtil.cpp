@@ -532,7 +532,7 @@ const TCHAR
 		_T("\r\n-- My client keeps track of all the recent opened windows, does yours?\r\n") LINE2,
 		_T("\r\n-- These addies are pretty annoying, aren't they? Get revenge by sending them yourself!\r\n") LINE2,
 		_T("\r\n-- My client supports taskbar thumbnails and Aero Peek previews, does yours?\r\n") LINE2,
-		_T("\r\n-- My client supports TLS encrypted communication and transfers, does yours?\r\n") LINE2,
+		_T("\r\n-- My client supports TLS-encrypted communication and transfers, does yours?\r\n") LINE2,
 		_T("\r\n-- My client supports grouping favorite hubs, does yours?\r\n") LINE2,
 		_T("\r\n-- My client supports segmented downloading, does yours?\r\n") LINE2,
 		_T("\r\n-- My client supports browsing file lists, does yours?\r\n") LINE2 };

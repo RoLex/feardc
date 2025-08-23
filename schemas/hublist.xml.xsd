@@ -69,6 +69,11 @@
 			<xs:documentation>Address of the hub or hublist, specified in the URI form (http://example.com, dchub://example.com, adc://example.com etc).</xs:documentation>
 		</xs:annotation>
 	</xs:attribute>
+	<xs:attribute name="Secure" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Secure address of the hub or hublist, specified in the URI form (https://example.com, nmdcs://example.com, adcs://example.com etc).</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
 	<xs:attribute name="Description" type="xs:string">
 		<xs:annotation>
 			<xs:documentation>Description of the hub.</xs:documentation>
@@ -225,6 +230,11 @@
 				</xs:annotation>
 			</xs:attribute>
 			<xs:attribute ref="Address" use="optional">
+				<xs:annotation>
+					<xs:documentation>See the reference attribute.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute ref="Secure" use="optional">
 				<xs:annotation>
 					<xs:documentation>See the reference attribute.</xs:documentation>
 				</xs:annotation>

@@ -25,8 +25,8 @@
 
 #define DCAPPNAME "DC++"
 #define DCTAGNAME "++"
-#define DCVERSIONSTRING "0.882"
-#define DCVERSIONFLOAT 0.882
+#define DCVERSIONSTRING "0.883"
+#define DCVERSIONFLOAT 0.883
 
 namespace dcpp {
 extern const std::string fullVersionString;

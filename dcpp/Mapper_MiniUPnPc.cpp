@@ -87,14 +87,22 @@ string Mapper_MiniUPnPc::getExternalIP() {
 }
 
 void Mapper_MiniUPnPc::formatDeviceName(const IGDdatas* igdData) {
-	device = igdData->CIF.friendlyName;
+	/* In theory the 'CIF' struct contains the "common" device info and 'first' has the current
+	   connection related info. In the real world it's all over the place - various manufacturers
+	   can omit or add any info to any field, almost arbitarily to their liking. 
+	   Let's try to dig out as much useful info as possible for the user to be able to identify
+	   the device but without becoming repetitive...
+	*/
+	device = igdData->friendlyName;
 
-	if (igdData->CIF.manufacturer[0] || igdData->CIF.modelName[0]) {
-		device += string(" - ") + igdData->CIF.manufacturer + " " + igdData->CIF.modelName;
-		if (igdData->CIF.modelNumber[0]) {
-			device += string(" ") + igdData->CIF.modelNumber;
-		}
-	}
+	if (igdData->manufacturer[0] && device.find(igdData->manufacturer) == string::npos)
+		device.append(" ").append(igdData->manufacturer);
+
+	if (igdData->modelName[0] && device.find(igdData->modelName) == string::npos)
+		device.append(" ").append(igdData->modelName);
+
+	if (igdData->modelNumber[0] && device.find(igdData->modelNumber) == string::npos)
+		device.append(" ").append(igdData->modelNumber);
 }
 
 } // dcpp namespace

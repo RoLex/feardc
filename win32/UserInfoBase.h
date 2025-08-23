@@ -124,6 +124,7 @@ protected:
 		handleUserFunction([&](UserInfoBase* u) { u->pm(parent); });
 	}
 /*
+	<todo>
 	<dt>Send public message</dt>
 	<dd>Prepend selected user nicks to public chat message input. Use this to address your message
 	to specific user or multiple users. Your message will be sent as public message as stated in

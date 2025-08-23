@@ -1,0 +1,1 @@
+<p>DC++ supports connecting to both legacy non-secure hub servers and hubs that support fully encrypted, secure connections. If specified, the URI part of the hub address determines whether the target hub supports secure connections. Addresses with adcs:// and nmdcs:// URIs will connect to secure hubs.</p>

@@ -1,14 +1,13 @@
 # FearDC - DC++ fork with NMDC TLS
 
-* Based on: DC++ 0.882
+* Based on: DC++ 0.883
 * DC++ website: https://dcplusplus.sourceforge.io
 
 # New in 1.3.2.1
 
 ```
-* Merge with DC++ 0.882
+* Merge with DC++ 0.883
 * Update PO4A to version 0.71
-* Update NAT-PMP to version 20230423
 * Replace GeoIP with MaxMindDB version 1.12.2
 * Correctly set language in PO files, language team remains to fix
 * Add missing copyrights and licenses for components used in this product
@@ -35,9 +34,6 @@
 * Fix locale detection when building help files on Cygwin and Msys
 * Fix negative upload and download statistics due to int64_t declaration
 * Fix C++20 deprecation warnings
-* Fix crash on missing help files
-* [LB#841189] [LQ#698901] Add support for TLS-encrypted NMDC client to hub connections, port defaults to 411, requires nmdcs:// in URL
-* Add support for TLS-encrypted hub address when available in public hubs
 * Add support for TLS-encrypted NMDC client to client connections, requires successful TLS configuration on our side and specified TLS flag in remote user $MyINFO
 * Add support for NAT traversal in passive client to client connections when using NMDC, requires specified NAT flag in remote user $MyINFO
 ```

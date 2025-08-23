@@ -31,7 +31,7 @@ AdvancedPage::ListItem AdvancedPage::listItems[] = {
 	{ SettingsManager::AUTO_FOLLOW, N_("Automatically follow redirects"), IDH_SETTINGS_ADVANCED_AUTO_FOLLOW },
 	{ SettingsManager::CLEAR_SEARCH, N_("Clear search box after each search"), IDH_SETTINGS_ADVANCED_CLEAR_SEARCH },
 	{ SettingsManager::LIST_DUPES, N_("Keep duplicate files in your file list"), IDH_SETTINGS_ADVANCED_LIST_DUPES },
-	{ SettingsManager::URL_HANDLER, N_("Register with Windows to handle dchub://, nmdcs://, adc:// and adcs:// URL links"), IDH_SETTINGS_ADVANCED_URL_HANDLER },
+	{ SettingsManager::URL_HANDLER, N_("Register with Windows to handle adc://, adcs://, dchub:// and nmdcs:// URL links"), IDH_SETTINGS_ADVANCED_URL_HANDLER },
 	{ SettingsManager::MAGNET_REGISTER, N_("Register with Windows to handle magnet: URI links"), IDH_SETTINGS_ADVANCED_MAGNET_REGISTER },
 	{ SettingsManager::DCEXT_REGISTER, N_("Register with Windows to handle .dcext files"), IDH_SETTINGS_ADVANCED_DCEXT_REGISTER },
 	{ SettingsManager::KEEP_LISTS, N_("Don't delete file lists when exiting"), IDH_SETTINGS_ADVANCED_KEEP_LISTS },

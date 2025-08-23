@@ -584,11 +584,15 @@ void HashManager::Hasher::instantPause() {
 
 void HashManager::Hasher::scheduleRebuild() {
 	rebuild = true; 
-	if(idle) {
-		s.signal();
-	} else {
-		LogManager::getInstance()->message(_("Hash database rebuild has been scheduled"));
+	{
+		Lock l(cs);
+		if(idle) {
+			s.signal();
+			return;
+		}
 	}
+
+	LogManager::getInstance()->message(_("Hash database rebuild has been scheduled"));
 }
 
 int HashManager::Hasher::run() {

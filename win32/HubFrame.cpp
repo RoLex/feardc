@@ -1397,7 +1397,7 @@ void HubFrame::tabMenuImpl(dwt::Menu* menu) {
 
 	menu->appendItem(T_("&Reconnect\tCtrl+R"), [this] { reconnect(); }, WinUtil::menuIcon(IDI_RECONNECT));
 	menu->appendItem(T_("Copy &address to clipboard"), [this] { handleCopyHub(false); });
-	if (client->isSecure() && client->getHubUrl().find("?kp=") == string::npos)
+	if (client->isSecure() && Util::isAdcsUrl(client->getHubUrl()) && client->getHubUrl().find("?kp=") == string::npos)
 		menu->appendItem(T_("Copy address with &keyprint to clipboard"), [this] { handleCopyHub(true); });
 	menu->appendItem(T_("&Search hub"), [this] { handleSearchHub(); }, WinUtil::menuIcon(IDI_SEARCH));
 	menu->appendItem(T_("&Disconnect"), [this] { disconnect(false); }, WinUtil::menuIcon(IDI_HUB_OFF));
