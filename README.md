@@ -3,10 +3,11 @@
 * Based on: DC++ 0.883
 * DC++ website: https://dcplusplus.sourceforge.io
 
-# New in 1.3.2.1
+# New in 1.3.2.2
 
 ```
 * Merge with DC++ 0.883
+* Update OpenSSL to version 3.5.5 LTS
 * Update PO4A to version 0.71
 * Replace GeoIP with MaxMindDB version 1.12.2
 * Correctly set language in PO files, language team remains to fix
@@ -19,6 +20,7 @@
 * $LogedIn is known NMDC command
 * Missing in all clients - force login timeout after 2 minutes
 * Add support for TTHS NMDC extension to save traffic on both sides with short TTH searches, widely supported by Verlihub
+* Add support for HubURL NMDC extension
 * Add support for BotList, HubTopic and MCTo NMDC extensions, widely supported by Verlihub
 * Add /mcpm command for private main chat messages, currently only for NMDC hubs that support MCTo extension
 * Don't waste our and NMDC hub resources when we don't want user commands

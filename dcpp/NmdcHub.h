@@ -43,7 +43,8 @@ public:
 		SUPPORTS_TLS = 0x10,
 		SUPPORTS_BOTLIST = 0x20,
 		SUPPORTS_HUBTOPIC = 0x40,
-		SUPPORTS_MCTO = 0x80
+		SUPPORTS_MCTO = 0x80,
+		SUPPORTS_HUBURL = 0x100
 	};
 
 	using Client::send;

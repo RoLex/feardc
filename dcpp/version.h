@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2026 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,8 +20,8 @@
 #define APPNAME "FearDC"
 #define TAGNAME "FearDC"
 // don't forget to update the .rc file as well!
-#define VERSIONSTRING "1.3.2.1"
-#define VERSIONFLOAT 0.1321
+#define VERSIONSTRING "1.3.2.2"
+#define VERSIONFLOAT 0.1322
 
 #define DCAPPNAME "DC++"
 #define DCTAGNAME "++"

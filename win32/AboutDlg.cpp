@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2026 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -115,7 +115,7 @@ bool AboutDlg::handleInitDialog() {
 		cur->addChild(Label::Seed(WinUtil::createIcon(IDI_DCPP, 128))); // 1 - icon
 
 		ls.caption = _T("\nBased on " DCAPPNAME " " DCVERSIONSTRING);
-		ls.caption += T_("\nCopyright © 2001-2025 Jacek Sieka");
+		ls.caption += T_("\nCopyright © 2001-2026 Jacek Sieka");
 		ls.caption += T_("\nEx-main project contributors: Todd Pederzani, poy");
 		ls.caption += T_("\nEx-codeveloper: Per Lind\303\251n");
 		ls.caption += T_("\nOriginal DC++ logo design: Martin Skogevall");

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2024 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2026 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -55,7 +55,7 @@ FavoriteManager::FavoriteManager() : lastId(0), useHttp(false), running(false), 
 	addBlacklist("hublist.org", "Domain used for spam purposes.");
 	addBlacklist("hubtracker.com", "Domain lost to unknown owners advertising dubious pharmaceuticals.");
 	addBlacklist("openhublist.org", "Domain used for spam purposes.");
-	addBlacklist("dchublist.com", "Redirection to the new domain fails. To access this hublist add its new address <https://www.te-home.net/?do=hublist&get=hublist.xml.bz2> instead.");
+	addBlacklist("dchublist.com", "Redirection to the new domain fails. To access this hublist add its new address <https://te-home.net/?do=hublist&get=hublist.xml.bz2> instead.");
 	addBlacklist("hublista.hu", "Server discontinued, domain may lost to unknown owners.");
 }
 

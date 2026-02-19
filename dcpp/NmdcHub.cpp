@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2026 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -700,6 +700,10 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 		if (haveSupports(SUPPORTS_HUBTOPIC) && param.size())
 			getHubIdentity().setDescription(unescape(param));
 
+	} else if (cmd == "$GetHubURL") {
+		if (haveSupports(SUPPORTS_HUBURL))
+			send("$MyHubURL " + getHubUrl() + "|");
+
 	} else if (cmd == "$Supports") {
 		StringTokenizer<string> st(param, ' ');
 		StringList& sl = st.getTokens();
@@ -721,6 +725,8 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 				supportFlags |= SUPPORTS_HUBTOPIC;
 			else if (i == "MCTo")
 				supportFlags |= SUPPORTS_MCTO;
+			else if (i == "HubURL")
+				supportFlags |= SUPPORTS_HUBURL;
 		}
 
 	} else if (cmd == "$UserCommand") {
@@ -792,7 +798,8 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 				feat.push_back("TTHSearch");
 				feat.push_back("HubTopic");
 				feat.push_back("MCTo");
-				feat.push_back("TTHS"); // https://www.te-home.net/?do=work&id=verlihub&page=nmdc#tths
+				feat.push_back("TTHS"); // https://te-home.net/?do=work&id=verlihub&page=nmdc#tths
+				feat.push_back("HubURL"); // https://te-home.net/?do=work&id=verlihub&page=nmdc#huburl
 				feat.push_back("ZPipe0");
 
 				if (!get(HubSettings::DisableCtmTLS) && CryptoManager::getInstance()->TLSOk()) // if not disabled by user
