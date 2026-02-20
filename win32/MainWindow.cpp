@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2026 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -120,7 +120,7 @@ fullSlots(false)
 	links.geoip_city = _T("https://client.feardc.net/geoip/GeoLite2-City.mmdb.gz");
 	links.faq = links.homepage + _T("faq.html");
 	links.help = links.homepage + _T("help.html");
-	links.discuss = _T("https://github.com/rolex/feardc/issues/");
+	links.discuss = _T("https://github.com/rolex/feardc/discussions/");
 	links.features = _T("https://github.com/rolex/feardc/issues/");
 	links.bugs = _T("https://github.com/rolex/feardc/issues/");
 	links.donate = _T("https://www.paypal.com/paypalme/feardc/");

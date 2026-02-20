@@ -36,3 +36,10 @@ Since: 1.3.x.x
 Usage: See https://dc-protocols.github.io/NMDC.html#_mcto
 
 --------------------------------------------------------------------
+
+Feature: HubURL
+Since: 1.3.x.x
+
+Usage: See https://dc-protocols.github.io/NMDC.html#_huburl
+
+--------------------------------------------------------------------

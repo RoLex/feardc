@@ -1,0 +1,2 @@
+NickRule extension
+SearchRule extension

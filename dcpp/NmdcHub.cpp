@@ -704,6 +704,8 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 		if (haveSupports(SUPPORTS_HUBURL))
 			send("$MyHubURL " + getHubUrl() + "|");
 
+	// todo: NickRule, SearchRule
+
 	} else if (cmd == "$Supports") {
 		StringTokenizer<string> st(param, ' ');
 		StringList& sl = st.getTokens();
@@ -798,8 +800,8 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 				feat.push_back("TTHSearch");
 				feat.push_back("HubTopic");
 				feat.push_back("MCTo");
-				feat.push_back("TTHS"); // https://te-home.net/?do=work&id=verlihub&page=nmdc#tths
-				feat.push_back("HubURL"); // https://te-home.net/?do=work&id=verlihub&page=nmdc#huburl
+				feat.push_back("TTHS"); // https://dc-protocols.github.io/NMDC.html#_tths
+				feat.push_back("HubURL"); // https://dc-protocols.github.io/NMDC.html#_huburl
 				feat.push_back("ZPipe0");
 
 				if (!get(HubSettings::DisableCtmTLS) && CryptoManager::getInstance()->TLSOk()) // if not disabled by user
