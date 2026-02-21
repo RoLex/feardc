@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-08-23 12:02+0200\n"
+"POT-Creation-Date: 2026-02-21 15:38+0100\n"
 "PO-Revision-Date: 2015-01-05 05:18+0000\n"
 "Last-Translator: Francisco Blas Izquierdo Riera (klondike) "
 "<franxisco1988@gmail.com>\n"
@@ -29,7 +29,7 @@ msgstr ""
 #: win32/AboutDlg.cpp:118
 msgid ""
 "\n"
-"Copyright © 2001-2025 Jacek Sieka"
+"Copyright © 2001-2026 Jacek Sieka"
 msgstr ""
 
 #: win32/AboutDlg.cpp:120
@@ -304,7 +304,7 @@ msgstr "&Eliminar\tDel"
 msgid "&Description"
 msgstr "&Descripción"
 
-#: win32/HubFrame.cpp:1403 win32/TransferView.cpp:563
+#: win32/HubFrame.cpp:1405 win32/TransferView.cpp:563
 msgid "&Disconnect"
 msgstr "&Desconectar"
 
@@ -430,7 +430,7 @@ msgstr "Quitar usuario de la cola"
 msgid "&Search\tCtrl+S"
 msgstr "&SBuscar\tCtrl+S"
 
-#: win32/HubFrame.cpp:1402
+#: win32/HubFrame.cpp:1404
 #, fuzzy
 msgid "&Search hub"
 msgstr "Menú Búsqueda"
@@ -1194,7 +1194,7 @@ msgstr "Valor"
 msgid "Copy &address to clipboard"
 msgstr "Copiar la &Dirección"
 
-#: win32/HubFrame.cpp:1401
+#: win32/HubFrame.cpp:1402
 #, fuzzy
 msgid "Copy address with &keyprint to clipboard"
 msgstr "Copiar la &Dirección"
@@ -3523,11 +3523,11 @@ msgstr "Reconectar"
 msgid "Reconnect disconnected hubs"
 msgstr "Cerrar todos los hubs desconectados"
 
-#: win32/HubFrame.cpp:1083 win32/HubFrame.cpp:1604
+#: win32/HubFrame.cpp:1083 win32/HubFrame.cpp:1606
 msgid "Redirect request received to a hub that's already connected"
 msgstr "Recibida petición de redirección para un Hub al que ya está conectado"
 
-#: win32/HubFrame.cpp:1599
+#: win32/HubFrame.cpp:1601
 msgid "Redirect request to an empty hub address"
 msgstr ""
 

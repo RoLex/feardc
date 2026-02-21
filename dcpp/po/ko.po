@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-08-23 11:46+0200\n"
+"POT-Creation-Date: 2026-02-21 15:38+0100\n"
 "PO-Revision-Date: 2010-08-06 12:56+0000\n"
 "Last-Translator: gutfeast <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -816,7 +816,7 @@ msgstr "이 파일은 이미 다운로드가 완료됨"
 msgid "This file is already queued"
 msgstr "이 파일은 이미 다운로드-큐에 추가되었음"
 
-#: dcpp/NmdcHub.cpp:1318
+#: dcpp/NmdcHub.cpp:1327
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "

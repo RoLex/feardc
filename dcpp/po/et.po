@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-08-23 11:46+0200\n"
+"POT-Creation-Date: 2026-02-21 15:38+0100\n"
 "PO-Revision-Date: 2013-07-21 09:59+0000\n"
 "Last-Translator: Gabberworld <Unknown>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -809,7 +809,7 @@ msgstr "Fail on juba alla laaditud"
 msgid "This file is already queued"
 msgstr "Fail on juba järjekorras"
 
-#: dcpp/NmdcHub.cpp:1318
+#: dcpp/NmdcHub.cpp:1327
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-08-23 11:46+0200\n"
+"POT-Creation-Date: 2026-02-21 15:38+0100\n"
 "PO-Revision-Date: 2012-04-05 17:09+0000\n"
 "Last-Translator: Tone Leskovec <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -820,7 +820,7 @@ msgstr "Ta datoteka je že v čakalni vrsti"
 msgid "This file is already queued"
 msgstr "Ta datoteka je že v čakalni vrsti"
 
-#: dcpp/NmdcHub.cpp:1318
+#: dcpp/NmdcHub.cpp:1327
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "

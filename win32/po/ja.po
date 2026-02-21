@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-08-23 12:02+0200\n"
+"POT-Creation-Date: 2026-02-21 15:38+0100\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr ""
 #: win32/AboutDlg.cpp:118
 msgid ""
 "\n"
-"Copyright © 2001-2025 Jacek Sieka"
+"Copyright © 2001-2026 Jacek Sieka"
 msgstr ""
 
 #: win32/AboutDlg.cpp:120
@@ -308,7 +308,7 @@ msgstr ""
 msgid "&Description"
 msgstr "記述"
 
-#: win32/HubFrame.cpp:1403 win32/TransferView.cpp:563
+#: win32/HubFrame.cpp:1405 win32/TransferView.cpp:563
 #, fuzzy
 msgid "&Disconnect"
 msgstr "クイック接続"
@@ -450,7 +450,7 @@ msgstr "キューからユーザーを外す"
 msgid "&Search\tCtrl+S"
 msgstr "検索"
 
-#: win32/HubFrame.cpp:1402
+#: win32/HubFrame.cpp:1404
 #, fuzzy
 msgid "&Search hub"
 msgstr "検索画面メニュー"
@@ -1209,7 +1209,7 @@ msgstr ""
 msgid "Copy &address to clipboard"
 msgstr "Magnet リンクをクリップボードにコピー"
 
-#: win32/HubFrame.cpp:1401
+#: win32/HubFrame.cpp:1402
 #, fuzzy
 msgid "Copy address with &keyprint to clipboard"
 msgstr "Magnet リンクをクリップボードにコピー"
@@ -3590,11 +3590,11 @@ msgstr "接続中"
 msgid "Reconnect disconnected hubs"
 msgstr "切断状態のウインドウを閉じる"
 
-#: win32/HubFrame.cpp:1083 win32/HubFrame.cpp:1604
+#: win32/HubFrame.cpp:1083 win32/HubFrame.cpp:1606
 msgid "Redirect request received to a hub that's already connected"
 msgstr "リダイレクト要求は接続中のハブに受け取られました。"
 
-#: win32/HubFrame.cpp:1599
+#: win32/HubFrame.cpp:1601
 msgid "Redirect request to an empty hub address"
 msgstr ""
 

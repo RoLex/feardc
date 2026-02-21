@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-08-23 12:02+0200\n"
+"POT-Creation-Date: 2026-02-21 15:38+0100\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 #: win32/AboutDlg.cpp:118
 msgid ""
 "\n"
-"Copyright © 2001-2025 Jacek Sieka"
+"Copyright © 2001-2026 Jacek Sieka"
 msgstr ""
 
 #: win32/AboutDlg.cpp:120
@@ -307,7 +307,7 @@ msgstr ""
 msgid "&Description"
 msgstr "&Opis:"
 
-#: win32/HubFrame.cpp:1403 win32/TransferView.cpp:563
+#: win32/HubFrame.cpp:1405 win32/TransferView.cpp:563
 msgid "&Disconnect"
 msgstr "&Prekini vezu"
 
@@ -435,7 +435,7 @@ msgstr "Ukloni korisnika iz reda za čekanje"
 msgid "&Search\tCtrl+S"
 msgstr "&Traži\tCtrl+S"
 
-#: win32/HubFrame.cpp:1402
+#: win32/HubFrame.cpp:1404
 #, fuzzy
 msgid "&Search hub"
 msgstr "Meni pretraga"
@@ -1191,7 +1191,7 @@ msgstr ""
 msgid "Copy &address to clipboard"
 msgstr "Kopiraj &adresu na clipboard"
 
-#: win32/HubFrame.cpp:1401
+#: win32/HubFrame.cpp:1402
 #, fuzzy
 msgid "Copy address with &keyprint to clipboard"
 msgstr "Kopiraj &adresu na clipboard"
@@ -3529,11 +3529,11 @@ msgstr "Ponovo uspostavi vezu"
 msgid "Reconnect disconnected hubs"
 msgstr "Zatvori isključene hubove"
 
-#: win32/HubFrame.cpp:1083 win32/HubFrame.cpp:1604
+#: win32/HubFrame.cpp:1083 win32/HubFrame.cpp:1606
 msgid "Redirect request received to a hub that's already connected"
 msgstr "Preusmjeravanje sa hubom koji je vec spojen"
 
-#: win32/HubFrame.cpp:1599
+#: win32/HubFrame.cpp:1601
 msgid "Redirect request to an empty hub address"
 msgstr ""
 

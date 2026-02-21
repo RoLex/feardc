@@ -143,7 +143,7 @@ bool AboutDlg::handleInitDialog() {
 #endif
 
 		ls.caption += _T("\nOpenSSL version: " OPENSSL_VERSION_TEXT);
-		ls.caption += Text::toT("\nMMDB version: " + GeoManager::getInstance()->getVersion() + ", " + GeoManager::getInstance()->getEpoch() + "\n");
+		ls.caption += Text::toT("\nMMDB version: " + GeoManager::getInstance()->getVersion() + ", " + GeoManager::getInstance()->getEpoch() + "\n"); // todo: metadata.build_epoch is compile time
 
 		cur->addChild(ls); // 2 - info
 

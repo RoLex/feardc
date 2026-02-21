@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-08-23 12:02+0200\n"
+"POT-Creation-Date: 2026-02-21 15:38+0100\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: Norwegian Bokmal <nb@li.org>\n"
@@ -28,7 +28,7 @@ msgstr ""
 #: win32/AboutDlg.cpp:118
 msgid ""
 "\n"
-"Copyright © 2001-2025 Jacek Sieka"
+"Copyright © 2001-2026 Jacek Sieka"
 msgstr ""
 
 #: win32/AboutDlg.cpp:120
@@ -304,7 +304,7 @@ msgstr ""
 msgid "&Description"
 msgstr "&Beskrivelse"
 
-#: win32/HubFrame.cpp:1403 win32/TransferView.cpp:563
+#: win32/HubFrame.cpp:1405 win32/TransferView.cpp:563
 msgid "&Disconnect"
 msgstr "&Koble fra"
 
@@ -433,7 +433,7 @@ msgstr "Fjern bruker fra kø"
 msgid "&Search\tCtrl+S"
 msgstr "&Søk \t Ctrl+S"
 
-#: win32/HubFrame.cpp:1402
+#: win32/HubFrame.cpp:1404
 #, fuzzy
 msgid "&Search hub"
 msgstr "Søke meny"
@@ -1191,7 +1191,7 @@ msgstr "Verdi"
 msgid "Copy &address to clipboard"
 msgstr "Kopier &adresse til utklippstavlen"
 
-#: win32/HubFrame.cpp:1401
+#: win32/HubFrame.cpp:1402
 #, fuzzy
 msgid "Copy address with &keyprint to clipboard"
 msgstr "Kopier &adresse til utklippstavlen"
@@ -3537,11 +3537,11 @@ msgstr "Koble til på nytt"
 msgid "Reconnect disconnected hubs"
 msgstr "Lukk frakoblede"
 
-#: win32/HubFrame.cpp:1083 win32/HubFrame.cpp:1604
+#: win32/HubFrame.cpp:1083 win32/HubFrame.cpp:1606
 msgid "Redirect request received to a hub that's already connected"
 msgstr "Omdirigeringsforespørsel til en hubb som allerede er tilkoblet"
 
-#: win32/HubFrame.cpp:1599
+#: win32/HubFrame.cpp:1601
 msgid "Redirect request to an empty hub address"
 msgstr ""
 

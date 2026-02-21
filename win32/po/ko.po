@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-08-23 12:02+0200\n"
+"POT-Creation-Date: 2026-02-21 15:38+0100\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr ""
 #: win32/AboutDlg.cpp:118
 msgid ""
 "\n"
-"Copyright © 2001-2025 Jacek Sieka"
+"Copyright © 2001-2026 Jacek Sieka"
 msgstr ""
 
 #: win32/AboutDlg.cpp:120
@@ -300,7 +300,7 @@ msgstr "지우기\tDel"
 msgid "&Description"
 msgstr "설명"
 
-#: win32/HubFrame.cpp:1403 win32/TransferView.cpp:563
+#: win32/HubFrame.cpp:1405 win32/TransferView.cpp:563
 msgid "&Disconnect"
 msgstr "연결 끊기"
 
@@ -428,7 +428,7 @@ msgstr "다운로드-큐의 모든 파일 소유자 목록에서 사용자를 �
 msgid "&Search\tCtrl+S"
 msgstr "검색\tCtrl+S"
 
-#: win32/HubFrame.cpp:1402
+#: win32/HubFrame.cpp:1404
 #, fuzzy
 msgid "&Search hub"
 msgstr "검색 창"
@@ -1209,7 +1209,7 @@ msgstr "값"
 msgid "Copy &address to clipboard"
 msgstr "클립보드에 허브 주소 복사하기"
 
-#: win32/HubFrame.cpp:1401
+#: win32/HubFrame.cpp:1402
 #, fuzzy
 msgid "Copy address with &keyprint to clipboard"
 msgstr "클립보드에 허브 주소 복사하기"
@@ -3566,12 +3566,12 @@ msgstr "재접속하기"
 msgid "Reconnect disconnected hubs"
 msgstr "접속이 끊어진 모든 허브 창 닫기"
 
-#: win32/HubFrame.cpp:1083 win32/HubFrame.cpp:1604
+#: win32/HubFrame.cpp:1083 win32/HubFrame.cpp:1606
 msgid "Redirect request received to a hub that's already connected"
 msgstr ""
 "이미 접속하고 있는 허브로의 접속-전환(Redirect) 제안이므로 응할 필요가 없음"
 
-#: win32/HubFrame.cpp:1599
+#: win32/HubFrame.cpp:1601
 msgid "Redirect request to an empty hub address"
 msgstr ""
 

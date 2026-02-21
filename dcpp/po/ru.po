@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-08-23 11:46+0200\n"
+"POT-Creation-Date: 2026-02-21 15:38+0100\n"
 "PO-Revision-Date: 2022-09-20 19:08+0000\n"
 "Last-Translator: RoLex <hundrambit@gmail.com>\n"
 "Language-Team: Russian <ru_GB@li.org>\n"
@@ -835,7 +835,7 @@ msgstr "Данный файл уже был скачан"
 msgid "This file is already queued"
 msgstr "Этот файл уже есть в очереди"
 
-#: dcpp/NmdcHub.cpp:1318
+#: dcpp/NmdcHub.cpp:1327
 #, boost-format
 msgid ""
 "This hub is trying to use your client to spam %1%, please urge hub owner to "
