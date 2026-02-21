@@ -84,21 +84,21 @@ class private_node_pool_impl
    {}
 
    //!Destructor. Deallocates all allocated blocks. Never throws
-   BOOST_CONTAINER_FORCEINLINE ~private_node_pool_impl()
+   inline ~private_node_pool_impl()
    {  this->purge_blocks();  }
 
-   BOOST_CONTAINER_FORCEINLINE size_type get_real_num_node() const
+   inline size_type get_real_num_node() const
    {  return m_nodes_per_block; }
 
    //!Returns the segment manager. Never throws
-   BOOST_CONTAINER_FORCEINLINE segment_manager_base_type* get_segment_manager_base()const
+   inline segment_manager_base_type* get_segment_manager_base()const
    {  return boost::movelib::to_raw_pointer(mp_segment_mngr_base);  }
 
-   BOOST_CONTAINER_FORCEINLINE void *allocate_node()
+   inline void *allocate_node()
    {  return this->priv_alloc_node();  }
 
    //!Deallocates an array pointed by ptr. Never throws
-   BOOST_CONTAINER_FORCEINLINE void deallocate_node(void *ptr)
+   inline void deallocate_node(void *ptr)
    {  this->priv_dealloc_node(ptr); }
 
    //!Allocates a singly linked list of n nodes ending in null pointer.
@@ -173,7 +173,7 @@ class private_node_pool_impl
             //Unlink the nodes
             free_nodes.clear();
             it = m_blocklist.erase_after(bit);
-            mp_segment_mngr_base->deallocate((void*)addr);
+            mp_segment_mngr_base->deallocate(const_cast<void*>(addr));
          }
          //Otherwise, insert them in the backup list, since the
          //next "remove_if" does not need to check them again.
@@ -205,7 +205,7 @@ class private_node_pool_impl
          , backup_list.size());
    }
 
-   BOOST_CONTAINER_FORCEINLINE size_type num_free_nodes()
+   inline size_type num_free_nodes()
    {  return m_freelist.size();  }
 
    //!Deallocates all used memory. Precondition: all nodes allocated from this pool should
@@ -221,7 +221,7 @@ class private_node_pool_impl
       while(!m_blocklist.empty()){
          void *addr = get_block_from_hook(&m_blocklist.front(), blocksize);
          m_blocklist.pop_front();
-         mp_segment_mngr_base->deallocate((void*)addr);
+         mp_segment_mngr_base->deallocate(const_cast<void*>(addr));
       }
       //Just clear free node list
       m_freelist.clear();

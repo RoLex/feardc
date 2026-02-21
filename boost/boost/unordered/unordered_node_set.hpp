@@ -1,4 +1,5 @@
-// Copyright (C) 2022 Christian Mazakas
+// Copyright (C) 2022-2023 Christian Mazakas
+// Copyright (C) 2024-2025 Joaquin M Lopez Munoz
 // Distributed under the Boost Software License, Version 1.0. (See accompanying
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -10,15 +11,17 @@
 #pragma once
 #endif
 
+#include <boost/unordered/concurrent_node_set_fwd.hpp>
 #include <boost/unordered/detail/foa/element_type.hpp>
-#include <boost/unordered/detail/foa/node_handle.hpp>
+#include <boost/unordered/detail/foa/node_set_handle.hpp>
 #include <boost/unordered/detail/foa/node_set_types.hpp>
 #include <boost/unordered/detail/foa/table.hpp>
+#include <boost/unordered/detail/serialize_container.hpp>
 #include <boost/unordered/detail/type_traits.hpp>
 #include <boost/unordered/unordered_node_set_fwd.hpp>
 
 #include <boost/core/allocator_access.hpp>
-#include <boost/functional/hash.hpp>
+#include <boost/container_hash/hash.hpp>
 #include <boost/throw_exception.hpp>
 
 #include <initializer_list>
@@ -34,38 +37,14 @@ namespace boost {
 #pragma warning(disable : 4714) /* marked as __forceinline not inlined */
 #endif
 
-    namespace detail {
-      template <class TypePolicy, class Allocator>
-      struct node_set_handle
-          : public detail::foa::node_handle_base<TypePolicy, Allocator>
-      {
-      private:
-        using base_type = detail::foa::node_handle_base<TypePolicy, Allocator>;
-
-        using typename base_type::type_policy;
-
-        template <class Key, class Hash, class Pred, class Alloc>
-        friend class boost::unordered::unordered_node_set;
-
-      public:
-        using value_type = typename TypePolicy::value_type;
-
-        constexpr node_set_handle() noexcept = default;
-        node_set_handle(node_set_handle&& nh) noexcept = default;
-        node_set_handle& operator=(node_set_handle&&) noexcept = default;
-
-        value_type& value() const
-        {
-          BOOST_ASSERT(!this->empty());
-          return const_cast<value_type&>(this->data());
-        }
-      };
-    } // namespace detail
-
     template <class Key, class Hash, class KeyEqual, class Allocator>
     class unordered_node_set
     {
-      using set_types = detail::foa::node_set_types<Key>;
+      template <class Key2, class Hash2, class Pred2, class Allocator2>
+      friend class concurrent_node_set;
+
+      using set_types = detail::foa::node_set_types<Key,
+        typename boost::allocator_void_pointer<Allocator>::type>;
 
       using table_type = detail::foa::table<set_types, Hash, KeyEqual,
         typename boost::allocator_rebind<Allocator,
@@ -97,11 +76,15 @@ namespace boost {
         typename boost::allocator_const_pointer<allocator_type>::type;
       using iterator = typename table_type::iterator;
       using const_iterator = typename table_type::const_iterator;
-      using node_type = detail::node_set_handle<set_types,
+      using node_type = detail::foa::node_set_handle<set_types,
         typename boost::allocator_rebind<Allocator,
           typename set_types::value_type>::type>;
       using insert_return_type =
         detail::foa::insert_return_type<iterator, node_type>;
+
+#if defined(BOOST_UNORDERED_ENABLE_STATS)
+      using stats = typename table_type::stats;
+#endif
 
       unordered_node_set() : unordered_node_set(0) {}
 
@@ -168,9 +151,7 @@ namespace boost {
       }
 
       unordered_node_set(unordered_node_set&& other)
-        noexcept(std::is_nothrow_move_constructible<hasher>::value&&
-            std::is_nothrow_move_constructible<key_equal>::value&&
-              std::is_nothrow_move_constructible<allocator_type>::value)
+        noexcept(std::is_nothrow_move_constructible<table_type>::value)
           : table_(std::move(other.table_))
       {
       }
@@ -206,6 +187,13 @@ namespace boost {
       {
       }
 
+      template <bool avoid_explicit_instantiation = true>
+      unordered_node_set(
+        concurrent_node_set<Key, Hash, KeyEqual, Allocator>&& other)
+          : table_(std::move(other.table_))
+      {
+      }
+
       ~unordered_node_set() = default;
 
       unordered_node_set& operator=(unordered_node_set const& other)
@@ -218,6 +206,13 @@ namespace boost {
         noexcept(std::declval<table_type&>() = std::declval<table_type&&>()))
       {
         table_ = std::move(other.table_);
+        return *this;
+      }
+
+      unordered_node_set& operator=(std::initializer_list<value_type> il)
+      {
+        this->clear();
+        this->insert(il.begin(), il.end());
         return *this;
       }
 
@@ -308,15 +303,17 @@ namespace boost {
 
       insert_return_type insert(node_type&& nh)
       {
+        using access = detail::foa::node_handle_access;
+
         if (nh.empty()) {
           return {end(), false, node_type{}};
         }
 
         BOOST_ASSERT(get_allocator() == nh.get_allocator());
 
-        auto itp = table_.insert(std::move(nh.element()));
+        auto itp = table_.insert(std::move(access::element(nh)));
         if (itp.second) {
-          nh.reset();
+          access::reset(nh);
           return {itp.first, true, node_type{}};
         } else {
           return {itp.first, false, std::move(nh)};
@@ -325,15 +322,17 @@ namespace boost {
 
       iterator insert(const_iterator, node_type&& nh)
       {
+        using access = detail::foa::node_handle_access;
+
         if (nh.empty()) {
           return end();
         }
 
         BOOST_ASSERT(get_allocator() == nh.get_allocator());
 
-        auto itp = table_.insert(std::move(nh.element()));
+        auto itp = table_.insert(std::move(access::element(nh)));
         if (itp.second) {
-          nh.reset();
+          access::reset(nh);
           return itp.first;
         } else {
           return itp.first;
@@ -380,6 +379,11 @@ namespace boost {
         return table_.erase(key);
       }
 
+      BOOST_FORCEINLINE init_type pull(const_iterator pos)
+      {
+        return table_.pull(pos);
+      }
+
       void swap(unordered_node_set& rhs) noexcept(
         noexcept(std::declval<table_type&>().swap(std::declval<table_type&>())))
       {
@@ -391,7 +395,8 @@ namespace boost {
         BOOST_ASSERT(pos != end());
         node_type nh;
         auto elem = table_.extract(pos);
-        nh.emplace(std::move(elem), get_allocator());
+        detail::foa::node_handle_emplacer(nh)(
+          std::move(elem), get_allocator());
         return nh;
       }
 
@@ -415,12 +420,14 @@ namespace boost {
       template <class H2, class P2>
       void merge(unordered_node_set<key_type, H2, P2, allocator_type>& source)
       {
+        BOOST_ASSERT(get_allocator() == source.get_allocator());
         table_.merge(source.table_);
       }
 
       template <class H2, class P2>
       void merge(unordered_node_set<key_type, H2, P2, allocator_type>&& source)
       {
+        BOOST_ASSERT(get_allocator() == source.get_allocator());
         table_.merge(std::move(source.table_));
       }
 
@@ -561,6 +568,14 @@ namespace boost {
 
       void reserve(size_type n) { table_.reserve(n); }
 
+#if defined(BOOST_UNORDERED_ENABLE_STATS)
+      /// Stats
+      ///
+      stats get_stats() const { return table_.get_stats(); }
+
+      void reset_stats() noexcept { table_.reset_stats(); }
+#endif
+
       /// Observers
       ///
 
@@ -601,6 +616,15 @@ namespace boost {
       return erase_if(set.table_, pred);
     }
 
+    template <class Archive, class Key, class Hash, class KeyEqual,
+      class Allocator>
+    void serialize(Archive& ar,
+      unordered_node_set<Key, Hash, KeyEqual, Allocator>& set,
+      unsigned int version)
+    {
+      detail::serialize_container(ar, set, version);
+    }
+
 #if defined(BOOST_MSVC)
 #pragma warning(pop) /* C4714 */
 #endif
@@ -613,10 +637,10 @@ namespace boost {
         std::equal_to<typename std::iterator_traits<InputIterator>::value_type>,
       class Allocator = std::allocator<
         typename std::iterator_traits<InputIterator>::value_type>,
-      class = boost::enable_if_t<detail::is_input_iterator_v<InputIterator> >,
-      class = boost::enable_if_t<detail::is_hash_v<Hash> >,
-      class = boost::enable_if_t<detail::is_pred_v<Pred> >,
-      class = boost::enable_if_t<detail::is_allocator_v<Allocator> > >
+      class = std::enable_if_t<detail::is_input_iterator_v<InputIterator> >,
+      class = std::enable_if_t<detail::is_hash_v<Hash> >,
+      class = std::enable_if_t<detail::is_pred_v<Pred> >,
+      class = std::enable_if_t<detail::is_allocator_v<Allocator> > >
     unordered_node_set(InputIterator, InputIterator,
       std::size_t = boost::unordered::detail::foa::default_bucket_count,
       Hash = Hash(), Pred = Pred(), Allocator = Allocator())
@@ -626,17 +650,17 @@ namespace boost {
 
     template <class T, class Hash = boost::hash<T>,
       class Pred = std::equal_to<T>, class Allocator = std::allocator<T>,
-      class = boost::enable_if_t<detail::is_hash_v<Hash> >,
-      class = boost::enable_if_t<detail::is_pred_v<Pred> >,
-      class = boost::enable_if_t<detail::is_allocator_v<Allocator> > >
+      class = std::enable_if_t<detail::is_hash_v<Hash> >,
+      class = std::enable_if_t<detail::is_pred_v<Pred> >,
+      class = std::enable_if_t<detail::is_allocator_v<Allocator> > >
     unordered_node_set(std::initializer_list<T>,
       std::size_t = boost::unordered::detail::foa::default_bucket_count,
       Hash = Hash(), Pred = Pred(), Allocator = Allocator())
       -> unordered_node_set<T, Hash, Pred, Allocator>;
 
     template <class InputIterator, class Allocator,
-      class = boost::enable_if_t<detail::is_input_iterator_v<InputIterator> >,
-      class = boost::enable_if_t<detail::is_allocator_v<Allocator> > >
+      class = std::enable_if_t<detail::is_input_iterator_v<InputIterator> >,
+      class = std::enable_if_t<detail::is_allocator_v<Allocator> > >
     unordered_node_set(InputIterator, InputIterator, std::size_t, Allocator)
       -> unordered_node_set<
         typename std::iterator_traits<InputIterator>::value_type,
@@ -645,9 +669,9 @@ namespace boost {
         Allocator>;
 
     template <class InputIterator, class Hash, class Allocator,
-      class = boost::enable_if_t<detail::is_hash_v<Hash> >,
-      class = boost::enable_if_t<detail::is_input_iterator_v<InputIterator> >,
-      class = boost::enable_if_t<detail::is_allocator_v<Allocator> > >
+      class = std::enable_if_t<detail::is_hash_v<Hash> >,
+      class = std::enable_if_t<detail::is_input_iterator_v<InputIterator> >,
+      class = std::enable_if_t<detail::is_allocator_v<Allocator> > >
     unordered_node_set(
       InputIterator, InputIterator, std::size_t, Hash, Allocator)
       -> unordered_node_set<
@@ -656,19 +680,19 @@ namespace boost {
         Allocator>;
 
     template <class T, class Allocator,
-      class = boost::enable_if_t<detail::is_allocator_v<Allocator> > >
+      class = std::enable_if_t<detail::is_allocator_v<Allocator> > >
     unordered_node_set(std::initializer_list<T>, std::size_t, Allocator)
       -> unordered_node_set<T, boost::hash<T>, std::equal_to<T>, Allocator>;
 
     template <class T, class Hash, class Allocator,
-      class = boost::enable_if_t<detail::is_hash_v<Hash> >,
-      class = boost::enable_if_t<detail::is_allocator_v<Allocator> > >
+      class = std::enable_if_t<detail::is_hash_v<Hash> >,
+      class = std::enable_if_t<detail::is_allocator_v<Allocator> > >
     unordered_node_set(std::initializer_list<T>, std::size_t, Hash, Allocator)
       -> unordered_node_set<T, Hash, std::equal_to<T>, Allocator>;
 
     template <class InputIterator, class Allocator,
-      class = boost::enable_if_t<detail::is_input_iterator_v<InputIterator> >,
-      class = boost::enable_if_t<detail::is_allocator_v<Allocator> > >
+      class = std::enable_if_t<detail::is_input_iterator_v<InputIterator> >,
+      class = std::enable_if_t<detail::is_allocator_v<Allocator> > >
     unordered_node_set(InputIterator, InputIterator, Allocator)
       -> unordered_node_set<
         typename std::iterator_traits<InputIterator>::value_type,
@@ -677,7 +701,7 @@ namespace boost {
         Allocator>;
 
     template <class T, class Allocator,
-      class = boost::enable_if_t<detail::is_allocator_v<Allocator> > >
+      class = std::enable_if_t<detail::is_allocator_v<Allocator> > >
     unordered_node_set(std::initializer_list<T>, Allocator)
       -> unordered_node_set<T, boost::hash<T>, std::equal_to<T>, Allocator>;
 #endif

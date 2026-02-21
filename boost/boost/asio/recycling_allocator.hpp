@@ -2,7 +2,7 @@
 // recycling_allocator.hpp
 // ~~~~~~~~~~~~~~~~~~~~~~~
 //
-// Copyright (c) 2003-2023 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+// Copyright (c) 2003-2025 Christopher M. Kohlhoff (chris at kohlhoff dot com)
 //
 // Distributed under the Boost Software License, Version 1.0. (See accompanying
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -25,7 +25,7 @@ namespace asio {
 
 /// An allocator that caches memory blocks in thread-local storage for reuse.
 /**
- * The @recycling_allocator uses a simple strategy where a limited number of
+ * The @c recycling_allocator uses a simple strategy where a limited number of
  * small memory blocks are cached in thread-local storage, if the current
  * thread is running an @c io_context or is part of a @c thread_pool.
  */
@@ -45,27 +45,27 @@ public:
   };
 
   /// Default constructor.
-  BOOST_ASIO_CONSTEXPR recycling_allocator() BOOST_ASIO_NOEXCEPT
+  constexpr recycling_allocator() noexcept
   {
   }
 
   /// Converting constructor.
   template <typename U>
-  BOOST_ASIO_CONSTEXPR recycling_allocator(
-      const recycling_allocator<U>&) BOOST_ASIO_NOEXCEPT
+  constexpr recycling_allocator(
+      const recycling_allocator<U>&) noexcept
   {
   }
 
   /// Equality operator. Always returns true.
-  BOOST_ASIO_CONSTEXPR bool operator==(
-      const recycling_allocator&) const BOOST_ASIO_NOEXCEPT
+  constexpr bool operator==(
+      const recycling_allocator&) const noexcept
   {
     return true;
   }
 
   /// Inequality operator. Always returns false.
-  BOOST_ASIO_CONSTEXPR bool operator!=(
-      const recycling_allocator&) const BOOST_ASIO_NOEXCEPT
+  constexpr bool operator!=(
+      const recycling_allocator&) const noexcept
   {
     return false;
   }
@@ -86,7 +86,7 @@ public:
 /// A proto-allocator that caches memory blocks in thread-local storage for
 /// reuse.
 /**
- * The @recycling_allocator uses a simple strategy where a limited number of
+ * The @c recycling_allocator uses a simple strategy where a limited number of
  * small memory blocks are cached in thread-local storage, if the current
  * thread is running an @c io_context or is part of a @c thread_pool.
  */
@@ -106,27 +106,27 @@ public:
   };
 
   /// Default constructor.
-  BOOST_ASIO_CONSTEXPR recycling_allocator() BOOST_ASIO_NOEXCEPT
+  constexpr recycling_allocator() noexcept
   {
   }
 
   /// Converting constructor.
   template <typename U>
-  BOOST_ASIO_CONSTEXPR recycling_allocator(
-      const recycling_allocator<U>&) BOOST_ASIO_NOEXCEPT
+  constexpr recycling_allocator(
+      const recycling_allocator<U>&) noexcept
   {
   }
 
   /// Equality operator. Always returns true.
-  BOOST_ASIO_CONSTEXPR bool operator==(
-      const recycling_allocator&) const BOOST_ASIO_NOEXCEPT
+  constexpr bool operator==(
+      const recycling_allocator&) const noexcept
   {
     return true;
   }
 
   /// Inequality operator. Always returns false.
-  BOOST_ASIO_CONSTEXPR bool operator!=(
-      const recycling_allocator&) const BOOST_ASIO_NOEXCEPT
+  constexpr bool operator!=(
+      const recycling_allocator&) const noexcept
   {
     return false;
   }

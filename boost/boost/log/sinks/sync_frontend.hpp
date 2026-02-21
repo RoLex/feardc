@@ -15,6 +15,7 @@
 #ifndef BOOST_LOG_SINKS_SYNC_FRONTEND_HPP_INCLUDED_
 #define BOOST_LOG_SINKS_SYNC_FRONTEND_HPP_INCLUDED_
 
+#include <mutex>
 #include <boost/log/detail/config.hpp>
 
 #ifdef BOOST_HAS_PRAGMA_ONCE
@@ -25,12 +26,10 @@
 #error Boost.Log: Synchronous sink frontend is only supported in multithreaded environment
 #endif
 
-#include <boost/static_assert.hpp>
 #include <boost/smart_ptr/shared_ptr.hpp>
 #include <boost/smart_ptr/make_shared_object.hpp>
 #include <boost/preprocessor/control/if.hpp>
 #include <boost/preprocessor/comparison/equal.hpp>
-#include <boost/thread/recursive_mutex.hpp>
 #include <boost/log/detail/locking_ptr.hpp>
 #include <boost/log/detail/parameter_tools.hpp>
 #include <boost/log/core/record_view.hpp>
@@ -76,13 +75,13 @@ class synchronous_sink :
 
 private:
     //! Synchronization mutex type
-    typedef boost::recursive_mutex backend_mutex_type;
+    typedef std::recursive_mutex backend_mutex_type;
 
 public:
     //! Sink implementation type
     typedef SinkBackendT sink_backend_type;
     //! \cond
-    BOOST_STATIC_ASSERT_MSG((has_requirement< typename sink_backend_type::frontend_requirements, synchronized_feeding >::value), "Synchronous sink frontend is incompatible with the specified backend: thread synchronization requirements are not met");
+    static_assert(has_requirement< typename sink_backend_type::frontend_requirements, synchronized_feeding >::value, "Synchronous sink frontend is incompatible with the specified backend: thread synchronization requirements are not met");
     //! \endcond
 
 #ifndef BOOST_LOG_DOXYGEN_PASS

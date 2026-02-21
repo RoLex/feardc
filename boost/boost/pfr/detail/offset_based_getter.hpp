@@ -1,5 +1,5 @@
 // Copyright (c) 2017-2018 Chris Beck
-// Copyright (c) 2019-2023 Antony Polukhin
+// Copyright (c) 2019-2025 Antony Polukhin
 //
 // Distributed under the Boost Software License, Version 1.0. (See accompanying
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -10,13 +10,15 @@
 
 #include <boost/pfr/detail/config.hpp>
 
-#include <type_traits>
-#include <utility>
-#include <memory>  // std::addressof
 #include <boost/pfr/detail/sequence_tuple.hpp>
 #include <boost/pfr/detail/rvalue_t.hpp>
 #include <boost/pfr/detail/size_t_.hpp>
 
+#if !defined(BOOST_PFR_INTERFACE_UNIT)
+#include <type_traits>
+#include <utility>
+#include <memory>  // std::addressof
+#endif
 
 namespace boost { namespace pfr { namespace detail {
 
@@ -42,7 +44,7 @@ struct tuple_of_aligned_storage<sequence_tuple::tuple<Ts...>> {
   using type = sequence_tuple::tuple<internal_aligned_storage<sizeof(Ts),
 #if defined(__GNUC__) && __GNUC__ < 8 && !defined(__x86_64__) && !defined(__CYGWIN__)
       // Before GCC-8 the `alignof` was returning the optimal alignment rather than the minimal one.
-      // We have to adjust the alignemnt because otherwise we get the wrong offset.
+      // We have to adjust the alignment because otherwise we get the wrong offset.
       (alignof(Ts) > 4 ? 4 : alignof(Ts))
 #else
       alignof(Ts)

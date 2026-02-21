@@ -31,6 +31,9 @@ constexpr char const* const empty_c_str_ = "";
 // This is the private 'guts' of a
 // url_view, exposed so different parts
 // of the implementation can work on it.
+// It stores the offsets and properties of
+// a URL string stored elsewhere and pointed
+// to by cs_.
 struct BOOST_URL_DECL url_impl : parts_base
 {
     static
@@ -76,7 +79,8 @@ struct BOOST_URL_DECL url_impl : parts_base
     pct_string_view pct_get(int, int) const noexcept;
     void set_size(int, std::size_t) noexcept;
     void split(int, std::size_t) noexcept;
-    void adjust(int, int, std::size_t) noexcept;
+    void adjust_right(int first, int last, std::size_t n) noexcept;
+    void adjust_left(int first, int last, std::size_t n) noexcept;
     void collapse(int, int, std::size_t) noexcept;
 
     void apply_scheme(core::string_view) noexcept;
@@ -114,6 +118,7 @@ public:
     char const* data() const noexcept;
     char const* end() const noexcept;
     std::size_t nseg() const noexcept;
+    std::size_t decoded_size() const noexcept;
 
     bool
     alias_of(
@@ -138,8 +143,9 @@ public:
 
 //------------------------------------------------
 
-// this allows a params to come from a
-// url_impl or a separate core::string_view
+// This class represents a query string, which
+// can originate from either an url_impl object
+// or an independent core::string_view.
 class BOOST_URL_DECL query_ref
     : private parts_base
 {

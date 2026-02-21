@@ -11,7 +11,6 @@
 #ifndef BOOST_MSM_COMMON_TYPES_H
 #define BOOST_MSM_COMMON_TYPES_H
 
-#include <boost/tuple/tuple.hpp>
 #include <boost/msm/common.hpp>
 
 namespace boost { namespace msm { namespace back
@@ -27,7 +26,7 @@ typedef enum
     HANDLED_DEFERRED=4
 } HandledEnum;
 
-typedef HandledEnum execute_return;
+typedef ::boost::msm::back::HandledEnum execute_return;
 
 // source of event provided to RTC algorithm
 enum EventSourceEnum

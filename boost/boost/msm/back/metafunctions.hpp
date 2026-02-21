@@ -45,6 +45,9 @@
 #include <boost/mpl/back_inserter.hpp>
 #include <boost/mpl/transform.hpp>
 
+#include <boost/fusion/include/as_vector.hpp>
+#include <boost/fusion/include/insert_range.hpp>
+
 #include <boost/type_traits/is_same.hpp>
 #include <boost/utility/enable_if.hpp>
 
@@ -54,20 +57,7 @@
 #include <boost/msm/mpl_graph/incidence_list_graph.hpp>
 #include <boost/msm/mpl_graph/depth_first_search.hpp>
 
-BOOST_MPL_HAS_XXX_TRAIT_DEF(explicit_creation)
-BOOST_MPL_HAS_XXX_TRAIT_DEF(pseudo_entry)
-BOOST_MPL_HAS_XXX_TRAIT_DEF(pseudo_exit)
-BOOST_MPL_HAS_XXX_TRAIT_DEF(concrete_exit_state)
-BOOST_MPL_HAS_XXX_TRAIT_DEF(composite_tag)
-BOOST_MPL_HAS_XXX_TRAIT_DEF(not_real_row_tag)
-BOOST_MPL_HAS_XXX_TRAIT_DEF(event_blocking_flag)
-BOOST_MPL_HAS_XXX_TRAIT_DEF(explicit_entry_state)
-BOOST_MPL_HAS_XXX_TRAIT_DEF(completion_event)
-BOOST_MPL_HAS_XXX_TRAIT_DEF(no_exception_thrown)
-BOOST_MPL_HAS_XXX_TRAIT_DEF(no_message_queue)
-BOOST_MPL_HAS_XXX_TRAIT_DEF(activate_deferred_events)
-BOOST_MPL_HAS_XXX_TRAIT_DEF(wrapped_entry)
-BOOST_MPL_HAS_XXX_TRAIT_DEF(active_state_switch_policy)
+#include <boost/msm/back/traits.hpp>
 
 namespace boost { namespace msm { namespace back
 {
@@ -636,13 +626,24 @@ struct has_exit_pseudo_states
 };
 
 // builds flags (add internal_flag_list and flag_list). internal_flag_list is used for terminate/interrupt states
+//template <class StateType>
+//struct get_flag_list
+//{
+//    typedef typename ::boost::mpl::insert_range<
+//        typename StateType::flag_list,
+//        typename ::boost::mpl::end< typename StateType::flag_list >::type,
+//        typename StateType::internal_flag_list
+//    >::type type;
+//};
 template <class StateType>
-struct get_flag_list 
+struct get_flag_list
 {
-    typedef typename ::boost::mpl::insert_range< 
-        typename StateType::flag_list, 
-        typename ::boost::mpl::end< typename StateType::flag_list >::type,
-        typename StateType::internal_flag_list
+    typedef typename ::boost::fusion::result_of::as_vector<
+        typename ::boost::fusion::result_of::insert_range<
+            typename StateType::flag_list,
+            typename ::boost::fusion::result_of::end< typename StateType::flag_list >::type,
+            typename StateType::internal_flag_list
+        >::type
     >::type type;
 };
 

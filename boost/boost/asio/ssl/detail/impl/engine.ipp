@@ -2,7 +2,7 @@
 // ssl/detail/impl/engine.ipp
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
-// Copyright (c) 2003-2023 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+// Copyright (c) 2003-2025 Christopher M. Kohlhoff (chris at kohlhoff dot com)
 //
 // Distributed under the Boost Software License, Version 1.0. (See accompanying
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -74,15 +74,13 @@ engine::engine(SSL* ssl_impl)
   ::SSL_set_bio(ssl_, int_bio, int_bio);
 }
 
-#if defined(BOOST_ASIO_HAS_MOVE)
-engine::engine(engine&& other) BOOST_ASIO_NOEXCEPT
+engine::engine(engine&& other) noexcept
   : ssl_(other.ssl_),
     ext_bio_(other.ext_bio_)
 {
   other.ssl_ = 0;
   other.ext_bio_ = 0;
 }
-#endif // defined(BOOST_ASIO_HAS_MOVE)
 
 engine::~engine()
 {
@@ -99,11 +97,22 @@ engine::~engine()
     ::SSL_free(ssl_);
 }
 
-#if defined(BOOST_ASIO_HAS_MOVE)
-engine& engine::operator=(engine&& other) BOOST_ASIO_NOEXCEPT
+engine& engine::operator=(engine&& other) noexcept
 {
   if (this != &other)
   {
+    if (ssl_ && SSL_get_app_data(ssl_))
+    {
+      delete static_cast<verify_callback_base*>(SSL_get_app_data(ssl_));
+      SSL_set_app_data(ssl_, 0);
+    }
+
+    if (ext_bio_)
+      ::BIO_free(ext_bio_);
+
+    if (ssl_)
+      ::SSL_free(ssl_);
+
     ssl_ = other.ssl_;
     ext_bio_ = other.ext_bio_;
     other.ssl_ = 0;
@@ -111,7 +120,6 @@ engine& engine::operator=(engine&& other) BOOST_ASIO_NOEXCEPT
   }
   return *this;
 }
-#endif // defined(BOOST_ASIO_HAS_MOVE)
 
 SSL* engine::native_handle()
 {

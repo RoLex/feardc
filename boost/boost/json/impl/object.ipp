@@ -10,6 +10,7 @@
 #ifndef BOOST_JSON_IMPL_OBJECT_IPP
 #define BOOST_JSON_IMPL_OBJECT_IPP
 
+#include <boost/core/detail/static_assert.hpp>
 #include <boost/container_hash/hash.hpp>
 #include <boost/json/object.hpp>
 #include <boost/json/detail/digest.hpp>
@@ -128,9 +129,8 @@ allocate(
     std::uintptr_t salt,
     storage_ptr const& sp)
 {
-    BOOST_STATIC_ASSERT(
-        alignof(key_value_pair) >=
-        alignof(index_t));
+    BOOST_CORE_STATIC_ASSERT(
+        alignof(key_value_pair) >= alignof(index_t));
     BOOST_ASSERT(capacity > 0);
     BOOST_ASSERT(capacity <= max_size());
     table* p;
@@ -419,6 +419,45 @@ operator=(
     this->~object();
     ::new(this) object(pilfer(tmp));
     return *this;
+}
+
+//----------------------------------------------------------
+//
+// Lookup
+//
+//----------------------------------------------------------
+
+system::result<value&>
+object::
+try_at(string_view key) noexcept
+{
+    auto it = find(key);
+    if( it != end() )
+        return it->value();
+
+    system::error_code ec;
+    BOOST_JSON_FAIL(ec, error::out_of_range);
+    return ec;
+}
+
+system::result<value const&>
+object::
+try_at(string_view key) const noexcept
+{
+    auto it = find(key);
+    if( it != end() )
+        return it->value();
+
+    system::error_code ec;
+    BOOST_JSON_FAIL(ec, error::out_of_range);
+    return ec;
+}
+
+value const&
+object::
+at(string_view key, source_location const& loc) const&
+{
+    return try_at(key).value(loc);
 }
 
 //----------------------------------------------------------

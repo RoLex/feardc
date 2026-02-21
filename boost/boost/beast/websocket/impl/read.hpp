@@ -15,7 +15,6 @@
 #include <boost/beast/websocket/detail/mask.hpp>
 #include <boost/beast/websocket/impl/stream_impl.hpp>
 #include <boost/beast/core/async_base.hpp>
-#include <boost/beast/core/bind_handler.hpp>
 #include <boost/beast/core/buffers_prefix.hpp>
 #include <boost/beast/core/buffers_suffix.hpp>
 #include <boost/beast/core/flat_static_buffer.hpp>
@@ -26,7 +25,6 @@
 #include <boost/beast/core/detail/clamp.hpp>
 #include <boost/beast/core/detail/config.hpp>
 #include <boost/asio/coroutine.hpp>
-#include <boost/asio/post.hpp>
 #include <boost/assert.hpp>
 #include <boost/config.hpp>
 #include <boost/optional.hpp>
@@ -122,7 +120,8 @@ public:
                         __FILE__, __LINE__,
                         "websocket::async_read_some"));
 
-                    net::post(sp->stream().get_executor(), std::move(*this));
+                    const auto ex = this->get_immediate_executor();
+                    net::dispatch(ex, std::move(*this));
                 }
                 BOOST_ASSERT(impl.rd_block.is_locked(this));
 
@@ -228,6 +227,8 @@ public:
                     // Handle ping frame
                     if(impl.rd_fh.op == detail::opcode::ping)
                     {
+                        impl.update_timer(this->get_executor());
+
                         if(impl.ctrl_cb)
                         {
                             if(! cont)
@@ -238,7 +239,8 @@ public:
                                         __FILE__, __LINE__,
                                         "websocket::async_read_some"));
 
-                                    net::post(sp->stream().get_executor(), std::move(*this));
+                                    const auto ex = this->get_immediate_executor();
+                                    net::dispatch(ex, std::move(*this));
                                 }
                                 BOOST_ASSERT(cont);
                                 // VFALCO call check_stop_now() here?
@@ -291,7 +293,8 @@ public:
                                     __FILE__, __LINE__,
                                     "websocket::async_read_some"));
 
-                                net::post(sp->stream().get_executor(), std::move(*this));
+                                const auto ex = this->get_immediate_executor();
+                                net::dispatch(ex, std::move(*this));
                             }
                             BOOST_ASSERT(impl.wr_block.is_locked(this));
                             if(impl.check_stop_now(ec))
@@ -335,7 +338,8 @@ public:
                                         __FILE__, __LINE__,
                                         "websocket::async_read_some"));
 
-                                    net::post(sp->stream().get_executor(), std::move(*this));
+                                    const auto ex = this->get_immediate_executor();
+                                    net::dispatch(ex, std::move(*this));
                                 }
                                 BOOST_ASSERT(cont);
                             }
@@ -366,7 +370,8 @@ public:
                                         __FILE__, __LINE__,
                                         "websocket::async_read_some"));
 
-                                    net::post(sp->stream().get_executor(), std::move(*this));
+                                    const auto ex = this->get_immediate_executor();
+                                    net::dispatch(ex, std::move(*this));
                                 }
                                 BOOST_ASSERT(cont);
                             }
@@ -555,8 +560,6 @@ public:
                         zs.avail_out = out.size();
                         BOOST_ASSERT(zs.avail_out > 0);
                     }
-                    // boolean to track the end of the message.
-                    bool fin = false;
                     if(impl.rd_remain > 0)
                     {
                         if(impl.rd_buf.size() > 0)
@@ -572,26 +575,26 @@ public:
                         {
                             break;
                         }
+                        impl.inflate(zs, ec);
+                        if(impl.check_stop_now(ec))
+                            goto upcall;
+                        impl.rd_remain -= zs.total_in;
+                        impl.rd_buf.consume(zs.total_in);
                     }
                     else if(impl.rd_fh.fin)
                     {
-                        // append the empty block codes
-                        static std::uint8_t constexpr
-                            empty_block[4] = { 0x00, 0x00, 0xff, 0xff };
-                        zs.next_in = empty_block;
-                        zs.avail_in = sizeof(empty_block);
-                        fin = true;
+                        impl.inflate_with_eb(zs, ec);
+                        if(impl.check_stop_now(ec))
+                            goto upcall;
+                        if(zs.total_out == 0)
+                        {
+                            impl.do_context_takeover_read(impl.role);
+                            impl.rd_done = true;
+                            break;
+                        }
                     }
                     else
                     {
-                        break;
-                    }
-                    impl.inflate(zs, zlib::Flush::sync, ec);
-                    if(impl.check_stop_now(ec))
-                        goto upcall;
-                    if(fin && zs.total_out == 0) {
-                        impl.do_context_takeover_read(impl.role);
-                        impl.rd_done = true;
                         break;
                     }
                     if(impl.rd_msg_max && beast::detail::sum_exceeds(
@@ -604,10 +607,6 @@ public:
                     }
                     cb_.consume(zs.total_out);
                     impl.rd_size += zs.total_out;
-                    if (! fin) {
-                        impl.rd_remain -= zs.total_in;
-                        impl.rd_buf.consume(zs.total_in);
-                    }
                     bytes_written_ += zs.total_out;
                 }
                 if(impl.rd_op == detail::opcode::text)
@@ -648,7 +647,8 @@ public:
                         __FILE__, __LINE__,
                         "websocket::async_read_some"));
 
-                    net::post(sp->stream().get_executor(), std::move(*this));
+                    const auto ex = this->get_immediate_executor();
+                    net::dispatch(ex, std::move(*this));
                 }
                 BOOST_ASSERT(impl.wr_block.is_locked(this));
                 if(impl.check_stop_now(ec))
@@ -656,6 +656,7 @@ public:
             }
 
             impl.change_status(status::closing);
+            impl.update_timer(this->get_executor());
 
             if(! impl.wr_close)
             {
@@ -815,13 +816,22 @@ template<class NextLayer, bool deflateSupported>
 struct stream<NextLayer, deflateSupported>::
     run_read_some_op
 {
+    boost::shared_ptr<impl_type> const& self;
+
+    using executor_type = typename stream::executor_type;
+
+    executor_type
+    get_executor() const noexcept
+    {
+        return self->stream().get_executor();
+    }
+
     template<
         class ReadHandler,
         class MutableBufferSequence>
     void
     operator()(
         ReadHandler&& h,
-        boost::shared_ptr<impl_type> const& sp,
         MutableBufferSequence const& b)
     {
         // If you get an error on the following line it means
@@ -837,7 +847,7 @@ struct stream<NextLayer, deflateSupported>::
             typename std::decay<ReadHandler>::type,
             MutableBufferSequence>(
                 std::forward<ReadHandler>(h),
-                sp,
+                self,
                 b);
     }
 };
@@ -846,13 +856,22 @@ template<class NextLayer, bool deflateSupported>
 struct stream<NextLayer, deflateSupported>::
     run_read_op
 {
+    boost::shared_ptr<impl_type> const& self;
+
+    using executor_type = typename stream::executor_type;
+
+    executor_type
+    get_executor() const noexcept
+    {
+        return self->stream().get_executor();
+    }
+
     template<
         class ReadHandler,
         class DynamicBuffer>
     void
     operator()(
         ReadHandler&& h,
-        boost::shared_ptr<impl_type> const& sp,
         DynamicBuffer* b,
         std::size_t limit,
         bool some)
@@ -870,7 +889,7 @@ struct stream<NextLayer, deflateSupported>::
             typename std::decay<ReadHandler>::type,
             DynamicBuffer>(
                 std::forward<ReadHandler>(h),
-                sp,
+                self,
                 *b,
                 limit,
                 some);
@@ -933,9 +952,8 @@ async_read(DynamicBuffer& buffer, ReadHandler&& handler)
     return net::async_initiate<
         ReadHandler,
         void(error_code, std::size_t)>(
-            run_read_op{},
+            run_read_op{impl_},
             handler,
-            impl_,
             &buffer,
             0,
             false);
@@ -982,7 +1000,7 @@ read_some(
     if(! limit)
         limit = (std::numeric_limits<std::size_t>::max)();
     auto const size =
-        clamp(read_size_hint(buffer), limit);
+        clamp(impl_->read_size_hint_db(buffer), limit);
     BOOST_ASSERT(size > 0);
     auto mb = beast::detail::dynamic_buffer_prepare(
         buffer, size, ec, error::buffer_overflow);
@@ -1010,9 +1028,8 @@ async_read_some(
     return net::async_initiate<
         ReadHandler,
         void(error_code, std::size_t)>(
-            run_read_op{},
+            run_read_op{impl_},
             handler,
-            impl_,
             &buffer,
             limit,
             true);
@@ -1281,8 +1298,6 @@ loop:
                 zs.avail_out = out.size();
                 BOOST_ASSERT(zs.avail_out > 0);
             }
-            // boolean to track the end of the message.
-            bool fin = false;
             if(impl.rd_remain > 0)
             {
                 if(impl.rd_buf.size() > 0)
@@ -1321,26 +1336,26 @@ loop:
                 {
                     break;
                 }
+                impl.inflate(zs, ec);
+                if(impl.check_stop_now(ec))
+                    return bytes_written;
+                impl.rd_remain -= zs.total_in;
+                impl.rd_buf.consume(zs.total_in);
             }
             else if(impl.rd_fh.fin)
             {
-                // append the empty block codes
-                static std::uint8_t constexpr
-                    empty_block[4] = { 0x00, 0x00, 0xff, 0xff };
-                zs.next_in = empty_block;
-                zs.avail_in = sizeof(empty_block);
-                fin = true;
+                impl.inflate_with_eb(zs, ec);
+                if(impl.check_stop_now(ec))
+                    return bytes_written;
+                if(zs.total_out == 0)
+                {
+                    impl.do_context_takeover_read(impl.role);
+                    impl.rd_done = true;
+                    break;
+                }
             }
             else
             {
-                break;
-            }
-            impl.inflate(zs, zlib::Flush::sync, ec);
-            if(impl.check_stop_now(ec))
-                return bytes_written;
-            if (fin && zs.total_out == 0) {
-                impl.do_context_takeover_read(impl.role);
-                impl.rd_done = true;
                 break;
             }
             if(impl.rd_msg_max && beast::detail::sum_exceeds(
@@ -1352,10 +1367,6 @@ loop:
             }
             cb.consume(zs.total_out);
             impl.rd_size += zs.total_out;
-            if (! fin) {
-                impl.rd_remain -= zs.total_in;
-                impl.rd_buf.consume(zs.total_in);
-            }
             bytes_written += zs.total_out;
         }
         if(impl.rd_op == detail::opcode::text)
@@ -1391,9 +1402,8 @@ async_read_some(
     return net::async_initiate<
         ReadHandler,
         void(error_code, std::size_t)>(
-            run_read_some_op{},
+            run_read_some_op{impl_},
             handler,
-            impl_,
             buffers);
 }
 

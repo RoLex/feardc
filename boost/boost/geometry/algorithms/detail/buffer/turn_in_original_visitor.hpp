@@ -16,8 +16,9 @@
 
 
 #include <boost/core/ignore_unused.hpp>
-#include <boost/geometry/core/coordinate_type.hpp>
+#include <boost/range/size.hpp>
 
+#include <boost/geometry/core/coordinate_type.hpp>
 #include <boost/geometry/algorithms/detail/buffer/buffer_policies.hpp>
 #include <boost/geometry/algorithms/detail/disjoint/interface.hpp>
 #include <boost/geometry/algorithms/expand.hpp>
@@ -74,7 +75,7 @@ struct include_turn_policy
     template <typename Turn>
     static inline bool apply(Turn const& turn)
     {
-        return turn.is_turn_traversable;
+        return turn.is_traversable;
     }
 };
 
@@ -88,7 +89,7 @@ struct turn_in_original_overlaps_box
     template <typename Box, typename Turn>
     inline bool apply(Box const& box, Turn const& turn) const
     {
-        if (! turn.is_turn_traversable || turn.within_original)
+        if (! turn.is_traversable || turn.within_original)
         {
             // Skip all points already processed
             return false;
@@ -236,7 +237,7 @@ public:
             return true;
         }
 
-        if (! turn.is_turn_traversable || turn.within_original)
+        if (! turn.is_traversable || turn.within_original)
         {
             // Skip all points already processed
             return true;
@@ -261,7 +262,7 @@ public:
         if (code == 0)
         {
             // On border of original: always discard
-            mutable_turn.is_turn_traversable = false;
+            mutable_turn.is_traversable = false;
         }
 
         // Point is inside an original ring

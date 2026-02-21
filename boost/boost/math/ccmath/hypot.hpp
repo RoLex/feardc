@@ -7,12 +7,14 @@
 #ifndef BOOST_MATH_CCMATH_HYPOT_HPP
 #define BOOST_MATH_CCMATH_HYPOT_HPP
 
-#include <cmath>
+#include <boost/math/ccmath/detail/config.hpp>
+
+#ifdef BOOST_MATH_NO_CCMATH
+#error "The header <boost/math/hypot.hpp> can only be used in C++17 and later."
+#endif
+
 #include <array>
-#include <limits>
-#include <type_traits>
 #include <boost/math/tools/config.hpp>
-#include <boost/math/tools/is_constant_evaluated.hpp>
 #include <boost/math/tools/promotion.hpp>
 #include <boost/math/ccmath/sqrt.hpp>
 #include <boost/math/ccmath/abs.hpp>
@@ -87,7 +89,7 @@ constexpr auto hypot(T1 x, T2 y) noexcept
 {
     if(BOOST_MATH_IS_CONSTANT_EVALUATED(x))
     {
-        using promoted_type = boost::math::tools::promote_args_2_t<T1, T2>;
+        using promoted_type = boost::math::tools::promote_args_t<T1, T2>;
         return boost::math::ccmath::hypot(static_cast<promoted_type>(x), static_cast<promoted_type>(y));
     }
     else

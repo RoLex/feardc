@@ -23,8 +23,8 @@
 
 #include <boost/container/detail/config_begin.hpp>
 #include <boost/container/container_fwd.hpp>
+#include <boost/container/detail/workaround.hpp>
 #include <boost/intrusive/pack_options.hpp>
-#include <boost/static_assert.hpp>
 
 namespace boost {
 namespace container {
@@ -52,8 +52,8 @@ enum tree_type_enum
 template<tree_type_enum TreeType, bool OptimizeSize>
 struct tree_opt
 {
-   static const boost::container::tree_type_enum tree_type = TreeType;
-   static const bool optimize_size = OptimizeSize;
+   BOOST_STATIC_CONSTEXPR boost::container::tree_type_enum tree_type = TreeType;
+   BOOST_STATIC_CONSTEXPR bool optimize_size = OptimizeSize;
 };
 
 typedef tree_opt<red_black_tree, true> tree_assoc_defaults;
@@ -116,15 +116,13 @@ using tree_assoc_options_t = typename boost::container::tree_assoc_options<Optio
 template<bool StoreHash, bool CacheBegin, bool LinearBuckets, bool FastmodBuckets>
 struct hash_opt
 {
-   static const bool store_hash  = StoreHash;
-   static const bool cache_begin = CacheBegin;
-   static const bool linear_buckets = LinearBuckets;
-   static const bool fastmod_buckets = FastmodBuckets;
+   BOOST_STATIC_CONSTEXPR bool store_hash  = StoreHash;
+   BOOST_STATIC_CONSTEXPR bool cache_begin = CacheBegin;
+   BOOST_STATIC_CONSTEXPR bool linear_buckets = LinearBuckets;
+   BOOST_STATIC_CONSTEXPR bool fastmod_buckets = FastmodBuckets;
 };
 
 typedef hash_opt<false, false, false, false> hash_assoc_defaults;
-
-#endif   //!defined(BOOST_CONTAINER_DOXYGEN_INVOKED)
 
 //!This option setter specifies if nodes also store the hash value
 //!so that search and rehashing for hash-expensive types is improved.
@@ -178,6 +176,8 @@ using hash_assoc_options_t = typename boost::container::hash_assoc_options<Optio
 
 #endif
 
+#endif   //!defined(BOOST_CONTAINER_DOXYGEN_INVOKED)
+
 ////////////////////////////////////////////////////////////////
 //
 //
@@ -203,18 +203,16 @@ struct default_if_void<void, Default>
 template<std::size_t N, std::size_t DefaultN>
 struct default_if_zero
 {
-   static const std::size_t value = N;
+   BOOST_STATIC_CONSTEXPR std::size_t value = N;
 };
 
 template<std::size_t DefaultN>
 struct default_if_zero<0u, DefaultN>
 {
-   static const std::size_t value = DefaultN;
+   BOOST_STATIC_CONSTEXPR std::size_t value = DefaultN;
 };
 
-
-
-#endif
+#endif   //!defined(BOOST_CONTAINER_DOXYGEN_INVOKED)
 
 #if !defined(BOOST_CONTAINER_DOXYGEN_INVOKED)
 
@@ -246,7 +244,7 @@ class default_next_capacity;
 
 typedef vector_opt<void, void> vector_null_opt;
 
-#else    //!defined(BOOST_CONTAINER_DOXYGEN_INVOKED)
+#else
 
 //!This growth factor argument specifies that the container should increase its
 //!capacity a 50% when existing capacity is exhausted.
@@ -262,20 +260,30 @@ struct growth_factor_100{};
 
 #endif   //!defined(BOOST_CONTAINER_DOXYGEN_INVOKED)
 
-//!This option setter specifies the growth factor strategy of the underlying vector.
+//!This option setter specifies the growth factor strategy of the
+//!underlying vector.
 //!
-//!\tparam GrowthFactor A function object that has the following signature:<br/><br/>
-//!`template<class SizeType>`<br/>
-//!`SizeType operator()(SizeType cur_cap, SizeType add_min_cap, SizeType max_cap) const;`.<br/><br/>
-//!`cur_cap` is the current capacity, `add_min_cap` is the minimum additional capacity
-//!we want to achieve and `max_cap` is the maximum capacity that the allocator or other 
-//!factors allow. The implementation should return a value between `cur_cap` + `add_min_cap`
-//!and `max_cap`. `cur_cap` + `add_min_cap` is guaranteed not to overflow/wraparound,
-//! but the implementation should handle wraparound produced by the growth factor.
+//!\tparam GrowthFactor The function object that implements the growth factor
+//!
+//! The GrowthFactor function object must offer the following interface:
+//!
+//!\code
+//!template<class SizeType>
+//!SizeType operator()(SizeType cur_cap, SizeType add_min_cap, SizeType max_cap) const;
+//!\endcode
+//!
+//!Where:
+//!   * `cur_cap` is the current capacity
+//!   * `add_min_cap` is the minimum additional capacity we want to achieve
+//!   * `max_cap` is the maximum capacity that the allocator or other factors allow.
+//!
+//!The implementation should return a value between `cur_cap + add_min_cap`
+//!and `max_cap`. The implementation should handle the potential wraparound produced
+//!by the growth factor and always succeed with a correct value.
 //!
 //!Predefined growth factors that can be passed as arguments to this option are:
-//!\c boost::container::growth_factor_50
-//!\c boost::container::growth_factor_60
+//!\c boost::container::growth_factor_50,
+//!\c boost::container::growth_factor_60 and
 //!\c boost::container::growth_factor_100
 //!
 //!If this option is not specified, a default will be used by the container.
@@ -289,8 +297,8 @@ BOOST_INTRUSIVE_OPTION_TYPE(growth_factor, GrowthFactor, GrowthFactor, growth_fa
 //!
 //!If the maximum capacity() to be used is limited, a user can try to use 8-bit, 16-bit 
 //!(e.g. in 32-bit machines), or 32-bit size types (e.g. in a 64 bit machine) to see if some
-//!memory can be saved for empty vectors. This could potentially performance benefits due to better
-//!cache usage.
+//!memory can be saved, specially for empty containers. This could potentially improve performance
+//!due to better cache usage.
 //!
 //!Note that alignment requirements can disallow theoretical space savings. Example:
 //!\c vector holds a pointer and two size types (for size and capacity), in a 32 bit machine
@@ -301,7 +309,7 @@ BOOST_INTRUSIVE_OPTION_TYPE(growth_factor, GrowthFactor, GrowthFactor, growth_fa
 //!Measure the size of the resulting container and do not assume a smaller \c stored_size
 //!will always lead to a smaller sizeof(container).
 //!
-//!If a user tries to insert more elements than representable by \c stored_size, vector
+//!If a user tries to insert more elements than representable by \c stored_size, the container
 //!will throw a length_error.
 //!
 //!If this option is not specified, `allocator_traits<A>::size_type` (usually std::size_t) will
@@ -337,7 +345,6 @@ struct vector_options
 
 //! Helper alias metafunction to combine options into a single type to be used
 //! by \c boost::container::vector.
-//! Supported options are: \c boost::container::growth_factor and \c boost::container::stored_size
 template<class ...Options>
 using vector_options_t = typename boost::container::vector_options<Options...>::type;
 
@@ -360,20 +367,23 @@ BOOST_INTRUSIVE_OPTION_CONSTANT(inplace_alignment, std::size_t, Alignment, inpla
 
 #if !defined(BOOST_CONTAINER_DOXYGEN_INVOKED)
 
-template<class GrowthType, std::size_t InplaceAlignment>
+template<class GrowthType, std::size_t InplaceAlignment, class StoredSizeType>
 struct small_vector_opt
 {
-   typedef GrowthType      growth_factor_type;
-   static const std::size_t inplace_alignment = InplaceAlignment;
+   typedef GrowthType     growth_factor_type;
+   BOOST_STATIC_CONSTEXPR std::size_t inplace_alignment = InplaceAlignment;
+   typedef StoredSizeType stored_size_type;
 };
 
-typedef small_vector_opt<void, 0u> small_vector_null_opt;
+typedef small_vector_opt<void, 0u, void> small_vector_null_opt;
 
 #endif    //!defined(BOOST_CONTAINER_DOXYGEN_INVOKED)
 
 //! Helper metafunction to combine options into a single type to be used
 //! by \c boost::container::small_vector.
-//! Supported options are: \c boost::container::growth_factor and \c boost::container::inplace_alignment
+//! Supported options are: \c boost::container::growth_factor,
+//! \c boost::container::inplace_alignment and
+//! \c boost::container::stored_size.
 #if defined(BOOST_CONTAINER_DOXYGEN_INVOKED) || defined(BOOST_CONTAINER_VARIADIC_TEMPLATES)
 template<class ...Options>
 #else
@@ -391,7 +401,9 @@ struct small_vector_options
       #endif
       >::type packed_options;
    typedef small_vector_opt< typename packed_options::growth_factor_type
-                           , packed_options::inplace_alignment> implementation_defined;
+                           , packed_options::inplace_alignment
+                           , typename packed_options::stored_size_type
+                           > implementation_defined;
    /// @endcond
    typedef implementation_defined type;
 };
@@ -400,7 +412,6 @@ struct small_vector_options
 
 //! Helper alias metafunction to combine options into a single type to be used
 //! by \c boost::container::small_vector.
-//! Supported options are: \c boost::container::growth_factor and \c boost::container::stored_size
 template<class ...Options>
 using small_vector_options_t = typename boost::container::small_vector_options<Options...>::type;
 
@@ -427,20 +438,22 @@ BOOST_INTRUSIVE_OPTION_CONSTANT(throw_on_overflow, bool, ThrowOnOverflow, throw_
 
 #if !defined(BOOST_CONTAINER_DOXYGEN_INVOKED)
 
-template<bool ThrowOnOverflow, std::size_t InplaceAlignment>
+template<bool ThrowOnOverflow, std::size_t InplaceAlignment, class StoredSizeType>
 struct static_vector_opt
 {
-   static const bool throw_on_overflow = ThrowOnOverflow;
-   static const std::size_t inplace_alignment = InplaceAlignment;
+   BOOST_STATIC_CONSTEXPR bool throw_on_overflow = ThrowOnOverflow;
+   BOOST_STATIC_CONSTEXPR std::size_t inplace_alignment = InplaceAlignment;
+   typedef StoredSizeType stored_size_type;
 };
 
-typedef static_vector_opt<true, 0u> static_vector_null_opt;
+typedef static_vector_opt<true, 0u, void> static_vector_null_opt;
 
 #endif    //!defined(BOOST_CONTAINER_DOXYGEN_INVOKED)
 
 //! Helper metafunction to combine options into a single type to be used
 //! by \c boost::container::static_vector.
-//! Supported options are: \c boost::container::throw_on_overflow and \c boost::container::inplace_alignment
+//! Supported options are: \c boost::container::throw_on_overflow, \c boost::container::inplace_alignment
+//! and \c boost::container::stored_size.
 #if defined(BOOST_CONTAINER_DOXYGEN_INVOKED) || defined(BOOST_CONTAINER_VARIADIC_TEMPLATES)
 template<class ...Options>
 #else
@@ -458,7 +471,9 @@ struct static_vector_options
       #endif
       >::type packed_options;
    typedef static_vector_opt< packed_options::throw_on_overflow
-                            , packed_options::inplace_alignment> implementation_defined;
+                            , packed_options::inplace_alignment
+                            , typename packed_options::stored_size_type
+                            > implementation_defined;
    /// @endcond
    typedef implementation_defined type;
 };
@@ -467,7 +482,6 @@ struct static_vector_options
 
 //! Helper alias metafunction to combine options into a single type to be used
 //! by \c boost::container::static_vector.
-//! Supported options are: \c boost::container::growth_factor and \c boost::container::stored_size
 template<class ...Options>
 using static_vector_options_t = typename boost::container::static_vector_options<Options...>::type;
 
@@ -515,7 +529,7 @@ template<class GrowthType, class StoredSizeType, std::size_t FreeFraction>
 struct devector_opt
    : vector_opt<GrowthType, StoredSizeType>
 {
-   static const std::size_t free_fraction = FreeFraction;
+   BOOST_STATIC_CONSTEXPR std::size_t free_fraction = FreeFraction;
 };
 
 typedef devector_opt<void, void, 0u> devector_null_opt;
@@ -587,7 +601,6 @@ struct devector_options
 
 //! Helper alias metafunction to combine options into a single type to be used
 //! by \c boost::container::devector.
-//! Supported options are: \c boost::container::growth_factor and \c boost::container::stored_size
 template<class ...Options>
 using devector_options_t = typename boost::container::devector_options<Options...>::type;
 
@@ -603,21 +616,30 @@ using devector_options_t = typename boost::container::devector_options<Options..
 
 #if !defined(BOOST_CONTAINER_DOXYGEN_INVOKED)
 
-template<std::size_t BlockBytes, std::size_t BlockSize>
+template<std::size_t BlockBytes, std::size_t BlockSize, class StoredSizeType, bool Reservable>
 struct deque_opt
 {
-   static const std::size_t block_bytes = BlockBytes;
-   static const std::size_t block_size  = BlockSize;
-   BOOST_STATIC_ASSERT_MSG(!(block_bytes && block_size), "block_bytes and block_size can't be specified at the same time");
+   BOOST_STATIC_CONSTEXPR std::size_t block_bytes = BlockBytes;
+   BOOST_STATIC_CONSTEXPR std::size_t block_size  = BlockSize;
+   BOOST_CONTAINER_STATIC_ASSERT_MSG(!(block_bytes && block_size), "block_bytes and block_size can't be specified at the same time");
+   BOOST_STATIC_CONSTEXPR bool reservable  = Reservable;
+
+   typedef StoredSizeType  stored_size_type;
+
+   template<class AllocTraits>
+   struct get_stored_size_type
+      : get_stored_size_type_with_alloctraits<AllocTraits, StoredSizeType>
+   {};
 };
 
-typedef deque_opt<0u, 0u> deque_null_opt;
+typedef deque_opt<0u, 0u, void, false> deque_null_opt;
 
 #endif
 
 //! Helper metafunction to combine options into a single type to be used
 //! by \c boost::container::deque.
-//! Supported options are: \c boost::container::block_bytes
+//! Supported options are: \c boost::container::block_bytes, \c boost::container::block_size,
+//! \c boost::container::stored_size and \c boost::container::reservable
 #if defined(BOOST_CONTAINER_DOXYGEN_INVOKED) || defined(BOOST_CONTAINER_VARIADIC_TEMPLATES)
 template<class ...Options>
 #else
@@ -634,7 +656,11 @@ struct deque_options
       Options...
       #endif
       >::type packed_options;
-   typedef deque_opt< packed_options::block_bytes, packed_options::block_size > implementation_defined;
+   typedef deque_opt< packed_options::block_bytes
+                    , packed_options::block_size
+                    , typename packed_options::stored_size_type
+                    , packed_options::reservable
+                    > implementation_defined;
    /// @endcond
    typedef implementation_defined type;
 };
@@ -643,25 +669,34 @@ struct deque_options
 
 //! Helper alias metafunction to combine options into a single type to be used
 //! by \c boost::container::deque.
-//! Supported options are: \c boost::container::block_bytes
 template<class ...Options>
 using deque_options_t = typename boost::container::deque_options<Options...>::type;
 
 #endif
 
 //!This option specifies the maximum size of a block in bytes: this delimites the number of contiguous elements
-//!that will be allocated by deque as min(1u, BlockBytes/sizeof(value_type))
+//!that will be allocated by some containers as min(1u, BlockBytes/sizeof(value_type))
 //!A value zero represents the default value.
 //!
 //!\tparam BlockBytes An unsigned integer value.
 BOOST_INTRUSIVE_OPTION_CONSTANT(block_bytes, std::size_t, BlockBytes, block_bytes)
 
 //!This option specifies the size of a block, delimites the number of contiguous elements
-//!that will be allocated by deque as BlockSize.
+//!that will be allocated by some containersas BlockSize.
+//!For some containers (like deque), a power of two value can improve performance.
 //!A value zero represents the default value.
 //!
 //!\tparam BlockBytes An unsigned integer value.
 BOOST_INTRUSIVE_OPTION_CONSTANT(block_size, std::size_t, BlockSize, block_size)
+
+//!This option specifies if the container has reserve/capacity-like features
+//!
+//!For some containers (like deque) this option might change the internal representation or
+//!behavior so that memory for elements can be allocated in advance in
+//!order to improve performance.
+//!
+//!\tparam Reservable An boolean value.
+BOOST_INTRUSIVE_OPTION_CONSTANT(reservable, bool, Reservable, reservable)
 
 }  //namespace container {
 }  //namespace boost {

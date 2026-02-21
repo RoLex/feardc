@@ -34,14 +34,12 @@ Locale::Po4a::Common, the first time this module is loaded determines whether Te
 
 package Locale::Po4a::Common;
 
-require Exporter;
-use vars qw(@ISA @EXPORT);
-@ISA    = qw(Exporter);
-@EXPORT = qw(wrap_msg wrap_mod wrap_ref_mod textdomain gettext dgettext);
-
 use 5.16.0;
 use strict;
 use warnings;
+
+use parent qw(Exporter);
+our @EXPORT_OK = qw(wrap_msg wrap_mod wrap_ref_mod gettext dgettext);
 
 sub import {
     my $class = shift;
@@ -224,7 +222,9 @@ BEGIN {
     if ( eval { require Locale::gettext } ) {
         import Locale::gettext;
         require POSIX;
-        POSIX::setlocale( &POSIX::LC_MESSAGES, '' );
+
+        # This cannot be done on Windows
+        POSIX::setlocale( &POSIX::LC_MESSAGES, '' ) unless $^O eq 'MSWin32';
     } else {
         eval '
            sub bindtextdomain($$) { }

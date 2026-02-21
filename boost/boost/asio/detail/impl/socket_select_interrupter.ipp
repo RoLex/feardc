@@ -2,7 +2,7 @@
 // detail/impl/socket_select_interrupter.ipp
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
-// Copyright (c) 2003-2023 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+// Copyright (c) 2003-2025 Christopher M. Kohlhoff (chris at kohlhoff dot com)
 //
 // Distributed under the Boost Software License, Version 1.0. (See accompanying
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -36,7 +36,7 @@ namespace boost {
 namespace asio {
 namespace detail {
 
-socket_select_interrupter::socket_select_interrupter()
+socket_select_interrupter::socket_select_interrupter(bool)
 {
   open_descriptors();
 }
@@ -91,7 +91,7 @@ void socket_select_interrupter::open_descriptors()
   socket_holder server(socket_ops::accept(acceptor.get(), 0, 0, ec));
   if (server.get() == invalid_socket)
     boost::asio::detail::throw_error(ec, "socket_select_interrupter");
-  
+
   ioctl_arg_type non_blocking = 1;
   socket_ops::state_type client_state = 0;
   if (socket_ops::ioctl(client.get(), client_state,

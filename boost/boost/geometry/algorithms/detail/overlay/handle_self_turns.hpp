@@ -53,6 +53,22 @@ struct check_within
 };
 
 template <>
+struct check_within<overlay_buffer>
+{
+    template
+    <
+        typename Turn, typename Geometry0, typename Geometry1,
+        typename UmbrellaStrategy
+    >
+    static inline
+    bool apply(Turn const& turn, Geometry0 const& geometry0,
+               Geometry1 const& geometry1, UmbrellaStrategy const& strategy)
+    {
+        return false;
+    }
+};
+
+template <>
 struct check_within<overlay_difference>
 {
     template
@@ -128,7 +144,7 @@ private :
     template <typename Turns, typename Clusters>
     static inline
     bool is_self_cluster(signed_size_type cluster_id,
-            const Turns& turns, Clusters const& clusters)
+            Turns const& turns, Clusters const& clusters)
     {
         auto cit = clusters.find(cluster_id);
         if (cit == clusters.end())

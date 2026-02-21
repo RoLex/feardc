@@ -38,4 +38,5 @@
 * Fix C++20 deprecation warnings
 * Add support for TLS-encrypted NMDC client to client connections, requires successful TLS configuration on our side and specified TLS flag in remote user $MyINFO
 * Add support for NAT traversal in passive client to client connections when using NMDC, requires specified NAT flag in remote user $MyINFO
+* Allow to copy address with keyprint to clipboard for NMDCS hubs
 ```

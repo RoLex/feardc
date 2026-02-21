@@ -15,7 +15,7 @@
 #include <boost/url/grammar/recycled.hpp>
 #include <boost/core/empty_value.hpp>
 #include <boost/assert.hpp>
-#include <boost/static_assert.hpp>
+#include <boost/core/detail/static_assert.hpp>
 #include <exception>
 #include <iterator>
 #include <new>
@@ -464,7 +464,7 @@ range(
     : s_(s)
     , n_(n)
 {
-    BOOST_STATIC_ASSERT(
+    BOOST_CORE_STATIC_ASSERT(
         sizeof(impl1<R, false>) <=
             BufferSize);
 
@@ -487,7 +487,7 @@ range(
     : s_(s)
     , n_(n)
 {
-    BOOST_STATIC_ASSERT(
+    BOOST_CORE_STATIC_ASSERT(
         sizeof(impl2<R0, R1, false>) <=
             BufferSize);
 
@@ -600,7 +600,7 @@ end() const noexcept ->
 
 template<class R>
 auto
-range_rule_t<R>::
+implementation_defined::range_rule_t<R>::
 parse(
     char const*& it,
     char const* end) const ->
@@ -669,7 +669,7 @@ parse(
 
 template<class R0, class R1>
 auto
-range_rule_t<R0, R1>::
+implementation_defined::range_rule_t<R0, R1>::
 parse(
     char const*& it,
     char const* end) const ->

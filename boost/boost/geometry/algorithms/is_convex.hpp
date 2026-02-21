@@ -16,6 +16,7 @@
 
 
 #include <boost/range/empty.hpp>
+#include <boost/range/size.hpp>
 
 #include <boost/geometry/algorithms/detail/equals/point_point.hpp>
 #include <boost/geometry/algorithms/detail/dummy_geometries.hpp>
@@ -153,7 +154,7 @@ namespace dispatch
 template
 <
     typename Geometry,
-    typename Tag = typename tag<Geometry>::type
+    typename Tag = tag_t<Geometry>
 >
 struct is_convex
 {
@@ -263,7 +264,7 @@ struct is_convex<default_strategy, false>
 
 namespace resolve_dynamic {
 
-template <typename Geometry, typename Tag = typename tag<Geometry>::type>
+template <typename Geometry, typename Tag = tag_t<Geometry>>
 struct is_convex
 {
     template <typename Strategy>

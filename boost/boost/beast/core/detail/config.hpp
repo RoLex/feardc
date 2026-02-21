@@ -14,8 +14,7 @@
 #include <boost/config.hpp>
 #include <boost/version.hpp>
 #include <boost/core/ignore_unused.hpp>
-#include <boost/static_assert.hpp>
-#include <boost/preprocessor/cat.hpp>
+#include <boost/core/detail/static_assert.hpp>
 
 namespace boost {
 namespace asio
@@ -41,8 +40,8 @@ namespace net = boost::asio;
 # endif
 
 #elif defined(BOOST_GCC)
-# if(BOOST_GCC < 40801)
-#  error Beast requires C++11: gcc version 4.8 or later needed
+# if(BOOST_GCC < 50000)
+#  error Beast requires C++11: gcc version 5 or later needed
 # endif
 
 #else
@@ -102,15 +101,16 @@ namespace net = boost::asio;
 #define BOOST_BEAST_ASYNC_TPARAM2 BOOST_ASIO_COMPLETION_TOKEN_FOR(void(::boost::beast::error_code, ::std::size_t))
 #endif
 
-
 #ifdef BOOST_BEAST_NO_SOURCE_LOCATION
 #define BOOST_BEAST_ASSIGN_EC(ec, error) ec = error
 #else
-
 #define BOOST_BEAST_ASSIGN_EC(ec, error) \
-    static constexpr auto BOOST_PP_CAT(loc_, __LINE__) ((BOOST_CURRENT_LOCATION)); \
-    ec.assign(error, & BOOST_PP_CAT(loc_, __LINE__) )
-
+    do \
+    { \
+        static constexpr auto loc_bb_((BOOST_CURRENT_LOCATION)); \
+        ec.assign(error, &loc_bb_); \
+    } \
+    while (false)
 #endif
 
 #ifndef BOOST_BEAST_FILE_BUFFER_SIZE

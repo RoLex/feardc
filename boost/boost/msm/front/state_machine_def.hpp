@@ -14,13 +14,14 @@
 #include <exception>
 #include <boost/assert.hpp>
 
+#include <boost/fusion/include/vector.hpp>
 #include <boost/mpl/vector.hpp>
-
 #include <boost/msm/row_tags.hpp>
 #include <boost/msm/back/common_types.hpp>
 #include <boost/msm/front/states.hpp>
 #include <boost/msm/front/completion_event.hpp>
 #include <boost/msm/front/common_states.hpp>
+#include <boost/msm/front/history_policies.hpp>
 
 namespace boost { namespace msm { namespace front
 {
@@ -29,15 +30,22 @@ template<class Derived,class BaseState = default_base_state>
 struct state_machine_def :  public boost::msm::front::detail::state_base<BaseState>
 {
     // tags
+    struct internal
+    {
+        typedef detail::composite_state_tag          tag;
+    };
     // default: no flag
-    typedef ::boost::mpl::vector0<>               flag_list;
-    typedef ::boost::mpl::vector0<>               internal_flag_list;
+    typedef ::boost::fusion::vector0<>               flag_list;
+    typedef ::boost::fusion::vector0<>               internal_flag_list;
     //default: no deferred events
-    typedef ::boost::mpl::vector0<>               deferred_events;
+    typedef ::boost::fusion::vector0<>               deferred_events;
     // customization (message queue, exceptions)
-    typedef ::boost::mpl::vector0<>               configuration;
+    typedef ::boost::fusion::vector0<>               configuration;
+    // history policy (required in the front-end for backmp11)
+    typedef no_history                               history;
 
-    typedef BaseState                             BaseAllStates;
+    typedef BaseState                                BaseAllStates;
+
     template<
         typename T1
         , class Event

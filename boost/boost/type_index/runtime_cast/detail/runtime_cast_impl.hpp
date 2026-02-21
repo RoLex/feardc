@@ -18,7 +18,10 @@
 /// desire opt in functionality instead of enabling it system wide.
 
 #include <boost/type_index.hpp>
-#include <boost/type_traits/integral_constant.hpp>
+
+#if !defined(BOOST_TYPE_INDEX_INTERFACE_UNIT)
+#include <type_traits>
+#endif
 
 #ifdef BOOST_HAS_PRAGMA_ONCE
 # pragma once
@@ -29,24 +32,24 @@ namespace boost { namespace typeindex {
 namespace detail {
 
 template<typename T, typename U>
-T* runtime_cast_impl(U* u, boost::true_type) BOOST_NOEXCEPT {
+T* runtime_cast_impl(U* u, std::integral_constant<bool, true>) noexcept {
     return u;
 }
 
 template<typename T, typename U>
-T const* runtime_cast_impl(U const* u, boost::true_type) BOOST_NOEXCEPT {
+T const* runtime_cast_impl(U const* u, std::integral_constant<bool, true>) noexcept {
     return u;
 }
 
 template<typename T, typename U>
-T* runtime_cast_impl(U* u, boost::false_type) BOOST_NOEXCEPT {
+T* runtime_cast_impl(U* u, std::integral_constant<bool, false>) noexcept {
     return const_cast<T*>(static_cast<T const*>(
         u->boost_type_index_find_instance_(boost::typeindex::type_id<T>())
     ));
 }
 
 template<typename T, typename U>
-T const* runtime_cast_impl(U const* u, boost::false_type) BOOST_NOEXCEPT {
+T const* runtime_cast_impl(U const* u, std::integral_constant<bool, false>) noexcept {
     return static_cast<T const*>(u->boost_type_index_find_instance_(boost::typeindex::type_id<T>()));
 }
 

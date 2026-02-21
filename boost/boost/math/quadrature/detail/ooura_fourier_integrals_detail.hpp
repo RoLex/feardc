@@ -14,7 +14,7 @@
 #include <boost/math/constants/constants.hpp>
 #include <boost/math/tools/config.hpp>
 
-#ifdef BOOST_HAS_THREADS
+#ifdef BOOST_MATH_HAS_THREADS
 #include <mutex>
 #include <atomic>
 #endif
@@ -195,11 +195,15 @@ public:
         lweights_.reserve(levels);
 
         for (size_t i = 0; i < levels; ++i) {
-            if (std::is_same<Real, float>::value) {
+            BOOST_MATH_IF_CONSTEXPR (std::is_same<Real, float>::value) {
                 add_level<double>(i);
             }
-            else if (std::is_same<Real, double>::value) {
+            else BOOST_MATH_IF_CONSTEXPR (std::is_same<Real, double>::value) {
+#ifndef BOOST_MATH_NO_LONG_DOUBLE_MATH_FUNCTIONS
                 add_level<long double>(i);
+#else
+                add_level<double>(i);
+#endif
             }
             else {
                 add_level<Real>(i);
@@ -266,11 +270,15 @@ public:
         size_t max_additional_levels = 4;
         while (big_nodes_.size() < requested_levels_ + max_additional_levels) {
             size_t ii = big_nodes_.size();
-            if (std::is_same<Real, float>::value) {
+            BOOST_MATH_IF_CONSTEXPR (std::is_same<Real, float>::value) {
                 add_level<double>(ii);
             }
-            else if (std::is_same<Real, double>::value) {
+            else BOOST_MATH_IF_CONSTEXPR (std::is_same<Real, double>::value) {
+#ifndef BOOST_MATH_NO_LONG_DOUBLE_MATH_FUNCTIONS
                 add_level<long double>(ii);
+#else
+                add_level<double>(ii);
+#endif
             }
             else {
                 add_level<Real>(ii);
@@ -382,7 +390,7 @@ private:
         lnode_row.shrink_to_fit();
         lweight_row.shrink_to_fit();
 
-        #ifdef BOOST_HAS_THREADS
+        #ifdef BOOST_MATH_HAS_THREADS
         // std::scoped_lock once C++17 is more common?
         std::lock_guard<std::mutex> lock(node_weight_mutex_);
         #endif 
@@ -419,7 +427,7 @@ private:
         return I0;
     }
 
-    #ifdef BOOST_HAS_THREADS
+    #ifdef BOOST_MATH_HAS_THREADS
     std::mutex node_weight_mutex_;
     #endif
     // Nodes for n >= 0, giving t_n = pi*phi(nh)/h. Generally t_n >> 1.
@@ -433,7 +441,7 @@ private:
     std::vector<std::vector<Real>> lweights_;
     Real rel_err_goal_;
 
-    #ifdef BOOST_HAS_THREADS
+    #ifdef BOOST_MATH_HAS_THREADS
     std::atomic<long> starting_level_{};
     #else
     long starting_level_;
@@ -464,11 +472,15 @@ public:
         lweights_.reserve(levels);
 
         for (size_t i = 0; i < levels; ++i) {
-            if (std::is_same<Real, float>::value) {
+            BOOST_MATH_IF_CONSTEXPR (std::is_same<Real, float>::value) {
                 add_level<double>(i);
             }
-            else if (std::is_same<Real, double>::value) {
+            else BOOST_MATH_IF_CONSTEXPR (std::is_same<Real, double>::value) {
+#ifndef BOOST_MATH_NO_LONG_DOUBLE_MATH_FUNCTIONS
                 add_level<long double>(i);
+#else
+                add_level<double>(i);
+#endif
             }
             else {
                 add_level<Real>(i);
@@ -512,11 +524,15 @@ public:
         size_t max_additional_levels = 4;
         while (big_nodes_.size() < requested_levels_ + max_additional_levels) {
             size_t ii = big_nodes_.size();
-            if (std::is_same<Real, float>::value) {
+            BOOST_MATH_IF_CONSTEXPR (std::is_same<Real, float>::value) {
                 add_level<double>(ii);
             }
-            else if (std::is_same<Real, double>::value) {
+            else BOOST_MATH_IF_CONSTEXPR (std::is_same<Real, double>::value) {
+#ifndef BOOST_MATH_NO_LONG_DOUBLE_MATH_FUNCTIONS
                 add_level<long double>(ii);
+#else
+                add_level<double>(ii);
+#endif
             }
             else {
                 add_level<Real>(ii);
@@ -619,7 +635,7 @@ private:
         lnode_row.shrink_to_fit();
         lweight_row.shrink_to_fit();
 
-        #ifdef BOOST_HAS_THREADS
+        #ifdef BOOST_MATH_HAS_THREADS
         std::lock_guard<std::mutex> lock(node_weight_mutex_);
         #endif
 
@@ -651,7 +667,7 @@ private:
         return I0;
     }
 
-    #ifdef BOOST_HAS_THREADS
+    #ifdef BOOST_MATH_HAS_THREADS
     std::mutex node_weight_mutex_;
     #endif 
 
@@ -662,7 +678,7 @@ private:
     std::vector<std::vector<Real>> lweights_;
     Real rel_err_goal_;
 
-    #ifdef BOOST_HAS_THREADS
+    #ifdef BOOST_MATH_HAS_THREADS
     std::atomic<long> starting_level_{};
     #else
     long starting_level_;

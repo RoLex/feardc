@@ -3,7 +3,6 @@
 
 // Copyright 2008-2022 Emil Dotchevski and Reverge Studios, Inc.
 // Copyright 2019 agate-pris
-
 // Distributed under the Boost Software License, Version 1.0. (See accompanying
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -16,7 +15,7 @@
 #include <boost/qvm/detail/cofactor_impl.hpp>
 #include <boost/qvm/detail/transp_impl.hpp>
 #include <boost/qvm/scalar_traits.hpp>
-#include <string>
+#include <boost/qvm/to_string.hpp>
 
 namespace boost { namespace qvm {
 
@@ -34,12 +33,6 @@ qvm_detail
 
 ////////////////////////////////////////////////
 
-namespace
-qvm_to_string_detail
-    {
-    template <class T>
-    std::string to_string( T const & x );
-    }
 
 namespace
 qvm_detail
@@ -1116,9 +1109,9 @@ mat_traits< qvm_detail::zero_mat_<T,Rows,Cols> >
     scalar_type
     read_element_idx( int row, int col, this_matrix const & )
         {
-        BOOST_QVM_ASSERT(row>=0);
+        BOOST_QVM_ASSERT(row>=0); (void)row;
         BOOST_QVM_ASSERT(row<rows);
-        BOOST_QVM_ASSERT(col>=0);
+        BOOST_QVM_ASSERT(col>=0); (void)col;
         BOOST_QVM_ASSERT(col<cols);
         return scalar_traits<scalar_type>::value(0);
         }

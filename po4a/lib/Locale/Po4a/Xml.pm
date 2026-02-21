@@ -52,13 +52,9 @@ use 5.16.0;
 use strict;
 use warnings;
 
-require Exporter;
-use vars qw(@ISA @EXPORT);
-@ISA    = qw(Locale::Po4a::TransTractor);
-@EXPORT = qw(new initialize @tag_types);
+use parent qw(Locale::Po4a::TransTractor);
 
-use Locale::Po4a::TransTractor;
-use Locale::Po4a::Common;
+use Locale::Po4a::Common qw(wrap_mod wrap_ref_mod dgettext);
 use Carp qw(croak);
 use File::Basename;
 use File::Spec;
@@ -896,16 +892,33 @@ sub tag_trans_xmlhead {
     my $out_charset = $self->get_out_charset;
 
     if ( defined $in_charset ) {
-        croak wrap_mod(
-            "po4a::xml",
-            dgettext(
-                "po4a",
-                "The file %s declares %s as encoding, but you provided %s as master charset. Please change either setting."
-            ),
-            $self->{'current_file'},
-            $in_charset,
-            $input_charset
-        ) if ( length( $input_charset // '' ) > 0 && uc($input_charset) ne uc($in_charset) );
+        if ( length( $input_charset // '' ) > 0 && uc($in_charset) ne uc($input_charset) ) {
+            if (   ( $in_charset eq 'UTF-8' || lc($in_charset) eq 'utf8' )
+                && ( $input_charset eq 'UTF-8' || lc($input_charset) eq 'utf8' ) )
+            {
+                croak wrap_mod(
+                    "po4a::pod",
+                    dgettext(
+                        "po4a",
+                        "The file %s declares %s as encoding, but you provided %s as master charset. Please change either setting because they really are different encoding in Perl. See https://perldoc.perl.org/Encode#UTF-8-vs.-utf8-vs.-UTF8"
+                    ),
+                    $self->{DOCPOD}{refname},
+                    $in_charset,
+                    $input_charset,
+                );
+            } else {
+                croak wrap_mod(
+                    "po4a::pod",
+                    dgettext(
+                        "po4a",
+                        "The file %s declares %s as encoding, but you provided %s as master charset. Please change either setting."
+                    ),
+                    $self->{DOCPOD}{refname},
+                    $in_charset,
+                    $input_charset,
+                );
+            }
+        }
 
         $tag =~ s/$in_charset/$out_charset/;
     } else {
@@ -2042,10 +2055,10 @@ sub translate_paragraph {
     {
         my $holder      = $save_holders[$#save_holders];
 
-		# Make sure all folded attributes have been un-folded.
-		if (%{$holder->{folded_attributes}}) {
-			die wrap_ref_mod($paragraph[1], "po4a::xml", dgettext("po4a", "po4a-id attributes mis-match (path: %s; string: %s)"), $self->get_path, $para);
-		}
+        # Make sure all folded attributes have been un-folded.
+        if (%{$holder->{folded_attributes}}) {
+            die wrap_ref_mod($paragraph[1], "po4a::xml", dgettext("po4a", "po4a-id attributes mis-match (path: %s; string: %s)"), $self->get_path, $para);
+        }
 
         my $translation = $holder->{'translation'};
 

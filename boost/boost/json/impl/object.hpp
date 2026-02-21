@@ -10,6 +10,7 @@
 #ifndef BOOST_JSON_IMPL_OBJECT_HPP
 #define BOOST_JSON_IMPL_OBJECT_HPP
 
+#include <boost/core/detail/static_assert.hpp>
 #include <boost/json/value.hpp>
 #include <iterator>
 #include <cmath>
@@ -29,9 +30,8 @@ constexpr
 std::size_t
 small_object_size_ = 18;
 
-BOOST_STATIC_ASSERT(
-    small_object_size_ <
-    BOOST_JSON_MAX_STRUCTURED_SIZE);
+BOOST_CORE_STATIC_ASSERT(
+    small_object_size_ < BOOST_JSON_MAX_STRUCTURED_SIZE);
 
 } // detail
 
@@ -48,8 +48,7 @@ struct alignas(key_value_pair)
     // VFALCO If we make key_value_pair smaller,
     //        then we might want to revisit this
     //        padding.
-    BOOST_STATIC_ASSERT(
-        sizeof(key_value_pair) == 32);
+    BOOST_CORE_STATIC_ASSERT( sizeof(key_value_pair) == 32 );
     char pad[4] = {}; // silence warnings
 #endif
 
@@ -360,35 +359,19 @@ reserve(std::size_t new_capacity)
 //
 //----------------------------------------------------------
 
-auto
+value&
 object::
-at(string_view key) & ->
-    value&
+at(string_view key, source_location const& loc) &
 {
     auto const& self = *this;
-    return const_cast< value& >( self.at(key) );
+    return const_cast< value& >( self.at(key, loc) );
 }
 
-auto
+value&&
 object::
-at(string_view key) && ->
-    value&&
+at(string_view key, source_location const& loc) &&
 {
-    return std::move( at(key) );
-}
-
-auto
-object::
-at(string_view key) const& ->
-    value const&
-{
-    auto it = find(key);
-    if(it == end())
-    {
-        BOOST_STATIC_CONSTEXPR source_location loc = BOOST_CURRENT_LOCATION;
-        detail::throw_system_error( error::out_of_range, &loc );
-    }
-    return it->value();
+    return std::move( at(key, loc) );
 }
 
 //----------------------------------------------------------

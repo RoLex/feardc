@@ -1,6 +1,6 @@
 // Copyright Kevlin Henney, 2000-2005.
 // Copyright Alexander Nasonov, 2006-2010.
-// Copyright Antony Polukhin, 2011-2023.
+// Copyright Antony Polukhin, 2011-2025.
 //
 // Distributed under the Boost Software License, Version 1.0. (See
 // accompanying file LICENSE_1_0.txt or copy at
@@ -18,42 +18,34 @@
 #ifndef BOOST_LEXICAL_CAST_DETAIL_IS_CHARACTER_HPP
 #define BOOST_LEXICAL_CAST_DETAIL_IS_CHARACTER_HPP
 
+#include <type_traits>
+
 #include <boost/config.hpp>
 #ifdef BOOST_HAS_PRAGMA_ONCE
 #   pragma once
 #endif
 
-#include <boost/type_traits/integral_constant.hpp>
-#include <boost/type_traits/is_same.hpp>
+namespace boost { namespace detail {
 
-namespace boost {
+// returns true, if T is one of the character types
+template < typename T >
+using is_character = std::integral_constant<
+    bool,
+    std::is_same< T, char >::value ||
+#if !defined(BOOST_NO_STRINGSTREAM) && !defined(BOOST_NO_STD_WSTRING)
+    std::is_same< T, wchar_t >::value ||
+#endif
+#ifndef BOOST_NO_CXX11_CHAR16_T
+    std::is_same< T, char16_t >::value ||
+#endif
+#ifndef BOOST_NO_CXX11_CHAR32_T
+    std::is_same< T, char32_t >::value ||
+#endif
+    std::is_same< T, unsigned char >::value ||
+    std::is_same< T, signed char >::value
+>;
 
-    namespace detail // is_character<...>
-    {
-        // returns true, if T is one of the character types
-        template < typename T >
-        struct is_character
-        {
-            typedef BOOST_DEDUCED_TYPENAME boost::integral_constant<
-                bool,
-                boost::is_same< T, char >::value ||
-                    #if !defined(BOOST_NO_STRINGSTREAM) && !defined(BOOST_NO_STD_WSTRING)
-                        boost::is_same< T, wchar_t >::value ||
-                    #endif
-                    #ifndef BOOST_NO_CXX11_CHAR16_T
-                        boost::is_same< T, char16_t >::value ||
-                    #endif
-                    #ifndef BOOST_NO_CXX11_CHAR32_T
-                        boost::is_same< T, char32_t >::value ||
-                    #endif
-                        boost::is_same< T, unsigned char >::value ||
-                        boost::is_same< T, signed char >::value
-            > type;
-
-            BOOST_STATIC_CONSTANT(bool, value = (type::value) );
-        };
-    }
-}
+}}
 
 #endif // BOOST_LEXICAL_CAST_DETAIL_IS_CHARACTER_HPP
 

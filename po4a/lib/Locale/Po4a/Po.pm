@@ -96,29 +96,20 @@ Set the package version for the POT header. The default is "VERSION".
 
 =cut
 
-use IO::File;
-
-require Exporter;
-
 package Locale::Po4a::Po;
-use DynaLoader;
-
-use Locale::Po4a::Common qw(wrap_msg wrap_mod wrap_ref_mod dgettext);
-
-use subs qw(makespace);
-use vars qw(@ISA @EXPORT_OK);
-@ISA       = qw(Exporter DynaLoader);
-@EXPORT    = qw(%debug);
-@EXPORT_OK = qw(&move_po_if_needed);
-
-use Locale::Po4a::TransTractor;
-
-# Try to use a C extension if present.
-eval("bootstrap Locale::Po4a::Po $Locale::Po4a::TransTractor::VERSION");
 
 use 5.16.0;
 use strict;
 use warnings;
+
+use parent qw(Exporter);
+our @EXPORT_OK = qw(move_po_if_needed);
+
+use IO::File;
+
+use Locale::Po4a::Common qw(wrap_msg wrap_mod wrap_ref_mod dgettext);
+
+use subs qw(makespace);
 
 use Carp qw(croak);
 use File::Basename;
@@ -318,7 +309,7 @@ sub read {
     my $filename = shift
       or croak wrap_mod( "po4a::po", dgettext( "po4a", "Please provide a non-null filename" ) );
 
-    my $charset = shift // 'UTF-8';
+    my $charset = shift // '';
     $charset = 'UTF-8' if $charset eq "CHARSET";
     warn "Read $filename with encoding: $charset" if $debug{'encoding'};
 
@@ -344,42 +335,69 @@ sub read {
     if ( $filename eq '-' ) {
         $fh = *STDIN;
     } else {
-        open( $fh, "<:encoding($charset)", $filename )
+        open( $fh, "<", $filename )
           or croak wrap_mod( "po4a::po", dgettext( "po4a", "Cannot read from %s: %s" ), $filename, $! );
     }
 
-    ## Read paragraphs line-by-line
     my $pofile = "";
+    ## Read the first msgid/msgstr to detect encoding
     while ( defined( my $textline = <$fh> ) ) {
         $pofile .= $textline;
+        last if ( $textline =~ /^msgid/ );
     }
-    $pofile =~ s/\r\n/\n/sg;    # Reading a DOS-encoded file from Linux (native files are handled in all cases)
+    while ( defined( my $textline = <$fh> ) ) {
+        $pofile .= $textline;
+        last if ( $textline =~ /^\s*$/ );
+    }
 
-    # If we did not get the charset right, reload the file with the right one
-    if ( $pofile =~ /charset=(.*?)[\s\\]/ ) {
+    my $is_charset_detected;
+    # Detect the charset
+    if ( $pofile =~ /^msgid ""\s*$/m &&
+         $pofile =~ /^msgstr ""\s*$/m &&
+         $pofile =~ /charset=(.*?)[\s\\]/
+    ) {
         my $detected_charset = $1;
-
-        if ( $detected_charset ne $charset && uc($detected_charset) ne $charset && uc($detected_charset) ne 'CHARSET' )
-        {
-            warn "Reloading the PO file, changing the charset from '$charset' to '$detected_charset'"
-              if $debug{'encoding'};
-            $self->read( $filename, $detected_charset, $checkvalidity );
-            return;
+        if (   $detected_charset ne $charset &&
+            uc($detected_charset) ne $charset &&
+            uc($detected_charset) ne 'CHARSET'
+        ) {
+            warn "Detected '$detected_charset' in the PO file. Using it instead of '$charset'"
+                if $debug{'encoding'};
+            $charset = $detected_charset;
+            $is_charset_detected = 1;
         }
     }
 
+    if (not length $charset) {
+        warn "Failed to autodetect encoding of '$filename' and none was provided. Assuming 'UTF-8'." if $debug{'encoding'};
+        $charset = 'UTF-8';
+    }
     if ( $pofile =~ m/^\N{BOM}/ ) {    # UTF-8 BOM detected
         croak "BOM detected";
         croak wrap_msg(
-            dgettext(
-                "po4a",
-                "The file %s starts with a BOM char indicating that its encoding is UTF-8, but you specified %s instead."
-            ),
+            $is_charset_detected ? dgettext( "po4a",
+                    "The file %s starts with a BOM char indicating that its encoding is UTF-8, but '%s' was detected."
+                ) : dgettext( "po4a",
+                    "The file %s starts with a BOM char indicating that its encoding is UTF-8, but you specified '%s' instead."
+                ),
             $filename,
             $charset
         ) if ( uc($charset) ne 'UTF-8' );
         $pofile =~ s/^\N{BOM}//;
     }
+
+    # Decode already read part of the PO file with the charset
+    $pofile = decode($charset, $pofile);
+
+    warn "Imbuing PO file '$filename' with '$charset'" if $debug{'encoding'};
+    binmode( $fh, ":encoding($charset)");
+
+    # Reading the rest of the file
+    while ( defined( my $textline = <$fh> ) ) {
+        $pofile .= $textline;
+    }
+
+    $pofile =~ s/\r\n/\n/sg;    # Reading a DOS-encoded file from Linux (native files are handled in all cases)
 
     if ( $filename ne '-' ) {
         close $fh
@@ -541,6 +559,9 @@ sub write {
           or croak wrap_mod( "po4a::po", dgettext( "po4a", "Cannot write to %s: %s" ), $filename, $! );
     }
 
+    # Some old perl versions qwak when the encoding is only set to utf. We need to first reset it to raw before setting utf8 again. Not sure why it's so.
+    binmode( $fh, ':raw' );
+    binmode( $fh, ':utf8' );
     print $fh "" . format_comment( $self->{header_comment}, "" )
       if length( $self->{header_comment} );
 
@@ -1002,7 +1023,7 @@ sub gettext {
     }
 
     if ( $opt{'wrap'} ) {
-        $res = wrap( $res, $opt{'wrapcol'} || 76 );
+        $res = wrap( $res, $opt{'wrapcol'}, 0 );
     }
 
     #    print STDERR "Gettext >>>$text<<<(escaped=$esc_text)=[[[$res]]]\n\n";
@@ -1117,9 +1138,7 @@ This information is written to the PO file using the B<wrap> or B<no-wrap> flag.
 
 =item B<wrapcol>
 
-the column at which we should wrap (default: 76).
-
-This information is not written to the PO file.
+ignored; the key is kept for backward computability.
 
 =back
 
@@ -1539,18 +1558,30 @@ sub canonize {
     return $text;
 }
 
-# wraps the string. We don't use Text::Wrap since it mangles whitespace at the end of the split line
+# Wraps the string. We don't use Text::Wrap since it mangles whitespace at the
+# end of the split line.
+#
+# Mandatory arguments:
+#  - A string to wrap. May content line breaks, in such case each line will be
+#    wrapped separately.
+# Optional arguments:
+#  - A column to wrap on. Default: 76. If the provided value is 0, then no wrapping is done
+#  - The extra length allowed for the first line. Default: -10 (which means it
+#    will be wrapped 10 characters shorter).
 sub wrap {
     my $text = shift;
     return "0" if ( $text eq '0' );
-    my $col   = shift || 76;
-    my @lines = split( /\n/, "$text" );
-    my $res   = "";
-    my $first = 1;
+    my $col = shift // 76;
+    return $text if ( $col == 0 );    # Finally, no wrap required
+
+    my $first_shift = shift || -10;
+    my @lines       = split( /\n/, "$text" );
+    my $res         = "";
+
     while ( defined( my $line = shift @lines ) ) {
-        if ( $first && length($line) > $col - 10 ) {
+        if ( $first_shift != 0 && length($line) > $col + $first_shift ) {
             unshift @lines, $line;
-            $first = 0;
+            $first_shift = 0;
             next;
         }
         if ( length($line) > $col ) {
@@ -1573,7 +1604,7 @@ sub wrap {
                 unshift @lines, $end;
             }
         }
-        $first = 0;
+        $first_shift = 0;
         $res .= "$line\n";
     }
 

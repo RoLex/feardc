@@ -46,6 +46,7 @@ struct impl_base<true>
     {
         // `true` if current read message is compressed
         bool rd_set = false;
+        std::uint8_t rd_eb_consumed = 0;
 
         zlib::deflate_stream zo;
         zlib::inflate_stream zi;
@@ -70,6 +71,7 @@ struct impl_base<true>
         if(pmd_)
         {
             pmd_->rd_set = rsv1;
+            pmd_->rd_eb_consumed = 0;
             return true;
         }
         return ! rsv1; // pmd not negotiated
@@ -166,10 +168,25 @@ struct impl_base<true>
     void
     inflate(
         zlib::z_params& zs,
-        zlib::Flush flush,
         error_code& ec)
     {
-        pmd_->zi.write(zs, flush, ec);
+        pmd_->zi.write(zs, zlib::Flush::sync, ec);
+    }
+
+    // append the empty block codes and inflate
+    void
+    inflate_with_eb(
+        zlib::z_params& zs,
+        error_code& ec)
+    {
+        const std::uint8_t eb[4] = { 0x00, 0x00, 0xff, 0xff };
+        zs.next_in = eb + pmd_->rd_eb_consumed;
+        zs.avail_in = sizeof(eb) - pmd_->rd_eb_consumed;
+        inflate(zs, ec);
+        pmd_->rd_eb_consumed += zs.total_in;
+        BOOST_ASSERT(pmd_->rd_eb_consumed <= sizeof(eb));
+        if(ec == zlib::error::need_buffers)
+            ec.clear();
     }
 
     void
@@ -237,7 +254,6 @@ struct impl_base<true>
     {
         o = pmd_opts_;
     }
-
 
     void
     build_request_pmd(http::request<http::empty_body>& req)
@@ -311,8 +327,9 @@ struct impl_base<true>
     read_size_hint_pmd(
         std::size_t initial_size,
         bool rd_done,
+        std::size_t rd_msg_max,
         std::uint64_t rd_remain,
-        detail::frame_header const& rd_fh) const
+        frame_header const& rd_fh) const
     {
         using beast::detail::clamp;
         std::size_t result;
@@ -339,7 +356,16 @@ struct impl_base<true>
             initial_size, clamp(rd_remain));
     done:
         BOOST_ASSERT(result != 0);
+        // Ensure offered size does not exceed rd_msg_max
+        if(rd_msg_max)
+            result = clamp(result, rd_msg_max);
         return result;
+    }
+
+    void
+    get_config_pmd(detail::pmd_offer &pmd)
+    {
+        pmd = pmd_config_;
     }
 };
 
@@ -383,7 +409,13 @@ struct impl_base<false>
     void
     inflate(
         zlib::z_params&,
-        zlib::Flush,
+        error_code&)
+    {
+    }
+
+    void
+    inflate_with_eb(
+        zlib::z_params&,
         error_code&)
     {
     }
@@ -461,6 +493,7 @@ struct impl_base<false>
     read_size_hint_pmd(
         std::size_t initial_size,
         bool rd_done,
+        std::size_t rd_msg_max,
         std::uint64_t rd_remain,
         frame_header const& rd_fh) const
     {
@@ -485,7 +518,16 @@ struct impl_base<false>
                 initial_size, clamp(rd_remain));
         }
         BOOST_ASSERT(result != 0);
+        // Ensure offered size does not exceed rd_msg_max
+        if(rd_msg_max)
+            result = clamp(result, rd_msg_max);
         return result;
+    }
+
+    void
+    get_config_pmd(detail::pmd_offer &pmd)
+    {
+        pmd = {};
     }
 };
 

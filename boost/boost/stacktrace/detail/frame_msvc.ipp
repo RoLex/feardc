@@ -1,4 +1,4 @@
-// Copyright Antony Polukhin, 2016-2023.
+// Copyright Antony Polukhin, 2016-2025.
 //
 // Distributed under the Boost Software License, Version 1.0. (See
 // accompanying file LICENSE_1_0.txt or copy at
@@ -18,19 +18,39 @@
 #include <boost/core/noncopyable.hpp>
 #include <boost/stacktrace/detail/to_dec_array.hpp>
 #include <boost/stacktrace/detail/to_hex_array.hpp>
+
+#ifndef BOOST_STACKTRACE_DISABLE_OFFSET_ADDR_BASE
+#include <boost/stacktrace/detail/addr_base_msvc.hpp>
+#endif
+
+#ifdef WIN32_LEAN_AND_MEAN
 #include <windows.h>
+#else
+// Prevent inclusion of extra Windows SDK headers which can cause conflict
+// with other code using Windows SDK
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#undef WIN32_LEAN_AND_MEAN
+#endif
+
 #include "dbgeng.h"
 
-#ifdef BOOST_MSVC
+#include <mutex>
+
+#if defined(__clang__) || defined(BOOST_MSVC)
 #   pragma comment(lib, "ole32.lib")
 #   pragma comment(lib, "Dbgeng.lib")
 #endif
 
 
 #ifdef __CRT_UUID_DECL // for __MINGW32__
+#if !defined(__MINGW32__) || \
+    (!defined(__clang__) && __GNUC__ < 12) || \
+    (defined(__clang__) && __clang_major__ < 16)
     __CRT_UUID_DECL(IDebugClient,0x27fe5639,0x8407,0x4f47,0x83,0x64,0xee,0x11,0x8f,0xb0,0x8a,0xc8)
     __CRT_UUID_DECL(IDebugControl,0x5182e668,0x105e,0x416e,0xad,0x92,0x24,0xef,0x80,0x04,0x24,0xba)
     __CRT_UUID_DECL(IDebugSymbols,0x8c31e98c,0x983a,0x48a5,0x90,0x16,0x6f,0xe5,0xd6,0x67,0xa9,0x50)
+#endif
 #elif defined(DEFINE_GUID) && !defined(BOOST_MSVC)
     DEFINE_GUID(IID_IDebugClient,0x27fe5639,0x8407,0x4f47,0x83,0x64,0xee,0x11,0x8f,0xb0,0x8a,0xc8);
     DEFINE_GUID(IID_IDebugControl,0x5182e668,0x105e,0x416e,0xad,0x92,0x24,0xef,0x80,0x04,0x24,0xba);
@@ -49,23 +69,23 @@ class com_holder: boost::noncopyable {
     T* holder_;
 
 public:
-    com_holder() BOOST_NOEXCEPT
+    com_holder() noexcept
         : holder_(0)
     {}
 
-    T* operator->() const BOOST_NOEXCEPT {
+    T* operator->() const noexcept {
         return holder_;
     }
 
-    void** to_void_ptr_ptr() BOOST_NOEXCEPT {
+    void** to_void_ptr_ptr() noexcept {
         return reinterpret_cast<void**>(&holder_);
     }
 
-    bool is_inited() const BOOST_NOEXCEPT {
+    bool is_inited() const noexcept {
         return !!holder_;
     }
 
-    ~com_holder() BOOST_NOEXCEPT {
+    ~com_holder() noexcept {
         if (holder_) {
             holder_->Release();
         }
@@ -101,7 +121,7 @@ inline void trim_right_zeroes(std::string& s) {
 }
 
 class debugging_symbols: boost::noncopyable {
-    static void try_init_com(com_holder< ::IDebugSymbols>& idebug) BOOST_NOEXCEPT {
+    static void try_init_com(com_holder< ::IDebugSymbols>& idebug) noexcept {
         com_holder< ::IDebugClient> iclient;
         if (S_OK != ::DebugCreate(__uuidof(IDebugClient), iclient.to_void_ptr_ptr())) {
             return;
@@ -134,21 +154,37 @@ class debugging_symbols: boost::noncopyable {
     }
 
 #ifndef BOOST_STACKTRACE_USE_WINDBG_CACHED
-
-    com_holder< ::IDebugSymbols> idebug_;
-public:
-    debugging_symbols() BOOST_NOEXCEPT
-    {
-        try_init_com(idebug_);
+    static std::mutex& get_mutex_inst() noexcept {
+        static std::mutex m;
+        return m;
     }
 
+    static com_holder< ::IDebugSymbols>& get_static_debug_inst() noexcept {
+        // [class.mfct]: A static local variable or local type in a member function always refers to the same entity, whether
+        // or not the member function is inline.
+        static com_holder< ::IDebugSymbols> idebug;
+
+        if (!idebug.is_inited()) {
+            try_init_com(idebug);
+        }
+
+        return idebug;
+    }
+
+    std::lock_guard<std::mutex> guard_;
+    com_holder< ::IDebugSymbols>& idebug_;
+public:
+    debugging_symbols() noexcept
+        : guard_( get_mutex_inst() )
+        , idebug_( get_static_debug_inst() )
+    {}
 #else
 
 #ifdef BOOST_NO_CXX11_THREAD_LOCAL
 #   error Your compiler does not support C++11 thread_local storage. It`s impossible to build with BOOST_STACKTRACE_USE_WINDBG_CACHED.
 #endif
 
-    static com_holder< ::IDebugSymbols>& get_thread_local_debug_inst() BOOST_NOEXCEPT {
+    static com_holder< ::IDebugSymbols>& get_thread_local_debug_inst() noexcept {
         // [class.mfct]: A static local variable or local type in a member function always refers to the same entity, whether
         // or not the member function is inline.
         static thread_local com_holder< ::IDebugSymbols> idebug;
@@ -162,13 +198,13 @@ public:
 
     com_holder< ::IDebugSymbols>& idebug_;
 public:
-    debugging_symbols() BOOST_NOEXCEPT
+    debugging_symbols() noexcept
         : idebug_( get_thread_local_debug_inst() )
     {}
 
 #endif // #ifndef BOOST_STACKTRACE_USE_WINDBG_CACHED
 
-    bool is_inited() const BOOST_NOEXCEPT {
+    bool is_inited() const noexcept {
         return idebug_.is_inited();
     }
 
@@ -215,6 +251,57 @@ public:
         const std::size_t delimiter = result.find_first_of('!');
         if (module_name) {
             *module_name = result.substr(0, delimiter);
+            if (!module_name->empty()) {
+                ULONG64 base = 0;
+                res = (S_OK == idebug_->GetModuleByOffset(
+                    offset,
+                    0,
+                    nullptr,
+                    &base
+                ));
+                
+                if (res) {
+                    name[0] = '\0';
+                    size = 0;
+                    res = (S_OK == idebug_->GetModuleNames(
+                        DEBUG_ANY_ID,
+                        base,
+                        name,
+                        sizeof(name),
+                        &size,
+                        nullptr,
+                        0,
+                        nullptr,
+                        nullptr,
+                        0,
+                        nullptr
+                    ));
+                }
+
+                if (!res && size != 0)
+                {
+                    std::string module_path(size, char());
+                    res = (S_OK == idebug_->GetModuleNames(
+                        DEBUG_ANY_ID,
+                        base,
+                        &module_path[0],
+                        static_cast<ULONG>(module_path.size()),
+                        &size,
+                        nullptr,
+                        0,
+                        nullptr,
+                        nullptr,
+                        0,
+                        nullptr
+                    ));
+                    if (res && size > 1) {
+                        module_name->assign(module_path, size - 1);
+                    }
+                }
+                else if (res && size > 1) {
+                    module_name->assign(name, size - 1);
+                }                
+            }
         }
 
         if (delimiter == std::string::npos) {
@@ -230,7 +317,7 @@ public:
         return result;
     }
 
-    std::size_t get_line_impl(const void* addr) const BOOST_NOEXCEPT {
+    std::size_t get_line_impl(const void* addr) const noexcept {
         ULONG result = 0;
         if (!is_inited()) {
             return result;
@@ -308,7 +395,13 @@ public:
         if (!name.empty()) {
             res += name;
         } else {
+#ifdef BOOST_STACKTRACE_DISABLE_OFFSET_ADDR_BASE
             res += to_hex_array(addr).data();
+#else
+            // Get own base address
+            const uintptr_t base_addr = get_own_proc_addr_base(addr);
+            res += to_hex_array(reinterpret_cast<uintptr_t>(addr) - base_addr).data();
+#endif
         }
 
         std::pair<std::string, std::size_t> source_line = this->get_source_file_line_impl(addr);

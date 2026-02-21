@@ -10,12 +10,15 @@
 #ifndef BOOST_BEAST_HTTP_PARSER_HPP
 #define BOOST_BEAST_HTTP_PARSER_HPP
 
+#include <boost/beast/http/parser_fwd.hpp>
+
 #include <boost/beast/core/detail/config.hpp>
 #include <boost/beast/http/basic_parser.hpp>
 #include <boost/beast/http/message.hpp>
 #include <boost/beast/http/type_traits.hpp>
 #include <boost/optional.hpp>
 #include <boost/throw_exception.hpp>
+#include <cstdint>
 #include <functional>
 #include <memory>
 #include <type_traits>
@@ -42,10 +45,17 @@ namespace http {
 
     @note A new instance of the parser is required for each message.
 */
+#if BOOST_BEAST_DOXYGEN
 template<
     bool isRequest,
     class Body,
     class Allocator = std::allocator<char>>
+#else
+template<
+    bool isRequest,
+    class Body,
+    class Allocator>
+#endif
 class parser
     : public basic_parser<isRequest>
 {
@@ -62,6 +72,7 @@ class parser
     typename Body::reader rd_;
     bool rd_inited_ = false;
     bool used_ = false;
+    bool merge_all_trailers_ = false;
 
     std::function<void(
         std::uint64_t,
@@ -237,7 +248,7 @@ public:
     {
         // Callback may not be constant, caller is responsible for
         // managing the lifetime of the callback. Copies are not made.
-        BOOST_STATIC_ASSERT(! std::is_const<Callback>::value);
+        BOOST_CORE_STATIC_ASSERT(! std::is_const<Callback>::value);
 
         // Can't set the callback after receiving any chunk data!
         BOOST_ASSERT(! rd_inited_);
@@ -285,12 +296,58 @@ public:
     {
         // Callback may not be constant, caller is responsible for
         // managing the lifetime of the callback. Copies are not made.
-        BOOST_STATIC_ASSERT(! std::is_const<Callback>::value);
+        BOOST_CORE_STATIC_ASSERT(! std::is_const<Callback>::value);
 
         // Can't set the callback after receiving any chunk data!
         BOOST_ASSERT(! rd_inited_);
 
         cb_b_ = std::ref(cb);
+    }
+
+    /** Returns `true` if the parser is allowed to merge all trailer fields.
+
+        @see
+            merge_all_trailers(bool).
+    */
+    bool
+    merge_all_trailers() const noexcept
+    {
+        return merge_all_trailers_;
+    }
+
+    /** Set whether the parser is allowed to merge all trailer fields.
+
+        By default, the parser merges only a set of
+        well-known trailer fields. When this option is
+        enabled, the parser merges all trailer fields listed
+        in the `Trailer` header field in the header section
+        of the message.
+
+        @note Enabling this option can introduce security
+        risks if untrusted input is processed and the
+        `Trailer` header field in the header section of the
+        message is not properly validated.
+
+        The default value is `false`, which merges only the
+        following well-known trailer fields:
+
+        @li `Digest`
+        @li `Content-Digest`
+        @li `Repr-Digest`
+        @li `Signature`
+        @li `Signature-Input`
+        @li `Server-Timing`
+        @li `ETag`
+        @li `Link`
+        @li `Alt-Svc`
+
+        @param v `true` to merge all trailer fields, or
+        `false` to merge only the well-known ones.
+    */
+    void
+    merge_all_trailers(bool v)
+    {
+        merge_all_trailers_ = v;
     }
 
 private:
@@ -429,9 +486,39 @@ private:
         field name,
         string_view name_string,
         string_view value,
-        error_code&) override
+        error_code& ec) override
     {
-        m_.insert(name, name_string, value);
+        m_.insert(name, name_string, value, ec);
+    }
+
+    void
+    on_trailer_field_impl(
+        field name,
+        string_view name_string,
+        string_view value,
+        error_code& ec) override
+    {
+        if(! token_list{m_[field::trailer]}.exists(name_string))
+            return;
+
+        switch(name)
+        {
+        case field::digest:          // RFC 3230, Section 2 (obsolete)
+        case field::content_digest:  // RFC 9530, Section 2
+        case field::repr_digest:     // RFC 9530, Section 3
+        case field::signature:       // RFC 9421, Section 4
+        case field::signature_input: // RFC 9421, Section 4
+        case field::server_timing:   // W3C Server Timing Spec
+        case field::etag:            // RFC 9110, Section 8.8.3
+        case field::link:            // RFC 8288, Section 3
+        case field::alt_svc:         // RFC 7838, Section 3
+            break;
+        default:
+            if(! merge_all_trailers_)
+                return;
+        }
+
+        m_.insert(name, name_string, value, ec);
     }
 
     void
@@ -488,6 +575,7 @@ private:
     }
 };
 
+#if BOOST_BEAST_DOXYGEN
 /// An HTTP/1 parser for producing a request message.
 template<class Body, class Allocator = std::allocator<char>>
 using request_parser = parser<true, Body, Allocator>;
@@ -495,6 +583,7 @@ using request_parser = parser<true, Body, Allocator>;
 /// An HTTP/1 parser for producing a response message.
 template<class Body, class Allocator = std::allocator<char>>
 using response_parser = parser<false, Body, Allocator>;
+#endif
 
 } // http
 } // beast

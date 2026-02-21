@@ -10,13 +10,15 @@
 #ifndef BOOST_BEAST_HTTP_BUFFER_BODY_HPP
 #define BOOST_BEAST_HTTP_BUFFER_BODY_HPP
 
-#include <boost/beast/core/detail/config.hpp>
+#include <boost/beast/http/buffer_body_fwd.hpp>
+
 #include <boost/beast/core/buffer_traits.hpp>
+#include <boost/beast/core/detail/config.hpp>
 #include <boost/beast/http/error.hpp>
 #include <boost/beast/http/message.hpp>
 #include <boost/beast/http/type_traits.hpp>
 #include <boost/optional.hpp>
-#include <type_traits>
+#include <cstdint>
 #include <utility>
 
 namespace boost {
@@ -196,7 +198,7 @@ struct buffer_body
                 }
                 return boost::none;
             }
-            if(body_.data)
+            if(body_.data && body_.size != 0)
             {
                 ec = {};
                 toggle_ = true;

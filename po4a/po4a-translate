@@ -88,7 +88,9 @@ at least at 80% to get written.
 
 =item B<-w>, B<--width>
 
-Column at which we should wrap the resulting file.
+Column at which we should wrap the resulting file if the format supports it (default: 76).
+If the provided value is 0 or negative, then the resulting file will not be wraped at all.
+This is useful with some formats that could break when rewraped.
 
 =item B<-h>, B<--help>
 
@@ -109,20 +111,6 @@ Increase the verbosity of the program.
 =item B<-d>, B<--debug>
 
 Output some debugging information.
-
-=item B<--porefs> I<type>[,B<wrap>|B<nowrap>]
-
-Specify the reference format. Argument I<type> can be one of B<never>
-to not produce any reference, B<file> to only specify the file
-without the line number, B<counter> to replace line number by an
-increasing counter, and B<full> to include complete references (default: full).
-
-Argument can be followed by a comma and either B<wrap> or B<nowrap> keyword.
-References are written by default on a single line.  The B<wrap> option wraps
-references on several lines, to mimic B<gettext> tools (B<xgettext> and
-B<msgmerge>).  This option will become the default in a future release, because
-it is more sensible.  The B<nowrap> option is available so that users who want
-to keep the old behavior can do so.
 
 =back
 
@@ -173,7 +161,7 @@ use warnings;
 
 use Locale::Po4a::Chooser;
 use Locale::Po4a::TransTractor;
-use Locale::Po4a::Common;
+use Locale::Po4a::Common qw(wrap_msg gettext);
 
 use Pod::Usage   qw(pod2usage);
 use Getopt::Long qw(GetOptions);
@@ -186,7 +174,7 @@ sub show_version {
 }
 
 Getopt::Long::Configure( 'no_auto_abbrev', 'no_ignore_case' );
-my ( $outfile,         $width,    $threshold ) = ( '-', 80, 80 );
+my ( $outfile,         $width,    $threshold ) = ( '-', 76, 80 );
 my ( $help,            $help_fmt, @verbose, $debug, $ignored_wrappo, @addfiles, $format, @options, $no_deprecation );
 my ( $master_filename, $po_filename );
 my ( $mastchar,        $locchar, $addchar );
@@ -234,7 +222,8 @@ push @masters, $master_filename;
 
 my %options = (
     "verbose" => scalar @verbose,
-    "debug"   => $debug
+    "debug"   => $debug,
+    "wrapcol" => $width
 );
 
 foreach (@options) {

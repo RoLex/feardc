@@ -1,4 +1,4 @@
-// Copyright Antony Polukhin, 2020-2023.
+// Copyright Antony Polukhin, 2020-2025.
 //
 // Distributed under the Boost Software License, Version 1.0. (See
 // accompanying file LICENSE_1_0.txt or copy at
@@ -9,41 +9,34 @@
 #ifndef BOOST_ANYS_UNIQUE_ANY_HPP_INCLUDED
 #define BOOST_ANYS_UNIQUE_ANY_HPP_INCLUDED
 
+#include <boost/any/detail/config.hpp>
+
+#if !defined(BOOST_USE_MODULES) || defined(BOOST_ANY_INTERFACE_UNIT)
+
+/// \file boost/any/unique_any.hpp
+/// \brief \copybrief boost::anys::unique_any
+
+#ifndef BOOST_ANY_INTERFACE_UNIT
 #include <boost/config.hpp>
 #ifdef BOOST_HAS_PRAGMA_ONCE
 #   pragma once
 #endif
 
-/// \file boost/any/unique_any.hpp
-/// \brief \copybrief boost::anys::unique_any
-
-#ifdef BOOST_NO_CXX11_RVALUE_REFERENCES
-#error Header <boost/any/unique_any.hpp> requires C++11 compatible compiler with move semantics
-#endif
-
-#ifdef BOOST_NO_CXX11_DEFAULTED_FUNCTIONS
-#error Header <boost/any/unique_any.hpp> requires C++11 compatible compiler with defaulted functions
-#endif
-
-#ifdef BOOST_NO_CXX11_SMART_PTR
-#error Header <boost/any/unique_any.hpp> requires C++11 compatible standard library with std::unique_ptr
-#endif
-#include <memory>
-
-#ifdef BOOST_NO_CXX11_HDR_INITIALIZER_LIST
-#error Header <boost/any/unique_any.hpp> requires C++11 compatible standard library with std::initializer_list
-#endif
-
+#include <memory>  // for std::unique_ptr
 #include <utility>
 #include <type_traits>
+
+#include <boost/throw_exception.hpp>
+#include <boost/type_index.hpp>
+#endif  // #ifndef BOOST_ANY_INTERFACE_UNIT
 
 #include <boost/any/fwd.hpp>
 #include <boost/any/bad_any_cast.hpp>
 #include <boost/any/detail/placeholder.hpp>
 
-#include <boost/type_index.hpp>
-
 namespace boost { namespace anys {
+
+BOOST_ANY_BEGIN_MODULE_EXPORT
 
 /// Helper type for providing emplacement type to the constructor.
 template <class T>
@@ -58,8 +51,6 @@ constexpr in_place_type_t<T> in_place_type{};
 
 /// \brief A class whose instances can hold instances of any
 /// type (including non-copyable and non-movable types).
-///
-/// \pre C++11 compatible compiler.
 class unique_any {
 public:
     /// \post this->has_value() is false.
@@ -311,7 +302,7 @@ inline const T * any_cast(const unique_any * operand) noexcept
 template<typename T>
 T any_cast(unique_any & operand)
 {
-    typedef typename std::remove_reference<T>::type nonref;
+    using nonref = typename std::remove_reference<T>::type;
 
     nonref * result = anys::any_cast<nonref>(std::addressof(operand));
     if(!result)
@@ -342,7 +333,7 @@ T any_cast(unique_any & operand)
 template<typename T>
 inline T any_cast(const unique_any & operand)
 {
-    typedef typename std::remove_reference<T>::type nonref;
+    using nonref = typename std::remove_reference<T>::type;
     return anys::any_cast<const nonref &>(const_cast<unique_any &>(operand));
 }
 
@@ -359,12 +350,19 @@ inline T any_cast(unique_any&& operand)
     return std::move(anys::any_cast<T&>(operand));
 }
 
+BOOST_ANY_END_MODULE_EXPORT
+
 } // namespace anys
+
+BOOST_ANY_BEGIN_MODULE_EXPORT
 
 using boost::anys::any_cast;
 using boost::anys::unsafe_any_cast;
 
+BOOST_ANY_END_MODULE_EXPORT
+
 } // namespace boost
 
+#endif  // #if !defined(BOOST_USE_MODULES) || defined(BOOST_ANY_INTERFACE_UNIT)
 
 #endif // BOOST_ANYS_UNIQUE_ANY_HPP_INCLUDED

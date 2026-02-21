@@ -18,7 +18,6 @@
 #include <ios>
 #include <cstdio>
 #include <cstdlib>
-#include <ciso646>
 #include <vector>
 #include <string>
 #include <fstream>
@@ -89,7 +88,7 @@ inline int fill_vector_uint64(const std::string & filename,
     size_t uCount = length / 8;
     if (uCount < NElem)
     {
-        throw std::ios_base::failure("incorrect lenght of the file\n");
+        throw std::ios_base::failure("incorrect length of the file\n");
     };
     V.clear();
     V.reserve(NElem);
@@ -230,7 +229,7 @@ struct uint64_file_generator
     {   //---------------------------- begin ---------------------------------
         s = filename;
         input.open(filename, std::ios_base::in | std::ios_base::binary);
-        if (input.fail() or input.bad())
+        if (input.fail() || input.bad())
         {
             throw std::ios_base::failure("could not open file \n");
         };

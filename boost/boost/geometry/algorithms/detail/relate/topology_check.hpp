@@ -12,6 +12,7 @@
 #ifndef BOOST_GEOMETRY_ALGORITHMS_DETAIL_RELATE_TOPOLOGY_CHECK_HPP
 #define BOOST_GEOMETRY_ALGORITHMS_DETAIL_RELATE_TOPOLOGY_CHECK_HPP
 
+#include <boost/range/size.hpp>
 
 #include <boost/geometry/algorithms/detail/equals/point_point.hpp>
 #include <boost/geometry/algorithms/not_implemented.hpp>
@@ -33,7 +34,7 @@ template
 <
     typename Geometry,
     typename Strategy,
-    typename Tag = typename geometry::tag<Geometry>::type
+    typename Tag = geometry::tag_t<Geometry>
 >
 struct topology_check
     : not_implemented<Tag>
@@ -305,7 +306,7 @@ private:
     mutable bool m_has_interior;
     mutable bool m_has_boundary;
 
-    typedef typename geometry::point_type<MultiLinestring>::type point_type;
+    using point_type = geometry::point_type_t<MultiLinestring>;
     mutable std::vector<point_type> m_endpoints;
 };
 

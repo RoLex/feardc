@@ -2,7 +2,9 @@
 
 * Merge with DC++ 0.883
 * Update OpenSSL to version 3.5.5 LTS
-* Update PO4A to version 0.71
+* Update ZLib to version 1.3.2
+* Update Boost to version 1.90
+* Update PO4A to version 0.74
 * Replace GeoIP with MaxMindDB version 1.12.2
 * Correctly set language in PO files, language team remains to fix
 * Add missing copyrights and licenses for components used in this product

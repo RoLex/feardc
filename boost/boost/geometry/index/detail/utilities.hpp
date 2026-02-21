@@ -12,7 +12,7 @@
 
 #include <type_traits>
 
-#include <boost/core/swap.hpp>
+#include <boost/core/invoke_swap.hpp>
 
 #ifndef BOOST_GEOMETRY_INDEX_DETAIL_UTILITIES_HPP
 #define BOOST_GEOMETRY_INDEX_DETAIL_UTILITIES_HPP
@@ -20,27 +20,27 @@
 namespace boost { namespace geometry { namespace index { namespace detail {
 
 template<class T>
-static inline void assign_cond(T & l, T const& r, std::true_type)
+inline void assign_cond(T & l, T const& r, std::true_type)
 {
     l = r;
 }
 
 template<class T>
-static inline void assign_cond(T &, T const&, std::false_type) {}
+inline void assign_cond(T &, T const&, std::false_type) {}
 
 template<class T>
-static inline void move_cond(T & l, T & r, std::true_type)
+inline void move_cond(T & l, T & r, std::true_type)
 {
     l = std::move(r);
 }
 
 template<class T>
-static inline void move_cond(T &, T &, std::false_type) {}
+inline void move_cond(T &, T &, std::false_type) {}
 
 template <typename T> inline
 void swap_cond(T & l, T & r, std::true_type)
 {
-    ::boost::swap(l, r);
+    ::boost::core::invoke_swap(l, r);
 }
 
 template <typename T> inline

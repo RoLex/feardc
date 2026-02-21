@@ -89,7 +89,7 @@ inline
 typename select_most_precise
 <
     Type,
-    typename geometry::coordinate_type<Point>::type
+    geometry::coordinate_type_t<Point>
 >::type
 side_value(model::infinite_line<Type> const& line, Point const& p)
 {
@@ -97,7 +97,7 @@ side_value(model::infinite_line<Type> const& line, Point const& p)
 }
 
 template <typename Type>
-inline bool is_degenerate(const model::infinite_line<Type>& line)
+inline bool is_degenerate(model::infinite_line<Type> const& line)
 {
     static Type const zero = 0;
     return math::equals(line.a, zero) && math::equals(line.b, zero);

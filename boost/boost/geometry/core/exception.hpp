@@ -1,6 +1,6 @@
 // Boost.Geometry (aka GGL, Generic Geometry Library)
 
-// Copyright (c) 2007-2015 Barend Gehrels, Amsterdam, the Netherlands.
+// Copyright (c) 2007-2025 Barend Gehrels, Amsterdam, the Netherlands.
 // Copyright (c) 2008-2015 Bruno Lalande, Paris, France.
 // Copyright (c) 2009-2015 Mateusz Loskot, London, UK.
 
@@ -20,6 +20,7 @@
 #define BOOST_GEOMETRY_CORE_EXCEPTION_HPP
 
 #include <exception>
+#include <string>
 
 namespace boost { namespace geometry
 {
@@ -33,7 +34,7 @@ namespace boost { namespace geometry
 class exception : public std::exception
 {
 public:
-    virtual char const* what() const throw()
+    char const* what() const noexcept override
     {
         return "Boost.Geometry exception";
     }
@@ -52,7 +53,7 @@ public:
 
     inline invalid_input_exception() {}
 
-    virtual char const* what() const throw()
+    char const* what() const noexcept override
     {
         return "Boost.Geometry Invalid-Input exception";
     }
@@ -77,7 +78,7 @@ public:
 
     inline empty_input_exception() {}
 
-    virtual char const* what() const throw()
+    virtual char const* what() const noexcept
     {
         return "Boost.Geometry Empty-Input exception";
     }
@@ -96,10 +97,32 @@ public:
 
     inline invalid_output_exception() {}
 
-    virtual char const* what() const throw()
+    char const* what() const noexcept override
     {
         return "Boost.Geometry Invalid-Output exception";
     }
+};
+
+/*!
+\brief Logic Exception
+\ingroup core
+\details Defines a type of object to be thrown as exception.
+    It reports errors that are a consequence of faulty logic within the program
+    such as violating logical preconditions or class invariants and may be preventable.
+ */
+class logic_exception : public geometry::exception
+{
+public:
+    inline logic_exception(char const* description)
+        : m_description(description) {}
+
+    char const* what() const noexcept override
+    {
+        return m_description.c_str();
+    }
+
+private:
+    std::string m_description;
 };
 
 

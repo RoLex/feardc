@@ -38,6 +38,25 @@
 namespace boost {
 namespace beast {
 namespace websocket {
+/** permessage-deflate extension status.
+
+    These settings indicate the status of the permessage-deflate
+    extension, showing if it is active and the window bits in use.
+
+    Objects of this type are used with
+    @ref beast::websocket::stream::get_status.
+*/
+struct permessage_deflate_status
+{
+    /// `true` if the permessage-deflate extension is active
+    bool active = false;
+
+    /// The number of window bits used by the client
+    int client_window_bits = 0;
+
+    /// The number of window bits used by the server
+    int server_window_bits = 0;
+};
 
 /** The type of received control frame.
 
@@ -398,6 +417,11 @@ public:
 
         @throws invalid_argument if `deflateSupported == false`, and either
         `client_enable` or `server_enable` is `true`.
+
+        @note
+
+        These settings should be configured before performing the WebSocket
+        handshake.
     */
     void
     set_option(permessage_deflate const& o);
@@ -405,6 +429,24 @@ public:
     /// Get the permessage-deflate extension options
     void
     get_option(permessage_deflate& o);
+
+    /** Get the status of the permessage-deflate extension.
+
+        Used to check the status of the permessage-deflate extension after
+        the WebSocket handshake.
+
+        @param status A reference to a `permessage_deflate_status` object
+        where the status will be stored.
+
+        @par Example
+        Checking the status of the permessage-deflate extension:
+        @code
+            permessage_deflate_status status;
+            ws.get_status(status);
+        @endcode
+    */
+    void
+    get_status(permessage_deflate_status &status) const noexcept;
 
     /** Set the automatic fragmentation option.
 
@@ -931,11 +973,13 @@ public:
             error_code const& ec    // Result of operation
         );
         @endcode
-        Regardless of whether the asynchronous operation completes
-        immediately or not, the handler will not be invoked from within
-        this function. Invocation of the handler will be performed in a
-        manner equivalent to using `net::post`.
-
+        If the handler has an associated immediate executor,
+        an immediate completion will be dispatched to it.
+        Otherwise, the handler will not be invoked from within
+        this function. Invocation of the handler will be performed
+        by dispatching to the immediate executor. If no
+        immediate executor is specified, this is equivalent
+        to using `net::post`.
         @par Example
         @code
         ws.async_handshake("localhost", "/",
@@ -1013,11 +1057,13 @@ public:
             error_code const& ec    // Result of operation
         );
         @endcode
-        Regardless of whether the asynchronous operation completes
-        immediately or not, the handler will not be invoked from within
-        this function. Invocation of the handler will be performed in a
-        manner equivalent to using `net::post`.
-
+        If the handler has an associated immediate executor,
+        an immediate completion will be dispatched to it.
+        Otherwise, the handler will not be invoked from within
+        this function. Invocation of the handler will be performed
+        by dispatching to the immediate executor. If no
+        immediate executor is specified, this is equivalent
+        to using `net::post`.
         @par Example
         @code
         response_type res;
@@ -1354,11 +1400,13 @@ public:
             error_code const& ec    // Result of operation
         );
         @endcode
-        Regardless of whether the asynchronous operation completes
-        immediately or not, the handler will not be invoked from within
-        this function. Invocation of the handler will be performed in a
-        manner equivalent to using `net::post`.
-
+        If the handler has an associated immediate executor,
+        an immediate completion will be dispatched to it.
+        Otherwise, the handler will not be invoked from within
+        this function. Invocation of the handler will be performed
+        by dispatching to the immediate executor. If no
+        immediate executor is specified, this is equivalent
+        to using `net::post`.
         @see
         @li <a href="https://tools.ietf.org/html/rfc6455#section-4.2">Websocket Opening Handshake Server Requirements (RFC6455)</a>
     */
@@ -1370,7 +1418,13 @@ public:
     async_accept(
         AcceptHandler&& handler =
             net::default_completion_token_t<
-                executor_type>{});
+                executor_type>{}
+#ifndef BOOST_BEAST_DOXYGEN
+        , typename std::enable_if<
+            ! net::is_const_buffer_sequence<
+            AcceptHandler>::value>::type* = nullptr
+#endif
+    );
 
     /** Perform the WebSocket handshake asynchronously in the server role.
 
@@ -1421,11 +1475,13 @@ public:
             error_code const& ec    // Result of operation
         );
         @endcode
-        Regardless of whether the asynchronous operation completes
-        immediately or not, the handler will not be invoked from within
-        this function. Invocation of the handler will be performed in a
-        manner equivalent to using `net::post`.
-
+        If the handler has an associated immediate executor,
+        an immediate completion will be dispatched to it.
+        Otherwise, the handler will not be invoked from within
+        this function. Invocation of the handler will be performed
+        by dispatching to the immediate executor. If no
+        immediate executor is specified, this is equivalent
+        to using `net::post`.
         @see
         @li <a href="https://tools.ietf.org/html/rfc6455#section-4.2">Websocket Opening Handshake Server Requirements (RFC6455)</a>
     */
@@ -1441,6 +1497,9 @@ public:
             net::default_completion_token_t<
                 executor_type>{}
 #ifndef BOOST_BEAST_DOXYGEN
+        , typename std::enable_if<
+            net::is_const_buffer_sequence<
+            ConstBufferSequence>::value>::type* = 0
         , typename std::enable_if<
             ! http::detail::is_header<
             ConstBufferSequence>::value>::type* = 0
@@ -1486,11 +1545,13 @@ public:
             error_code const& ec    // Result of operation
         );
         @endcode
-        Regardless of whether the asynchronous operation completes
-        immediately or not, the handler will not be invoked from within
-        this function. Invocation of the handler will be performed in a
-        manner equivalent to using `net::post`.
-
+        If the handler has an associated immediate executor,
+        an immediate completion will be dispatched to it.
+        Otherwise, the handler will not be invoked from within
+        this function. Invocation of the handler will be performed
+        by dispatching to the immediate executor. If no
+        immediate executor is specified, this is equivalent
+        to using `net::post`.
         @see
         @li <a href="https://tools.ietf.org/html/rfc6455#section-4.2">Websocket Opening Handshake Server Requirements (RFC6455)</a>
     */
@@ -1513,26 +1574,26 @@ public:
     //
     //--------------------------------------------------------------------------
 
-    /** Send a websocket close control frame.
+    /** Perform the WebSocket closing handshake and close the underlying stream.
 
-        This function is used to send a
-        <a href="https://tools.ietf.org/html/rfc6455#section-5.5.1">close frame</a>,
-        which begins the websocket closing handshake. The session ends when
-        both ends of the connection have sent and received a close frame.
+        This function sends a
+        <a href="https://tools.ietf.org/html/rfc6455#section-5.5.1">close frame</a>
+        to begin the WebSocket closing handshake and waits for a corresponding
+        close frame in response. Once received, it calls @ref teardown
+        to gracefully shut down the underlying stream.
+
+        After beginning the closing handshake, the program should not write
+        further message data, pings, or pongs. However, it can still read
+        incoming message data. A read returning @ref error::closed indicates a
+        successful connection closure.
 
         The call blocks until one of the following conditions is true:
 
-        @li The close frame is written.
-
+        @li The closing handshake completes, and @ref teardown finishes.
         @li An error occurs.
 
         The algorithm, known as a <em>composed operation</em>, is implemented
         in terms of calls to the next layer's `write_some` function.
-
-        After beginning the closing handshake, the program should not write
-        further message data, pings, or pongs. Instead, the program should
-        continue reading message data until an error occurs. A read returning
-        @ref error::closed indicates a successful connection closure.
 
         @param cr The reason for the close.
         If the close reason specifies a close code other than
@@ -1548,26 +1609,26 @@ public:
     void
     close(close_reason const& cr);
 
-    /** Send a websocket close control frame.
+    /** Perform the WebSocket closing handshake and close the underlying stream.
 
-        This function is used to send a
-        <a href="https://tools.ietf.org/html/rfc6455#section-5.5.1">close frame</a>,
-        which begins the websocket closing handshake. The session ends when
-        both ends of the connection have sent and received a close frame.
+        This function sends a
+        <a href="https://tools.ietf.org/html/rfc6455#section-5.5.1">close frame</a>
+        to begin the WebSocket closing handshake and waits for a corresponding
+        close frame in response. Once received, it calls @ref teardown
+        to gracefully shut down the underlying stream.
+
+        After beginning the closing handshake, the program should not write
+        further message data, pings, or pongs. However, it can still read
+        incoming message data. A read returning @ref error::closed indicates a
+        successful connection closure.
 
         The call blocks until one of the following conditions is true:
 
-        @li The close frame is written.
-
+        @li The closing handshake completes, and @ref teardown finishes.
         @li An error occurs.
 
         The algorithm, known as a <em>composed operation</em>, is implemented
         in terms of calls to the next layer's `write_some` function.
-
-        After beginning the closing handshake, the program should not write
-        further message data, pings, or pongs. Instead, the program should
-        continue reading message data until an error occurs. A read returning
-        @ref error::closed indicates a successful connection closure.
 
         @param cr The reason for the close.
         If the close reason specifies a close code other than
@@ -1583,29 +1644,33 @@ public:
     void
     close(close_reason const& cr, error_code& ec);
 
-    /** Send a websocket close control frame asynchronously.
+    /** Perform the WebSocket closing handshake asynchronously and close
+        the underlying stream.
 
-        This function is used to asynchronously send a
-        <a href="https://tools.ietf.org/html/rfc6455#section-5.5.1">close frame</a>,
-        which begins the websocket closing handshake. The session ends when
-        both ends of the connection have sent and received a close frame.
+        This function sends a
+        <a href="https://tools.ietf.org/html/rfc6455#section-5.5.1">close frame</a>
+        to begin the WebSocket closing handshake and waits for a corresponding
+        close frame in response. Once received, it calls @ref async_teardown
+        to gracefully shut down the underlying stream asynchronously.
+
+        After beginning the closing handshake, the program should not write
+        further message data, pings, or pongs. However, it can still read
+        incoming message data. A read returning @ref error::closed indicates a
+        successful connection closure.
 
         This call always returns immediately. The asynchronous operation
         will continue until one of the following conditions is true:
 
-        @li The close frame finishes sending.
-
+        @li The closing handshake completes, and @ref async_teardown finishes.
         @li An error occurs.
+
+        If a timeout occurs, @ref close_socket will be called to close the
+        underlying stream.
 
         The algorithm, known as a <em>composed asynchronous operation</em>,
         is implemented in terms of calls to the next layer's `async_write_some`
         function. No other operations except for message reading operations
         should be initiated on the stream after a close operation is started.
-
-        After beginning the closing handshake, the program should not write
-        further message data, pings, or pongs. Instead, the program should
-        continue reading message data until an error occurs. A read returning
-        @ref error::closed indicates a successful connection closure.
 
         @param cr The reason for the close.
         If the close reason specifies a close code other than
@@ -1622,12 +1687,15 @@ public:
             error_code const& ec     // Result of operation
         );
         @endcode
-        Regardless of whether the asynchronous operation completes
-        immediately or not, the handler will not be invoked from within
-        this function. Invocation of the handler will be performed in a
-        manner equivalent to using `net::post`.
+        If the handler has an associated immediate executor,
+        an immediate completion will be dispatched to it.
+        Otherwise, the handler will not be invoked from within
+        this function. Invocation of the handler will be performed
+        by dispatching to the immediate executor. If no
+        immediate executor is specified, this is equivalent
+        to using `net::post`.
 
-         @par Per-Operation Cancellation
+        @par Per-Operation Cancellation
 
         This asynchronous operation supports cancellation for the following
         net::cancellation_type values:
@@ -1637,9 +1705,10 @@ public:
 
         `total` cancellation succeeds if the operation is suspended due to ongoing
         control operations such as a ping/pong.
+
         `terminal` cancellation succeeds when supported by the underlying stream.
 
-        @note `terminal` cancellation will may close the underlying socket.
+        @note `terminal` cancellation may close the underlying socket.
 
         @see
         @li <a href="https://tools.ietf.org/html/rfc6455#section-7.1.2">Websocket Closing Handshake (RFC6455)</a>
@@ -1741,10 +1810,13 @@ public:
             error_code const& ec     // Result of operation
         );
         @endcode
-        Regardless of whether the asynchronous operation completes
-        immediately or not, the handler will not be invoked from within
-        this function. Invocation of the handler will be performed in a
-        manner equivalent to using `net::post`.
+        If the handler has an associated immediate executor,
+        an immediate completion will be dispatched to it.
+        Otherwise, the handler will not be invoked from within
+        this function. Invocation of the handler will be performed
+        by dispatching to the immediate executor. If no
+        immediate executor is specified, this is equivalent
+        to using `net::post`.
 
         @par Per-Operation Cancellation
 
@@ -1756,19 +1828,20 @@ public:
 
         `total` cancellation succeeds if the operation is suspended due to ongoing
         control operations such as a ping/pong.
+
         `terminal` cancellation succeeds when supported by the underlying stream.
 
         `terminal` cancellation leaves the stream in an undefined state,
         so that only closing it is guaranteed to succeed.
     */
     template<
-        BOOST_BEAST_ASYNC_TPARAM1 WriteHandler =
+        BOOST_BEAST_ASYNC_TPARAM1 PingHandler =
             net::default_completion_token_t<executor_type>
     >
-    BOOST_BEAST_ASYNC_RESULT1(WriteHandler)
+    BOOST_BEAST_ASYNC_RESULT1(PingHandler)
     async_ping(
         ping_data const& payload,
-        WriteHandler&& handler =
+        PingHandler&& handler =
             net::default_completion_token_t<
                 executor_type>{});
 
@@ -1864,10 +1937,13 @@ public:
             error_code const& ec     // Result of operation
         );
         @endcode
-        Regardless of whether the asynchronous operation completes
-        immediately or not, the handler will not be invoked from within
-        this function. Invocation of the handler will be performed in a
-        manner equivalent to using `net::post`.
+        If the handler has an associated immediate executor,
+        an immediate completion will be dispatched to it.
+        Otherwise, the handler will not be invoked from within
+        this function. Invocation of the handler will be performed
+        by dispatching to the immediate executor. If no
+        immediate executor is specified, this is equivalent
+        to using `net::post`.
 
         @par Per-Operation Cancellation
 
@@ -1879,19 +1955,20 @@ public:
 
         `total` cancellation succeeds if the operation is suspended due to ongoing
         control operations such as a ping/pong.
+
         `terminal` cancellation succeeds when supported by the underlying stream.
 
         `terminal` cancellation leaves the stream in an undefined state,
         so that only closing it is guaranteed to succeed.
     */
     template<
-        BOOST_BEAST_ASYNC_TPARAM1 WriteHandler =
+        BOOST_BEAST_ASYNC_TPARAM1 PongHandler =
             net::default_completion_token_t<executor_type>
     >
-    BOOST_BEAST_ASYNC_RESULT1(WriteHandler)
+    BOOST_BEAST_ASYNC_RESULT1(PongHandler)
     async_pong(
         ping_data const& payload,
-        WriteHandler&& handler =
+        PongHandler&& handler =
             net::default_completion_token_t<
                 executor_type>{});
 
@@ -2040,10 +2117,13 @@ public:
             std::size_t bytes_written   // Number of bytes appended to buffer
         );
         @endcode
-        Regardless of whether the asynchronous operation completes
-        immediately or not, the handler will not be invoked from within
-        this function. Invocation of the handler will be performed in a
-        manner equivalent to using `net::post`.
+        If the handler has an associated immediate executor,
+        an immediate completion will be dispatched to it.
+        Otherwise, the handler will not be invoked from within
+        this function. Invocation of the handler will be performed
+        by dispatching to the immediate executor. If no
+        immediate executor is specified, this is equivalent
+        to using `net::post`.
 
         @par Per-Operation Cancellation
 
@@ -2055,6 +2135,7 @@ public:
 
         `total` cancellation succeeds if the operation is suspended due to ongoing
         control operations such as a ping/pong.
+
         `terminal` cancellation succeeds when supported by the underlying stream.
 
         `terminal` cancellation leaves the stream in an undefined state,
@@ -2200,6 +2281,8 @@ public:
         Received message data is appended to the buffer.
         The functions @ref got_binary and @ref got_text may be used
         to query the stream and determine the type of the last received message.
+        The function @ref is_message_done may be called to determine if the
+        message received by the last read operation is complete.
 
         Until the operation completes, the implementation will read incoming
         control frames and handle them automatically as follows:
@@ -2234,10 +2317,13 @@ public:
             std::size_t bytes_written   // Number of bytes appended to buffer
         );
         @endcode
-        Regardless of whether the asynchronous operation completes
-        immediately or not, the handler will not be invoked from within
-        this function. Invocation of the handler will be performed in a
-        manner equivalent to using `net::post`.
+        If the handler has an associated immediate executor,
+        an immediate completion will be dispatched to it.
+        Otherwise, the handler will not be invoked from within
+        this function. Invocation of the handler will be performed
+        by dispatching to the immediate executor. If no
+        immediate executor is specified, this is equivalent
+        to using `net::post`.
 
         @par Per-Operation Cancellation
 
@@ -2249,6 +2335,7 @@ public:
 
         `total` cancellation succeeds if the operation is suspended due to ongoing
         control operations such as a ping/pong.
+
         `terminal` cancellation succeeds when supported by the underlying stream.
 
         `terminal` cancellation leaves the stream in an undefined state,
@@ -2368,6 +2455,7 @@ public:
 
         `total` cancellation succeeds if the operation is suspended due to ongoing
         control operations such as a ping/pong.
+
         `terminal` cancellation succeeds when supported by the underlying stream.
 
         `terminal` cancellation leaves the stream in an undefined state,
@@ -2402,6 +2490,8 @@ public:
         Received message data is appended to the buffer.
         The functions @ref got_binary and @ref got_text may be used
         to query the stream and determine the type of the last received message.
+        The function @ref is_message_done may be called to determine if the
+        message received by the last read operation is complete.
 
         Until the operation completes, the implementation will read incoming
         control frames and handle them automatically as follows:
@@ -2439,11 +2529,13 @@ public:
             std::size_t bytes_written   // Number of bytes written to the buffers
         );
         @endcode
-        Regardless of whether the asynchronous operation completes
-        immediately or not, the handler will not be invoked from within
-        this function. Invocation of the handler will be performed in a
-        manner equivalent to using `net::post`.
-
+        If the handler has an associated immediate executor,
+        an immediate completion will be dispatched to it.
+        Otherwise, the handler will not be invoked from within
+        this function. Invocation of the handler will be performed
+        by dispatching to the immediate executor. If no
+        immediate executor is specified, this is equivalent
+        to using `net::post`.
 
         @par Per-Operation Cancellation
 
@@ -2455,6 +2547,7 @@ public:
 
         `total` cancellation succeeds if the operation is suspended due to ongoing
         control operations such as a ping/pong.
+
         `terminal` cancellation succeeds when supported by the underlying stream.
 
         `terminal` cancellation leaves the stream in an undefined state,
@@ -2578,10 +2671,13 @@ public:
                                             // this will be less than the buffer_size.
         );
         @endcode
-        Regardless of whether the asynchronous operation completes
-        immediately or not, the handler will not be invoked from within
-        this function. Invocation of the handler will be performed in a
-        manner equivalent to using `net::post`.
+        If the handler has an associated immediate executor,
+        an immediate completion will be dispatched to it.
+        Otherwise, the handler will not be invoked from within
+        this function. Invocation of the handler will be performed
+        by dispatching to the immediate executor. If no
+        immediate executor is specified, this is equivalent
+        to using `net::post`.
 
         @par Per-Operation Cancellation
 
@@ -2593,6 +2689,7 @@ public:
 
         `total` cancellation succeeds if the operation is suspended due to ongoing
         control operations such as a ping/pong.
+
         `terminal` cancellation succeeds when supported by the underlying stream.
 
         `terminal` cancellation leaves the stream in an undefined state,
@@ -2659,6 +2756,10 @@ public:
         the @ref binary (or @ref text) option. The actual payload sent
         may be transformed as per the WebSocket protocol settings.
 
+        This function always writes a complete WebSocket frame (not WebSocket
+        message) upon successful completion, so it is well defined to perform
+        ping, pong, and close operations after this operation completes.
+
         @param fin `true` if this is the last part of the message.
 
         @param buffers The buffers containing the message part to send.
@@ -2696,6 +2797,10 @@ public:
         the @ref binary (or @ref text) option. The actual payload sent
         may be transformed as per the WebSocket protocol settings.
 
+        This function always writes a complete WebSocket frame (not WebSocket
+        message) upon successful completion, so it is well defined to perform
+        ping, pong, and close operations in parallel to this operation.
+
         @param fin `true` if this is the last part of the message.
 
         @param buffers The buffers containing the message part to send.
@@ -2717,10 +2822,13 @@ public:
                                             // this will be less than the buffer_size.
         );
         @endcode
-        Regardless of whether the asynchronous operation completes
-        immediately or not, the handler will not be invoked from within
-        this function. Invocation of the handler will be performed in a
-        manner equivalent to using `net::post`.
+        If the handler has an associated immediate executor,
+        an immediate completion will be dispatched to it.
+        Otherwise, the handler will not be invoked from within
+        this function. Invocation of the handler will be performed
+        by dispatching to the immediate executor. If no
+        immediate executor is specified, this is equivalent
+        to using `net::post`.
 
         @par Per-Operation Cancellation
 
@@ -2732,6 +2840,7 @@ public:
 
         `total` cancellation succeeds if the operation is suspended due to ongoing
         control operations such as a ping/pong.
+
         `terminal` cancellation succeeds when supported by the underlying stream.
 
         `terminal` cancellation leaves the stream in an undefined state,

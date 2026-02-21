@@ -24,6 +24,7 @@
 // Boost
 #include <boost/container/new_allocator.hpp>
 #include <boost/tuple/tuple.hpp>
+#include <boost/core/invoke_swap.hpp>
 
 // Boost.Geometry
 #include <boost/geometry/core/static_assert.hpp>
@@ -192,9 +193,9 @@ public:
     /*! \brief The Box type used by the R-tree. */
     typedef geometry::model::box<
                 geometry::model::point<
-                    typename coordinate_type<indexable_type>::type,
+                    coordinate_type_t<indexable_type>,
                     dimension<indexable_type>::value,
-                    typename coordinate_system<indexable_type>::type
+                    coordinate_system_t<indexable_type>
                 >
             >
     bounds_type;
@@ -657,9 +658,9 @@ public:
                     src.m_members.parameters(),
                     std::move(src.m_members.allocators()))
     {
-        boost::swap(m_members.values_count, src.m_members.values_count);
-        boost::swap(m_members.leafs_level, src.m_members.leafs_level);
-        boost::swap(m_members.root, src.m_members.root);
+        boost::core::invoke_swap(m_members.values_count, src.m_members.values_count);
+        boost::core::invoke_swap(m_members.leafs_level, src.m_members.leafs_level);
+        boost::core::invoke_swap(m_members.root, src.m_members.root);
     }
 
     /*!
@@ -683,9 +684,9 @@ public:
     {
         if ( src.m_members.allocators() == allocator )
         {
-            boost::swap(m_members.values_count, src.m_members.values_count);
-            boost::swap(m_members.leafs_level, src.m_members.leafs_level);
-            boost::swap(m_members.root, src.m_members.root);
+            boost::core::invoke_swap(m_members.values_count, src.m_members.values_count);
+            boost::core::invoke_swap(m_members.leafs_level, src.m_members.leafs_level);
+            boost::core::invoke_swap(m_members.root, src.m_members.root);
         }
         else
         {
@@ -758,9 +759,9 @@ public:
                 m_members.equal_to() = src.m_members.equal_to();
                 m_members.parameters() = src.m_members.parameters();
 
-                boost::swap(m_members.values_count, src.m_members.values_count);
-                boost::swap(m_members.leafs_level, src.m_members.leafs_level);
-                boost::swap(m_members.root, src.m_members.root);
+                boost::core::invoke_swap(m_members.values_count, src.m_members.values_count);
+                boost::core::invoke_swap(m_members.leafs_level, src.m_members.leafs_level);
+                boost::core::invoke_swap(m_members.root, src.m_members.root);
 
                 // NOTE: if propagate is true for std allocators on darwin 4.2.1, glibc++
                 // (allocators stored as base classes of members_holder)
@@ -795,9 +796,9 @@ public:
     */
     void swap(rtree & other)
     {
-        boost::swap(m_members.indexable_getter(), other.m_members.indexable_getter());
-        boost::swap(m_members.equal_to(), other.m_members.equal_to());
-        boost::swap(m_members.parameters(), other.m_members.parameters());
+        boost::core::invoke_swap(m_members.indexable_getter(), other.m_members.indexable_getter());
+        boost::core::invoke_swap(m_members.equal_to(), other.m_members.equal_to());
+        boost::core::invoke_swap(m_members.parameters(), other.m_members.parameters());
 
         // NOTE: if propagate is true for std allocators on darwin 4.2.1, glibc++
         // (allocators stored as base classes of members_holder)
@@ -808,9 +809,9 @@ public:
         > propagate;
         detail::swap_cond(m_members.allocators(), other.m_members.allocators(), propagate());
 
-        boost::swap(m_members.values_count, other.m_members.values_count);
-        boost::swap(m_members.leafs_level, other.m_members.leafs_level);
-        boost::swap(m_members.root, other.m_members.root);
+        boost::core::invoke_swap(m_members.values_count, other.m_members.values_count);
+        boost::core::invoke_swap(m_members.leafs_level, other.m_members.leafs_level);
+        boost::core::invoke_swap(m_members.root, other.m_members.root);
     }
 
     /*!
@@ -825,7 +826,7 @@ public:
     \warning
     This operation only guarantees that there will be no memory leaks.
     After an exception is thrown the R-tree may be left in an inconsistent state,
-    elements must not be inserted or removed. Other operations are allowed however
+    elements must not be inserted or removed. Other operations are allowed, however,
     some of them may return invalid data.
     */
     inline void insert(value_type const& value)
@@ -849,7 +850,7 @@ public:
     \warning
     This operation only guarantees that there will be no memory leaks.
     After an exception is thrown the R-tree may be left in an inconsistent state,
-    elements must not be inserted or removed. Other operations are allowed however
+    elements must not be inserted or removed. Other operations are allowed, however,
     some of them may return invalid data.
     */
     template <typename Iterator>

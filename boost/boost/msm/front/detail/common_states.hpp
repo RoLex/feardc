@@ -14,12 +14,17 @@
 #include <boost/mpl/int.hpp>
 
 #include <boost/mpl/vector.hpp>
+#include <boost/fusion/container/vector.hpp>
 #include <boost/fusion/container/map.hpp>
 #include <boost/fusion/include/at_key.hpp>
 #include <boost/type_traits/add_const.hpp>
 
 namespace boost { namespace msm { namespace front {namespace detail
 {
+
+struct state_tag {};
+struct composite_state_tag {};
+
 template <class Attributes= ::boost::fusion::map<> >
 struct inherit_attributes
 {
@@ -59,6 +64,10 @@ struct state_base : public inherit_attributes<Attributes>, USERBASE
 {
     typedef USERBASE        user_state_base;
     typedef Attributes      attributes_type;
+    struct internal
+    {
+        typedef state_tag   tag;
+    };
 
     // empty implementation for the states not wishing to define an entry condition
     // will not be called polymorphic way
@@ -67,8 +76,9 @@ struct state_base : public inherit_attributes<Attributes>, USERBASE
     template <class Event,class FSM>
     void on_exit(Event const&,FSM& ){}
     // default (empty) transition table;
-    typedef ::boost::mpl::vector0<>  internal_transition_table;
-    typedef ::boost::mpl::vector0<>  transition_table;
+    typedef ::boost::mpl::vector<>  internal_transition_table;
+    typedef ::boost::fusion::vector<>  internal_transition_table11;
+    typedef ::boost::fusion::vector<>  transition_table;
 };
 
 }}}}

@@ -5,7 +5,12 @@
 #ifndef BOOST_UNORDERED_DETAIL_FOA_NODE_SET_TYPES_HPP
 #define BOOST_UNORDERED_DETAIL_FOA_NODE_SET_TYPES_HPP
 
+#include <boost/unordered/detail/foa/element_type.hpp>
+#include <boost/unordered/detail/foa/types_constructibility.hpp>
+#include <boost/unordered/detail/type_traits.hpp>
+
 #include <boost/core/allocator_access.hpp>
+#include <boost/core/no_exceptions_support.hpp>
 #include <boost/core/pointer_traits.hpp>
 
 namespace boost {
@@ -13,7 +18,7 @@ namespace boost {
     namespace detail {
       namespace foa {
 
-        template <class Key> struct node_set_types
+        template <class Key, class VoidPtr> struct node_set_types
         {
           using key_type = Key;
           using init_type = Key;
@@ -21,7 +26,10 @@ namespace boost {
 
           static Key const& extract(value_type const& key) { return key; }
 
-          using element_type = foa::element_type<value_type>;
+          using element_type = foa::element_type<value_type, VoidPtr>;
+
+          using types = node_set_types<Key, VoidPtr>;
+          using constructibility_checker = set_types_constructibility<types>;
 
           static value_type& value_from(element_type const& x) { return *x.p; }
           static Key const& extract(element_type const& k) { return *k.p; }
@@ -32,7 +40,7 @@ namespace boost {
           static void construct(
             A& al, element_type* p, element_type const& copy)
           {
-            construct(al, p, *copy.p);
+            construct(al, p, detail::as_const(*copy.p));
           }
 
           template <typename Allocator>
@@ -46,23 +54,25 @@ namespace boost {
           template <class A, class... Args>
           static void construct(A& al, value_type* p, Args&&... args)
           {
+            constructibility_checker::check(al, p, std::forward<Args>(args)...);
             boost::allocator_construct(al, p, std::forward<Args>(args)...);
           }
 
           template <class A, class... Args>
           static void construct(A& al, element_type* p, Args&&... args)
           {
-            p->p = boost::to_address(boost::allocator_allocate(al, 1));
+            p->p = boost::allocator_allocate(al, 1);
             BOOST_TRY
             {
-              boost::allocator_construct(al, p->p, std::forward<Args>(args)...);
+              auto address = boost::to_address(p->p);
+              constructibility_checker::check(
+                al, address, std::forward<Args>(args)...);
+              boost::allocator_construct(
+                al, address, std::forward<Args>(args)...);
             }
             BOOST_CATCH(...)
             {
-              boost::allocator_deallocate(al,
-                boost::pointer_traits<typename boost::allocator_pointer<
-                  A>::type>::pointer_to(*p->p),
-                1);
+              boost::allocator_deallocate(al, p->p, 1);
               BOOST_RETHROW
             }
             BOOST_CATCH_END
@@ -77,18 +87,15 @@ namespace boost {
           static void destroy(A& al, element_type* p) noexcept
           {
             if (p->p) {
-              destroy(al, p->p);
-              boost::allocator_deallocate(al,
-                boost::pointer_traits<typename boost::allocator_pointer<
-                  A>::type>::pointer_to(*(p->p)),
-                1);
+              destroy(al, boost::to_address(p->p));
+              boost::allocator_deallocate(al, p->p, 1);
             }
           }
         };
 
       } // namespace foa
-    }   // namespace detail
-  }     // namespace unordered
+    } // namespace detail
+  } // namespace unordered
 } // namespace boost
 
 #endif // BOOST_UNORDERED_DETAIL_FOA_NODE_SET_TYPES_HPP

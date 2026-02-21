@@ -2,7 +2,7 @@
 // system_executor.hpp
 // ~~~~~~~~~~~~~~~~~~~
 //
-// Copyright (c) 2003-2023 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+// Copyright (c) 2003-2025 Christopher M. Kohlhoff (chris at kohlhoff dot com)
 //
 // Distributed under the Boost Software License, Version 1.0. (See accompanying
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -40,7 +40,7 @@ class basic_system_executor
 {
 public:
   /// Default constructor.
-  basic_system_executor() BOOST_ASIO_NOEXCEPT
+  basic_system_executor() noexcept
     : allocator_(Allocator())
   {
   }
@@ -169,11 +169,11 @@ private:
    * auto ex2 = boost::asio::require(ex1,
    *     boost::asio::execution::allocator); @endcode
    */
-  basic_system_executor<Blocking, Relationship, std::allocator<void> >
+  basic_system_executor<Blocking, Relationship, std::allocator<void>>
   require(execution::allocator_t<void>) const
   {
     return basic_system_executor<Blocking,
-        Relationship, std::allocator<void> >();
+        Relationship, std::allocator<void>>();
   }
 
 #if !defined(GENERATING_DOCUMENTATION)
@@ -181,6 +181,7 @@ private:
   friend struct boost_asio_query_fn::impl;
   friend struct boost::asio::execution::detail::blocking_t<0>;
   friend struct boost::asio::execution::detail::mapping_t<0>;
+  friend struct boost::asio::execution::detail::inline_exception_handling_t<0>;
   friend struct boost::asio::execution::detail::outstanding_work_t<0>;
   friend struct boost::asio::execution::detail::relationship_t<0>;
 #endif // !defined(GENERATING_DOCUMENTATION)
@@ -196,10 +197,28 @@ private:
    *       == boost::asio::execution::mapping.thread)
    *   ... @endcode
    */
-  static BOOST_ASIO_CONSTEXPR execution::mapping_t query(
-      execution::mapping_t) BOOST_ASIO_NOEXCEPT
+  static constexpr execution::mapping_t query(
+      execution::mapping_t) noexcept
   {
     return execution::mapping.thread;
+  }
+
+  /// Query the current value of the @c inline_exception_handling property.
+  /**
+   * Do not call this function directly. It is intended for use with the
+   * boost::asio::query customisation point.
+   *
+   * For example:
+   * @code boost::asio::system_executor ex;
+   * if (boost::asio::query(ex,
+   *       boost::asio::execution::inline_exception_handling)
+   *     == boost::asio::execution::inline_exception_handling.thread)
+   *   ... @endcode
+   */
+  static constexpr execution::inline_exception_handling_t query(
+      execution::inline_exception_handling_t) noexcept
+  {
+    return execution::inline_exception_handling.terminate;
   }
 
   /// Query the current value of the @c context property.
@@ -212,7 +231,7 @@ private:
    * boost::asio::system_context& pool = boost::asio::query(
    *     ex, boost::asio::execution::context); @endcode
    */
-  static system_context& query(execution::context_t) BOOST_ASIO_NOEXCEPT;
+  static system_context& query(execution::context_t) noexcept;
 
   /// Query the current value of the @c blocking property.
   /**
@@ -225,8 +244,8 @@ private:
    *       == boost::asio::execution::blocking.always)
    *   ... @endcode
    */
-  static BOOST_ASIO_CONSTEXPR execution::blocking_t query(
-      execution::blocking_t) BOOST_ASIO_NOEXCEPT
+  static constexpr execution::blocking_t query(
+      execution::blocking_t) noexcept
   {
     return Blocking();
   }
@@ -242,8 +261,8 @@ private:
    *       == boost::asio::execution::relationship.continuation)
    *   ... @endcode
    */
-  static BOOST_ASIO_CONSTEXPR execution::relationship_t query(
-      execution::relationship_t) BOOST_ASIO_NOEXCEPT
+  static constexpr execution::relationship_t query(
+      execution::relationship_t) noexcept
   {
     return Relationship();
   }
@@ -259,8 +278,8 @@ private:
    *     boost::asio::execution::allocator); @endcode
    */
   template <typename OtherAllocator>
-  BOOST_ASIO_CONSTEXPR Allocator query(
-      execution::allocator_t<OtherAllocator>) const BOOST_ASIO_NOEXCEPT
+  constexpr Allocator query(
+      execution::allocator_t<OtherAllocator>) const noexcept
   {
     return allocator_;
   }
@@ -275,8 +294,8 @@ private:
    * auto alloc = boost::asio::query(ex,
    *     boost::asio::execution::allocator); @endcode
    */
-  BOOST_ASIO_CONSTEXPR Allocator query(
-      execution::allocator_t<void>) const BOOST_ASIO_NOEXCEPT
+  constexpr Allocator query(
+      execution::allocator_t<void>) const noexcept
   {
     return allocator_;
   }
@@ -292,7 +311,7 @@ private:
    * std::size_t occupancy = boost::asio::query(
    *     ex, boost::asio::execution::occupancy); @endcode
    */
-  std::size_t query(execution::occupancy_t) const BOOST_ASIO_NOEXCEPT;
+  std::size_t query(execution::occupancy_t) const noexcept;
 
 public:
   /// Compare two executors for equality.
@@ -300,7 +319,7 @@ public:
    * Two executors are equal if they refer to the same underlying io_context.
    */
   friend bool operator==(const basic_system_executor&,
-      const basic_system_executor&) BOOST_ASIO_NOEXCEPT
+      const basic_system_executor&) noexcept
   {
     return true;
   }
@@ -310,28 +329,28 @@ public:
    * Two executors are equal if they refer to the same underlying io_context.
    */
   friend bool operator!=(const basic_system_executor&,
-      const basic_system_executor&) BOOST_ASIO_NOEXCEPT
+      const basic_system_executor&) noexcept
   {
     return false;
   }
 
   /// Execution function.
   template <typename Function>
-  void execute(BOOST_ASIO_MOVE_ARG(Function) f) const
+  void execute(Function&& f) const
   {
-    this->do_execute(BOOST_ASIO_MOVE_CAST(Function)(f), Blocking());
+    this->do_execute(static_cast<Function&&>(f), Blocking());
   }
 
 #if !defined(BOOST_ASIO_NO_TS_EXECUTORS)
 public:
   /// Obtain the underlying execution context.
-  system_context& context() const BOOST_ASIO_NOEXCEPT;
+  system_context& context() const noexcept;
 
   /// Inform the executor that it has some outstanding work to do.
   /**
    * For the system executor, this is a no-op.
    */
-  void on_work_started() const BOOST_ASIO_NOEXCEPT
+  void on_work_started() const noexcept
   {
   }
 
@@ -339,7 +358,7 @@ public:
   /**
    * For the system executor, this is a no-op.
    */
-  void on_work_finished() const BOOST_ASIO_NOEXCEPT
+  void on_work_finished() const noexcept
   {
   }
 
@@ -356,7 +375,7 @@ public:
    * internal storage needed for function invocation.
    */
   template <typename Function, typename OtherAllocator>
-  void dispatch(BOOST_ASIO_MOVE_ARG(Function) f, const OtherAllocator& a) const;
+  void dispatch(Function&& f, const OtherAllocator& a) const;
 
   /// Request the system executor to invoke the given function object.
   /**
@@ -372,7 +391,7 @@ public:
    * internal storage needed for function invocation.
    */
   template <typename Function, typename OtherAllocator>
-  void post(BOOST_ASIO_MOVE_ARG(Function) f, const OtherAllocator& a) const;
+  void post(Function&& f, const OtherAllocator& a) const;
 
   /// Request the system executor to invoke the given function object.
   /**
@@ -388,7 +407,7 @@ public:
    * internal storage needed for function invocation.
    */
   template <typename Function, typename OtherAllocator>
-  void defer(BOOST_ASIO_MOVE_ARG(Function) f, const OtherAllocator& a) const;
+  void defer(Function&& f, const OtherAllocator& a) const;
 #endif // !defined(BOOST_ASIO_NO_TS_EXECUTORS)
 
 private:
@@ -402,17 +421,17 @@ private:
 
   /// Execution helper implementation for the possibly blocking property.
   template <typename Function>
-  void do_execute(BOOST_ASIO_MOVE_ARG(Function) f,
+  void do_execute(Function&& f,
       execution::blocking_t::possibly_t) const;
 
   /// Execution helper implementation for the always blocking property.
   template <typename Function>
-  void do_execute(BOOST_ASIO_MOVE_ARG(Function) f,
+  void do_execute(Function&& f,
       execution::blocking_t::always_t) const;
 
   /// Execution helper implementation for the never blocking property.
   template <typename Function>
-  void do_execute(BOOST_ASIO_MOVE_ARG(Function) f,
+  void do_execute(Function&& f,
       execution::blocking_t::never_t) const;
 
   // The allocator used for execution functions.
@@ -429,7 +448,7 @@ private:
  * immediately.
  */
 typedef basic_system_executor<execution::blocking_t::possibly_t,
-    execution::relationship_t::fork_t, std::allocator<void> >
+    execution::relationship_t::fork_t, std::allocator<void>>
   system_executor;
 
 #if !defined(GENERATING_DOCUMENTATION)
@@ -443,8 +462,8 @@ struct equality_comparable<
     boost::asio::basic_system_executor<Blocking, Relationship, Allocator>
   >
 {
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_valid = true);
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_noexcept = true);
+  static constexpr bool is_valid = true;
+  static constexpr bool is_noexcept = true;
 };
 
 #endif // !defined(BOOST_ASIO_HAS_DEDUCED_EQUALITY_COMPARABLE_TRAIT)
@@ -458,8 +477,8 @@ struct execute_member<
     Function
   >
 {
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_valid = true);
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_noexcept = false);
+  static constexpr bool is_valid = true;
+  static constexpr bool is_noexcept = false;
   typedef void result_type;
 };
 
@@ -473,8 +492,8 @@ struct require_member<
     boost::asio::execution::blocking_t::possibly_t
   >
 {
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_valid = true);
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_noexcept = false);
+  static constexpr bool is_valid = true;
+  static constexpr bool is_noexcept = false;
   typedef boost::asio::basic_system_executor<
       boost::asio::execution::blocking_t::possibly_t,
       Relationship, Allocator> result_type;
@@ -486,8 +505,8 @@ struct require_member<
     boost::asio::execution::blocking_t::always_t
   >
 {
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_valid = true);
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_noexcept = false);
+  static constexpr bool is_valid = true;
+  static constexpr bool is_noexcept = false;
   typedef boost::asio::basic_system_executor<
       boost::asio::execution::blocking_t::always_t,
       Relationship, Allocator> result_type;
@@ -499,8 +518,8 @@ struct require_member<
     boost::asio::execution::blocking_t::never_t
   >
 {
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_valid = true);
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_noexcept = false);
+  static constexpr bool is_valid = true;
+  static constexpr bool is_noexcept = false;
   typedef boost::asio::basic_system_executor<
       boost::asio::execution::blocking_t::never_t,
       Relationship, Allocator> result_type;
@@ -512,8 +531,8 @@ struct require_member<
     boost::asio::execution::relationship_t::fork_t
   >
 {
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_valid = true);
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_noexcept = false);
+  static constexpr bool is_valid = true;
+  static constexpr bool is_noexcept = false;
   typedef boost::asio::basic_system_executor<Blocking,
       boost::asio::execution::relationship_t::fork_t,
       Allocator> result_type;
@@ -525,8 +544,8 @@ struct require_member<
     boost::asio::execution::relationship_t::continuation_t
   >
 {
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_valid = true);
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_noexcept = false);
+  static constexpr bool is_valid = true;
+  static constexpr bool is_noexcept = false;
   typedef boost::asio::basic_system_executor<Blocking,
       boost::asio::execution::relationship_t::continuation_t,
       Allocator> result_type;
@@ -538,10 +557,10 @@ struct require_member<
     boost::asio::execution::allocator_t<void>
   >
 {
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_valid = true);
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_noexcept = false);
+  static constexpr bool is_valid = true;
+  static constexpr bool is_noexcept = false;
   typedef boost::asio::basic_system_executor<Blocking,
-      Relationship, std::allocator<void> > result_type;
+      Relationship, std::allocator<void>> result_type;
 };
 
 template <typename Blocking, typename Relationship,
@@ -551,8 +570,8 @@ struct require_member<
     boost::asio::execution::allocator_t<OtherAllocator>
   >
 {
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_valid = true);
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_noexcept = false);
+  static constexpr bool is_valid = true;
+  static constexpr bool is_noexcept = false;
   typedef boost::asio::basic_system_executor<Blocking,
       Relationship, OtherAllocator> result_type;
 };
@@ -574,11 +593,35 @@ struct query_static_constexpr_member<
     >::type
   >
 {
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_valid = true);
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_noexcept = true);
+  static constexpr bool is_valid = true;
+  static constexpr bool is_noexcept = true;
   typedef boost::asio::execution::mapping_t::thread_t result_type;
 
-  static BOOST_ASIO_CONSTEXPR result_type value() BOOST_ASIO_NOEXCEPT
+  static constexpr result_type value() noexcept
+  {
+    return result_type();
+  }
+};
+
+template <typename Blocking, typename Relationship,
+    typename Allocator, typename Property>
+struct query_static_constexpr_member<
+    boost::asio::basic_system_executor<Blocking, Relationship, Allocator>,
+    Property,
+    typename boost::asio::enable_if<
+      boost::asio::is_convertible<
+        Property,
+        boost::asio::execution::inline_exception_handling_t
+      >::value
+    >::type
+  >
+{
+  static constexpr bool is_valid = true;
+  static constexpr bool is_noexcept = true;
+  typedef boost::asio::execution::inline_exception_handling_t::terminate_t
+    result_type;
+
+  static constexpr result_type value() noexcept
   {
     return result_type();
   }
@@ -601,8 +644,8 @@ struct query_member<
     >::type
   >
 {
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_valid = true);
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_noexcept = true);
+  static constexpr bool is_valid = true;
+  static constexpr bool is_noexcept = true;
   typedef boost::asio::execution::blocking_t result_type;
 };
 
@@ -619,8 +662,8 @@ struct query_member<
     >::type
   >
 {
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_valid = true);
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_noexcept = true);
+  static constexpr bool is_valid = true;
+  static constexpr bool is_noexcept = true;
   typedef boost::asio::execution::relationship_t result_type;
 };
 
@@ -630,8 +673,8 @@ struct query_member<
     boost::asio::execution::context_t
   >
 {
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_valid = true);
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_noexcept = true);
+  static constexpr bool is_valid = true;
+  static constexpr bool is_noexcept = true;
   typedef boost::asio::system_context& result_type;
 };
 
@@ -641,8 +684,8 @@ struct query_member<
     boost::asio::execution::allocator_t<void>
   >
 {
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_valid = true);
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_noexcept = true);
+  static constexpr bool is_valid = true;
+  static constexpr bool is_noexcept = true;
   typedef Allocator result_type;
 };
 
@@ -652,8 +695,8 @@ struct query_member<
     boost::asio::execution::allocator_t<Allocator>
   >
 {
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_valid = true);
-  BOOST_ASIO_STATIC_CONSTEXPR(bool, is_noexcept = true);
+  static constexpr bool is_valid = true;
+  static constexpr bool is_noexcept = true;
   typedef Allocator result_type;
 };
 

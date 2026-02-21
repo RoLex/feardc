@@ -4,6 +4,7 @@
 #define BOOST_MATH_FP_TRAITS_HPP
 
 // Copyright (c) 2006 Johan Rade
+// Copyright (c) 2024 Matt Borland
 
 // Distributed under the Boost Software License, Version 1.0.
 // (See accompanying file LICENSE_1_0.txt
@@ -24,6 +25,7 @@ With these techniques, the code could be simplified.
 #include <cstdint>
 #include <limits>
 #include <type_traits>
+#include <boost/math/tools/config.hpp>
 #include <boost/math/tools/is_standalone.hpp>
 #include <boost/math/tools/assert.hpp>
 
@@ -33,16 +35,6 @@ With these techniques, the code could be simplified.
 #include <boost/predef/other/endian.h>
 #define BOOST_MATH_ENDIAN_BIG_BYTE BOOST_ENDIAN_BIG_BYTE
 #define BOOST_MATH_ENDIAN_LITTLE_BYTE BOOST_ENDIAN_LITTLE_BYTE
-
-#elif (__cplusplus >= 202002L || _MSVC_LANG >= 202002L)
-
-#if __has_include(<bit>)
-#include <bit>
-#define BOOST_MATH_ENDIAN_BIG_BYTE (std::endian::native == std::endian::big)
-#define BOOST_MATH_ENDIAN_LITTLE_BYTE (std::endian::native == std::endian::little)
-#else
-#error Missing <bit> header. Please disable standalone mode, and file an issue at https://github.com/boostorg/math
-#endif
 
 #elif defined(_WIN32)
 
@@ -212,14 +204,14 @@ template<> struct fp_traits_non_native<float, single_precision>
 {
     typedef ieee_copy_all_bits_tag method;
 
-    static constexpr uint32_t sign        = 0x80000000u;
-    static constexpr uint32_t exponent    = 0x7f800000;
-    static constexpr uint32_t flag        = 0x00000000;
-    static constexpr uint32_t significand = 0x007fffff;
+    BOOST_MATH_STATIC constexpr uint32_t sign        = 0x80000000u;
+    BOOST_MATH_STATIC constexpr uint32_t exponent    = 0x7f800000;
+    BOOST_MATH_STATIC constexpr uint32_t flag        = 0x00000000;
+    BOOST_MATH_STATIC constexpr uint32_t significand = 0x007fffff;
 
     typedef uint32_t bits;
-    static void get_bits(float x, uint32_t& a) { std::memcpy(&a, &x, 4); }
-    static void set_bits(float& x, uint32_t a) { std::memcpy(&x, &a, 4); }
+    BOOST_MATH_GPU_ENABLED static void get_bits(float x, uint32_t& a) { std::memcpy(&a, &x, 4); }
+    BOOST_MATH_GPU_ENABLED static void set_bits(float& x, uint32_t a) { std::memcpy(&x, &a, 4); }
 };
 
 // ieee_tag version, double (64 bits) ----------------------------------------------
@@ -260,15 +252,15 @@ template<> struct fp_traits_non_native<double, double_precision>
 {
     typedef ieee_copy_all_bits_tag method;
 
-    static constexpr uint64_t sign     = static_cast<uint64_t>(0x80000000u) << 32;
-    static constexpr uint64_t exponent = static_cast<uint64_t>(0x7ff00000) << 32;
-    static constexpr uint64_t flag     = 0;
-    static constexpr uint64_t significand
+    BOOST_MATH_STATIC constexpr uint64_t sign     = static_cast<uint64_t>(0x80000000u) << 32;
+    BOOST_MATH_STATIC constexpr uint64_t exponent = static_cast<uint64_t>(0x7ff00000) << 32;
+    BOOST_MATH_STATIC constexpr uint64_t flag     = 0;
+    BOOST_MATH_STATIC constexpr uint64_t significand
         = (static_cast<uint64_t>(0x000fffff) << 32) + static_cast<uint64_t>(0xffffffffu);
 
     typedef uint64_t bits;
-    static void get_bits(double x, uint64_t& a) { std::memcpy(&a, &x, 8); }
-    static void set_bits(double& x, uint64_t a) { std::memcpy(&x, &a, 8); }
+    BOOST_MATH_GPU_ENABLED static void get_bits(double x, uint64_t& a) { std::memcpy(&a, &x, 8); }
+    BOOST_MATH_GPU_ENABLED static void set_bits(double& x, uint64_t a) { std::memcpy(&x, &a, 8); }
 };
 
 #endif
@@ -278,7 +270,7 @@ template<> struct fp_traits_non_native<double, double_precision>
 // long double (64 bits) -------------------------------------------------------
 
 #if defined(BOOST_NO_INT64_T) || defined(BOOST_NO_INCLASS_MEMBER_INITIALIZATION)\
-   || defined(BOOST_BORLANDC) || defined(__CODEGEAR__)
+   || defined(BOOST_BORLANDC) || defined(__CODEGEAR__) || (defined(__APPLE__) && defined(__aarch64__)) || defined(_MSC_VER)
 
 template<> struct fp_traits_non_native<long double, double_precision>
 {
@@ -305,31 +297,9 @@ private:
     static constexpr int offset_ = BOOST_MATH_ENDIAN_BIG_BYTE ? 0 : 4;
 };
 
-//..............................................................................
-
-#else
-
-template<> struct fp_traits_non_native<long double, double_precision>
-{
-    typedef ieee_copy_all_bits_tag method;
-
-    static const uint64_t sign     = static_cast<uint64_t>(0x80000000u) << 32;
-    static const uint64_t exponent = static_cast<uint64_t>(0x7ff00000) << 32;
-    static const uint64_t flag     = 0;
-    static const uint64_t significand
-        = (static_cast<uint64_t>(0x000fffff) << 32) + static_cast<uint64_t>(0xffffffffu);
-
-    typedef uint64_t bits;
-    static void get_bits(long double x, uint64_t& a) { std::memcpy(&a, &x, 8); }
-    static void set_bits(long double& x, uint64_t a) { std::memcpy(&x, &a, 8); }
-};
-
-#endif
-
-
 // long double (>64 bits), x86 and x64 -----------------------------------------
 
-#if defined(__i386) || defined(__i386__) || defined(_M_IX86) \
+#elif defined(__i386) || defined(__i386__) || defined(_M_IX86) \
     || defined(__amd64) || defined(__amd64__)  || defined(_M_AMD64) \
     || defined(__x86_64) || defined(__x86_64__) || defined(_M_X64)
 
@@ -340,10 +310,10 @@ struct fp_traits_non_native<long double, extended_double_precision>
 {
     typedef ieee_copy_leading_bits_tag method;
 
-    static constexpr uint32_t sign        = 0x80000000u;
-    static constexpr uint32_t exponent    = 0x7fff0000;
-    static constexpr uint32_t flag        = 0x00008000;
-    static constexpr uint32_t significand = 0x00007fff;
+    BOOST_MATH_STATIC constexpr uint32_t sign        = 0x80000000u;
+    BOOST_MATH_STATIC constexpr uint32_t exponent    = 0x7fff0000;
+    BOOST_MATH_STATIC constexpr uint32_t flag        = 0x00008000;
+    BOOST_MATH_STATIC constexpr uint32_t significand = 0x00007fff;
 
     typedef uint32_t bits;
 
@@ -391,10 +361,10 @@ struct fp_traits_non_native<long double, extended_double_precision>
 {
     typedef ieee_copy_leading_bits_tag method;
 
-    static constexpr uint32_t sign        = 0x80000000u;
-    static constexpr uint32_t exponent    = 0x7ff00000;
-    static constexpr uint32_t flag        = 0x00000000;
-    static constexpr uint32_t significand = 0x000fffff;
+    BOOST_MATH_STATIC constexpr uint32_t sign        = 0x80000000u;
+    BOOST_MATH_STATIC constexpr uint32_t exponent    = 0x7ff00000;
+    BOOST_MATH_STATIC constexpr uint32_t flag        = 0x00000000;
+    BOOST_MATH_STATIC constexpr uint32_t significand = 0x000fffff;
 
     typedef uint32_t bits;
 
@@ -409,7 +379,7 @@ struct fp_traits_non_native<long double, extended_double_precision>
     }
 
 private:
-    static constexpr int offset_ = BOOST_MATH_ENDIAN_BIG_BYTE ? 0 : 12;
+    BOOST_MATH_STATIC constexpr int offset_ = BOOST_MATH_ENDIAN_BIG_BYTE ? 0 : 12;
 };
 
 
@@ -429,10 +399,10 @@ struct fp_traits_non_native<long double, extended_double_precision>
 {
     typedef ieee_copy_leading_bits_tag method;
 
-    static constexpr uint32_t sign        = 0x80000000u;
-    static constexpr uint32_t exponent    = 0x7fff0000;
-    static constexpr uint32_t flag        = 0x00008000;
-    static constexpr uint32_t significand = 0x00007fff;
+    BOOST_MATH_STATIC constexpr uint32_t sign        = 0x80000000u;
+    BOOST_MATH_STATIC constexpr uint32_t exponent    = 0x7fff0000;
+    BOOST_MATH_STATIC constexpr uint32_t flag        = 0x00008000;
+    BOOST_MATH_STATIC constexpr uint32_t significand = 0x00007fff;
 
     // copy 1st, 2nd, 5th and 6th byte. 3rd and 4th byte are padding.
 
@@ -465,10 +435,10 @@ struct fp_traits_non_native<long double, extended_double_precision>
 {
     typedef ieee_copy_leading_bits_tag method;
 
-    static constexpr uint32_t sign        = 0x80000000u;
-    static constexpr uint32_t exponent    = 0x7fff0000;
-    static constexpr uint32_t flag        = 0x00000000;
-    static constexpr uint32_t significand = 0x0000ffff;
+    BOOST_MATH_STATIC constexpr uint32_t sign        = 0x80000000u;
+    BOOST_MATH_STATIC constexpr uint32_t exponent    = 0x7fff0000;
+    BOOST_MATH_STATIC constexpr uint32_t flag        = 0x00000000;
+    BOOST_MATH_STATIC constexpr uint32_t significand = 0x0000ffff;
 
     typedef uint32_t bits;
 
@@ -483,7 +453,7 @@ struct fp_traits_non_native<long double, extended_double_precision>
     }
 
 private:
-    static constexpr int offset_ = BOOST_MATH_ENDIAN_BIG_BYTE ? 0 : 12;
+    BOOST_MATH_STATIC constexpr int offset_ = BOOST_MATH_ENDIAN_BIG_BYTE ? 0 : 12;
 };
 
 #endif
@@ -563,7 +533,8 @@ struct select_native<long double>
    && !defined(BOOST_MATH_DISABLE_STD_FPCLASSIFY)\
    && !defined(__INTEL_COMPILER)\
    && !defined(sun)\
-   && !defined(__VXWORKS__)
+   && !defined(__VXWORKS__)\
+   && !defined(BOOST_MATH_HAS_GPU_SUPPORT)
 #  define BOOST_MATH_USE_STD_FPCLASSIFY
 #endif
 

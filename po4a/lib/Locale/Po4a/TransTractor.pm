@@ -1,28 +1,18 @@
 #!/usr/bin/perl -w
 
-require Exporter;
-
 package Locale::Po4a::TransTractor;
-use DynaLoader;
 
 use 5.16.0;
 use strict;
 use warnings;
 
 use subs qw(makespace);
-use vars qw($VERSION @ISA @EXPORT);
-$VERSION = "0.71";
-@ISA     = qw(DynaLoader);
-@EXPORT  = qw(new process translate
-  read write readpo writepo
-  getpoout setpoout get_in_charset get_out_charset handle_yaml);
-
-# Try to use a C extension if present.
-eval("bootstrap Locale::Po4a::TransTractor $VERSION");
+use vars qw($VERSION);
+$VERSION = "0.74";
 
 use Carp qw(croak confess);
 use Locale::Po4a::Po;
-use Locale::Po4a::Common;
+use Locale::Po4a::Common qw(wrap_msg wrap_mod gettext dgettext);
 
 use File::Path;    # mkdir before write
 use File::Spec;
@@ -256,7 +246,17 @@ Sets the verbosity.
 
 Sets the debugging.
 
+=item wrapcol ($)
+
+The column at which we should wrap text in output document (default: 76).
+
+The negative value means not to wrap lines at all.
+
 =back
+
+Also it accepts next options for underlying Po-files: B<porefs>,
+B<copyright-holder>, B<msgid-bugs-address>, B<package-name>,
+B<package-version>, B<wrap-po>.
 
 =cut
 
@@ -355,13 +355,14 @@ sub new {
     bless $self, $class;
 
     ## initialize the plugin
-    # prevent the plugin from croaking on the options intended for Po.pm
+    # prevent the plugin from croaking on the options intended for Po.pm or ourself
     $self->{options}{'porefs'}             = '';
     $self->{options}{'copyright-holder'}   = '';
     $self->{options}{'msgid-bugs-address'} = '';
     $self->{options}{'package-name'}       = '';
     $self->{options}{'package-version'}    = '';
     $self->{options}{'wrap-po'}            = '';
+    $self->{options}{'wrapcol'}            = '';
 
     # let the plugin parse the options and such
     $self->initialize(%options);
@@ -391,9 +392,20 @@ sub new {
     if ( defined $options{'debug'} ) {
         $self->{TT}{debug} = $options{'debug'};
     }
+    if ( defined $options{'wrapcol'} ) {
+        if ( $options{'wrapcol'} < 0 ) {
+            $self->{TT}{wrapcol} = 'Inf';
+        } else {
+            $self->{TT}{wrapcol} = $options{'wrapcol'};
+        }
+    } else {
+        $self->{TT}{wrapcol} = 76;
+    }
 
     return $self;
 }
+
+sub initialize { }
 
 =back
 
@@ -401,11 +413,14 @@ sub new {
 
 =over 4
 
-=item read($$)
+=item read($$$)
 
-Add another input document data at the end of the existing array
-C<< @{$self->{TT}{doc_in}} >>. The argument is the filename to read. If a second
-argument is provided, it is the filename to use in the references.
+Add another input document data at the end of the existing array C<< @{$self->{TT}{doc_in}} >>.
+
+This function takes two mandatory arguments and an optional one.
+ * The filename to read on disk;
+ * The name to use as filename when building the reference in the PO file;
+ * The charset to use to read that file (UTF-8 by default)
 
 This array C<< @{$self->{TT}{doc_in}} >> holds this input document data as an
 array of strings with alternating meanings.
@@ -420,8 +435,8 @@ function when you're done with packing input files into the document.
 
 sub read() {
     my $self     = shift;
-    my $filename = shift or confess "Cannot write to a file without filename";
-    my $refname  = shift or confess "Cannot write to a file without refname";
+    my $filename = shift or confess "Cannot read from a file without filename";
+    my $refname  = shift or confess "Cannot read from a file without refname";
     my $charset  = shift || 'UTF-8';
     my $linenum  = 0;
 
@@ -454,8 +469,14 @@ sub read() {
     my $error = $@;
     if ( length($error) ) {
         chomp $error;
-        die wrap_msg( dgettext( "po4a", "Malformed encoding while reading from file %s with charset %s: %s" ),
-            $filename, $charset, $error );
+        die wrap_msg(
+            dgettext(
+                "po4a",
+                "Malformed encoding while reading from file %s with charset %s: %s\nIf %s is not the expected charset, you need to configure the right one with --master-charset or other similar flags."
+            ),
+            $filename,
+            $charset, $error, $charset
+        );
     }
 
     # Croak if we need to
@@ -511,6 +532,11 @@ sub write {
     map { print $fh $_ } $self->docheader();
     eval {
         map { print $fh $_ } @{ $self->{TT}{doc_out} };
+
+        # we use the "eval {} or do {}" approach to deal with exceptions, cf https://perlmaven.com/fatal-errors-in-external-modules
+        # but we want it to fail only if there is an error. It seems to be some cases where "map" returns false even if there is no error.
+        # Thus this final 1 to evaluate to true in absence of error.
+        1;
     } or do {
         my $error = $@ || 'Unknown failure';
         chomp $error;
@@ -520,11 +546,23 @@ sub write {
             binmode STDERR, ':encoding(UTF-8)';
             my $char = chr( hex($1) );
             die wrap_msg(
-                dgettext( "po4a", "Malformed encoding while writing char '%s' to file %s with charset %s: %s" ),
-                $char, $filename, $charset, $error );
+                dgettext(
+                    "po4a",
+                    "Malformed encoding while writing char '%s' to file %s with charset %s: %s\nIf %s is not the expected charset, you need to configure the right one with --localized-charset or other similar flags."
+                ),
+                $char,
+                $filename,
+                $charset, $error, $charset
+            );
         } else {
-            die wrap_msg( dgettext( "po4a", "Malformed encoding while writing to file %s with charset %s: %s" ),
-                $filename, $charset, $error );
+            die wrap_msg(
+                dgettext(
+                    "po4a",
+                    "Malformed encoding while writing to file %s with charset %s: %s\nIf %s is not the expected charset, you need to configure the right one with --localized-charset or other similar flags."
+                ),
+                $filename,
+                $charset, $error, $charset
+            );
         }
     };
 
@@ -623,8 +661,14 @@ sub addendum_parse {
     } or do {
         my $error = $@ || 'Unknown failure';
         chomp $error;
-        die wrap_msg( dgettext( "po4a", "Malformed encoding while reading from file %s with charset %s: %s" ),
-            $filename, $charset, $error );
+        die wrap_msg(
+            dgettext(
+                "po4a",
+                "Malformed encoding while reading from file %s with charset %s: %s\nIf %s is not the expected charset, you need to configure the right one with --master-charset or other similar flags."
+            ),
+            $filename,
+            $charset, $error, $charset
+        );
     };
 
     unless ( $header =~ s/PO4A-HEADER://i ) {
@@ -695,8 +739,14 @@ sub addendum_parse {
     my $error = $@;
     if ( length($error) ) {
         chomp $error;
-        die wrap_msg( dgettext( "po4a", "Malformed encoding while reading from file %s with charset %s: %s" ),
-            $filename, $charset, $error );
+        die wrap_msg(
+            dgettext(
+                "po4a",
+                "Malformed encoding while reading from file %s with charset %s: %s\nIf %s is not the expected charset, you need to configure the right one with --master-charset or other similar flags."
+            ),
+            $filename,
+            $charset, $error, $charset
+        );
     }
     close INS;
 
@@ -920,7 +970,10 @@ a translation or extracting it, and wraps the translation.
 
 =item B<wrapcol>
 
-the column at which we should wrap (default: 76).
+the column at which we should wrap (default: the value of B<wrapcol> specified
+during creation of the TransTractor or 76).
+
+The negative value will be substracted from the default.
 
 =item B<comment>
 
@@ -966,10 +1019,10 @@ sub translate {
     #            unless $validoption{$_};
     # }
 
-    if ( defined $options{'wrapcol'} && $options{'wrapcol'} < 0 ) {
-
-        # FIXME: should be the parameter given with --width
-        $options{'wrapcol'} = 76 + $options{'wrapcol'};
+    if ( !defined $options{'wrapcol'} ) {
+        $options{'wrapcol'} = $self->{TT}{wrapcol};
+    } elsif ( $options{'wrapcol'} < 0 ) {
+        $options{'wrapcol'} = $self->{TT}{wrapcol} + $options{'wrapcol'};
     }
     my $transstring = $self->{TT}{po_in}->gettext(
         $string,
@@ -985,7 +1038,6 @@ sub translate {
         'automatic' => $options{'comment'},
         'flags'     => $options{'flags'},
         'wrap'      => $options{'wrap'} || 0,
-        'wrapcol'   => $options{'wrapcol'}
     );
 
     if ( $options{'wrap'} || 0 ) {

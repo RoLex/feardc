@@ -3,7 +3,6 @@
 
 // Copyright 2008-2022 Emil Dotchevski and Reverge Studios, Inc.
 // Copyright 2019 agate-pris
-
 // Distributed under the Boost Software License, Version 1.0. (See accompanying
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -13,7 +12,7 @@
 #include <boost/qvm/vec_operations4.hpp>
 #include <boost/qvm/assert.hpp>
 #include <boost/qvm/scalar_traits.hpp>
-#include <string>
+#include <boost/qvm/to_string.hpp>
 
 namespace boost { namespace qvm {
 
@@ -31,12 +30,6 @@ qvm_detail
 
 ////////////////////////////////////////////////
 
-namespace
-qvm_to_string_detail
-    {
-    template <class T>
-    std::string to_string( T const & x );
-    }
 
 namespace
 qvm_detail
@@ -228,7 +221,7 @@ vec_traits< qvm_detail::zero_vec_<T,Dim> >
     scalar_type
     read_element_idx( int i, this_vector const & )
         {
-        BOOST_QVM_ASSERT(i>=0);
+        BOOST_QVM_ASSERT(i>=0); (void)i;
         BOOST_QVM_ASSERT(i<Dim);
         return scalar_traits<scalar_type>::value(0);
         }

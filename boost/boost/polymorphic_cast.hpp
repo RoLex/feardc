@@ -14,7 +14,7 @@
 //  08 Nov 14  Add polymorphic_pointer_downcast (Boris Rasin)
 //  09 Jun 14  "cast.hpp" was renamed to "polymorphic_cast.hpp" and
 //             inclusion of numeric_cast was removed (Antony Polukhin)
-//  23 Jun 05  numeric_cast removed and redirected to the new verion (Fernando Cacciola)
+//  23 Jun 05  numeric_cast removed and redirected to the new version (Fernando Cacciola)
 //  02 Apr 01  Removed BOOST_NO_LIMITS workarounds and included
 //             <boost/limits.hpp> instead (the workaround did not
 //             actually compile when BOOST_NO_LIMITS was defined in
@@ -31,7 +31,7 @@
 //  19 Oct 00  Fix numeric_cast for floating-point types (Dave Abrahams)
 //  15 Jul 00  Suppress numeric_cast warnings for GCC, Borland and MSVC
 //             (Dave Abrahams)
-//  30 Jun 00  More MSVC6 wordarounds.  See comments below.  (Dave Abrahams)
+//  30 Jun 00  More MSVC6 workarounds.  See comments below.  (Dave Abrahams)
 //  28 Jun 00  Removed implicit_cast<>.  See comment below. (Beman Dawes)
 //  27 Jun 00  More MSVC6 workarounds
 //  15 Jun 00  Add workarounds for MSVC6
@@ -49,38 +49,24 @@
 #ifndef BOOST_POLYMORPHIC_CAST_HPP
 #define BOOST_POLYMORPHIC_CAST_HPP
 
-# include <boost/config.hpp>
+#include <boost/config.hpp>
 
 #ifdef BOOST_HAS_PRAGMA_ONCE
 #   pragma once
 #endif
 
-#include <boost/config/pragma_message.hpp>
-#if defined(BOOST_NO_CXX11_RVALUE_REFERENCES) || \
-    defined(BOOST_NO_CXX11_AUTO_DECLARATIONS) || \
-    defined(BOOST_NO_CXX11_CONSTEXPR) || \
-    defined(BOOST_NO_CXX11_NULLPTR) || \
-    defined(BOOST_NO_CXX11_NOEXCEPT) || \
-    defined(BOOST_NO_CXX11_DEFAULTED_FUNCTIONS) || \
-    defined(BOOST_NO_CXX11_FINAL) || \
-    defined(BOOST_NO_CXX11_ALIGNOF) || \
-    defined(BOOST_NO_CXX11_STATIC_ASSERT) || \
-    defined(BOOST_NO_CXX11_SMART_PTR) || \
-    defined(BOOST_NO_CXX11_HDR_INITIALIZER_LIST) || \
-    defined(BOOST_NO_CXX11_HDR_TYPE_TRAITS)
-
-BOOST_PRAGMA_MESSAGE("C++03 support is deprecated in Boost.Conversion 1.82 and will be removed in Boost.Conversion 1.84.")
-
-#endif
-
 # include <boost/assert.hpp>
-# include <boost/core/addressof.hpp>
-# include <boost/core/enable_if.hpp>
 # include <boost/throw_exception.hpp>
-# include <boost/type_traits/is_reference.hpp> 
-# include <boost/type_traits/remove_reference.hpp>
 
+# include <memory>  // std::addressof
 # include <typeinfo>
+# include <type_traits>
+
+#if defined(__cpp_constexpr) && __cpp_constexpr >= 201907L
+#define BOOST_CONVERSION_IMPL_CONSTEXPR_DYN_CAST constexpr
+#else
+#define BOOST_CONVERSION_IMPL_CONSTEXPR_DYN_CAST inline
+#endif
 
 namespace boost
 {
@@ -94,7 +80,7 @@ namespace boost
     //  section 15.8 exercise 1, page 425.
 
     template <class Target, class Source>
-    inline Target polymorphic_cast(Source* x)
+    BOOST_CONVERSION_IMPL_CONSTEXPR_DYN_CAST Target polymorphic_cast(Source* x)
     {
         Target tmp = dynamic_cast<Target>(x);
         if ( tmp == 0 ) boost::throw_exception( std::bad_cast() );
@@ -113,7 +99,7 @@ namespace boost
     //  Contributed by Dave Abrahams
 
     template <class Target, class Source>
-    inline Target polymorphic_downcast(Source* x)
+    BOOST_CONVERSION_IMPL_CONSTEXPR_DYN_CAST Target polymorphic_downcast(Source* x)
     {
         BOOST_ASSERT( dynamic_cast<Target>(x) == x );  // detect logic error
         return static_cast<Target>(x);
@@ -129,16 +115,18 @@ namespace boost
     //  Contributed by Julien Delacroix
 
     template <class Target, class Source>
-    inline typename boost::enable_if_c<
-        boost::is_reference<Target>::value, Target
+    BOOST_CONVERSION_IMPL_CONSTEXPR_DYN_CAST typename std::enable_if<
+        std::is_reference<Target>::value, Target
     >::type polymorphic_downcast(Source& x)
     {
-        typedef typename boost::remove_reference<Target>::type* target_pointer_type;
+        using target_pointer_type = typename std::remove_reference<Target>::type*;
         return *boost::polymorphic_downcast<target_pointer_type>(
-            boost::addressof(x)
+            std::addressof(x)
         );
     }
 
 } // namespace boost
+
+#undef BOOST_CONVERSION_IMPL_CONSTEXPR_DYN_CAST
 
 #endif  // BOOST_POLYMORPHIC_CAST_HPP
