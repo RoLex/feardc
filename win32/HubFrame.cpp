@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2026 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1397,8 +1397,10 @@ void HubFrame::tabMenuImpl(dwt::Menu* menu) {
 
 	menu->appendItem(T_("&Reconnect\tCtrl+R"), [this] { reconnect(); }, WinUtil::menuIcon(IDI_RECONNECT));
 	menu->appendItem(T_("Copy &address to clipboard"), [this] { handleCopyHub(false); });
-	if (client->isSecure() && Util::isAdcsUrl(client->getHubUrl()) && client->getHubUrl().find("?kp=") == string::npos)
+
+	if (client->isSecure() && (Util::isAdcsUrl(client->getHubUrl()) || Util::isNmdcsUrl(client->getHubUrl())) && client->getHubUrl().find("?kp=") == string::npos)
 		menu->appendItem(T_("Copy address with &keyprint to clipboard"), [this] { handleCopyHub(true); });
+
 	menu->appendItem(T_("&Search hub"), [this] { handleSearchHub(); }, WinUtil::menuIcon(IDI_SEARCH));
 	menu->appendItem(T_("&Disconnect"), [this] { disconnect(false); }, WinUtil::menuIcon(IDI_HUB_OFF));
 
