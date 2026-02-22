@@ -27,7 +27,6 @@ gcc_flags = {
         "-Wno-missing-field-initializers",
         "-Wno-unknown-pragmas",
         "-Wno-unused-parameter",
-        "-Wno-overloaded-virtual", # todo, gcc 15
 #       "-Wno-unused-value",
 #       "-Wno-unused-but-set-variable",
         "-Wno-deprecated-declarations", # todo: remove when openssl deprecations are fixed
@@ -39,7 +38,15 @@ gcc_flags = {
     ],
 }
 
-gcc_xxflags = {"common": ["-std=gnu++20"], "debug": [], "release": []}
+gcc_xxflags = {
+    "common": [
+        "-std=gnu++20",
+        "-Wno-overloaded-virtual",
+        "-Wno-dangling-reference"
+    ],
+    "debug": [],
+    "release": []
+}
 
 msvc_flags = {
     # 4100: unreferenced formal parameter

@@ -76,6 +76,10 @@ void UserInfoBase::pm(TabViewPtr parent) {
 	PrivateFrame::openWindow(parent, user, Util::emptyStringT);
 }
 
+void UserInfoBase::pubMsg() {
+	HubFrame::publicMessage(user.hint.empty() ? FavoriteManager::getInstance()->getUserURL(user) : user.hint);
+}
+
 void UserInfoBase::grant() {
 	UploadManager::getInstance()->reserveSlot(user);
 }
@@ -105,7 +109,7 @@ tstring UserInfoBase::getInfo(int flags) const {
 
 	addLine(str(TF_("Hubs: %1%") % WinUtil::getHubNames(user).first));
 
-	auto lock = ClientManager::getInstance()->lock();
+	auto lock = ClientManager::getInstance()->lock(); // todo: is not unlocked? and below
 	auto ou = ClientManager::getInstance()->findOnlineUser(user);
 	if(!ou)
 		return ret;

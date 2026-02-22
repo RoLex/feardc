@@ -10,6 +10,10 @@
 	<dt>Send private message</dt>
 	<dd>Open <placeholder><a href="window_pm.html">Private Message</a></placeholder> windows to
 	chat privately with the selected users.</dd>
+	<dt>Send public message</dt>
+	<dd>Prepend selected user nicks to public chat message input. Use this to address your message
+	to specific user or multiple users. Your message will be sent as public message as stated in
+	input field.</dd>
 	<dt>Grant extra slot</dt>
 	<dd>In addition to your regular upload slots, an extra upload slot will be given to the
 	selected users until the end of the current DC++ session.</dd>

@@ -103,6 +103,13 @@ void HubFrame::activateWindow(const string& url) {
 	}
 }
 
+void HubFrame::publicMessage(string url) {
+	auto i = find_if(frames.begin(), frames.end(), [&url](HubFrame* frame) { return frame->url == url; });
+
+	if (i != frames.end())
+		(*i)->handlePublicMessage();
+}
+
 void HubFrame::closeAll(ClosePred f) {
 	if(!WinUtil::mainWindow->getEnabled())
 		return;
@@ -1388,6 +1395,17 @@ bool HubFrame::handleUsersContextMenu(dwt::ScreenCoordinate pt) {
 		return true;
 	}
 	return false;
+}
+
+void HubFrame::handlePublicMessage() {
+	if (!selCount)
+		return;
+
+	string nicks = users->forEachSelectedT(FillNicks()).nicks;
+	nicks = Text::fromT(message->getText()) + nicks + ": ";
+	message->setText(Text::toT(nicks));
+	message->setFocus();
+	message->setSelection(nicks.size(), nicks.size());
 }
 
 void HubFrame::tabMenuImpl(dwt::Menu* menu) {

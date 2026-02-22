@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2026 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,6 +42,7 @@ public:
 	virtual void getOwnList(TabViewPtr);
 	virtual void matchQueue();
 	virtual void pm(TabViewPtr);
+	virtual void pubMsg();
 	virtual void grant();
 	virtual void addFav();
 	virtual void removeFromQueue();
@@ -123,17 +124,11 @@ protected:
 	void handlePrivateMessage(TabViewPtr parent) {
 		handleUserFunction([&](UserInfoBase* u) { u->pm(parent); });
 	}
-/*
-	<todo>
-	<dt>Send public message</dt>
-	<dd>Prepend selected user nicks to public chat message input. Use this to address your message
-	to specific user or multiple users. Your message will be sent as public message as stated in
-	input field.</dd>
 
-	void handlePublicMessage(TabViewPtr parent) { // todo
-		handleUserFunction([&](UserInfoBase* u) { u->onPublicMessage(parent); });
+	void handlePublicMessage() {
+		handleUserFunction([](UserInfoBase* u) { u->pubMsg(); });
 	}
-*/
+
 	void handleGrantSlot() {
 		handleUserFunction([](UserInfoBase* u) { u->grant(); });
 	}
@@ -169,7 +164,7 @@ protected:
 
 		if (includeSendPM) {
 			menu->appendItem(T_("&Send private message"), [this, parent] { this->t().handlePrivateMessage(parent); }, dwt::IconPtr(), true, !defaultIsGetList);
-			//menu->appendItem(T_("Send public message"), [this, parent] { this->t().handlePublicMessage(parent); }, dwt::IconPtr(), true, !defaultIsGetList);
+			menu->appendItem(T_("Send public message"), [this] { this->t().handlePublicMessage(); }, dwt::IconPtr(), true, false);
 		}
 
 		if(!traits.isSet(UserTraits::favOnly))

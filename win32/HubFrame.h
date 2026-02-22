@@ -70,6 +70,7 @@ public:
 
 	static void openWindow(TabViewPtr parent, string url, bool activate = true, bool connect = true);
 	static void activateWindow(const string& url);
+	static void publicMessage(string url);
 
 private:
 	typedef std::function<bool (HubFrame*)> ClosePred;
@@ -144,6 +145,28 @@ private:
 		}
 		void operator()(UserMap::const_reference ui) {
 			available += ui.second->getIdentity().getBytesShared();
+		}
+	};
+
+	struct FillNicks {
+		FillNicks():
+			nicks("")
+		{}
+
+		string nicks;
+
+		void operator() (UserInfo *ui) {
+			if (nicks.size())
+				nicks += ", ";
+
+			nicks += ui->getIdentity().getNick();
+		}
+
+		void operator()(UserMap::const_reference ui) {
+			if (nicks.size())
+				nicks += ", ";
+
+			nicks += ui.second->getIdentity().getNick();
 		}
 	};
 
@@ -236,6 +259,7 @@ private:
 	void handleCopyHub(bool keyprinted);
 	void handleSearchHub();
 	void handleAddAsFavorite();
+	void handlePublicMessage();
 
 	void showFilterOpts();
 	void hideFilterOpts(dwt::Widget* w);
