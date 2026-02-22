@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-08-23 11:48+0200\n"
+"POT-Creation-Date: 2026-02-22 18:06+0100\n"
 "PO-Revision-Date: 2009-07-31 21:39+0000\n"
 "Last-Translator: heroid <heroid@ayih.org>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -616,60 +616,73 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
 #: /home/hundr/feardc/help/commands_user_general.inc:13
-msgid "Grant extra slot"
+msgid "Send public message"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
 #: /home/hundr/feardc/help/commands_user_general.inc:14
+msgid ""
+"Prepend selected user nicks to public chat message input. Use this to "
+"address your message to specific user or multiple users. Your message will "
+"be sent as public message as stated in input field."
+msgstr ""
+
+#. type: Content of: <html><body><dl><dt>
+#: /home/hundr/feardc/help/commands_user_general.inc:17
+msgid "Grant extra slot"
+msgstr ""
+
+#. type: Content of: <html><body><dl><dd>
+#: /home/hundr/feardc/help/commands_user_general.inc:18
 msgid ""
 "In addition to your regular upload slots, an extra upload slot will be given "
 "to the selected users until the end of the current DC++ session."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/feardc/help/commands_user_general.inc:16
+#: /home/hundr/feardc/help/commands_user_general.inc:20
 #: help/window_download_queue.html:139
 msgid "Remove user from queue"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/feardc/help/commands_user_general.inc:17
+#: /home/hundr/feardc/help/commands_user_general.inc:21
 msgid ""
 "Remove the selected users from the source list of all queued files. Pending "
 "file list requests will be removed as well."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/feardc/help/commands_user_general.inc:19
+#: /home/hundr/feardc/help/commands_user_general.inc:23
 msgid "Ignore chat"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/feardc/help/commands_user_general.inc:20
+#: /home/hundr/feardc/help/commands_user_general.inc:24
 msgid ""
 "Add user matching definitions (or modify existing ones, if possible) to "
 "ignore chat messages from the selected users."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/feardc/help/commands_user_general.inc:22
+#: /home/hundr/feardc/help/commands_user_general.inc:26
 msgid "Un-ignore chat"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/feardc/help/commands_user_general.inc:23
+#: /home/hundr/feardc/help/commands_user_general.inc:27
 msgid ""
 "Add user matching definitions (or modify existing ones, if possible) to stop "
 "ignoring chat messages from the selected users."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/feardc/help/commands_user_general.inc:25
+#: /home/hundr/feardc/help/commands_user_general.inc:29
 msgid "Copy user information"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/feardc/help/commands_user_general.inc:26
+#: /home/hundr/feardc/help/commands_user_general.inc:30
 msgid ""
 "Copy a few lines containing user information to the clipboard. The data may "
 "include: the user's nick(s), her hub address(es), her IP, country, email, "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-21 15:38+0100\n"
+"POT-Creation-Date: 2026-02-22 18:20+0100\n"
 "PO-Revision-Date: 2021-09-05 08:03+0000\n"
 "Last-Translator: Eric Xu <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -197,19 +197,19 @@ msgstr "%1% 结果"
 msgid "%1% sources added"
 msgstr "%1% 资源已添加"
 
-#: win32/HubFrame.cpp:365
+#: win32/HubFrame.cpp:372
 #, boost-format
 msgid "%1% user"
 msgid_plural "%1% users"
 msgstr[0] "%1% 个用户"
 
-#: win32/HubFrame.cpp:1377 win32/TransferView.cpp:354 win32/UsersFrame.cpp:509
+#: win32/HubFrame.cpp:1384 win32/TransferView.cpp:354 win32/UsersFrame.cpp:509
 #: win32/FinishedFrameBase.h:489
 #, boost-format
 msgid "%1% users"
 msgstr "%1% 用户"
 
-#: win32/MainWindow.cpp:1219 win32/UserInfoBase.cpp:163
+#: win32/MainWindow.cpp:1219 win32/UserInfoBase.cpp:167
 #, boost-format
 msgid "%1%/%2%"
 msgstr "%1%/%2%"
@@ -228,8 +228,8 @@ msgstr "%1%/秒"
 msgid "%1%/s, %2% left"
 msgstr "%1%/秒, %2% 剩余"
 
-#: win32/DirectoryListingFrame.cpp:832 win32/UserInfoBase.cpp:116
-#: win32/UserInfoBase.cpp:164 win32/WinUtil.cpp:1719
+#: win32/DirectoryListingFrame.cpp:832 win32/UserInfoBase.cpp:120
+#: win32/UserInfoBase.cpp:168 win32/WinUtil.cpp:1719
 #, boost-format
 msgid "%1%: %2%"
 msgstr "%1%: %2%"
@@ -244,7 +244,7 @@ msgstr "添加(&A)"
 msgid "&Add folder"
 msgstr "添加目录(&A)"
 
-#: win32/WinUtil.cpp:1651 win32/UserInfoBase.h:167
+#: win32/WinUtil.cpp:1651 win32/UserInfoBase.h:162
 msgid "&Browse file list"
 msgstr "浏览文件列表(&B)"
 
@@ -300,7 +300,7 @@ msgstr "删除(&D)\tDel"
 msgid "&Description"
 msgstr "描述(&D)"
 
-#: win32/HubFrame.cpp:1405 win32/TransferView.cpp:563
+#: win32/HubFrame.cpp:1423 win32/TransferView.cpp:563
 msgid "&Disconnect"
 msgstr "断开连接(&D)"
 
@@ -333,7 +333,7 @@ msgstr "查找(&F)...\tCtrl+F"
 msgid "&Force attempt"
 msgstr "强制重试(&F)"
 
-#: win32/QueueFrame.cpp:1002 win32/WinUtil.cpp:1648 win32/UserInfoBase.h:166
+#: win32/QueueFrame.cpp:1002 win32/WinUtil.cpp:1648 win32/UserInfoBase.h:161
 msgid "&Get file list"
 msgstr "取得文件列表(&G)"
 
@@ -349,7 +349,7 @@ msgstr "帮助(&H)"
 msgid "&Hide\tCtrl+1"
 msgstr "隐藏(&H)\tCtrl+1"
 
-#: win32/WinUtil.cpp:1654 win32/UserInfoBase.h:168
+#: win32/WinUtil.cpp:1654 win32/UserInfoBase.h:163
 msgid "&Match queue"
 msgstr "匹配队列(&M)"
 
@@ -398,7 +398,7 @@ msgstr "服务器列表(&P)\tCtrl+P"
 msgid "&Quick connect...\tCtrl+Q"
 msgstr "快速连接(&Q)...\tCtrl+Q"
 
-#: win32/HubFrame.cpp:1398 win32/MainWindow.cpp:318
+#: win32/HubFrame.cpp:1416 win32/MainWindow.cpp:318
 msgid "&Reconnect\tCtrl+R"
 msgstr "重新连接(&R)\tCtrl+R"
 
@@ -425,11 +425,11 @@ msgstr "&从队列中移除文件"
 msgid "&Search\tCtrl+S"
 msgstr "搜索(&S)\tCtrl+S"
 
-#: win32/HubFrame.cpp:1404
+#: win32/HubFrame.cpp:1422
 msgid "&Search hub"
 msgstr "&搜索枢纽"
 
-#: win32/QueueFrame.cpp:1009 win32/WinUtil.cpp:1657 win32/UserInfoBase.h:171
+#: win32/QueueFrame.cpp:1009 win32/WinUtil.cpp:1657 win32/UserInfoBase.h:166
 msgid "&Send private message"
 msgstr "发送私人消息(&S)"
 
@@ -479,7 +479,7 @@ msgstr "(未找到最近使用的条目)"
 msgid "(User offline)"
 msgstr "（用户离线）"
 
-#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:426
+#: win32/HubFrame.cpp:527 win32/HubFrame.cpp:536 win32/PrivateFrame.cpp:426
 #: win32/PrivateFrame.cpp:433
 msgid "*** Keyboard commands:"
 msgstr "***键盘命令："
@@ -573,8 +573,8 @@ msgstr "主动模式(让DC++使用NAT-PMP/UPnP来配置路由)"
 msgid "Add"
 msgstr "新增"
 
-#: win32/HubFrame.cpp:1395 win32/PublicHubsFrame.cpp:402 win32/WinUtil.cpp:1660
-#: win32/UserInfoBase.h:176
+#: win32/HubFrame.cpp:1413 win32/PublicHubsFrame.cpp:402 win32/WinUtil.cpp:1660
+#: win32/UserInfoBase.h:171
 msgid "Add To &Favorites"
 msgstr "添加到 &收藏夹"
 
@@ -609,7 +609,7 @@ msgid ""
 "to ignore chat messages from the current user."
 msgstr "添加一个用户匹配的定义（或者修改已存在的一个）忽略当前用户聊天信息"
 
-#: win32/HubFrame.cpp:555
+#: win32/HubFrame.cpp:562
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to ignore chat messages from the specified user."
@@ -621,14 +621,14 @@ msgid ""
 "to stop ignoring chat messages from the current user."
 msgstr "添加一个用户匹配的定义（或者修改已存在的一个）停止忽略当前用户聊天信息"
 
-#: win32/HubFrame.cpp:557
+#: win32/HubFrame.cpp:564
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to stop ignoring chat messages from the specified user."
 msgstr ""
 "添加一个用户匹配的定义(或修改现有的一个)并停止从指定的用户忽略聊天信息。"
 
-#: win32/HubFrame.cpp:544
+#: win32/HubFrame.cpp:551
 msgid ""
 "Adds the current hub (along with your nickname and password, if used) to the "
 "list of Favorite Hubs."
@@ -642,7 +642,7 @@ msgstr "添加当前用户到收藏用户列表"
 msgid "Adds the current user's list to the Download Queue."
 msgstr "添加当前用户列表到下载队列"
 
-#: win32/HubFrame.cpp:553
+#: win32/HubFrame.cpp:560
 msgid "Adds the user's list to the Download Queue."
 msgstr "添加用户列表到下载队列。"
 
@@ -808,12 +808,12 @@ msgstr "当速度低于此值时自动打开额外通道 (0 = 禁用)"
 msgid "Automatically search for alternative download locations"
 msgstr "自动搜索其他下载位置"
 
-#: win32/HubFrame.cpp:1218
+#: win32/HubFrame.cpp:1225
 #, boost-format
 msgid "Average: %1%"
 msgstr "平均: %1%"
 
-#: win32/UserInfoBase.cpp:134 win32/UsersFrame.cpp:81
+#: win32/UserInfoBase.cpp:138 win32/UsersFrame.cpp:81
 msgid "Away"
 msgstr "离开"
 
@@ -880,7 +880,7 @@ msgstr "绑定地址"
 msgid "Blog"
 msgstr "博客"
 
-#: win32/UserInfoBase.cpp:122 win32/UsersFrame.cpp:330 win32/UsersFrame.cpp:331
+#: win32/UserInfoBase.cpp:126 win32/UsersFrame.cpp:330 win32/UsersFrame.cpp:331
 msgid "Bot"
 msgstr "机器人"
 
@@ -900,7 +900,7 @@ msgstr "浏览器主题"
 msgid "Button style"
 msgstr "按钮样式"
 
-#: win32/HubFrame.cpp:67 win32/SearchFrame.cpp:60 win32/UserInfoBase.cpp:167
+#: win32/HubFrame.cpp:67 win32/SearchFrame.cpp:60 win32/UserInfoBase.cpp:171
 #: win32/UserMatchDlg.cpp:222 win32/UserMatchPage.cpp:215
 #: win32/UsersFrame.cpp:61 win32/UsersFrame.cpp:100
 msgid "CID"
@@ -1109,11 +1109,11 @@ msgstr "连接到收藏夹的hub组"
 msgid "Connect to all hubs in this group"
 msgstr "连接本组的全部站点"
 
-#: win32/UserInfoBase.h:179
+#: win32/UserInfoBase.h:174
 msgid "Connect to hub"
 msgstr "连接到Hub"
 
-#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1808
+#: win32/HubFrame.cpp:751 win32/WinUtil.cpp:1808
 msgid "Connected"
 msgstr "已连接"
 
@@ -1121,12 +1121,12 @@ msgstr "已连接"
 msgid "Connecting"
 msgstr "连接中..."
 
-#: win32/HubFrame.cpp:1019
+#: win32/HubFrame.cpp:1026
 #, boost-format
 msgid "Connecting to %1%..."
 msgstr "连接到 %1%..."
 
-#: win32/HubFrame.cpp:63 win32/SearchFrame.cpp:55 win32/UserInfoBase.cpp:154
+#: win32/HubFrame.cpp:63 win32/SearchFrame.cpp:55 win32/UserInfoBase.cpp:158
 #: win32/UsersFrame.cpp:102
 msgid "Connection"
 msgstr "连接方式"
@@ -1156,11 +1156,11 @@ msgstr ""
 msgid "Copy &Value"
 msgstr "值"
 
-#: win32/HubFrame.cpp:1399
+#: win32/HubFrame.cpp:1417
 msgid "Copy &address to clipboard"
 msgstr "复制 &地址 到剪贴板"
 
-#: win32/HubFrame.cpp:1402
+#: win32/HubFrame.cpp:1420
 #, fuzzy
 msgid "Copy address with &keyprint to clipboard"
 msgstr "复制 &地址 到剪贴板"
@@ -1169,12 +1169,12 @@ msgstr "复制 &地址 到剪贴板"
 msgid "Copy magnet link to clipboard"
 msgstr "复制magnet链接"
 
-#: win32/UserInfoBase.h:190
+#: win32/UserInfoBase.h:185
 msgid "Copy user information"
 msgstr "复制用户信息"
 
 #: win32/HubFrame.cpp:65 win32/PublicHubsFrame.cpp:48 win32/TransferView.cpp:58
-#: win32/UserInfoBase.cpp:156
+#: win32/UserInfoBase.cpp:160
 msgid "Country"
 msgstr "国家/地区"
 
@@ -1198,7 +1198,7 @@ msgstr "剪切(&t)\tCtrl+X"
 msgid "Current communication channel - click to change"
 msgstr "当前通信信道 - 点击更改"
 
-#: win32/HubFrame.cpp:515
+#: win32/HubFrame.cpp:522
 #, boost-format
 msgid "Current hub topic: %1%"
 msgstr "当前站点主题: %1%"
@@ -1265,8 +1265,8 @@ msgstr "默认主题"
 
 #: win32/FavHubGroupsDlg.cpp:140 win32/FavHubProperties.cpp:96
 #: win32/FavHubProperties.cpp:132 win32/FavHubsFrame.cpp:50
-#: win32/GeneralPage.cpp:59 win32/HubFrame.cpp:61 win32/HubFrame.cpp:441
-#: win32/PublicHubsFrame.cpp:45 win32/UserInfoBase.cpp:152
+#: win32/GeneralPage.cpp:59 win32/HubFrame.cpp:61 win32/HubFrame.cpp:448
+#: win32/PublicHubsFrame.cpp:45 win32/UserInfoBase.cpp:156
 #: win32/UsersFrame.cpp:60 win32/UsersFrame.cpp:82 win32/UsersFrame.cpp:475
 msgid "Description"
 msgstr "描述"
@@ -1366,7 +1366,7 @@ msgid ""
 "can specify \"brief\" to have a brief listing."
 msgstr ""
 
-#: win32/HubFrame.cpp:541
+#: win32/HubFrame.cpp:548
 #, fuzzy
 msgid ""
 "Displays the connectivity status information, auto detected or manually "
@@ -1417,7 +1417,7 @@ msgstr "不下载共享目录里已经有的文件"
 msgid "Don't download files already in the queue"
 msgstr "不下载已在队列中的文件"
 
-#: win32/HubFrame.cpp:621
+#: win32/HubFrame.cpp:628
 msgid "Don't remove /password before your password"
 msgstr "勿删除你的密码前的“/passwaord ”"
 
@@ -1570,7 +1570,7 @@ msgstr "退出(&x)\tAlt+F4"
 msgid "E-Mail"
 msgstr "电子邮件"
 
-#: win32/UserInfoBase.cpp:157
+#: win32/UserInfoBase.cpp:161
 msgid "E-mail"
 msgstr "电子邮件"
 
@@ -1583,7 +1583,7 @@ msgid "Elapsed"
 msgstr "使用时间"
 
 #: win32/FavHubGroupsDlg.cpp:144 win32/FavHubProperties.cpp:137
-#: win32/GeneralPage.cpp:64 win32/HubFrame.cpp:442
+#: win32/GeneralPage.cpp:64 win32/HubFrame.cpp:449
 msgid "Email"
 msgstr "电子邮件"
 
@@ -1751,7 +1751,7 @@ msgstr "扩展名"
 msgid "Extensions for the %1% search type"
 msgstr "搜索类型%1%的扩展名"
 
-#: win32/HubFrame.cpp:443
+#: win32/HubFrame.cpp:450
 msgid "External / WAN IP"
 msgstr "外网/公网 IP 地址"
 
@@ -1767,7 +1767,7 @@ msgstr "外部协议请求"
 msgid "F&ilter"
 msgstr "过滤器(&i)"
 
-#: win32/HubFrame.cpp:814
+#: win32/HubFrame.cpp:821
 msgid ""
 "Failed to create a new PM window; check the \"Max PM windows\" value in "
 "Settings > Experts only"
@@ -1789,7 +1789,7 @@ msgstr "站点收藏夹"
 msgid "Favorite download directories"
 msgstr "收藏的 \"下载目录\""
 
-#: win32/HubFrame.cpp:1246
+#: win32/HubFrame.cpp:1253
 msgid "Favorite hub added"
 msgstr "已加入站点收藏夹"
 
@@ -1797,7 +1797,7 @@ msgstr "已加入站点收藏夹"
 msgid "Favorite hub groups"
 msgstr "收藏的站点组"
 
-#: win32/HubFrame.cpp:1256
+#: win32/HubFrame.cpp:1263
 msgid "Favorite hub removed"
 msgstr "收藏Hub已被移除"
 
@@ -1940,7 +1940,7 @@ msgstr "过滤器:"
 msgid "Filter spam messages"
 msgstr "过滤垃圾消息"
 
-#: win32/HubFrame.cpp:224 win32/UsersFrame.cpp:180
+#: win32/HubFrame.cpp:231 win32/UsersFrame.cpp:180
 msgid "Filter users"
 msgstr "过滤用户"
 
@@ -1990,7 +1990,7 @@ msgstr "已完成的上传文件"
 msgid "Fire a balloon popup example"
 msgstr "Fire气泡提示样例"
 
-#: win32/UserInfoBase.cpp:140
+#: win32/UserInfoBase.cpp:144
 msgid "Fireball"
 msgstr ""
 
@@ -2052,7 +2052,7 @@ msgstr "GiB"
 msgid "Global application style"
 msgstr "全局程序样式"
 
-#: win32/WinUtil.cpp:1663 win32/UserInfoBase.h:177
+#: win32/WinUtil.cpp:1663 win32/UserInfoBase.h:172
 msgid "Grant &extra slot"
 msgstr "开启额外的通道(&e)"
 
@@ -2112,7 +2112,7 @@ msgstr "帮助 内容(&C) \tF1"
 msgid "Help center"
 msgstr "帮助中心"
 
-#: win32/UserInfoBase.cpp:120
+#: win32/UserInfoBase.cpp:124
 msgid "Hidden user"
 msgstr "隐藏的用户"
 
@@ -2163,7 +2163,7 @@ msgstr "主页"
 msgid "Hub"
 msgstr "服务器"
 
-#: win32/HubFrame.cpp:437
+#: win32/HubFrame.cpp:444
 msgid "Hub IP & port"
 msgstr "站点IP & 端口"
 
@@ -2171,7 +2171,7 @@ msgstr "站点IP & 端口"
 msgid "Hub Menu"
 msgstr "站点菜单"
 
-#: win32/HubFrame.cpp:436 win32/UserMatchDlg.cpp:222
+#: win32/HubFrame.cpp:443 win32/UserMatchDlg.cpp:222
 #: win32/UserMatchPage.cpp:215
 msgid "Hub address"
 msgstr "站点地址"
@@ -2188,7 +2188,7 @@ msgstr "Hub地址不能为空"
 msgid "Hub address or Magnet link"
 msgstr "站点地址或磁力链"
 
-#: win32/FavHubsFrame.cpp:232 win32/HubFrame.cpp:1248
+#: win32/FavHubsFrame.cpp:232 win32/HubFrame.cpp:1255
 msgid "Hub already exists as a favorite"
 msgstr "站点已在收藏夹中"
 
@@ -2197,11 +2197,11 @@ msgstr "站点已在收藏夹中"
 msgid "Hub list downloaded (%1%)"
 msgstr "已下载枢纽列表 (%1%)"
 
-#: win32/HubFrame.cpp:635
+#: win32/HubFrame.cpp:642
 msgid "Hub offline"
 msgstr "枢纽离线"
 
-#: win32/UserInfoBase.cpp:124
+#: win32/UserInfoBase.cpp:128
 msgid "Hub operator"
 msgstr "站点操作员"
 
@@ -2238,7 +2238,7 @@ msgid "Hubs with secure transfers"
 msgstr "带安全传输的枢纽"
 
 #: win32/MainWindow.cpp:1215 win32/PublicHubsFrame.cpp:260
-#: win32/UserInfoBase.cpp:106
+#: win32/UserInfoBase.cpp:110
 #, boost-format
 msgid "Hubs: %1%"
 msgstr "Hub数: %1%"
@@ -2249,7 +2249,7 @@ msgid "Hubs: %1% / %2%"
 msgstr "Hub数: %1% / %2%"
 
 #: win32/HubFrame.cpp:64 win32/ProxyPage.cpp:79 win32/SearchFrame.cpp:58
-#: win32/TransferView.cpp:57 win32/UserInfoBase.cpp:155
+#: win32/TransferView.cpp:57 win32/UserInfoBase.cpp:159
 #: win32/UserMatchDlg.cpp:222 win32/UserMatchPage.cpp:215
 msgid "IP"
 msgstr "IP"
@@ -2307,7 +2307,7 @@ msgstr ""
 "如果没有指定参数，它将用 Windows 中关联的应用程序启动枢纽或私聊的日志。如果指"
 "定了其中一个参数，它将打开那个日志文件。状态日志仅在枢纽框架中可用。"
 
-#: win32/UserInfoBase.h:185
+#: win32/UserInfoBase.h:180
 msgid "Ignore chat"
 msgstr "忽略聊天信息"
 
@@ -2323,12 +2323,12 @@ msgstr "忽略来自机器人的私聊消息"
 msgid "Ignore private messages from the hub"
 msgstr "忽略来自Hub的私聊消息"
 
-#: win32/HubFrame.cpp:809
+#: win32/HubFrame.cpp:816
 #, boost-format
 msgid "Ignored message: %1%"
 msgstr "忽略消息: %1%"
 
-#: win32/UserInfoBase.cpp:126
+#: win32/UserInfoBase.cpp:130
 msgid "In away mode"
 msgstr "处于离开模式"
 
@@ -2391,27 +2391,27 @@ msgstr "项目版本"
 msgid "Items: %1%"
 msgstr "项目数: %1%"
 
-#: win32/HubFrame.cpp:475
+#: win32/HubFrame.cpp:482
 msgid "Join/part of favorite users showing off"
 msgstr "关闭好友 进/出 消息"
 
-#: win32/HubFrame.cpp:473
+#: win32/HubFrame.cpp:480
 msgid "Join/part of favorite users showing on"
 msgstr "显示好友 进/出 消息"
 
-#: win32/HubFrame.cpp:468
+#: win32/HubFrame.cpp:475
 msgid "Join/part showing off"
 msgstr "不显示 进入/退出 信息"
 
-#: win32/HubFrame.cpp:466
+#: win32/HubFrame.cpp:473
 msgid "Join/part showing on"
 msgstr "显示 进入/退出 信息"
 
-#: win32/HubFrame.cpp:532
+#: win32/HubFrame.cpp:539
 msgid "Joins <hub-ip>. See also Open new window when using /join."
 msgstr "加入 <hub-ip>。请参见使用 /join 时打开新窗口。"
 
-#: win32/HubFrame.cpp:1045
+#: win32/HubFrame.cpp:1052
 #, boost-format
 msgid "Joins: %1%"
 msgstr "加入：%1%"
@@ -2573,7 +2573,7 @@ msgstr "日志"
 msgid "Login"
 msgstr "登录"
 
-#: win32/HubFrame.cpp:1151
+#: win32/HubFrame.cpp:1158
 msgid "Login timeout, disconnecting and waiting for next attempt..."
 msgstr ""
 
@@ -2779,7 +2779,7 @@ msgstr "小端口大小"
 msgid "Minimize to tray"
 msgstr "最小化到系统托盘"
 
-#: win32/HubFrame.cpp:595 win32/HubFrame.cpp:602
+#: win32/HubFrame.cpp:602 win32/HubFrame.cpp:609
 msgid "Missing command parameters: /mcpm <user> <message>"
 msgstr ""
 
@@ -2805,7 +2805,7 @@ msgstr "下移(&D)"
 msgid "Move &Up"
 msgstr "上移(&U)"
 
-#: win32/UserInfoBase.cpp:146
+#: win32/UserInfoBase.cpp:150
 msgid "NAT"
 msgstr ""
 
@@ -2870,7 +2870,7 @@ msgstr "未修改虚拟目录名，跳过。。。"
 
 #: win32/FavHubGroupsDlg.cpp:135 win32/FavHubProperties.cpp:119
 #: win32/FavHubsFrame.cpp:51 win32/GeneralPage.cpp:53 win32/HubFrame.cpp:59
-#: win32/HubFrame.cpp:440 win32/UserMatchDlg.cpp:222
+#: win32/HubFrame.cpp:447 win32/UserMatchDlg.cpp:222
 #: win32/UserMatchPage.cpp:215 win32/UsersFrame.cpp:54 win32/UsersFrame.cpp:80
 #: win32/FinishedFrameBase.h:741
 msgid "Nick"
@@ -2949,7 +2949,7 @@ msgid "Noon"
 msgstr "中午"
 
 #: win32/QueueFrame.cpp:406 win32/QueueFrame.cpp:995 win32/SearchFrame.cpp:190
-#: win32/TransferView.cpp:551 win32/UserInfoBase.cpp:131
+#: win32/TransferView.cpp:551 win32/UserInfoBase.cpp:135
 msgid "Normal"
 msgstr "普通"
 
@@ -2999,7 +2999,7 @@ msgstr "离线"
 msgid "Online"
 msgstr "在线"
 
-#: win32/HubFrame.cpp:438
+#: win32/HubFrame.cpp:445
 msgid "Online users"
 msgstr "在线用户"
 
@@ -3074,7 +3074,7 @@ msgid ""
 "automatically send the search."
 msgstr "使用指定的搜索字符串打开一个新的搜索窗口。它不会自动发送搜索"
 
-#: win32/HubFrame.cpp:549
+#: win32/HubFrame.cpp:556
 msgid ""
 "Opens a private message window to the user, and optionally sends the "
 "message, if one was specified."
@@ -3122,7 +3122,7 @@ msgstr "已载入部分文件列表"
 msgid "Partial match"
 msgstr "部分匹配"
 
-#: win32/HubFrame.cpp:1074
+#: win32/HubFrame.cpp:1081
 #, boost-format
 msgid "Parts: %1%"
 msgstr "部分：%1%"
@@ -3200,7 +3200,7 @@ msgstr "播放声音"
 msgid "Please enter a nickname in the settings dialog!"
 msgstr "请在设置里输入昵称!"
 
-#: win32/HubFrame.cpp:763
+#: win32/HubFrame.cpp:770
 msgid "Please enter a password"
 msgstr "请输入一个密码"
 
@@ -3246,7 +3246,7 @@ msgstr "首选端口映射器"
 msgid "Preview"
 msgstr "预览"
 
-#: win32/HubFrame.cpp:559
+#: win32/HubFrame.cpp:566
 msgid ""
 "Prints the current hub's topic. Useful if you want to copy the topic or it "
 "contains a link you'd like to easily open."
@@ -3262,12 +3262,12 @@ msgstr "优先级"
 msgid "Private key file"
 msgstr "私钥文件"
 
-#: win32/HubFrame.cpp:1173
+#: win32/HubFrame.cpp:1180
 #, fuzzy, boost-format
 msgid "Private main chat message from %1%: %2%"
 msgstr "私聊消息来自 %1%: %2%"
 
-#: win32/HubFrame.cpp:609
+#: win32/HubFrame.cpp:616
 #, fuzzy, boost-format
 msgid "Private main chat message was sent to %1%: %2%"
 msgstr "私聊消息来自 %1%: %2%"
@@ -3276,7 +3276,7 @@ msgstr "私聊消息来自 %1%: %2%"
 msgid "Private message"
 msgstr "私聊消息"
 
-#: win32/HubFrame.cpp:818
+#: win32/HubFrame.cpp:825
 #, boost-format
 msgid "Private message from %1%: %2%"
 msgstr "私聊消息来自 %1%: %2%"
@@ -3374,12 +3374,12 @@ msgstr "获取到文件列表的%1%，继续获取%2%"
 msgid "Ready to search..."
 msgstr "准备搜索..."
 
-#: win32/HubFrame.cpp:116
+#: win32/HubFrame.cpp:123
 #, boost-format
 msgid "Really close %1% hub windows?"
 msgstr "真的关闭%1%站点窗口？"
 
-#: win32/HubFrame.cpp:298
+#: win32/HubFrame.cpp:305
 msgid "Really close?"
 msgstr "确定要关闭吗？"
 
@@ -3404,7 +3404,7 @@ msgstr ""
 "重新构建HashIndex.xml和HashData.dat文件，删除不再共享的文件的条目，或已更改的"
 "文件的旧散列。它在 DC++ 主线程中运行，因此在重新构建完成前，程序界面将冻结。"
 
-#: win32/HubFrame.cpp:1091
+#: win32/HubFrame.cpp:1098
 #, boost-format
 msgid "Received a redirect request to %1%, click here to follow it"
 msgstr "接收到到%1%,的重定向请求，点击这里查看"
@@ -3433,11 +3433,11 @@ msgstr "重新连接"
 msgid "Reconnect disconnected hubs"
 msgstr "重新连接断开的站点"
 
-#: win32/HubFrame.cpp:1083 win32/HubFrame.cpp:1606
+#: win32/HubFrame.cpp:1090 win32/HubFrame.cpp:1624
 msgid "Redirect request received to a hub that's already connected"
 msgstr "被重定向到一个已经连接的站点"
 
-#: win32/HubFrame.cpp:1601
+#: win32/HubFrame.cpp:1619
 msgid "Redirect request to an empty hub address"
 msgstr "重定向到一个空的站点地址"
 
@@ -3506,11 +3506,11 @@ msgstr "移除慢速文件列表"
 msgid "Remove source"
 msgstr "删除资源"
 
-#: win32/QueueFrame.cpp:1034 win32/WinUtil.cpp:1666 win32/UserInfoBase.h:181
+#: win32/QueueFrame.cpp:1034 win32/WinUtil.cpp:1666 win32/UserInfoBase.h:176
 msgid "Remove user from queue"
 msgstr "从队列中删除用户"
 
-#: win32/HubFrame.cpp:547
+#: win32/HubFrame.cpp:554
 msgid "Removes the current hub from the list of Favorite Hubs."
 msgstr "从收藏枢纽列表中删除当前枢纽。"
 
@@ -3617,7 +3617,7 @@ msgstr "搜索端口 (v4)"
 msgid "Search port (v6)"
 msgstr "搜索端口 (v6)"
 
-#: win32/HubFrame.cpp:1157
+#: win32/HubFrame.cpp:1164
 #, boost-format
 msgid "Search spam detected from %1%"
 msgstr "搜索 检测到垃圾信息，来自 %1%"
@@ -3690,11 +3690,16 @@ msgstr "已选择的标签页"
 msgid "Send once per nick"
 msgstr "每个昵称只发送一次"
 
+#: win32/UserInfoBase.h:167
+#, fuzzy
+msgid "Send public message"
+msgstr "发送私人消息(&S)"
+
 #: win32/AdvancedPage.cpp:45
 msgid "Send unknown /commands to the hub"
 msgstr "发送未知的“/命令”到站点"
 
-#: win32/HubFrame.cpp:551
+#: win32/HubFrame.cpp:558
 msgid ""
 "Sends a private main chat message to the user if supported by hub, NMDC only."
 msgstr ""
@@ -3710,7 +3715,7 @@ msgstr "发送一条随机广告信息到聊天系统，包含DC++主页链接�
 msgid "Separator"
 msgstr "分隔线"
 
-#: win32/FavHubsFrame.cpp:53 win32/UserInfoBase.cpp:137
+#: win32/FavHubsFrame.cpp:53 win32/UserInfoBase.cpp:141
 msgid "Server"
 msgstr "服务器地址"
 
@@ -3798,8 +3803,8 @@ msgstr "共享隐藏文件"
 msgid "Share size: %1%"
 msgstr "文件大小: %1%"
 
-#: win32/HubFrame.cpp:60 win32/HubFrame.cpp:439 win32/PublicHubsFrame.cpp:49
-#: win32/UserInfoBase.cpp:151
+#: win32/HubFrame.cpp:60 win32/HubFrame.cpp:446 win32/PublicHubsFrame.cpp:49
+#: win32/UserInfoBase.cpp:155
 msgid "Shared"
 msgstr "共享量"
 
@@ -3890,7 +3895,7 @@ msgstr "跳过零字节文件"
 msgid "Slot granted"
 msgstr "开启额外通道"
 
-#: win32/SearchFrame.cpp:54 win32/UserInfoBase.cpp:164
+#: win32/SearchFrame.cpp:54 win32/UserInfoBase.cpp:168
 msgid "Slots"
 msgstr "通道"
 
@@ -3935,7 +3940,7 @@ msgstr "资源太慢"
 msgid "Speak as a third person."
 msgstr ""
 
-#: win32/HubFrame.cpp:605
+#: win32/HubFrame.cpp:612
 #, boost-format
 msgid "Specified user is not online: %1%"
 msgstr ""
@@ -3953,7 +3958,7 @@ msgstr "为用户匹配的定义指定一个名称"
 msgid "Specify a search string"
 msgstr "请指定要搜索的关键字"
 
-#: win32/HubFrame.cpp:457
+#: win32/HubFrame.cpp:464
 msgid "Specify a server to connect to"
 msgstr "请指定目标服务器"
 
@@ -4015,7 +4020,7 @@ msgstr "上次的 状态/时间"
 msgid "Status bar\tCtrl+3"
 msgstr "状态栏\tCtrl+3"
 
-#: win32/UserInfoBase.cpp:149
+#: win32/UserInfoBase.cpp:153
 #, fuzzy, boost-format
 msgid "Status: %1%"
 msgstr "部分：%1%"
@@ -4028,7 +4033,7 @@ msgstr "状态：可用 - 双击切换至离开"
 msgid "Status: Away - Double-click to switch to Available"
 msgstr "状态：离开 - 双击切换至可用"
 
-#: win32/HubFrame.cpp:759
+#: win32/HubFrame.cpp:766
 msgid "Stored password sent..."
 msgstr "存储的密码已送出…"
 
@@ -4061,7 +4066,7 @@ msgstr "系统日志"
 msgid "TB"
 msgstr "TB"
 
-#: win32/UserInfoBase.cpp:143
+#: win32/UserInfoBase.cpp:147
 msgid "TLS"
 msgstr ""
 
@@ -4090,7 +4095,7 @@ msgstr "标签页宽度"
 msgid "Tabs"
 msgstr "标签页"
 
-#: win32/HubFrame.cpp:62 win32/UserInfoBase.cpp:153 win32/UsersFrame.cpp:104
+#: win32/HubFrame.cpp:62 win32/UserInfoBase.cpp:157 win32/UsersFrame.cpp:104
 msgid "Tag"
 msgstr "标记"
 
@@ -4134,7 +4139,7 @@ msgid ""
 "into view."
 msgstr "菜单栏现在是隐藏的。按Alt或F10暂时显示出来。"
 
-#: win32/HubFrame.cpp:635
+#: win32/HubFrame.cpp:642
 msgid "The message cannot be delivered because the hub is offline."
 msgstr "无法传递消息，因枢纽离线"
 
@@ -4154,16 +4159,16 @@ msgstr ""
 msgid "The user does not support the CCPM ADC extension"
 msgstr "用户不支持 CCPM ADC 扩展"
 
-#: win32/HubFrame.cpp:586
+#: win32/HubFrame.cpp:593
 msgid "This command is not yet supported on ADC hubs."
 msgstr ""
 
-#: win32/HubFrame.cpp:589
+#: win32/HubFrame.cpp:596
 #, fuzzy
 msgid "This hub does not support MCTo extension."
 msgstr "用户不支持 CCPM ADC 扩展"
 
-#: win32/HubFrame.cpp:1258
+#: win32/HubFrame.cpp:1265
 msgid "This hub is not a favorite hub"
 msgstr "此Hub不在收藏夹中"
 
@@ -4211,19 +4216,19 @@ msgstr "到"
 msgid "Toggle window when selecting an active tab"
 msgstr "点击当前窗口标签时切换窗口"
 
-#: win32/HubFrame.cpp:536
+#: win32/HubFrame.cpp:543
 msgid ""
 "Toggles the displaying of favorite users joining the hub. Does not require /"
 "showjoins to be enabled."
 msgstr "是否显示加入此枢纽的收藏用户。无需启用  /showjoins"
 
-#: win32/HubFrame.cpp:534
+#: win32/HubFrame.cpp:541
 msgid ""
 "Toggles the displaying of users joining the hub. This only takes effect for "
 "freshly-arriving users."
 msgstr "切换用户加入站点的显示方式。仅对新加入的用户生效。"
 
-#: win32/HubFrame.cpp:538
+#: win32/HubFrame.cpp:545
 msgid "Toggles visibility of the list of users for the current hub."
 msgstr "是否显示当前枢纽的用户列表"
 
@@ -4290,7 +4295,7 @@ msgstr "U: %1%"
 msgid "U: %1%/s (%2%)"
 msgstr "U: %1%/s (%2%)"
 
-#: win32/UserInfoBase.h:187
+#: win32/UserInfoBase.h:182
 msgid "Un-ignore chat"
 msgstr "未忽略的聊天"
 
@@ -4329,7 +4334,7 @@ msgstr "未完成文件太小"
 msgid "Unknown"
 msgstr "未知"
 
-#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:457
+#: win32/HubFrame.cpp:624 win32/PrivateFrame.cpp:457
 #, boost-format
 msgid "Unknown command: %1%"
 msgstr "未知命令: %1%"
@@ -4627,7 +4632,7 @@ msgstr "另一个标签页"
 msgid "You must enter a name"
 msgstr "你必须输入一个名称"
 
-#: win32/HubFrame.cpp:1145
+#: win32/HubFrame.cpp:1152
 msgid "Your nick was already taken, please change to something else!"
 msgstr "昵称已经有人使用，请选择其它昵称!"
 

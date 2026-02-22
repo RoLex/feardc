@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-21 15:38+0100\n"
+"POT-Creation-Date: 2026-02-22 18:20+0100\n"
 "PO-Revision-Date: 2012-09-09 21:26+0000\n"
 "Last-Translator: M@nk <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -201,7 +201,7 @@ msgstr "%1% výsledků"
 msgid "%1% sources added"
 msgstr "%1% zdrojů přidáno"
 
-#: win32/HubFrame.cpp:365
+#: win32/HubFrame.cpp:372
 #, boost-format
 msgid "%1% user"
 msgid_plural "%1% users"
@@ -209,13 +209,13 @@ msgstr[0] "%1% uživatel"
 msgstr[1] "%1% uživatelé"
 msgstr[2] "%1% uživatelé"
 
-#: win32/HubFrame.cpp:1377 win32/TransferView.cpp:354 win32/UsersFrame.cpp:509
+#: win32/HubFrame.cpp:1384 win32/TransferView.cpp:354 win32/UsersFrame.cpp:509
 #: win32/FinishedFrameBase.h:489
 #, boost-format
 msgid "%1% users"
 msgstr "%1% uživatelé"
 
-#: win32/MainWindow.cpp:1219 win32/UserInfoBase.cpp:163
+#: win32/MainWindow.cpp:1219 win32/UserInfoBase.cpp:167
 #, boost-format
 msgid "%1%/%2%"
 msgstr "%1%/%2%"
@@ -234,8 +234,8 @@ msgstr "%1%/s"
 msgid "%1%/s, %2% left"
 msgstr "%1%/s, %2% zbývá"
 
-#: win32/DirectoryListingFrame.cpp:832 win32/UserInfoBase.cpp:116
-#: win32/UserInfoBase.cpp:164 win32/WinUtil.cpp:1719
+#: win32/DirectoryListingFrame.cpp:832 win32/UserInfoBase.cpp:120
+#: win32/UserInfoBase.cpp:168 win32/WinUtil.cpp:1719
 #, boost-format
 msgid "%1%: %2%"
 msgstr "%1%: %2%"
@@ -250,7 +250,7 @@ msgstr "Přid&at"
 msgid "&Add folder"
 msgstr "&Přidat adresář"
 
-#: win32/WinUtil.cpp:1651 win32/UserInfoBase.h:167
+#: win32/WinUtil.cpp:1651 win32/UserInfoBase.h:162
 msgid "&Browse file list"
 msgstr "&Projít seznam souborů"
 
@@ -306,7 +306,7 @@ msgstr "&Odstranit\tDel"
 msgid "&Description"
 msgstr "&Popis"
 
-#: win32/HubFrame.cpp:1405 win32/TransferView.cpp:563
+#: win32/HubFrame.cpp:1423 win32/TransferView.cpp:563
 msgid "&Disconnect"
 msgstr "O&dpojit"
 
@@ -339,7 +339,7 @@ msgstr "&Hledat...\tCtrl+F"
 msgid "&Force attempt"
 msgstr "&Vynutit připojení"
 
-#: win32/QueueFrame.cpp:1002 win32/WinUtil.cpp:1648 win32/UserInfoBase.h:166
+#: win32/QueueFrame.cpp:1002 win32/WinUtil.cpp:1648 win32/UserInfoBase.h:161
 msgid "&Get file list"
 msgstr "&Stáhnout seznam souborů"
 
@@ -355,7 +355,7 @@ msgstr "&Nápověda"
 msgid "&Hide\tCtrl+1"
 msgstr "&Skrýt\tCtrl+1"
 
-#: win32/WinUtil.cpp:1654 win32/UserInfoBase.h:168
+#: win32/WinUtil.cpp:1654 win32/UserInfoBase.h:163
 msgid "&Match queue"
 msgstr "&Porovnat frontu"
 
@@ -403,7 +403,7 @@ msgstr "&Veřejné huby\tCtrl+P"
 msgid "&Quick connect...\tCtrl+Q"
 msgstr "&Rychlé připojení...\tCtrl+Q"
 
-#: win32/HubFrame.cpp:1398 win32/MainWindow.cpp:318
+#: win32/HubFrame.cpp:1416 win32/MainWindow.cpp:318
 msgid "&Reconnect\tCtrl+R"
 msgstr "&Znovu připojit\tCtrl+R"
 
@@ -431,12 +431,12 @@ msgstr "Odebrat uzivatele z fronty"
 msgid "&Search\tCtrl+S"
 msgstr "&Hledat\tCtrl+S"
 
-#: win32/HubFrame.cpp:1404
+#: win32/HubFrame.cpp:1422
 #, fuzzy
 msgid "&Search hub"
 msgstr "Vyhedavaci Menu"
 
-#: win32/QueueFrame.cpp:1009 win32/WinUtil.cpp:1657 win32/UserInfoBase.h:171
+#: win32/QueueFrame.cpp:1009 win32/WinUtil.cpp:1657 win32/UserInfoBase.h:166
 msgid "&Send private message"
 msgstr "&Poslat soukromou zprávu"
 
@@ -487,7 +487,7 @@ msgstr "(Žádná položka najita)"
 msgid "(User offline)"
 msgstr "Uzivatel neni pripojen"
 
-#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:426
+#: win32/HubFrame.cpp:527 win32/HubFrame.cpp:536 win32/PrivateFrame.cpp:426
 #: win32/PrivateFrame.cpp:433
 #, fuzzy
 msgid "*** Keyboard commands:"
@@ -582,8 +582,8 @@ msgstr ""
 msgid "Add"
 msgstr "Přid&at"
 
-#: win32/HubFrame.cpp:1395 win32/PublicHubsFrame.cpp:402 win32/WinUtil.cpp:1660
-#: win32/UserInfoBase.h:176
+#: win32/HubFrame.cpp:1413 win32/PublicHubsFrame.cpp:402 win32/WinUtil.cpp:1660
+#: win32/UserInfoBase.h:171
 msgid "Add To &Favorites"
 msgstr "Přidat do &Oblíbených"
 
@@ -620,7 +620,7 @@ msgid ""
 "to ignore chat messages from the current user."
 msgstr ""
 
-#: win32/HubFrame.cpp:555
+#: win32/HubFrame.cpp:562
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to ignore chat messages from the specified user."
@@ -632,13 +632,13 @@ msgid ""
 "to stop ignoring chat messages from the current user."
 msgstr ""
 
-#: win32/HubFrame.cpp:557
+#: win32/HubFrame.cpp:564
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to stop ignoring chat messages from the specified user."
 msgstr ""
 
-#: win32/HubFrame.cpp:544
+#: win32/HubFrame.cpp:551
 msgid ""
 "Adds the current hub (along with your nickname and password, if used) to the "
 "list of Favorite Hubs."
@@ -652,7 +652,7 @@ msgstr ""
 msgid "Adds the current user's list to the Download Queue."
 msgstr ""
 
-#: win32/HubFrame.cpp:553
+#: win32/HubFrame.cpp:560
 msgid "Adds the user's list to the Download Queue."
 msgstr ""
 
@@ -818,12 +818,12 @@ msgstr "Otevrit dalsi slot, kdyz bude rychlost mensi jak (0 = zakazane)"
 msgid "Automatically search for alternative download locations"
 msgstr "Automaticky hledat alternativni zdroje pro stahovani"
 
-#: win32/HubFrame.cpp:1218
+#: win32/HubFrame.cpp:1225
 #, boost-format
 msgid "Average: %1%"
 msgstr "Průměr: %1%"
 
-#: win32/UserInfoBase.cpp:134 win32/UsersFrame.cpp:81
+#: win32/UserInfoBase.cpp:138 win32/UsersFrame.cpp:81
 msgid "Away"
 msgstr "Nepřítomen"
 
@@ -891,7 +891,7 @@ msgstr "Zavazna adresa"
 msgid "Blog"
 msgstr "Blog"
 
-#: win32/UserInfoBase.cpp:122 win32/UsersFrame.cpp:330 win32/UsersFrame.cpp:331
+#: win32/UserInfoBase.cpp:126 win32/UsersFrame.cpp:330 win32/UsersFrame.cpp:331
 msgid "Bot"
 msgstr "Bot"
 
@@ -911,7 +911,7 @@ msgstr "Procházet Témata"
 msgid "Button style"
 msgstr "Styl tlačítka"
 
-#: win32/HubFrame.cpp:67 win32/SearchFrame.cpp:60 win32/UserInfoBase.cpp:167
+#: win32/HubFrame.cpp:67 win32/SearchFrame.cpp:60 win32/UserInfoBase.cpp:171
 #: win32/UserMatchDlg.cpp:222 win32/UserMatchPage.cpp:215
 #: win32/UsersFrame.cpp:61 win32/UsersFrame.cpp:100
 msgid "CID"
@@ -1125,11 +1125,11 @@ msgstr "Pozadovat potvrzeni pri odebrani oblibeneho hubu"
 msgid "Connect to all hubs in this group"
 msgstr ""
 
-#: win32/UserInfoBase.h:179
+#: win32/UserInfoBase.h:174
 msgid "Connect to hub"
 msgstr "Připojit k hubu"
 
-#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1808
+#: win32/HubFrame.cpp:751 win32/WinUtil.cpp:1808
 msgid "Connected"
 msgstr "Pripojen"
 
@@ -1137,12 +1137,12 @@ msgstr "Pripojen"
 msgid "Connecting"
 msgstr "Připojuji se"
 
-#: win32/HubFrame.cpp:1019
+#: win32/HubFrame.cpp:1026
 #, boost-format
 msgid "Connecting to %1%..."
 msgstr "Připojuji se k %1%..."
 
-#: win32/HubFrame.cpp:63 win32/SearchFrame.cpp:55 win32/UserInfoBase.cpp:154
+#: win32/HubFrame.cpp:63 win32/SearchFrame.cpp:55 win32/UserInfoBase.cpp:158
 #: win32/UsersFrame.cpp:102
 msgid "Connection"
 msgstr "Pripojeni"
@@ -1172,11 +1172,11 @@ msgstr ""
 msgid "Copy &Value"
 msgstr ""
 
-#: win32/HubFrame.cpp:1399
+#: win32/HubFrame.cpp:1417
 msgid "Copy &address to clipboard"
 msgstr "Kopírovat &adresu do schránky"
 
-#: win32/HubFrame.cpp:1402
+#: win32/HubFrame.cpp:1420
 #, fuzzy
 msgid "Copy address with &keyprint to clipboard"
 msgstr "Kopírovat &adresu do schránky"
@@ -1185,13 +1185,13 @@ msgstr "Kopírovat &adresu do schránky"
 msgid "Copy magnet link to clipboard"
 msgstr "Kopirovat magnet link do schranky"
 
-#: win32/UserInfoBase.h:190
+#: win32/UserInfoBase.h:185
 #, fuzzy
 msgid "Copy user information"
 msgstr "Obecné informace"
 
 #: win32/HubFrame.cpp:65 win32/PublicHubsFrame.cpp:48 win32/TransferView.cpp:58
-#: win32/UserInfoBase.cpp:156
+#: win32/UserInfoBase.cpp:160
 msgid "Country"
 msgstr "Stat"
 
@@ -1215,7 +1215,7 @@ msgstr "Vyjmou&t\tCtrl+X"
 msgid "Current communication channel - click to change"
 msgstr ""
 
-#: win32/HubFrame.cpp:515
+#: win32/HubFrame.cpp:522
 #, boost-format
 msgid "Current hub topic: %1%"
 msgstr ""
@@ -1284,8 +1284,8 @@ msgstr "Výchozí motiv"
 
 #: win32/FavHubGroupsDlg.cpp:140 win32/FavHubProperties.cpp:96
 #: win32/FavHubProperties.cpp:132 win32/FavHubsFrame.cpp:50
-#: win32/GeneralPage.cpp:59 win32/HubFrame.cpp:61 win32/HubFrame.cpp:441
-#: win32/PublicHubsFrame.cpp:45 win32/UserInfoBase.cpp:152
+#: win32/GeneralPage.cpp:59 win32/HubFrame.cpp:61 win32/HubFrame.cpp:448
+#: win32/PublicHubsFrame.cpp:45 win32/UserInfoBase.cpp:156
 #: win32/UsersFrame.cpp:60 win32/UsersFrame.cpp:82 win32/UsersFrame.cpp:475
 msgid "Description"
 msgstr "Popis"
@@ -1387,7 +1387,7 @@ msgid ""
 "can specify \"brief\" to have a brief listing."
 msgstr ""
 
-#: win32/HubFrame.cpp:541
+#: win32/HubFrame.cpp:548
 msgid ""
 "Displays the connectivity status information, auto detected or manually "
 "chosen connection mode, IP and ports that FearDC is currently using for "
@@ -1436,7 +1436,7 @@ msgstr "Nestahovat soubory ktere uz sdilite"
 msgid "Don't download files already in the queue"
 msgstr "Nenacitat data ktere jsou uz ve fronte"
 
-#: win32/HubFrame.cpp:621
+#: win32/HubFrame.cpp:628
 msgid "Don't remove /password before your password"
 msgstr "Neodebirat /heslo pred vasim heslom"
 
@@ -1592,7 +1592,7 @@ msgstr "U&končit\tAlt+F4"
 msgid "E-Mail"
 msgstr "e-mail"
 
-#: win32/UserInfoBase.cpp:157
+#: win32/UserInfoBase.cpp:161
 msgid "E-mail"
 msgstr "E-mail"
 
@@ -1606,7 +1606,7 @@ msgid "Elapsed"
 msgstr "Min cas trvani"
 
 #: win32/FavHubGroupsDlg.cpp:144 win32/FavHubProperties.cpp:137
-#: win32/GeneralPage.cpp:64 win32/HubFrame.cpp:442
+#: win32/GeneralPage.cpp:64 win32/HubFrame.cpp:449
 #, fuzzy
 msgid "Email"
 msgstr "E-mail"
@@ -1780,7 +1780,7 @@ msgstr ""
 msgid "Extensions for the %1% search type"
 msgstr ""
 
-#: win32/HubFrame.cpp:443
+#: win32/HubFrame.cpp:450
 msgid "External / WAN IP"
 msgstr "Externí / WAN IP"
 
@@ -1797,7 +1797,7 @@ msgstr ""
 msgid "F&ilter"
 msgstr "F&iltr"
 
-#: win32/HubFrame.cpp:814
+#: win32/HubFrame.cpp:821
 msgid ""
 "Failed to create a new PM window; check the \"Max PM windows\" value in "
 "Settings > Experts only"
@@ -1819,7 +1819,7 @@ msgstr "Oblibene Huby"
 msgid "Favorite download directories"
 msgstr "Oblibene slozky"
 
-#: win32/HubFrame.cpp:1246
+#: win32/HubFrame.cpp:1253
 msgid "Favorite hub added"
 msgstr "Hub byl pridany do Oblibenych"
 
@@ -1828,7 +1828,7 @@ msgstr "Hub byl pridany do Oblibenych"
 msgid "Favorite hub groups"
 msgstr "Oblibeny hub smazany"
 
-#: win32/HubFrame.cpp:1256
+#: win32/HubFrame.cpp:1263
 msgid "Favorite hub removed"
 msgstr "Oblibeny hub smazany"
 
@@ -1980,7 +1980,7 @@ msgstr "Filtr:"
 msgid "Filter spam messages"
 msgstr "Filtrovat zprávy o vykopnutí"
 
-#: win32/HubFrame.cpp:224 win32/UsersFrame.cpp:180
+#: win32/HubFrame.cpp:231 win32/UsersFrame.cpp:180
 #, fuzzy
 msgid "Filter users"
 msgstr "Oblibeni uzivatele"
@@ -2033,7 +2033,7 @@ msgstr "Dokoncene odesilani"
 msgid "Fire a balloon popup example"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:140
+#: win32/UserInfoBase.cpp:144
 msgid "Fireball"
 msgstr ""
 
@@ -2097,7 +2097,7 @@ msgstr "GiB"
 msgid "Global application style"
 msgstr "Pozadovat potvrzeni pri ukonceni programu"
 
-#: win32/WinUtil.cpp:1663 win32/UserInfoBase.h:177
+#: win32/WinUtil.cpp:1663 win32/UserInfoBase.h:172
 msgid "Grant &extra slot"
 msgstr "Udělit &extra slot"
 
@@ -2155,7 +2155,7 @@ msgstr "&Obsah nápovědy\tF1"
 msgid "Help center"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:120
+#: win32/UserInfoBase.cpp:124
 #, fuzzy
 msgid "Hidden user"
 msgstr "Uzivatel je v pasivnim mode"
@@ -2207,7 +2207,7 @@ msgstr "Domovská stránka"
 msgid "Hub"
 msgstr "Hub"
 
-#: win32/HubFrame.cpp:437
+#: win32/HubFrame.cpp:444
 msgid "Hub IP & port"
 msgstr ""
 
@@ -2215,7 +2215,7 @@ msgstr ""
 msgid "Hub Menu"
 msgstr "Hub Menu"
 
-#: win32/HubFrame.cpp:436 win32/UserMatchDlg.cpp:222
+#: win32/HubFrame.cpp:443 win32/UserMatchDlg.cpp:222
 #: win32/UserMatchPage.cpp:215
 msgid "Hub address"
 msgstr "Adresa hubu"
@@ -2233,7 +2233,7 @@ msgstr "Adresa hubu nemůže být prázdná"
 msgid "Hub address or Magnet link"
 msgstr "Adresa hubu nemůže být prázdná"
 
-#: win32/FavHubsFrame.cpp:232 win32/HubFrame.cpp:1248
+#: win32/FavHubsFrame.cpp:232 win32/HubFrame.cpp:1255
 msgid "Hub already exists as a favorite"
 msgstr "Hub je uz v oblibenych"
 
@@ -2242,12 +2242,12 @@ msgstr "Hub je uz v oblibenych"
 msgid "Hub list downloaded (%1%)"
 msgstr "Seznam hubů stažen... (%1%)"
 
-#: win32/HubFrame.cpp:635
+#: win32/HubFrame.cpp:642
 #, fuzzy
 msgid "Hub offline"
 msgstr "Uzivatel neni pripojen"
 
-#: win32/UserInfoBase.cpp:124
+#: win32/UserInfoBase.cpp:128
 msgid "Hub operator"
 msgstr ""
 
@@ -2286,7 +2286,7 @@ msgid "Hubs with secure transfers"
 msgstr ""
 
 #: win32/MainWindow.cpp:1215 win32/PublicHubsFrame.cpp:260
-#: win32/UserInfoBase.cpp:106
+#: win32/UserInfoBase.cpp:110
 #, boost-format
 msgid "Hubs: %1%"
 msgstr "Huby: %1%"
@@ -2297,7 +2297,7 @@ msgid "Hubs: %1% / %2%"
 msgstr "Huby: %1% / %2%"
 
 #: win32/HubFrame.cpp:64 win32/ProxyPage.cpp:79 win32/SearchFrame.cpp:58
-#: win32/TransferView.cpp:57 win32/UserInfoBase.cpp:155
+#: win32/TransferView.cpp:57 win32/UserInfoBase.cpp:159
 #: win32/UserMatchDlg.cpp:222 win32/UserMatchPage.cpp:215
 msgid "IP"
 msgstr "Ip"
@@ -2353,7 +2353,7 @@ msgid ""
 "hub frame."
 msgstr ""
 
-#: win32/UserInfoBase.h:185
+#: win32/UserInfoBase.h:180
 #, fuzzy
 msgid "Ignore chat"
 msgstr "Ignorovat hladani z TTH"
@@ -2371,12 +2371,12 @@ msgstr "Ignorovat soukromé zprávy od botů"
 msgid "Ignore private messages from the hub"
 msgstr "Ignorovat soukromé zprávy z hubu"
 
-#: win32/HubFrame.cpp:809
+#: win32/HubFrame.cpp:816
 #, boost-format
 msgid "Ignored message: %1%"
 msgstr "Ignorovaná zpráva: %1%"
 
-#: win32/UserInfoBase.cpp:126
+#: win32/UserInfoBase.cpp:130
 #, fuzzy
 msgid "In away mode"
 msgstr "Nepritomnost vypnuta"
@@ -2441,29 +2441,29 @@ msgstr ""
 msgid "Items: %1%"
 msgstr "Položky: %1%"
 
-#: win32/HubFrame.cpp:475
+#: win32/HubFrame.cpp:482
 msgid "Join/part of favorite users showing off"
 msgstr "Zvýraznit připojení oblíbených uživatelů"
 
-#: win32/HubFrame.cpp:473
+#: win32/HubFrame.cpp:480
 msgid "Join/part of favorite users showing on"
 msgstr ""
 "Zobrazovani prichodu/odchodu oblibenych uzivatelu v hlavnim chatu zapnute"
 
-#: win32/HubFrame.cpp:468
+#: win32/HubFrame.cpp:475
 msgid "Join/part showing off"
 msgstr "Zobrazeni prichodu/odchodu uzivatelu vypnute"
 
-#: win32/HubFrame.cpp:466
+#: win32/HubFrame.cpp:473
 msgid "Join/part showing on"
 msgstr "Zobrazeni prichodu/odchodu uzivatelu zapnute"
 
-#: win32/HubFrame.cpp:532
+#: win32/HubFrame.cpp:539
 #, fuzzy
 msgid "Joins <hub-ip>. See also Open new window when using /join."
 msgstr "Otevrit nove okno pri pouziti /join"
 
-#: win32/HubFrame.cpp:1045
+#: win32/HubFrame.cpp:1052
 #, boost-format
 msgid "Joins: %1%"
 msgstr ""
@@ -2631,7 +2631,7 @@ msgstr "Zaznamenavani"
 msgid "Login"
 msgstr "Uzivatelske jmeno"
 
-#: win32/HubFrame.cpp:1151
+#: win32/HubFrame.cpp:1158
 msgid "Login timeout, disconnecting and waiting for next attempt..."
 msgstr ""
 
@@ -2850,7 +2850,7 @@ msgstr "Mini slot velikost"
 msgid "Minimize to tray"
 msgstr "Minimalizovat do systemove listy"
 
-#: win32/HubFrame.cpp:595 win32/HubFrame.cpp:602
+#: win32/HubFrame.cpp:602 win32/HubFrame.cpp:609
 msgid "Missing command parameters: /mcpm <user> <message>"
 msgstr ""
 
@@ -2875,7 +2875,7 @@ msgstr "Přesunout &dolů"
 msgid "Move &Up"
 msgstr "Posunout nahor&u"
 
-#: win32/UserInfoBase.cpp:146
+#: win32/UserInfoBase.cpp:150
 msgid "NAT"
 msgstr ""
 
@@ -2943,7 +2943,7 @@ msgstr "Novy virtualny nazev je shodny se starsim, ignoruje se..."
 
 #: win32/FavHubGroupsDlg.cpp:135 win32/FavHubProperties.cpp:119
 #: win32/FavHubsFrame.cpp:51 win32/GeneralPage.cpp:53 win32/HubFrame.cpp:59
-#: win32/HubFrame.cpp:440 win32/UserMatchDlg.cpp:222
+#: win32/HubFrame.cpp:447 win32/UserMatchDlg.cpp:222
 #: win32/UserMatchPage.cpp:215 win32/UsersFrame.cpp:54 win32/UsersFrame.cpp:80
 #: win32/FinishedFrameBase.h:741
 msgid "Nick"
@@ -3025,7 +3025,7 @@ msgid "Noon"
 msgstr "Ne"
 
 #: win32/QueueFrame.cpp:406 win32/QueueFrame.cpp:995 win32/SearchFrame.cpp:190
-#: win32/TransferView.cpp:551 win32/UserInfoBase.cpp:131
+#: win32/TransferView.cpp:551 win32/UserInfoBase.cpp:135
 msgid "Normal"
 msgstr "Normalni"
 
@@ -3077,7 +3077,7 @@ msgstr "Nepripojen"
 msgid "Online"
 msgstr "Pripojen"
 
-#: win32/HubFrame.cpp:438
+#: win32/HubFrame.cpp:445
 #, fuzzy
 msgid "Online users"
 msgstr "Oblibeni uzivatele"
@@ -3153,7 +3153,7 @@ msgid ""
 "automatically send the search."
 msgstr ""
 
-#: win32/HubFrame.cpp:549
+#: win32/HubFrame.cpp:556
 msgid ""
 "Opens a private message window to the user, and optionally sends the "
 "message, if one was specified."
@@ -3201,7 +3201,7 @@ msgstr ""
 msgid "Partial match"
 msgstr ""
 
-#: win32/HubFrame.cpp:1074
+#: win32/HubFrame.cpp:1081
 #, boost-format
 msgid "Parts: %1%"
 msgstr ""
@@ -3284,7 +3284,7 @@ msgstr "Barvy a zvuky"
 msgid "Please enter a nickname in the settings dialog!"
 msgstr "Zvolte si prosim nick v nastaveni!"
 
-#: win32/HubFrame.cpp:763
+#: win32/HubFrame.cpp:770
 msgid "Please enter a password"
 msgstr "Prosim zadejte svoje heslo"
 
@@ -3333,7 +3333,7 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: win32/HubFrame.cpp:559
+#: win32/HubFrame.cpp:566
 msgid ""
 "Prints the current hub's topic. Useful if you want to copy the topic or it "
 "contains a link you'd like to easily open."
@@ -3347,12 +3347,12 @@ msgstr "Priorita"
 msgid "Private key file"
 msgstr "Soubor soukromého klíče"
 
-#: win32/HubFrame.cpp:1173
+#: win32/HubFrame.cpp:1180
 #, fuzzy, boost-format
 msgid "Private main chat message from %1%: %2%"
 msgstr "Soukromá zpráva od %1%: %2%"
 
-#: win32/HubFrame.cpp:609
+#: win32/HubFrame.cpp:616
 #, fuzzy, boost-format
 msgid "Private main chat message was sent to %1%: %2%"
 msgstr "Soukromá zpráva od %1%: %2%"
@@ -3361,7 +3361,7 @@ msgstr "Soukromá zpráva od %1%: %2%"
 msgid "Private message"
 msgstr "Soukroma zprava"
 
-#: win32/HubFrame.cpp:818
+#: win32/HubFrame.cpp:825
 #, boost-format
 msgid "Private message from %1%: %2%"
 msgstr "Soukromá zpráva od %1%: %2%"
@@ -3462,12 +3462,12 @@ msgstr ""
 msgid "Ready to search..."
 msgstr "Pripravene k vyhledavani..."
 
-#: win32/HubFrame.cpp:116
+#: win32/HubFrame.cpp:123
 #, fuzzy, boost-format
 msgid "Really close %1% hub windows?"
 msgstr "Zavřít všechna okna s vyhledáváním"
 
-#: win32/HubFrame.cpp:298
+#: win32/HubFrame.cpp:305
 msgid "Really close?"
 msgstr ""
 
@@ -3489,7 +3489,7 @@ msgid ""
 "rebuild is finished."
 msgstr ""
 
-#: win32/HubFrame.cpp:1091
+#: win32/HubFrame.cpp:1098
 #, boost-format
 msgid "Received a redirect request to %1%, click here to follow it"
 msgstr ""
@@ -3520,11 +3520,11 @@ msgstr "Znovu se připojit"
 msgid "Reconnect disconnected hubs"
 msgstr "Zavřit odpojené Huby"
 
-#: win32/HubFrame.cpp:1083 win32/HubFrame.cpp:1606
+#: win32/HubFrame.cpp:1090 win32/HubFrame.cpp:1624
 msgid "Redirect request received to a hub that's already connected"
 msgstr "Pozadavek na presmerovani je na hub na ktorem uz jste pripojeni"
 
-#: win32/HubFrame.cpp:1601
+#: win32/HubFrame.cpp:1619
 msgid "Redirect request to an empty hub address"
 msgstr ""
 
@@ -3598,11 +3598,11 @@ msgstr "Odpojit pomale stahovani Filelistu"
 msgid "Remove source"
 msgstr "Odebrat zdroj"
 
-#: win32/QueueFrame.cpp:1034 win32/WinUtil.cpp:1666 win32/UserInfoBase.h:181
+#: win32/QueueFrame.cpp:1034 win32/WinUtil.cpp:1666 win32/UserInfoBase.h:176
 msgid "Remove user from queue"
 msgstr "Odebrat uzivatele z fronty"
 
-#: win32/HubFrame.cpp:547
+#: win32/HubFrame.cpp:554
 msgid "Removes the current hub from the list of Favorite Hubs."
 msgstr ""
 
@@ -3713,7 +3713,7 @@ msgstr "Vyhledat"
 msgid "Search port (v6)"
 msgstr "Vyhledat"
 
-#: win32/HubFrame.cpp:1157
+#: win32/HubFrame.cpp:1164
 #, boost-format
 msgid "Search spam detected from %1%"
 msgstr "Detekován vyhledávací spam od %1%"
@@ -3796,11 +3796,16 @@ msgstr "Vyberte druh &textu"
 msgid "Send once per nick"
 msgstr "Poslat kazdemu jmeno po jednom"
 
+#: win32/UserInfoBase.h:167
+#, fuzzy
+msgid "Send public message"
+msgstr "&Poslat soukromou zprávu"
+
 #: win32/AdvancedPage.cpp:45
 msgid "Send unknown /commands to the hub"
 msgstr "Posilat nezname prikazy na hub"
 
-#: win32/HubFrame.cpp:551
+#: win32/HubFrame.cpp:558
 msgid ""
 "Sends a private main chat message to the user if supported by hub, NMDC only."
 msgstr ""
@@ -3815,7 +3820,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Oddelovac"
 
-#: win32/FavHubsFrame.cpp:53 win32/UserInfoBase.cpp:137
+#: win32/FavHubsFrame.cpp:53 win32/UserInfoBase.cpp:141
 msgid "Server"
 msgstr "Server"
 
@@ -3898,8 +3903,8 @@ msgstr "Sdilet skryte soubory"
 msgid "Share size: %1%"
 msgstr "Velikost: %1%"
 
-#: win32/HubFrame.cpp:60 win32/HubFrame.cpp:439 win32/PublicHubsFrame.cpp:49
-#: win32/UserInfoBase.cpp:151
+#: win32/HubFrame.cpp:60 win32/HubFrame.cpp:446 win32/PublicHubsFrame.cpp:49
+#: win32/UserInfoBase.cpp:155
 msgid "Shared"
 msgstr "Sdileni"
 
@@ -3991,7 +3996,7 @@ msgstr "Vynechavat soubory z nulovou velikosti"
 msgid "Slot granted"
 msgstr "Slot prideleny"
 
-#: win32/SearchFrame.cpp:54 win32/UserInfoBase.cpp:164
+#: win32/SearchFrame.cpp:54 win32/UserInfoBase.cpp:168
 msgid "Slots"
 msgstr "Sloty"
 
@@ -4038,7 +4043,7 @@ msgstr "Příliš pomalý zdroj"
 msgid "Speak as a third person."
 msgstr ""
 
-#: win32/HubFrame.cpp:605
+#: win32/HubFrame.cpp:612
 #, boost-format
 msgid "Specified user is not online: %1%"
 msgstr ""
@@ -4056,7 +4061,7 @@ msgstr ""
 msgid "Specify a search string"
 msgstr "Napiste, co chcete hledat"
 
-#: win32/HubFrame.cpp:457
+#: win32/HubFrame.cpp:464
 msgid "Specify a server to connect to"
 msgstr "Napiste server, ke kteremu se chcete pripojit"
 
@@ -4119,7 +4124,7 @@ msgstr "Cas (Kdy byl naposledy pripojen)"
 msgid "Status bar\tCtrl+3"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:149
+#: win32/UserInfoBase.cpp:153
 #, fuzzy, boost-format
 msgid "Status: %1%"
 msgstr "Stav"
@@ -4132,7 +4137,7 @@ msgstr ""
 msgid "Status: Away - Double-click to switch to Available"
 msgstr ""
 
-#: win32/HubFrame.cpp:759
+#: win32/HubFrame.cpp:766
 msgid "Stored password sent..."
 msgstr "Ulozene heslo poslane ..."
 
@@ -4166,7 +4171,7 @@ msgstr "Systemove zpravy"
 msgid "TB"
 msgstr "TiB"
 
-#: win32/UserInfoBase.cpp:143
+#: win32/UserInfoBase.cpp:147
 msgid "TLS"
 msgstr ""
 
@@ -4196,7 +4201,7 @@ msgstr ""
 msgid "Tabs"
 msgstr "Záložky"
 
-#: win32/HubFrame.cpp:62 win32/UserInfoBase.cpp:153 win32/UsersFrame.cpp:104
+#: win32/HubFrame.cpp:62 win32/UserInfoBase.cpp:157 win32/UsersFrame.cpp:104
 msgid "Tag"
 msgstr "Tag"
 
@@ -4233,7 +4238,7 @@ msgid ""
 "into view."
 msgstr ""
 
-#: win32/HubFrame.cpp:635
+#: win32/HubFrame.cpp:642
 msgid "The message cannot be delivered because the hub is offline."
 msgstr ""
 
@@ -4253,15 +4258,15 @@ msgstr ""
 msgid "The user does not support the CCPM ADC extension"
 msgstr ""
 
-#: win32/HubFrame.cpp:586
+#: win32/HubFrame.cpp:593
 msgid "This command is not yet supported on ADC hubs."
 msgstr ""
 
-#: win32/HubFrame.cpp:589
+#: win32/HubFrame.cpp:596
 msgid "This hub does not support MCTo extension."
 msgstr ""
 
-#: win32/HubFrame.cpp:1258
+#: win32/HubFrame.cpp:1265
 msgid "This hub is not a favorite hub"
 msgstr "Hub odebrany z oblibenych"
 
@@ -4310,19 +4315,19 @@ msgstr "Do"
 msgid "Toggle window when selecting an active tab"
 msgstr "Pri kliknuti na zalozku aktivniho okna prejit na predch. zalozku"
 
-#: win32/HubFrame.cpp:536
+#: win32/HubFrame.cpp:543
 msgid ""
 "Toggles the displaying of favorite users joining the hub. Does not require /"
 "showjoins to be enabled."
 msgstr ""
 
-#: win32/HubFrame.cpp:534
+#: win32/HubFrame.cpp:541
 msgid ""
 "Toggles the displaying of users joining the hub. This only takes effect for "
 "freshly-arriving users."
 msgstr ""
 
-#: win32/HubFrame.cpp:538
+#: win32/HubFrame.cpp:545
 msgid "Toggles visibility of the list of users for the current hub."
 msgstr ""
 
@@ -4393,7 +4398,7 @@ msgstr "U: %1%"
 msgid "U: %1%/s (%2%)"
 msgstr "U: %1%/s (%2%)"
 
-#: win32/UserInfoBase.h:187
+#: win32/UserInfoBase.h:182
 msgid "Un-ignore chat"
 msgstr ""
 
@@ -4432,7 +4437,7 @@ msgstr ""
 msgid "Unknown"
 msgstr "Neznamy"
 
-#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:457
+#: win32/HubFrame.cpp:624 win32/PrivateFrame.cpp:457
 #, boost-format
 msgid "Unknown command: %1%"
 msgstr "Neznámý příkaz: %1%"
@@ -4728,7 +4733,7 @@ msgstr ""
 msgid "You must enter a name"
 msgstr ""
 
-#: win32/HubFrame.cpp:1145
+#: win32/HubFrame.cpp:1152
 msgid "Your nick was already taken, please change to something else!"
 msgstr "Vase jmeno se uz pouziva, zvolte si prosim jine!"
 

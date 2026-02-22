@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2025-08-23 11:48+0200\n"
+"POT-Creation-Date: 2026-02-22 18:06+0100\n"
 "PO-Revision-Date: 2022-09-19 23:22+0000\n"
 "Last-Translator: Sopor <Unknown>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -720,11 +720,25 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
 #: /home/hundr/feardc/help/commands_user_general.inc:13
+#, fuzzy
+msgid "Send public message"
+msgstr "Skicka privat meddelande"
+
+#. type: Content of: <html><body><dl><dd>
+#: /home/hundr/feardc/help/commands_user_general.inc:14
+msgid ""
+"Prepend selected user nicks to public chat message input. Use this to "
+"address your message to specific user or multiple users. Your message will "
+"be sent as public message as stated in input field."
+msgstr ""
+
+#. type: Content of: <html><body><dl><dt>
+#: /home/hundr/feardc/help/commands_user_general.inc:17
 msgid "Grant extra slot"
 msgstr "Bevilja extra slott"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/feardc/help/commands_user_general.inc:14
+#: /home/hundr/feardc/help/commands_user_general.inc:18
 msgid ""
 "In addition to your regular upload slots, an extra upload slot will be given "
 "to the selected users until the end of the current DC++ session."
@@ -733,13 +747,13 @@ msgstr ""
 "ges ut till valda användare vid slutet av den nuvarande DC++-sessionen."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/feardc/help/commands_user_general.inc:16
+#: /home/hundr/feardc/help/commands_user_general.inc:20
 #: help/window_download_queue.html:139
 msgid "Remove user from queue"
 msgstr "Ta bort användare från kön"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/feardc/help/commands_user_general.inc:17
+#: /home/hundr/feardc/help/commands_user_general.inc:21
 msgid ""
 "Remove the selected users from the source list of all queued files. Pending "
 "file list requests will be removed as well."
@@ -748,12 +762,12 @@ msgstr ""
 "fillistförfrågans kommer även att tas bort."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/feardc/help/commands_user_general.inc:19
+#: /home/hundr/feardc/help/commands_user_general.inc:23
 msgid "Ignore chat"
 msgstr "Ignorera chatt"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/feardc/help/commands_user_general.inc:20
+#: /home/hundr/feardc/help/commands_user_general.inc:24
 msgid ""
 "Add user matching definitions (or modify existing ones, if possible) to "
 "ignore chat messages from the selected users."
@@ -762,12 +776,12 @@ msgstr ""
 "tillgängligt) för att ignorera chattmeddelanden från de valda användarna."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/feardc/help/commands_user_general.inc:22
+#: /home/hundr/feardc/help/commands_user_general.inc:26
 msgid "Un-ignore chat"
 msgstr "Ej ignorera chatten"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/feardc/help/commands_user_general.inc:23
+#: /home/hundr/feardc/help/commands_user_general.inc:27
 msgid ""
 "Add user matching definitions (or modify existing ones, if possible) to stop "
 "ignoring chat messages from the selected users."
@@ -777,12 +791,12 @@ msgstr ""
 "användarna."
 
 #. type: Content of: <html><body><dl><dt>
-#: /home/hundr/feardc/help/commands_user_general.inc:25
+#: /home/hundr/feardc/help/commands_user_general.inc:29
 msgid "Copy user information"
 msgstr "Kopiera användarinformation"
 
 #. type: Content of: <html><body><dl><dd>
-#: /home/hundr/feardc/help/commands_user_general.inc:26
+#: /home/hundr/feardc/help/commands_user_general.inc:30
 msgid ""
 "Copy a few lines containing user information to the clipboard. The data may "
 "include: the user's nick(s), her hub address(es), her IP, country, email, "

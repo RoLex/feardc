@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-21 15:38+0100\n"
+"POT-Creation-Date: 2026-02-22 18:20+0100\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -201,7 +201,7 @@ msgstr "%1% rămas"
 msgid "%1% sources added"
 msgstr ""
 
-#: win32/HubFrame.cpp:365
+#: win32/HubFrame.cpp:372
 #, boost-format
 msgid "%1% user"
 msgid_plural "%1% users"
@@ -209,13 +209,13 @@ msgstr[0] "%1% utilizator"
 msgstr[1] "%1% utilizatori"
 msgstr[2] "%1% utilizatori"
 
-#: win32/HubFrame.cpp:1377 win32/TransferView.cpp:354 win32/UsersFrame.cpp:509
+#: win32/HubFrame.cpp:1384 win32/TransferView.cpp:354 win32/UsersFrame.cpp:509
 #: win32/FinishedFrameBase.h:489
 #, fuzzy, boost-format
 msgid "%1% users"
 msgstr "%1% utilizator"
 
-#: win32/MainWindow.cpp:1219 win32/UserInfoBase.cpp:163
+#: win32/MainWindow.cpp:1219 win32/UserInfoBase.cpp:167
 #, fuzzy, boost-format
 msgid "%1%/%2%"
 msgstr "%1%/s"
@@ -234,8 +234,8 @@ msgstr "%1%/s"
 msgid "%1%/s, %2% left"
 msgstr "%1%/s, %2% rămas"
 
-#: win32/DirectoryListingFrame.cpp:832 win32/UserInfoBase.cpp:116
-#: win32/UserInfoBase.cpp:164 win32/WinUtil.cpp:1719
+#: win32/DirectoryListingFrame.cpp:832 win32/UserInfoBase.cpp:120
+#: win32/UserInfoBase.cpp:168 win32/WinUtil.cpp:1719
 #, fuzzy, boost-format
 msgid "%1%: %2%"
 msgstr "D: %1%/s (%2%)"
@@ -250,7 +250,7 @@ msgstr "&Adaugă"
 msgid "&Add folder"
 msgstr "&Adaugă subdirector"
 
-#: win32/WinUtil.cpp:1651 win32/UserInfoBase.h:167
+#: win32/WinUtil.cpp:1651 win32/UserInfoBase.h:162
 msgid "&Browse file list"
 msgstr "&Răsfoiește lista de fișiere"
 
@@ -308,7 +308,7 @@ msgstr ""
 msgid "&Description"
 msgstr "&Descriere"
 
-#: win32/HubFrame.cpp:1405 win32/TransferView.cpp:563
+#: win32/HubFrame.cpp:1423 win32/TransferView.cpp:563
 msgid "&Disconnect"
 msgstr "&Deconectare"
 
@@ -343,7 +343,7 @@ msgstr "&Find...\tF3"
 msgid "&Force attempt"
 msgstr "Conectare &forțată"
 
-#: win32/QueueFrame.cpp:1002 win32/WinUtil.cpp:1648 win32/UserInfoBase.h:166
+#: win32/QueueFrame.cpp:1002 win32/WinUtil.cpp:1648 win32/UserInfoBase.h:161
 msgid "&Get file list"
 msgstr "&Ia lista de fișiere"
 
@@ -360,7 +360,7 @@ msgstr "&Ajutor"
 msgid "&Hide\tCtrl+1"
 msgstr "Gă&sire\tCtrl+S"
 
-#: win32/WinUtil.cpp:1654 win32/UserInfoBase.h:168
+#: win32/WinUtil.cpp:1654 win32/UserInfoBase.h:163
 msgid "&Match queue"
 msgstr "&Potrivește cu coada"
 
@@ -410,7 +410,7 @@ msgstr "Huburi &Publice\tCtrl+P"
 msgid "&Quick connect...\tCtrl+Q"
 msgstr "Conectare Rapi&dă ...\tCtrl+Q"
 
-#: win32/HubFrame.cpp:1398 win32/MainWindow.cpp:318
+#: win32/HubFrame.cpp:1416 win32/MainWindow.cpp:318
 msgid "&Reconnect\tCtrl+R"
 msgstr "&Reconectare\tCtrl+R"
 
@@ -438,12 +438,12 @@ msgstr "Înlătură utilizatorul din coadă"
 msgid "&Search\tCtrl+S"
 msgstr "Gă&sire\tCtrl+S"
 
-#: win32/HubFrame.cpp:1404
+#: win32/HubFrame.cpp:1422
 #, fuzzy
 msgid "&Search hub"
 msgstr "Meniu căutare"
 
-#: win32/QueueFrame.cpp:1009 win32/WinUtil.cpp:1657 win32/UserInfoBase.h:171
+#: win32/QueueFrame.cpp:1009 win32/WinUtil.cpp:1657 win32/UserInfoBase.h:166
 msgid "&Send private message"
 msgstr "Me&saj privat"
 
@@ -496,7 +496,7 @@ msgstr ""
 msgid "(User offline)"
 msgstr "Utilizator neconectat"
 
-#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:426
+#: win32/HubFrame.cpp:527 win32/HubFrame.cpp:536 win32/PrivateFrame.cpp:426
 #: win32/PrivateFrame.cpp:433
 #, fuzzy
 msgid "*** Keyboard commands:"
@@ -594,8 +594,8 @@ msgstr ""
 msgid "Add"
 msgstr "&Adaugă"
 
-#: win32/HubFrame.cpp:1395 win32/PublicHubsFrame.cpp:402 win32/WinUtil.cpp:1660
-#: win32/UserInfoBase.h:176
+#: win32/HubFrame.cpp:1413 win32/PublicHubsFrame.cpp:402 win32/WinUtil.cpp:1660
+#: win32/UserInfoBase.h:171
 msgid "Add To &Favorites"
 msgstr "Adaugă la &Favorite"
 
@@ -630,7 +630,7 @@ msgid ""
 "to ignore chat messages from the current user."
 msgstr ""
 
-#: win32/HubFrame.cpp:555
+#: win32/HubFrame.cpp:562
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to ignore chat messages from the specified user."
@@ -642,13 +642,13 @@ msgid ""
 "to stop ignoring chat messages from the current user."
 msgstr ""
 
-#: win32/HubFrame.cpp:557
+#: win32/HubFrame.cpp:564
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to stop ignoring chat messages from the specified user."
 msgstr ""
 
-#: win32/HubFrame.cpp:544
+#: win32/HubFrame.cpp:551
 msgid ""
 "Adds the current hub (along with your nickname and password, if used) to the "
 "list of Favorite Hubs."
@@ -662,7 +662,7 @@ msgstr ""
 msgid "Adds the current user's list to the Download Queue."
 msgstr ""
 
-#: win32/HubFrame.cpp:553
+#: win32/HubFrame.cpp:560
 msgid "Adds the user's list to the Download Queue."
 msgstr ""
 
@@ -832,12 +832,12 @@ msgstr "Deschide automat un slot nou când viteza e sub (0=dezactivare)"
 msgid "Automatically search for alternative download locations"
 msgstr "Caută automat opțiuni alternative de descărcare"
 
-#: win32/HubFrame.cpp:1218
+#: win32/HubFrame.cpp:1225
 #, boost-format
 msgid "Average: %1%"
 msgstr "Medie: %1%"
 
-#: win32/UserInfoBase.cpp:134 win32/UsersFrame.cpp:81
+#: win32/UserInfoBase.cpp:138 win32/UsersFrame.cpp:81
 msgid "Away"
 msgstr ""
 
@@ -906,7 +906,7 @@ msgstr "Adresa folosită"
 msgid "Blog"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:122 win32/UsersFrame.cpp:330 win32/UsersFrame.cpp:331
+#: win32/UserInfoBase.cpp:126 win32/UsersFrame.cpp:330 win32/UsersFrame.cpp:331
 msgid "Bot"
 msgstr ""
 
@@ -926,7 +926,7 @@ msgstr ""
 msgid "Button style"
 msgstr ""
 
-#: win32/HubFrame.cpp:67 win32/SearchFrame.cpp:60 win32/UserInfoBase.cpp:167
+#: win32/HubFrame.cpp:67 win32/SearchFrame.cpp:60 win32/UserInfoBase.cpp:171
 #: win32/UserMatchDlg.cpp:222 win32/UserMatchPage.cpp:215
 #: win32/UsersFrame.cpp:61 win32/UsersFrame.cpp:100
 msgid "CID"
@@ -1143,11 +1143,11 @@ msgstr "Confirmarea ștergerii huburilor favorite"
 msgid "Connect to all hubs in this group"
 msgstr ""
 
-#: win32/UserInfoBase.h:179
+#: win32/UserInfoBase.h:174
 msgid "Connect to hub"
 msgstr "Conectează-te la hub"
 
-#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1808
+#: win32/HubFrame.cpp:751 win32/WinUtil.cpp:1808
 msgid "Connected"
 msgstr "Conectat"
 
@@ -1155,12 +1155,12 @@ msgstr "Conectat"
 msgid "Connecting"
 msgstr "În curs de conectare"
 
-#: win32/HubFrame.cpp:1019
+#: win32/HubFrame.cpp:1026
 #, boost-format
 msgid "Connecting to %1%..."
 msgstr "În curs de conectare la %1%..."
 
-#: win32/HubFrame.cpp:63 win32/SearchFrame.cpp:55 win32/UserInfoBase.cpp:154
+#: win32/HubFrame.cpp:63 win32/SearchFrame.cpp:55 win32/UserInfoBase.cpp:158
 #: win32/UsersFrame.cpp:102
 msgid "Connection"
 msgstr "Conexiune"
@@ -1191,11 +1191,11 @@ msgstr ""
 msgid "Copy &Value"
 msgstr ""
 
-#: win32/HubFrame.cpp:1399
+#: win32/HubFrame.cpp:1417
 msgid "Copy &address to clipboard"
 msgstr "Copiază &adresa în memorie"
 
-#: win32/HubFrame.cpp:1402
+#: win32/HubFrame.cpp:1420
 #, fuzzy
 msgid "Copy address with &keyprint to clipboard"
 msgstr "Copiază &adresa în memorie"
@@ -1204,13 +1204,13 @@ msgstr "Copiază &adresa în memorie"
 msgid "Copy magnet link to clipboard"
 msgstr "Copiază link-ul Magnet în memorie"
 
-#: win32/UserInfoBase.h:190
+#: win32/UserInfoBase.h:185
 #, fuzzy
 msgid "Copy user information"
 msgstr "Informații Personale"
 
 #: win32/HubFrame.cpp:65 win32/PublicHubsFrame.cpp:48 win32/TransferView.cpp:58
-#: win32/UserInfoBase.cpp:156
+#: win32/UserInfoBase.cpp:160
 msgid "Country"
 msgstr "Țara"
 
@@ -1236,7 +1236,7 @@ msgstr "&Notepad\tCtrl+N"
 msgid "Current communication channel - click to change"
 msgstr ""
 
-#: win32/HubFrame.cpp:515
+#: win32/HubFrame.cpp:522
 #, boost-format
 msgid "Current hub topic: %1%"
 msgstr ""
@@ -1307,8 +1307,8 @@ msgstr "Implicit"
 
 #: win32/FavHubGroupsDlg.cpp:140 win32/FavHubProperties.cpp:96
 #: win32/FavHubProperties.cpp:132 win32/FavHubsFrame.cpp:50
-#: win32/GeneralPage.cpp:59 win32/HubFrame.cpp:61 win32/HubFrame.cpp:441
-#: win32/PublicHubsFrame.cpp:45 win32/UserInfoBase.cpp:152
+#: win32/GeneralPage.cpp:59 win32/HubFrame.cpp:61 win32/HubFrame.cpp:448
+#: win32/PublicHubsFrame.cpp:45 win32/UserInfoBase.cpp:156
 #: win32/UsersFrame.cpp:60 win32/UsersFrame.cpp:82 win32/UsersFrame.cpp:475
 msgid "Description"
 msgstr "Descriere"
@@ -1413,7 +1413,7 @@ msgid ""
 "can specify \"brief\" to have a brief listing."
 msgstr ""
 
-#: win32/HubFrame.cpp:541
+#: win32/HubFrame.cpp:548
 msgid ""
 "Displays the connectivity status information, auto detected or manually "
 "chosen connection mode, IP and ports that FearDC is currently using for "
@@ -1462,7 +1462,7 @@ msgstr "Nu descărca fișiere deja partajate"
 msgid "Don't download files already in the queue"
 msgstr "Nu descărca fișiere deja în coadă"
 
-#: win32/HubFrame.cpp:621
+#: win32/HubFrame.cpp:628
 msgid "Don't remove /password before your password"
 msgstr "Nu înlătura /password înaintea parolei"
 
@@ -1620,7 +1620,7 @@ msgstr ""
 msgid "E-Mail"
 msgstr "E-mail"
 
-#: win32/UserInfoBase.cpp:157
+#: win32/UserInfoBase.cpp:161
 #, fuzzy
 msgid "E-mail"
 msgstr "E-mail"
@@ -1635,7 +1635,7 @@ msgid "Elapsed"
 msgstr "Timp minim scurs"
 
 #: win32/FavHubGroupsDlg.cpp:144 win32/FavHubProperties.cpp:137
-#: win32/GeneralPage.cpp:64 win32/HubFrame.cpp:442
+#: win32/GeneralPage.cpp:64 win32/HubFrame.cpp:449
 #, fuzzy
 msgid "Email"
 msgstr "E-mail"
@@ -1804,7 +1804,7 @@ msgstr ""
 msgid "Extensions for the %1% search type"
 msgstr ""
 
-#: win32/HubFrame.cpp:443
+#: win32/HubFrame.cpp:450
 msgid "External / WAN IP"
 msgstr "IP extern / WAN"
 
@@ -1821,7 +1821,7 @@ msgstr ""
 msgid "F&ilter"
 msgstr "F&iltru"
 
-#: win32/HubFrame.cpp:814
+#: win32/HubFrame.cpp:821
 msgid ""
 "Failed to create a new PM window; check the \"Max PM windows\" value in "
 "Settings > Experts only"
@@ -1844,7 +1844,7 @@ msgstr "Huburile Favorite"
 msgid "Favorite download directories"
 msgstr "Dosare de Descărcare Favorite"
 
-#: win32/HubFrame.cpp:1246
+#: win32/HubFrame.cpp:1253
 msgid "Favorite hub added"
 msgstr "Hub favorit adăugat"
 
@@ -1853,7 +1853,7 @@ msgstr "Hub favorit adăugat"
 msgid "Favorite hub groups"
 msgstr "Hub favorit șters"
 
-#: win32/HubFrame.cpp:1256
+#: win32/HubFrame.cpp:1263
 msgid "Favorite hub removed"
 msgstr "Hub favorit șters"
 
@@ -2005,7 +2005,7 @@ msgstr "F&iltru"
 msgid "Filter spam messages"
 msgstr "Filtrare a mesajelor de izgonire"
 
-#: win32/HubFrame.cpp:224 win32/UsersFrame.cpp:180
+#: win32/HubFrame.cpp:231 win32/UsersFrame.cpp:180
 #, fuzzy
 msgid "Filter users"
 msgstr "Utilizatori Favoriți"
@@ -2061,7 +2061,7 @@ msgstr "Încărcările Terminate"
 msgid "Fire a balloon popup example"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:140
+#: win32/UserInfoBase.cpp:144
 msgid "Fireball"
 msgstr ""
 
@@ -2127,7 +2127,7 @@ msgstr "GiB"
 msgid "Global application style"
 msgstr "Confirmare la ieșirea din program"
 
-#: win32/WinUtil.cpp:1663 win32/UserInfoBase.h:177
+#: win32/WinUtil.cpp:1663 win32/UserInfoBase.h:172
 msgid "Grant &extra slot"
 msgstr "Of&eră slot în plus"
 
@@ -2187,7 +2187,7 @@ msgstr "&Cuprinsul fițierului de ajutor\tF1"
 msgid "Help center"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:120
+#: win32/UserInfoBase.cpp:124
 #, fuzzy
 msgid "Hidden user"
 msgstr "Utilizator pasiv"
@@ -2241,7 +2241,7 @@ msgstr "Pagina principală DC++"
 msgid "Hub"
 msgstr "Hub"
 
-#: win32/HubFrame.cpp:437
+#: win32/HubFrame.cpp:444
 msgid "Hub IP & port"
 msgstr ""
 
@@ -2249,7 +2249,7 @@ msgstr ""
 msgid "Hub Menu"
 msgstr "Meniul hub-ului"
 
-#: win32/HubFrame.cpp:436 win32/UserMatchDlg.cpp:222
+#: win32/HubFrame.cpp:443 win32/UserMatchDlg.cpp:222
 #: win32/UserMatchPage.cpp:215
 #, fuzzy
 msgid "Hub address"
@@ -2268,7 +2268,7 @@ msgstr "Adresa hub-ului nu poate fi lăsată goală"
 msgid "Hub address or Magnet link"
 msgstr "Adresa hub-ului nu poate fi lăsată goală"
 
-#: win32/FavHubsFrame.cpp:232 win32/HubFrame.cpp:1248
+#: win32/FavHubsFrame.cpp:232 win32/HubFrame.cpp:1255
 msgid "Hub already exists as a favorite"
 msgstr "Hub-ul este deja favorit"
 
@@ -2277,12 +2277,12 @@ msgstr "Hub-ul este deja favorit"
 msgid "Hub list downloaded (%1%)"
 msgstr "Lista de huburi descărcată... (%1%)"
 
-#: win32/HubFrame.cpp:635
+#: win32/HubFrame.cpp:642
 #, fuzzy
 msgid "Hub offline"
 msgstr "Utilizator neconectat"
 
-#: win32/UserInfoBase.cpp:124
+#: win32/UserInfoBase.cpp:128
 msgid "Hub operator"
 msgstr ""
 
@@ -2321,7 +2321,7 @@ msgid "Hubs with secure transfers"
 msgstr ""
 
 #: win32/MainWindow.cpp:1215 win32/PublicHubsFrame.cpp:260
-#: win32/UserInfoBase.cpp:106
+#: win32/UserInfoBase.cpp:110
 #, boost-format
 msgid "Hubs: %1%"
 msgstr "Huburi: %1%"
@@ -2332,7 +2332,7 @@ msgid "Hubs: %1% / %2%"
 msgstr "Hub-uri: %1% / %2%"
 
 #: win32/HubFrame.cpp:64 win32/ProxyPage.cpp:79 win32/SearchFrame.cpp:58
-#: win32/TransferView.cpp:57 win32/UserInfoBase.cpp:155
+#: win32/TransferView.cpp:57 win32/UserInfoBase.cpp:159
 #: win32/UserMatchDlg.cpp:222 win32/UserMatchPage.cpp:215
 msgid "IP"
 msgstr "IP"
@@ -2388,7 +2388,7 @@ msgid ""
 "hub frame."
 msgstr ""
 
-#: win32/UserInfoBase.h:185
+#: win32/UserInfoBase.h:180
 #, fuzzy
 msgid "Ignore chat"
 msgstr "Ignoră căutarile TTH"
@@ -2406,12 +2406,12 @@ msgstr "Ignoră mesajele private de la boți"
 msgid "Ignore private messages from the hub"
 msgstr "Ignoră mesajele private dinspre hub"
 
-#: win32/HubFrame.cpp:809
+#: win32/HubFrame.cpp:816
 #, boost-format
 msgid "Ignored message: %1%"
 msgstr "Mesaj ignorat: %1%"
 
-#: win32/UserInfoBase.cpp:126
+#: win32/UserInfoBase.cpp:130
 #, fuzzy
 msgid "In away mode"
 msgstr "Mod PLECAT dezactivat"
@@ -2476,28 +2476,28 @@ msgstr ""
 msgid "Items: %1%"
 msgstr "Obiecte: %1%"
 
-#: win32/HubFrame.cpp:475
+#: win32/HubFrame.cpp:482
 msgid "Join/part of favorite users showing off"
 msgstr "Afișarea Alăturării / Plecării utilizatorilor favoriți dezactivată"
 
-#: win32/HubFrame.cpp:473
+#: win32/HubFrame.cpp:480
 msgid "Join/part of favorite users showing on"
 msgstr "Afișarea Alăturării / Plecării utilizatorilor favoriți activată"
 
-#: win32/HubFrame.cpp:468
+#: win32/HubFrame.cpp:475
 msgid "Join/part showing off"
 msgstr "Afișare alăturări/plecări dezactivată"
 
-#: win32/HubFrame.cpp:466
+#: win32/HubFrame.cpp:473
 msgid "Join/part showing on"
 msgstr "Afișare alăturări/plecări activată"
 
-#: win32/HubFrame.cpp:532
+#: win32/HubFrame.cpp:539
 #, fuzzy
 msgid "Joins <hub-ip>. See also Open new window when using /join."
 msgstr "Deschide o fereastră nouă la folosirea comenzii /join"
 
-#: win32/HubFrame.cpp:1045
+#: win32/HubFrame.cpp:1052
 #, boost-format
 msgid "Joins: %1%"
 msgstr ""
@@ -2664,7 +2664,7 @@ msgstr "Jurnalizare"
 msgid "Login"
 msgstr "Autentificare"
 
-#: win32/HubFrame.cpp:1151
+#: win32/HubFrame.cpp:1158
 msgid "Login timeout, disconnecting and waiting for next attempt..."
 msgstr ""
 
@@ -2878,7 +2878,7 @@ msgstr "Dimensiune minislot"
 msgid "Minimize to tray"
 msgstr "Minimizează în bara de sistem"
 
-#: win32/HubFrame.cpp:595 win32/HubFrame.cpp:602
+#: win32/HubFrame.cpp:602 win32/HubFrame.cpp:609
 msgid "Missing command parameters: /mcpm <user> <message>"
 msgstr ""
 
@@ -2903,7 +2903,7 @@ msgstr "Mută în &jos"
 msgid "Move &Up"
 msgstr "Mută în s&us"
 
-#: win32/UserInfoBase.cpp:146
+#: win32/UserInfoBase.cpp:150
 msgid "NAT"
 msgstr ""
 
@@ -2971,7 +2971,7 @@ msgstr "Numele noului director virtual e identic cu cel vechi, se ignoră..."
 
 #: win32/FavHubGroupsDlg.cpp:135 win32/FavHubProperties.cpp:119
 #: win32/FavHubsFrame.cpp:51 win32/GeneralPage.cpp:53 win32/HubFrame.cpp:59
-#: win32/HubFrame.cpp:440 win32/UserMatchDlg.cpp:222
+#: win32/HubFrame.cpp:447 win32/UserMatchDlg.cpp:222
 #: win32/UserMatchPage.cpp:215 win32/UsersFrame.cpp:54 win32/UsersFrame.cpp:80
 #: win32/FinishedFrameBase.h:741
 msgid "Nick"
@@ -3053,7 +3053,7 @@ msgid "Noon"
 msgstr "Nu"
 
 #: win32/QueueFrame.cpp:406 win32/QueueFrame.cpp:995 win32/SearchFrame.cpp:190
-#: win32/TransferView.cpp:551 win32/UserInfoBase.cpp:131
+#: win32/TransferView.cpp:551 win32/UserInfoBase.cpp:135
 msgid "Normal"
 msgstr "Normală"
 
@@ -3105,7 +3105,7 @@ msgstr "Neconectat"
 msgid "Online"
 msgstr "Conectat"
 
-#: win32/HubFrame.cpp:438
+#: win32/HubFrame.cpp:445
 #, fuzzy
 msgid "Online users"
 msgstr "Utilizatori Favoriți"
@@ -3181,7 +3181,7 @@ msgid ""
 "automatically send the search."
 msgstr ""
 
-#: win32/HubFrame.cpp:549
+#: win32/HubFrame.cpp:556
 msgid ""
 "Opens a private message window to the user, and optionally sends the "
 "message, if one was specified."
@@ -3229,7 +3229,7 @@ msgstr ""
 msgid "Partial match"
 msgstr ""
 
-#: win32/HubFrame.cpp:1074
+#: win32/HubFrame.cpp:1081
 #, boost-format
 msgid "Parts: %1%"
 msgstr ""
@@ -3312,7 +3312,7 @@ msgstr "Culori și sunete"
 msgid "Please enter a nickname in the settings dialog!"
 msgstr "Introduceți o poreclă în dialogul de setări!"
 
-#: win32/HubFrame.cpp:763
+#: win32/HubFrame.cpp:770
 msgid "Please enter a password"
 msgstr "Introduceți o parolă"
 
@@ -3361,7 +3361,7 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: win32/HubFrame.cpp:559
+#: win32/HubFrame.cpp:566
 msgid ""
 "Prints the current hub's topic. Useful if you want to copy the topic or it "
 "contains a link you'd like to easily open."
@@ -3375,12 +3375,12 @@ msgstr "Prioritate"
 msgid "Private key file"
 msgstr "Cheie privată"
 
-#: win32/HubFrame.cpp:1173
+#: win32/HubFrame.cpp:1180
 #, fuzzy, boost-format
 msgid "Private main chat message from %1%: %2%"
 msgstr "Mesaj privat de la %1%: %2%"
 
-#: win32/HubFrame.cpp:609
+#: win32/HubFrame.cpp:616
 #, fuzzy, boost-format
 msgid "Private main chat message was sent to %1%: %2%"
 msgstr "Mesaj privat de la %1%: %2%"
@@ -3389,7 +3389,7 @@ msgstr "Mesaj privat de la %1%: %2%"
 msgid "Private message"
 msgstr "Mesaj Privat"
 
-#: win32/HubFrame.cpp:818
+#: win32/HubFrame.cpp:825
 #, boost-format
 msgid "Private message from %1%: %2%"
 msgstr "Mesaj privat de la %1%: %2%"
@@ -3490,12 +3490,12 @@ msgstr ""
 msgid "Ready to search..."
 msgstr "Pregătit de căutare..."
 
-#: win32/HubFrame.cpp:116
+#: win32/HubFrame.cpp:123
 #, fuzzy, boost-format
 msgid "Really close %1% hub windows?"
 msgstr "Într-adevăr închideți?"
 
-#: win32/HubFrame.cpp:298
+#: win32/HubFrame.cpp:305
 msgid "Really close?"
 msgstr "Într-adevăr închideți?"
 
@@ -3517,7 +3517,7 @@ msgid ""
 "rebuild is finished."
 msgstr ""
 
-#: win32/HubFrame.cpp:1091
+#: win32/HubFrame.cpp:1098
 #, boost-format
 msgid "Received a redirect request to %1%, click here to follow it"
 msgstr ""
@@ -3547,11 +3547,11 @@ msgstr "Reconectare"
 msgid "Reconnect disconnected hubs"
 msgstr "Închide orice neconectat"
 
-#: win32/HubFrame.cpp:1083 win32/HubFrame.cpp:1606
+#: win32/HubFrame.cpp:1090 win32/HubFrame.cpp:1624
 msgid "Redirect request received to a hub that's already connected"
 msgstr "Redirecționarea primită arată spre un hub deja conectat"
 
-#: win32/HubFrame.cpp:1601
+#: win32/HubFrame.cpp:1619
 msgid "Redirect request to an empty hub address"
 msgstr ""
 
@@ -3626,11 +3626,11 @@ msgstr "Înlătură listele de fișiere lente"
 msgid "Remove source"
 msgstr "Înlătură sursa"
 
-#: win32/QueueFrame.cpp:1034 win32/WinUtil.cpp:1666 win32/UserInfoBase.h:181
+#: win32/QueueFrame.cpp:1034 win32/WinUtil.cpp:1666 win32/UserInfoBase.h:176
 msgid "Remove user from queue"
 msgstr "Înlătură utilizatorul din coadă"
 
-#: win32/HubFrame.cpp:547
+#: win32/HubFrame.cpp:554
 msgid "Removes the current hub from the list of Favorite Hubs."
 msgstr ""
 
@@ -3741,7 +3741,7 @@ msgstr "Caută după"
 msgid "Search port (v6)"
 msgstr "Caută după"
 
-#: win32/HubFrame.cpp:1157
+#: win32/HubFrame.cpp:1164
 #, boost-format
 msgid "Search spam detected from %1%"
 msgstr "Spam de căutare detectat de la %1%"
@@ -3824,11 +3824,16 @@ msgstr "Selectați stilul &textului"
 msgid "Send once per nick"
 msgstr "Trimite o dată per poreclă"
 
+#: win32/UserInfoBase.h:167
+#, fuzzy
+msgid "Send public message"
+msgstr "Me&saj privat"
+
 #: win32/AdvancedPage.cpp:45
 msgid "Send unknown /commands to the hub"
 msgstr "Trimite comenzile necunoscute de tip /comandă către hub"
 
-#: win32/HubFrame.cpp:551
+#: win32/HubFrame.cpp:558
 msgid ""
 "Sends a private main chat message to the user if supported by hub, NMDC only."
 msgstr ""
@@ -3843,7 +3848,7 @@ msgstr ""
 msgid "Separator"
 msgstr "Separator"
 
-#: win32/FavHubsFrame.cpp:53 win32/UserInfoBase.cpp:137
+#: win32/FavHubsFrame.cpp:53 win32/UserInfoBase.cpp:141
 msgid "Server"
 msgstr "Server"
 
@@ -3928,8 +3933,8 @@ msgstr "Partajează fișierele ascunse"
 msgid "Share size: %1%"
 msgstr "Dimensiune: %1%"
 
-#: win32/HubFrame.cpp:60 win32/HubFrame.cpp:439 win32/PublicHubsFrame.cpp:49
-#: win32/UserInfoBase.cpp:151
+#: win32/HubFrame.cpp:60 win32/HubFrame.cpp:446 win32/PublicHubsFrame.cpp:49
+#: win32/UserInfoBase.cpp:155
 msgid "Shared"
 msgstr "Partajat"
 
@@ -4021,7 +4026,7 @@ msgstr "Ignoră fișierele de dimensiune zero"
 msgid "Slot granted"
 msgstr "Slot alocat"
 
-#: win32/SearchFrame.cpp:54 win32/UserInfoBase.cpp:164
+#: win32/SearchFrame.cpp:54 win32/UserInfoBase.cpp:168
 msgid "Slots"
 msgstr "Sloturi"
 
@@ -4068,7 +4073,7 @@ msgstr "Sursă prea lentă"
 msgid "Speak as a third person."
 msgstr ""
 
-#: win32/HubFrame.cpp:605
+#: win32/HubFrame.cpp:612
 #, boost-format
 msgid "Specified user is not online: %1%"
 msgstr ""
@@ -4086,7 +4091,7 @@ msgstr ""
 msgid "Specify a search string"
 msgstr "Specifică cuvintele de căutat"
 
-#: win32/HubFrame.cpp:457
+#: win32/HubFrame.cpp:464
 msgid "Specify a server to connect to"
 msgstr "Specifică un server pentru conectare"
 
@@ -4149,7 +4154,7 @@ msgstr "Timpul ultimei apariții"
 msgid "Status bar\tCtrl+3"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:149
+#: win32/UserInfoBase.cpp:153
 #, fuzzy, boost-format
 msgid "Status: %1%"
 msgstr "Stare"
@@ -4162,7 +4167,7 @@ msgstr ""
 msgid "Status: Away - Double-click to switch to Available"
 msgstr ""
 
-#: win32/HubFrame.cpp:759
+#: win32/HubFrame.cpp:766
 msgid "Stored password sent..."
 msgstr "Parola stocată a fost trimisă..."
 
@@ -4196,7 +4201,7 @@ msgstr "Jurnal de sistem"
 msgid "TB"
 msgstr "TiB"
 
-#: win32/UserInfoBase.cpp:143
+#: win32/UserInfoBase.cpp:147
 msgid "TLS"
 msgstr ""
 
@@ -4226,7 +4231,7 @@ msgstr ""
 msgid "Tabs"
 msgstr "Tab-uri"
 
-#: win32/HubFrame.cpp:62 win32/UserInfoBase.cpp:153 win32/UsersFrame.cpp:104
+#: win32/HubFrame.cpp:62 win32/UserInfoBase.cpp:157 win32/UsersFrame.cpp:104
 msgid "Tag"
 msgstr "Etichetă"
 
@@ -4263,7 +4268,7 @@ msgid ""
 "into view."
 msgstr ""
 
-#: win32/HubFrame.cpp:635
+#: win32/HubFrame.cpp:642
 msgid "The message cannot be delivered because the hub is offline."
 msgstr ""
 
@@ -4283,15 +4288,15 @@ msgstr ""
 msgid "The user does not support the CCPM ADC extension"
 msgstr ""
 
-#: win32/HubFrame.cpp:586
+#: win32/HubFrame.cpp:593
 msgid "This command is not yet supported on ADC hubs."
 msgstr ""
 
-#: win32/HubFrame.cpp:589
+#: win32/HubFrame.cpp:596
 msgid "This hub does not support MCTo extension."
 msgstr ""
 
-#: win32/HubFrame.cpp:1258
+#: win32/HubFrame.cpp:1265
 msgid "This hub is not a favorite hub"
 msgstr "Acest hub nu este favorit"
 
@@ -4340,19 +4345,19 @@ msgstr "Spre"
 msgid "Toggle window when selecting an active tab"
 msgstr "Comută fereastra cînd e selectat un tab activ"
 
-#: win32/HubFrame.cpp:536
+#: win32/HubFrame.cpp:543
 msgid ""
 "Toggles the displaying of favorite users joining the hub. Does not require /"
 "showjoins to be enabled."
 msgstr ""
 
-#: win32/HubFrame.cpp:534
+#: win32/HubFrame.cpp:541
 msgid ""
 "Toggles the displaying of users joining the hub. This only takes effect for "
 "freshly-arriving users."
 msgstr ""
 
-#: win32/HubFrame.cpp:538
+#: win32/HubFrame.cpp:545
 msgid "Toggles visibility of the list of users for the current hub."
 msgstr ""
 
@@ -4423,7 +4428,7 @@ msgstr "Î: %1%"
 msgid "U: %1%/s (%2%)"
 msgstr "Î: %1%/s (%2%)"
 
-#: win32/UserInfoBase.h:187
+#: win32/UserInfoBase.h:182
 msgid "Un-ignore chat"
 msgstr ""
 
@@ -4463,7 +4468,7 @@ msgstr "Fișier neterminat prea mic"
 msgid "Unknown"
 msgstr "Necunoscut"
 
-#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:457
+#: win32/HubFrame.cpp:624 win32/PrivateFrame.cpp:457
 #, boost-format
 msgid "Unknown command: %1%"
 msgstr "Comandă necunoscută: %1%"
@@ -4757,7 +4762,7 @@ msgstr ""
 msgid "You must enter a name"
 msgstr ""
 
-#: win32/HubFrame.cpp:1145
+#: win32/HubFrame.cpp:1152
 msgid "Your nick was already taken, please change to something else!"
 msgstr "Porecla dvs. e deja folosită, vă rugăm să o schimbați!"
 

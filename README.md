@@ -33,6 +33,7 @@
 * Add different icon for private message window when user is bot or hub
 * Add setting to disable creation of taskbar menu with list of open windows
 * Add status line to user information, displays supported flags - Normal, Away, Server, Fireball, TLS and NAT, NMDC only
+* Add public message menu to user list
 * Properly show away, fireball and server status on NMDC hubs
 * Save last away status on restart
 * Fix locale detection when building help files on Cygwin and Msys

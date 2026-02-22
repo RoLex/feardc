@@ -29,6 +29,7 @@ gcc_flags = {
         "-Wno-unused-parameter",
 #       "-Wno-unused-value",
 #       "-Wno-unused-but-set-variable",
+        "-Wno-old-style-definition",
         "-Wno-deprecated-declarations", # todo: remove when openssl deprecations are fixed
         "-fexceptions",
     ],

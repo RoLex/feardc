@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-21 15:38+0100\n"
+"POT-Creation-Date: 2026-02-22 18:20+0100\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: الأستاذ عوض الغامدي _ منتديات عميد التعريب <Unknown>\n"
 "Language-Team: awadh alghaamdi <awadh_al_ghaamdi@hotmail.com>\n"
@@ -200,20 +200,20 @@ msgstr "%1% متبقية"
 msgid "%1% sources added"
 msgstr ""
 
-#: win32/HubFrame.cpp:365
+#: win32/HubFrame.cpp:372
 #, boost-format
 msgid "%1% user"
 msgid_plural "%1% users"
 msgstr[0] ""
 msgstr[1] ""
 
-#: win32/HubFrame.cpp:1377 win32/TransferView.cpp:354 win32/UsersFrame.cpp:509
+#: win32/HubFrame.cpp:1384 win32/TransferView.cpp:354 win32/UsersFrame.cpp:509
 #: win32/FinishedFrameBase.h:489
 #, fuzzy, boost-format
 msgid "%1% users"
 msgstr "لا يوجد مستخدمين"
 
-#: win32/MainWindow.cpp:1219 win32/UserInfoBase.cpp:163
+#: win32/MainWindow.cpp:1219 win32/UserInfoBase.cpp:167
 #, fuzzy, boost-format
 msgid "%1%/%2%"
 msgstr "%1%/s"
@@ -232,8 +232,8 @@ msgstr "%1%/s"
 msgid "%1%/s, %2% left"
 msgstr "%1%/s, %2% متبقية"
 
-#: win32/DirectoryListingFrame.cpp:832 win32/UserInfoBase.cpp:116
-#: win32/UserInfoBase.cpp:164 win32/WinUtil.cpp:1719
+#: win32/DirectoryListingFrame.cpp:832 win32/UserInfoBase.cpp:120
+#: win32/UserInfoBase.cpp:168 win32/WinUtil.cpp:1719
 #, fuzzy, boost-format
 msgid "%1%: %2%"
 msgstr "%1%/s, %2% متبقية"
@@ -250,7 +250,7 @@ msgstr "اُضيفت"
 msgid "&Add folder"
 msgstr "&إضافة مجلد"
 
-#: win32/WinUtil.cpp:1651 win32/UserInfoBase.h:167
+#: win32/WinUtil.cpp:1651 win32/UserInfoBase.h:162
 msgid "&Browse file list"
 msgstr "ت&صفح قائمة الملفات"
 
@@ -312,7 +312,7 @@ msgstr ""
 msgid "&Description"
 msgstr "الو&صف:"
 
-#: win32/HubFrame.cpp:1405 win32/TransferView.cpp:563
+#: win32/HubFrame.cpp:1423 win32/TransferView.cpp:563
 #, fuzzy
 msgid "&Disconnect"
 msgstr "توصيل سريع"
@@ -351,7 +351,7 @@ msgstr "البحث"
 msgid "&Force attempt"
 msgstr ""
 
-#: win32/QueueFrame.cpp:1002 win32/WinUtil.cpp:1648 win32/UserInfoBase.h:166
+#: win32/QueueFrame.cpp:1002 win32/WinUtil.cpp:1648 win32/UserInfoBase.h:161
 msgid "&Get file list"
 msgstr ""
 
@@ -369,7 +369,7 @@ msgstr "&مساعدة"
 msgid "&Hide\tCtrl+1"
 msgstr "البحث"
 
-#: win32/WinUtil.cpp:1654 win32/UserInfoBase.h:168
+#: win32/WinUtil.cpp:1654 win32/UserInfoBase.h:163
 #, fuzzy
 msgid "&Match queue"
 msgstr "توافق الطابور"
@@ -424,7 +424,7 @@ msgstr "المحاور العامة"
 msgid "&Quick connect...\tCtrl+Q"
 msgstr "توصيل سريع"
 
-#: win32/HubFrame.cpp:1398 win32/MainWindow.cpp:318
+#: win32/HubFrame.cpp:1416 win32/MainWindow.cpp:318
 msgid "&Reconnect\tCtrl+R"
 msgstr ""
 
@@ -454,12 +454,12 @@ msgstr "حذف المستخدم من الطابور"
 msgid "&Search\tCtrl+S"
 msgstr "البحث"
 
-#: win32/HubFrame.cpp:1404
+#: win32/HubFrame.cpp:1422
 #, fuzzy
 msgid "&Search hub"
 msgstr "قائمة البحث"
 
-#: win32/QueueFrame.cpp:1009 win32/WinUtil.cpp:1657 win32/UserInfoBase.h:171
+#: win32/QueueFrame.cpp:1009 win32/WinUtil.cpp:1657 win32/UserInfoBase.h:166
 msgid "&Send private message"
 msgstr ""
 
@@ -513,7 +513,7 @@ msgstr ""
 msgid "(User offline)"
 msgstr "المستخدم غير موجود"
 
-#: win32/HubFrame.cpp:520 win32/HubFrame.cpp:529 win32/PrivateFrame.cpp:426
+#: win32/HubFrame.cpp:527 win32/HubFrame.cpp:536 win32/PrivateFrame.cpp:426
 #: win32/PrivateFrame.cpp:433
 #, fuzzy
 msgid "*** Keyboard commands:"
@@ -610,8 +610,8 @@ msgstr ""
 msgid "Add"
 msgstr "اُضيفت"
 
-#: win32/HubFrame.cpp:1395 win32/PublicHubsFrame.cpp:402 win32/WinUtil.cpp:1660
-#: win32/UserInfoBase.h:176
+#: win32/HubFrame.cpp:1413 win32/PublicHubsFrame.cpp:402 win32/WinUtil.cpp:1660
+#: win32/UserInfoBase.h:171
 #, fuzzy
 msgid "Add To &Favorites"
 msgstr "إضافة للمف&ضلة"
@@ -647,7 +647,7 @@ msgid ""
 "to ignore chat messages from the current user."
 msgstr ""
 
-#: win32/HubFrame.cpp:555
+#: win32/HubFrame.cpp:562
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to ignore chat messages from the specified user."
@@ -659,13 +659,13 @@ msgid ""
 "to stop ignoring chat messages from the current user."
 msgstr ""
 
-#: win32/HubFrame.cpp:557
+#: win32/HubFrame.cpp:564
 msgid ""
 "Adds a user matching definition (or modifies an existing one, if possible) "
 "to stop ignoring chat messages from the specified user."
 msgstr ""
 
-#: win32/HubFrame.cpp:544
+#: win32/HubFrame.cpp:551
 msgid ""
 "Adds the current hub (along with your nickname and password, if used) to the "
 "list of Favorite Hubs."
@@ -679,7 +679,7 @@ msgstr ""
 msgid "Adds the current user's list to the Download Queue."
 msgstr ""
 
-#: win32/HubFrame.cpp:553
+#: win32/HubFrame.cpp:560
 msgid "Adds the user's list to the Download Queue."
 msgstr ""
 
@@ -850,12 +850,12 @@ msgstr "(فتح وصلة جديدة إذا كانت السرعة منخفضة (�
 msgid "Automatically search for alternative download locations"
 msgstr "عمل البحث لمصادر تحميل أخرى أوتوماتيكيا"
 
-#: win32/HubFrame.cpp:1218
+#: win32/HubFrame.cpp:1225
 #, fuzzy, boost-format
 msgid "Average: %1%"
 msgstr "المستحدمين"
 
-#: win32/UserInfoBase.cpp:134 win32/UsersFrame.cpp:81
+#: win32/UserInfoBase.cpp:138 win32/UsersFrame.cpp:81
 msgid "Away"
 msgstr ""
 
@@ -925,7 +925,7 @@ msgstr "عنوان"
 msgid "Blog"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:122 win32/UsersFrame.cpp:330 win32/UsersFrame.cpp:331
+#: win32/UserInfoBase.cpp:126 win32/UsersFrame.cpp:330 win32/UsersFrame.cpp:331
 msgid "Bot"
 msgstr ""
 
@@ -945,7 +945,7 @@ msgstr ""
 msgid "Button style"
 msgstr ""
 
-#: win32/HubFrame.cpp:67 win32/SearchFrame.cpp:60 win32/UserInfoBase.cpp:167
+#: win32/HubFrame.cpp:67 win32/SearchFrame.cpp:60 win32/UserInfoBase.cpp:171
 #: win32/UserMatchDlg.cpp:222 win32/UserMatchPage.cpp:215
 #: win32/UsersFrame.cpp:61 win32/UsersFrame.cpp:100
 msgid "CID"
@@ -1162,11 +1162,11 @@ msgstr "تأكيد إزالة المحور المفضل"
 msgid "Connect to all hubs in this group"
 msgstr ""
 
-#: win32/UserInfoBase.h:179
+#: win32/UserInfoBase.h:174
 msgid "Connect to hub"
 msgstr ""
 
-#: win32/HubFrame.cpp:744 win32/WinUtil.cpp:1808
+#: win32/HubFrame.cpp:751 win32/WinUtil.cpp:1808
 msgid "Connected"
 msgstr "موصل حاليا"
 
@@ -1175,12 +1175,12 @@ msgstr "موصل حاليا"
 msgid "Connecting"
 msgstr "الوصلة"
 
-#: win32/HubFrame.cpp:1019
+#: win32/HubFrame.cpp:1026
 #, fuzzy, boost-format
 msgid "Connecting to %1%..."
 msgstr "الوصلة"
 
-#: win32/HubFrame.cpp:63 win32/SearchFrame.cpp:55 win32/UserInfoBase.cpp:154
+#: win32/HubFrame.cpp:63 win32/SearchFrame.cpp:55 win32/UserInfoBase.cpp:158
 #: win32/UsersFrame.cpp:102
 msgid "Connection"
 msgstr "الوصلة"
@@ -1210,12 +1210,12 @@ msgstr ""
 msgid "Copy &Value"
 msgstr ""
 
-#: win32/HubFrame.cpp:1399
+#: win32/HubFrame.cpp:1417
 #, fuzzy
 msgid "Copy &address to clipboard"
 msgstr "نسخ الوصلة للحافظة"
 
-#: win32/HubFrame.cpp:1402
+#: win32/HubFrame.cpp:1420
 #, fuzzy
 msgid "Copy address with &keyprint to clipboard"
 msgstr "نسخ الوصلة للحافظة"
@@ -1224,13 +1224,13 @@ msgstr "نسخ الوصلة للحافظة"
 msgid "Copy magnet link to clipboard"
 msgstr "نسخ الوصلة للحافظة"
 
-#: win32/UserInfoBase.h:190
+#: win32/UserInfoBase.h:185
 #, fuzzy
 msgid "Copy user information"
 msgstr "المعلومات الخاصة"
 
 #: win32/HubFrame.cpp:65 win32/PublicHubsFrame.cpp:48 win32/TransferView.cpp:58
-#: win32/UserInfoBase.cpp:156
+#: win32/UserInfoBase.cpp:160
 msgid "Country"
 msgstr "دولة"
 
@@ -1257,7 +1257,7 @@ msgstr "المذكرة"
 msgid "Current communication channel - click to change"
 msgstr ""
 
-#: win32/HubFrame.cpp:515
+#: win32/HubFrame.cpp:522
 #, boost-format
 msgid "Current hub topic: %1%"
 msgstr ""
@@ -1327,8 +1327,8 @@ msgstr "رسالة الذهاب الإفتراضية"
 
 #: win32/FavHubGroupsDlg.cpp:140 win32/FavHubProperties.cpp:96
 #: win32/FavHubProperties.cpp:132 win32/FavHubsFrame.cpp:50
-#: win32/GeneralPage.cpp:59 win32/HubFrame.cpp:61 win32/HubFrame.cpp:441
-#: win32/PublicHubsFrame.cpp:45 win32/UserInfoBase.cpp:152
+#: win32/GeneralPage.cpp:59 win32/HubFrame.cpp:61 win32/HubFrame.cpp:448
+#: win32/PublicHubsFrame.cpp:45 win32/UserInfoBase.cpp:156
 #: win32/UsersFrame.cpp:60 win32/UsersFrame.cpp:82 win32/UsersFrame.cpp:475
 msgid "Description"
 msgstr "المواصفات"
@@ -1433,7 +1433,7 @@ msgid ""
 "can specify \"brief\" to have a brief listing."
 msgstr ""
 
-#: win32/HubFrame.cpp:541
+#: win32/HubFrame.cpp:548
 msgid ""
 "Displays the connectivity status information, auto detected or manually "
 "chosen connection mode, IP and ports that FearDC is currently using for "
@@ -1484,7 +1484,7 @@ msgstr "لا تحمل ملفات مساهم بها حاليا"
 msgid "Don't download files already in the queue"
 msgstr "لا تحمل ملفات مساهم بها حاليا"
 
-#: win32/HubFrame.cpp:621
+#: win32/HubFrame.cpp:628
 msgid "Don't remove /password before your password"
 msgstr "لا تمسح / كلمة السر قبل كلمة السر"
 
@@ -1646,7 +1646,7 @@ msgstr ""
 msgid "E-Mail"
 msgstr "الإيميل"
 
-#: win32/UserInfoBase.cpp:157
+#: win32/UserInfoBase.cpp:161
 #, fuzzy
 msgid "E-mail"
 msgstr "الإيميل"
@@ -1661,7 +1661,7 @@ msgid "Elapsed"
 msgstr "الحد الأدنى للوصلات"
 
 #: win32/FavHubGroupsDlg.cpp:144 win32/FavHubProperties.cpp:137
-#: win32/GeneralPage.cpp:64 win32/HubFrame.cpp:442
+#: win32/GeneralPage.cpp:64 win32/HubFrame.cpp:449
 #, fuzzy
 msgid "Email"
 msgstr "الإيميل"
@@ -1830,7 +1830,7 @@ msgstr ""
 msgid "Extensions for the %1% search type"
 msgstr ""
 
-#: win32/HubFrame.cpp:443
+#: win32/HubFrame.cpp:450
 msgid "External / WAN IP"
 msgstr ""
 
@@ -1847,7 +1847,7 @@ msgstr ""
 msgid "F&ilter"
 msgstr "ملف"
 
-#: win32/HubFrame.cpp:814
+#: win32/HubFrame.cpp:821
 msgid ""
 "Failed to create a new PM window; check the \"Max PM windows\" value in "
 "Settings > Experts only"
@@ -1870,7 +1870,7 @@ msgstr "المحاور المفضلة"
 msgid "Favorite download directories"
 msgstr "التحميلات المفضلة للمجلادت"
 
-#: win32/HubFrame.cpp:1246
+#: win32/HubFrame.cpp:1253
 msgid "Favorite hub added"
 msgstr "المحور المفضل تمت إضافته"
 
@@ -1879,7 +1879,7 @@ msgstr "المحور المفضل تمت إضافته"
 msgid "Favorite hub groups"
 msgstr "المحور المفضل تمت إضافته"
 
-#: win32/HubFrame.cpp:1256
+#: win32/HubFrame.cpp:1263
 #, fuzzy
 msgid "Favorite hub removed"
 msgstr "المحور المفضل تمت إضافته"
@@ -2034,7 +2034,7 @@ msgstr "ملف"
 msgid "Filter spam messages"
 msgstr "للمسجات للحالة Log عمل"
 
-#: win32/HubFrame.cpp:224 win32/UsersFrame.cpp:180
+#: win32/HubFrame.cpp:231 win32/UsersFrame.cpp:180
 #, fuzzy
 msgid "Filter users"
 msgstr "المستخدمين المفضلين"
@@ -2090,7 +2090,7 @@ msgstr "رفع الملفات المنتهية"
 msgid "Fire a balloon popup example"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:140
+#: win32/UserInfoBase.cpp:144
 msgid "Fireball"
 msgstr ""
 
@@ -2156,7 +2156,7 @@ msgstr "GB"
 msgid "Global application style"
 msgstr "تأكيد الخروج من البرنامج"
 
-#: win32/WinUtil.cpp:1663 win32/UserInfoBase.h:177
+#: win32/WinUtil.cpp:1663 win32/UserInfoBase.h:172
 msgid "Grant &extra slot"
 msgstr ""
 
@@ -2216,7 +2216,7 @@ msgstr ""
 msgid "Help center"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:120
+#: win32/UserInfoBase.cpp:124
 #, fuzzy
 msgid "Hidden user"
 msgstr "Passive المستخد في وضعية"
@@ -2271,7 +2271,7 @@ msgstr "DC++ موقع"
 msgid "Hub"
 msgstr "المحور"
 
-#: win32/HubFrame.cpp:437
+#: win32/HubFrame.cpp:444
 msgid "Hub IP & port"
 msgstr ""
 
@@ -2279,7 +2279,7 @@ msgstr ""
 msgid "Hub Menu"
 msgstr "قائمة المحاور"
 
-#: win32/HubFrame.cpp:436 win32/UserMatchDlg.cpp:222
+#: win32/HubFrame.cpp:443 win32/UserMatchDlg.cpp:222
 #: win32/UserMatchPage.cpp:215
 #, fuzzy
 msgid "Hub address"
@@ -2297,7 +2297,7 @@ msgstr ""
 msgid "Hub address or Magnet link"
 msgstr ""
 
-#: win32/FavHubsFrame.cpp:232 win32/HubFrame.cpp:1248
+#: win32/FavHubsFrame.cpp:232 win32/HubFrame.cpp:1255
 msgid "Hub already exists as a favorite"
 msgstr ""
 
@@ -2306,12 +2306,12 @@ msgstr ""
 msgid "Hub list downloaded (%1%)"
 msgstr "الملفات المحملة المنتهية"
 
-#: win32/HubFrame.cpp:635
+#: win32/HubFrame.cpp:642
 #, fuzzy
 msgid "Hub offline"
 msgstr "المستخدم غير موجود"
 
-#: win32/UserInfoBase.cpp:124
+#: win32/UserInfoBase.cpp:128
 msgid "Hub operator"
 msgstr ""
 
@@ -2351,7 +2351,7 @@ msgid "Hubs with secure transfers"
 msgstr ""
 
 #: win32/MainWindow.cpp:1215 win32/PublicHubsFrame.cpp:260
-#: win32/UserInfoBase.cpp:106
+#: win32/UserInfoBase.cpp:110
 #, fuzzy, boost-format
 msgid "Hubs: %1%"
 msgstr "محاور"
@@ -2362,7 +2362,7 @@ msgid "Hubs: %1% / %2%"
 msgstr "محاور"
 
 #: win32/HubFrame.cpp:64 win32/ProxyPage.cpp:79 win32/SearchFrame.cpp:58
-#: win32/TransferView.cpp:57 win32/UserInfoBase.cpp:155
+#: win32/TransferView.cpp:57 win32/UserInfoBase.cpp:159
 #: win32/UserMatchDlg.cpp:222 win32/UserMatchPage.cpp:215
 msgid "IP"
 msgstr "IP"
@@ -2418,7 +2418,7 @@ msgid ""
 "hub frame."
 msgstr ""
 
-#: win32/UserInfoBase.h:185
+#: win32/UserInfoBase.h:180
 #, fuzzy
 msgid "Ignore chat"
 msgstr "\"تغاضى عن بحث الـ \"تي تي إتش"
@@ -2438,12 +2438,12 @@ msgstr "فتح السائل الخاصة في النافذة الخاص بها"
 msgid "Ignore private messages from the hub"
 msgstr "فتح السائل الخاصة في النافذة الخاص بها"
 
-#: win32/HubFrame.cpp:809
+#: win32/HubFrame.cpp:816
 #, boost-format
 msgid "Ignored message: %1%"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:126
+#: win32/UserInfoBase.cpp:130
 #, fuzzy
 msgid "In away mode"
 msgstr "نظام الذهاب لا يعمل"
@@ -2508,28 +2508,28 @@ msgstr ""
 msgid "Items: %1%"
 msgstr ""
 
-#: win32/HubFrame.cpp:475
+#: win32/HubFrame.cpp:482
 msgid "Join/part of favorite users showing off"
 msgstr "وصل / القطع للمستخدمين المفضلين لا يعمل"
 
-#: win32/HubFrame.cpp:473
+#: win32/HubFrame.cpp:480
 msgid "Join/part of favorite users showing on"
 msgstr "وصل / القطع للمستخدمين المفضلين يعمل"
 
-#: win32/HubFrame.cpp:468
+#: win32/HubFrame.cpp:475
 msgid "Join/part showing off"
 msgstr "وصل/القطع لا يعمل"
 
-#: win32/HubFrame.cpp:466
+#: win32/HubFrame.cpp:473
 msgid "Join/part showing on"
 msgstr "وصل/القطع يعمل"
 
-#: win32/HubFrame.cpp:532
+#: win32/HubFrame.cpp:539
 #, fuzzy
 msgid "Joins <hub-ip>. See also Open new window when using /join."
 msgstr "فتح نافذة جديدة عند استخدام /اتصال"
 
-#: win32/HubFrame.cpp:1045
+#: win32/HubFrame.cpp:1052
 #, boost-format
 msgid "Joins: %1%"
 msgstr ""
@@ -2700,7 +2700,7 @@ msgstr "Logging"
 msgid "Login"
 msgstr "أسم المستخدم"
 
-#: win32/HubFrame.cpp:1151
+#: win32/HubFrame.cpp:1158
 msgid "Login timeout, disconnecting and waiting for next attempt..."
 msgstr ""
 
@@ -2925,7 +2925,7 @@ msgstr "الحد الأدنى للوصلات"
 msgid "Minimize to tray"
 msgstr "إرسال إلى التراي"
 
-#: win32/HubFrame.cpp:595 win32/HubFrame.cpp:602
+#: win32/HubFrame.cpp:602 win32/HubFrame.cpp:609
 msgid "Missing command parameters: /mcpm <user> <message>"
 msgstr ""
 
@@ -2950,7 +2950,7 @@ msgstr ""
 msgid "Move &Up"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:146
+#: win32/UserInfoBase.cpp:150
 msgid "NAT"
 msgstr ""
 
@@ -3018,7 +3018,7 @@ msgstr "...أسم وهمي يطابق أسما قديما ، جاري الإلغ
 
 #: win32/FavHubGroupsDlg.cpp:135 win32/FavHubProperties.cpp:119
 #: win32/FavHubsFrame.cpp:51 win32/GeneralPage.cpp:53 win32/HubFrame.cpp:59
-#: win32/HubFrame.cpp:440 win32/UserMatchDlg.cpp:222
+#: win32/HubFrame.cpp:447 win32/UserMatchDlg.cpp:222
 #: win32/UserMatchPage.cpp:215 win32/UsersFrame.cpp:54 win32/UsersFrame.cpp:80
 #: win32/FinishedFrameBase.h:741
 msgid "Nick"
@@ -3102,7 +3102,7 @@ msgid "Noon"
 msgstr ""
 
 #: win32/QueueFrame.cpp:406 win32/QueueFrame.cpp:995 win32/SearchFrame.cpp:190
-#: win32/TransferView.cpp:551 win32/UserInfoBase.cpp:131
+#: win32/TransferView.cpp:551 win32/UserInfoBase.cpp:135
 msgid "Normal"
 msgstr "عادي"
 
@@ -3152,7 +3152,7 @@ msgstr "غير متصل"
 msgid "Online"
 msgstr "متصل"
 
-#: win32/HubFrame.cpp:438
+#: win32/HubFrame.cpp:445
 #, fuzzy
 msgid "Online users"
 msgstr "المستخدمين المفضلين"
@@ -3232,7 +3232,7 @@ msgid ""
 "automatically send the search."
 msgstr ""
 
-#: win32/HubFrame.cpp:549
+#: win32/HubFrame.cpp:556
 msgid ""
 "Opens a private message window to the user, and optionally sends the "
 "message, if one was specified."
@@ -3281,7 +3281,7 @@ msgstr ""
 msgid "Partial match"
 msgstr ""
 
-#: win32/HubFrame.cpp:1074
+#: win32/HubFrame.cpp:1081
 #, boost-format
 msgid "Parts: %1%"
 msgstr ""
@@ -3363,7 +3363,7 @@ msgstr ""
 msgid "Please enter a nickname in the settings dialog!"
 msgstr "لو سمحت أضف اسما في نافذة خواص البرنامج"
 
-#: win32/HubFrame.cpp:763
+#: win32/HubFrame.cpp:770
 msgid "Please enter a password"
 msgstr "لو سمحت أدخل باسوورد"
 
@@ -3409,7 +3409,7 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: win32/HubFrame.cpp:559
+#: win32/HubFrame.cpp:566
 msgid ""
 "Prints the current hub's topic. Useful if you want to copy the topic or it "
 "contains a link you'd like to easily open."
@@ -3423,12 +3423,12 @@ msgstr "الأولوية"
 msgid "Private key file"
 msgstr ""
 
-#: win32/HubFrame.cpp:1173
+#: win32/HubFrame.cpp:1180
 #, boost-format
 msgid "Private main chat message from %1%: %2%"
 msgstr ""
 
-#: win32/HubFrame.cpp:609
+#: win32/HubFrame.cpp:616
 #, boost-format
 msgid "Private main chat message was sent to %1%: %2%"
 msgstr ""
@@ -3437,7 +3437,7 @@ msgstr ""
 msgid "Private message"
 msgstr ""
 
-#: win32/HubFrame.cpp:818
+#: win32/HubFrame.cpp:825
 #, boost-format
 msgid "Private message from %1%: %2%"
 msgstr ""
@@ -3539,12 +3539,12 @@ msgstr ""
 msgid "Ready to search..."
 msgstr "... جاهز لعملية البحث"
 
-#: win32/HubFrame.cpp:116
+#: win32/HubFrame.cpp:123
 #, fuzzy, boost-format
 msgid "Really close %1% hub windows?"
 msgstr "حقا تريد الإزالة ؟"
 
-#: win32/HubFrame.cpp:298
+#: win32/HubFrame.cpp:305
 #, fuzzy
 msgid "Really close?"
 msgstr "حقا تريد الإزالة ؟"
@@ -3567,7 +3567,7 @@ msgid ""
 "rebuild is finished."
 msgstr ""
 
-#: win32/HubFrame.cpp:1091
+#: win32/HubFrame.cpp:1098
 #, boost-format
 msgid "Received a redirect request to %1%, click here to follow it"
 msgstr ""
@@ -3599,11 +3599,11 @@ msgstr "موصل حاليا"
 msgid "Reconnect disconnected hubs"
 msgstr "فصل و غلق"
 
-#: win32/HubFrame.cpp:1083 win32/HubFrame.cpp:1606
+#: win32/HubFrame.cpp:1090 win32/HubFrame.cpp:1624
 msgid "Redirect request received to a hub that's already connected"
 msgstr "عملية التحويل تم استلامها من المحور المتصل به حاليا"
 
-#: win32/HubFrame.cpp:1601
+#: win32/HubFrame.cpp:1619
 msgid "Redirect request to an empty hub address"
 msgstr ""
 
@@ -3676,11 +3676,11 @@ msgstr ""
 msgid "Remove source"
 msgstr "حذف المصدر"
 
-#: win32/QueueFrame.cpp:1034 win32/WinUtil.cpp:1666 win32/UserInfoBase.h:181
+#: win32/QueueFrame.cpp:1034 win32/WinUtil.cpp:1666 win32/UserInfoBase.h:176
 msgid "Remove user from queue"
 msgstr "حذف المستخدم من الطابور"
 
-#: win32/HubFrame.cpp:547
+#: win32/HubFrame.cpp:554
 msgid "Removes the current hub from the list of Favorite Hubs."
 msgstr ""
 
@@ -3792,7 +3792,7 @@ msgstr "البحث عن"
 msgid "Search port (v6)"
 msgstr "البحث عن"
 
-#: win32/HubFrame.cpp:1157
+#: win32/HubFrame.cpp:1164
 #, boost-format
 msgid "Search spam detected from %1%"
 msgstr ""
@@ -3869,11 +3869,15 @@ msgstr ""
 msgid "Send once per nick"
 msgstr "ارسل مرة لكل اسم مستخدم"
 
+#: win32/UserInfoBase.h:167
+msgid "Send public message"
+msgstr ""
+
 #: win32/AdvancedPage.cpp:45
 msgid "Send unknown /commands to the hub"
 msgstr "ارسل أوامر غير معروفة للمحور"
 
-#: win32/HubFrame.cpp:551
+#: win32/HubFrame.cpp:558
 msgid ""
 "Sends a private main chat message to the user if supported by hub, NMDC only."
 msgstr ""
@@ -3888,7 +3892,7 @@ msgstr ""
 msgid "Separator"
 msgstr "الفاصل"
 
-#: win32/FavHubsFrame.cpp:53 win32/UserInfoBase.cpp:137
+#: win32/FavHubsFrame.cpp:53 win32/UserInfoBase.cpp:141
 msgid "Server"
 msgstr "سيرفر"
 
@@ -3971,8 +3975,8 @@ msgstr "الملفات المختفية"
 msgid "Share size: %1%"
 msgstr "الحجم"
 
-#: win32/HubFrame.cpp:60 win32/HubFrame.cpp:439 win32/PublicHubsFrame.cpp:49
-#: win32/UserInfoBase.cpp:151
+#: win32/HubFrame.cpp:60 win32/HubFrame.cpp:446 win32/PublicHubsFrame.cpp:49
+#: win32/UserInfoBase.cpp:155
 msgid "Shared"
 msgstr "الحجم المساهم به"
 
@@ -4064,7 +4068,7 @@ msgstr "التغاضي عن الملفات الصفرية"
 msgid "Slot granted"
 msgstr "تم أخذ الوصلة"
 
-#: win32/SearchFrame.cpp:54 win32/UserInfoBase.cpp:164
+#: win32/SearchFrame.cpp:54 win32/UserInfoBase.cpp:168
 msgid "Slots"
 msgstr "الوصلات"
 
@@ -4112,7 +4116,7 @@ msgstr ""
 msgid "Speak as a third person."
 msgstr ""
 
-#: win32/HubFrame.cpp:605
+#: win32/HubFrame.cpp:612
 #, boost-format
 msgid "Specified user is not online: %1%"
 msgstr ""
@@ -4130,7 +4134,7 @@ msgstr ""
 msgid "Specify a search string"
 msgstr "حدد كلمة البحث"
 
-#: win32/HubFrame.cpp:457
+#: win32/HubFrame.cpp:464
 msgid "Specify a server to connect to"
 msgstr "حدد سيرفرا لتتوصل إليه"
 
@@ -4195,7 +4199,7 @@ msgstr "آخر وقت وجد فيه"
 msgid "Status bar\tCtrl+3"
 msgstr ""
 
-#: win32/UserInfoBase.cpp:149
+#: win32/UserInfoBase.cpp:153
 #, fuzzy, boost-format
 msgid "Status: %1%"
 msgstr "الحالة"
@@ -4208,7 +4212,7 @@ msgstr ""
 msgid "Status: Away - Double-click to switch to Available"
 msgstr ""
 
-#: win32/HubFrame.cpp:759
+#: win32/HubFrame.cpp:766
 msgid "Stored password sent..."
 msgstr "...كلمة السر المخزنة تم ارسالها"
 
@@ -4242,7 +4246,7 @@ msgstr "المذكرة"
 msgid "TB"
 msgstr "B"
 
-#: win32/UserInfoBase.cpp:143
+#: win32/UserInfoBase.cpp:147
 msgid "TLS"
 msgstr ""
 
@@ -4271,7 +4275,7 @@ msgstr ""
 msgid "Tabs"
 msgstr ""
 
-#: win32/HubFrame.cpp:62 win32/UserInfoBase.cpp:153 win32/UsersFrame.cpp:104
+#: win32/HubFrame.cpp:62 win32/UserInfoBase.cpp:157 win32/UsersFrame.cpp:104
 msgid "Tag"
 msgstr "بطاقة"
 
@@ -4308,7 +4312,7 @@ msgid ""
 "into view."
 msgstr ""
 
-#: win32/HubFrame.cpp:635
+#: win32/HubFrame.cpp:642
 msgid "The message cannot be delivered because the hub is offline."
 msgstr ""
 
@@ -4328,15 +4332,15 @@ msgstr ""
 msgid "The user does not support the CCPM ADC extension"
 msgstr ""
 
-#: win32/HubFrame.cpp:586
+#: win32/HubFrame.cpp:593
 msgid "This command is not yet supported on ADC hubs."
 msgstr ""
 
-#: win32/HubFrame.cpp:589
+#: win32/HubFrame.cpp:596
 msgid "This hub does not support MCTo extension."
 msgstr ""
 
-#: win32/HubFrame.cpp:1258
+#: win32/HubFrame.cpp:1265
 msgid "This hub is not a favorite hub"
 msgstr ""
 
@@ -4385,19 +4389,19 @@ msgstr ""
 msgid "Toggle window when selecting an active tab"
 msgstr "أظهر النافذة عندما تختار تاب فعالة"
 
-#: win32/HubFrame.cpp:536
+#: win32/HubFrame.cpp:543
 msgid ""
 "Toggles the displaying of favorite users joining the hub. Does not require /"
 "showjoins to be enabled."
 msgstr ""
 
-#: win32/HubFrame.cpp:534
+#: win32/HubFrame.cpp:541
 msgid ""
 "Toggles the displaying of users joining the hub. This only takes effect for "
 "freshly-arriving users."
 msgstr ""
 
-#: win32/HubFrame.cpp:538
+#: win32/HubFrame.cpp:545
 msgid "Toggles visibility of the list of users for the current hub."
 msgstr ""
 
@@ -4465,7 +4469,7 @@ msgstr ""
 msgid "U: %1%/s (%2%)"
 msgstr ""
 
-#: win32/UserInfoBase.h:187
+#: win32/UserInfoBase.h:182
 msgid "Un-ignore chat"
 msgstr ""
 
@@ -4502,7 +4506,7 @@ msgstr ""
 msgid "Unknown"
 msgstr "غير معروف"
 
-#: win32/HubFrame.cpp:617 win32/PrivateFrame.cpp:457
+#: win32/HubFrame.cpp:624 win32/PrivateFrame.cpp:457
 #, boost-format
 msgid "Unknown command: %1%"
 msgstr ""
@@ -4795,7 +4799,7 @@ msgstr ""
 msgid "You must enter a name"
 msgstr ""
 
-#: win32/HubFrame.cpp:1145
+#: win32/HubFrame.cpp:1152
 msgid "Your nick was already taken, please change to something else!"
 msgstr "!الإسم المستعار مأخوذ حاليا ، قم بتغييره لأسم آخر"
 
