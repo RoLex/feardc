@@ -161,13 +161,6 @@ private:
 
 			nicks += ui->getIdentity().getNick();
 		}
-
-		void operator()(UserMap::const_reference ui) {
-			if (nicks.size())
-				nicks += ", ";
-
-			nicks += ui.second->getIdentity().getNick();
-		}
 	};
 
 	SplitterContainerPtr paned;

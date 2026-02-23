@@ -18,7 +18,18 @@ from build_util import Dev, gen_po_name, set_lang_name
 #   -Wno-unknown-pragmas: htmlhelp.h emits these.
 #   -Wno-unused-[parameter / value]: We have a ton of these; maybe one day...
 #   -Wno-unused-but-set-variable: dwarf/dwarf_arange.c:113:13
-gcc_flags = {
+
+# CFLAGS - c only, yes, we do include pure c libs
+
+gcc_cflags = {
+    "common": [
+        "-Wno-old-style-definition"
+    ]
+}
+
+# CCFLAGS - c and c++
+
+gcc_ccflags = {
     "common": [
         #"-g",
         "-gdwarf-4",
@@ -29,7 +40,6 @@ gcc_flags = {
         "-Wno-unused-parameter",
 #       "-Wno-unused-value",
 #       "-Wno-unused-but-set-variable",
-        "-Wno-old-style-definition",
         "-Wno-deprecated-declarations", # todo: remove when openssl deprecations are fixed
         "-fexceptions",
     ],
@@ -39,7 +49,9 @@ gcc_flags = {
     ],
 }
 
-gcc_xxflags = {
+# CXXFLAGS - c++ only
+
+gcc_cxxflags = {
     "common": [
         "-std=gnu++20",
         "-Wno-overloaded-virtual",
@@ -340,16 +352,18 @@ if "mingw" in env["TOOLS"]:
     env.Append(LIBPATH=[mingw_lib])
 
 if "msvc" in env["TOOLS"]:
-    flags = msvc_flags
-    xxflags = msvc_xxflags
+    c_flags = {"common": []} # todo: c only for msvc
+    cc_flags = msvc_flags
+    cxx_flags = msvc_xxflags
     link_flags = msvc_link_flags
     defs = msvc_defs
 
     env.Append(LIBS=["User32", "shell32", "Advapi32"])
 
 else:
-    flags = gcc_flags
-    xxflags = gcc_xxflags
+    c_flags = gcc_cflags
+    cc_flags = gcc_ccflags
+    cxx_flags = gcc_cxxflags
     link_flags = gcc_link_flags
     defs = gcc_defs
 
@@ -358,11 +372,13 @@ else:
 env.Append(CPPDEFINES=defs[env["mode"]])
 env.Append(CPPDEFINES=defs["common"])
 
-env.Append(CCFLAGS=flags[env["mode"]])
-env.Append(CCFLAGS=flags["common"])
+env.Append(CFLAGS=c_flags["common"])
 
-env.Append(CXXFLAGS=xxflags[env["mode"]])
-env.Append(CXXFLAGS=xxflags["common"])
+env.Append(CCFLAGS=cc_flags[env["mode"]])
+env.Append(CCFLAGS=cc_flags["common"])
+
+env.Append(CXXFLAGS=cxx_flags[env["mode"]])
+env.Append(CXXFLAGS=cxx_flags["common"])
 
 env.Append(LINKFLAGS=link_flags[env["mode"]])
 env.Append(LINKFLAGS=link_flags["common"])

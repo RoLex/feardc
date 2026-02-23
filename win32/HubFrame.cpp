@@ -1401,11 +1401,11 @@ void HubFrame::handlePublicMessage() {
 	if (!selCount)
 		return;
 
-	string nicks = users->forEachSelectedT(FillNicks()).nicks;
-	nicks = Text::fromT(message->getText()) + nicks + ": ";
-	message->setText(Text::toT(nicks));
+	string line = Text::fromT(message->getText());
+	line += users->forEachSelectedT(FillNicks()).nicks + ": ";
+	message->setText(Text::toT(line));
 	message->setFocus();
-	message->setSelection(nicks.size(), nicks.size());
+	message->setSelection(line.size(), line.size());
 }
 
 void HubFrame::tabMenuImpl(dwt::Menu* menu) {
