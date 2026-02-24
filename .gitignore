@@ -1,0 +1,11 @@
+/_todo/
+/build/
+/dcpp/version-rev-id.inc
+/help/changelog.html
+/help/compile.html
+/help/cshelp.h
+/mingw/include/_*.h
+/res/_*.ico
+/test/data/out/
+__pycache__
+.sconsign.dblite
