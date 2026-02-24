@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2026 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -128,6 +128,7 @@ public:
 	QueueItem::Priority hasDownload(const UserPtr& aUser) noexcept;
 
 	int countOnlineSources(const string& aTarget);
+	bool isSameSource(QueueItem*, const HintedUser&) noexcept;
 
 	void loadQueue(function<void (float)> progressF) noexcept;
 	void saveQueue(bool force = false) noexcept;

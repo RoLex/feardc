@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2026 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1331,6 +1331,56 @@ int QueueManager::countOnlineSources(const string& aTarget) {
 	return onlineSources;
 }
 
+/*
+	problem:
+		we download same file from same user on different hubs
+		source user contains same data except hub url and cid
+	deeper problem:
+		there are many clones with different suffixes in our network
+		one solution is to partially compare short nick with long one
+	solution:
+		compare ip and nick to avoid adding same user more than once
+	better solution:
+		erase source hub url, cid and possibly nick from user poiter
+		in this case we need to store two source objects and check them
+*/
+
+bool QueueManager::isSameSource(QueueItem* qItem, const HintedUser& pUser) noexcept { // sr->getIP()
+	if (!SETTING(NO_SAME_USER_MATCH))
+		return false;
+
+	Lock l(cs);
+	OnlineUser* newUser = ClientManager::getInstance()->findOnlineUser(pUser);
+
+	if (!newUser) // offline result user
+		return true;
+
+	const auto& newIdent = newUser->getIdentity();
+	OnlineUser* oldUser = NULL;
+	HintedUserList hintList;
+	qItem->getOnlineUsers(hintList);
+
+	for (auto& hintUser: hintList) {
+		oldUser = ClientManager::getInstance()->findOnlineUser(hintUser);
+
+		if (oldUser) {
+			if ((oldUser->getIdentity().getIp() == newIdent.getIp()) && (oldUser->getIdentity().getNick() == newIdent.getNick())) {
+				LogManager::getInstance()->message(
+					str(F_("Skipping same source: %1% %2% %3%/%4%")
+						% Util::addBrackets(newIdent.getIp())
+						% Util::addBrackets(newIdent.getNick())
+						% Util::addBrackets(newUser->getClient().getHubUrl())
+						% Util::addBrackets(oldUser->getClient().getHubUrl()))
+				);
+
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
 void QueueManager::saveQueue(bool force) noexcept {
 	if(!dirty && !force)
 		return;
@@ -1577,7 +1627,7 @@ void QueueManager::on(SearchManagerListener::SR, const SearchResultPtr& sr) noex
 
 		for(auto qi: matches) {
 			// Size compare to avoid popular spoof
-			if(qi->getSize() == sr->getSize() && !qi->isSource(sr->getUser()) && !qi->isBadSource(sr->getUser())) {
+			if (qi->getSize() == sr->getSize() && !qi->isSource(sr->getUser()) && !qi->isBadSource(sr->getUser()) && !isSameSource(qi, sr->getUser())) {
 				try {
 					if(!SETTING(AUTO_SEARCH_AUTO_MATCH))
 						wantConnection = addSource(qi, sr->getUser(), 0);

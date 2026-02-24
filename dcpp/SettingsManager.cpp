@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2026 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -92,7 +92,7 @@ const string SettingsManager::settingTags[] =
 	"AddFinishedInstantly", "AdlsBreakOnFirst",
 	"AllowUntrustedClients", "AllowUntrustedHubs", "AlwaysCCPM", "AlwaysTray", "AutoAway", "LastAway",
 	"AutoDetectIncomingConnection", "AutoFollow", "AutoKick", "AutoKickNoFavs", "AutoSearch",
-	"AutoSearchAutoMatch", "AutoDropAll", "AutoDropDisconnect", "AutoDropFilelists",
+	"AutoSearchAutoMatch", "NoSameUserMatch", "AutoDropAll", "AutoDropDisconnect", "AutoDropFilelists",
 	"AwayCompLock", "AwayTimeStamp", "BoldFinishedDownloads", "BoldFinishedUploads", "BoldFL",
 	"BoldHub", "BoldPm", "BoldQueue", "BoldSearch", "BoldSystemLog", "ClearSearch",
 	"ClickableChatLinks",
@@ -253,6 +253,7 @@ SettingsManager::SettingsManager() {
 	setDefault(ADLS_BREAK_ON_FIRST, false);
 	setDefault(HUB_USER_COMMANDS, true);
 	setDefault(AUTO_SEARCH_AUTO_MATCH, true);
+	setDefault(NO_SAME_USER_MATCH, false);
 	setDefault(LOG_FILELIST_TRANSFERS, false);
 	setDefault(LOG_SYSTEM, false);
 	setDefault(SEND_UNKNOWN_COMMANDS, true);

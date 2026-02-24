@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2026 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,6 +37,7 @@ PropPage::ListItem QueuePage::optionItems[] = {
 	{ SettingsManager::AUTODROP_DISCONNECT, N_("Don't remove the source when autodropping, only disconnect"), IDH_SETTINGS_QUEUE_AUTODROP_DISCONNECT },
 	{ SettingsManager::AUTO_SEARCH, N_("Automatically search for alternative download locations"), IDH_SETTINGS_QUEUE_AUTO_SEARCH },
 	{ SettingsManager::AUTO_SEARCH_AUTO_MATCH, N_("Automatically match queue for search hits"), IDH_SETTINGS_QUEUE_AUTO_SEARCH_AUTO_MATCH },
+	{ SettingsManager::NO_SAME_USER_MATCH, N_("Don't match same user on different hubs"), IDH_SETTINGS_QUEUE_NO_SAME_USER_MATCH },
 	{ SettingsManager::SKIP_ZERO_BYTE, N_("Skip zero-byte files"), IDH_SETTINGS_QUEUE_SKIP_ZERO_BYTE },
 	{ SettingsManager::DONT_DL_ALREADY_SHARED, N_("Don't download files already in share"), IDH_SETTINGS_QUEUE_DONT_DL_ALREADY_SHARED },
 	{ SettingsManager::DONT_DL_ALREADY_QUEUED, N_("Don't download files already in the queue"), IDH_SETTINGS_QUEUE_DONT_DL_ALREADY_QUEUED },
