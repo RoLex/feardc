@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-24 18:19+0100\n"
+"POT-Creation-Date: 2026-02-25 13:24+0100\n"
 "PO-Revision-Date: 2013-09-15 14:06+0000\n"
 "Last-Translator: Gabriel O <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
@@ -209,11 +209,11 @@ msgstr ""
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1722
+#: dcpp/QueueManager.cpp:1730
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "nekonzistentný CRC32 (kontrola v SFV)"
 
-#: dcpp/QueueManager.cpp:1713
+#: dcpp/QueueManager.cpp:1721
 #, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "CRC32 nekonzistencia (SFV-Check): %1%"
@@ -702,6 +702,11 @@ msgstr "Odstrániť všetky podadresáre pred pridaním tohto"
 msgid "Response does not match request"
 msgstr "Odpoveď nezodpovedá požiadavke"
 
+#: dcpp/QueueManager.cpp:680
+#, fuzzy, boost-format
+msgid "Same source: %1%"
+msgstr "Duplicitný zdroj: %1%"
+
 #: dcpp/MappingManager.cpp:143 dcpp/MappingManager.cpp:203
 msgid "Search"
 msgstr "Vyhľadávanie"
@@ -732,9 +737,9 @@ msgstr "Odoslané %1%"
 msgid "Shared Files"
 msgstr "Zdieľané súbory"
 
-#: dcpp/QueueManager.cpp:1369
+#: dcpp/QueueManager.cpp:1376
 #, boost-format
-msgid "Skipping same source: %1% %2% %3%/%4%"
+msgid "Skipping same source: %1%/%2% %3%/%4%"
 msgstr ""
 
 #: dcpp/Socket.cpp:498 dcpp/Socket.cpp:502
@@ -809,7 +814,7 @@ msgid ""
 "encrypted transfers will be disabled"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1556
+#: dcpp/QueueManager.cpp:1564
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -879,12 +884,12 @@ msgstr "Neignorovať"
 msgid "Unable to create thread"
 msgstr "Nepodarilo sa vytvoriť vlákno"
 
-#: dcpp/QueueManager.cpp:936
+#: dcpp/QueueManager.cpp:940
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%) nor to rename to %4% (%5%)"
 msgstr "Zlyhalo premiestnenie %1% do %2% (%3%) aj premiestnenie do %4% (%5%)"
 
-#: dcpp/QueueManager.cpp:933
+#: dcpp/QueueManager.cpp:937
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%); renamed to %4%"
 msgstr "Zlyhalo premiestnenie %1% do %2% (%3%); premenované na %4%"
@@ -896,7 +901,7 @@ msgid ""
 msgstr ""
 "Zlyhalo otvorenie portu/portov %1%; konektivita sa musí nastaviť manuálne"
 
-#: dcpp/QueueManager.cpp:1116
+#: dcpp/QueueManager.cpp:1120
 #, boost-format
 msgid "Unable to open filelist: %1%"
 msgstr "Nepodarilo sa otvoriť zoznam súborov: %1%"

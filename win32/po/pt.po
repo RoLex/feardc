@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dccwin32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-24 18:19+0100\n"
+"POT-Creation-Date: 2026-02-25 13:06+0100\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: \n"
@@ -1455,7 +1455,7 @@ msgid "Don't download files already in the queue"
 msgstr "Não transferir ficheiros já existentes na lista"
 
 #: win32/QueuePage.cpp:40
-msgid "Don't match same user on different hubs"
+msgid "Don't download from same user on different hubs"
 msgstr ""
 
 #: win32/HubFrame.cpp:628

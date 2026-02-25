@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-24 18:19+0100\n"
+"POT-Creation-Date: 2026-02-25 13:24+0100\n"
 "PO-Revision-Date: 2017-03-22 12:21+0000\n"
 "Last-Translator: SebastianoPistore <sebastiano.pistore.info@aol.com>\n"
 "Language-Team: Italian language <netcelli@gmail.com>\n"
@@ -213,11 +213,11 @@ msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
 "Blocco di '%1%' in corso, rilevato un possibile DDos (hub di origine '%2%')"
 
-#: dcpp/QueueManager.cpp:1722
+#: dcpp/QueueManager.cpp:1730
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "Inconsistenza CRC32 (Controllo SFV)"
 
-#: dcpp/QueueManager.cpp:1713
+#: dcpp/QueueManager.cpp:1721
 #, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "Inconsistenza CRC32 (SFV-Check): %1%"
@@ -715,6 +715,11 @@ msgstr "Elimina tutte le sottocartelle prima di aggiungerne una nuova"
 msgid "Response does not match request"
 msgstr "Il risultato non corrisponde con la richiesta"
 
+#: dcpp/QueueManager.cpp:680
+#, fuzzy, boost-format
+msgid "Same source: %1%"
+msgstr "Sorgente duplicata: %1%"
+
 #: dcpp/MappingManager.cpp:143 dcpp/MappingManager.cpp:203
 msgid "Search"
 msgstr "Cerca"
@@ -745,9 +750,9 @@ msgstr "Inviato %1%"
 msgid "Shared Files"
 msgstr "File Condivisi"
 
-#: dcpp/QueueManager.cpp:1369
+#: dcpp/QueueManager.cpp:1376
 #, boost-format
-msgid "Skipping same source: %1% %2% %3%/%4%"
+msgid "Skipping same source: %1%/%2% %3%/%4%"
 msgstr ""
 
 #: dcpp/Socket.cpp:498 dcpp/Socket.cpp:502
@@ -828,7 +833,7 @@ msgstr ""
 "La porta del trasferimento cifrato non può essere la stessa della porta di "
 "trasferimento, i trasferimenti cifrati verranno disabilitati"
 
-#: dcpp/QueueManager.cpp:1556
+#: dcpp/QueueManager.cpp:1564
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -900,12 +905,12 @@ msgstr "Non ignorare"
 msgid "Unable to create thread"
 msgstr "Impossibile creare la discussione"
 
-#: dcpp/QueueManager.cpp:936
+#: dcpp/QueueManager.cpp:940
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%) nor to rename to %4% (%5%)"
 msgstr "Impossibile spostare %1% in %2% (%3%) o rinominarlo in %4% (%5%)"
 
-#: dcpp/QueueManager.cpp:933
+#: dcpp/QueueManager.cpp:937
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%); renamed to %4%"
 msgstr ""
@@ -919,7 +924,7 @@ msgstr ""
 "Non si è in grado di aprire la porta (o le porte) %1%; le impostazioni della "
 "connettività devono essere configurate manualmente"
 
-#: dcpp/QueueManager.cpp:1116
+#: dcpp/QueueManager.cpp:1120
 #, boost-format
 msgid "Unable to open filelist: %1%"
 msgstr "Impossibile aprire elenco dei file condivisi :%1%"

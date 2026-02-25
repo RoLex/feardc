@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-24 18:19+0100\n"
+"POT-Creation-Date: 2026-02-25 13:06+0100\n"
 "PO-Revision-Date: 2014-05-18 08:00+0000\n"
 "Last-Translator: DIMITRIOS VLASTARAS <dimitriosvlastaras@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1471,7 +1471,7 @@ msgid "Don't download files already in the queue"
 msgstr "Να μη γίνεται λήψη των αρχείων που είναι ήδη στην σειρά αναμονής"
 
 #: win32/QueuePage.cpp:40
-msgid "Don't match same user on different hubs"
+msgid "Don't download from same user on different hubs"
 msgstr ""
 
 #: win32/HubFrame.cpp:628

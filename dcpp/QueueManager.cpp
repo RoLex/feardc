@@ -1368,10 +1368,6 @@ bool QueueManager::isSameSource(QueueItem* qItem, const HintedUser& pUser) noexc
 			newNick.assign(newUser->getIdentity().getNick());
 			oldNick.assign(oldUser->getIdentity().getNick());
 
-			//test
-			LogManager::getInstance()->message(str(F_("old nick: %1% / %2% / %3%") % Util::addBrackets(oldNick) % oldNick.size() % oldNick.compare(0, oldNick.size(), newNick, 0, oldNick.size())));
-			LogManager::getInstance()->message(str(F_("new nick: %1% / %2% / %3%") % Util::addBrackets(newNick) % newNick.size() % newNick.compare(0, newNick.size(), oldNick, 0, newNick.size())));
-
 			if (oldNick.size() && newNick.size() && ( // todo: add util function to detect clones
 				(oldNick.compare(0, oldNick.size(), newNick, 0, oldNick.size()) == 0) ||
 				(newNick.compare(0, newNick.size(), oldNick, 0, newNick.size()) == 0)

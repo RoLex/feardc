@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-24 18:19+0100\n"
+"POT-Creation-Date: 2026-02-25 13:24+0100\n"
 "PO-Revision-Date: 2022-09-19 12:47+0000\n"
 "Last-Translator: eMTee <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -211,11 +211,11 @@ msgstr ""
 "'%1%' a(z) '%2%' hubról blokkolva túlterheléses támadás (DDoS) észlelése "
 "miatt"
 
-#: dcpp/QueueManager.cpp:1722
+#: dcpp/QueueManager.cpp:1730
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "CRC32 inkonzisztencia (SFV-Ellenőrzéskor)"
 
-#: dcpp/QueueManager.cpp:1713
+#: dcpp/QueueManager.cpp:1721
 #, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "CRC32 inkonzisztencia (SFV-Ellenőrzéskor): %1%"
@@ -710,6 +710,11 @@ msgstr "Távolíts el minden alkönyvtárat, mielőtt ezt felveszed"
 msgid "Response does not match request"
 msgstr "A válasz nem felel meg a kérésnek"
 
+#: dcpp/QueueManager.cpp:680
+#, fuzzy, boost-format
+msgid "Same source: %1%"
+msgstr "Dupla forrás: %1%"
+
 #: dcpp/MappingManager.cpp:143 dcpp/MappingManager.cpp:203
 msgid "Search"
 msgstr "Keresés"
@@ -740,9 +745,9 @@ msgstr "Elküldve %1%"
 msgid "Shared Files"
 msgstr "Megosztott fájlok"
 
-#: dcpp/QueueManager.cpp:1369
+#: dcpp/QueueManager.cpp:1376
 #, boost-format
-msgid "Skipping same source: %1% %2% %3%/%4%"
+msgid "Skipping same source: %1%/%2% %3%/%4%"
 msgstr ""
 
 #: dcpp/Socket.cpp:498 dcpp/Socket.cpp:502
@@ -821,7 +826,7 @@ msgstr ""
 "A titkosított átvitel port nem lehet ugyanaz mint az átvitel port. A "
 "titkosított adatátvitel tiltva lesz"
 
-#: dcpp/QueueManager.cpp:1556
+#: dcpp/QueueManager.cpp:1564
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -894,14 +899,14 @@ msgstr "Újra engedélyezett"
 msgid "Unable to create thread"
 msgstr "A szál léterhozása sikertelen"
 
-#: dcpp/QueueManager.cpp:936
+#: dcpp/QueueManager.cpp:940
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%) nor to rename to %4% (%5%)"
 msgstr ""
 "Nem sikerült átmozgatni %1% fájlt a következõ helyre: %2% (%3%) sem pedig "
 "átnevezni a következõre: %4% (%5%)"
 
-#: dcpp/QueueManager.cpp:933
+#: dcpp/QueueManager.cpp:937
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%); renamed to %4%"
 msgstr ""
@@ -916,7 +921,7 @@ msgstr ""
 "Nem sikerült megnyitni a(z) %1% port(ok)at. Kézzel kell beállítanod a "
 "kapcsolatot"
 
-#: dcpp/QueueManager.cpp:1116
+#: dcpp/QueueManager.cpp:1120
 #, boost-format
 msgid "Unable to open filelist: %1%"
 msgstr "Nem sikerült megnyitni a fájl-listát: %1%"

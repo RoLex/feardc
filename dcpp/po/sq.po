@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-24 18:19+0100\n"
+"POT-Creation-Date: 2026-02-25 13:24+0100\n"
 "PO-Revision-Date: 2008-03-13 23:13+0000\n"
 "Last-Translator: Jacek Sieka <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -208,11 +208,11 @@ msgstr ""
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1722
+#: dcpp/QueueManager.cpp:1730
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "SFV-kontrolli dha një shumë kontroll të gabuar CRC32"
 
-#: dcpp/QueueManager.cpp:1713
+#: dcpp/QueueManager.cpp:1721
 #, fuzzy, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "SFV-kontrolli dha një shumë kontroll të gabuar CRC32"
@@ -685,6 +685,11 @@ msgstr "Përpara se t`a vendosish këtë, zhvendos të gjitha nën-dosjet"
 msgid "Response does not match request"
 msgstr "Struktura e shkarkuar s`i përgjigjet TTH rrënjës"
 
+#: dcpp/QueueManager.cpp:680
+#, boost-format
+msgid "Same source: %1%"
+msgstr ""
+
 #: dcpp/MappingManager.cpp:143 dcpp/MappingManager.cpp:203
 msgid "Search"
 msgstr ""
@@ -715,9 +720,9 @@ msgstr ""
 msgid "Shared Files"
 msgstr "Filet e shpërndara"
 
-#: dcpp/QueueManager.cpp:1369
+#: dcpp/QueueManager.cpp:1376
 #, boost-format
-msgid "Skipping same source: %1% %2% %3%/%4%"
+msgid "Skipping same source: %1%/%2% %3%/%4%"
 msgstr ""
 
 #: dcpp/Socket.cpp:498 dcpp/Socket.cpp:502
@@ -791,7 +796,7 @@ msgid ""
 "encrypted transfers will be disabled"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1556
+#: dcpp/QueueManager.cpp:1564
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -859,12 +864,12 @@ msgstr ""
 msgid "Unable to create thread"
 msgstr "S`mund të krijon strukturë"
 
-#: dcpp/QueueManager.cpp:936
+#: dcpp/QueueManager.cpp:940
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%) nor to rename to %4% (%5%)"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:933
+#: dcpp/QueueManager.cpp:937
 #, boost-format
 msgid "Unable to move %1% to %2% (%3%); renamed to %4%"
 msgstr ""
@@ -875,7 +880,7 @@ msgid ""
 "Unable to open %1% port(s); connectivity settings must be configured manually"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1116
+#: dcpp/QueueManager.cpp:1120
 #, boost-format
 msgid "Unable to open filelist: %1%"
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-24 18:05+0100\n"
+"POT-Creation-Date: 2026-02-25 12:52+0100\n"
 "PO-Revision-Date: 2009-07-31 21:39+0000\n"
 "Last-Translator: heroid <heroid@ayih.org>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -8797,25 +8797,26 @@ msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
 #: help/settings_queue.html:108
-msgid "Don't match same user on different hubs"
+msgid "Don't download from same user on different hubs"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
 #: help/settings_queue.html:110
 msgid ""
 "Enable to skip new source users with same nick and IP address when "
-"autosearching for same files. The download speed will not magically increase "
-"when you download from same user multiple times.  Instead it takes more "
-"resources both from us and remote user."
+"downloading files. The download speed will not magically increase when you "
+"download from same user multiple times. Instead it uses more resources both "
+"on our side and remote users side. Simply this behaviour is useless and "
+"therefore should be disabled."
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_queue.html:116
+#: help/settings_queue.html:117
 msgid "Skip zero-byte files"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_queue.html:117
+#: help/settings_queue.html:118
 msgid ""
 "When this option is enabled, any zero byte files you try to download will be "
 "silently skipped. Sometimes empty files contain information through their "
@@ -8823,12 +8824,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_queue.html:121
+#: help/settings_queue.html:122
 msgid "Don't download files already in share"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_queue.html:122
+#: help/settings_queue.html:123
 msgid ""
 "This option will stop you from downloading files which already exist in one "
 "of your shared directories. When you enable this function, to get already "
@@ -8836,12 +8837,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_queue.html:125
+#: help/settings_queue.html:126
 msgid "Don't download files already in the queue"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_queue.html:126
+#: help/settings_queue.html:127
 msgid ""
 "This option will stop you from downloading files which already exist in your "
 "queue by blocking the addition of the same file to a different place in the "
@@ -8853,12 +8854,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_queue.html:131
+#: help/settings_queue.html:132
 msgid "Keep finished files in the queue"
 msgstr ""
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_queue.html:132
+#: help/settings_queue.html:133
 msgid ""
 "Enable this option if you want to keep downloaded files and folders in the "
 "download queue after they have been finished. After downloaded the queue "
