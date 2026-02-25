@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-21 15:38+0100\n"
+"POT-Creation-Date: 2026-02-24 18:19+0100\n"
 "PO-Revision-Date: 2010-08-06 12:56+0000\n"
 "Last-Translator: gutfeast <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -208,11 +208,11 @@ msgstr ""
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1672
+#: dcpp/QueueManager.cpp:1722
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "32-bit CRC 코드 불일치 (SFV-검사)"
 
-#: dcpp/QueueManager.cpp:1663
+#: dcpp/QueueManager.cpp:1713
 #, fuzzy, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "32-bit CRC 코드 불일치 (SFV-검사)"
@@ -574,7 +574,7 @@ msgstr ""
 msgid "Invalid regular expression: %1%"
 msgstr ""
 
-#: dcpp/SettingsManager.cpp:719
+#: dcpp/SettingsManager.cpp:720
 msgid "Invalid search type name"
 msgstr "유효하지 않은 검색 유형의 이름"
 
@@ -631,7 +631,7 @@ msgstr "아무런 개인 키 파일도 선택되지 않았음"
 msgid "No slots available"
 msgstr "남은 슬롯이 없음"
 
-#: dcpp/SettingsManager.cpp:777
+#: dcpp/SettingsManager.cpp:778
 msgid "No such search type"
 msgstr "그러한 검색 유형은 없음"
 
@@ -717,6 +717,11 @@ msgstr ""
 msgid "Shared Files"
 msgstr "공유 파일"
 
+#: dcpp/QueueManager.cpp:1369
+#, boost-format
+msgid "Skipping same source: %1% %2% %3%/%4%"
+msgstr ""
+
 #: dcpp/Socket.cpp:498 dcpp/Socket.cpp:502
 msgid "Socks server authentication failed (bad login / password?)"
 msgstr "소켓 서버 인증이 실패함 (잘못된 로그인이름/비밀번호?)"
@@ -785,7 +790,7 @@ msgid ""
 "encrypted transfers will be disabled"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1506
+#: dcpp/QueueManager.cpp:1556
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -825,7 +830,7 @@ msgstr ""
 "이 허브가 %1%을 스팸하도록 당신의 클라이언트 이용하려고 시도합니다, 허브 주인"
 "에게 이를 시정하도록 요구하세요"
 
-#: dcpp/SettingsManager.cpp:723 dcpp/SettingsManager.cpp:745
+#: dcpp/SettingsManager.cpp:724 dcpp/SettingsManager.cpp:746
 msgid "This search type already exists"
 msgstr "같은 이름의 검색 유형이 이미 존재합니다"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-22 18:20+0100\n"
+"POT-Creation-Date: 2026-02-24 18:19+0100\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -770,7 +770,7 @@ msgstr ""
 msgid "Auto grant slot"
 msgstr "Gefa hleðsluhólf sjálvirkt / Notendanafn"
 
-#: win32/QueuePage.cpp:58
+#: win32/QueuePage.cpp:59
 msgid "Auto priority settings"
 msgstr ""
 
@@ -786,7 +786,7 @@ msgstr ""
 msgid "Auto-search limit"
 msgstr ""
 
-#: win32/QueuePage.cpp:94
+#: win32/QueuePage.cpp:95
 #, fuzzy
 msgid "Autodrop settings"
 msgstr "Tengingamöguleikar"
@@ -875,7 +875,7 @@ msgstr "Í burtu gert óvirkt"
 msgid "B"
 msgstr "B"
 
-#: win32/QueuePage.cpp:108
+#: win32/QueuePage.cpp:109
 msgid "B/s"
 msgstr ""
 
@@ -1001,7 +1001,7 @@ msgstr "Spjall"
 msgid "Chat lines to recall from history when opening a window"
 msgstr ""
 
-#: win32/QueuePage.cpp:110
+#: win32/QueuePage.cpp:111
 msgid "Check every"
 msgstr ""
 
@@ -1471,14 +1471,18 @@ msgstr ""
 msgid "Don't delete file lists when exiting"
 msgstr "Halda skráarlistum við lokun forritsinns"
 
-#: win32/QueuePage.cpp:41
+#: win32/QueuePage.cpp:42
 msgid "Don't download files already in share"
 msgstr "Ekki sækja skrár sem eru þegar til í deilingu"
 
-#: win32/QueuePage.cpp:42
+#: win32/QueuePage.cpp:43
 #, fuzzy
 msgid "Don't download files already in the queue"
 msgstr "Ekki sækja skrár sem eru þegar til í deilingu"
+
+#: win32/QueuePage.cpp:40
+msgid "Don't match same user on different hubs"
+msgstr ""
 
 #: win32/HubFrame.cpp:628
 msgid "Don't remove /password before your password"
@@ -1630,7 +1634,7 @@ msgstr "Niðurhöl"
 msgid "Downloads running, please disconnect them"
 msgstr ""
 
-#: win32/QueuePage.cpp:104
+#: win32/QueuePage.cpp:105
 msgid "Drop sources below"
 msgstr ""
 
@@ -2226,7 +2230,7 @@ msgstr "Ekki sækja skrár sem eru þegar til í deilingu"
 msgid "High"
 msgstr "Hár"
 
-#: win32/QueuePage.cpp:74
+#: win32/QueuePage.cpp:75
 msgid "High prio max size"
 msgstr ""
 
@@ -2234,7 +2238,7 @@ msgstr ""
 msgid "Highest"
 msgstr "Hæstur"
 
-#: win32/QueuePage.cpp:68
+#: win32/QueuePage.cpp:69
 msgid "Highest prio max size"
 msgstr ""
 
@@ -2540,7 +2544,7 @@ msgid "Keep duplicate files in your file list"
 msgstr ""
 "Heldur líkum skrám í skráarlista (verða aldrei reiknaðir í heildardeilingu)"
 
-#: win32/QueuePage.cpp:43
+#: win32/QueuePage.cpp:44
 #, fuzzy
 msgid "Keep finished files in the queue"
 msgstr "Ekki sækja skrár sem eru þegar til í deilingu"
@@ -2555,9 +2559,9 @@ msgid "Key Search:"
 msgstr "Leit"
 
 #: win32/ADLSProperties.cpp:100 win32/ExpertsPage.cpp:45
-#: win32/ExpertsPage.cpp:48 win32/ListFilter.cpp:158 win32/QueuePage.cpp:72
-#: win32/QueuePage.cpp:78 win32/QueuePage.cpp:84 win32/QueuePage.cpp:90
-#: win32/QueuePage.cpp:138 win32/SearchFrame.cpp:203
+#: win32/ExpertsPage.cpp:48 win32/ListFilter.cpp:158 win32/QueuePage.cpp:73
+#: win32/QueuePage.cpp:79 win32/QueuePage.cpp:85 win32/QueuePage.cpp:91
+#: win32/QueuePage.cpp:139 win32/SearchFrame.cpp:203
 msgid "KiB"
 msgstr ""
 
@@ -2708,7 +2712,7 @@ msgstr "Notendanafn"
 msgid "Low"
 msgstr "Lár"
 
-#: win32/QueuePage.cpp:86
+#: win32/QueuePage.cpp:87
 msgid "Low prio max size"
 msgstr ""
 
@@ -2819,7 +2823,7 @@ msgstr "Hraði auðkenningar"
 msgid "Max hubs"
 msgstr "Hámark tengipunkta"
 
-#: win32/QueuePage.cpp:122
+#: win32/QueuePage.cpp:123
 msgid "Max inactivity"
 msgstr ""
 
@@ -2886,12 +2890,12 @@ msgstr ""
 msgid "Min Size"
 msgstr "Lámarks deiling"
 
-#: win32/QueuePage.cpp:116
+#: win32/QueuePage.cpp:117
 #, fuzzy
 msgid "Min elapsed"
 msgstr "Lámark hólfa"
 
-#: win32/QueuePage.cpp:134
+#: win32/QueuePage.cpp:135
 msgid "Min filesize"
 msgstr ""
 
@@ -2905,7 +2909,7 @@ msgstr "Lámarks deiling"
 msgid "Min slots"
 msgstr "Lámark hólfa"
 
-#: win32/QueuePage.cpp:128
+#: win32/QueuePage.cpp:129
 #, fuzzy
 msgid "Min sources online"
 msgstr "Bíð (Notandi tengdur)"
@@ -3099,7 +3103,7 @@ msgstr ""
 msgid "Normal"
 msgstr "Venjulegt"
 
-#: win32/QueuePage.cpp:80
+#: win32/QueuePage.cpp:81
 msgid "Normal prio max size"
 msgstr ""
 
@@ -3245,7 +3249,7 @@ msgstr ""
 msgid "Options"
 msgstr "Valmöguleikar"
 
-#: win32/QueuePage.cpp:141
+#: win32/QueuePage.cpp:142
 #, fuzzy
 msgid "Other queue options"
 msgstr "Leitarmöguleikar"
@@ -4056,7 +4060,7 @@ msgstr "Stærð"
 msgid "Skip tray icon notification on PM from bots and hub"
 msgstr ""
 
-#: win32/QueuePage.cpp:40
+#: win32/QueuePage.cpp:41
 msgid "Skip zero-byte files"
 msgstr "Sleppa tómum skrám"
 
@@ -4838,7 +4842,7 @@ msgstr "Tengdur"
 msgid "minutes of inactivity (0 = disabled)"
 msgstr ""
 
-#: win32/QueuePage.cpp:114 win32/QueuePage.cpp:120 win32/QueuePage.cpp:126
+#: win32/QueuePage.cpp:115 win32/QueuePage.cpp:121 win32/QueuePage.cpp:127
 msgid "s"
 msgstr ""
 

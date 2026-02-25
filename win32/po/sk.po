@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-22 18:20+0100\n"
+"POT-Creation-Date: 2026-02-24 18:19+0100\n"
 "PO-Revision-Date: 2013-09-15 10:47+0000\n"
 "Last-Translator: Gabriel O <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
@@ -748,7 +748,7 @@ msgstr "Autor: "
 msgid "Auto grant slot"
 msgstr "Automatické udelenie slotu"
 
-#: win32/QueuePage.cpp:58
+#: win32/QueuePage.cpp:59
 msgid "Auto priority settings"
 msgstr "Automatické nastavenie priority"
 
@@ -765,7 +765,7 @@ msgstr "Obmedzenie automatického hľadania"
 msgid "Auto-search limit"
 msgstr "Obmedzenie automatického hľadania"
 
-#: win32/QueuePage.cpp:94
+#: win32/QueuePage.cpp:95
 msgid "Autodrop settings"
 msgstr "Nastavenie automatického odpojenia"
 
@@ -850,7 +850,7 @@ msgstr "Režim Preč zapnutý: %1%"
 msgid "B"
 msgstr "B"
 
-#: win32/QueuePage.cpp:108
+#: win32/QueuePage.cpp:109
 msgid "B/s"
 msgstr "B/s"
 
@@ -972,7 +972,7 @@ msgstr "Chat"
 msgid "Chat lines to recall from history when opening a window"
 msgstr "Načítať riadky v chate z histórie pri otváraní okna"
 
-#: win32/QueuePage.cpp:110
+#: win32/QueuePage.cpp:111
 msgid "Check every"
 msgstr "Kontrolovať každých"
 
@@ -1422,13 +1422,17 @@ msgstr "Neodpájať automaticky obľúbených používateľov, ktorí opustia hu
 msgid "Don't delete file lists when exiting"
 msgstr "Nemazať zoznamy súborov pri ukončení"
 
-#: win32/QueuePage.cpp:41
+#: win32/QueuePage.cpp:42
 msgid "Don't download files already in share"
 msgstr "Nesťahovať už zdieľané súbory"
 
-#: win32/QueuePage.cpp:42
+#: win32/QueuePage.cpp:43
 msgid "Don't download files already in the queue"
 msgstr "Nesťahovať súbory už  zaradené vo fronte"
+
+#: win32/QueuePage.cpp:40
+msgid "Don't match same user on different hubs"
+msgstr ""
 
 #: win32/HubFrame.cpp:628
 msgid "Don't remove /password before your password"
@@ -1571,7 +1575,7 @@ msgstr "Sťahovania"
 msgid "Downloads running, please disconnect them"
 msgstr "Prebieha sťahovanie, odpojte ho prosím"
 
-#: win32/QueuePage.cpp:104
+#: win32/QueuePage.cpp:105
 msgid "Drop sources below"
 msgstr "Odpojiť zdroje pod"
 
@@ -2142,7 +2146,7 @@ msgstr "Skryť už zdieľané súbory"
 msgid "High"
 msgstr "Vysoká"
 
-#: win32/QueuePage.cpp:74
+#: win32/QueuePage.cpp:75
 msgid "High prio max size"
 msgstr "Vysoká prio. max. veľkosť"
 
@@ -2150,7 +2154,7 @@ msgstr "Vysoká prio. max. veľkosť"
 msgid "Highest"
 msgstr "Najvyššia"
 
-#: win32/QueuePage.cpp:68
+#: win32/QueuePage.cpp:69
 msgid "Highest prio max size"
 msgstr "Najvyššia prio. max. veľkosť"
 
@@ -2444,7 +2448,7 @@ msgstr "KB"
 msgid "Keep duplicate files in your file list"
 msgstr "Ponechať duplicity vo vašom zozname súborov"
 
-#: win32/QueuePage.cpp:43
+#: win32/QueuePage.cpp:44
 msgid "Keep finished files in the queue"
 msgstr "Nechať dokončené súbory v queue"
 
@@ -2457,9 +2461,9 @@ msgid "Key Search:"
 msgstr "Kľúčové hľadanie"
 
 #: win32/ADLSProperties.cpp:100 win32/ExpertsPage.cpp:45
-#: win32/ExpertsPage.cpp:48 win32/ListFilter.cpp:158 win32/QueuePage.cpp:72
-#: win32/QueuePage.cpp:78 win32/QueuePage.cpp:84 win32/QueuePage.cpp:90
-#: win32/QueuePage.cpp:138 win32/SearchFrame.cpp:203
+#: win32/ExpertsPage.cpp:48 win32/ListFilter.cpp:158 win32/QueuePage.cpp:73
+#: win32/QueuePage.cpp:79 win32/QueuePage.cpp:85 win32/QueuePage.cpp:91
+#: win32/QueuePage.cpp:139 win32/SearchFrame.cpp:203
 msgid "KiB"
 msgstr "KiB"
 
@@ -2605,7 +2609,7 @@ msgstr "Záznamy"
 msgid "Low"
 msgstr "Nízka"
 
-#: win32/QueuePage.cpp:86
+#: win32/QueuePage.cpp:87
 msgid "Low prio max size"
 msgstr "Nízka prio. max. veľkosť"
 
@@ -2709,7 +2713,7 @@ msgstr "Max. rýchlosť hašovania"
 msgid "Max hubs"
 msgstr "Max. počet hub-ov"
 
-#: win32/QueuePage.cpp:122
+#: win32/QueuePage.cpp:123
 msgid "Max inactivity"
 msgstr "Max. neaktivita"
 
@@ -2771,11 +2775,11 @@ msgstr "Min. veľkosť súboru"
 msgid "Min Size"
 msgstr "Min. veľkosť"
 
-#: win32/QueuePage.cpp:116
+#: win32/QueuePage.cpp:117
 msgid "Min elapsed"
 msgstr "Min. uplynutý čas"
 
-#: win32/QueuePage.cpp:134
+#: win32/QueuePage.cpp:135
 msgid "Min filesize"
 msgstr "Min. veľkosť súboru"
 
@@ -2787,7 +2791,7 @@ msgstr "Min. zdieľanie"
 msgid "Min slots"
 msgstr "Min. pozícií"
 
-#: win32/QueuePage.cpp:128
+#: win32/QueuePage.cpp:129
 msgid "Min sources online"
 msgstr "Min. počet zdrojov online"
 
@@ -2973,7 +2977,7 @@ msgstr "Poludnie"
 msgid "Normal"
 msgstr "Normálna"
 
-#: win32/QueuePage.cpp:80
+#: win32/QueuePage.cpp:81
 msgid "Normal prio max size"
 msgstr "Normálna prio. max. veľkosť"
 
@@ -3116,7 +3120,7 @@ msgstr "Operátori (pridal %1%)"
 msgid "Options"
 msgstr "Možnosti"
 
-#: win32/QueuePage.cpp:141
+#: win32/QueuePage.cpp:142
 msgid "Other queue options"
 msgstr "Iné možnosti frontu"
 
@@ -3912,7 +3916,7 @@ msgstr "Veľkosť: %1%"
 msgid "Skip tray icon notification on PM from bots and hub"
 msgstr ""
 
-#: win32/QueuePage.cpp:40
+#: win32/QueuePage.cpp:41
 msgid "Skip zero-byte files"
 msgstr "Preskočiť súbory s veľkosťou nula najtov"
 
@@ -4699,7 +4703,7 @@ msgstr "minút"
 msgid "minutes of inactivity (0 = disabled)"
 msgstr "minút neaktivity (0 = vypnuté)"
 
-#: win32/QueuePage.cpp:114 win32/QueuePage.cpp:120 win32/QueuePage.cpp:126
+#: win32/QueuePage.cpp:115 win32/QueuePage.cpp:121 win32/QueuePage.cpp:127
 msgid "s"
 msgstr "s"
 

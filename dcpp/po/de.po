@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-21 15:38+0100\n"
+"POT-Creation-Date: 2026-02-24 18:19+0100\n"
 "PO-Revision-Date: 2012-05-18 12:19+0000\n"
 "Last-Translator: Dennis Baudys <Unknown>\n"
 "Language-Team: German <de@li.org>\n"
@@ -209,11 +209,11 @@ msgstr ""
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1672
+#: dcpp/QueueManager.cpp:1722
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "CRC32 Inkonsistenz (SFV-Prüfung)"
 
-#: dcpp/QueueManager.cpp:1663
+#: dcpp/QueueManager.cpp:1713
 #, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "CRC32-Prüfsummeninkonsistenz (SFV-Prüfung): %1%"
@@ -578,7 +578,7 @@ msgstr "Ungültiger Dateiname beim Hashen des Ordners %1% gefunden"
 msgid "Invalid regular expression: %1%"
 msgstr "Ungültiger regulärer Ausdruck: %1%"
 
-#: dcpp/SettingsManager.cpp:719
+#: dcpp/SettingsManager.cpp:720
 msgid "Invalid search type name"
 msgstr "Ungültiger Name des Suchtyps"
 
@@ -635,7 +635,7 @@ msgstr "Keine Privater Schlüssel-Datei gewählt"
 msgid "No slots available"
 msgstr "Keine Slots verfügbar"
 
-#: dcpp/SettingsManager.cpp:777
+#: dcpp/SettingsManager.cpp:778
 msgid "No such search type"
 msgstr "Kein solcher Suchtyp gefunden."
 
@@ -720,6 +720,11 @@ msgstr ""
 msgid "Shared Files"
 msgstr "Freigegebene Dateien"
 
+#: dcpp/QueueManager.cpp:1369
+#, boost-format
+msgid "Skipping same source: %1% %2% %3%/%4%"
+msgstr ""
+
 #: dcpp/Socket.cpp:498 dcpp/Socket.cpp:502
 msgid "Socks server authentication failed (bad login / password?)"
 msgstr ""
@@ -789,7 +794,7 @@ msgid ""
 "encrypted transfers will be disabled"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1506
+#: dcpp/QueueManager.cpp:1556
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -829,7 +834,7 @@ msgstr ""
 "Dieser Hub versucht Ihren Clienten zu benutzen um %1% zu spammen. Fordern "
 "Sie vom Hub-Besitzer dies zu unterlassen"
 
-#: dcpp/SettingsManager.cpp:723 dcpp/SettingsManager.cpp:745
+#: dcpp/SettingsManager.cpp:724 dcpp/SettingsManager.cpp:746
 msgid "This search type already exists"
 msgstr "Dieser Suchtyp existiert bereits"
 

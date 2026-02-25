@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-22 18:20+0100\n"
+"POT-Creation-Date: 2026-02-24 18:19+0100\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -772,7 +772,7 @@ msgstr ""
 msgid "Auto grant slot"
 msgstr "ផ្តល់រន្ធស្វ័យប្រវត្តិ / សម្មតិនាម"
 
-#: win32/QueuePage.cpp:58
+#: win32/QueuePage.cpp:59
 #, fuzzy
 msgid "Auto priority settings"
 msgstr "ស្វ័យជម្រុះរាល់ការកំណត់"
@@ -790,7 +790,7 @@ msgstr "ស្វែងរកដោយស្វ័យប្រវត្តិម
 msgid "Auto-search limit"
 msgstr "ស្វែងរកដោយស្វ័យប្រវត្តិមានកំណត់"
 
-#: win32/QueuePage.cpp:94
+#: win32/QueuePage.cpp:95
 msgid "Autodrop settings"
 msgstr "ស្វ័យជម្រុះរាល់ការកំណត់"
 
@@ -876,7 +876,7 @@ msgstr "មិននៅ បិទ"
 msgid "B"
 msgstr "B"
 
-#: win32/QueuePage.cpp:108
+#: win32/QueuePage.cpp:109
 msgid "B/s"
 msgstr "B/s"
 
@@ -1000,7 +1000,7 @@ msgstr "ជជែកកំសាន្ត"
 msgid "Chat lines to recall from history when opening a window"
 msgstr ""
 
-#: win32/QueuePage.cpp:110
+#: win32/QueuePage.cpp:111
 msgid "Check every"
 msgstr "ពិនិត្យមើលទាំងអស់"
 
@@ -1470,14 +1470,18 @@ msgstr "កុំផ្តាច់ដោយស្វ័យប្រវត្ត
 msgid "Don't delete file lists when exiting"
 msgstr "កុំលុបបញ្ជីឯកសារចោល នៅពេលចាកចេញ"
 
-#: win32/QueuePage.cpp:41
+#: win32/QueuePage.cpp:42
 msgid "Don't download files already in share"
 msgstr "កុំទាញយកឯកសារណាដែលមានរួចហើយនៅក្នុងទីចែករំលែក"
 
-#: win32/QueuePage.cpp:42
+#: win32/QueuePage.cpp:43
 #, fuzzy
 msgid "Don't download files already in the queue"
 msgstr "កុំទាញយកឯកសារណាដែលមានរួចហើយនៅក្នុងទីចែករំលែក"
+
+#: win32/QueuePage.cpp:40
+msgid "Don't match same user on different hubs"
+msgstr ""
 
 #: win32/HubFrame.cpp:628
 msgid "Don't remove /password before your password"
@@ -1628,7 +1632,7 @@ msgstr "ទីទាញយក"
 msgid "Downloads running, please disconnect them"
 msgstr ""
 
-#: win32/QueuePage.cpp:104
+#: win32/QueuePage.cpp:105
 msgid "Drop sources below"
 msgstr "ជម្រុះរាល់ប្រភពខាងក្រោម"
 
@@ -2226,7 +2230,7 @@ msgstr "កុំទាញយកឯកសារណាដែលមានរួច
 msgid "High"
 msgstr "ខ្ពស់"
 
-#: win32/QueuePage.cpp:74
+#: win32/QueuePage.cpp:75
 msgid "High prio max size"
 msgstr "អាទិភាពខ្ពស់ ទំហំអតិបរមា"
 
@@ -2234,7 +2238,7 @@ msgstr "អាទិភាពខ្ពស់ ទំហំអតិបរមា"
 msgid "Highest"
 msgstr "ខ្ពស់បំផុត"
 
-#: win32/QueuePage.cpp:68
+#: win32/QueuePage.cpp:69
 msgid "Highest prio max size"
 msgstr "អាទិភាពខ្ពស់បំផុត ទំហំអតិបរមា"
 
@@ -2538,7 +2542,7 @@ msgstr "KiB"
 msgid "Keep duplicate files in your file list"
 msgstr "រក្សារាល់ឯកសារចម្លងនៅក្នុងបញ្ជីឯកសាររបស់អ្នក"
 
-#: win32/QueuePage.cpp:43
+#: win32/QueuePage.cpp:44
 #, fuzzy
 msgid "Keep finished files in the queue"
 msgstr "កុំទាញយកឯកសារណាដែលមានរួចហើយនៅក្នុងទីចែករំលែក"
@@ -2553,9 +2557,9 @@ msgid "Key Search:"
 msgstr "ស្វែងរក"
 
 #: win32/ADLSProperties.cpp:100 win32/ExpertsPage.cpp:45
-#: win32/ExpertsPage.cpp:48 win32/ListFilter.cpp:158 win32/QueuePage.cpp:72
-#: win32/QueuePage.cpp:78 win32/QueuePage.cpp:84 win32/QueuePage.cpp:90
-#: win32/QueuePage.cpp:138 win32/SearchFrame.cpp:203
+#: win32/ExpertsPage.cpp:48 win32/ListFilter.cpp:158 win32/QueuePage.cpp:73
+#: win32/QueuePage.cpp:79 win32/QueuePage.cpp:85 win32/QueuePage.cpp:91
+#: win32/QueuePage.cpp:139 win32/SearchFrame.cpp:203
 msgid "KiB"
 msgstr "KiB"
 
@@ -2705,7 +2709,7 @@ msgstr "ចូល"
 msgid "Low"
 msgstr "ទាប"
 
-#: win32/QueuePage.cpp:86
+#: win32/QueuePage.cpp:87
 msgid "Low prio max size"
 msgstr "អាទិភាពទាប ទំហំអតិបរមា"
 
@@ -2815,7 +2819,7 @@ msgstr "ល្បឿនច្របូកច្របល់អតិបរមា
 msgid "Max hubs"
 msgstr "Hubs អតិបរមា"
 
-#: win32/QueuePage.cpp:122
+#: win32/QueuePage.cpp:123
 msgid "Max inactivity"
 msgstr "ដែលស្ងៀម អតិបរមា"
 
@@ -2881,11 +2885,11 @@ msgstr ""
 msgid "Min Size"
 msgstr "ទំហំអប្បបរមា"
 
-#: win32/QueuePage.cpp:116
+#: win32/QueuePage.cpp:117
 msgid "Min elapsed"
 msgstr "ពេលវេលាដែលកន្លងទៅអប្បបរមា"
 
-#: win32/QueuePage.cpp:134
+#: win32/QueuePage.cpp:135
 msgid "Min filesize"
 msgstr "ទំហំឯកសារអប្បបរមា"
 
@@ -2899,7 +2903,7 @@ msgstr "អប្បបរមាចែករំលែក"
 msgid "Min slots"
 msgstr "អប្បបរមាប្រលោះ"
 
-#: win32/QueuePage.cpp:128
+#: win32/QueuePage.cpp:129
 msgid "Min sources online"
 msgstr "ចំនួនប្រភពអប្បបរមាលើបណ្តាញ"
 
@@ -3091,7 +3095,7 @@ msgstr ""
 msgid "Normal"
 msgstr "ធម្មតា"
 
-#: win32/QueuePage.cpp:80
+#: win32/QueuePage.cpp:81
 msgid "Normal prio max size"
 msgstr "អាទិភាពធម្មតា ទំហំអតិបរមា"
 
@@ -3237,7 +3241,7 @@ msgstr ""
 msgid "Options"
 msgstr "ជម្រើស"
 
-#: win32/QueuePage.cpp:141
+#: win32/QueuePage.cpp:142
 msgid "Other queue options"
 msgstr "ជម្រើសជួរដ៏ទៃ"
 
@@ -4049,7 +4053,7 @@ msgstr "ទំហំ"
 msgid "Skip tray icon notification on PM from bots and hub"
 msgstr ""
 
-#: win32/QueuePage.cpp:40
+#: win32/QueuePage.cpp:41
 msgid "Skip zero-byte files"
 msgstr "រំលងឯកសារ zero-byte"
 
@@ -4841,7 +4845,7 @@ msgstr "លើបណ្តាញ"
 msgid "minutes of inactivity (0 = disabled)"
 msgstr ""
 
-#: win32/QueuePage.cpp:114 win32/QueuePage.cpp:120 win32/QueuePage.cpp:126
+#: win32/QueuePage.cpp:115 win32/QueuePage.cpp:121 win32/QueuePage.cpp:127
 msgid "s"
 msgstr "s"
 

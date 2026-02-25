@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-21 15:38+0100\n"
+"POT-Creation-Date: 2026-02-24 18:19+0100\n"
 "PO-Revision-Date: 2017-03-22 12:21+0000\n"
 "Last-Translator: SebastianoPistore <sebastiano.pistore.info@aol.com>\n"
 "Language-Team: Italian language <netcelli@gmail.com>\n"
@@ -213,11 +213,11 @@ msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
 "Blocco di '%1%' in corso, rilevato un possibile DDos (hub di origine '%2%')"
 
-#: dcpp/QueueManager.cpp:1672
+#: dcpp/QueueManager.cpp:1722
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "Inconsistenza CRC32 (Controllo SFV)"
 
-#: dcpp/QueueManager.cpp:1663
+#: dcpp/QueueManager.cpp:1713
 #, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "Inconsistenza CRC32 (SFV-Check): %1%"
@@ -600,7 +600,7 @@ msgstr "Nome di file non valido trovato facendo l'hashing della cartella %1%"
 msgid "Invalid regular expression: %1%"
 msgstr "Espressione regolare non valida: %1%"
 
-#: dcpp/SettingsManager.cpp:719
+#: dcpp/SettingsManager.cpp:720
 msgid "Invalid search type name"
 msgstr "NOme del tipo di file da ricercare non valido"
 
@@ -659,7 +659,7 @@ msgstr "Nessun file di chiave privata scelto"
 msgid "No slots available"
 msgstr "Nessuno slot disponibile"
 
-#: dcpp/SettingsManager.cpp:777
+#: dcpp/SettingsManager.cpp:778
 msgid "No such search type"
 msgstr "Tipo di ricerca inesistente"
 
@@ -745,6 +745,11 @@ msgstr "Inviato %1%"
 msgid "Shared Files"
 msgstr "File Condivisi"
 
+#: dcpp/QueueManager.cpp:1369
+#, boost-format
+msgid "Skipping same source: %1% %2% %3%/%4%"
+msgstr ""
+
 #: dcpp/Socket.cpp:498 dcpp/Socket.cpp:502
 msgid "Socks server authentication failed (bad login / password?)"
 msgstr ""
@@ -823,7 +828,7 @@ msgstr ""
 "La porta del trasferimento cifrato non può essere la stessa della porta di "
 "trasferimento, i trasferimenti cifrati verranno disabilitati"
 
-#: dcpp/QueueManager.cpp:1506
+#: dcpp/QueueManager.cpp:1556
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -865,7 +870,7 @@ msgstr ""
 "Questo hub sta cercando di usare il tuo client per spammare %1%, avvisa il "
 "proprietario dell'hub per correggere il problema"
 
-#: dcpp/SettingsManager.cpp:723 dcpp/SettingsManager.cpp:745
+#: dcpp/SettingsManager.cpp:724 dcpp/SettingsManager.cpp:746
 msgid "This search type already exists"
 msgstr "Questo tipo di ricerca è già presente"
 

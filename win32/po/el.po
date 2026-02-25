@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-22 18:20+0100\n"
+"POT-Creation-Date: 2026-02-24 18:19+0100\n"
 "PO-Revision-Date: 2014-05-18 08:00+0000\n"
 "Last-Translator: DIMITRIOS VLASTARAS <dimitriosvlastaras@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -765,7 +765,7 @@ msgstr ""
 msgid "Auto grant slot"
 msgstr "Αυτόματη παραχώρηση θέσης / Ψευδώνυμο"
 
-#: win32/QueuePage.cpp:58
+#: win32/QueuePage.cpp:59
 msgid "Auto priority settings"
 msgstr "Ρυθμίσεις αυτόματης προτεραιότητας"
 
@@ -782,7 +782,7 @@ msgstr "Όριο αυτόματης αναζήτησης"
 msgid "Auto-search limit"
 msgstr "Όριο αυτόματης αναζήτησης"
 
-#: win32/QueuePage.cpp:94
+#: win32/QueuePage.cpp:95
 msgid "Autodrop settings"
 msgstr "Ρυθμίσεις αυτόματης απόρριψης"
 
@@ -869,7 +869,7 @@ msgstr "Κατάσταση απουσίας ενεργή: %1%"
 msgid "B"
 msgstr "B"
 
-#: win32/QueuePage.cpp:108
+#: win32/QueuePage.cpp:109
 msgid "B/s"
 msgstr "B/δευτ"
 
@@ -996,7 +996,7 @@ msgstr ""
 "Γραμμές συζήτησης που θα ανακαλούνται απο το ιστορικό όταν ανοίγει ένα "
 "παράθυρο"
 
-#: win32/QueuePage.cpp:110
+#: win32/QueuePage.cpp:111
 msgid "Check every"
 msgstr "Έλεγχος κάθε"
 
@@ -1462,13 +1462,17 @@ msgstr ""
 msgid "Don't delete file lists when exiting"
 msgstr "Να μη διαγράφονται οι λίστες αρχείων κατά την έξοδο"
 
-#: win32/QueuePage.cpp:41
+#: win32/QueuePage.cpp:42
 msgid "Don't download files already in share"
 msgstr "Να μη γίνεται λήψη των ήδη κοινόχρηστων αρχείων"
 
-#: win32/QueuePage.cpp:42
+#: win32/QueuePage.cpp:43
 msgid "Don't download files already in the queue"
 msgstr "Να μη γίνεται λήψη των αρχείων που είναι ήδη στην σειρά αναμονής"
+
+#: win32/QueuePage.cpp:40
+msgid "Don't match same user on different hubs"
+msgstr ""
 
 #: win32/HubFrame.cpp:628
 msgid "Don't remove /password before your password"
@@ -1615,7 +1619,7 @@ msgstr "Λήψεις"
 msgid "Downloads running, please disconnect them"
 msgstr "Ενεργές λήψεις,παρακαλώ αποσυνδέστε τες"
 
-#: win32/QueuePage.cpp:104
+#: win32/QueuePage.cpp:105
 msgid "Drop sources below"
 msgstr "Απόρριψη πηγών κάτω από"
 
@@ -2202,7 +2206,7 @@ msgstr "Απόκρυψη ήδη κοινόχρηστων αρχείων"
 msgid "High"
 msgstr "Υψηλή"
 
-#: win32/QueuePage.cpp:74
+#: win32/QueuePage.cpp:75
 msgid "High prio max size"
 msgstr "Μέγιστο μέγεθος υψηλής προτεραιότητας"
 
@@ -2210,7 +2214,7 @@ msgstr "Μέγιστο μέγεθος υψηλής προτεραιότητας"
 msgid "Highest"
 msgstr "Μέγιστη"
 
-#: win32/QueuePage.cpp:68
+#: win32/QueuePage.cpp:69
 msgid "Highest prio max size"
 msgstr "Μέγιστο μέγεθος υψηλότατης προτεραιότητας"
 
@@ -2512,7 +2516,7 @@ msgstr "Kb"
 msgid "Keep duplicate files in your file list"
 msgstr "Παραμονή διπλών αρχείων στη λίστα σας"
 
-#: win32/QueuePage.cpp:43
+#: win32/QueuePage.cpp:44
 msgid "Keep finished files in the queue"
 msgstr "Να διατηρούνται τα τελειωμένα αρχεία στην σειρά"
 
@@ -2526,9 +2530,9 @@ msgid "Key Search:"
 msgstr "Αναζήτηση"
 
 #: win32/ADLSProperties.cpp:100 win32/ExpertsPage.cpp:45
-#: win32/ExpertsPage.cpp:48 win32/ListFilter.cpp:158 win32/QueuePage.cpp:72
-#: win32/QueuePage.cpp:78 win32/QueuePage.cpp:84 win32/QueuePage.cpp:90
-#: win32/QueuePage.cpp:138 win32/SearchFrame.cpp:203
+#: win32/ExpertsPage.cpp:48 win32/ListFilter.cpp:158 win32/QueuePage.cpp:73
+#: win32/QueuePage.cpp:79 win32/QueuePage.cpp:85 win32/QueuePage.cpp:91
+#: win32/QueuePage.cpp:139 win32/SearchFrame.cpp:203
 msgid "KiB"
 msgstr "Kb"
 
@@ -2676,7 +2680,7 @@ msgstr "Καταγραφές"
 msgid "Low"
 msgstr "Χαμηλή"
 
-#: win32/QueuePage.cpp:86
+#: win32/QueuePage.cpp:87
 msgid "Low prio max size"
 msgstr "Μέγιστο μέγεθος χαμηλής προτεραιότητας"
 
@@ -2784,7 +2788,7 @@ msgstr "Μέγιστη ταχύτητα δεικτοποίησης"
 msgid "Max hubs"
 msgstr "Μέγιστος αριθμός κυψελών"
 
-#: win32/QueuePage.cpp:122
+#: win32/QueuePage.cpp:123
 msgid "Max inactivity"
 msgstr "Μέγιστη αδράνεια"
 
@@ -2847,11 +2851,11 @@ msgstr "Ελάχιστο μέγεθος αρχείου"
 msgid "Min Size"
 msgstr "Ελάχιστο μέγεθος"
 
-#: win32/QueuePage.cpp:116
+#: win32/QueuePage.cpp:117
 msgid "Min elapsed"
 msgstr "Ελάχιστος χρόνος που διανύθηκε"
 
-#: win32/QueuePage.cpp:134
+#: win32/QueuePage.cpp:135
 msgid "Min filesize"
 msgstr "Ελάχιστο μέγεθος αρχείου"
 
@@ -2863,7 +2867,7 @@ msgstr "Ελάχιστος διαμοιρασμός"
 msgid "Min slots"
 msgstr "Ελάχιστος αριθμός θέσεων"
 
-#: win32/QueuePage.cpp:128
+#: win32/QueuePage.cpp:129
 msgid "Min sources online"
 msgstr "Ελάχιστες συνδεδεμένες πηγές"
 
@@ -3052,7 +3056,7 @@ msgstr "Μεσημέρι"
 msgid "Normal"
 msgstr "Κανονική"
 
-#: win32/QueuePage.cpp:80
+#: win32/QueuePage.cpp:81
 msgid "Normal prio max size"
 msgstr "Μέγιστο μέγεθος κανονικής προτεραιότητας"
 
@@ -3197,7 +3201,7 @@ msgstr ""
 msgid "Options"
 msgstr "Επιλογές"
 
-#: win32/QueuePage.cpp:141
+#: win32/QueuePage.cpp:142
 msgid "Other queue options"
 msgstr "Άλλες επιλογές για τα αρχεία σε αναμονή"
 
@@ -4013,7 +4017,7 @@ msgstr "Μέγεθος: %1%"
 msgid "Skip tray icon notification on PM from bots and hub"
 msgstr ""
 
-#: win32/QueuePage.cpp:40
+#: win32/QueuePage.cpp:41
 msgid "Skip zero-byte files"
 msgstr "Παράλειψη αρχείων μηδενικού μεγέθους (0b)"
 
@@ -4803,7 +4807,7 @@ msgstr "γραμμές"
 msgid "minutes of inactivity (0 = disabled)"
 msgstr ""
 
-#: win32/QueuePage.cpp:114 win32/QueuePage.cpp:120 win32/QueuePage.cpp:126
+#: win32/QueuePage.cpp:115 win32/QueuePage.cpp:121 win32/QueuePage.cpp:127
 msgid "s"
 msgstr "δευτ."
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-21 15:38+0100\n"
+"POT-Creation-Date: 2026-02-24 18:19+0100\n"
 "PO-Revision-Date: 2013-09-15 14:06+0000\n"
 "Last-Translator: Gabriel O <Unknown>\n"
 "Language-Team: Slovak <sk@li.org>\n"
@@ -209,11 +209,11 @@ msgstr ""
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1672
+#: dcpp/QueueManager.cpp:1722
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "nekonzistentný CRC32 (kontrola v SFV)"
 
-#: dcpp/QueueManager.cpp:1663
+#: dcpp/QueueManager.cpp:1713
 #, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "CRC32 nekonzistencia (SFV-Check): %1%"
@@ -590,7 +590,7 @@ msgstr "Invalid file name found while hashing folder %1%"
 msgid "Invalid regular expression: %1%"
 msgstr "Neplatný regulérny výraz: %1%"
 
-#: dcpp/SettingsManager.cpp:719
+#: dcpp/SettingsManager.cpp:720
 msgid "Invalid search type name"
 msgstr "Neplatný názov typu hľadania"
 
@@ -647,7 +647,7 @@ msgstr "Nebol vybraný súbor s privátnym kľúčom"
 msgid "No slots available"
 msgstr "Nie sú dostupné sloty"
 
-#: dcpp/SettingsManager.cpp:777
+#: dcpp/SettingsManager.cpp:778
 msgid "No such search type"
 msgstr "Žiadny takýto typ hľadania"
 
@@ -732,6 +732,11 @@ msgstr "Odoslané %1%"
 msgid "Shared Files"
 msgstr "Zdieľané súbory"
 
+#: dcpp/QueueManager.cpp:1369
+#, boost-format
+msgid "Skipping same source: %1% %2% %3%/%4%"
+msgstr ""
+
 #: dcpp/Socket.cpp:498 dcpp/Socket.cpp:502
 msgid "Socks server authentication failed (bad login / password?)"
 msgstr ""
@@ -804,7 +809,7 @@ msgid ""
 "encrypted transfers will be disabled"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1506
+#: dcpp/QueueManager.cpp:1556
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -844,7 +849,7 @@ msgstr ""
 "Tento hub sa pokúša použiť vás klient na spamovanie %1%, prosím naliehajte "
 "na majiteľa hub-u aby s tým niečo spravil"
 
-#: dcpp/SettingsManager.cpp:723 dcpp/SettingsManager.cpp:745
+#: dcpp/SettingsManager.cpp:724 dcpp/SettingsManager.cpp:746
 msgid "This search type already exists"
 msgstr "Tento typ hľadania už existuje"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-22 18:06+0100\n"
+"POT-Creation-Date: 2026-02-24 18:05+0100\n"
 "PO-Revision-Date: 2012-08-03 23:15+0000\n"
 "Last-Translator: adrian_007 <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -10283,12 +10283,26 @@ msgstr ""
 "list użytkowników.</span>"
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_queue.html:107
+#: help/settings_queue.html:108
+msgid "Don't match same user on different hubs"
+msgstr ""
+
+#. type: Content of: <html><body><dl><dd>
+#: help/settings_queue.html:110
+msgid ""
+"Enable to skip new source users with same nick and IP address when "
+"autosearching for same files. The download speed will not magically increase "
+"when you download from same user multiple times.  Instead it takes more "
+"resources both from us and remote user."
+msgstr ""
+
+#. type: Content of: <html><body><dl><dt>
+#: help/settings_queue.html:116
 msgid "Skip zero-byte files"
 msgstr "Pomiń puste pliki"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_queue.html:108
+#: help/settings_queue.html:117
 msgid ""
 "When this option is enabled, any zero byte files you try to download will be "
 "silently skipped. Sometimes empty files contain information through their "
@@ -10300,12 +10314,12 @@ msgstr ""
 "dysku."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_queue.html:112
+#: help/settings_queue.html:121
 msgid "Don't download files already in share"
 msgstr "Nie ściągaj plików które znajdują się w udostępnionych"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_queue.html:113
+#: help/settings_queue.html:122
 #, fuzzy
 msgid ""
 "This option will stop you from downloading files which already exist in one "
@@ -10316,12 +10330,12 @@ msgstr ""
 "przez nas katalogach."
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_queue.html:116
+#: help/settings_queue.html:125
 msgid "Don't download files already in the queue"
 msgstr "Nie pobieraj plików znajdujących się w kolejce do pobrania"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_queue.html:117
+#: help/settings_queue.html:126
 msgid ""
 "This option will stop you from downloading files which already exist in your "
 "queue by blocking the addition of the same file to a different place in the "
@@ -10333,12 +10347,12 @@ msgid ""
 msgstr ""
 
 #. type: Content of: <html><body><dl><dt>
-#: help/settings_queue.html:122
+#: help/settings_queue.html:131
 msgid "Keep finished files in the queue"
 msgstr "Zachowaj zakończone pliki w kolejce"
 
 #. type: Content of: <html><body><dl><dd>
-#: help/settings_queue.html:123
+#: help/settings_queue.html:132
 msgid ""
 "Enable this option if you want to keep downloaded files and folders in the "
 "download queue after they have been finished. After downloaded the queue "

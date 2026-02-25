@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-22 18:20+0100\n"
+"POT-Creation-Date: 2026-02-24 18:19+0100\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -760,7 +760,7 @@ msgstr ""
 msgid "Auto grant slot"
 msgstr "자동 슬롯 허용 (체크) / 사용자 닉네임"
 
-#: win32/QueuePage.cpp:58
+#: win32/QueuePage.cpp:59
 msgid "Auto priority settings"
 msgstr "다운로드 우선순위 자동-분류 설정"
 
@@ -777,7 +777,7 @@ msgstr "자동-검색 제한 (추가 가능한 소유자 수)"
 msgid "Auto-search limit"
 msgstr "자동-검색 제한 (추가 가능한 소유자 수)"
 
-#: win32/QueuePage.cpp:94
+#: win32/QueuePage.cpp:95
 msgid "Autodrop settings"
 msgstr "다운로드 자동-버림 조건 설정"
 
@@ -878,7 +878,7 @@ msgstr "자리비움 모드 켜짐: %1%"
 msgid "B"
 msgstr "B"
 
-#: win32/QueuePage.cpp:108
+#: win32/QueuePage.cpp:109
 msgid "B/s"
 msgstr "B/s"
 
@@ -1002,7 +1002,7 @@ msgstr "허브 대화 메시지"
 msgid "Chat lines to recall from history when opening a window"
 msgstr "창을 열 때 Log에서 불러올 최근 히스토리 줄수"
 
-#: win32/QueuePage.cpp:110
+#: win32/QueuePage.cpp:111
 msgid "Check every"
 msgstr "체크 간격"
 
@@ -1468,13 +1468,17 @@ msgstr "허브를 떠난 즐겨찾기-사용자를 자동으로 끊지 않음"
 msgid "Don't delete file lists when exiting"
 msgstr "다운로드한 파일-목록을 프로그램을 종료할 때 삭제하지 않고 보존함"
 
-#: win32/QueuePage.cpp:41
+#: win32/QueuePage.cpp:42
 msgid "Don't download files already in share"
 msgstr "이미 공유하고 있는 파일은 다운로드하지 않음"
 
-#: win32/QueuePage.cpp:42
+#: win32/QueuePage.cpp:43
 msgid "Don't download files already in the queue"
 msgstr "이미 다운로드-큐에 등록한 파일은 다운로드하지 않음"
+
+#: win32/QueuePage.cpp:40
+msgid "Don't match same user on different hubs"
+msgstr ""
 
 #: win32/HubFrame.cpp:628
 msgid "Don't remove /password before your password"
@@ -1623,7 +1627,7 @@ msgstr "다운로드"
 msgid "Downloads running, please disconnect them"
 msgstr "다운로드가 진행되고 있습니다, 연결을 끊으세요"
 
-#: win32/QueuePage.cpp:104
+#: win32/QueuePage.cpp:105
 msgid "Drop sources below"
 msgstr "자동-버림 속도(↓)"
 
@@ -2220,7 +2224,7 @@ msgstr "이미 공유하고 있는 파일은 감춤"
 msgid "High"
 msgstr "높음"
 
-#: win32/QueuePage.cpp:74
+#: win32/QueuePage.cpp:75
 msgid "High prio max size"
 msgstr "'높음' 상한 크기"
 
@@ -2228,7 +2232,7 @@ msgstr "'높음' 상한 크기"
 msgid "Highest"
 msgstr "최고"
 
-#: win32/QueuePage.cpp:68
+#: win32/QueuePage.cpp:69
 msgid "Highest prio max size"
 msgstr "'최고' 상한 크기"
 
@@ -2535,7 +2539,7 @@ msgstr "kiB"
 msgid "Keep duplicate files in your file list"
 msgstr "내 파일-목록에 중복된 파일을 포함함"
 
-#: win32/QueuePage.cpp:43
+#: win32/QueuePage.cpp:44
 msgid "Keep finished files in the queue"
 msgstr "다운로드 완료된 파일을 다운로드-큐에서 제거하지 않고 남겨둠"
 
@@ -2549,9 +2553,9 @@ msgid "Key Search:"
 msgstr "검색"
 
 #: win32/ADLSProperties.cpp:100 win32/ExpertsPage.cpp:45
-#: win32/ExpertsPage.cpp:48 win32/ListFilter.cpp:158 win32/QueuePage.cpp:72
-#: win32/QueuePage.cpp:78 win32/QueuePage.cpp:84 win32/QueuePage.cpp:90
-#: win32/QueuePage.cpp:138 win32/SearchFrame.cpp:203
+#: win32/ExpertsPage.cpp:48 win32/ListFilter.cpp:158 win32/QueuePage.cpp:73
+#: win32/QueuePage.cpp:79 win32/QueuePage.cpp:85 win32/QueuePage.cpp:91
+#: win32/QueuePage.cpp:139 win32/SearchFrame.cpp:203
 msgid "KiB"
 msgstr "kiB"
 
@@ -2699,7 +2703,7 @@ msgstr "로그"
 msgid "Low"
 msgstr "낮음"
 
-#: win32/QueuePage.cpp:86
+#: win32/QueuePage.cpp:87
 msgid "Low prio max size"
 msgstr "'낮음' 상한 크기"
 
@@ -2806,7 +2810,7 @@ msgstr "최대 Hash(파일 ID) 작성 속도"
 msgid "Max hubs"
 msgstr "최대 허브"
 
-#: win32/QueuePage.cpp:122
+#: win32/QueuePage.cpp:123
 msgid "Max inactivity"
 msgstr "최대 무반응"
 
@@ -2869,11 +2873,11 @@ msgstr "최소 크기"
 msgid "Min Size"
 msgstr "최소 크기"
 
-#: win32/QueuePage.cpp:116
+#: win32/QueuePage.cpp:117
 msgid "Min elapsed"
 msgstr "최소 경과시간"
 
-#: win32/QueuePage.cpp:134
+#: win32/QueuePage.cpp:135
 msgid "Min filesize"
 msgstr "최소 파일 크기"
 
@@ -2885,7 +2889,7 @@ msgstr "최소 공유"
 msgid "Min slots"
 msgstr "최소 슬롯"
 
-#: win32/QueuePage.cpp:128
+#: win32/QueuePage.cpp:129
 msgid "Min sources online"
 msgstr "최소 온라인 소유자"
 
@@ -3074,7 +3078,7 @@ msgstr "정오"
 msgid "Normal"
 msgstr "보통"
 
-#: win32/QueuePage.cpp:80
+#: win32/QueuePage.cpp:81
 msgid "Normal prio max size"
 msgstr "'보통' 상한 크기"
 
@@ -3221,7 +3225,7 @@ msgstr ""
 msgid "Options"
 msgstr "옵션"
 
-#: win32/QueuePage.cpp:141
+#: win32/QueuePage.cpp:142
 msgid "Other queue options"
 msgstr "기타 다운로드-큐 옵션"
 
@@ -4052,7 +4056,7 @@ msgstr "크기: %1%"
 msgid "Skip tray icon notification on PM from bots and hub"
 msgstr ""
 
-#: win32/QueuePage.cpp:40
+#: win32/QueuePage.cpp:41
 msgid "Skip zero-byte files"
 msgstr ""
 "0 byte인 파일은 다운로드하지 않음 (이 옵션을 켜면, 0 byte인 파일은 다운로드"
@@ -4853,7 +4857,7 @@ msgstr "줄"
 msgid "minutes of inactivity (0 = disabled)"
 msgstr ""
 
-#: win32/QueuePage.cpp:114 win32/QueuePage.cpp:120 win32/QueuePage.cpp:126
+#: win32/QueuePage.cpp:115 win32/QueuePage.cpp:121 win32/QueuePage.cpp:127
 msgid "s"
 msgstr "s"
 

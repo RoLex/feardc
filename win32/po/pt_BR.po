@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: win32\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-22 18:20+0100\n"
+"POT-Creation-Date: 2026-02-24 18:19+0100\n"
 "PO-Revision-Date: 2012-05-16 01:15+0000\n"
 "Last-Translator: Launchpad Translations Administrators <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -755,7 +755,7 @@ msgstr ""
 msgid "Auto grant slot"
 msgstr "Auto garantir slot / Apelido"
 
-#: win32/QueuePage.cpp:58
+#: win32/QueuePage.cpp:59
 msgid "Auto priority settings"
 msgstr "Configurações da auto prioridade"
 
@@ -772,7 +772,7 @@ msgstr "Limite da Auto-busca"
 msgid "Auto-search limit"
 msgstr "Limite da Auto-busca"
 
-#: win32/QueuePage.cpp:94
+#: win32/QueuePage.cpp:95
 msgid "Autodrop settings"
 msgstr "Configurações para auto-soltar"
 
@@ -861,7 +861,7 @@ msgstr "Modo distante ligado: %1%"
 msgid "B"
 msgstr "B"
 
-#: win32/QueuePage.cpp:108
+#: win32/QueuePage.cpp:109
 msgid "B/s"
 msgstr "B/s"
 
@@ -988,7 +988,7 @@ msgid "Chat lines to recall from history when opening a window"
 msgstr ""
 "Mostrar as últimas linhas do histórico de conversa ao abrir uma nova janela."
 
-#: win32/QueuePage.cpp:110
+#: win32/QueuePage.cpp:111
 msgid "Check every"
 msgstr "Verificar a cada"
 
@@ -1447,13 +1447,17 @@ msgstr ""
 msgid "Don't delete file lists when exiting"
 msgstr "Não apagar as listas de arquivos quando sair"
 
-#: win32/QueuePage.cpp:41
+#: win32/QueuePage.cpp:42
 msgid "Don't download files already in share"
 msgstr "Não baixar arquivos já no compartilhamento"
 
-#: win32/QueuePage.cpp:42
+#: win32/QueuePage.cpp:43
 msgid "Don't download files already in the queue"
 msgstr "Não baixar arquivos que já estão na fila"
+
+#: win32/QueuePage.cpp:40
+msgid "Don't match same user on different hubs"
+msgstr ""
 
 #: win32/HubFrame.cpp:628
 msgid "Don't remove /password before your password"
@@ -1601,7 +1605,7 @@ msgstr "Downloads"
 msgid "Downloads running, please disconnect them"
 msgstr "Downloads em execução, por favor desconecte eles"
 
-#: win32/QueuePage.cpp:104
+#: win32/QueuePage.cpp:105
 msgid "Drop sources below"
 msgstr "Soltar as fontes abaixo"
 
@@ -2186,7 +2190,7 @@ msgstr "Esconder os arquivos já no compartilhamento"
 msgid "High"
 msgstr "Alta"
 
-#: win32/QueuePage.cpp:74
+#: win32/QueuePage.cpp:75
 msgid "High prio max size"
 msgstr "Tamanho máximo com prioridade alta"
 
@@ -2194,7 +2198,7 @@ msgstr "Tamanho máximo com prioridade alta"
 msgid "Highest"
 msgstr "Mais alta"
 
-#: win32/QueuePage.cpp:68
+#: win32/QueuePage.cpp:69
 msgid "Highest prio max size"
 msgstr "Tamanho máximo com a prioridade mais alta"
 
@@ -2495,7 +2499,7 @@ msgstr "KiB"
 msgid "Keep duplicate files in your file list"
 msgstr "Manter arquivos duplicados na sua lista de arquivos"
 
-#: win32/QueuePage.cpp:43
+#: win32/QueuePage.cpp:44
 msgid "Keep finished files in the queue"
 msgstr "Manter arquivos finalizados na lista"
 
@@ -2509,9 +2513,9 @@ msgid "Key Search:"
 msgstr "Procurar"
 
 #: win32/ADLSProperties.cpp:100 win32/ExpertsPage.cpp:45
-#: win32/ExpertsPage.cpp:48 win32/ListFilter.cpp:158 win32/QueuePage.cpp:72
-#: win32/QueuePage.cpp:78 win32/QueuePage.cpp:84 win32/QueuePage.cpp:90
-#: win32/QueuePage.cpp:138 win32/SearchFrame.cpp:203
+#: win32/ExpertsPage.cpp:48 win32/ListFilter.cpp:158 win32/QueuePage.cpp:73
+#: win32/QueuePage.cpp:79 win32/QueuePage.cpp:85 win32/QueuePage.cpp:91
+#: win32/QueuePage.cpp:139 win32/SearchFrame.cpp:203
 msgid "KiB"
 msgstr "KiB"
 
@@ -2660,7 +2664,7 @@ msgstr "Logs"
 msgid "Low"
 msgstr "Baixa"
 
-#: win32/QueuePage.cpp:86
+#: win32/QueuePage.cpp:87
 msgid "Low prio max size"
 msgstr "Tamanho máximo com baixa prioridade"
 
@@ -2768,7 +2772,7 @@ msgstr "Velocidade máxima do hash"
 msgid "Max hubs"
 msgstr "Máx de hubs"
 
-#: win32/QueuePage.cpp:122
+#: win32/QueuePage.cpp:123
 msgid "Max inactivity"
 msgstr "Máximo de inatividade"
 
@@ -2831,11 +2835,11 @@ msgstr "Tamanho Mínimo do Arquivo"
 msgid "Min Size"
 msgstr "Tamanho mínimo"
 
-#: win32/QueuePage.cpp:116
+#: win32/QueuePage.cpp:117
 msgid "Min elapsed"
 msgstr "Mínimo restante"
 
-#: win32/QueuePage.cpp:134
+#: win32/QueuePage.cpp:135
 msgid "Min filesize"
 msgstr "Tamanho mínimo do arquivo"
 
@@ -2847,7 +2851,7 @@ msgstr "Mín de compartilhamento"
 msgid "Min slots"
 msgstr "Mín de losts"
 
-#: win32/QueuePage.cpp:128
+#: win32/QueuePage.cpp:129
 msgid "Min sources online"
 msgstr "Mínimo de fontes online"
 
@@ -3035,7 +3039,7 @@ msgstr "Meio dia"
 msgid "Normal"
 msgstr "Normal"
 
-#: win32/QueuePage.cpp:80
+#: win32/QueuePage.cpp:81
 msgid "Normal prio max size"
 msgstr "Tamanho máximo com a prioridade normal"
 
@@ -3182,7 +3186,7 @@ msgstr ""
 msgid "Options"
 msgstr "Opções"
 
-#: win32/QueuePage.cpp:141
+#: win32/QueuePage.cpp:142
 msgid "Other queue options"
 msgstr "Outras opções da fila"
 
@@ -3996,7 +4000,7 @@ msgstr "Tamanho: %1%"
 msgid "Skip tray icon notification on PM from bots and hub"
 msgstr ""
 
-#: win32/QueuePage.cpp:40
+#: win32/QueuePage.cpp:41
 msgid "Skip zero-byte files"
 msgstr "Pular arquivos com zero-byte"
 
@@ -4787,7 +4791,7 @@ msgstr "linhas"
 msgid "minutes of inactivity (0 = disabled)"
 msgstr ""
 
-#: win32/QueuePage.cpp:114 win32/QueuePage.cpp:120 win32/QueuePage.cpp:126
+#: win32/QueuePage.cpp:115 win32/QueuePage.cpp:121 win32/QueuePage.cpp:127
 msgid "s"
 msgstr "s"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-21 15:38+0100\n"
+"POT-Creation-Date: 2026-02-24 18:19+0100\n"
 "PO-Revision-Date: 2012-10-19 07:10+0000\n"
 "Last-Translator: comet <Unknown>\n"
 "Language-Team: Simplified Chinese <zh_CN@li.org>\n"
@@ -204,11 +204,11 @@ msgstr ""
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1672
+#: dcpp/QueueManager.cpp:1722
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "CRC32 出错(SFV-Check)"
 
-#: dcpp/QueueManager.cpp:1663
+#: dcpp/QueueManager.cpp:1713
 #, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "CRC32 不一致 (SFV-Check): %1%"
@@ -578,7 +578,7 @@ msgstr "当hashing %1%文件夹时发现无效的文件名"
 msgid "Invalid regular expression: %1%"
 msgstr "无效的正则表达式：%1%"
 
-#: dcpp/SettingsManager.cpp:719
+#: dcpp/SettingsManager.cpp:720
 msgid "Invalid search type name"
 msgstr "无效的搜索类型名称"
 
@@ -633,7 +633,7 @@ msgstr "未选择密钥文件"
 msgid "No slots available"
 msgstr "对方上传通道都已经满了"
 
-#: dcpp/SettingsManager.cpp:777
+#: dcpp/SettingsManager.cpp:778
 msgid "No such search type"
 msgstr "无此搜索类型"
 
@@ -717,6 +717,11 @@ msgstr "已经发送 %1%"
 msgid "Shared Files"
 msgstr "共享文件"
 
+#: dcpp/QueueManager.cpp:1369
+#, boost-format
+msgid "Skipping same source: %1% %2% %3%/%4%"
+msgstr ""
+
 #: dcpp/Socket.cpp:498 dcpp/Socket.cpp:502
 msgid "Socks server authentication failed (bad login / password?)"
 msgstr "Socks代理鉴权失败 (用户名/密码错误?)"
@@ -786,7 +791,7 @@ msgid ""
 "encrypted transfers will be disabled"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1506
+#: dcpp/QueueManager.cpp:1556
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -825,7 +830,7 @@ msgid ""
 msgstr ""
 "这个站点在尝试利用你的客户端去发送垃圾信息%1%，请让站点管理员去修复这个问题"
 
-#: dcpp/SettingsManager.cpp:723 dcpp/SettingsManager.cpp:745
+#: dcpp/SettingsManager.cpp:724 dcpp/SettingsManager.cpp:746
 msgid "This search type already exists"
 msgstr "此搜索类型已存在"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcpp\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-21 15:38+0100\n"
+"POT-Creation-Date: 2026-02-24 18:19+0100\n"
 "PO-Revision-Date: 2022-09-25 14:53+0000\n"
 "Last-Translator: Francisco Blas Izquierdo Riera (klondike) "
 "<franxisco1988@gmail.com>\n"
@@ -215,11 +215,11 @@ msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr ""
 "Bloqueando '%1%', se detectón un ataque DDoS potencial (hub de origen '%2%')"
 
-#: dcpp/QueueManager.cpp:1672
+#: dcpp/QueueManager.cpp:1722
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "Error de CRC32  (SFV-Check)"
 
-#: dcpp/QueueManager.cpp:1663
+#: dcpp/QueueManager.cpp:1713
 #, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "CRC32 incongruencia (SFV-Check): %1%"
@@ -601,7 +601,7 @@ msgstr ""
 msgid "Invalid regular expression: %1%"
 msgstr "Expresión regular invalida: %1%"
 
-#: dcpp/SettingsManager.cpp:719
+#: dcpp/SettingsManager.cpp:720
 msgid "Invalid search type name"
 msgstr "Nombre del tipo de búsqueda incorrecto"
 
@@ -660,7 +660,7 @@ msgstr "No ha elegido archivo que claves privadas"
 msgid "No slots available"
 msgstr "Sin Slots Disponibles"
 
-#: dcpp/SettingsManager.cpp:777
+#: dcpp/SettingsManager.cpp:778
 msgid "No such search type"
 msgstr "No existe tipo de búsqueda"
 
@@ -745,6 +745,11 @@ msgstr "Enviado %1%"
 msgid "Shared Files"
 msgstr "Archivos compartidos"
 
+#: dcpp/QueueManager.cpp:1369
+#, boost-format
+msgid "Skipping same source: %1% %2% %3%/%4%"
+msgstr ""
+
 #: dcpp/Socket.cpp:498 dcpp/Socket.cpp:502
 msgid "Socks server authentication failed (bad login / password?)"
 msgstr ""
@@ -815,7 +820,7 @@ msgid ""
 "encrypted transfers will be disabled"
 msgstr ""
 
-#: dcpp/QueueManager.cpp:1506
+#: dcpp/QueueManager.cpp:1556
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -855,7 +860,7 @@ msgstr ""
 "Este centro está intentando usar su cliente para hacer spam %1%, por favor "
 "propietario del centro de urgencia de arreglar esto"
 
-#: dcpp/SettingsManager.cpp:723 dcpp/SettingsManager.cpp:745
+#: dcpp/SettingsManager.cpp:724 dcpp/SettingsManager.cpp:746
 msgid "This search type already exists"
 msgstr "Este tipo de búsqueda ya existe"
 

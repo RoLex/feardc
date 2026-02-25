@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dcplusplus\n"
 "Report-Msgid-Bugs-To: dcplusplus-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2026-02-21 15:38+0100\n"
+"POT-Creation-Date: 2026-02-24 18:19+0100\n"
 "PO-Revision-Date: 2016-10-03 18:02+0000\n"
 "Last-Translator: Igor Jerosimić <Unknown>\n"
 "Language-Team: Serbian <sr@li.org>\n"
@@ -208,11 +208,11 @@ msgstr "Blokirao C-C vezu ka habu ('%1%:%2%'; zahtev od '%3%')"
 msgid "Blocking '%1%', potential DDoS detected (originating hub '%2%')"
 msgstr "Blokiram '%1%', otkriven potencijalni DDoS napad (izvorni hab '%2%')"
 
-#: dcpp/QueueManager.cpp:1672
+#: dcpp/QueueManager.cpp:1722
 msgid "CRC32 inconsistency (SFV-Check)"
 msgstr "CRC32 neusaglašenost (SFV-Check)"
 
-#: dcpp/QueueManager.cpp:1663
+#: dcpp/QueueManager.cpp:1713
 #, boost-format
 msgid "CRC32 inconsistency (SFV-Check): %1%"
 msgstr "CRC32 neusaglašenost (SFV-Check): %1%"
@@ -589,7 +589,7 @@ msgstr "Pronašao neispravno ime datoteke tokom hashovanja direktorijuma %1%"
 msgid "Invalid regular expression: %1%"
 msgstr "Regular expression nije validan: %1%"
 
-#: dcpp/SettingsManager.cpp:719
+#: dcpp/SettingsManager.cpp:720
 msgid "Invalid search type name"
 msgstr "Neispravan tip pretrage"
 
@@ -648,7 +648,7 @@ msgstr "Nije izabarana datoteka za privatni ključ"
 msgid "No slots available"
 msgstr "Nema slobodnih slotova"
 
-#: dcpp/SettingsManager.cpp:777
+#: dcpp/SettingsManager.cpp:778
 msgid "No such search type"
 msgstr "Ne postojeći tip pretrage"
 
@@ -732,6 +732,11 @@ msgstr "Poslao %1%"
 msgid "Shared Files"
 msgstr "Deljene datoteke"
 
+#: dcpp/QueueManager.cpp:1369
+#, boost-format
+msgid "Skipping same source: %1% %2% %3%/%4%"
+msgstr ""
+
 #: dcpp/Socket.cpp:498 dcpp/Socket.cpp:502
 msgid "Socks server authentication failed (bad login / password?)"
 msgstr "Socks server provera nije uspela (loše korisničko ime / lozinka?)"
@@ -804,7 +809,7 @@ msgstr ""
 "Enkriptovani prenosni port ne može da bude isti kao prenosni port, "
 "enkriptovani prenos će biti onemogućen"
 
-#: dcpp/QueueManager.cpp:1506
+#: dcpp/QueueManager.cpp:1556
 #, boost-format
 msgid ""
 "The queued file %1% already exists in your share, removing from the queue"
@@ -845,7 +850,7 @@ msgstr ""
 "Ovaj hab pokušava da iskoristi vaš klijent za spam %1%, molimo naglasite "
 "vlasniku haba da popravi ovo."
 
-#: dcpp/SettingsManager.cpp:723 dcpp/SettingsManager.cpp:745
+#: dcpp/SettingsManager.cpp:724 dcpp/SettingsManager.cpp:746
 msgid "This search type already exists"
 msgstr "Ovaj tip pretrage već postoji"
 
