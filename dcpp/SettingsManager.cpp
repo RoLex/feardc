@@ -92,7 +92,7 @@ const string SettingsManager::settingTags[] =
 	"AddFinishedInstantly", "AdlsBreakOnFirst",
 	"AllowUntrustedClients", "AllowUntrustedHubs", "AlwaysCCPM", "AlwaysTray", "AutoAway", "LastAway",
 	"AutoDetectIncomingConnection", "AutoFollow", "AutoKick", "AutoKickNoFavs", "AutoSearch",
-	"AutoSearchAutoMatch", "NoSameUserMatch", "AutoDropAll", "AutoDropDisconnect", "AutoDropFilelists",
+	"AutoSearchAutoMatch", "NoSameUserSource", "AutoDropAll", "AutoDropDisconnect", "AutoDropFilelists",
 	"AwayCompLock", "AwayTimeStamp", "BoldFinishedDownloads", "BoldFinishedUploads", "BoldFL",
 	"BoldHub", "BoldPm", "BoldQueue", "BoldSearch", "BoldSystemLog", "ClearSearch",
 	"ClickableChatLinks",
@@ -253,7 +253,7 @@ SettingsManager::SettingsManager() {
 	setDefault(ADLS_BREAK_ON_FIRST, false);
 	setDefault(HUB_USER_COMMANDS, true);
 	setDefault(AUTO_SEARCH_AUTO_MATCH, true);
-	setDefault(NO_SAME_USER_MATCH, false);
+	setDefault(NO_SAME_USER_SOURCE, false);
 	setDefault(LOG_FILELIST_TRANSFERS, false);
 	setDefault(LOG_SYSTEM, false);
 	setDefault(SEND_UNKNOWN_COMMANDS, true);

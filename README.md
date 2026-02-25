@@ -30,6 +30,7 @@
 * Add %[extra] variable support to main and private chat log formats when available, this shows user IP and country
 * Add global and favorite hub settings to disable TLS NMDC client-client connections, this allows transfers between us and old clients
 * Add setting to skip tray icon notification on PM from bots or hub
+* Add setting to skip downloading from same user on different hubs, request by Tantrix [#5]
 * Add different icon for private message window when user is bot or hub
 * Add setting to disable creation of taskbar menu with list of open windows
 * Add status line to user information, displays supported flags - Normal, Away, Server, Fireball, TLS and NAT, NMDC only

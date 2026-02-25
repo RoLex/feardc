@@ -105,12 +105,13 @@ The drawbacks are that it might add slower sources, possibly increasing
 the time needed to complete a download, and that you'll download a lot
 of file lists.</i></dd>
 
-<dt>Don't match same user on different hubs</dt>
-<dd cshelp="IDH_SETTINGS_QUEUE_NO_SAME_USER_MATCH">
+<dt>Don't download from same user on different hubs</dt>
+<dd cshelp="IDH_SETTINGS_QUEUE_NO_SAME_USER_SOURCE">
 Enable to skip new source users with same nick and IP address when
-autosearching for same files. The download speed will not magically
-increase when you download from same user multiple times.
-Instead it takes more resources both from us and remote user.
+downloading files. The download speed will not magically increase
+when you download from same user multiple times. Instead it uses
+more resources both on our side and remote users side. Simply this
+behaviour is useless and therefore should be disabled.
 </dd>
 
   <dt>Skip zero-byte files</dt>

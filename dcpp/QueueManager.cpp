@@ -676,6 +676,10 @@ bool QueueManager::addSource(QueueItem* qi, const HintedUser& aUser, Flags::Mask
 		throw QueueException(str(F_("Duplicate source: %1%") % Util::getFileName(qi->getTarget())));
 	}
 
+	if (isSameSource(qi, aUser)) {
+		throw QueueException(str(F_("Same source: %1%") % Util::getFileName(qi->getTarget())));
+	}
+
 	qi->addSource(aUser);
 
 	if(aUser.user->isSet(User::PASSIVE) && !ClientManager::getInstance()->isActive() ) {
@@ -1340,37 +1344,45 @@ int QueueManager::countOnlineSources(const string& aTarget) {
 		one solution is to partially compare short nick with long one
 	solution:
 		compare ip and nick to avoid adding same user more than once
-	better solution:
-		erase source hub url, cid and possibly nick from user poiter
-		in this case we need to store two source objects and check them
 */
 
-bool QueueManager::isSameSource(QueueItem* qItem, const HintedUser& pUser) noexcept { // sr->getIP()
-	if (!SETTING(NO_SAME_USER_MATCH))
+bool QueueManager::isSameSource(QueueItem* qItem, const HintedUser& pUser) noexcept {
+	if (!SETTING(NO_SAME_USER_SOURCE))
 		return false;
 
 	Lock l(cs);
 	OnlineUser* newUser = ClientManager::getInstance()->findOnlineUser(pUser);
 
-	if (!newUser) // offline result user
-		return true;
+	if (!newUser) // dont break other checks
+		return false;
 
-	const auto& newIdent = newUser->getIdentity();
 	OnlineUser* oldUser = NULL;
+	string newNick, oldNick;
 	HintedUserList hintList;
 	qItem->getOnlineUsers(hintList);
 
 	for (auto& hintUser: hintList) {
 		oldUser = ClientManager::getInstance()->findOnlineUser(hintUser);
 
-		if (oldUser) {
-			if ((oldUser->getIdentity().getIp() == newIdent.getIp()) && (oldUser->getIdentity().getNick() == newIdent.getNick())) {
+		if (oldUser && oldUser->getIdentity().getIp() == newUser->getIdentity().getIp()) {
+			newNick.assign(newUser->getIdentity().getNick());
+			oldNick.assign(oldUser->getIdentity().getNick());
+
+			//test
+			LogManager::getInstance()->message(str(F_("old nick: %1% / %2% / %3%") % Util::addBrackets(oldNick) % oldNick.size() % oldNick.compare(0, oldNick.size(), newNick, 0, oldNick.size())));
+			LogManager::getInstance()->message(str(F_("new nick: %1% / %2% / %3%") % Util::addBrackets(newNick) % newNick.size() % newNick.compare(0, newNick.size(), oldNick, 0, newNick.size())));
+
+			if (oldNick.size() && newNick.size() && ( // todo: add util function to detect clones
+				(oldNick.compare(0, oldNick.size(), newNick, 0, oldNick.size()) == 0) ||
+				(newNick.compare(0, newNick.size(), oldNick, 0, newNick.size()) == 0)
+			)) {
 				LogManager::getInstance()->message(
-					str(F_("Skipping same source: %1% %2% %3%/%4%")
-						% Util::addBrackets(newIdent.getIp())
-						% Util::addBrackets(newIdent.getNick())
+					str(F_("Skipping same source: %1%/%2% %3%/%4%")
+						% Util::addBrackets(newNick)
+						% Util::addBrackets(oldNick)
 						% Util::addBrackets(newUser->getClient().getHubUrl())
-						% Util::addBrackets(oldUser->getClient().getHubUrl()))
+						% Util::addBrackets(oldUser->getClient().getHubUrl())
+					)
 				);
 
 				return true;
@@ -1627,7 +1639,7 @@ void QueueManager::on(SearchManagerListener::SR, const SearchResultPtr& sr) noex
 
 		for(auto qi: matches) {
 			// Size compare to avoid popular spoof
-			if (qi->getSize() == sr->getSize() && !qi->isSource(sr->getUser()) && !qi->isBadSource(sr->getUser()) && !isSameSource(qi, sr->getUser())) {
+			if (qi->getSize() == sr->getSize() && !qi->isSource(sr->getUser()) && !qi->isBadSource(sr->getUser())) {
 				try {
 					if(!SETTING(AUTO_SEARCH_AUTO_MATCH))
 						wantConnection = addSource(qi, sr->getUser(), 0);
