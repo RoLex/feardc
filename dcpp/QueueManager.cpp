@@ -1364,18 +1364,22 @@ bool QueueManager::isSameSource(QueueItem* qItem, const HintedUser& pUser) noexc
 	for (auto& hintUser: hintList) {
 		oldUser = ClientManager::getInstance()->findOnlineUser(hintUser);
 
-		if (oldUser && oldUser->getIdentity().getIp() == newUser->getIdentity().getIp()) {
+		if (oldUser && (oldUser->getIdentity().getIp() == newUser->getIdentity().getIp())) { // same ip
 			newNick.assign(newUser->getIdentity().getNick());
 			oldNick.assign(oldUser->getIdentity().getNick());
 
-			if (oldNick.size() && newNick.size() && ( // todo: add util function to detect clones
-				(oldNick.compare(0, oldNick.size(), newNick, 0, oldNick.size()) == 0) ||
-				(newNick.compare(0, newNick.size(), oldNick, 0, newNick.size()) == 0)
-			)) {
+			if ((oldUser->getIdentity().get("SS") == newUser->getIdentity().get("SS")) || // same share
+				(oldNick.size() && newNick.size() && (
+					(oldNick.compare(0, oldNick.size(), newNick, 0, oldNick.size()) == 0) || // same nick
+					(newNick.compare(0, newNick.size(), oldNick, 0, newNick.size()) == 0)
+				))
+			) {
 				LogManager::getInstance()->message(
-					str(F_("Skipping same source: %1%/%2% %3%/%4%")
+					str(F_("Skipping same source: %1%/%2% %3%/%4% %5%/%6%")
 						% Util::addBrackets(newNick)
 						% Util::addBrackets(oldNick)
+						% Util::addBrackets(newUser->getIdentity().get("SS"))
+						% Util::addBrackets(oldUser->getIdentity().get("SS"))
 						% Util::addBrackets(newUser->getClient().getHubUrl())
 						% Util::addBrackets(oldUser->getClient().getHubUrl())
 					)
