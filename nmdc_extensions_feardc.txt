@@ -43,3 +43,10 @@ Since: 1.3.x.x
 Usage: See https://dc-protocols.github.io/NMDC.html#_huburl
 
 --------------------------------------------------------------------
+
+Feature: SaltPass
+Since: 1.3.2.3
+
+Usage: See https://dc-protocols.github.io/NMDC.html#_saltpass
+
+--------------------------------------------------------------------

@@ -185,6 +185,7 @@ int SearchManager::run() {
 	return 0;
 }
 
+/* todo: SUDP for nmdc */
 void SearchManager::onData(const string& x, const string& remoteIp) {
 	if(x.empty()) { return; } // shouldn't happen but rather be safe...
 

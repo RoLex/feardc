@@ -18,6 +18,8 @@
 #include "stdinc.h"
 #include "NmdcHub.h"
 
+#include <boost/scoped_array.hpp>
+
 #include "ChatMessage.h"
 #include "ClientManager.h"
 #include "ConnectionManager.h"
@@ -802,6 +804,7 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 				feat.push_back("MCTo");
 				feat.push_back("TTHS"); // https://dc-protocols.github.io/NMDC.html#_tths
 				feat.push_back("HubURL"); // https://dc-protocols.github.io/NMDC.html#_huburl
+				feat.push_back("SaltPass"); // https://dc-protocols.github.io/NMDC.html#_saltpass
 				feat.push_back("ZPipe0");
 
 				if (!get(HubSettings::DisableCtmTLS) && CryptoManager::getInstance()->TLSOk()) // if not disabled by user
@@ -1070,11 +1073,13 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 		// todo: any better ideas are welcome
 		fire(ClientListener::HubMCTo(), this, nick, chatMessage);
 
-	} else if(cmd == "$GetPass") {
-		OnlineUser& ou = getUser(getMyNick());
+	} else if (cmd == "$GetPass") {
+		OnlineUser &ou = getUser(getMyNick());
 		ou.getIdentity().set("RG", "1");
 		setMyIdentity(ou.getIdentity());
+		salt = param;
 		fire(ClientListener::GetPassword(), this);
+
 	} else if(cmd == "$BadPass") {
 		setPassword(Util::emptyString);
 	} else if(cmd == "$ZOn") {
@@ -1232,6 +1237,24 @@ void NmdcHub::search(int aSizeType, int64_t aSize, int aFileType, const string& 
 		tmp2 = "Hub:" + fromUtf8(getMyNick());
 
 	send("$Search " + tmp2 + ' ' + c1 + '?' + c2 + '?' + Util::toString(aSize) + '?' + Util::toString(aFileType + 1) + '?' + tmp + '|');
+}
+
+void NmdcHub::password(const string &aPass) {
+	const auto &filteredPass = fromUtf8(aPass);
+
+	if (salt.empty()) {
+		send("$MyPass " + filteredPass + "|");
+		return;
+	}
+
+	const size_t saltBytes = salt.size() * 5 / 8;
+	boost::scoped_array<uint8_t> buf(new uint8_t[saltBytes]);
+	Encoder::fromBase32(salt.c_str(), &buf[0], saltBytes);
+	TigerHash th;
+	th.update(filteredPass.data(), filteredPass.length());
+	th.update(&buf[0], saltBytes);
+	send("$MyPass " + Encoder::toBase32(th.finalize(), TigerHash::BYTES) + "|");
+	salt.clear();
 }
 
 string NmdcHub::validateMessage(string tmp, bool reverse) {
