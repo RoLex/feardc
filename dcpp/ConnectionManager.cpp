@@ -654,6 +654,10 @@ void ConnectionManager::addNewConnection(UserConnection* uc, ConnectionType type
 			cqi.setState(ConnectionQueueItem::ACTIVE);
 			uc->setFlag(UserConnection::FLAG_ASSOCIATED);
 
+			if(type == CONNECTION_TYPE_PM) {
+				uc->setState(UserConnection::STATE_CMD);
+			}
+
 			fire(ConnectionManagerListener::Connected(), &cqi, uc);
 
 			dcdebug("ConnectionManager::addNewConnection, leaving to uploadmanager or PM handler\n");

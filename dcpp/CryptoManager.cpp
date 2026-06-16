@@ -193,7 +193,6 @@ void CryptoManager::generateCertificate() {
 	// Prepare self-signed cert
 	CHECK((X509_set_version(x509ss, 0x02))) // This is actually V3
 	CHECK((X509_set_serialNumber(x509ss, serial)))
-	CHECK((X509_set_serialNumber(x509ss, serial)))
 	CHECK((X509_set_issuer_name(x509ss, nm)))
 	CHECK((X509_set_subject_name(x509ss, nm)))
 	CHECK((X509_gmtime_adj(X509_get_notBefore(x509ss), 0)))

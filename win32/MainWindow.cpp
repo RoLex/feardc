@@ -950,7 +950,7 @@ void MainWindow::fillLimiterMenu(Menu* menu, bool upload) {
 		ParamDlg dlg(this, title);
 		dlg.addIntTextBox(T_("New limit (KiB/s) (0 = infinite)"), Text::toT(std::to_string(x)), 0, ThrottleManager::MAX_LIMIT);
 		if(dlg.run() == IDOK) {
-			ThrottleManager::setSetting(setting, Util::toUInt(Text::fromT(dlg.getValue())));
+			ThrottleManager::setSetting(setting, Util::toInt(Text::fromT(dlg.getValue())));
 		}
 	});
 }

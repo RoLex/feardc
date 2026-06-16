@@ -1131,6 +1131,7 @@ void HubFrame::on(HubUpdated, Client*) noexcept {
 	}
 #endif
 	tstring hubNameT = Text::toT(hubName);
+	dwt::util::cutStr(hubNameT, 1000);
 	callAsync([this, hubNameT] { setText(hubNameT); });
 }
 

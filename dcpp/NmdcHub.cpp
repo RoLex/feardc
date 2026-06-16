@@ -300,6 +300,9 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 			}
 		}
 
+		if (param.size() < i + 9)
+			return;
+
 		int a;
 		if(param[i] == 'F') {
 			a = SearchManager::SIZE_DONTCARE;

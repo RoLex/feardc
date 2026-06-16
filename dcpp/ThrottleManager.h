@@ -54,6 +54,13 @@ namespace dcpp
 
 		static void setSetting(SettingsManager::IntSetting setting, int value);
 
+		// @todo if we want to allow higher limit values in the future (over ~2 Gib/s)
+		// (means transfer speeds of that magnitude or higher become common) then
+		// lots of code dealing with byte representation of speeds and limits values 
+		// needs to be checked and changed to use int64 types, to make sure that 
+		// formatBytes of actual speeds, DS, US values etc... won't overflow. 
+		// See L#2143720 for a similar issue.
+
 		static const int MAX_LIMIT = 1024 * 1024; // 1 GiB/s
 
 	private:
@@ -64,11 +71,11 @@ namespace dcpp
 
 		// download limiter
 		CriticalSection	downCS;
-		int64_t			downTokens;
+		int64_t downTokens;
 
 		// upload limiter
 		CriticalSection	upCS;
-		int64_t			upTokens;
+		int64_t upTokens;
 
 		friend class Singleton<ThrottleManager>;
 

@@ -67,6 +67,12 @@ void Spinner::assignBuddy(Control* buddy) {
 	dwtassert(buddy && buddy->handle() && buddy->getParent() == getParent(), "A spinner and its buddy must have the same parent");
 	assignBuddy_(buddy);
 	buddy->onSized([this](const SizedEvent&) { handleSized(); });
+
+	// check range when the value of the buddy control changes - this is automatic the other way round only
+	buddy->onCommand([this]() { this->setValue(this->getValue()); }, EN_CHANGE);
+
+	// initial sync with the buddy
+	setValue(getValue());
 }
 
 Control* Spinner::getBuddy() const {

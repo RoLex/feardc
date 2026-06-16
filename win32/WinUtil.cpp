@@ -677,19 +677,19 @@ bool WinUtil::checkCommand(tstring& cmd, tstring& param, tstring& message, tstri
 		HashManager::getInstance()->rebuild();
 	} else if(Util::stricmp(cmd.c_str(), _T("upload")) == 0) {
 		auto value = Util::toInt(Text::fromT(param));
-		if(value >= 0) {
+		if(value < 0 || value > ThrottleManager::MAX_LIMIT) {
+			status = T_("Invalid speed value");
+		} else {
 			ThrottleManager::setSetting(ThrottleManager::getCurSetting(SettingsManager::MAX_UPLOAD_SPEED_MAIN), value);
 			status = value ? str(TF_("Upload limit set to %1% KiB/s") % value) : T_("Upload limit disabled");
-		} else {
-			status = T_("Invalid speed value");
 		}
 	} else if(Util::stricmp(cmd.c_str(), _T("download")) == 0) {
 		auto value = Util::toInt(Text::fromT(param));
-		if(value >= 0) {
+		if(value < 0 || value > ThrottleManager::MAX_LIMIT) {
+			status = T_("Invalid speed value");
+		} else {
 			ThrottleManager::setSetting(ThrottleManager::getCurSetting(SettingsManager::MAX_DOWNLOAD_SPEED_MAIN), value);
 			status = value ? str(TF_("Download limit set to %1% KiB/s") % value) : T_("Download limit disabled");
-		} else {
-			status = T_("Invalid speed value");
 		}
 	} else if(Util::stricmp(cmd.c_str(), _T("about:config")) == 0 || Util::stricmp(cmd.c_str(), _T("ac")) == 0 || Util::stricmp(cmd.c_str(), _T("a:c")) == 0) {
 		ACFrame::openWindow(mainWindow->getTabView());

@@ -1,3 +1,8 @@
+* [L#2156600] Avoid freezes with overly long hub and nick names (emtee)
+* [L#2154041] Improved bounds check for NMDC search strings (emtee)
+* [L#2142457] Reject direct private messages that are received before the connection has been fully negotiated (fix adapted from AirDC++) (emtee)
+* [L#2143720] Prevent accepting overly high or out of range numeric setting values (emtee)
+
 -- 0.883 2025-09-12 --
 * [L#841189] Enable support for secure NMDC (nmdcs://) hub connections (emtee)
 * Prefer secure hub addresses, if available, in Public hub lists

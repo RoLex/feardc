@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2026 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -204,7 +204,7 @@ void BufferedSocket::threadRead() {
 
 	string::size_type pos = 0;
 	// always uncompressed data
-	string l;
+	string l, sub;
 	int bufpos = 0, total = left;
 
 	while (left > 0) {
@@ -231,8 +231,15 @@ void BufferedSocket::threadRead() {
 					}
 					// process all lines
 					while ((pos = l.find(separator)) != string::npos) {
-                       	if(pos > 0) // check empty (only pipe) command and don't waste cpu with it ;o)
-							fire(BufferedSocketListener::Line(), l.substr(0, pos));
+                       	if (pos > 0) { // check empty (only pipe) command and don't waste cpu with it ;o)
+							sub = l.substr(0, pos);
+
+							if (strlen(sub.c_str()) < sub.size())
+								dcdebug ("Ignoring NULL character in line: %d vs %d [%s]\n", strlen(sub.c_str()), sub.size(), sub.c_str());
+							else
+								fire(BufferedSocketListener::Line(), sub);
+						}
+
 						l.erase (0, pos + 1 /* separator char */);
 					}
 					// store remainder
@@ -251,8 +258,15 @@ void BufferedSocket::threadRead() {
 				}
 				l = line + string ((char*)&inbuf[bufpos], left);
 				while ((pos = l.find(separator)) != string::npos) {
-	                if(pos > 0) // check empty (only pipe) command and don't waste cpu with it ;o)
-						fire(BufferedSocketListener::Line(), l.substr(0, pos));
+	                if (pos > 0) { // check empty (only pipe) command and don't waste cpu with it ;o)
+						sub = l.substr(0, pos);
+
+						if (strlen(sub.c_str()) < sub.size())
+							dcdebug ("Ignoring NULL character in line: %d vs %d [%s]\n", strlen(sub.c_str()), sub.size(), sub.c_str());
+						else
+							fire(BufferedSocketListener::Line(), l.substr(0, pos));
+					}
+
 					l.erase (0, pos + 1 /* separator char */);
 					if (l.length() < (size_t)left) left = l.length();
 					if (mode != MODE_LINE) {

@@ -314,7 +314,9 @@ void PrivateFrame::updateOnlineStatus(bool newChannel) {
 		newChannel = true;
 	}
 
-	setText(WinUtil::getNick(replyTo.getUser()) + _T(" - ") + WinUtil::getHubName(replyTo.getUser()));
+	tstring nickT = WinUtil::getNick(replyTo.getUser());
+	dwt::util::cutStr(nickT, 100);
+	setText(nickT + _T(" - ") + WinUtil::getHubName(replyTo.getUser()));
 
 	if(newChannel) {
 		updateChannel();
