@@ -572,7 +572,12 @@ void NmdcHub::onLine(const string& aLine) noexcept {
 		if (j == string::npos)
 			return;
 
-		string server = Socket::resolve(param.substr(i, j - i), AF_INET);
+		string server = param.substr(i, j - i);
+
+		if (!Util::validateHost(server))
+			return;
+
+		server = Socket::resolve(server, AF_INET);
 
 		if (isProtectedIP(server))
 			return;

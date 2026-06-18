@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2026 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -346,6 +346,10 @@ string Socket::listen(const string& port) {
 void Socket::connect(const string& aAddr, const string& aPort, const string& localPort) {
 	disconnect();
 
+	if (!Util::validateHost(aAddr) || !Util::validatePort(aPort)) {
+		throw SocketException(EADDRNOTAVAIL);
+	}
+
 	// We try to connect to both IPv4 and IPv6 if available
 	auto addr = resolveAddr(aAddr, aPort);
 
@@ -610,7 +614,7 @@ void Socket::writeTo(const string& aAddr, const string& aPort, const void* aBuff
 	if(aLen <= 0)
 		return;
 
-	if(aAddr.empty() || aPort.empty()) {
+	if (!Util::validateHost(aAddr) || !Util::validatePort(aPort)) {
 		throw SocketException(EADDRNOTAVAIL);
 	}
 

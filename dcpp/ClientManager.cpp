@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2026 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -513,15 +513,17 @@ void ClientManager::on(NmdcSearch, Client* aClient, const string& aSeeker, int a
 				aClient->send(str);
 
 		} else {
-			string ip, port;
-
 			auto ipPortPair = NmdcHub::parseIpPort(aSeeker);
 
-			port = ipPortPair.second;
-			ip = Socket::resolve(ipPortPair.first, AF_INET);
+			if (!Util::validateHost(ipPortPair.first))
+				return;
+
+			string ip = Socket::resolve(ipPortPair.first, AF_INET);
 
 			if(static_cast<NmdcHub*>(aClient)->isProtectedIP(ip))
 				return;
+
+			string port = ipPortPair.second;
 
 			if(port.empty())
 				port = "412";

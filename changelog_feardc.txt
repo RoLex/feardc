@@ -33,6 +33,7 @@
 * Properly show away, fireball and server status on NMDC hubs
 * Save last away status on restart
 * Don't parse plain text protocol commands containing NULL character
+* Don't try to resolve or connect to invalid address or port
 * Fix locale detection when building help files on Cygwin and Msys
 * Fix negative upload and download statistics due to int64_t declaration
 * Fix C++20 deprecation warnings

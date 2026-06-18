@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2025 Jacek Sieka, arnetheduck on gmail point com
+ * Copyright (C) 2001-2026 Jacek Sieka, arnetheduck on gmail point com
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -712,6 +712,53 @@ vector<Util::AddressInfo> Util::getIpAddresses(bool v6) {
 
 #endif
 	return adapterData;
+}
+
+/*
+	validate ipv4, ipv6, dns, host
+*/
+bool Util::validateHost(const string &host) {
+	auto s = host.size();
+
+	if (s < 2 || s > 255)
+		return false;
+
+	unsigned char c;
+
+	for (auto i = 0; i < s; ++i) {
+		c = static_cast<unsigned char>(host[i]);
+
+		if (!isalnum(c) && (c != '.') && (c != ':') && (c != '-'))
+			return false;
+	}
+
+	return true;
+}
+
+/*
+	validate port number
+*/
+bool Util::validatePort(const string &port) {
+	auto s = port.size();
+
+	if (s < 1 || s > 5)
+		return false;
+
+	unsigned char c;
+
+	for (auto i = 0; i < s; ++i) {
+		c = static_cast<unsigned char>(port[i]);
+
+		if (!isdigit(c))
+			return false;
+	}
+
+	int p = toInt(port);
+
+	if (p < 1 || p > 65535)
+		return false;
+
+	return true;
 }
 
 typedef const uint8_t* ccp;
