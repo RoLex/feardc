@@ -232,12 +232,13 @@ void BufferedSocket::threadRead() {
 					// process all lines
 					while ((pos = l.find(separator)) != string::npos) {
                        	if (pos > 0) { // check empty (only pipe) command and don't waste cpu with it ;o)
-							sub = l.substr(0, pos);
+							sub.assign(l, 0, pos);
 
-							if (strlen(sub.c_str()) < sub.size())
+							if (strlen(sub.c_str()) < sub.size()) {
 								dcdebug ("Ignoring NULL character in line: %d vs %d [%s]\n", strlen(sub.c_str()), sub.size(), sub.c_str());
-							else
+							} else {
 								fire(BufferedSocketListener::Line(), sub);
+							}
 						}
 
 						l.erase (0, pos + 1 /* separator char */);
@@ -259,12 +260,13 @@ void BufferedSocket::threadRead() {
 				l = line + string ((char*)&inbuf[bufpos], left);
 				while ((pos = l.find(separator)) != string::npos) {
 	                if (pos > 0) { // check empty (only pipe) command and don't waste cpu with it ;o)
-						sub = l.substr(0, pos);
+						sub.assign(l, 0, pos);
 
-						if (strlen(sub.c_str()) < sub.size())
+						if (strlen(sub.c_str()) < sub.size()) {
 							dcdebug ("Ignoring NULL character in line: %d vs %d [%s]\n", strlen(sub.c_str()), sub.size(), sub.c_str());
-						else
-							fire(BufferedSocketListener::Line(), l.substr(0, pos));
+						} else {
+							fire(BufferedSocketListener::Line(), sub);
+						}
 					}
 
 					l.erase (0, pos + 1 /* separator char */);
